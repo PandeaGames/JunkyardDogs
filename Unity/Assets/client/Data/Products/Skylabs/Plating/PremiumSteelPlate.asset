@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e898c12224211543892380af52f98a0, type: 3}
+  m_Name: PremiumSteelPlate
+  m_EditorClassIdentifier: 
+  _manufacturer: {fileID: 11400000, guid: 2aeb4c1ba3b2b6c44962fc440c235b76, type: 2}
+  _material: {fileID: 11400000, guid: 66796a819a8882b47908df728f6aa07d, type: 2}
+  _volume: 1
+  _thickness: 2
