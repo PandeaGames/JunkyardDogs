@@ -8,6 +8,9 @@ namespace JunkyardDogs.Specifications
     public class Chassis : PhysicalSpecification
     {
         [SerializeField]
+        private float _maxSpeedPerSecond;
+
+        [SerializeField]
         private int _frontPlates;
 
         [SerializeField]
@@ -36,6 +39,8 @@ namespace JunkyardDogs.Specifications
 
         [SerializeField]
         private bool _rightArmament;
+
+        public float MaxSpeedPerSecond { get { return _maxSpeedPerSecond; } }
 
         public int FrontPlates { get { return _frontPlates; } }
         public int LeftPLates { get { return _leftPlates; } }

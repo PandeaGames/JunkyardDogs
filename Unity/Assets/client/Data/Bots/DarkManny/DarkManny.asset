@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57a25811bc8744143825806c75195e8a, type: 3}
+  m_Name: DarkManny
+  m_EditorClassIdentifier: 
+  _motherboard: {fileID: 11400000, guid: 054ad275a52ac1443935c625869b38a0, type: 2}
+  _chassis: {fileID: 11400000, guid: e4d7df082bfde6146821eea4c178ba09, type: 2}
+  _agent: {fileID: 11400000, guid: aaf456c66b07c794fb5edb7be9284222, type: 2}

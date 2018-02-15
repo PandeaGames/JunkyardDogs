@@ -14,6 +14,7 @@ MonoBehaviour:
   _manufacturer: {fileID: 11400000, guid: 2aeb4c1ba3b2b6c44962fc440c235b76, type: 2}
   _material: {fileID: 11400000, guid: 66796a819a8882b47908df728f6aa07d, type: 2}
   _volume: 10
+  _maxSpeedPerSecond: 1
   _frontPlates: 3
   _leftPlates: 1
   _rightPlates: 1

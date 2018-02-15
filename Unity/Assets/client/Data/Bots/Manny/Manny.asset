@@ -13,3 +13,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _motherboard: {fileID: 11400000, guid: 054ad275a52ac1443935c625869b38a0, type: 2}
   _chassis: {fileID: 11400000, guid: e4d7df082bfde6146821eea4c178ba09, type: 2}
+  _agent: {fileID: 11400000, guid: deec64ce12d7900439e93cec067137d3, type: 2}

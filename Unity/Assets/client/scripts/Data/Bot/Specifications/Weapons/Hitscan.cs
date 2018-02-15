@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using JunkyardDogs.Simulation;
 
 namespace JunkyardDogs.Specifications
 {
@@ -9,5 +10,15 @@ namespace JunkyardDogs.Specifications
         private HitscanBullet _shell;
 
         public HitscanBullet Shell { get { return _shell; } }
+
+        public override Assailer GetAssailer()
+        {
+            return _shell;
+        }
+
+        public override AttackActionResultType GetActionType()
+        {
+            return AttackActionResultType.HITSCAN;
+        }
     }
 }

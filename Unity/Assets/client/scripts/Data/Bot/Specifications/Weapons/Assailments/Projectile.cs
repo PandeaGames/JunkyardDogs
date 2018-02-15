@@ -6,8 +6,12 @@ namespace JunkyardDogs.Specifications
     [CreateAssetMenu(fileName = "Projectile", menuName = "Specifications/Projectile", order = 7)]
     public class Projectile : Assailer
     {
-        private int _speed;
+        [SerializeField]
+        private float _speed;
+        [SerializeField]
+        private float _radius;
 
-        public int Speed { get { return _speed; } }
+        public float Speed { get { return _speed; } }
+        public float Radius { get { return _radius; } }
     }
 }

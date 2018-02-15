@@ -11,15 +11,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82290ab34243d384bacf2277a1831a68, type: 3}
   m_Name: Chassis
   m_EditorClassIdentifier: 
-  _specification: {fileID: 0}
+  _specification: {fileID: 11400000, guid: a94f08ca2c2963d478be94476d338885, type: 2}
   _distinctions: []
-  _frontPlates: []
-  _leftPlates: []
-  _rightPlates: []
-  _backPlates: []
+  _frontPlates:
+  - {fileID: 11400000, guid: d29ba4188b6407e4ca754f666ed31743, type: 2}
+  - {fileID: 11400000, guid: 4e8efd15ce5540448b8d4f2a59011419, type: 2}
+  - {fileID: 11400000, guid: 703be72f2b3d6f344bd6eaf39539fe8b, type: 2}
+  _leftPlates:
+  - {fileID: 11400000, guid: c200e751ef6604148b4ccd6ed0c6b0ca, type: 2}
+  _rightPlates:
+  - {fileID: 11400000, guid: 17c686a66c55641499c7212dada55679, type: 2}
+  _backPlates:
+  - {fileID: 11400000, guid: 4a6f5417b8167994faa3ba3f5e00cecc, type: 2}
   _topPlates: []
-  _bottomPlates: []
+  _bottomPlates:
+  - {fileID: 11400000, guid: 2bdc3247c88df244e8a04e225abc82b6, type: 2}
   _topArmament: {fileID: 0}
   _frontArmament: {fileID: 0}
-  _leftArmament: {fileID: 0}
+  _leftArmament: {fileID: 11400000, guid: ef9233ab405ed454c9d5014a819803be, type: 2}
   _rightArmament: {fileID: 0}
