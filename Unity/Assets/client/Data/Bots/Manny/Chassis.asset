@@ -29,4 +29,4 @@ MonoBehaviour:
   _topArmament: {fileID: 0}
   _frontArmament: {fileID: 0}
   _leftArmament: {fileID: 11400000, guid: ef9233ab405ed454c9d5014a819803be, type: 2}
-  _rightArmament: {fileID: 0}
+  _rightArmament: {fileID: 11400000, guid: 0109868bc0f033a48849e6397689fc18, type: 2}

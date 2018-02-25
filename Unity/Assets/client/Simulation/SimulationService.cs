@@ -12,18 +12,23 @@ using JunkyardDogs.Simulation.Agent;
 using JunkyardDogs.Simulation.Knowledge.Information;
 using JunkyardDogs.Simulation.Behavior;
 using JunkyardDogs.Components;
+using JunkyardDogs.Simulation.Simulation;
 
 namespace JunkyardDogs.Simulation
 {
     public class SimulationService : Service
     {
-        private const float SimuationStep = (1f / 60f);
+        public const float SimuationStep = 1f / 60f;
+        private float VariableSimulationStep { get { return 1f / (60f * _speed); } }
         private const double MovementTimeLength = 1;
 
         private Engagement _engagement;
         private RulesOfEngagement _rules;
         private Outcome _outcome;
+
+        [SerializeField][Range(0, 1f)]
         private float _speed = 1f;
+
         private Coroutine _simulationCoroutine;
         private Bot _redBot, _blueBot;
         private int _ticks;
@@ -69,8 +74,8 @@ namespace JunkyardDogs.Simulation
             _objectList.Add(_simulatedBots[_redBot]);
             _objectList.Add(_simulatedBots[_blueBot]);
 
-            _simulatedBots[_redBot].position.Set(5, 0);
-            _simulatedBots[_blueBot].position.Set(-5, 0);
+            _simulatedBots[_redBot].body.position.Set(5, 0);
+            _simulatedBots[_blueBot].body.position.Set(-5, 0);
 
             _simulationCoroutine = StartCoroutine(SimulationCoroutine());
         }
@@ -93,8 +98,14 @@ namespace JunkyardDogs.Simulation
                 //TODO: Figure out how to keep simlulation fixed step, 
                 //while also supporting positional interpolation for the sake
                 //of messing with the speed of the somulation. 
+                // Debug.Log(SimuationStep / _speed);
 
-                yield return new WaitForSeconds(SimuationStep * _speed);
+                if (VariableSimulationStep >= SimuationStep)
+                {
+                    yield return new WaitForSeconds(VariableSimulationStep);
+                }
+                
+                //yield return new WaitForSecondsRealtime
                 Step(SimuationStep * _speed);
             }
         }
@@ -129,19 +140,22 @@ namespace JunkyardDogs.Simulation
 
             foreach (SimulatedObject simulated in _objectList)
             {
-                Gizmos.DrawSphere(simulated.position, simulated.radius);
+                if (simulated.collider == null)
+                    continue;
+
+                simulated.collider.OnDrawGizmos();
             }
         }
 
         private void SimulateBot(SimulatedBot bot, SimulatedBot opponent)
         {
             bot.Information.Self.Health = bot.Health;
-            bot.Information.Self.Position = bot.position;
+            bot.Information.Self.Position = bot.body.position;
             bot.Information.Self.State = bot.State.State.TargetState;
             bot.Information.Self.Health = bot.Health;
 
             bot.Information.Opponent.Health = opponent.Health;
-            bot.Information.Opponent.Position = opponent.position;
+            bot.Information.Opponent.Position = opponent.body.position;
             bot.Information.Opponent.State = opponent.State.State.TargetState;
             bot.Information.Opponent.Health = opponent.Health;
 
@@ -182,7 +196,7 @@ namespace JunkyardDogs.Simulation
 
         private void ExecuteDirectives(SimulatedBot bot, SimulatedBot opponent)
         {
-            bot.velocity = Vector2.zero;
+            bot.body.velocity = Vector2.zero;
 
             if (bot.DelayedAttackAction != null)
             {
@@ -204,7 +218,21 @@ namespace JunkyardDogs.Simulation
             }
             else if(bot.LastMovementCommand + MovementTimeLength > SimulationTime())
             {
-                bot.velocity = bot.MovementAction.movement * 3;
+                //TODO: get 3 from the speed of the chassis. based on weight and locomotion
+                //bot.body.velocity = bot.MovementAction.movement * 3;
+
+                Vector2 delta = opponent.body.position - bot.body.position;
+                Vector2 moveDelta = bot.MovementAction.movement;
+
+                float angle = Mathf.Atan2(delta.y, delta.x);
+                float moveAngle = Mathf.Atan2(moveDelta.x, moveDelta.y);
+
+                float finalAngle = moveAngle + angle;
+
+                bot.body.velocity.Set(
+                    Mathf.Cos(finalAngle) * 3,
+                    Mathf.Sin(finalAngle) * 3
+                    );
             }
             else
             {
@@ -320,7 +348,10 @@ namespace JunkyardDogs.Simulation
             //Update positions
             foreach(SimulatedObject simulated in _objectList)
             {
-                simulated.position += simulated.velocity * SimuationStep;
+                if(simulated.body != null)
+                    simulated.body.position += simulated.body.velocity * SimuationStep;
+
+                simulated.Update();
             }
 
             //Calculate collisions
@@ -328,17 +359,85 @@ namespace JunkyardDogs.Simulation
             {
                 SimulatedObject simulated = _objectList[i];
 
+                if (simulated.collider == null)
+                    continue;
+
                 for (int j = i + 1; j < _objectList.Count; j++)
                 {
                     SimulatedObject other = _objectList[j];
 
-                    if (Vector2.Distance(simulated.position, other.position) < simulated.radius + other.radius)
+                    if (other.collider == null)
+                        continue;
+                         
+                    if(DoesCollide(simulated.collider, other.collider))
                     {
                         simulated.OnCollide(other);
                         other.OnCollide(simulated);
                     }
                 }
             }
+        }
+
+        private bool DoesCollide(SimulatedCollider collider, SimulatedCollider other)
+        {
+            SimulatedCircleCollider colliderCircle = collider as SimulatedCircleCollider;
+            SimulatedCircleCollider otherCircle = other as SimulatedCircleCollider;
+
+            SimulatedLineCollider colliderLine = collider as SimulatedLineCollider;
+            SimulatedLineCollider otherLine = other as SimulatedLineCollider;
+
+            if (colliderCircle != null && otherCircle != null)
+            {
+                if (Vector2.Distance(colliderCircle.Body.position, otherCircle.Body.position) < colliderCircle.radius + otherCircle.radius)
+                {
+                    return true;
+                }
+            }
+
+            if(colliderLine != null && otherLine != null)
+            {
+                return false;
+            }
+
+            if (colliderLine != null || otherLine != null)
+            {
+                SimulatedLineCollider line = colliderLine == null ? otherLine : colliderLine;
+                SimulatedCircleCollider circle = colliderLine == null ? colliderCircle : otherCircle;
+
+                Vector2 p1 = line.Body.position;
+                Vector2 p2 = line.Body.position;
+
+                p2.x += Mathf.Cos(line.angle) * 10;
+                p2.y += Mathf.Sin(line.angle) * 10;
+
+                Vector2 c = circle.Body.position;
+                float r = circle.radius;
+
+                Vector2 p3 = new Vector2(p1.x - c.x, p1.y - c.y);
+                Vector2 p4 = new Vector2(p2.x - c.x, p2.y - c.y);
+                //var p3 = { x:p1.x - c.x, y: p1.y - c.y}; //shifted line points
+                //var p4 = { x:p2.x - c.x, y: p2.y - c.y};
+
+                float m = (p4.y - p3.y) / (p4.x - p3.x); //slope of the line
+                float b = p3.y - m * p3.x; //y-intercept of line
+
+                float underRadical = Mathf.Pow(r, 2) * Mathf.Pow(m, 2) + Mathf.Pow(r, 2) - Mathf.Pow(b, 2); //the value under the square root sign 
+
+                if (underRadical< 0) {
+                    //line completely missed
+                    return false;
+                } else {
+                    float t1 = (-m * b + Mathf.Sqrt(underRadical)) / (Mathf.Pow(m, 2) + 1); //one of the intercept x's
+                    float t2 = (-m * b - Mathf.Sqrt(underRadical)) / (Mathf.Pow(m, 2) + 1); //other intercept's x
+                    Vector2 i1 = new Vector2(t1 + c.x, m * t1 + b + c.y);
+                    Vector2 i2 = new Vector2(t2 + c.x, m * t2 + b + c.y);
+                   // var i1 = { x:t1 + c.x, y:m * t1 + b + c.y }; //intercept point 1
+                    //var i2 = { x:t2 + c.x, y:m * t2 + b + c.y }; //intercept point 2
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         private void OnBotDestroyed(SimulatedObject bot)
@@ -366,156 +465,17 @@ namespace JunkyardDogs.Simulation
             }
         }
 
-        private class DelayedAttackAction
-        {
-            public bool WaitForAttack;
-            public double DelayAttackStart;
-            public bool HasExecutedDelayedAttack;
-            public AttackActionResult AttackActionResult;
-            public WeaponProcessor Processor;
-        }
-
-        private class SimulatedObject
-        {
-            public delegate void SimuatedObjectDelegate(SimulatedObject simulated);
-
-            public event SimuatedObjectDelegate OnRemove;
-
-            public Vector2 position;
-            public Vector2 velocity;
-            public float radius;
-
-            public virtual void OnCollide(SimulatedObject other)
-            {
-
-            }
-
-            protected void Remove()
-            {
-                if (OnRemove != null)
-                    OnRemove(this);
-            }
-        }
-
-        private class SimulatedAttack : SimulatedObject
-        {
-            private SimulatedBot _bot;
-            private SimulatedBot _opponent;
-            private WeaponProcessor _processor;
-            private AttackActionResult _actionResult;
-
-            public SimulatedBot Bot { get { return _bot; } }
-            public WeaponProcessor Processor { get { return _processor; } }
-            public AttackActionResult ActionResult { get { return _actionResult; } }
-
-            public SimulatedAttack(SimulatedBot bot, SimulatedBot opponent, AttackActionResult actionResult, WeaponProcessor processor)
-            {
-                _bot = bot;
-                _opponent = opponent;
-                _actionResult = actionResult;
-                _processor = processor;
-            }
-
-            public override void OnCollide(SimulatedObject other)
-            {
-                SimulatedBot simulatedBot = other as SimulatedBot;
-
-                if (simulatedBot != null && other == _opponent)
-                {
-                    simulatedBot.RecieveAttack(this);
-                    Remove();
-                }
-            }
-        }
-
-        private class SimulatedBot : SimulatedObject
-        {
-            public event SimuatedObjectDelegate OnBotDestroyed;
-
-            private Bot _bot;
-
-            //TODO get from bot
-            public int Health = 100;
-
-            public AgentState State;
-            public int DirectiveIndex = 0;
-            public Information Information;
-
-            public DelayedAttackAction DelayedAttackAction;
-            public double LastMovementCommand;
-            public ActionResult MovementAction;
-
-            public Bot Bot { get { return _bot; } }
-
-            public SimulatedBot(Bot bot)
-            {
-                _bot = bot;
-                State = bot.Agent.InitialState;
-                radius = 0.5f;//TODO: get from chassis
-            }
-
-            public void RecieveAttack(SimulatedAttack attack)
-            {
-                Health -= (int)attack.ActionResult.DamageOuput;
-                if(Health<=0)
-                {
-                    Remove();
-
-                    if (OnBotDestroyed != null)
-                        OnBotDestroyed(this);
-                }
-            }
-        }
-
-        private class SimulatedProjectile: SimulatedAttack
-        {
-            public SimulatedProjectile(SimulatedBot bot, SimulatedBot opponent, AttackActionResult actionResult, WeaponProcessor processor) : base(bot, opponent, actionResult, processor)
-            {
-                Vector2 delta =  opponent.position - bot.position;
-
-                position = bot.position;
-                radius = actionResult.ProjectileResult.Radius;
-
-                float angle = Mathf.Atan2(delta.y, delta.x);
-
-                velocity.Set(
-                    Mathf.Cos(angle) * actionResult.ProjectileResult.Velocity,
-                    Mathf.Sin(angle) * actionResult.ProjectileResult.Velocity
-                    );
-            }
-        }
-
-        private class SimulatedMelee : SimulatedAttack
-        {
-            public SimulatedMelee(SimulatedBot bot, SimulatedBot opponent, AttackActionResult actionResult, WeaponProcessor processor) : base(bot, opponent, actionResult, processor)
-            {
-            }
-        }
-
-        private class SimulatedHitscan : SimulatedAttack
-        {
-            public SimulatedHitscan(SimulatedBot bot, SimulatedBot opponent, AttackActionResult actionResult, WeaponProcessor processor) : base(bot, opponent, actionResult, processor)
-            {
-            }
-        }
-
-        private class SimulatedMortar : SimulatedAttack
-        {
-            public SimulatedMortar(SimulatedBot bot, SimulatedBot opponent, AttackActionResult actionResult, WeaponProcessor processor) : base(bot, opponent, actionResult, processor)
-            {
-            }
-        }
-
-        private class SimulatedPulse : SimulatedAttack
-        {
-            public float PulseVelocity = 0;
-
-            public SimulatedPulse(SimulatedBot bot, SimulatedBot opponent, AttackActionResult actionResult, WeaponProcessor processor):base(bot, opponent, actionResult, processor)
-            {
-                PulseVelocity = actionResult.PulseResult.Velocity;
-            }
-        }
+        
     }
+    public class DelayedAttackAction
+    {
+        public bool WaitForAttack;
+        public double DelayAttackStart;
+        public bool HasExecutedDelayedAttack;
+        public AttackActionResult AttackActionResult;
+        public WeaponProcessor Processor;
+    }
+
     public struct ActionResult
     {
         public Vector2 movement;
@@ -575,3 +535,4 @@ namespace JunkyardDogs.Simulation
         public Mortar MortarResult;
     }
 }
+ 

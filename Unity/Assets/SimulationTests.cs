@@ -17,7 +17,7 @@ public class SimulationTests : MonoBehaviour {
     void Start () {
         _simulationService = _serviceManager.GetService<SimulationService>();
         _simulationService.SetEngagement(_engagement);
-        _simulationService.SetSimulationSpeed(1);
+        _simulationService.SetSimulationSpeed(1f);
         _simulationService.StartSimulation();
     }
 	
