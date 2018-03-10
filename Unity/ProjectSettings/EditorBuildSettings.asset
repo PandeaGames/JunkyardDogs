@@ -4,4 +4,13 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/client/scenes/screens/junkyard.unity
+    guid: 11e5c97c871319348866e0c38ea419e5
+  - enabled: 1
+    path: Assets/client/scenes/test.unity
+    guid: 249acaaefc3decc45ae27083a08db275
+  - enabled: 1
+    path: Assets/client/scenes/templates/TemplateScreen.unity
+    guid: 8dfafa2d46744df419c4ac78581d65ce

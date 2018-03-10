@@ -38,9 +38,9 @@ namespace JunkyardDogs.Simulation
         private List<SimulatedObject> _objectList;
         private List<SimulatedObject> _removeBuffer;
 
-        public override void StartService()
+        public override void StartService(ServiceManager serviceManager)
         {
-            base.StartService();
+            base.StartService(serviceManager);
 
             _simulatedBots = new Dictionary<Bot, SimulatedBot>();
             _objectList = new List<SimulatedObject>();

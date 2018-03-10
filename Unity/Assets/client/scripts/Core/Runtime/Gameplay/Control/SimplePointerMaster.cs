@@ -23,7 +23,6 @@ public class SimplePointerMaster : InputMaster
     private Dictionary<int, bool> _touchDown = new Dictionary<int, bool>();
     private int _touchCount;
 
-    // Update is called once per frame
     void Update()
     {
         _puppet.PuppetUpdate();

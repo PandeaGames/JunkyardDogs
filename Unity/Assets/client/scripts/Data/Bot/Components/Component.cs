@@ -6,7 +6,7 @@ using System;
 namespace JunkyardDogs.Components
 {
     [Serializable]
-    public class Component<T> : ScriptableObject where T:Specification
+    public class Component<T> : GenericComponent where T:Specification
     {
         [SerializeField]
         private T _specification;
@@ -16,7 +16,15 @@ namespace JunkyardDogs.Components
 
         public T Specification {
             get { return _specification; }
-            set { _specification = value; }
+            set
+            {
+                _specification = value;
+            }
+        }
+
+        public override Specification GetSpecification()
+        {
+            return _specification;
         }
     }
 }
