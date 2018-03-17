@@ -8,6 +8,17 @@ using JunkyardDogs.Specifications;
 public class SpecificationCatalogue : ScriptableObject
 {
     [SerializeField]
+    private Manufacturer _manufacturer;
+
+    public Manufacturer Manufacturer
+    {
+        get
+        {
+            return _manufacturer;
+        }
+    }
+
+    [SerializeField]
     private Specification[] _specifications;
 
     public Specification[] Specifications

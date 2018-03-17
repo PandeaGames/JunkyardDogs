@@ -11,6 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 750d20fa396d80145ad933ba83bf9665, type: 3}
   m_Name: SpecificationCatalogue01
   m_EditorClassIdentifier: 
+  _manufacturer: {fileID: 11400000, guid: 2aeb4c1ba3b2b6c44962fc440c235b76, type: 2}
   _specifications:
   - {fileID: 11400000, guid: b0875a0104cf8a542a6bd099c7796aef, type: 2}
   - {fileID: 11400000, guid: 8f57986df6cf50745a31b2b247101dcb, type: 2}

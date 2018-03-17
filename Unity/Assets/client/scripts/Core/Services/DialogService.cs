@@ -56,7 +56,7 @@ public class DialogService : Service
             return;
         }
 
-        Debug.LogError("Display Dialog type " + typeof(T).Name+" with config "+config);
+        Debug.Log("Display Dialog type " + typeof(T).Name+" with config "+config);
         _dialogStage.ShowDialog(prefab, config, responseDelegate);
     }
 

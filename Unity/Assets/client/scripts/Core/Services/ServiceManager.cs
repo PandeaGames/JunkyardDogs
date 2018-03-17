@@ -30,7 +30,7 @@ public class ServiceManager : MonoBehaviour {
 
     public void StartServices()
     {
-        Debug.Log("Service Manager starting: " + name);
+        Debug.Log("Service Manager starting:");
 
         //If we are calling start 2 times, fail out
         if (_isRunning)
@@ -74,6 +74,11 @@ public class ServiceManager : MonoBehaviour {
 
     public bool ContainsService<T>() where T : Service
     {
+        if (!_isRunning)
+        {
+            StartServices();
+        }
+
         Service service = null;
         _serviceLookup.TryGetValue(typeof(T), out service);
         return service != null;
@@ -81,6 +86,11 @@ public class ServiceManager : MonoBehaviour {
 
     public T GetService<T>() where T:Service
     {
+        if(!_isRunning)
+        {
+            StartServices();
+        }
+
         Service service = null;
         _serviceLookup.TryGetValue(typeof(T), out service);
 

@@ -19,7 +19,7 @@ public abstract class UserService<T> : Service where T:User
         _user = Load();
     }
 
-    private T Load()
+    public T Load()
     {
         T user = ScriptableObject.CreateInstance<T>();
         user.UID = SystemInfo.deviceUniqueIdentifier;

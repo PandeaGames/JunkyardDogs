@@ -31,11 +31,12 @@ public class DialogStage : MonoBehaviour
 
     private void OnDialogClose(Dialog dialog)
     {
-        BlurDialog(dialog); 
+        BlurDialog(dialog);
+        Destroy(dialog.gameObject);
     }
 
     private void OnDialogCancel(Dialog dialog)
     {
-
+        Destroy(dialog.gameObject);
     }
 }
