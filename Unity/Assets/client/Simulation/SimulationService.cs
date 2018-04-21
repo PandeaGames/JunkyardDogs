@@ -13,6 +13,7 @@ using JunkyardDogs.Simulation.Knowledge.Information;
 using JunkyardDogs.Simulation.Behavior;
 using JunkyardDogs.Components;
 using JunkyardDogs.Simulation.Simulation;
+using Bot = JunkyardDogs.Components.Bot;
 
 namespace JunkyardDogs.Simulation
 {
@@ -292,7 +293,7 @@ namespace JunkyardDogs.Simulation
             if (weapon == null)
                 return;
 
-            Specifications.Weapon specification = weapon.Specification;
+            Specifications.Weapon specification = weapon.Specification as Specifications.Weapon;
 
             AttackActionResult attackAction = specification.GetResult();
 

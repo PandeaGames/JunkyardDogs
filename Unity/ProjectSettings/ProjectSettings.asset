@@ -517,6 +517,7 @@ PlayerSettings:
     4: TextMeshPro
     7: TextMeshPro
     13: TextMeshPro
+    14: TextMeshPro
     17: TextMeshPro
     18: TextMeshPro
     19: TextMeshPro
@@ -532,7 +533,7 @@ PlayerSettings:
   scriptingBackend: {}
   incrementalIl2cppBuild: {}
   additionalIl2CppArgs: 
-  scriptingRuntimeVersion: 0
+  scriptingRuntimeVersion: 1
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
@@ -616,7 +617,7 @@ PlayerSettings:
       daydreamIconBackground: {fileID: 0}
   cloudServicesEnabled: {}
   facebookSdkVersion: 7.9.4
-  apiCompatibilityLevel: 2
+  apiCompatibilityLevel: 3
   cloudProjectId: bf90d7bb-1185-4a24-8f27-b39938cf07b9
   projectName: JunkyardDogs
   organizationId: colincove

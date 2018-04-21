@@ -1,0 +1,128 @@
+ManifestFileVersion: 0
+CRC: 3421159005
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 72b3961dcc5ec5d3f2495fc725bfa02c
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 8608d64b29bcd75c04d30b1b8cdbe83f
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 333e9c107faf2a3449cd64de62d2ef60, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 0833d720b03f4ba4691b17c7949e2ab1, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 4ae6ae314c73cc144a7e07e999e16e28, type: 3}
+- Class: 114
+  Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 1e898c12224211543892380af52f98a0, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 394b2a32c8afa0749a8b9719c2f85a99, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: aedf2342af1176b42bf51f5a3136eb3a, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 2bc383b2da7c72946a114ca2612ed7bf, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: b1d4f20500189514a9ea47afb5cfb85f, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 758fa2d563d977c40b5da55a9f3eb054, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 56f3ff764eb213643bf5a37c1a76f76e, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 2c569057ac781074b8ae652816158b37, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 4616b887cfd7d074b9479c1aa29e691a, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 0ea50dc75883c514b9a275b478e7382a, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: fe60c5f819838e2409f2638a7dd4da28, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 2783ee59a0878da43a7dd161ba94d41c, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: db09b6690c924ff44a0bb02e19fb16f9, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: c016de890c5b47b46a926660ab460ac6, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 750d20fa396d80145ad933ba83bf9665, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: e774f14bdec23194f9db265633ad69b8, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 0166818c59ad1eb458b5a3d9663b5ea6, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 72d103ec788367e42a966eab1d783f39, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 8d05b97d3903fbd4c93af04f4dfc5590, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 1038089e1f9093f4180a3b3d0fc9df65, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 2ca0e29f4c4aa8d4982fffef9a051a76, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 128
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+- Class: 222
+  Script: {instanceID: 0}
+- Class: 224
+  Script: {instanceID: 0}
+Assets:
+- Assets/AssetBundles/Data/Simulation/Knowledge/Aggressive.asset
+- Assets/AssetBundles/Data/Products/Skylabs/Weapons/Deagle.asset
+- Assets/AssetBundles/Data/Simulation/Knowledge/Natural.asset
+- Assets/AssetBundles/Data/Products/Skylabs/Materials/Alloy/Steel.asset
+- Assets/AssetBundles/Data/Simulation/Directives/DirectiveAttackTop.asset
+- Assets/AssetBundles/Data/Products/Skylabs/Processors/subprocessor/WeaponChip.asset
+- Assets/AssetBundles/Data/Simulation/Behavior/MoveUp.asset
+- Assets/AssetBundles/Data/Products/Skylabs/Materials/CircuitBoard.asset
+- Assets/AssetBundles/Data/Products/Skylabs/Materials/Alloy/Aluminum.asset
+- Assets/AssetBundles/Data/Simulation/Knowledge/Evassive.asset
+- Assets/AssetBundles/Data/Products/Skylabs/Weapons/LaserBeam.asset
+- Assets/AssetBundles/Data/Simulation/Behavior/AttackLeft.asset
+- Assets/AssetBundles/Data/Simulation/Behavior/MoveRight.asset
+- Assets/AssetBundles/Data/Simulation/Directives/DirectiveMoveLeft.asset
+- Assets/AssetBundles/Data/Simulation/Knowledge/CloseRange.asset
+- Assets/AssetBundles/Data/Simulation/Directives/DirectiveMoveBack.asset
+- Assets/AssetBundles/Data/Products/Skylabs/Plating/PremiumSteelPlate.asset
+- Assets/AssetBundles/Data/Simulation/Directives/DirectiveAttackFront.asset
+- Assets/AssetBundles/Data/Simulation/Directives/DirectiveMoveForward.asset
+- Assets/AssetBundles/Data/Simulation/Behavior/AttackRight.asset
+- Assets/AssetBundles/Data/Simulation/Behavior/MoveLeft.asset
+- Assets/AssetBundles/Data/Simulation/Directives/DirectiveAttackLeft.asset
+- Assets/AssetBundles/Data/Simulation/Directives/DirectiveAttackRight.asset
+- Assets/AssetBundles/Data/Products/Skylabs/Chassis/Mamoth.asset
+- Assets/AssetBundles/Data/Products/Skylabs/Skylabs.asset
+- Assets/AssetBundles/Data/Products/Skylabs/Weapons/Pulse.asset
+- Assets/AssetBundles/Data/Simulation/Behavior/AttackTop.asset
+- Assets/AssetBundles/Data/Products/Skylabs/Weapons/FrickinLaser.asset
+- Assets/AssetBundles/Data/Simulation/Directives/DirectiveMoveRight.asset
+- Assets/AssetBundles/Data/Simulation/Knowledge/FarRange.asset
+- Assets/AssetBundles/Data/Products/Skylabs/Weapons/SpiralPower.asset
+- Assets/AssetBundles/Data/Products/Skylabs/Processors/cpu/Himmel-i9.asset
+- Assets/AssetBundles/Data/Simulation/Knowledge/MediumRange.asset
+- Assets/AssetBundles/Data/Gameplay/DialogConfig.asset
+- Assets/AssetBundles/Data/Products/Skylabs/Weapons/Bullet.asset
+- Assets/AssetBundles/Data/Products/Skylabs/Boards/HimmelMotherboard.asset
+- Assets/AssetBundles/Data/Simulation/Knowledge/LowHealth.asset
+- Assets/AssetBundles/Data/Simulation/Behavior/MoveBack.asset
+- Assets/AssetBundles/Data/Simulation/Behavior/AttackFront.asset
+- Assets/AssetBundles/Data/Simulation/Knowledge/MediumHealth.asset
+- Assets/AssetBundles/Data/Simulation/Knowledge/HighHealth.asset
+- Assets/AssetBundles/Data/Gameplay/Junkyard/SpecificationCatalogue01.asset
+- Assets/AssetBundles/Data/Products/Skylabs/Weapons/PulseEmitter.asset
+Dependencies: []

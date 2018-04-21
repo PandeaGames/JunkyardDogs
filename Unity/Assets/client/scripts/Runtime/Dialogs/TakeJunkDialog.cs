@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEditor;
 using JunkyardDogs.Components;
 using System;
 
@@ -9,7 +8,6 @@ public class TakeJunkDialog : Dialog
     public class TakeJunkDialogResponse : Response
     {
         public GenericComponent Component;
-
     }
     [Serializable]
     public class TakeJunkDialogConfig : Config

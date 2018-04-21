@@ -2,6 +2,7 @@
 using System.Collections;
 using JunkyardDogs.Simulation.Agent;
 using JunkyardDogs.Simulation.Knowledge.Information;
+using Bot = JunkyardDogs.Components.Bot;
 
 namespace JunkyardDogs.Simulation.Simulation
 {

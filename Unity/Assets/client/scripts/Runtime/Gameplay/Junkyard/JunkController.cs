@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using JunkyardDogs.Components;
 using Random = UnityEngine.Random;
+using WeakReference = Data.WeakReference;
 
 public class JunkController : MonoBehaviour {
 
@@ -15,18 +16,20 @@ public class JunkController : MonoBehaviour {
     private Junk[] _junkList;
 
     private SpecificationCatalogue _specificationCatalogue;
-    private Specification[] _specifications;
-    private Specification _specification;
-    private DialogService _dialogService;
+    private WeakReference[] _specifications;
+    private WeakReference _specification;
+    private DialogService _dialogService; 
     private JunkyardUserService _userService;
+    private ComponentInstantiatorService _componentService;
     private JunkyardUser _user;
 
     protected void Start()
     {
         _dialogService = _serviceManager.GetService<DialogService>();
         _userService = _serviceManager.GetService<JunkyardUserService>();
+        _componentService = _serviceManager.GetService<ComponentInstantiatorService>();
         _user = _userService.User;
-
+        
         foreach (Junk junk in _junkList)
         {
             junk.OnClick += HandleJunkClick;
@@ -43,7 +46,14 @@ public class JunkController : MonoBehaviour {
 
         _specification = _specifications[choice];
 
-        GenericComponent component = ComponentInstantiatorUtils.GenerateComponent(_specification);
+        _specification.LoadAssync<Specification>(OnLoadComplete);
+
+        Destroy(junk.gameObject);
+    }
+
+    private void OnLoadComplete(Specification asset, WeakReference reference)
+    {
+        GenericComponent component = _componentService.GenerateComponent(_specification);
 
         component.Manufacturer = _specificationCatalogue.Manufacturer;
 
@@ -52,8 +62,6 @@ public class JunkController : MonoBehaviour {
         config.Component = component;
 
         _dialogService.DisplayDialog<TakeJunkDialog>(config, SelectComponent);
-
-        Destroy(junk.gameObject);
     }
 
     private void SelectComponent(Dialog.Response response)

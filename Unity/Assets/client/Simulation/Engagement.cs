@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using JunkyardDogs.Components;
+using System;
 
 namespace JunkyardDogs.Simulation
 {
-    [CreateAssetMenu(fileName = "Engagement", menuName = "Simulation/Engagement", order = 2)]
-    public class Engagement : ScriptableObject
+    [Serializable]
+    public class Engagement
     {
         [SerializeField]
         private Bot _redCombatent;
