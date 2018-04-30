@@ -10,16 +10,15 @@ using Component = JunkyardDogs.Components.Component;
 public class JunkyardUser : User
 {
     public int Cash { get; set; }
-    public WeakReference Nationality { get; set; }
-    public List<Component> Components { get; set; }
+    public Competitor Competitor { get; set; }
 
     public void AddComponent(Component component)
     {
-        Components.Add(component);
+        Competitor.Inventory.AddComponent(component);
     }
 
     public JunkyardUser()
     {
-        Components = new List<Component>();
+        Competitor = new Competitor();
     }
 }

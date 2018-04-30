@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 2817094690
+CRC: 685278963
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: c321ac37a1e15f7579341e6a13dcf332
+    Hash: cef1b2eef8d691ce2dac8462fa96ce21
   TypeTreeHash:
     serializedVersion: 2
-    Hash: f4f48b417e9fc242df400526cd913349
+    Hash: cd5fd6aeb0594a74e27b5ab5d455c658
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -42,6 +42,10 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: 758fa2d563d977c40b5da55a9f3eb054, type: 3}
 - Class: 114
+  Script: {fileID: 1453722849, guid: 89f0137620f6af44b9ba852b4190e64e, type: 3}
+- Class: 114
+  Script: {fileID: -667331979, guid: 89f0137620f6af44b9ba852b4190e64e, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: 56f3ff764eb213643bf5a37c1a76f76e, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 2c569057ac781074b8ae652816158b37, type: 3}
@@ -49,6 +53,8 @@ ClassTypes:
   Script: {fileID: 11500000, guid: 4616b887cfd7d074b9479c1aa29e691a, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 0ea50dc75883c514b9a275b478e7382a, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 79364c380c289744f8ccf9b3740a2355, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: fe60c5f819838e2409f2638a7dd4da28, type: 3}
 - Class: 114
@@ -71,6 +77,12 @@ ClassTypes:
   Script: {fileID: 11500000, guid: 1038089e1f9093f4180a3b3d0fc9df65, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 2ca0e29f4c4aa8d4982fffef9a051a76, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 235578e597f999546a0db936d98dc210, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 2f47d67ae0aa1244888e7dbd847d0613, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 4fbf8ecc2f029484aacb01161c290d02, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 128
@@ -85,6 +97,7 @@ Assets:
 - Assets/AssetBundles/Data/Simulation/Knowledge/Aggressive.asset
 - Assets/AssetBundles/Data/Products/Skylabs/Weapons/Deagle.asset
 - Assets/AssetBundles/Data/Simulation/Knowledge/Natural.asset
+- Assets/AssetBundles/Data/Nations/NationTitleLocalization.asset
 - Assets/AssetBundles/Data/Products/Skylabs/Materials/Alloy/Steel.asset
 - Assets/AssetBundles/Data/Simulation/Directives/DirectiveAttackTop.asset
 - Assets/AssetBundles/Data/Products/Skylabs/Processors/subprocessor/WeaponChip.asset
@@ -99,6 +112,8 @@ Assets:
 - Assets/AssetBundles/Data/Simulation/Knowledge/CloseRange.asset
 - Assets/AssetBundles/Data/Simulation/Directives/DirectiveMoveBack.asset
 - Assets/AssetBundles/Data/Products/Skylabs/Plating/PremiumSteelPlate.asset
+- Assets/AssetBundles/Data/Nations/Germany.asset
+- Assets/AssetBundles/Data/Nations/Canada.asset
 - Assets/AssetBundles/Data/Simulation/Directives/DirectiveAttackFront.asset
 - Assets/AssetBundles/Data/Simulation/Directives/DirectiveMoveForward.asset
 - Assets/AssetBundles/Data/Simulation/Behavior/AttackRight.asset
@@ -117,6 +132,7 @@ Assets:
 - Assets/AssetBundles/Data/Simulation/Knowledge/MediumRange.asset
 - Assets/AssetBundles/Data/Gameplay/DialogConfig.asset
 - Assets/AssetBundles/Data/Products/Skylabs/Weapons/Bullet.asset
+- Assets/AssetBundles/Data/Nations/NationList.asset
 - Assets/AssetBundles/Data/Products/Skylabs/Boards/HimmelMotherboard.asset
 - Assets/AssetBundles/Data/Simulation/Knowledge/LowHealth.asset
 - Assets/AssetBundles/Data/Simulation/Behavior/MoveBack.asset
@@ -124,5 +140,7 @@ Assets:
 - Assets/AssetBundles/Data/Simulation/Knowledge/MediumHealth.asset
 - Assets/AssetBundles/Data/Simulation/Knowledge/HighHealth.asset
 - Assets/AssetBundles/Data/Gameplay/Junkyard/SpecificationCatalogue01.asset
+- Assets/AssetBundles/Data/Nations/FlagsLarge.asset
 - Assets/AssetBundles/Data/Products/Skylabs/Weapons/PulseEmitter.asset
-Dependencies: []
+Dependencies:
+- C:/Users/ccove/JunkyardDogs/Unity/AssetBundles/Android/art

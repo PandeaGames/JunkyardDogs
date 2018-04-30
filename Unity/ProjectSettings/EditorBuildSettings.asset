@@ -14,3 +14,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/client/scenes/templates/TemplateScreen.unity
     guid: 8dfafa2d46744df419c4ac78581d65ce
+  - enabled: 1
+    path: Assets/client/scenes/gameScenes/gameStart.unity
+    guid: 54859798c291c9d47b3117bb001cacd4
+  - enabled: 1
+    path: Assets/client/scenes/screens/chooseCountry.unity
+    guid: 770c9a88a7298864db58a6e3d88ae23b

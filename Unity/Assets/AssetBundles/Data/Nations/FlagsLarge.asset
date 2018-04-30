@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 235578e597f999546a0db936d98dc210, type: 3}
+  m_Name: FlagsLarge
+  m_EditorClassIdentifier: 
+  _manifest:
+  - _value: {fileID: 21300000, guid: 8b476fb91e3da5a4f89df3b4a9fedc2f, type: 3}
+    _keys:
+    - {fileID: 11400000, guid: e1377e88e1c743c43879391c9855fe9a, type: 2}
+  - _value: {fileID: 21300000, guid: d774e74cba1d78a4394218e8713a8f94, type: 3}
+    _keys:
+    - {fileID: 11400000, guid: 66dcb958f403299419f540261837ad7c, type: 2}
+  _default: {fileID: 21300000, guid: 3bce8448c72a3504eaf3af8d91998419, type: 3}

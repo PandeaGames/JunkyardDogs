@@ -57,8 +57,44 @@ MonoBehaviour:
   Google_LastUpdatedVersion: 
   GoogleUpdateFrequency: 3
   GoogleUpdateDelay: 5
-  mTerms: []
-  mLanguages: []
+  mTerms:
+  - Term: nationality.canada.title
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - Kanada
+    - Canada
+    Flags: 0000
+  - Term: nationality.germany.title
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - Deutschland
+    - Germany
+    Flags: 0000
+  - Term: nationality.undefined
+    TermType: 0
+    Description: 
+    Languages:
+    - undefined
+    - undefined
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  mLanguages:
+  - Name: German
+    Code: de
+    Flags: 0
+  - Name: English
+    Code: en
+    Flags: 0
   CaseInsensitiveTerms: 0
   Assets: []
   NeverDestroy: 1

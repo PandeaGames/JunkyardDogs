@@ -19,9 +19,9 @@ public class ScreenController : MonoBehaviour
 
     public event ScreenControllerDelegate OnTransitionComplete;
 
-    private WindowController _window;
-    private Config _config;
-    private RectTransform _rectTransform;
+    protected WindowController _window;
+    protected Config _config;
+    protected RectTransform _rectTransform;
 
     public void Setup(WindowController window, Config config)
     {

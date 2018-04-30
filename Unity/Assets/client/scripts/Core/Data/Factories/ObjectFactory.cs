@@ -25,7 +25,7 @@ public abstract class ObjectManifestEntry<T> : IEnumerable
     }
 }
 
-public abstract class ObjectFactory<T, K> : ScriptableObject where T:Object where K: ObjectManifestEntry<T>
+public abstract class ObjectFactory<T, K> : ScriptableObject where K: ObjectManifestEntry<T>
 {
     [SerializeField]
     private List<K> _manifest;
@@ -50,6 +50,6 @@ public abstract class ObjectFactory<T, K> : ScriptableObject where T:Object wher
             result = manifestEntry.Value;
         }
 
-        return _default;
+        return result;
     }
 }
