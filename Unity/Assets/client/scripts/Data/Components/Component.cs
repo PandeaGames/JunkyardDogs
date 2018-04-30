@@ -4,13 +4,18 @@ using JunkyardDogs.Specifications;
 using System;
 using Polenter.Serialization;
 using WeakReference = Data.WeakReference;
+using System.Threading.Tasks;
 
 namespace JunkyardDogs.Components
 {
     [Serializable]
-    public class Component<T> : GenericComponent where T:Specification
+    public class Component : ILoadableObject
     {
+        private bool _isLoaded;
+
         public WeakReference SpecificationReference { get; set; }
+
+        public WeakReference Manufacturer { get; set; }
 
         [ExcludeFromSerialization]
         public Specification Specification
@@ -24,19 +29,32 @@ namespace JunkyardDogs.Components
         [SerializeField]
         public Distinction[] _distinctions { get; set; }
 
-        public override Specification GetSpecification()
-        {
-            return Specification;
-        }
-
-        public override void SetSpecification(WeakReference spec)
-        {
-            SpecificationReference.Reference = spec;
-        }
-
         public Component()
         {
             SpecificationReference = new WeakReference();
+        }
+
+        public void LoadAsync(Action onLoadSuccess, Action onLoadFailed)
+        {
+            if (SpecificationReference == null)
+            {
+                Task task = Task.Run(onLoadFailed);
+            }
+            else
+            {
+                SpecificationReference.LoadAsync<Specification>(
+                    (asset, reference) => 
+                    {
+                        onLoadSuccess();
+                        _isLoaded = true;
+                    },
+                    onLoadFailed);
+            }
+        }
+
+        public bool IsLoaded()
+        {
+            return _isLoaded;
         }
     }
 }

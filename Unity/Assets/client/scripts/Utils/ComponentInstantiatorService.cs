@@ -10,9 +10,9 @@ public class ComponentInstantiatorService : Service
 {
     public JunkyardDogs.Components.Weapon _testComponent;
 
-    public JunkyardDogs.Components.GenericComponent GenerateComponent(WeakReference spec)
+    public JunkyardDogs.Components.Component GenerateComponent(WeakReference spec)
     {
-        JunkyardDogs.Components.GenericComponent component = null;
+        JunkyardDogs.Components.Component component = null;
         ScriptableObject asset = spec.Asset;
 
         if(asset is JunkyardDogs.Specifications.Weapon)
@@ -44,7 +44,7 @@ public class ComponentInstantiatorService : Service
             component = new JunkyardDogs.Components.CircuitBoard();
         }
 
-        component.SetSpecification(spec);
+        component.SpecificationReference = spec;
 
         return component;
     }

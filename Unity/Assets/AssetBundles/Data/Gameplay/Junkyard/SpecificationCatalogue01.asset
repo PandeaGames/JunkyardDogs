@@ -11,7 +11,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 750d20fa396d80145ad933ba83bf9665, type: 3}
   m_Name: SpecificationCatalogue01
   m_EditorClassIdentifier: 
-  _manufacturer: {fileID: 11400000, guid: 2aeb4c1ba3b2b6c44962fc440c235b76, type: 2}
+  _manufacturer:
+    _guid: 2aeb4c1ba3b2b6c44962fc440c235b76
+    _path: Assets/AssetBundles/Data/Products/Skylabs/Skylabs.asset
   _specifications:
   - _guid: f6a8c3bc92d7d7543bbffb9fa413ff2c
     _path: Assets/AssetBundles/Data/Products/Skylabs/Weapons/FrickinLaser.asset

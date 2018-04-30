@@ -14,7 +14,7 @@ namespace JunkyardDogs.Components
     }
 
     [Serializable]
-    public class Distinction : ScriptableObject
+    public class Distinction
     {
         public double ValueDouble { get; set; }
         public int ValueInteger { get; set; }

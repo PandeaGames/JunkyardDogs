@@ -6,7 +6,7 @@ using System;
 namespace JunkyardDogs.Components
 {
     [Serializable]
-    public class CPU : Component<Specifications.CPU>
+    public class CPU : Component
     {
         public Quirk[] Quirks { get; set; }
 

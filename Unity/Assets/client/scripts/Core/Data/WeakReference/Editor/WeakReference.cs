@@ -5,56 +5,36 @@ using System;
 using System.Collections.Generic;
 using WeakReference = Data.WeakReference;
 
-/*
-[AttributeUsage(AttributeTargets.Field)]
-public class WeakReferenceAttribute : PropertyAttribute
-{
-    private Type _typeRestriction;
-    public Type TypeRestriction
-    {
-        get
-        {
-            return _typeRestriction;
-        }
-    }
-
-    public WeakReferenceAttribute()
-    {
-        _typeRestriction = typeof(ScriptableObject);
-    }
-
-    public WeakReferenceAttribute(Type typeRestriction)
-    {
-        _typeRestriction = typeRestriction;
-    }
-}*/
-
-[CustomPropertyDrawer(typeof(WeakReference))]
-public class WeakReferenceEditor : PropertyDrawer
+[CustomPropertyDrawer(typeof(WeakReferenceAttribute))]
+public class WeakReferenceAttribuiteEditor : PropertyDrawer
 {
     private Dictionary<SerializedProperty, ScriptableObject> _objectTable = new Dictionary<SerializedProperty, ScriptableObject>();
 
     public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
     {
+        WeakReferenceAttribute weakReferenceAttribute = attribute as WeakReferenceAttribute;
+
         ScriptableObject objectReference;
 
         _objectTable.TryGetValue(property, out objectReference);
 
         EditorGUI.BeginProperty(position, label, property);
 
+        position = EditorGUI.PrefixLabel(position, GUIUtility.GetControlID(FocusType.Passive), label);
+
         SerializedProperty guid = property.FindPropertyRelative("_guid");
         SerializedProperty path = property.FindPropertyRelative("_path");
 
-        if(!string.IsNullOrEmpty(path.stringValue) && objectReference ==  null)
+        if (!string.IsNullOrEmpty(path.stringValue) && objectReference == null)
         {
             objectReference = AssetDatabase.LoadAssetAtPath<ScriptableObject>(path.stringValue);
             _objectTable.Add(property, objectReference);
         }
 
         EditorGUI.BeginChangeCheck();
-        objectReference = EditorGUI.ObjectField(position, objectReference, typeof(ScriptableObject),false) as ScriptableObject;
+        objectReference = EditorGUI.ObjectField(position, objectReference, weakReferenceAttribute.TypeRestriction, false) as ScriptableObject;
 
-        if(EditorGUI.EndChangeCheck())
+        if (EditorGUI.EndChangeCheck())
         {
             string assetPath = AssetDatabase.GetAssetPath(objectReference);
             guid.stringValue = AssetDatabase.AssetPathToGUID(assetPath);

@@ -4,12 +4,20 @@ using System;
 using Polenter.Serialization;
 using System.IO;
 
+public static class UserServiceUtils
+{
+    public const string USER_DATA_KEY = "user_data";
+    public const string USER_DATA_BACKUP_KEY = "user_data_backup";
+
+    public static void ClearUserData()
+    {
+        PlayerPrefs.SetString(UserServiceUtils.USER_DATA_KEY, "");
+    }
+}
+
 [Serializable]
 public abstract class UserService<T> : Service where T:User, new()
 {
-    private const string USER_DATA_KEY = "user_data";
-    private const string USER_DATA_BACKUP_KEY = "user_data_backup";
-
     [SerializeField]
     private T _user;
 
@@ -29,12 +37,12 @@ public abstract class UserService<T> : Service where T:User, new()
         T user = null;
         try
         {
-            if (!PlayerPrefs.HasKey(USER_DATA_KEY))
+            if (!PlayerPrefs.HasKey(UserServiceUtils.USER_DATA_KEY))
             {
                 throw new Exception("There is no user data saved");
             }
 
-            string savedData = PlayerPrefs.GetString(USER_DATA_KEY);
+            string savedData = PlayerPrefs.GetString(UserServiceUtils.USER_DATA_KEY);
 
             using (var stream = GenerateStreamFromString(savedData))
             {
@@ -81,7 +89,7 @@ public abstract class UserService<T> : Service where T:User, new()
                 serializedString = reader.ReadToEnd();
             }
 
-            PlayerPrefs.SetString(USER_DATA_KEY, serializedString);
+            PlayerPrefs.SetString(UserServiceUtils.USER_DATA_KEY, serializedString);
             Debug.Log("User Data saved: " + user.UID);
         }
         catch (Exception e)
@@ -97,7 +105,7 @@ public abstract class UserService<T> : Service where T:User, new()
 
     public void ClearUserData()
     {
-        PlayerPrefs.SetString(USER_DATA_KEY, "");
+        UserServiceUtils.ClearUserData();
         Debug.Log("User Data cleared.");
     }
 }

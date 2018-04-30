@@ -6,6 +6,7 @@ using UnityEngine;
 using JunkyardDogs.Components;
 using Random = UnityEngine.Random;
 using WeakReference = Data.WeakReference;
+using Component = JunkyardDogs.Components.Component;
 
 public class JunkController : MonoBehaviour {
 
@@ -46,14 +47,14 @@ public class JunkController : MonoBehaviour {
 
         _specification = _specifications[choice];
 
-        _specification.LoadAssync<Specification>(OnLoadComplete);
+        _specification.LoadAsync<Specification>(OnLoadComplete, OnLoadFail);
 
         Destroy(junk.gameObject);
     }
 
     private void OnLoadComplete(Specification asset, WeakReference reference)
     {
-        GenericComponent component = _componentService.GenerateComponent(_specification);
+        Component component = _componentService.GenerateComponent(_specification);
 
         component.Manufacturer = _specificationCatalogue.Manufacturer;
 
@@ -62,6 +63,11 @@ public class JunkController : MonoBehaviour {
         config.Component = component;
 
         _dialogService.DisplayDialog<TakeJunkDialog>(config, SelectComponent);
+    }
+
+    private void OnLoadFail()
+    {
+
     }
 
     private void SelectComponent(Dialog.Response response)

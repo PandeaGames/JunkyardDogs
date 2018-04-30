@@ -6,7 +6,7 @@ using System;
 namespace JunkyardDogs.Components
 {
     [Serializable]
-    public class SubProcessor : Component<Specifications.SubProcessor>
+    public class SubProcessor : Component
     {
         public SubProcessor()
         {

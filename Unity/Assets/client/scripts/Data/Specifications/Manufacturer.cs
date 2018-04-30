@@ -9,5 +9,8 @@ namespace JunkyardDogs.Specifications
     {
         [SerializeField]
         private Distinction _distinctions;
+
+        [SerializeField]
+        private Nationality _nationality;
     }
 }

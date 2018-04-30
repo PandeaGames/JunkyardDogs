@@ -6,7 +6,7 @@ using System;
 namespace JunkyardDogs.Components
 {
     [Serializable]
-    public class Motherboard : Component<Specifications.Motherboard>
+    public class Motherboard : Component
     {
         [SerializeField]
         public CPU CPU { get; set; }

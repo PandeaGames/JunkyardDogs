@@ -8,10 +8,10 @@ using WeakReference = Data.WeakReference;
 [CreateAssetMenu(fileName = "SpecificationCatalogue", menuName = "GamePlay/SpecificationCatalogue", order = 3)]
 public class SpecificationCatalogue : ScriptableObject
 {
-    [SerializeField]
-    private Manufacturer _manufacturer;
+    [SerializeField][WeakReference(typeof(Manufacturer))]
+    private WeakReference _manufacturer;
 
-    public Manufacturer Manufacturer
+    public WeakReference Manufacturer
     {
         get
         {
@@ -19,7 +19,7 @@ public class SpecificationCatalogue : ScriptableObject
         }
     }
 
-    [SerializeField]
+    [SerializeField][WeakReference(typeof(Specification))]
     private WeakReference[] _specifications;
 
     public WeakReference[] Specifications

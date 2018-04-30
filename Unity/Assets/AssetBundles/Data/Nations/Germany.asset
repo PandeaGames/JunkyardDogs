@@ -8,7 +8,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1038089e1f9093f4180a3b3d0fc9df65, type: 3}
-  m_Name: Skylabs
+  m_Script: {fileID: 11500000, guid: 79364c380c289744f8ccf9b3740a2355, type: 3}
+  m_Name: Germany
   m_EditorClassIdentifier: 
-  _nationality: {fileID: 11400000, guid: 66dcb958f403299419f540261837ad7c, type: 2}

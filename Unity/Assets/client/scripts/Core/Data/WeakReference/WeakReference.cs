@@ -4,8 +4,31 @@ using AssetBundles;
 using System;
 using System.Collections;
 
+[AttributeUsage(AttributeTargets.All, AllowMultiple = false, Inherited = false)]
+public class WeakReferenceAttribute : PropertyAttribute
+{
+    private Type _typeRestriction;
+    public Type TypeRestriction
+    {
+        get
+        {
+            return _typeRestriction;
+        }
+    }
+
+    public WeakReferenceAttribute()
+    {
+        _typeRestriction = typeof(ScriptableObject);
+    }
+
+    public WeakReferenceAttribute(Type typeRestriction)
+    {
+        _typeRestriction = typeRestriction;
+    }
+}
+
 namespace Data
-{ 
+{
     [Serializable]
     public class WeakReference
     {
@@ -25,11 +48,6 @@ namespace Data
         public ScriptableObject Asset {
             get
             {
-                if (_cache == null)
-                {
-                    _cache = Load();
-                }
-
                 return _cache;
             }
         }
@@ -43,18 +61,7 @@ namespace Data
             }
         }
 
-        public ScriptableObject Load()
-        {
-            string error;
-            string bundleName = AssetBundleUtils.GetBundleNameFromPath(Path);
-
-            LoadedAssetBundle bundle = AssetBundleManager.GetLoadedAssetBundle(AssetBundleUtils.GetBundleNameFromPath(Path), out error);
-
-            _cache = bundle.m_AssetBundle.LoadAsset<ScriptableObject>(Path);
-            return _cache;
-        }
-
-        public void LoadAssync<T>( Action<T, WeakReference> onComplete ) where T:ScriptableObject
+        public void LoadAsync<T>( Action<T, WeakReference> onComplete, Action onFail ) where T:ScriptableObject
         {
             // Load asset from assetBundle.
             string bundleName = AssetBundleUtils.GetBundleNameFromPath(Path);
