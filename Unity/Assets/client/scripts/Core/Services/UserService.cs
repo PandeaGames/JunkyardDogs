@@ -11,7 +11,79 @@ public static class UserServiceUtils
 
     public static void ClearUserData()
     {
-        PlayerPrefs.SetString(UserServiceUtils.USER_DATA_KEY, "");
+        PlayerPrefs.DeleteKey(USER_DATA_KEY);
+    }
+
+    public static T Load<T>() where T : User, new()
+    {
+        return Load<T>(new SharpSerializer());
+    }
+
+    public static T Load<T>(SharpSerializer serializer) where T : User, new()
+    {
+        T user = null;
+
+        try
+        {
+            if (!PlayerPrefs.HasKey(UserServiceUtils.USER_DATA_KEY))
+            {
+                throw new Exception("There is no user data saved");
+            }
+
+            string savedData = PlayerPrefs.GetString(UserServiceUtils.USER_DATA_KEY);
+
+            using (var stream = GenerateStreamFromString(savedData))
+            {
+                user = serializer.Deserialize(stream) as T;
+            }
+        }
+        catch (Exception e)
+        {
+            Debug.LogError("There was an error loading user data: \n" + e);
+            user = new T();
+            user.UID = SystemInfo.deviceUniqueIdentifier;
+        }
+
+        return user;
+    }
+
+    public static void Save(User user)
+    {
+        Save(user, new SharpSerializer());
+    }
+
+    public static void Save(User user, SharpSerializer serializer)
+    {
+        try
+        {
+            MemoryStream stream = new MemoryStream();
+            serializer.Serialize(user, stream);
+
+            string serializedString;
+
+            stream.Position = 0;
+            using (var reader = new StreamReader(stream))
+            {
+                serializedString = reader.ReadToEnd();
+            }
+
+            PlayerPrefs.SetString(UserServiceUtils.USER_DATA_KEY, serializedString);
+            Debug.Log("User Data saved: " + user.UID);
+        }
+        catch (Exception e)
+        {
+            Debug.LogError("Failed to save user: " + e);
+        }
+    }
+
+    private static Stream GenerateStreamFromString(string s)
+    {
+        var stream = new MemoryStream();
+        var writer = new StreamWriter(stream);
+        writer.Write(s);
+        writer.Flush();
+        stream.Position = 0;
+        return stream;
     }
 }
 
@@ -34,39 +106,12 @@ public abstract class UserService<T> : Service where T:User, new()
 
     public T Load()
     {
-        T user = null;
-        try
+        if(_user != null)
         {
-            if (!PlayerPrefs.HasKey(UserServiceUtils.USER_DATA_KEY))
-            {
-                throw new Exception("There is no user data saved");
-            }
-
-            string savedData = PlayerPrefs.GetString(UserServiceUtils.USER_DATA_KEY);
-
-            using (var stream = GenerateStreamFromString(savedData))
-            {
-                user = _serializer.Deserialize(stream) as T;
-            }
-        }
-        catch (Exception e)
-        {
-            Debug.LogError("There was an error loading user data: \n" + e);
-            user = new T();
-            user.UID = SystemInfo.deviceUniqueIdentifier;
+            return _user;
         }
 
-        return user;
-    }
-
-    public static Stream GenerateStreamFromString(string s)
-    {
-        var stream = new MemoryStream();
-        var writer = new StreamWriter(stream);
-        writer.Write(s);
-        writer.Flush();
-        stream.Position = 0;
-        return stream;
+        return UserServiceUtils.Load<T>(_serializer);
     }
 
     public void Save()
@@ -74,28 +119,9 @@ public abstract class UserService<T> : Service where T:User, new()
         Save(_user);
     }
 
-    public void Save(User user)
+    public void Save(T user)
     {
-        try
-        {
-            MemoryStream stream = new MemoryStream();
-            _serializer.Serialize(user, stream);
-
-            string serializedString;
-
-            stream.Position = 0;
-            using (var reader = new StreamReader(stream))
-            {
-                serializedString = reader.ReadToEnd();
-            }
-
-            PlayerPrefs.SetString(UserServiceUtils.USER_DATA_KEY, serializedString);
-            Debug.Log("User Data saved: " + user.UID);
-        }
-        catch (Exception e)
-        {
-            Debug.LogError("Failed to save user: " + e);
-        }
+        UserServiceUtils.Save(user, _serializer);
     }
 
     protected virtual string SerializeUser(User user)

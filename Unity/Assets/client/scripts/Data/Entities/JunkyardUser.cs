@@ -9,8 +9,14 @@ using Component = JunkyardDogs.Components.Component;
 [Serializable]
 public class JunkyardUser : User
 {
-    public int Cash { get; set; }
-    public Competitor Competitor { get; set; }
+    [SerializeField]
+    private int _cash;
+
+    [SerializeField]
+    private Competitor _competitor;
+
+    public int Cash { get { return _cash; } set { _cash = value; } }
+    public Competitor Competitor { get { return _competitor; } set { _competitor = value; } }
 
     public void AddComponent(Component component)
     {

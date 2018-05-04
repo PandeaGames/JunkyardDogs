@@ -88,6 +88,26 @@ MonoBehaviour:
     - 
     - 
     Flags: 0000
+  - Term: UI.screens.return_to
+    TermType: 0
+    Description: 
+    Languages:
+    - Zuruck zu {0}
+    - Return to {0}
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: UI.screens.worldMap.junkyard
+    TermType: 0
+    Description: 
+    Languages:
+    - Junkyard
+    - Junkyard
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
   mLanguages:
   - Name: German
     Code: de

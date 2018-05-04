@@ -1,11 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Data;
+using System;
 using System.Collections.Generic;
+using WeakReference = Data.WeakReference;
 
+[Serializable]
 public class Competitor
 {
-    public WeakReference Nationality { get; set; }
+    [SerializeField]
+    private WeakReference _nationality;
+
+    public WeakReference Nationality { get { return _nationality; } set { _nationality = value; } }
     public Inventory Inventory { get; set; }
     public Record Record { get; set; }
 

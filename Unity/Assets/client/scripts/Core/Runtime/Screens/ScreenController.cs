@@ -23,7 +23,7 @@ public class ScreenController : MonoBehaviour
     protected Config _config;
     protected RectTransform _rectTransform;
 
-    public void Setup(WindowController window, Config config)
+    public virtual void Setup(WindowController window, Config config)
     {
         _window = window;
         _config = config;
@@ -32,6 +32,16 @@ public class ScreenController : MonoBehaviour
     public virtual void Start()
     {
         _rectTransform = GetComponent<RectTransform>();
+
+        if (_rectTransform)
+        {
+            _rectTransform.anchorMin = Vector2.zero;
+            _rectTransform.anchorMax = Vector2.one;
+            _rectTransform.offsetMax = Vector2.zero;
+            _rectTransform.offsetMin = Vector2.zero;
+
+            _rectTransform.hasChanged = false;
+        }
     }
 
     public void Update()

@@ -8,7 +8,7 @@ public class TaskProvider : MonoBehaviour
     public static TaskProvider Instance;
 
     // Use this for initialization
-    void Start()
+    void Awake()
     {
         Instance = this;
     }

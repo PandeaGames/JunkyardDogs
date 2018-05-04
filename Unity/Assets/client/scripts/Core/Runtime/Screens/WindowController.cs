@@ -59,6 +59,23 @@ public class WindowController : MonoBehaviour
 
     private ScreenController _activeScreen;
 
+    public void Start()
+    {
+        ScreenController[] screenControllers = GetComponentsInChildren<ScreenController>();
+
+        ScreenController screenController = null;
+
+        if(screenControllers.Length > 0)
+        {
+            screenController = screenControllers[0];
+        }
+
+        if(screenController != null)
+        {
+            screenController.Setup(this, ScriptableObject.CreateInstance<ScreenController.Config>());
+        }
+    }
+
     public virtual void LaunchScreen(ScreenTransition transition)
     {
         StartCoroutine(LoadSceneAsync(transition));

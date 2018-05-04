@@ -8,6 +8,9 @@ using WeakReference = Data.WeakReference;
 public class ChooseCountryScreen : ScreenController, ILoadableObject
 {
     [SerializeField]
+    private ServiceManager _serviceManager;
+
+    [SerializeField]
     private GameObject _nationEntryPrefab;
 
     [SerializeField]
@@ -23,6 +26,7 @@ public class ChooseCountryScreen : ScreenController, ILoadableObject
     private Transform _listContainer;
 
     private bool _isLoaded = false;
+    private JunkyardUserService _junkyardUserService;
 
     public bool IsLoaded()
     {
@@ -44,10 +48,11 @@ public class ChooseCountryScreen : ScreenController, ILoadableObject
 
     }
 
-    public override void Start()
+    public override void Setup(WindowController window, Config config)
     {
-        base.Start();
+        base.Setup(window, config);
 
+        _junkyardUserService = _serviceManager.GetService<JunkyardUserService>();
         LoadAsync(LoadComplete, null);
     }
 
@@ -61,13 +66,15 @@ public class ChooseCountryScreen : ScreenController, ILoadableObject
             nationEntry.transform.SetParent(_listContainer.transform);
             Image image = nationEntry.GetComponent<Image>();
             Button button = nationEntry.GetComponent<Button>();
-            button.onClick.AddListener(() => OnNationClick(nationality));
+            button.onClick.AddListener(() => OnNationClick(nationalityReference));
             image.sprite = _nationFlagFactory.GetAsset(nationality);
         }
     }
 
-    private void OnNationClick(Nationality nationality)
+    private void OnNationClick(WeakReference nationalityReference)
     {
+        _junkyardUserService.User.Competitor.Nationality = nationalityReference;
+        _junkyardUserService.Save();
         _window.LaunchScreen("junkyard", ScriptableObject.CreateInstance<JunkyardScreen.Config>());
     }
 }

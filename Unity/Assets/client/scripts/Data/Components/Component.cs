@@ -12,6 +12,7 @@ namespace JunkyardDogs.Components
     public class Component : ILoadableObject
     {
         private bool _isLoaded;
+        private bool _isLoading;
 
         public WeakReference SpecificationReference { get; set; }
 

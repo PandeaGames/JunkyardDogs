@@ -10,6 +10,9 @@ public class TemplateImporter : EditorWindow
 {
     private string[] _scenePaths;
 
+    [NonSerialized]
+    private bool isLoaded = false;
+
     public void OnGUI()
     {
         Refresh();
@@ -25,7 +28,7 @@ public class TemplateImporter : EditorWindow
             EditorGUI.BeginDisabledGroup(isActiveScene);
 
             EditorGUILayout.BeginHorizontal();
-            EditorGUILayout.LabelField(GetSceneNameFromPath(path));
+            EditorGUILayout.LabelField(CoreEditorUtils.GetSceneNameFromPath(path));
 
             if (GUILayout.Button("Import"))
                 ImportScene(path);
@@ -40,45 +43,23 @@ public class TemplateImporter : EditorWindow
 
     private void Refresh()
     {
-        if(_scenePaths == null)
+        if(!isLoaded)
         {
-            _scenePaths = ReadScenePaths();
+            _scenePaths = CoreEditorUtils.ReadScenePaths();
+            isLoaded = true;
         }
-    }
-
-    private string GetSceneNameFromPath(string path)
-    {
-        return path.Substring(path.LastIndexOf('/') + 1);
-    }
-
-    private static string[] ReadScenePaths()
-    {
-        List<string> temp = new List<string>();
-        foreach (UnityEditor.EditorBuildSettingsScene S in UnityEditor.EditorBuildSettings.scenes)
-        {
-            if (S.enabled)
-            {
-                string path = S.path;
-                temp.Add(path);
-            }
-        }
-        return temp.ToArray();
     }
 
     private void ImportScene(string path)
     {
         EditorSceneManager.OpenScene(path, UnityEditor.SceneManagement.OpenSceneMode.Additive);
-        //EditorSceneManager.LoadScene(path);
         Scene scene = SceneManager.GetSceneByPath(path);
         Scene activeScene = EditorSceneManager.GetActiveScene();
         EditorSceneManager.MergeScenes(scene, activeScene);
-        //UnityEditor.SceneManagement.EditorSceneManager.LoadScene(scene.buildIndex);
-        // SceneManager.LoadScene(scene.buildIndex);
     }
 
     private void OpenScene(string path)
     {
         EditorSceneManager.OpenScene(path);
-       // SceneManager.SetActiveScene(scene);
     }
 }

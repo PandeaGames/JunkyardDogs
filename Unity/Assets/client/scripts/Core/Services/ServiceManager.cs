@@ -32,8 +32,14 @@ public class ServiceManager : MonoBehaviour {
     {
         Debug.Log("Service Manager starting:");
 
+        if (_services == null)
+        {
+            Debug.Log("Service Manager generating new service list.");
+            _services = new List<Service>();
+        }
+
         //If we are calling start 2 times, fail out
-        if (_isRunning)
+            if (_isRunning)
         {
             Debug.LogWarning("Tried to Start ServiceManager 2 times.");
             return;

@@ -20,3 +20,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/client/scenes/screens/chooseCountry.unity
     guid: 770c9a88a7298864db58a6e3d88ae23b
+  - enabled: 1
+    path: Assets/client/scenes/screens/worldMap.unity
+    guid: 99f609023f93d9848b1520cb5110f8ec

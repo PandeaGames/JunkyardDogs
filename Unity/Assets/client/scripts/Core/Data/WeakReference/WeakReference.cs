@@ -4,6 +4,10 @@ using AssetBundles;
 using System;
 using System.Collections;
 
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
 [AttributeUsage(AttributeTargets.All, AllowMultiple = false, Inherited = false)]
 public class WeakReferenceAttribute : PropertyAttribute
 {
@@ -50,6 +54,14 @@ namespace Data
             {
                 return _cache;
             }
+#if UNITY_EDITOR
+            set
+            {
+                _cache = value;
+                Path = AssetDatabase.GetAssetPath(value);
+                GUID = AssetDatabase.AssetPathToGUID(Path);
+            }
+#endif
         }
 
         public WeakReference Reference
@@ -61,7 +73,19 @@ namespace Data
             }
         }
 
-        public void LoadAsync<T>( Action<T, WeakReference> onComplete, Action onFail ) where T:ScriptableObject
+        #if UNITY_EDITOR
+        public T Load<T>() where T: ScriptableObject
+        {
+            if (_cache == null)
+            {
+                _cache = AssetDatabase.LoadAssetAtPath<ScriptableObject>(Path);
+            }
+
+            return _cache as T;
+        }          
+#endif
+
+    public void LoadAsync<T>( Action<T, WeakReference> onComplete, Action onFail ) where T:ScriptableObject
         {
             // Load asset from assetBundle.
             string bundleName = AssetBundleUtils.GetBundleNameFromPath(Path);

@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
+using WeakReference = Data.WeakReference;
+
 [Serializable]
 public class ViewUserDataWindow : EditorWindow
 {
@@ -29,52 +31,61 @@ public class ViewUserDataWindow : EditorWindow
 
     private void LoadUser()
     {
-        //JunkyardUserService _userService = new JunkyardUserService();
-        
-        //_user = _userService.Load();
+        _user = UserServiceUtils.Load<JunkyardUser>();
     }
 
     void OnGUI()
     {
-       /* if (_user == null)
-            LoadUser();*/
-
+        if (GUILayout.Button("Reload"))
+            OnReloadData();
         if (GUILayout.Button("Clear User Data"))
             OnClearData();
-        //if (GUILayout.Button("Save User Data"))
-          //  OnSaveData();
-        //if (GUILayout.Button("Create Asset"))
-          //  OnCreateAsset();
+        if (GUILayout.Button("Save User Data"))
+            OnSaveData();
 
-        //Editor editor = Editor.CreateEditor(_user);
-        //editor.OnInspectorGUI();
+        if (_user != null)
+        {
+            OnUserGUI(_user);
+        }
+    }
+
+    private void OnUserGUI(JunkyardUser user)
+    {
+        Competitor competitor = user.Competitor;
+        WeakReference nationalityReference = competitor.Nationality;
+
+        Nationality nationality = null;
+
+        if (nationalityReference != null)
+        {
+            nationality = nationalityReference.Load<Nationality>();
+        }
+
+        user.UID = EditorGUI.TextField(EditorGUILayout.GetControlRect(), new GUIContent("UID"), _user.UID);
+        user.Cash = EditorGUI.IntField(EditorGUILayout.GetControlRect(), new GUIContent("Cash"), _user.Cash);
+        nationality = EditorGUI.ObjectField(EditorGUILayout.GetControlRect(), new GUIContent("Nationality"), nationality, typeof(Nationality), false) as Nationality;
+
+        if (nationalityReference != null)
+        {
+            nationalityReference.Asset = nationality;
+        }
+    }
+
+    private void OnReloadData()
+    {
+        _user = UserServiceUtils.Load<JunkyardUser>();
+        EditorUtility.DisplayDialog("Success", "User Succesfuly Loaded: " + _user.UID, "ok");
     }
 
     private void OnSaveData()
     {
-        JunkyardUserService _userService = new JunkyardUserService();
-        _userService.Save(_user);
-        _userService = null;
-
+        UserServiceUtils.Save(_user);
         EditorUtility.DisplayDialog("Success", "User Succesfuly saved: " + _user.UID, "ok");
     }
 
     private void OnClearData()
     {
-        JunkyardUserService _userService = new JunkyardUserService();
-        _userService.ClearUserData();
-        _userService = null;
-
+        UserServiceUtils.ClearUserData();
         EditorUtility.DisplayDialog("Success", "User data cleared.", "ok");
-    }
-
-    private void OnCreateAsset()
-    {
-        Debug.Log(_user);
-        /*AssetDatabase.CreateAsset(_user, "Assets/userData.asset");
-
-        EditorGUIUtility.PingObject(_user);
-
-        EditorUtility.DisplayDialog("Success", "Asset Created", "ok");*/
     }
 }
