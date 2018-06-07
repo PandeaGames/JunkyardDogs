@@ -3,8 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using JunkyardDogs.Components;
+using JunkyardDogs.Specifications;
 
 using WeakReference = Data.WeakReference;
+using Component = JunkyardDogs.Components.Component;
 
 [Serializable]
 public class ViewUserDataWindow : EditorWindow
@@ -29,6 +32,8 @@ public class ViewUserDataWindow : EditorWindow
     [SerializeField]
     public JunkyardUser _user;
 
+    private Editor _inventoryListEditor;
+
     private void LoadUser()
     {
         _user = UserServiceUtils.Load<JunkyardUser>();
@@ -52,11 +57,17 @@ public class ViewUserDataWindow : EditorWindow
     private void OnUserGUI(JunkyardUser user)
     {
         Competitor competitor = user.Competitor;
+        Inventory inventory = competitor.Inventory;
         WeakReference nationalityReference = competitor.Nationality;
 
         Nationality nationality = null;
 
         if (nationalityReference != null)
+        {
+            nationality = nationalityReference.Asset as Nationality;
+        }
+
+        if (nationalityReference != null && nationality == null)
         {
             nationality = nationalityReference.Load<Nationality>();
         }
@@ -65,8 +76,28 @@ public class ViewUserDataWindow : EditorWindow
         user.Cash = EditorGUI.IntField(EditorGUILayout.GetControlRect(), new GUIContent("Cash"), _user.Cash);
         nationality = EditorGUI.ObjectField(EditorGUILayout.GetControlRect(), new GUIContent("Nationality"), nationality, typeof(Nationality), false) as Nationality;
 
+        EditorGUI.LabelField(EditorGUILayout.GetControlRect(), "Inventory");
+
+        foreach (Component component in inventory)
+        {
+            Specification specification = component.SpecificationReference.Asset as Specification;
+
+            if (component.SpecificationReference.Asset == null)
+            {
+                specification = component.SpecificationReference.Load<Specification>();
+            }
+
+            Type specType = specification.GetType();
+            string name = specification.name;
+            component.SpecificationReference.Asset = EditorGUI.ObjectField(EditorGUILayout.GetControlRect(), new GUIContent(name), specification, specType, false) as Specification;
+        }
+
         if (nationalityReference != null)
         {
+            if(nationality != null)
+            {
+                nationalityReference.Asset = nationality;
+            }
             nationalityReference.Asset = nationality;
         }
     }

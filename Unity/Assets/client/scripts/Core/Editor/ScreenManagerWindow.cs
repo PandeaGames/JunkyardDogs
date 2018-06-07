@@ -48,6 +48,7 @@ public class LoadedScreen
         }
 
         _duplicateScreen.name = _screenController.gameObject.name;
+        _duplicateScreen.SetActive(true);
 
         return _duplicateScreen;
     }

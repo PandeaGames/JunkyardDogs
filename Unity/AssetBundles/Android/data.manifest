@@ -1,19 +1,27 @@
 ManifestFileVersion: 0
-CRC: 685278963
+CRC: 290581506
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: cef1b2eef8d691ce2dac8462fa96ce21
+    Hash: fae3ee7a8648b131f192060f73aad6ab
   TypeTreeHash:
     serializedVersion: 2
-    Hash: cd5fd6aeb0594a74e27b5ab5d455c658
+    Hash: 0d09fbf4334db6587d3bec6f759d6a6e
 HashAppended: 0
 ClassTypes:
 - Class: 1
   Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
 - Class: 21
   Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
 - Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
   Script: {instanceID: 0}
 - Class: 48
   Script: {instanceID: 0}
@@ -25,6 +33,8 @@ ClassTypes:
   Script: {fileID: 11500000, guid: 4ae6ae314c73cc144a7e07e999e16e28, type: 3}
 - Class: 114
   Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: -405508275, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 - Class: 114
   Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 - Class: 114
@@ -41,6 +51,12 @@ ClassTypes:
   Script: {fileID: 11500000, guid: b1d4f20500189514a9ea47afb5cfb85f, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 758fa2d563d977c40b5da55a9f3eb054, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: d62dd4e5fec1edd47869d9876fd4619e, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 235578e597f999546a0db936d98dc210, type: 3}
+- Class: 114
+  Script: {fileID: -806885394, guid: 89f0137620f6af44b9ba852b4190e64e, type: 3}
 - Class: 114
   Script: {fileID: 1453722849, guid: 89f0137620f6af44b9ba852b4190e64e, type: 3}
 - Class: 114
@@ -64,11 +80,17 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: c016de890c5b47b46a926660ab460ac6, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: 2f47d67ae0aa1244888e7dbd847d0613, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: 750d20fa396d80145ad933ba83bf9665, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: e774f14bdec23194f9db265633ad69b8, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: be25e45ceb939b44481a616f2288af51, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: 0166818c59ad1eb458b5a3d9663b5ea6, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 4fbf8ecc2f029484aacb01161c290d02, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 72d103ec788367e42a966eab1d783f39, type: 3}
 - Class: 114
@@ -78,11 +100,9 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: 2ca0e29f4c4aa8d4982fffef9a051a76, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: 235578e597f999546a0db936d98dc210, type: 3}
+  Script: {fileID: 11500000, guid: 77f72ce97b7884f4dafb1c8542fe5620, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: 2f47d67ae0aa1244888e7dbd847d0613, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: 4fbf8ecc2f029484aacb01161c290d02, type: 3}
+  Script: {fileID: 11500000, guid: 6254eddb268c66b438b0b967b63edb03, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 128
@@ -117,6 +137,7 @@ Assets:
 - Assets/AssetBundles/Data/Simulation/Directives/DirectiveAttackFront.asset
 - Assets/AssetBundles/Data/Simulation/Directives/DirectiveMoveForward.asset
 - Assets/AssetBundles/Data/Simulation/Behavior/AttackRight.asset
+- Assets/AssetBundles/Data/Bots/BotFactory.asset
 - Assets/AssetBundles/Data/Simulation/Behavior/MoveLeft.asset
 - Assets/AssetBundles/Data/Simulation/Directives/DirectiveAttackLeft.asset
 - Assets/AssetBundles/Data/Simulation/Directives/DirectiveAttackRight.asset

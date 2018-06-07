@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d88239d1c9d63d24898842a0caee7a91, type: 3}
+  m_Name: WorldSO
+  m_EditorClassIdentifier: 
+  _layers:
+  - _guid: d1dabf11888dd694e91da70f8fc00f4d
+    _path: Assets/Elementia/Data/LayerPlantation.asset
+  - _guid: f3d0a30c630f22141b9703f37f5cd405
+    _path: Assets/Elementia/Data/LayerWater.asset

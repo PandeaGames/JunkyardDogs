@@ -23,3 +23,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/client/scenes/screens/worldMap.unity
     guid: 99f609023f93d9848b1520cb5110f8ec
+  - enabled: 1
+    path: Assets/client/scenes/screens/inventory.unity
+    guid: 0b53384c0bf426c4ca9344c65800e900
+  - enabled: 1
+    path: Assets/client/scenes/screens/ElementiaScreen.unity
+    guid: d51de9e07a86bb043a47a6433525a64c

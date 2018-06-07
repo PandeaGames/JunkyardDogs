@@ -22,4 +22,11 @@ public class Inventory : IEnumerable
     {
         Components = new List<Component>();
     }
+
+#if UNITY_EDITOR
+    public List<Component> GetComponents()
+    {
+        return Components;
+    }
+#endif
 }

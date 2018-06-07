@@ -11,7 +11,17 @@ public static class UserServiceUtils
 
     public static void ClearUserData()
     {
-        PlayerPrefs.DeleteKey(USER_DATA_KEY);
+        ClearUserData(string.Empty);
+    }
+
+    public static void ClearUserData(string prefix)
+    {
+        PlayerPrefs.DeleteKey(string.Format("{0}{1}", prefix, UserServiceUtils.USER_DATA_KEY));
+    }
+
+    public static T Load<T>(string prefix) where T : User, new()
+    {
+        return Load<T>(new SharpSerializer(), prefix);
     }
 
     public static T Load<T>() where T : User, new()
@@ -21,16 +31,24 @@ public static class UserServiceUtils
 
     public static T Load<T>(SharpSerializer serializer) where T : User, new()
     {
+        return Load<T>(serializer, string.Empty);
+    }
+
+    public static T Load<T>(SharpSerializer serializer, string prefix) where T : User, new()
+    {
         T user = null;
 
         try
         {
-            if (!PlayerPrefs.HasKey(UserServiceUtils.USER_DATA_KEY))
+            string location = string.Format("{0}{1}", prefix, UserServiceUtils.USER_DATA_KEY);
+            if (!PlayerPrefs.HasKey(location))
             {
-                throw new Exception("There is no user data saved");
+                throw new Exception("There is no user data saved at "+ location);
             }
 
-            string savedData = PlayerPrefs.GetString(UserServiceUtils.USER_DATA_KEY);
+            string savedData = PlayerPrefs.GetString(location);
+
+            Debug.Log("Loading user from "+ location);
 
             using (var stream = GenerateStreamFromString(savedData))
             {
@@ -39,7 +57,7 @@ public static class UserServiceUtils
         }
         catch (Exception e)
         {
-            Debug.LogError("There was an error loading user data: \n" + e);
+            Debug.LogError("There was an error loading user data at "+ string.Format("{0}{1}", prefix, UserServiceUtils.USER_DATA_KEY) + ": \n" + e);
             user = new T();
             user.UID = SystemInfo.deviceUniqueIdentifier;
         }
@@ -47,12 +65,17 @@ public static class UserServiceUtils
         return user;
     }
 
-    public static void Save(User user)
+    public static void Save(User user, string prefix)
     {
-        Save(user, new SharpSerializer());
+        Save(user, new SharpSerializer(), prefix);
     }
 
-    public static void Save(User user, SharpSerializer serializer)
+    public static void Save(User user)
+    {
+        Save(user, string.Empty);
+    }
+
+    public static void Save(User user, SharpSerializer serializer, string prefix)
     {
         try
         {
@@ -67,8 +90,8 @@ public static class UserServiceUtils
                 serializedString = reader.ReadToEnd();
             }
 
-            PlayerPrefs.SetString(UserServiceUtils.USER_DATA_KEY, serializedString);
-            Debug.Log("User Data saved: " + user.UID);
+            PlayerPrefs.SetString(string.Format("{0}{1}", prefix, UserServiceUtils.USER_DATA_KEY), serializedString);
+            Debug.Log("User Data saved at "+ string.Format("{0}{1}", prefix, UserServiceUtils.USER_DATA_KEY) + ": " + user.UID);
         }
         catch (Exception e)
         {
@@ -91,6 +114,8 @@ public static class UserServiceUtils
 public abstract class UserService<T> : Service where T:User, new()
 {
     [SerializeField]
+    protected string _userDataStorageKeyPrefix;
+
     private T _user;
 
     private SharpSerializer _serializer;
@@ -111,7 +136,7 @@ public abstract class UserService<T> : Service where T:User, new()
             return _user;
         }
 
-        return UserServiceUtils.Load<T>(_serializer);
+        return UserServiceUtils.Load<T>(_serializer, _userDataStorageKeyPrefix);
     }
 
     public void Save()
@@ -121,17 +146,12 @@ public abstract class UserService<T> : Service where T:User, new()
 
     public void Save(T user)
     {
-        UserServiceUtils.Save(user, _serializer);
-    }
-
-    protected virtual string SerializeUser(User user)
-    {
-        return JsonUtility.ToJson(user); 
+        UserServiceUtils.Save(user, _serializer, _userDataStorageKeyPrefix);
     }
 
     public void ClearUserData()
     {
-        UserServiceUtils.ClearUserData();
-        Debug.Log("User Data cleared.");
+        UserServiceUtils.ClearUserData(_userDataStorageKeyPrefix);
+        Debug.Log("User Data cleared at " + string.Format("{0}{1}", _userDataStorageKeyPrefix, UserServiceUtils.USER_DATA_KEY));
     }
 }

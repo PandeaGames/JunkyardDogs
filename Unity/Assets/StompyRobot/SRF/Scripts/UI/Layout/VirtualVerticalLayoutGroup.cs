@@ -598,6 +598,7 @@ namespace SRF.UI.Layout
             }
 
             row.SetParent(rectTransform, false);
+            
 
             return item;
         }

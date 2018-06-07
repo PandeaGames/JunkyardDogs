@@ -8,9 +8,4 @@ public class JunkyardUserService : UserService<JunkyardUser>
     {
         base.StartService(serviceManager);
     }
-
-    protected override string SerializeUser(User user)
-    {
-        return JsonUtility.ToJson(user as JunkyardUser);
-    }
 }
