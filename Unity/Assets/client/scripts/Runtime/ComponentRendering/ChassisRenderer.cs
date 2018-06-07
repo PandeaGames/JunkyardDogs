@@ -1,10 +1,44 @@
 ﻿using UnityEngine;
 using System.Collections;
 using JunkyardDogs.Components;
+using System.Collections.Generic;
 using Component = JunkyardDogs.Components.Component;
 
 public class ChassisRenderer : ComponentRenderer
 {
+    [SerializeField]
+    public Transform Chassis;
+
+    [SerializeField]
+    public List<PlateRenderer> FrontPlates;
+
+    [SerializeField]
+    public List<PlateRenderer> LeftPlates;
+
+    [SerializeField]
+    public List<PlateRenderer> RightPlates;
+
+    [SerializeField]
+    public List<PlateRenderer> BackPlates;
+
+    [SerializeField]
+    public List<PlateRenderer> TopPlates;
+
+    [SerializeField]
+    public List<PlateRenderer> BottomPlates;
+
+    [SerializeField]
+    public Transform TopArmament;
+
+    [SerializeField]
+    public Transform FrontArmament;
+
+    [SerializeField]
+    public Transform LeftArmament;
+
+    [SerializeField]
+    public Transform RightArmament;
+
     public override void RenderComponent(Component component)
     {
         Chassis chassis = component as Chassis;
