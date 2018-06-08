@@ -9,19 +9,104 @@ ModelImporter:
     100002: //RootNode
     100004: Part
     100006: Part1
+    100008: Chassis1
+    100010: Chassis2
+    100012: Chassis3
+    100014: Chassis3 1
+    100016: Mammoth
+    100018: transform1
+    100020: transform2
+    100022: BottomPlate
+    100024: Doodad
+    100026: Frame
+    100028: FrontPlate
+    100030: LeftPlate1
+    100032: LeftPlate2
+    100034: RightPlate1
+    100036: RightPlate2
+    100038: TopPlate1
+    100040: TopPlate2
+    100042: WeaponLeft
+    100044: WeaponRight
+    100046: WeaponTop
     400000: Chassis
     400002: //RootNode
     400004: Part
     400006: Part1
+    400008: Chassis1
+    400010: Chassis2
+    400012: Chassis3
+    400014: Chassis3 1
+    400016: Mammoth
+    400018: transform1
+    400020: transform2
+    400022: BottomPlate
+    400024: Doodad
+    400026: Frame
+    400028: FrontPlate
+    400030: LeftPlate1
+    400032: LeftPlate2
+    400034: RightPlate1
+    400036: RightPlate2
+    400038: TopPlate1
+    400040: TopPlate2
+    400042: WeaponLeft
+    400044: WeaponRight
+    400046: WeaponTop
     2300000: Chassis
     2300002: Part
     2300004: Part1
+    2300006: Chassis2
+    2300008: Chassis3
+    2300010: BottomPlate
+    2300012: Doodad
+    2300014: Frame
+    2300016: FrontPlate
+    2300018: LeftPlate1
+    2300020: LeftPlate2
+    2300022: RightPlate1
+    2300024: RightPlate2
+    2300026: TopPlate1
+    2300028: TopPlate2
+    2300030: WeaponLeft
+    2300032: WeaponRight
+    2300034: WeaponTop
     3300000: Chassis
     3300002: Part
     3300004: Part1
+    3300006: Chassis2
+    3300008: Chassis3
+    3300010: BottomPlate
+    3300012: Doodad
+    3300014: Frame
+    3300016: FrontPlate
+    3300018: LeftPlate1
+    3300020: LeftPlate2
+    3300022: RightPlate1
+    3300024: RightPlate2
+    3300026: TopPlate1
+    3300028: TopPlate2
+    3300030: WeaponLeft
+    3300032: WeaponRight
+    3300034: WeaponTop
     4300000: Chassis
     4300002: Part
     4300004: Part1
+    4300006: Chassis2
+    4300008: Chassis3
+    4300010: RightPlate1
+    4300012: RightPlate2
+    4300014: FrontPlate
+    4300016: TopPlate2
+    4300018: TopPlate1
+    4300020: Frame
+    4300022: BottomPlate
+    4300024: LeftPlate1
+    4300026: LeftPlate2
+    4300028: WeaponRight
+    4300030: WeaponTop
+    4300032: WeaponLeft
+    4300034: Doodad
     9500000: //RootNode
   externalObjects:
   - first:
