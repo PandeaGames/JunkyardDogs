@@ -108,6 +108,36 @@ MonoBehaviour:
     - 
     - 
     Flags: 0000
+  - Term: Button
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: UI.build_new_bot
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - Build New Bot
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: UI.dialogs.select_component
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - Select Component
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
   mLanguages:
   - Name: German
     Code: de

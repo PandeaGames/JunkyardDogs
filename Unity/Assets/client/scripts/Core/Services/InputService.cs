@@ -4,8 +4,8 @@ using System.Collections.Generic;
 
 public class InputService : Service
 {
-    public delegate void OnMultiPointer(Vector2 cameraPosition, Vector2 worldPosition, int index, RaycastHit2D[] raycast = null);
-    public delegate void OnPointer(Vector2 cameraPosition, Vector2 worldPosition, RaycastHit2D[] raycast = null);
+    public delegate void OnMultiPointer(Vector3 cameraPosition, int index, RaycastHit raycast);
+    public delegate void OnPointer(Vector3 cameraPosition, RaycastHit raycast);
 
     public event OnPointer OnPointerDown;
     public event OnPointer OnPointerUp;
@@ -24,17 +24,23 @@ public class InputService : Service
     [SerializeField]
     private int _maxRaycastResults = 1;
 
-    private ContactFilter2D _contactFilter = default(ContactFilter2D);
     private bool _pointerDown;
     private int _touchCount;
-    private Dictionary<int, Vector2> _touchDown;
+    private Dictionary<int, Vector3> _touchDown;
+
+    private Vector3 _gizmoPosition;
+    private Vector3 _gizmoDirection;
 
     public override void StartService(ServiceManager serviceManager)
     {
         base.StartService(serviceManager);
 
-        _touchDown = new Dictionary<int, Vector2>();
-        _contactFilter.useTriggers = _useTriggersInRaycast;
+        _touchDown = new Dictionary<int, Vector3>();
+    }
+
+    public void OnDrawGizmos()
+    {
+        Gizmos.DrawLine(Camera.main.transform.position, Camera.main.transform.position + Camera.main.transform.forward * 20);
     }
 
     public override void EndService(ServiceManager serviceManager)
@@ -62,6 +68,7 @@ public class InputService : Service
 
         if (Input.GetMouseButtonDown(0) && OnPointerDown!=null)
         {
+           
             HandlePointerAction(Input.mousePosition, OnPointerDown);
             _pointerDown = true;
         }
@@ -79,7 +86,7 @@ public class InputService : Service
 
         for (int i = Input.touchCount; i < _touchCount; i++)
         {
-            Vector2 cameraPosition;
+            Vector3 cameraPosition;
             _touchDown.TryGetValue(i, out cameraPosition);
 
             HandleMultiPointerAction(cameraPosition, i, OnMultiPointerUp, OnPointerUp);
@@ -90,10 +97,9 @@ public class InputService : Service
         {
             touch = Input.touches[i];
 
-            Vector2 cameraPosition = touch.position;
+            Vector3 cameraPosition = touch.position;
 
             Vector3 target = Camera.main.ScreenToWorldPoint(touch.position);
-            target.z = 0.5f;
 
             if (!_touchDown.ContainsKey(i))
             {
@@ -107,39 +113,39 @@ public class InputService : Service
         _touchCount = Input.touchCount;
     }
 
-    private void HandlePointerAction(Vector2 cameraPosition, OnPointer eventToNotify)
+    private void HandlePointerAction(Vector3 cameraPosition, OnPointer eventToNotify)
     {
         //TODO: always the same value. needs z value. is it not valuable at all? 
         Vector3 worldPosition = Camera.main.ScreenToWorldPoint(cameraPosition);
+        Ray ray = Camera.main.ScreenPointToRay(cameraPosition);
 
-        RaycastHit2D[] results = null;
+        RaycastHit results = default(RaycastHit);
 
         if (_providePonterRaycast)
         {
-            results = new RaycastHit2D[_maxRaycastResults];
-            Physics2D.Raycast(worldPosition, Vector2.zero, _contactFilter, results);
+            // Physics.Raycast(worldPosition, Camera.main.transform.forward,out results);
+            Physics.Raycast(ray, out results);
         }
 
         if(eventToNotify != null)
-            eventToNotify(cameraPosition, worldPosition, results);
+            eventToNotify(worldPosition, results);
     }
 
     private void HandleMultiPointerAction(Vector2 cameraPosition, int index, OnMultiPointer eventToNotify, OnPointer pointerEventToNotify)
     {
         Vector3 worldPosition = Camera.main.ScreenToWorldPoint(cameraPosition);
 
-        RaycastHit2D[] results = null;
+        RaycastHit results = default(RaycastHit);
 
         if (_providePonterRaycast)
         {
-            results = new RaycastHit2D[_maxRaycastResults];
-            Physics2D.Raycast(worldPosition, Vector2.zero, _contactFilter, results);
+            Physics.Raycast(cameraPosition, Camera.main.transform.forward, out results);
         }
 
         if (eventToNotify != null)
-            eventToNotify(cameraPosition, worldPosition, index, results);
+            eventToNotify(cameraPosition, index, results);
 
         if(index == 0 && pointerEventToNotify != null)
-            pointerEventToNotify(cameraPosition, worldPosition, results);
+            pointerEventToNotify(cameraPosition, results);
     }
 }

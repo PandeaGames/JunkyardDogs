@@ -36,24 +36,25 @@ public class InventoryScreen : ScreenController
         {
             _virtualVerticalLayoutGroup.AddItem(component);
         }
+        RectTransform rt = _virtualVerticalLayoutGroup.transform as RectTransform;
+        rt.sizeDelta = new Vector2(rt.sizeDelta.x, _virtualVerticalLayoutGroup.minHeight);
+        _virtualVerticalLayoutGroup.SelectedItemChanged.AddListener(OnInventoryButtonPressed);
+    }
 
-            /*foreach(Component component in inventory)
-            {
-                ComponentDisplay display = Instantiate(_inventoryItemOriginal).GetComponent<ComponentDisplay>();
-                display.transform.SetParent(_inventoryList, false);
-                display.RenderComponent(component);
-                display.gameObject.SetActive(true);
+    private void OnDestroy()
+    {
+        _virtualVerticalLayoutGroup.SelectedItemChanged.RemoveListener(OnInventoryButtonPressed);
+    }
 
-                Button button = display.GetComponent<Button>();
-
-                if (button != null)
-                {
-                    button.onClick.AddListener(() => OnInventoryButtonPressed(component, display));
-                }
-            }*/
+    public void OnInventoryButtonPressed(object data)
+    {
+        if(data != null)
+        {
+            OnInventoryButtonPressed(data as Component);
         }
+    }
 
-    private void OnInventoryButtonPressed(Component component, ComponentDisplay display)
+    private void OnInventoryButtonPressed(Component component)
     {
         List<MessageDialog.Option> options = new List<MessageDialog.Option>();
 
@@ -74,11 +75,9 @@ public class InventoryScreen : ScreenController
             {
                 //TODO: Sell
                 _junkyardUserService.User.Competitor.Inventory.Components.Remove(component);
-                Destroy(display.gameObject);
+                _virtualVerticalLayoutGroup.RemoveItem(component);
                 _junkyardUserService.Save();
             }
         });
     }
-
-
 }

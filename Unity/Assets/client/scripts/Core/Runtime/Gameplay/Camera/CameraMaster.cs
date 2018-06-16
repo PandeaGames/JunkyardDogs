@@ -38,7 +38,7 @@ public class CameraMaster : MonoBehaviour {
     {
         Vector3 pos = agent.GetCameraPosition();
 
-        transform.position = new Vector3(pos.x, pos.y, transform.position.z);
+        transform.position = new Vector3(pos.x, pos.y, pos.z);
         transform.rotation = agent.GetCameraRotation();
 
         _camera.orthographicSize = agent.GetCameraOrthographicScale();

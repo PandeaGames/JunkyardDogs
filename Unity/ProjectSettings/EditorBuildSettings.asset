@@ -29,3 +29,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/client/scenes/screens/ElementiaScreen.unity
     guid: d51de9e07a86bb043a47a6433525a64c
+  - enabled: 1
+    path: Assets/client/scenes/screens/GarageScreen.unity
+    guid: bed66ca90b549344cbf20bd38299a01c
+  - enabled: 1
+    path: Assets/client/scenes/gameScenes/garage.unity
+    guid: 9ed203f5430d5e345a8633599fef7c4e

@@ -8,19 +8,20 @@ using System;
 namespace JunkyardDogs.Components
 {
     [Serializable]
-    public class Bot : UnityEngine.Object
+    public class Bot
     {
-        [SerializeField]
-        private Motherboard _motherboard;
+        public Motherboard Motherboard { get; set; }
+        public Chassis Chassis { get; set; }
+        public Agent Agent { get; set; }
 
-        [SerializeField]
-        private Chassis _chassis;
+        public Bot()
+        {
 
-        [SerializeField]
-        private Agent _agent;
+        }
 
-        public Chassis Chassis { get { return _chassis; } }
-        public Motherboard Motherboard { get { return _motherboard; } }
-        public Agent Agent { get { return _agent; } }
+        public Bot(Chassis chassis)
+        {
+            Chassis = chassis;
+        }
     }
 }

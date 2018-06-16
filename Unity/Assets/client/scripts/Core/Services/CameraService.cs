@@ -8,7 +8,9 @@ public class CameraService : Service
     public event cameraMasterChange OnMasterChange;
     public event cameraAgentChange OnAgentChange;
 
+    [SerializeField]
     private CameraMaster _activeMaster;
+    [SerializeField]
     private CameraAgent _activeAgent;
     private List<CameraMaster> _masters = new List<CameraMaster>();
     private List<CameraAgent> _agents = new List<CameraAgent>();

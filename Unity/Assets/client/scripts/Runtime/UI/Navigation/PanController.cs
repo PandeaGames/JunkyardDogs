@@ -16,14 +16,14 @@ public class PanController : MonoBehaviour {
     [SerializeField]
     private ServiceManager _serviceManager;
 
-    private InputService _inputService;
+    private InputService2D _inputService;
     private Vector2 _pointerPosition;
     private bool _isPanning;
     private Transform _targetTransform;
 
     // Use this for initialization
     void Start () {
-        _inputService = _serviceManager.GetService<InputService>();
+        _inputService = _serviceManager.GetService<InputService2D>();
 
         _inputService.OnPointerMove += OnPointerMove;
         _inputService.OnPointerDown += OnPointerDown;

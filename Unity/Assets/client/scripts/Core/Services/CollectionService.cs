@@ -10,13 +10,13 @@ public class CollectionService : Service
     private bool _enforceSingleFrameCollection = true;
 
     private Collectable _pendingCollection;
-    private InputService _inputService;
+    private InputService2D _inputService;
 
     public override void StartService(ServiceManager serviceManager)
     {
         base.StartService(serviceManager);
 
-        _inputService = serviceManager.GetService<InputService>();
+        _inputService = serviceManager.GetService<InputService2D>();
 
         _inputService.OnPointerDown += OnPointer;
     }

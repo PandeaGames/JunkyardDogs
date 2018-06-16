@@ -137,6 +137,7 @@ public class WindowController : MonoBehaviour
         }
 
         _activeScreen = controller;
+        _activeScreen.gameObject.SetActive(true);
 
         controller.Transition(transition);
         controller.transform.SetParent(transform, true);
