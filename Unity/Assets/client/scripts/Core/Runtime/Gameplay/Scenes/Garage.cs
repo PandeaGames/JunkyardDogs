@@ -78,6 +78,10 @@ public class Garage : MonoBehaviour
             if(_lineupCameraAgent.Target == botBuilderDisplay.transform)
             {
                 botBuilderDisplay.Focus();
+                var config = ScriptableObject.CreateInstance<EditBotScreen.EditBotScreenConfig>();
+                config.BuilderDisplay = botBuilderDisplay;
+                _window.LaunchScreen("EditBot", config);
+                _cameraService.Focus(botBuilderDisplay.CameraAgent);
             }
             else
             {

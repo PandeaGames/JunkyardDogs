@@ -138,6 +138,16 @@ MonoBehaviour:
     - 
     - 
     Flags: 0000
+  - Term: UI.exit
+    TermType: 0
+    Description: 
+    Languages:
+    - Exit
+    - Exit
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
   mLanguages:
   - Name: German
     Code: de

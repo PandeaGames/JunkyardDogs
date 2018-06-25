@@ -63,6 +63,9 @@ public class InputService : Service
     {
         if (_pointerDown)
         {
+            var pos = Input.mousePosition;
+            pos.z = 10;
+            Debug.Log("From Service Input.mousePosition ["+ pos + "] Camera.main.ScreenToWorldPoint(cameraPosition) ["+ Camera.main.ScreenToWorldPoint(pos) +"]");
             HandlePointerAction(Input.mousePosition, OnPointerMove);
         }
 
@@ -115,6 +118,7 @@ public class InputService : Service
 
     private void HandlePointerAction(Vector3 cameraPosition, OnPointer eventToNotify)
     {
+        cameraPosition.z = 10;
         //TODO: always the same value. needs z value. is it not valuable at all? 
         Vector3 worldPosition = Camera.main.ScreenToWorldPoint(cameraPosition);
         Ray ray = Camera.main.ScreenPointToRay(cameraPosition);

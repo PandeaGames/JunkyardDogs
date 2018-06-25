@@ -9,9 +9,6 @@ public class BotBuilderDisplay : MonoBehaviour
     public event Action<BotBuilderDisplay> OnSelect;
 
     [SerializeField]
-    private Transform _cameraAgentContainer;
-
-    [SerializeField]
     private CameraAgent _cameraAgent;
 
     [SerializeField]
@@ -24,12 +21,14 @@ public class BotBuilderDisplay : MonoBehaviour
     private Collider _collider;
 
     private bool _isFocused;
-    public bool IsFocused { get { return _isFocused; } }
-
     private CameraService _cameraService;
     private InputService _inputService;
     private BotBuilder _botBuilder;
     private GameObject _bot;
+    private Vector2 _pointerPosition;
+
+    public bool IsFocused { get { return _isFocused; } }
+    public CameraAgent CameraAgent { get { return _cameraAgent; } }
 
     public void Setup(BotBuilder botBuilder)
     {
@@ -53,7 +52,8 @@ public class BotBuilderDisplay : MonoBehaviour
 
     private void OnPointerDown(Vector3 cameraPosition, RaycastHit raycast)
     {
-        if(raycast.collider == _collider)
+        _pointerPosition = cameraPosition;
+        if (raycast.collider == _collider)
         {
             if (OnSelect != null)
                 OnSelect(this);
@@ -75,8 +75,16 @@ public class BotBuilderDisplay : MonoBehaviour
     public void Focus()
     {
         _isFocused = true;
-        _cameraService.Focus(_cameraAgent);
-        _cameraAgentContainer.transform.rotation.Set(0, 0, 0, 0);
         _bot.transform.rotation.Set(0, 0, 0, 0);
+        _inputService.OnPointerMove += OnPointerMove;
+    }
+
+    private void OnPointerMove(Vector3 cameraPosition, RaycastHit raycast)
+    {
+        Vector2 delta = (_pointerPosition - new Vector2(cameraPosition.x, cameraPosition.y)) * 1;
+        //_bot.transform.rotation.SetAxisAngle(Vector3.down, _bot.transform.rotation.eulerAngles.y + delta.x);
+        _bot.transform.rotation = Quaternion.AngleAxis(_bot.transform.rotation.eulerAngles.y + delta.x, Vector3.up);
+        _pointerPosition = cameraPosition;
+        Debug.Log("_bot.transform.rotation.eulerAngles.y [" + _bot.transform.rotation.eulerAngles.y + "] delta.x[" + delta.x + "]");
     }
 }
