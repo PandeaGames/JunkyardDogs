@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: MammothAvatarMask
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: BottomPlate
+    m_Weight: 1
+  - m_Path: Doodad
+    m_Weight: 1
+  - m_Path: Frame
+    m_Weight: 1
+  - m_Path: FrontPlate
+    m_Weight: 1
+  - m_Path: LeftPlate1
+    m_Weight: 1
+  - m_Path: LeftPlate2
+    m_Weight: 1
+  - m_Path: RightPlate1
+    m_Weight: 1
+  - m_Path: RightPlate2
+    m_Weight: 1
+  - m_Path: TopPlate1
+    m_Weight: 1
+  - m_Path: TopPlate2
+    m_Weight: 1
+  - m_Path: WeaponLeft
+    m_Weight: 1
+  - m_Path: WeaponRight
+    m_Weight: 1
+  - m_Path: WeaponTop
+    m_Weight: 1

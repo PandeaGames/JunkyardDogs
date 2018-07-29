@@ -17,8 +17,8 @@ public class JunkController : MonoBehaviour {
     private Junk[] _junkList;
 
     private SpecificationCatalogue _specificationCatalogue;
-    private WeakReference[] _specifications;
-    private WeakReference _specification;
+    private SpecificationCatalogue.Product[] _products;
+    private SpecificationCatalogue.Product _product;
     private DialogService _dialogService; 
     private JunkyardUserService _userService;
     private ComponentInstantiatorService _componentService;
@@ -40,23 +40,21 @@ public class JunkController : MonoBehaviour {
     private void HandleJunkClick(Junk junk)
     {
         _specificationCatalogue = junk.Catalogue;
-        _specifications = _specificationCatalogue.Specifications;
+        _products = _specificationCatalogue.Products;
 
-        int length = _specifications.Length;
+        int length = _products.Length;
         int choice = (int)Random.Range(0, length);
 
-        _specification = _specifications[choice];
+        _product = _products[choice];
 
-        _specification.LoadAsync<Specification>(OnLoadComplete, OnLoadFail);
+        _product.LoadAsync(OnLoadComplete, OnLoadFail);
 
         Destroy(junk.gameObject);
     }
 
-    private void OnLoadComplete(Specification asset, WeakReference reference)
+    private void OnLoadComplete()
     {
-        Component component = _componentService.GenerateComponent(_specification);
-
-        component.Manufacturer = _specificationCatalogue.Manufacturer;
+        Component component = ManufacturerUtils.BuildComponent(_specificationCatalogue.Manufacturer, _product);
 
         TakeJunkDialog.TakeJunkDialogConfig config = ScriptableObject.CreateInstance<TakeJunkDialog.TakeJunkDialogConfig>();
 

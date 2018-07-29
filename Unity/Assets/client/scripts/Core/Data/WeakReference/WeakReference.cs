@@ -76,7 +76,7 @@ namespace Data
         #if UNITY_EDITOR
         public T Load<T>() where T: ScriptableObject
         {
-            if (_cache == null)
+            if (_cache == null && !string.IsNullOrEmpty(Path))
             {
                 _cache = AssetDatabase.LoadAssetAtPath<ScriptableObject>(Path);
             }
@@ -87,6 +87,13 @@ namespace Data
 
     public void LoadAsync<T>( Action<T, WeakReference> onComplete, Action onFail ) where T:ScriptableObject
         {
+
+            if (string.IsNullOrEmpty(Path))
+            {
+                onComplete(null, this);
+                return;
+            }
+
             // Load asset from assetBundle.
             string bundleName = AssetBundleUtils.GetBundleNameFromPath(Path);
             string fileName = System.IO.Path.GetFileNameWithoutExtension(Path);

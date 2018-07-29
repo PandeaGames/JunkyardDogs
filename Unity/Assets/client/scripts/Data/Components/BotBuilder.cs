@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace JunkyardDogs.Components
 {
@@ -30,6 +31,7 @@ namespace JunkyardDogs.Components
     {
         private Bot _bot;
         private Inventory _inventory;
+        private Dictionary<Chassis.ArmamentLocation, WeaponProcessorBuilder> _processorBuilders;
 
         public Bot Bot { get { return _bot; } }
         public Inventory Inventory { get { return _inventory; } }
@@ -47,6 +49,22 @@ namespace JunkyardDogs.Components
         {
             _bot = bot;
             _inventory = inventory;
+            _processorBuilders = new Dictionary<Chassis.ArmamentLocation, WeaponProcessorBuilder>();
+
+            SetupProgessorBuilder(bot, inventory, Chassis.ArmamentLocation.Front);
+            SetupProgessorBuilder(bot, inventory, Chassis.ArmamentLocation.Left);
+            SetupProgessorBuilder(bot, inventory, Chassis.ArmamentLocation.Right);
+            SetupProgessorBuilder(bot, inventory, Chassis.ArmamentLocation.Top);
+        }
+
+        private void SetupProgessorBuilder(Bot bot, Inventory inventory, Chassis.ArmamentLocation location)
+        {
+            WeaponProcessor processor = bot.Chassis.GetWeaponProcessor(location);
+
+            if (processor != null)
+            {
+                _processorBuilders.Add(location, new WeaponProcessorBuilder(inventory, processor));
+            }
         }
 
         public void RemovePlate(Chassis.PlateLocation location, int index)
@@ -106,6 +124,13 @@ namespace JunkyardDogs.Components
             }
         }
 
+        public WeaponProcessorBuilder GetWeaponProcessorBuilder(Chassis.ArmamentLocation location)
+        {
+            WeaponProcessorBuilder builder = null;
+            _processorBuilders.TryGetValue(location, out builder);
+            return builder;
+        }
+
         public void SetWeaponProcessor(WeaponProcessor processor, Chassis.ArmamentLocation location)
         {
             if(!_inventory.ContainsComponent(processor))
@@ -115,6 +140,7 @@ namespace JunkyardDogs.Components
 
             RemoveWeaponProcessor(location);
             _inventory.RemoveComponent(processor);
+            _processorBuilders[location] = new WeaponProcessorBuilder(_inventory, processor);
 
             switch (location)
             {

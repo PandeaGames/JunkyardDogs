@@ -7,7 +7,7 @@ using System;
 namespace JunkyardDogs.Components
 {
     [Serializable]
-    public class Chassis : Component
+    public class Chassis : PhysicalComponent
     {
         public enum PlateLocation
         {
@@ -57,10 +57,15 @@ namespace JunkyardDogs.Components
 
         public Chassis()
         {
-
+            FrontPlates = new List<Plate>();
+            LeftPlates = new List<Plate>();
+            RightPlates = new List<Plate>();
+            BackPlates = new List<Plate>();
+            TopPlates = new List<Plate>();
+            BottomPlates = new List<Plate>();
         }
 
-        private List<Plate> GetPlateList(PlateLocation location)
+        public List<Plate> GetPlateList(PlateLocation location)
         {
             switch (location)
             {
@@ -97,18 +102,33 @@ namespace JunkyardDogs.Components
             List<Plate> plateList = GetPlateList(location);
             Plate removedPlate = null;
 
-            if(plateList.Count > index)
+            while(plateList.Count <= index)
             {
-                removedPlate = plateList[index];
-            }
-            else
-            {
-                plateList.Capacity = index + 1;
+                plateList.Add(null);
             }
 
-            plateList[index] = plate;
+            removedPlate = plateList[index];
+
+            plateList.Insert(index, plate);
 
             return removedPlate;
+        }
+
+        public WeaponProcessor GetWeaponProcessor(ArmamentLocation location)
+        {
+            switch (location)
+            {
+                case ArmamentLocation.Front:
+                    return FrontArmament;
+                case ArmamentLocation.Left:
+                    return LeftArmament;
+                case ArmamentLocation.Right:
+                    return RightArmament;
+                case ArmamentLocation.Top:
+                    return TopArmament;
+                default:
+                    return null;
+            }
         }
     }
 }

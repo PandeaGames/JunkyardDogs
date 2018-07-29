@@ -7,7 +7,7 @@ namespace JunkyardDogs.Components
 {
 
     [Serializable]
-    public class WeaponProcessor : Component
+    public class WeaponProcessor : PhysicalComponent
     {
         public Components.Weapon Weapon { get; set; }
 

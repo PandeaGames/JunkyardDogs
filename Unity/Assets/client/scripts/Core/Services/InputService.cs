@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System;
+using UnityEngine.EventSystems;
 
 public class InputService : Service
 {
@@ -10,6 +12,7 @@ public class InputService : Service
     public event OnPointer OnPointerDown;
     public event OnPointer OnPointerUp;
     public event OnPointer OnPointerMove;
+    public event OnPointer OnPointerClick;
 
     public event OnMultiPointer OnMultiPointerDown;
     public event OnMultiPointer OnMultiPointerUp;
@@ -24,12 +27,17 @@ public class InputService : Service
     [SerializeField]
     private int _maxRaycastResults = 1;
 
+    private Vector3 _clickDownPosition;
+    private DateTime _pointerDownTimestamp;
     private bool _pointerDown;
     private int _touchCount;
     private Dictionary<int, Vector3> _touchDown;
 
-    private Vector3 _gizmoPosition;
-    private Vector3 _gizmoDirection;
+    //TODO:Place in some sort of configuration scriptable object
+    private int _clickTimeSpan = 300;
+    private float _clickDistance = 40;
+
+    private Ray _ray;
 
     public override void StartService(ServiceManager serviceManager)
     {
@@ -40,7 +48,8 @@ public class InputService : Service
 
     public void OnDrawGizmos()
     {
-        Gizmos.DrawLine(Camera.main.transform.position, Camera.main.transform.position + Camera.main.transform.forward * 20);
+        Gizmos.color = Color.red;
+        Gizmos.DrawRay(_ray.origin, _ray.direction * 100);
     }
 
     public override void EndService(ServiceManager serviceManager)
@@ -53,6 +62,11 @@ public class InputService : Service
 
     protected virtual void Update()
     {
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            return;
+        }
+       
         HandlePointers();
 
         if(_touchEnabled)
@@ -65,21 +79,34 @@ public class InputService : Service
         {
             var pos = Input.mousePosition;
             pos.z = 10;
-            Debug.Log("From Service Input.mousePosition ["+ pos + "] Camera.main.ScreenToWorldPoint(cameraPosition) ["+ Camera.main.ScreenToWorldPoint(pos) +"]");
             HandlePointerAction(Input.mousePosition, OnPointerMove);
         }
 
-        if (Input.GetMouseButtonDown(0) && OnPointerDown!=null)
+        if (Input.GetMouseButtonDown(0) && !_pointerDown)
         {
-           
+            Debug.Log("DOWN");
             HandlePointerAction(Input.mousePosition, OnPointerDown);
             _pointerDown = true;
+            
+            _pointerDownTimestamp = DateTime.UtcNow;
+            _clickDownPosition = Input.mousePosition;
         }
 
         if (Input.GetMouseButtonUp(0) && _pointerDown)
         {
+            Debug.Log("UP");
             HandlePointerAction(Input.mousePosition, OnPointerUp);
             _pointerDown = false;
+            TimeSpan timeFromDown = DateTime.UtcNow - _pointerDownTimestamp;
+            float clickDistance = Vector3.Distance(_clickDownPosition, Input.mousePosition);
+            bool validClickTime = timeFromDown.Milliseconds < _clickTimeSpan;
+            bool validClickDistance = clickDistance < _clickDistance;
+            Debug.Log("CLICK CHECK timeFromDown: "+ timeFromDown.Milliseconds + " clickDistance:"+ clickDistance);
+            if (validClickTime && validClickDistance)
+            {
+                Debug.Log("CLICK");
+                HandlePointerAction(Input.mousePosition, OnPointerClick);
+            }
         }
     }
 
@@ -109,8 +136,10 @@ public class InputService : Service
                 _touchDown.Add(i, cameraPosition);
                 HandleMultiPointerAction(cameraPosition, i, OnMultiPointerDown, OnPointerDown);
             }
-
-            HandleMultiPointerAction(cameraPosition, i, OnMultiPointerMove, OnPointerMove);
+            else
+            {
+                HandleMultiPointerAction(cameraPosition, i, OnMultiPointerMove, OnPointerMove);
+            }
         }
 
         _touchCount = Input.touchCount;
@@ -122,6 +151,8 @@ public class InputService : Service
         //TODO: always the same value. needs z value. is it not valuable at all? 
         Vector3 worldPosition = Camera.main.ScreenToWorldPoint(cameraPosition);
         Ray ray = Camera.main.ScreenPointToRay(cameraPosition);
+
+        _ray = ray;
 
         RaycastHit results = default(RaycastHit);
 

@@ -6,7 +6,7 @@ using System;
 namespace JunkyardDogs.Components
 {
     [Serializable]
-    public class Weapon : Component
+    public class Weapon : PhysicalComponent
     {
         public Weapon()
         {

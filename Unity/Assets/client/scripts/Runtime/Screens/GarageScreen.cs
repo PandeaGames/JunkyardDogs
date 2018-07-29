@@ -46,8 +46,12 @@ public class GarageScreen : ScreenController
     private void SelectedNewChassis(Dialog.Response response)
     {
         var choice = response as ChooseFromInventoryDialog.ChooseFromInventoryDialogResponse;
-        BotBuilder builder = BotBuilder.CreateNewBot(_user.Competitor.Inventory, choice.Component as Chassis);
-        _junkardUserService.Save();
-        _garage.AddBuilder(builder);
+
+        if(choice.Component != null)
+        {
+            BotBuilder builder = BotBuilder.CreateNewBot(_user.Competitor.Inventory, choice.Component as Chassis);
+            _junkardUserService.Save();
+            _garage.AddBuilder(builder);
+        }
     }
 }

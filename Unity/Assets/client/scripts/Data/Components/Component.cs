@@ -35,7 +35,7 @@ namespace JunkyardDogs.Components
             SpecificationReference = new WeakReference();
         }
 
-        public void LoadAsync(Action onLoadSuccess, Action onLoadFailed)
+        public virtual void LoadAsync(Action onLoadSuccess, Action onLoadFailed)
         {
             if (SpecificationReference == null)
             {

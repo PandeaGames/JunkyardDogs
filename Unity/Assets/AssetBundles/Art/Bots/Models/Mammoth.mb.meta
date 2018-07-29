@@ -107,6 +107,19 @@ ModelImporter:
     4300030: WeaponTop
     4300032: WeaponLeft
     4300034: Doodad
+    6400000: BottomPlate
+    6400002: Doodad
+    6400004: Frame
+    6400006: FrontPlate
+    6400008: LeftPlate1
+    6400010: LeftPlate2
+    6400012: RightPlate1
+    6400014: RightPlate2
+    6400016: TopPlate1
+    6400018: TopPlate2
+    6400020: WeaponLeft
+    6400022: WeaponRight
+    6400024: WeaponTop
     9500000: //RootNode
   externalObjects:
   - first:
@@ -118,7 +131,7 @@ ModelImporter:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -145,7 +158,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 0

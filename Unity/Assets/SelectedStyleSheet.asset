@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d631692ab5174474eaaf2b43947b0b9f, type: 3}
+  m_Name: SelectedStyleSheet
+  m_EditorClassIdentifier: 
+  _keys:
+  - Selected
+  _styles:
+  - ActiveColor: {r: 0.89208925, g: 1, b: 0.58823526, a: 1}
+    DisabledColor: {r: 0.63235295, g: 0.63235295, b: 0.63235295, a: 1}
+    HoverColor: {r: 0.86764705, g: 0.92332655, b: 1, a: 1}
+    Image: {fileID: 21300000, guid: 20102f75c01cd664391b07b34d65e6e0, type: 3}
+    NormalColor: {r: 0.75334686, g: 0.7205882, b: 1, a: 1}
+  Parent: {fileID: 0}

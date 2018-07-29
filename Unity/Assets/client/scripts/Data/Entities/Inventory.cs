@@ -9,6 +9,13 @@ public class Inventory : IEnumerable
     public List<Component> Components { get; set; }
     public List<Bot> Bots { get; set; }
 
+    public Inventory()
+    {
+        
+        Components = new List<Component>();
+        Bots = new List<Bot>();
+    }
+
     public void AddComponent(Component component)
     {
         Components.Add(component);
@@ -53,11 +60,6 @@ public class Inventory : IEnumerable
 
     public void DismantleBot(Bot bot)
     {
-    }
-
-    public Inventory()
-    {
-        Components = new List<Component>();
     }
 
 #if UNITY_EDITOR

@@ -8,6 +8,9 @@ using System.Collections.Generic;
 public class Garage : MonoBehaviour
 {
     [SerializeField]
+    public AvatarMask _maskTest;
+
+    [SerializeField]
     private ServiceManager _serviceManager;
 
     [SerializeField]

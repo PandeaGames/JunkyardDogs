@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79f73177c4a6cbb4797db2d81c644424, type: 3}
+  m_Name: MammothBotAvatar
+  m_EditorClassIdentifier: 
+  Frame: {fileID: 100026, guid: 7e67833773f929446a0115d1bfe23f17, type: 3}
+  FrontPlates:
+  - {fileID: 100028, guid: 7e67833773f929446a0115d1bfe23f17, type: 3}
+  LeftPlates:
+  - {fileID: 100030, guid: 7e67833773f929446a0115d1bfe23f17, type: 3}
+  - {fileID: 100032, guid: 7e67833773f929446a0115d1bfe23f17, type: 3}
+  RightPlates:
+  - {fileID: 100034, guid: 7e67833773f929446a0115d1bfe23f17, type: 3}
+  - {fileID: 100036, guid: 7e67833773f929446a0115d1bfe23f17, type: 3}
+  BackPlates: []
+  TopPlates:
+  - {fileID: 100038, guid: 7e67833773f929446a0115d1bfe23f17, type: 3}
+  - {fileID: 100040, guid: 7e67833773f929446a0115d1bfe23f17, type: 3}
+  BottomPlates:
+  - {fileID: 100022, guid: 7e67833773f929446a0115d1bfe23f17, type: 3}
+  TopArmament: {fileID: 100046, guid: 7e67833773f929446a0115d1bfe23f17, type: 3}
+  FrontArmament: {fileID: 0}
+  LeftArmament: {fileID: 100042, guid: 7e67833773f929446a0115d1bfe23f17, type: 3}
+  RightArmament: {fileID: 100044, guid: 7e67833773f929446a0115d1bfe23f17, type: 3}
