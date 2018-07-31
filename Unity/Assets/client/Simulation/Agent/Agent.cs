@@ -1,26 +1,71 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
 namespace JunkyardDogs.Simulation.Agent
 {
-    [CreateAssetMenu(fileName = "Agent", menuName = "Simulation/Agent/Agent", order = 2)]
-    public class Agent : ScriptableObject
+    public class Agent : ILoadableObject
     {
-        [SerializeField]
-        private List<AgentState> _states;
-
-        [SerializeField]
-        private AgentState _initialState;
-
-        public List<AgentState> States
-        {
-            get { return _states; }
-        }
+        public List<AgentState> States { get; set; }
+        private int DefaultState { get; set; }
 
         public AgentState InitialState
         {
-            get { return _initialState; }
+            get { return States[DefaultState]; }
+        }
+
+        public void LoadAsync(Action onLoadSuccess, Action onLoadFailed)
+        {
+            int objectsToLoad = 0;
+            bool hasError = false;
+
+            Action onInternalLoadSuccess = () =>
+            {
+                if (--objectsToLoad <= 0)
+                {
+                    if (hasError)
+                    {
+                        onLoadFailed();
+                    }
+                    else
+                    {
+                        onLoadSuccess();
+                    }
+                }
+            };
+
+            Action onInternalLoadError = () =>
+            {
+                hasError = true;
+
+                if (--objectsToLoad <= 0)
+                {
+                    onLoadFailed();
+                }
+            };
+
+            if(States != null)
+            {
+                States.ForEach((state) =>
+                {
+                    if (state != null)
+                    {
+                        objectsToLoad++;
+                        state.LoadAsync(onInternalLoadSuccess, onInternalLoadError);
+                    }
+                });
+            }
+
+            if(objectsToLoad == 0)
+            {
+                onLoadSuccess();
+            }
+        }
+
+        public bool IsLoaded()
+        {
+            throw new NotImplementedException();
         }
     }
 }

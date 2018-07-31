@@ -29,9 +29,15 @@ public class BotRenderer : MonoBehaviour
 
     private void RenderArmament(Bot bot, Chassis.ArmamentLocation location, PrefabFactory componentFactory, Chassis chasiss, BotAvatar botAvatar, MaterialFactory materials, UnityEngine.Material missingComponentMaterial)
     {
-        GameObject armamentContainer = botAvatar.GetArmamentContainer(location);
+        GameObject avatarArmamentContainer = botAvatar.GetArmamentContainer(location);
+        GameObject armamentContainer = null;
 
-        if(armamentContainer != null)
+        if(avatarArmamentContainer != null)
+        {
+            armamentContainer = transform.GetChild(avatarArmamentContainer.transform.GetSiblingIndex()).gameObject;
+        }
+
+        if (armamentContainer != null)
         {
             foreach (Transform child in armamentContainer.transform)
             {
@@ -39,7 +45,7 @@ public class BotRenderer : MonoBehaviour
             }
 
             Renderer renderer = armamentContainer.GetComponent<Renderer>();
-            renderer.enabled = false;
+            renderer.material = missingComponentMaterial;
 
             WeaponProcessor processor = bot.Chassis.GetWeaponProcessor(location);
 
@@ -50,14 +56,20 @@ public class BotRenderer : MonoBehaviour
 
                 if(weapon == null)
                 {
+                    renderer.enabled = true;
                     obj = componentFactory.InstantiateAsset(processor.Specification);
                 }
                 else
                 {
+                    renderer.enabled = false;
                     obj = componentFactory.InstantiateAsset(weapon.Specification);
                 }
 
                 obj.transform.SetParent(transform.GetChild(armamentContainer.transform.GetSiblingIndex()), false);
+            }
+            else
+            {
+                renderer.enabled = true;
             }
         }
     }

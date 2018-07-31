@@ -9,6 +9,7 @@ public class EditBotScreen : ScreenController
     public class EditBotScreenConfig : Config
     {
         public BotBuilderDisplay BuilderDisplay;
+        public Garage Garage;
     }
 
     [SerializeField]
@@ -16,6 +17,9 @@ public class EditBotScreen : ScreenController
 
     [SerializeField]
     private Button _exitButton;
+
+    [SerializeField]
+    private Button _editBehaviourButton;
 
     private JunkyardUserService _junkardUserService;
     private DialogService _dialogService;
@@ -30,12 +34,14 @@ public class EditBotScreen : ScreenController
         _builderDisplay = _editBotScreenConfig.BuilderDisplay;
         _junkardUserService = _serviceManager.GetService<JunkyardUserService>();
         _dialogService = _serviceManager.GetService<DialogService>();
-
-        _exitButton.onClick.AddListener(OnExitClicked);
+        _exitButton.onClick.AddListener(() => _editBotScreenConfig.Garage.GoToLineup());
+        _editBehaviourButton.onClick.AddListener(OnEditBehaviourButtonClicked);
     }
 
-    private void OnExitClicked()
+    private void OnEditBehaviourButtonClicked()
     {
-        //_exitButton
+        var config = ScriptableObject.CreateInstance<EditBehaviourScreen.EditBehaviourConfig>();
+        config.Builder = _builderDisplay.BotBuilder;
+        _window.LaunchScreen("EditBotBehaviour", config);
     }
 }

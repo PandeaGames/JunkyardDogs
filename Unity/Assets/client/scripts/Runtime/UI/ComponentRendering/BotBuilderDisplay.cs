@@ -4,7 +4,7 @@ using JunkyardDogs.Components;
 using JunkyardDogs.Specifications;
 using System;
 
-public class BotBuilderDisplay : MonoBehaviour
+public class BotBuilderDisplay : MonoBehaviour 
 {
     public event Action<BotBuilderDisplay> OnSelect;
 
@@ -44,6 +44,7 @@ public class BotBuilderDisplay : MonoBehaviour
 
     public bool IsFocused { get { return _isFocused; } }
     public CameraAgent CameraAgent { get { return _cameraAgent; } }
+    public BotBuilder BotBuilder { get { return _botBuilder; } }
 
     public void Setup(BotBuilder botBuilder)
     {
@@ -58,12 +59,11 @@ public class BotBuilderDisplay : MonoBehaviour
 
         Bot bot = botBuilder.Bot;
         var chassis = bot.Chassis;
-        var reference = chassis.SpecificationReference;
 
-        reference.LoadAsync<JunkyardDogs.Specifications.Chassis>(
-            (chassisSpec, referenceSpec) =>
+        bot.LoadAsync(
+            () =>
             {
-                SetupChassis(chassisSpec);
+                SetupChassis(( JunkyardDogs.Specifications.Chassis)chassis.Specification);
             }, () => { });
 
         _inputService.OnPointerClick += OnPointerClick;

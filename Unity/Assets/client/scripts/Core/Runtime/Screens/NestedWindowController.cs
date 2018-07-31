@@ -22,7 +22,7 @@ public class NestedWindowController : WindowController
         //we are currently viewing the last screen. Clear the window completely.
         if(_stack.Count == 1)
         {
-            RemoveScreen();
+            Close();
             _stack.Clear();
             return;
         }

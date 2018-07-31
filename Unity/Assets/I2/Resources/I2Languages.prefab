@@ -148,6 +148,26 @@ MonoBehaviour:
     - 
     - 
     Flags: 0000
+  - Term: Build New Bot
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - Edit Behaviour
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: UI.edit_behaviour
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - Edit Behaviour
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
   mLanguages:
   - Name: German
     Code: de

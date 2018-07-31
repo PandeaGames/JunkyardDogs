@@ -28,6 +28,11 @@ public class ScreenTransition
     public ScreenController.Config ScreenConfig { get { return _screenConfig; } }
     public ScreenController.Result Result { get { return _result; } }
 
+    public ScreenTransition(Direction direction)
+    {
+        _direction = direction;
+    }
+
     public ScreenTransition(string sceneId, ScreenController.Config screenConfig, Direction direction)
     {
         _direction = direction;
@@ -54,6 +59,8 @@ public class ScreenTransition
 
 public class WindowController : MonoBehaviour
 {
+    public event Action OnClose;
+
     [SerializeField]
     private bool _overlapTransitions;
 
@@ -93,9 +100,22 @@ public class WindowController : MonoBehaviour
         }
     }
 
-    public void RemoveScreen()
+    public void RemoveScreen(ScreenController screen, ScreenTransition transition)
     {
-        
+        _activeScreen.Transition(transition);
+        _activeScreen.OnTransitionComplete += TransitionComplete;
+        _activeScreen.OnExit -= Close;
+    }
+
+    protected void Close()
+    {
+        if(_activeScreen)
+        {
+            RemoveScreen(_activeScreen, new ScreenTransition(Direction.FROM));
+        }
+
+        if (OnClose != null)
+            OnClose();
     }
 
     private IEnumerator LoadSceneAsync(ScreenTransition transition)
@@ -132,8 +152,7 @@ public class WindowController : MonoBehaviour
 
         if (_activeScreen != null)
         {
-            _activeScreen.Transition(transition);
-            _activeScreen.OnTransitionComplete += TransitionComplete;
+            RemoveScreen(_activeScreen, transition);
         }
 
         _activeScreen = controller;
@@ -141,6 +160,7 @@ public class WindowController : MonoBehaviour
 
         controller.Transition(transition);
         controller.transform.SetParent(transform, true);
+        controller.OnExit += Close;
         controller.Setup(this, transition.ScreenConfig);
 
         RectTransform rt = controller.GetComponent<RectTransform>();

@@ -55,7 +55,9 @@ public class MessageDialog : Dialog
     [SerializeField]
     private Transform _buttonContainer;
 
+    [NonSerialized]
     private MessageDialogConfig _config;
+    [NonSerialized]
     private Option _selected;
 
     public override void Setup(Config config, DialogResponseDelegate responseDelegate = null)

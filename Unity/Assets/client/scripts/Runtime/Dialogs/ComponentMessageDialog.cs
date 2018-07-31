@@ -20,6 +20,7 @@ public class ComponentMessageDialog : MessageDialog
     [SerializeField]
     private ComponentDisplay _componentDisplay;
 
+    [NonSerialized]
     private ComponentMessageDialogConfig _config;
 
     public override void Setup(Config config, DialogResponseDelegate responseDelegate = null)

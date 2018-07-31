@@ -18,6 +18,7 @@ public class ScreenController : MonoBehaviour
     public delegate void ScreenControllerDelegate(ScreenController controller);
 
     public event ScreenControllerDelegate OnTransitionComplete;
+    public event Action OnExit;
 
     protected WindowController _window;
     protected Config _config;
@@ -77,5 +78,11 @@ public class ScreenController : MonoBehaviour
     public Result GetResult()
     {
         return ScriptableObject.CreateInstance<Result>();
+    }
+
+    protected void Exit()
+    {
+        if (OnExit != null)
+            OnExit();
     }
 }

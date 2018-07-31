@@ -65,6 +65,77 @@ namespace JunkyardDogs.Components
             BottomPlates = new List<Plate>();
         }
 
+        public override void LoadAsync(Action onLoadSuccess, Action onLoadFailed)
+        {
+            int objectsToLoad = 0;
+            bool hasError = false;
+
+            Action onInternalLoadSuccess = () =>
+            {
+                if (--objectsToLoad <= 0)
+                {
+                    if (hasError)
+                    {
+                        onLoadFailed();
+                    }
+                    else
+                    {
+                        onLoadSuccess();
+                    }
+                }
+            };
+
+            Action onInternalLoadError = () =>
+            {
+                hasError = true;
+
+                if (--objectsToLoad <= 0)
+                {
+                    onLoadFailed();
+                }
+            };
+
+            objectsToLoad++;
+            base.LoadAsync(onInternalLoadSuccess, onInternalLoadError);
+
+            Func<List<Plate>, bool> loadPlates = (plates) =>
+            {
+                if(plates != null)
+                {
+                    plates.ForEach((plate) =>
+                    {
+                        if(plate != null)
+                        {
+                            objectsToLoad++;
+                            plate.LoadAsync(onInternalLoadSuccess, onInternalLoadError);
+                        }
+                    });
+                }
+                return true;
+            };
+
+            loadPlates(RightPlates);
+            loadPlates(LeftPlates);
+            loadPlates(TopPlates);
+            loadPlates(BottomPlates);
+            loadPlates(BackPlates);
+
+            Func<WeaponProcessor, bool> loadWeapon = (weapon) =>
+            {
+                if (weapon != null)
+                {
+                    objectsToLoad++;
+                    weapon.LoadAsync(onInternalLoadSuccess, onInternalLoadError);
+                }
+                return true;
+            };
+
+            loadWeapon(RightArmament);
+            loadWeapon(LeftArmament);
+            loadWeapon(TopArmament);
+            loadWeapon(FrontArmament);
+        }
+
         public List<Plate> GetPlateList(PlateLocation location)
         {
             switch (location)

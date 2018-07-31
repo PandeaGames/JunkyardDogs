@@ -5,11 +5,14 @@ using JunkyardDogs.Components;
 using UnityEngine.UI.Extensions;
 using System.Collections.Generic;
 
-public class Garage : MonoBehaviour
+public enum GarageStates
 {
-    [SerializeField]
-    public AvatarMask _maskTest;
+    Lineup,
+    BotFocus
+}
 
+public class Garage : StateMachine<GarageStates>
+{
     [SerializeField]
     private ServiceManager _serviceManager;
 
@@ -31,12 +34,13 @@ public class Garage : MonoBehaviour
     private JunkyardUserService _junkardUserService;
     private DialogService _dialogService;
     private CameraService _cameraService;
+    private BotBuilderDisplay _selectedBuilder;
     private JunkyardUser _user;
     private List<BotBuilderDisplay> _builders;
 
     public List<BotBuilderDisplay> Builders { get { return _builders; } }
 
-    public void Start()
+    protected override void Start()
     {
         _junkardUserService = _serviceManager.GetService<JunkyardUserService>();
         _cameraService = _serviceManager.GetService<CameraService>();
@@ -50,11 +54,52 @@ public class Garage : MonoBehaviour
             AddBuilder(bot, _user.Competitor.Inventory);
         }
 
-        _cameraService.Focus(_lineupCameraAgent);
+        base.Start();
+    }
 
-        GarageScreen.GarageScreenConfig config = ScriptableObject.CreateInstance<GarageScreen.GarageScreenConfig>();
-        config.Garage = this;
-        _window.LaunchScreen("garageScreen", config);
+    protected override void LeaveState(GarageStates state)
+    {
+        switch(state)
+        {
+            case GarageStates.Lineup:
+                break;
+            case GarageStates.BotFocus:
+
+                if(_selectedBuilder)
+                {
+                    _selectedBuilder.Blur();
+                }
+                
+                break;
+        }
+    }
+
+    protected override void EnterState(GarageStates state)
+    {
+        switch (state)
+        {
+            case GarageStates.Lineup:
+
+                _cameraService.Focus(_lineupCameraAgent);
+                GarageScreen.GarageScreenConfig config = ScriptableObject.CreateInstance<GarageScreen.GarageScreenConfig>();
+                config.Garage = this;
+                _window.LaunchScreen("garageScreen", config);
+                break;
+
+            case GarageStates.BotFocus:
+
+                if(_selectedBuilder)
+                {
+                    _selectedBuilder.Focus();
+                    var editConfig = ScriptableObject.CreateInstance<EditBotScreen.EditBotScreenConfig>();
+                    editConfig.BuilderDisplay = _selectedBuilder;
+                    editConfig.Garage = this;
+                    _window.LaunchScreen("EditBot", editConfig);
+                    _cameraService.Focus(_selectedBuilder.CameraAgent);
+                }
+                
+                break;
+        }
     }
 
     public void AddBuilder(Bot bot, Inventory inventory)
@@ -67,33 +112,39 @@ public class Garage : MonoBehaviour
         BotBuilderDisplay botBuilderDisplay = Instantiate(_botBuilderDisplayPrefab).GetComponent<BotBuilderDisplay>();
         botBuilderDisplay.transform.SetParent(_listContent, false);
         botBuilderDisplay.gameObject.SetActive(true);
-        _lineupCameraAgent.SetTarget(botBuilderDisplay.transform);
         botBuilderDisplay.Setup(builder);
         botBuilderDisplay.transform.position = new Vector3(0, 0, _builders.Count * _spacing);
         _builders.Add(botBuilderDisplay);
         botBuilderDisplay.OnSelect += OnSelectBuilder;
+
+        if(_currentState == GarageStates.Lineup)
+        {
+            _lineupCameraAgent.SetTarget(botBuilderDisplay.transform);
+        }
+    }
+
+    public void GoToLineup()
+    {
+        SetState(GarageStates.Lineup);
     }
 
     private void OnSelectBuilder(BotBuilderDisplay botBuilderDisplay)
     {
-        if(!botBuilderDisplay.IsFocused)
+        if(_currentState == GarageStates.Lineup)
         {
-            if(_lineupCameraAgent.Target == botBuilderDisplay.transform)
+            if(!botBuilderDisplay.IsFocused)
             {
-                botBuilderDisplay.Focus();
-                var config = ScriptableObject.CreateInstance<EditBotScreen.EditBotScreenConfig>();
-                config.BuilderDisplay = botBuilderDisplay;
-                _window.LaunchScreen("EditBot", config);
-                _cameraService.Focus(botBuilderDisplay.CameraAgent);
+                if(_selectedBuilder == botBuilderDisplay)
+                {
+                    SetState(GarageStates.BotFocus);
+                }
+                else
+                {
+                    _lineupCameraAgent.SetTarget(botBuilderDisplay.transform);
+                }
             }
-            else
-            {
-                _lineupCameraAgent.SetTarget(botBuilderDisplay.transform);
-            }
-        }
-        else
-        {
 
+            _selectedBuilder = botBuilderDisplay;
         }
     }
 }

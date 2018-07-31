@@ -188,7 +188,7 @@ namespace JunkyardDogs.Simulation
                 }
             }
 
-            if (stateTransition)
+            if (stateTransition != null)
             {
                 bot.State = stateTransition.StateToTransition;
                 bot.DirectiveIndex = 0;
