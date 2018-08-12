@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using JunkyardDogs.Simulation.Knowledge;
 using System;
+using Data;
 
 namespace JunkyardDogs.Simulation.Agent
 {
@@ -16,6 +17,14 @@ namespace JunkyardDogs.Simulation.Agent
         {
             get { return StateWeakReference.Asset as Knowledge.State; }
         }
+
+        public AgentState()
+        {
+            StateWeakReference = new Data.WeakReference();
+            Directives = new List<Directive>();
+            Transitions = new List<StateTransition>();
+        }
+        
 
         public void LoadAsync(Action onLoadSuccess, Action onLoadFailed)
         {

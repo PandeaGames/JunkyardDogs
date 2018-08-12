@@ -45,11 +45,11 @@ namespace Data
         public string Path { get { return _path; } set { _path = value; } }
 
         private string _bundleCache;
-        private ScriptableObject _cache;
+        private UnityEngine.Object _cache;
         private bool _loaded;
 
         [ExcludeFromSerialization]
-        public ScriptableObject Asset {
+        public UnityEngine.Object Asset {
             get
             {
                 return _cache;
@@ -74,7 +74,7 @@ namespace Data
         }
 
         #if UNITY_EDITOR
-        public T Load<T>() where T: ScriptableObject
+        /*public T Load<T>() where T: UnityEngine.Object
         {
             if (_cache == null && !string.IsNullOrEmpty(Path))
             {
@@ -82,10 +82,10 @@ namespace Data
             }
 
             return _cache as T;
-        }          
+        }  */        
 #endif
 
-    public void LoadAsync<T>( Action<T, WeakReference> onComplete, Action onFail ) where T:ScriptableObject
+    public void LoadAsync<T>( Action<T, WeakReference> onComplete, Action onFail ) where T:UnityEngine.Object
         {
 
             if (string.IsNullOrEmpty(Path))
@@ -104,7 +104,7 @@ namespace Data
 
             TaskProvider.Instance.RunTask(request, () =>
             {
-                _cache = request.GetAsset<ScriptableObject>() as T;
+                _cache = request.GetAsset<UnityEngine.Object>() as T;
                 _loaded = true;
 
                 if (onComplete != null)

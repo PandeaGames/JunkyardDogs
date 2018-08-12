@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
+using UnityEngine.UI;
 
 public abstract class Dialog : MonoBehaviour
 {
@@ -28,14 +29,21 @@ public abstract class Dialog : MonoBehaviour
     public event DialogDelegate OnCancel;
 
     [SerializeField]
-    public GameObject _closeButton;
+    protected Button _closeButton;
 
+    [NonSerialized]
     private DialogResponseDelegate _responseDelegate;
+    [NonSerialized]
     private Config _config;
 
     public virtual void Setup(Config config, DialogResponseDelegate responseDelegate = null) {
         _config = config;
         _responseDelegate = responseDelegate;
+
+        if (_closeButton)
+        {
+            _closeButton.onClick.AddListener(Close);
+        }
     }
 
     public void OnDestroy()

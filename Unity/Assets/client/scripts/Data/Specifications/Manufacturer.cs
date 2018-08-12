@@ -1,31 +1,34 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 using JunkyardDogs.Components;
 using Component = JunkyardDogs.Components.Component;
-using Data;
+using WeakReference = Data.WeakReference;
 
 namespace JunkyardDogs.Specifications
 {
     public class ManufacturerUtils
     {
-        public static Component BuildComponent(WeakReference manufacturer, SpecificationCatalogue.Product product)
+        public static void BuildComponent(WeakReference manufacturer, SpecificationCatalogue.Product product, Action<Component> onComplete)
         {
-            return BuildComponent(manufacturer, product.Specification, product.Material);
+            BuildComponent(manufacturer, product.Specification, product.Material, onComplete);
         }
 
-        public static Component BuildComponent(WeakReference manufacturer, WeakReference spec, WeakReference material)
+        public static void BuildComponent(WeakReference manufacturer, WeakReference spec, WeakReference material, Action<Component> onComplete)
         {
-            Component component = ComponentUtils.GenerateComponent(spec);
-            PhysicalComponent physicalComponent = component as PhysicalComponent;
-
-            component.Manufacturer = manufacturer;
-
-            if (physicalComponent != null)
+            ComponentUtils.GenerateComponent(spec, (component) =>
             {
-                physicalComponent.Material = material;
-            }
+                PhysicalComponent physicalComponent = component as PhysicalComponent;
 
-            return component;
+                component.Manufacturer = manufacturer;
+
+                if (physicalComponent != null)
+                {
+                    physicalComponent.Material = material;
+                }
+
+                onComplete(component);
+            }); 
         }
     }
 

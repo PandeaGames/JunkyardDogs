@@ -7,13 +7,19 @@ public class NestedWindowController : WindowController
 {
     private List<ConfiguredScreen> _stack;
 
+    protected override void Start()
+    {
+        base.Start();
+        _stack = new List<ConfiguredScreen>();
+    }
+    
     public override void LaunchScreen(string sceneId, ScreenController.Config screenConfig)
     {
         _stack.Add(new ConfiguredScreen(sceneId, screenConfig));
         base.LaunchScreen(sceneId, screenConfig);
     }
 
-    public void Back()
+    protected override void Back()
     {
         //there is no stack, so no navigation can happen
         if (_stack.Count == 0)

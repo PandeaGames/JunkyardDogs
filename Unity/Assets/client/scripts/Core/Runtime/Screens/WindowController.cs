@@ -66,7 +66,7 @@ public class WindowController : MonoBehaviour
 
     private ScreenController _activeScreen;
 
-    public void Start()
+    protected virtual void Start()
     {
         ScreenController[] screenControllers = GetComponentsInChildren<ScreenController>();
 
@@ -105,6 +105,12 @@ public class WindowController : MonoBehaviour
         _activeScreen.Transition(transition);
         _activeScreen.OnTransitionComplete += TransitionComplete;
         _activeScreen.OnExit -= Close;
+        _activeScreen.OnBack -= Back;
+    }
+
+    protected virtual void Back()
+    {
+        Close();
     }
 
     protected void Close()
@@ -158,10 +164,11 @@ public class WindowController : MonoBehaviour
         _activeScreen = controller;
         _activeScreen.gameObject.SetActive(true);
 
-        controller.Transition(transition);
         controller.transform.SetParent(transform, true);
         controller.OnExit += Close;
+        controller.OnBack += Back;
         controller.Setup(this, transition.ScreenConfig);
+        controller.Transition(transition);
 
         RectTransform rt = controller.GetComponent<RectTransform>();
         rt.anchorMin = Vector2.zero;

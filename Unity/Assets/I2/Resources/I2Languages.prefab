@@ -168,6 +168,26 @@ MonoBehaviour:
     - 
     - 
     Flags: 0000
+  - Term: UI.done
+    TermType: 0
+    Description: 
+    Languages:
+    - Fertig
+    - Done
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: UI.new_bahviour
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - New Directive
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
   mLanguages:
   - Name: German
     Code: de

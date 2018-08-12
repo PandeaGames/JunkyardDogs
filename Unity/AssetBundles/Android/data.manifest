@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 290581506
+CRC: 2100013419
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: fae3ee7a8648b131f192060f73aad6ab
+    Hash: ced5fdd58eae130906fb905ac8d959c9
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 0d09fbf4334db6587d3bec6f759d6a6e
+    Hash: 52deb57fdee625ebf9e1ae206c0f649e
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -25,10 +25,18 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 48
   Script: {instanceID: 0}
+- Class: 64
+  Script: {instanceID: 0}
+- Class: 90
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
 - Class: 114
   Script: {fileID: 11500000, guid: 333e9c107faf2a3449cd64de62d2ef60, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 0833d720b03f4ba4691b17c7949e2ab1, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: eba0c660f2ee447f839ec2ea62cb54ff, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 4ae6ae314c73cc144a7e07e999e16e28, type: 3}
 - Class: 114
@@ -38,7 +46,15 @@ ClassTypes:
 - Class: 114
   Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 - Class: 114
+  Script: {fileID: 1679637790, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: -1200242548, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: 1367256648, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
   Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: 1297475563, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 1e898c12224211543892380af52f98a0, type: 3}
 - Class: 114
@@ -48,6 +64,10 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: 2bc383b2da7c72946a114ca2612ed7bf, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: 9ec294d2fa4e34a419e6f9a3cbc2ce2a, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 19c408e3f064e184fa5e0d9862ac4d8b, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: b1d4f20500189514a9ea47afb5cfb85f, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 758fa2d563d977c40b5da55a9f3eb054, type: 3}
@@ -55,8 +75,6 @@ ClassTypes:
   Script: {fileID: 11500000, guid: d62dd4e5fec1edd47869d9876fd4619e, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 235578e597f999546a0db936d98dc210, type: 3}
-- Class: 114
-  Script: {fileID: -806885394, guid: 89f0137620f6af44b9ba852b4190e64e, type: 3}
 - Class: 114
   Script: {fileID: 1453722849, guid: 89f0137620f6af44b9ba852b4190e64e, type: 3}
 - Class: 114
@@ -72,6 +90,8 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: 79364c380c289744f8ccf9b3740a2355, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: 344445a89b4f74a0e9a0a766903df87e, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: fe60c5f819838e2409f2638a7dd4da28, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 2783ee59a0878da43a7dd161ba94d41c, type: 3}
@@ -80,11 +100,17 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: c016de890c5b47b46a926660ab460ac6, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: 77f72ce97b7884f4dafb1c8542fe5620, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: d631692ab5174474eaaf2b43947b0b9f, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: 2f47d67ae0aa1244888e7dbd847d0613, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 750d20fa396d80145ad933ba83bf9665, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: e774f14bdec23194f9db265633ad69b8, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 6254eddb268c66b438b0b967b63edb03, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: be25e45ceb939b44481a616f2288af51, type: 3}
 - Class: 114
@@ -98,11 +124,11 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: 1038089e1f9093f4180a3b3d0fc9df65, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: af24afde2bf74f1c975bc94acbb8aede, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: 2ca0e29f4c4aa8d4982fffef9a051a76, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: 77f72ce97b7884f4dafb1c8542fe5620, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: 6254eddb268c66b438b0b967b63edb03, type: 3}
+  Script: {fileID: 11500000, guid: eb4f58339cb9499fafb3ba9bc4567fd9, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 128
@@ -123,21 +149,27 @@ Assets:
 - Assets/AssetBundles/Data/Products/Skylabs/Processors/subprocessor/WeaponChip.asset
 - Assets/AssetBundles/Data/Simulation/Behavior/MoveUp.asset
 - Assets/AssetBundles/Data/Products/Skylabs/Materials/CircuitBoard.asset
+- Assets/AssetBundles/Data/Products/Materials/Alloy/Copper.asset
 - Assets/AssetBundles/Data/Products/Skylabs/Materials/Alloy/Aluminum.asset
 - Assets/AssetBundles/Data/Simulation/Knowledge/Evassive.asset
 - Assets/AssetBundles/Data/Products/Skylabs/Weapons/LaserBeam.asset
 - Assets/AssetBundles/Data/Simulation/Behavior/AttackLeft.asset
+- Assets/AssetBundles/Data/Products/Plating/Plate_Thickness02.asset
+- Assets/AssetBundles/Data/Simulation/Behavior/List.asset
 - Assets/AssetBundles/Data/Simulation/Behavior/MoveRight.asset
 - Assets/AssetBundles/Data/Simulation/Directives/DirectiveMoveLeft.asset
 - Assets/AssetBundles/Data/Simulation/Knowledge/CloseRange.asset
 - Assets/AssetBundles/Data/Simulation/Directives/DirectiveMoveBack.asset
 - Assets/AssetBundles/Data/Products/Skylabs/Plating/PremiumSteelPlate.asset
+- Assets/AssetBundles/Data/Products/Plating/Plate_Thickness04.asset
 - Assets/AssetBundles/Data/Nations/Germany.asset
 - Assets/AssetBundles/Data/Nations/Canada.asset
 - Assets/AssetBundles/Data/Simulation/Directives/DirectiveAttackFront.asset
 - Assets/AssetBundles/Data/Simulation/Directives/DirectiveMoveForward.asset
+- Assets/AssetBundles/Data/Products/Materials/Alloy/Steel.asset
 - Assets/AssetBundles/Data/Simulation/Behavior/AttackRight.asset
-- Assets/AssetBundles/Data/Bots/BotFactory.asset
+- Assets/AssetBundles/Art/Factories/BotFactory.asset
+- Assets/AssetBundles/Data/Products/Plating/Plate_Thickness03.asset
 - Assets/AssetBundles/Data/Simulation/Behavior/MoveLeft.asset
 - Assets/AssetBundles/Data/Simulation/Directives/DirectiveAttackLeft.asset
 - Assets/AssetBundles/Data/Simulation/Directives/DirectiveAttackRight.asset
@@ -149,6 +181,7 @@ Assets:
 - Assets/AssetBundles/Data/Simulation/Directives/DirectiveMoveRight.asset
 - Assets/AssetBundles/Data/Simulation/Knowledge/FarRange.asset
 - Assets/AssetBundles/Data/Products/Skylabs/Weapons/SpiralPower.asset
+- Assets/AssetBundles/Data/Products/Plating/Plate_Thickness01.asset
 - Assets/AssetBundles/Data/Products/Skylabs/Processors/cpu/Himmel-i9.asset
 - Assets/AssetBundles/Data/Simulation/Knowledge/MediumRange.asset
 - Assets/AssetBundles/Data/Gameplay/DialogConfig.asset
@@ -163,5 +196,6 @@ Assets:
 - Assets/AssetBundles/Data/Gameplay/Junkyard/SpecificationCatalogue01.asset
 - Assets/AssetBundles/Data/Nations/FlagsLarge.asset
 - Assets/AssetBundles/Data/Products/Skylabs/Weapons/PulseEmitter.asset
+- Assets/AssetBundles/Data/Products/Plating/Plate_Thickness05.asset
 Dependencies:
 - C:/Users/ccove/JunkyardDogs/Unity/AssetBundles/Android/art

@@ -89,6 +89,19 @@ public class ServiceManager : MonoBehaviour {
         _serviceLookup.TryGetValue(typeof(T), out service);
         return service != null;
     }
+    
+    public bool ServiceExists<T>() where T : Service
+    {
+        bool serviceExists = ContainsService<T>();
+
+        if (!serviceExists)
+        {
+            serviceExists = FetchExistingService<T>() != null;
+        }
+        
+        return serviceExists;
+    }
+
 
     public T GetService<T>() where T:Service
     {
@@ -108,8 +121,8 @@ public class ServiceManager : MonoBehaviour {
 
         return (T)service;
     }
-    
-    private T FetchServiceDependancy<T>() where T : Service
+
+    private T FetchExistingService<T>() where T : Service
     {
         T service = null;
         ServiceManager[] serviceManagers = FindObjectsOfType<ServiceManager>();
@@ -122,6 +135,13 @@ public class ServiceManager : MonoBehaviour {
                 break;
             }
         }
+
+        return service;
+    }
+    
+    private T FetchServiceDependancy<T>() where T : Service
+    {
+        T service = FetchExistingService<T>();
 
         if (!service)
         {

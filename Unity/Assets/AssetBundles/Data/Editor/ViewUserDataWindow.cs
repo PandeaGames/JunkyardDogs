@@ -69,7 +69,7 @@ public class ViewUserDataWindow : EditorWindow
 
         if (nationalityReference != null && nationality == null)
         {
-            nationality = nationalityReference.Load<Nationality>();
+            //nationality = nationalityReference.Load<Nationality>();
         }
 
         user.UID = EditorGUI.TextField(EditorGUILayout.GetControlRect(), new GUIContent("UID"), _user.UID);
@@ -84,7 +84,7 @@ public class ViewUserDataWindow : EditorWindow
 
             if (component.SpecificationReference.Asset == null)
             {
-                specification = component.SpecificationReference.Load<Specification>();
+                //specification = component.SpecificationReference.Load<Specification>();
             }
 
             Type specType = specification.GetType();

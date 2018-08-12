@@ -19,6 +19,7 @@ public class ScreenController : MonoBehaviour
 
     public event ScreenControllerDelegate OnTransitionComplete;
     public event Action OnExit;
+    public event Action OnBack;
 
     protected WindowController _window;
     protected Config _config;
@@ -57,7 +58,7 @@ public class ScreenController : MonoBehaviour
         }
     }
 
-    public void Transition(ScreenTransition transition)
+    public virtual void Transition(ScreenTransition transition)
     {
         StartCoroutine(DelayedTransitionComplete());
     }
@@ -84,5 +85,11 @@ public class ScreenController : MonoBehaviour
     {
         if (OnExit != null)
             OnExit();
+    }
+    
+    protected void Back()
+    {
+        if (OnBack != null)
+            OnBack();
     }
 }

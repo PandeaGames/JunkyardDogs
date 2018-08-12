@@ -54,13 +54,14 @@ public class JunkController : MonoBehaviour {
 
     private void OnLoadComplete()
     {
-        Component component = ManufacturerUtils.BuildComponent(_specificationCatalogue.Manufacturer, _product);
+        ManufacturerUtils.BuildComponent(_specificationCatalogue.Manufacturer, _product, (component) =>
+        {
+            TakeJunkDialog.TakeJunkDialogConfig config = ScriptableObject.CreateInstance<TakeJunkDialog.TakeJunkDialogConfig>();
 
-        TakeJunkDialog.TakeJunkDialogConfig config = ScriptableObject.CreateInstance<TakeJunkDialog.TakeJunkDialogConfig>();
+            config.Component = component;
 
-        config.Component = component;
-
-        _dialogService.DisplayDialog<TakeJunkDialog>(config, SelectComponent);
+            _dialogService.DisplayDialog<TakeJunkDialog>(config, SelectComponent);
+        });
     }
 
     private void OnLoadFail()

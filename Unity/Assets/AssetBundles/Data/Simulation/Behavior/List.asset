@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eba0c660f2ee447f839ec2ea62cb54ff, type: 3}
+  m_Name: List
+  m_EditorClassIdentifier: 
+  _list:
+  - _guid: c2a57ede4f2dda34dacd24289c1e2c18
+    _path: Assets/AssetBundles/Data/Simulation/Behavior/AttackFront.asset
+  - _guid: 5f534ae4e47532042814bc1d0227c7a3
+    _path: Assets/AssetBundles/Data/Simulation/Behavior/AttackLeft.asset
+  - _guid: a8ba1bd81ad75524dbcd08c3f3174eab
+    _path: Assets/AssetBundles/Data/Simulation/Behavior/AttackRight.asset
+  - _guid: 73ffa02c253beda4e8c3423e925221e3
+    _path: Assets/AssetBundles/Data/Simulation/Behavior/AttackTop.asset
+  - _guid: fb48eebe053ebff458e37173970408bf
+    _path: Assets/AssetBundles/Data/Simulation/Behavior/MoveBack.asset
+  - _guid: 5b0af0d916d990a4a90306a8a85e08c8
+    _path: Assets/AssetBundles/Data/Simulation/Behavior/MoveLeft.asset
+  - _guid: 1285a406565f4934d87c5f6d481bd8e5
+    _path: Assets/AssetBundles/Data/Simulation/Behavior/MoveRight.asset
+  - _guid: d0e0a9b1297c9ff4aae4b8d0098b2643
+    _path: Assets/AssetBundles/Data/Simulation/Behavior/MoveUp.asset

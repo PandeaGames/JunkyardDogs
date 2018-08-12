@@ -18,7 +18,7 @@ namespace JunkyardDogs.Components
 
         public Bot()
         {
-
+            Agent = new Agent();
         }
 
         public Bot(Chassis chassis)

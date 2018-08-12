@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using JunkyardDogs.Components;
 using JunkyardDogs.Specifications;
 using Chassis = JunkyardDogs.Components.Chassis;
+using Material = UnityEngine.Material;
 
 public class BotRenderer : MonoBehaviour
 {
@@ -24,7 +25,11 @@ public class BotRenderer : MonoBehaviour
         RenderArmament(bot, Chassis.ArmamentLocation.Top, componentFactory, chassis, botAvatar, materials, missingComponentMaterial);
 
         Renderer renderer = transform.GetChild(botAvatar.Frame.transform.GetSiblingIndex()).GetComponent<Renderer>();
-        renderer.material = materials.GetAsset(bot.Chassis.Material.Asset);
+
+        bot.Chassis.Material.LoadAsync<ScriptableObject>((asset, reference) =>
+        {
+            renderer.material = materials.GetAsset(asset);
+        }, () => { });
     }
 
     private void RenderArmament(Bot bot, Chassis.ArmamentLocation location, PrefabFactory componentFactory, Chassis chasiss, BotAvatar botAvatar, MaterialFactory materials, UnityEngine.Material missingComponentMaterial)
@@ -90,7 +95,10 @@ public class BotRenderer : MonoBehaviour
             if(hasPlate)
             {
                 JunkyardDogs.Components.Plate plateComponent = plates[i];
-                plateRenderer.material = materials.GetAsset(plateComponent.Material.Asset);
+                plateComponent.Material.LoadAsync<ScriptableObject>((asset, reference) =>
+                {
+                    plateRenderer.material = materials.GetAsset(asset);
+                }, () => { });
             }
             else
             {

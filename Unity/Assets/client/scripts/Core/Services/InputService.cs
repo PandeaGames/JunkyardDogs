@@ -81,7 +81,7 @@ public class InputService : Service
             pos.z = 10;
             HandlePointerAction(Input.mousePosition, OnPointerMove);
         }
-
+        
         if (Input.GetMouseButtonDown(0) && !_pointerDown)
         {
             Debug.Log("DOWN");
