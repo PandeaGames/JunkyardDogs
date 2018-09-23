@@ -30,22 +30,7 @@ namespace JunkyardDogs.Simulation.Agent
         {
             int objectsToLoad = 0;
             bool hasError = false;
-
-            Action<ScriptableObject, Data.WeakReference> onInternalAssetLoadSuccess = (so,  refernce) =>
-            {
-                if (--objectsToLoad <= 0)
-                {
-                    if (hasError)
-                    {
-                        onLoadFailed();
-                    }
-                    else
-                    {
-                        onLoadSuccess();
-                    }
-                }
-            };
-
+            
             Action onInternalLoadSuccess = () =>
             {
                 if (--objectsToLoad <= 0)
@@ -69,6 +54,11 @@ namespace JunkyardDogs.Simulation.Agent
                 {
                     onLoadFailed();
                 }
+            };
+            
+            Action<ScriptableObject, Data.WeakReference> onInternalAssetLoadSuccess = (so,  refernce) =>
+            {
+                onInternalLoadSuccess();
             };
 
             if(StateWeakReference != null)

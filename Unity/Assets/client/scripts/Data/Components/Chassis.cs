@@ -64,6 +64,72 @@ namespace JunkyardDogs.Components
             TopPlates = new List<Plate>();
             BottomPlates = new List<Plate>();
         }
+        
+        public override void Dismantle(Inventory inventory)
+        {
+            base.Dismantle(inventory);
+            
+            FrontPlates.ForEach((plate) =>
+            {
+                inventory.AddComponent(plate);
+            });
+            
+            LeftPlates.ForEach((plate) =>
+            {
+                inventory.AddComponent(plate);
+            });
+            
+            RightPlates.ForEach((plate) =>
+            {
+                inventory.AddComponent(plate);
+            });
+            
+            BackPlates.ForEach((plate) =>
+            {
+                inventory.AddComponent(plate);
+            });
+            
+            TopPlates.ForEach((plate) =>
+            {
+                inventory.AddComponent(plate);
+            });
+            
+            BottomPlates.ForEach((plate) =>
+            {
+                inventory.AddComponent(plate);
+            });
+            
+            FrontPlates.Clear();
+            LeftPlates.Clear();
+            RightPlates.Clear();
+            BackPlates.Clear();
+            TopPlates.Clear();
+            BottomPlates.Clear();
+
+            if (TopArmament != null)
+            {
+                TopArmament.Dismantle(inventory);
+                TopArmament = null;
+            }
+            
+            if (FrontArmament != null)
+            {
+                FrontArmament.Dismantle(inventory);
+                FrontArmament = null;
+            }
+            
+            if (LeftArmament != null)
+            {
+                LeftArmament.Dismantle(inventory);
+                LeftArmament = null;
+            }
+            
+            if (RightArmament != null)
+            {
+                RightArmament.Dismantle(inventory);
+                RightArmament = null;
+            }
+        }
 
         public override void LoadAsync(Action onLoadSuccess, Action onLoadFailed)
         {

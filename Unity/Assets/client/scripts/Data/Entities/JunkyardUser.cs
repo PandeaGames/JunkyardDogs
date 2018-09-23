@@ -17,6 +17,7 @@ public class JunkyardUser : User
 
     public int Cash { get { return _cash; } set { _cash = value; } }
     public Competitor Competitor { get { return _competitor; } set { _competitor = value; } }
+    public Tournaments Tournaments { get; set; }
 
     public void AddComponent(Component component)
     {
@@ -26,5 +27,6 @@ public class JunkyardUser : User
     public JunkyardUser()
     {
         Competitor = new Competitor();
+        Tournaments = new Tournaments();
     }
 }

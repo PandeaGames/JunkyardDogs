@@ -66,10 +66,11 @@ public class EditBehaviourScreen : ScreenController
         {
             _editBehaviourConfig.Builder.Bot.Agent.States.Add(new AgentState());
         }
-        
+
+        int stateNumber = 0;
         _editBehaviourConfig.Builder.Bot.Agent.States.ForEach((state) =>
         {
-            options.Add(new Dropdown.OptionData(state.ToString()));
+            options.Add(new Dropdown.OptionData(state.ToString() + stateNumber++));
         });
         
         _statesDropdown.AddOptions(options);

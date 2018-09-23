@@ -3,7 +3,7 @@ using Polenter.Serialization;
 using AssetBundles;
 using System;
 using System.Collections;
-
+using UnityEngine.UI;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -90,21 +90,28 @@ namespace Data
 
             if (string.IsNullOrEmpty(Path))
             {
-                onComplete(null, this);
+                TaskProvider.Instance.DelayedAction(() =>
+                {
+                    _loaded = true;
+
+                    if (onComplete != null)
+                        onComplete(null, this);
+                });
+                
                 return;
             }
 
             // Load asset from assetBundle.
             string bundleName = AssetBundleUtils.GetBundleNameFromPath(Path);
             string fileName = System.IO.Path.GetFileNameWithoutExtension(Path);
-            AssetBundleLoadAssetOperation request = AssetBundleManager.LoadAssetAsync(bundleName, fileName, typeof(ScriptableObject));
+            AssetBundleLoadAssetOperation request = AssetBundleManager.LoadAssetAsync(bundleName, fileName, typeof(T));
 
             if (request == null)
                 return;
 
             TaskProvider.Instance.RunTask(request, () =>
             {
-                _cache = request.GetAsset<UnityEngine.Object>() as T;
+                _cache = request.GetAsset<T>();
                 _loaded = true;
 
                 if (onComplete != null)

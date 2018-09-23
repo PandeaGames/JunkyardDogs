@@ -39,7 +39,7 @@ public class ServiceManager : MonoBehaviour {
         }
 
         //If we are calling start 2 times, fail out
-            if (_isRunning)
+         if (_isRunning)
         {
             Debug.LogWarning("Tried to Start ServiceManager 2 times.");
             return;

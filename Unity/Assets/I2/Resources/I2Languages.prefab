@@ -188,6 +188,26 @@ MonoBehaviour:
     - 
     - 
     Flags: 0000
+  - Term: UI.dismantle
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - Dismantle
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: challlenge
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - Challenge
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
   mLanguages:
   - Name: German
     Code: de

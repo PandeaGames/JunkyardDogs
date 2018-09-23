@@ -154,6 +154,8 @@ public class BotBuilderDisplay : MonoBehaviour
         _dialogService.DisplayDialog<ChooseFromInventoryDialog>(dialogConfig, (Dialog.Response response) =>
         {
             var choice = response as ChooseFromInventoryDialog.ChooseFromInventoryDialogResponse;
+            if (choice == null)
+                return;
             _botBuilder.SetPlate(choice.Component as JunkyardDogs.Components.Plate, botAvatar.GetPlateLocation(plateObject), botAvatar.GetPlateIndex(plateObject));
             _junkardUserService.Save();
             botRenderer.Render(_botBuilder.Bot, _componentFactory, _scriptableObjectFactory, _materialFactory, _missingComponentMaterial);

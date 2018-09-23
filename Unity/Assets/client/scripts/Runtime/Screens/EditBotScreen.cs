@@ -21,6 +21,9 @@ public class EditBotScreen : ScreenController
     [SerializeField]
     private Button _editBehaviourButton;
 
+    [SerializeField]
+    private Button _dismantleButton;
+
     private JunkyardUserService _junkardUserService;
     private DialogService _dialogService;
     private EditBotScreenConfig _editBotScreenConfig;
@@ -36,6 +39,7 @@ public class EditBotScreen : ScreenController
         _dialogService = _serviceManager.GetService<DialogService>();
         _exitButton.onClick.AddListener(() => _editBotScreenConfig.Garage.GoToLineup());
         _editBehaviourButton.onClick.AddListener(OnEditBehaviourButtonClicked);
+        _dismantleButton.onClick.AddListener(_editBotScreenConfig.Garage.DismantleSelected);
     }
 
     private void OnEditBehaviourButtonClicked()

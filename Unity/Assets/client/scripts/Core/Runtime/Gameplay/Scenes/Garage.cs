@@ -57,6 +57,27 @@ public class Garage : StateMachine<GarageStates>
         base.Start();
     }
 
+    public void DismantleSelected()
+    {
+        if (_selectedBuilder != null)
+        {
+            if (_currentState == GarageStates.BotFocus)
+            {
+                SetState(GarageStates.Lineup);
+            }
+            
+            _selectedBuilder.BotBuilder.Dismantle();
+            _builders.Remove(_selectedBuilder);
+            GameObject.Destroy(_selectedBuilder.gameObject);
+            if (_builders.Count > 0)
+            {
+                OnSelectBuilder(_builders[0]);
+            }
+            
+            _junkardUserService.Save();
+        }
+    }
+
     protected override void LeaveState(GarageStates state)
     {
         switch(state)

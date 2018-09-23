@@ -57,5 +57,10 @@ namespace JunkyardDogs.Components
         {
             return _isLoaded;
         }
+
+        public virtual void Dismantle(Inventory inventory)
+        {
+            inventory.AddComponent(this);
+        }
     }
 }

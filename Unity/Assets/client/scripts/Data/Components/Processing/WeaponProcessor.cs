@@ -16,6 +16,17 @@ namespace JunkyardDogs.Components
 
         }
 
+        public override void Dismantle(Inventory inventory)
+        {
+            base.Dismantle(inventory);
+
+            if (Weapon != null)
+            {
+                Weapon.Dismantle(inventory);
+                Weapon = null;
+            }
+        }
+
         public override void LoadAsync(Action onLoadSuccess, Action onLoadFailed)
         {
             int objectsToLoad = 0;

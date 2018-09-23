@@ -1,0 +1,21 @@
+ManifestFileVersion: 0
+CRC: 1022651516
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 3ce6934175c549b09b8b7dae9aab4928
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 21f0dc8ebad690f009368069428e0a1a
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+Assets:
+- Assets/AssetBundles/Art/Nationality/Flags/2560_1536/kr.png
+- Assets/AssetBundles/Art/Nationality/Flags/2560_1536/ca.png
+- Assets/AssetBundles/Art/Components/Icons/GenericComponentIcon.png
+- Assets/AssetBundles/Art/Nationality/Flags/2560_1536/de.png
+Dependencies: []

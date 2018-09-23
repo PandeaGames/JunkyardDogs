@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 2100013419
+CRC: 3626972725
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: ced5fdd58eae130906fb905ac8d959c9
+    Hash: fc78de617c6a57c33010ec3b97a73937
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 52deb57fdee625ebf9e1ae206c0f649e
+    Hash: 328e1dec34a10242fb23698f5b6368ca
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -42,6 +42,8 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 - Class: 114
+  Script: {fileID: 1741964061, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
   Script: {fileID: -405508275, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 - Class: 114
   Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
@@ -49,6 +51,8 @@ ClassTypes:
   Script: {fileID: 1679637790, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 - Class: 114
   Script: {fileID: -1200242548, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: -146154839, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 - Class: 114
   Script: {fileID: 1367256648, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 - Class: 114
@@ -64,9 +68,15 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: 2bc383b2da7c72946a114ca2612ed7bf, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: 0cd35cc2af173254bb7ea8e14875bdf9, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: 9ec294d2fa4e34a419e6f9a3cbc2ce2a, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: eb4f58339cb9499fafb3ba9bc4567fd9, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: 19c408e3f064e184fa5e0d9862ac4d8b, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 5772a094857f41edb95db54e192aec8f, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: b1d4f20500189514a9ea47afb5cfb85f, type: 3}
 - Class: 114
@@ -82,6 +92,10 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: 56f3ff764eb213643bf5a37c1a76f76e, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: 728df196fad0488da12604098ca16311, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: ad3f9237b50071741a0c977f58015074, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: 2c569057ac781074b8ae652816158b37, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 4616b887cfd7d074b9479c1aa29e691a, type: 3}
@@ -92,7 +106,11 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: 344445a89b4f74a0e9a0a766903df87e, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: 9e29bba802af4f02b84ead460b4343be, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: fe60c5f819838e2409f2638a7dd4da28, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 876302494e2244cc88264d649be53ee5, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 2783ee59a0878da43a7dd161ba94d41c, type: 3}
 - Class: 114
@@ -127,8 +145,6 @@ ClassTypes:
   Script: {fileID: 11500000, guid: af24afde2bf74f1c975bc94acbb8aede, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 2ca0e29f4c4aa8d4982fffef9a051a76, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: eb4f58339cb9499fafb3ba9bc4567fd9, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 128
@@ -140,6 +156,7 @@ ClassTypes:
 - Class: 224
   Script: {instanceID: 0}
 Assets:
+- Assets/AssetBundles/Data/Tournaments/Tournaments/MooseChallenge.asset
 - Assets/AssetBundles/Data/Simulation/Knowledge/Aggressive.asset
 - Assets/AssetBundles/Data/Products/Skylabs/Weapons/Deagle.asset
 - Assets/AssetBundles/Data/Simulation/Knowledge/Natural.asset
@@ -175,6 +192,7 @@ Assets:
 - Assets/AssetBundles/Data/Simulation/Directives/DirectiveAttackRight.asset
 - Assets/AssetBundles/Data/Products/Skylabs/Chassis/Mamoth.asset
 - Assets/AssetBundles/Data/Products/Skylabs/Skylabs.asset
+- Assets/AssetBundles/Data/Tournaments/Tournaments/MooseHerd.asset
 - Assets/AssetBundles/Data/Products/Skylabs/Weapons/Pulse.asset
 - Assets/AssetBundles/Data/Simulation/Behavior/AttackTop.asset
 - Assets/AssetBundles/Data/Products/Skylabs/Weapons/FrickinLaser.asset

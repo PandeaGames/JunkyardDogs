@@ -16,6 +16,9 @@ public class GarageScreen : ScreenController
 
     [SerializeField]
     private Button _newBotButton;
+    
+    [SerializeField]
+    private Button _dismantleButton;
 
     private JunkyardUserService _junkardUserService;
     private DialogService _dialogService;
@@ -35,6 +38,7 @@ public class GarageScreen : ScreenController
         _user = _junkardUserService.Load();
 
         _newBotButton.onClick.AddListener(OnNewBotClicked);
+        _dismantleButton.onClick.AddListener(_garage.DismantleSelected);
     }
 
     private void OnNewBotClicked()

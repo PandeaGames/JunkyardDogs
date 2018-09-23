@@ -13,15 +13,14 @@ public class TaskProvider : MonoBehaviour
         Instance = this;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void RunTask( IEnumerator task, Action onComplete )
     {
         StartCoroutine(Run(task, onComplete));
+    }
+    
+    public void DelayedAction(Action onComplete )
+    {
+        StartCoroutine(Run(NullObjectsLoaded(), onComplete));
     }
 
     private IEnumerator Run(IEnumerator task, Action onComplete)
@@ -30,5 +29,10 @@ public class TaskProvider : MonoBehaviour
 
         if (onComplete != null)
             onComplete();
+    }
+    
+    private IEnumerator NullObjectsLoaded()
+    {
+        yield return 0;
     }
 }

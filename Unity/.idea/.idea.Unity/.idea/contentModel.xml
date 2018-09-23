@@ -174,7 +174,32 @@
               <e p="StateTransition.cs" t="Include" />
             </e>
             <e p="Blueprints" t="Include">
+              <e p="AgentBlueprint.cs" t="Include" />
+              <e p="AgentBlueprintData.cs" t="Include" />
               <e p="Blueprint.cs" t="Include" />
+              <e p="BlueprintBase.cs" t="Include" />
+              <e p="BlueprintData.cs" t="Include" />
+              <e p="BotBlueprint.cs" t="Include" />
+              <e p="BotBlueprintData.cs" t="Include" />
+              <e p="ChassisBlueprint.cs" t="Include" />
+              <e p="ChassisBlueprintData.cs" t="Include" />
+              <e p="CompetitorBlueprint.cs" t="Include" />
+              <e p="CompetitorBlueprintData.cs" t="Include" />
+              <e p="ComponentBlueprint.cs" t="Include" />
+              <e p="ComponentBlueprintData.cs" t="Include" />
+              <e p="Editor" t="Include">
+                <e p="BlueprintCustomDrawer.cs" t="Include" />
+              </e>
+              <e p="MotherboardBlueprint.cs" t="Include" />
+              <e p="MotherboardBlueprintData.cs" t="Include" />
+              <e p="PhysicalComponentBlueprint.cs" t="Include" />
+              <e p="PhysicalComponentData.cs" t="Include" />
+              <e p="PlateBlueprint.cs" t="Include" />
+              <e p="PlateBlueprintData.cs" t="Include" />
+              <e p="WeaponBlueprint.cs" t="Include" />
+              <e p="WeaponBlueprintData.cs" t="Include" />
+              <e p="WeaponProcessorBlueprint.cs" t="Include" />
+              <e p="WeaponProcessorBlueprintData.cs" t="Include" />
             </e>
             <e p="Bot.cs" t="Include" />
             <e p="BotAvatar.cs" t="Include" />
@@ -201,15 +226,21 @@
             </e>
             <e p="Entities" t="Include">
               <e p="Competitor.cs" t="Include" />
+              <e p="CompetitorProvider.cs" t="Include" />
+              <e p="DataCompetitorProvider.cs" t="Include" />
               <e p="Inventory.cs" t="Include" />
               <e p="JunkyardUser.cs" t="Include" />
               <e p="Record.cs" t="Include" />
+              <e p="StageState.cs" t="Include" />
+              <e p="Tournaments.cs" t="Include" />
+              <e p="TournamentState.cs" t="Include" />
             </e>
             <e p="Gameplay" t="Include">
               <e p="Nationality.cs" t="Include" />
               <e p="SpecificationCatalogue.cs" t="Include" />
             </e>
             <e p="NationList.cs" t="Include" />
+            <e p="NewBehaviourScript.cs" t="Include" />
             <e p="Specifications" t="Include">
               <e p="Chassis.cs" t="Include" />
               <e p="Effect.cs" t="Include" />
@@ -254,6 +285,23 @@
                 <e p="Weapon.cs" t="Include" />
               </e>
             </e>
+            <e p="Tournaments" t="Include">
+              <e p="Formats" t="Include">
+                <e p="EliminationFormat.cs" t="Include" />
+                <e p="TournamentFormat.cs" t="Include" />
+              </e>
+              <e p="Results" t="Include">
+                <e p="SingleResult.cs" t="Include" />
+                <e p="TournamentResult.cs" t="Include" />
+              </e>
+              <e p="Seeding" t="Include">
+                <e p="RandomSeeding.cs" t="Include" />
+                <e p="TournamentSeeding.cs" t="Include" />
+              </e>
+              <e p="Tournament.cs" t="Include" />
+              <e p="TournamentFormat.cs" t="Include" />
+              <e p="TournamentGroup.cs" t="Include" />
+            </e>
             <e p="WeakReferencesJunkyardDogs.cs" t="Include" />
           </e>
           <e p="Runtime" t="Include">
@@ -262,10 +310,14 @@
               <e p="ComponentRenderer.cs" t="Include" />
               <e p="PlateRenderer.cs" t="Include" />
             </e>
+            <e p="Controllers" t="Include">
+              <e p="MatchTest.cs" t="Include" />
+            </e>
             <e p="Dialogs" t="Include">
               <e p="ChooseActionDialog.cs" t="Include" />
               <e p="ChooseFromInventoryDialog.cs" t="Include" />
               <e p="ComponentMessageDialog.cs" t="Include" />
+              <e p="EventDialog.cs" t="Include" />
               <e p="TakeJunkDialog.cs" t="Include" />
             </e>
             <e p="GameBootstrap.cs" t="Include" />
@@ -279,6 +331,9 @@
               <e p="Junkyard" t="Include">
                 <e p="Junk.cs" t="Include" />
                 <e p="JunkController.cs" t="Include" />
+              </e>
+              <e p="UI" t="Include">
+                <e p="EventButton.cs" t="Include" />
               </e>
             </e>
             <e p="Screens" t="Include">

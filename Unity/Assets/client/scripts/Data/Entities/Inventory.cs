@@ -60,6 +60,13 @@ public class Inventory : IEnumerable
 
     public void DismantleBot(Bot bot)
     {
+        if (!Bots.Contains(bot))
+        {
+            return;
+        }
+        
+        Bots.Remove(bot);
+        bot.Chassis.Dismantle(this);
     }
 
 #if UNITY_EDITOR

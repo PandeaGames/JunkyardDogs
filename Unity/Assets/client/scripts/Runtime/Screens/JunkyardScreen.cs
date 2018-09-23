@@ -33,6 +33,6 @@ public class JunkyardScreen : ScreenController {
 
     private void OnReturnPressed()
     {
-
+        Back();
     }
 }

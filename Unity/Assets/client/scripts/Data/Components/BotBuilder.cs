@@ -57,6 +57,11 @@ namespace JunkyardDogs.Components
             SetupProgessorBuilder(bot, inventory, Chassis.ArmamentLocation.Top);
         }
 
+        public void Dismantle()
+        {
+            _inventory.DismantleBot(_bot);
+        }
+
         private void SetupProgessorBuilder(Bot bot, Inventory inventory, Chassis.ArmamentLocation location)
         {
             WeaponProcessor processor = bot.Chassis.GetWeaponProcessor(location);
