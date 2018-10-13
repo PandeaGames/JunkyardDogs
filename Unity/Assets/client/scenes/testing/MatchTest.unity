@@ -502,6 +502,7 @@ MonoBehaviour:
   _serviceManager: {fileID: 1301531656}
   _userBotIndex: 0
   _competitor: {fileID: 11400000, guid: c35545fbdca035141886f385e70a1091, type: 2}
+  _realTime: 0
   _state:
     _guid: 73eeb1a3ba11d3d439dae0512e62bbfe
     _path: Assets/AssetBundles/Data/Simulation/Knowledge/Evassive.asset

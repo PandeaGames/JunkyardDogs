@@ -1,6 +1,8 @@
-﻿using JunkyardDogs.Components;
+﻿using System.Collections;
+using JunkyardDogs.Components;
 using JunkyardDogs.Simulation;
 using UnityEngine;
+using UnityEngine.Assertions.Must;
 using WeakReference = Data.WeakReference;
 
 public class MatchTest : MonoBehaviour
@@ -13,12 +15,16 @@ public class MatchTest : MonoBehaviour
 
     [SerializeField]
     public CompetitorBlueprintData _competitor;
+
+    [SerializeField] 
+    public bool _realTime;
     
     [SerializeField, WeakReference(typeof(JunkyardDogs.Simulation.Knowledge.State))]
     private WeakReference _state;
 
     private JunkyardUserService _userService;
     private SimulationService _simulationService;
+    private Engagement _engagement;
 
     private void Start()
     {
@@ -29,25 +35,26 @@ public class MatchTest : MonoBehaviour
 
          (_competitor.GetBlueprint() as CompetitorBlueprint).Generate((opponent) =>
         {
-            Engagement engagement = new Engagement();
+            _engagement = new Engagement();
 
-            engagement.BlueCombatent = user.Competitor.Inventory.Bots[_userBotIndex];
-            engagement.RedCombatent = opponent.Inventory.Bots[0];
+            _engagement.BlueCombatent = user.Competitor.Inventory.Bots[_userBotIndex];
+            _engagement.RedCombatent = opponent.Inventory.Bots[0];
+            _engagement.SetTimeLimit(180);//3 minutes
 
-            PrepareForBattle(engagement.BlueCombatent);
+            PrepareForBattle(_engagement.BlueCombatent);
             
-            engagement.BlueCombatent.LoadAsync(() => engagement.RedCombatent.LoadAsync(() =>
+            _engagement.BlueCombatent.LoadAsync(() => _engagement.RedCombatent.LoadAsync(() =>
             {
-                _simulationService.SetEngagement(engagement);
-                _simulationService.StartSimulation();
+                _simulationService.SetEngagement(_engagement);
+                _simulationService.StartSimulation(_realTime);
+
+                StartCoroutine(EndOfBattleCoroutine());
+
             }, OnError), OnError);
             
             
         }, () => {
 });
-        
-        
-        
     }
 
     private void OnError()
@@ -59,4 +66,22 @@ public class MatchTest : MonoBehaviour
     {
         bot.Agent.States.ForEach((state) => { state.StateWeakReference = _state; });
     }
+
+    private IEnumerator EndOfBattleCoroutine()
+    {
+        while (_engagement.Outcome == null)
+        {
+            yield return 0;
+        }
+        
+        if (_engagement.Outcome.Winner == _engagement.RedCombatent)
+        {
+            Debug.Log("WINNER: RED");
+        }
+        else
+        {
+            Debug.Log("WINNER: Blue");
+        }
+    }
+    
 }

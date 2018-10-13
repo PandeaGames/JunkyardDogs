@@ -8,9 +8,4 @@ public class LineupCameraAgent : SimpleFollowAgent
         base.Update();
         transform.LookAt(_target);
     }
-
-    public override Quaternion GetCameraRotation()
-    {
-        return transform.rotation;
-    }
 }

@@ -8,6 +8,8 @@ namespace JunkyardDogs.Simulation
     [Serializable]
     public class Engagement
     {
+        public SimulationService.Outcome Outcome { get; set; }
+        
         [SerializeField]
         private Bot _redCombatent;
 
@@ -44,6 +46,11 @@ namespace JunkyardDogs.Simulation
                 return _seed;
             }
         }
+
+        public void SetTimeLimit(float timeLimit)
+        {
+            _rules.MatchTimeLimit = timeLimit;
+        }
     }
 
     public enum Initiator
@@ -56,5 +63,6 @@ namespace JunkyardDogs.Simulation
     public struct RulesOfEngagement
     {
         public Initiator initiator;
+        public float MatchTimeLimit;
     }
 }

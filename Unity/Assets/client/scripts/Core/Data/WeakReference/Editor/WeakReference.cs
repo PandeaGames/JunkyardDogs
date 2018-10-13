@@ -25,7 +25,8 @@ public class WeakReferenceAttribuiteEditor : PropertyDrawer
         SerializedProperty guid = property.FindPropertyRelative("_guid");
         SerializedProperty path = property.FindPropertyRelative("_path");
 
-        if (!string.IsNullOrEmpty(path.stringValue) && objectReference == null)
+        
+        if (path != null && !string.IsNullOrEmpty(path.stringValue) && objectReference == null)
         {
             objectReference = AssetDatabase.LoadAssetAtPath<ScriptableObject>(path.stringValue);
             _objectTable.Add(property, objectReference);

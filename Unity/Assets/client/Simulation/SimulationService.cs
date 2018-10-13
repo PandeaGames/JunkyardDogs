@@ -7,6 +7,7 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using UnityEngine;
 using JunkyardDogs.Simulation.Agent;
 using JunkyardDogs.Simulation.Knowledge.Information;
@@ -18,14 +19,13 @@ using Bot = JunkyardDogs.Components.Bot;
 namespace JunkyardDogs.Simulation
 {
     public class SimulationService : Service
-    {
+    {   
         public const float SimuationStep = 1f / 60f;
         private float VariableSimulationStep { get { return 1f / (60f * _speed); } }
         private const double MovementTimeLength = 1;
 
         private Engagement _engagement;
         private RulesOfEngagement _rules;
-        private Outcome _outcome;
 
         [SerializeField][Range(0, 1f)]
         private float _speed = 1f;
@@ -35,6 +35,10 @@ namespace JunkyardDogs.Simulation
         private int _ticks;
 
         private Dictionary<Bot, SimulatedBot> _simulatedBots;
+        public Dictionary<Bot, SimulatedBot> SimulatedBots
+        {
+            get { return _simulatedBots; }
+        }
 
         private List<SimulatedObject> _objectList;
         private List<SimulatedObject> _removeBuffer;
@@ -66,7 +70,7 @@ namespace JunkyardDogs.Simulation
             _simulatedBots[_blueBot].OnBotDestroyed += OnBotDestroyed;
         }
 
-        public void StartSimulation()
+        public void StartSimulation(bool realTime = true)
         {
             StopSimulation();
 
@@ -78,7 +82,14 @@ namespace JunkyardDogs.Simulation
             _simulatedBots[_redBot].body.position.Set(5, 0);
             _simulatedBots[_blueBot].body.position.Set(-5, 0);
 
-            _simulationCoroutine = StartCoroutine(SimulationCoroutine());
+            if (realTime)
+            {
+                _simulationCoroutine = StartCoroutine(SimulationCoroutine());
+            }
+            else
+            {
+                SimulateEntireMatch();
+            }
         }
 
         public void StopSimulation()
@@ -91,10 +102,18 @@ namespace JunkyardDogs.Simulation
         {
             _speed = speed;
         }
+        
+        private void SimulateEntireMatch()
+        {
+            while (_engagement.Outcome == null)
+            {
+                Step(SimuationStep);
+            }
+        }
 
         private IEnumerator SimulationCoroutine()
         {
-            while (_outcome == null)
+            while (_engagement.Outcome == null)
             {
                 //TODO: Figure out how to keep simlulation fixed step, 
                 //while also supporting positional interpolation for the sake
@@ -110,6 +129,7 @@ namespace JunkyardDogs.Simulation
                 Step(SimuationStep * _speed);
             }
         }
+        
 
         private double SimulationTime()
         {
@@ -130,6 +150,16 @@ namespace JunkyardDogs.Simulation
             SimulateBot(_simulatedBots[_redBot], _simulatedBots[_blueBot]);
             SimulateBot(_simulatedBots[_blueBot], _simulatedBots[_redBot]);
             SimulateEnvironment();
+            
+            if (_ticks * SimuationStep > _engagement.Rules.MatchTimeLimit)
+            {
+                int winnerChoice = Random.Range(0, 1);
+                
+                Bot winner = winnerChoice == 0 ? _redBot:_blueBot;
+                Bot loser = _redBot == winner ? _blueBot : _redBot;
+
+                _engagement.Outcome = new Outcome(winner, loser, _ticks * SimuationStep);
+            }
         }
 
         public void OnDrawGizmos()
@@ -450,7 +480,7 @@ namespace JunkyardDogs.Simulation
                 Bot winner = simulatedBot.Bot;
                 Bot loser = _redBot == winner ? _blueBot : _redBot;
 
-                this._outcome = new Outcome(winner, loser);
+                _engagement.Outcome = new Outcome(winner, loser, _ticks * SimuationStep);
             }
         }
 
@@ -458,8 +488,13 @@ namespace JunkyardDogs.Simulation
         {
             private Bot _winner;
             private Bot _loser;
+            private float _matchLength;
+            
+            public Bot Winner { get { return _winner; } }
+            public Bot Loser { get { return _loser; } }
+            public float MatchLength { get { return _matchLength; } }
 
-            public Outcome(Bot winner, Bot loser)
+            public Outcome(Bot winner, Bot loser, float matchLength)
             {
                 _winner = winner;
                 _loser = loser;

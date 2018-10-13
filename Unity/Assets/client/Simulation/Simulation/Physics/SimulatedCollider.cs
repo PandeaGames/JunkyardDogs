@@ -20,5 +20,10 @@ namespace JunkyardDogs.Simulation.Simulation
         {
 
         }
+
+        public Vector3 PositionToWorld()
+        {
+            return new Vector3(_body.position.x, 0, _body.position.y);
+        }
     }
 }

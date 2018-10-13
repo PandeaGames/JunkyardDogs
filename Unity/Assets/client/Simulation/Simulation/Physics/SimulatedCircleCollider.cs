@@ -16,8 +16,6 @@ namespace JunkyardDogs.Simulation.Simulation
         {
             Gizmos.color = gizmosColor;
 
-
-
             Gizmos.DrawSphere(new Vector3(_body.position.x, 0 ,_body.position.y), radius);
         }
     }

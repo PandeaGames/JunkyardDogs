@@ -41,3 +41,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/client/scenes/screens/EditBotBehaviour.unity
     guid: 32ce806c0db420f4fb2f800651b4b118
+  - enabled: 1
+    path: Assets/client/scenes/gameScenes/Match.unity
+    guid: 57902adbdfc08fb4b8e52c2ee4d4c4aa

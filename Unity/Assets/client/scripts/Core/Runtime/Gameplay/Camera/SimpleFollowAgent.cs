@@ -35,6 +35,6 @@ public class SimpleFollowAgent : CameraAgent
 
     public override Quaternion GetCameraRotation()
     {
-        return new Quaternion();
+        return transform.rotation;
     }
 }
