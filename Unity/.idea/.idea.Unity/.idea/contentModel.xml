@@ -457,6 +457,9 @@
                 <e p="RandomSeeding.cs" t="Include" />
                 <e p="TournamentSeeding.cs" t="Include" />
               </e>
+              <e p="TestData" t="Include">
+                <e p="TournamentTestData.cs" t="Include" />
+              </e>
               <e p="Tournament.cs" t="Include" />
               <e p="TournamentFormat.cs" t="Include" />
               <e p="TournamentGroup.cs" t="Include" />
@@ -470,6 +473,7 @@
               <e p="PlateRenderer.cs" t="Include" />
             </e>
             <e p="Controllers" t="Include">
+              <e p="ChooseUserBotController.cs" t="Include" />
               <e p="MatchController.cs" t="Include" />
               <e p="MatchTest.cs" t="Include" />
               <e p="TournamentController.cs" t="Include" />

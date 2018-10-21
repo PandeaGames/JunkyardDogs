@@ -32,15 +32,26 @@ public class SimpleBotMatchRendering : MonoBehaviour
         _simulationService = _serviceManager.GetService<SimulationService>();
         _simulatedBots = new Dictionary<SimulatedBot, BotRenderer>();
     }
+
+    private void OnDestroy()
+    {
+        foreach (KeyValuePair<SimulatedBot, BotRenderer> simulatedBot in _simulatedBots)
+        {
+            Destroy(simulatedBot.Value.gameObject);
+        }
+        
+        _simulatedBots.Clear();
+    }
     
     private void Update()
     {
-        foreach (KeyValuePair<Bot, SimulatedBot> simulationServiceSimulatedBot in _simulationService.SimulatedBots)
+        foreach (KeyValuePair<BotId, SimulatedBot> simulationServiceSimulatedBot in _simulationService.SimulatedBots)
         {
             if (!_simulatedBots.ContainsKey(simulationServiceSimulatedBot.Value))
             {
+                Bot bot = _simulationService.GetBot(simulationServiceSimulatedBot.Key);
                 GameObject botObject =
-                    Instantiate(_botPrefabFactory.GetAsset(simulationServiceSimulatedBot.Key.Chassis.Specification));
+                    Instantiate(_botPrefabFactory.GetAsset(bot.Chassis.Specification));
                 
                 BotRenderer renderer = botObject.AddComponent<BotRenderer>();
                 _simulatedBots.Add(simulationServiceSimulatedBot.Value, renderer);

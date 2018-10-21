@@ -9,14 +9,6 @@ public class StageState
     {
         Rounds = new List<RoundState>();
     }
-
-    public ResultState GetResult()
-    {
-        if (Rounds.Count > 0)
-            return Rounds[Rounds.Count - 1].Result;
-        
-        return null;
-    }
     
     public RoundState GetCurrentRound()
     {
@@ -43,22 +35,30 @@ public class MatchState
 {
     public Result ParticipantA { get; set; }
     public Result ParticipantB { get; set; }
+    
+    public Result Winner { get; set; }
+    public Result Loser { get; set; }
 
     public MatchState()
     {
         ParticipantA = new Result();
         ParticipantB = new Result();
+        Winner = new Result();
+        Loser = new Result();
+    }
+
+    public bool HasResult()
+    {
+        return Winner.HasResult() && Loser.HasResult();
     }
 }
 
 public class RoundState
 {
     public List<MatchState> Matches { get; set; }
-    public ResultState Result { get; set; }
 
     public RoundState()
     {
-        Result = new ResultState();
         Matches = new List<MatchState>();
     }
     
@@ -82,19 +82,36 @@ public class RoundState
 
     public bool IsComplete()
     {
-        return Result.IsComplete();
+        foreach (MatchState match in Matches)
+        {
+            if (!match.Winner.HasResult())
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
     
     public MatchState GetCurrentMatch()
     {
-        int resultIndex = Result.CurrentResultIndex();
-
-        if (resultIndex == -1)
+        MatchState currentMatch = null;
+        
+        foreach (MatchState match in Matches)
         {
-            return null;
+            if (!match.HasResult())
+            {
+                currentMatch = match;
+                break;
+            }
         }
         
-        return Matches[resultIndex];
+        return currentMatch;
+    }
+
+    public void AddMatch(MatchState match)
+    {
+        Matches.Add(match);
     }
 }
 

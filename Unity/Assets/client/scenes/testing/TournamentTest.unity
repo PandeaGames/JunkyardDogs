@@ -138,7 +138,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 424832436}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 354, y: 228, z: 0}
+  m_LocalPosition: {x: 308.5, y: 223.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1573882840}
@@ -445,17 +445,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf0b0f87e7464ca5bae95124afea2ae9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tournament:
-    _guid: 88efe2d08a1fe734b903249d4363e137
-    _path: Assets/AssetBundles/Data/Tournaments/Tournaments/MooseChallenge.asset
-  _state:
-    _guid: 73eeb1a3ba11d3d439dae0512e62bbfe
-    _path: Assets/AssetBundles/Data/Simulation/Knowledge/Evassive.asset
-  _participants:
-  - _guid: e0c99f6117aca3d40821dcc9f01b3279
-    _path: Assets/AssetBundles/Data/Competitors/Germany/Florian/FlorianParticipation.asset
-  - _guid: 4151cf371d1930b4fb6a67e6635f13c8
-    _path: Assets/AssetBundles/Data/Tournaments/Participants/UserAutoParticipant_bot0.asset
+  _testData: {fileID: 11400000, guid: 069ab874c6fb4894490f10661ce13457, type: 2}
   _tournamentController: {fileID: 1878382276}
 --- !u!1001 &1967321481
 Prefab:
@@ -499,12 +489,12 @@ Prefab:
     - target: {fileID: 224471251949519604, guid: 15e382c51c5374b439231f6c19885e7f,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 354
+      value: 308.5
       objectReference: {fileID: 0}
     - target: {fileID: 224471251949519604, guid: 15e382c51c5374b439231f6c19885e7f,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 228
+      value: 223.5
       objectReference: {fileID: 0}
     - target: {fileID: 114633840190484196, guid: 15e382c51c5374b439231f6c19885e7f,
         type: 2}

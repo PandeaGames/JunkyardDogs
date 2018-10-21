@@ -21,9 +21,10 @@ public class TournamentStage
 		return _format.GenerateState(participants);
 	}
 	
-	public StageState GenerateState(ResultState perviousResult)
+	public StageState GenerateState(StageState lastStage)
 	{
-		return _format.GenerateState(perviousResult);
+		//TODO support multi stage tournaments
+		throw new NotImplementedException();
 	}
 }
 
@@ -52,7 +53,7 @@ public class TournamentFormat : ScriptableObject
 			}
 			else
 			{
-				stageState = stage.GenerateState(state.StageStates[i-1].GetResult());
+				stageState = stage.GenerateState(state.StageStates[state.StageStates.Count - 1]);
 			}
 			
 			state.StageStates.Add(stageState);

@@ -8,5 +8,5 @@ public abstract class StageFormat : ScriptableObject {
     private int _groups = 1;
 
     public abstract StageState GenerateState(int participants);
-    public abstract StageState GenerateState(ResultState perviousResult);
+    public abstract StageState GenerateState(StageState lastStage);
 }

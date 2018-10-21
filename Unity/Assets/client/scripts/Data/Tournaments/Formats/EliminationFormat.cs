@@ -1,7 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Text.RegularExpressions;
+﻿using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 [CreateAssetMenu(menuName = "Tournaments/Formats/EliminationFormat")]
 public class EliminationFormat : StageFormat
@@ -33,35 +32,34 @@ public class EliminationFormat : StageFormat
 
 		if (round.Matches.Count > 1)
 		{
-			GenerateRound(rounds, round.Result);
+			GenerateRound(rounds);
 		}
 	}
 	
-	private void GenerateRound(List<RoundState> rounds, ResultState perviousResult)
+	private void GenerateRound(List<RoundState> rounds)
 	{
+		RoundState lastRound = rounds[rounds.Count - 1];
 		EliminationRoundState round = new EliminationRoundState();
 		rounds.Add(round);
-		EliminationResultState eliminationResults = perviousResult as EliminationResultState;
 
-		for (int i = 0; i < eliminationResults.Winners.Count; i += 2)
+		for (int i = 0; i < lastRound.Matches.Count; i+=2)
 		{
 			MatchState match = new MatchState();
-			match.ParticipantA = eliminationResults.Winners[i];
-			match.ParticipantB = eliminationResults.Winners[i+1];
+			match.ParticipantA = lastRound.Matches[i].Winner;
+			match.ParticipantB = lastRound.Matches[i + 1].Winner;
 			round.AddMatch(match);
 		}
 		
 		if (round.Matches.Count > 1)
 		{
-			GenerateRound(rounds, round.Result);
+			GenerateRound(rounds);
 		}
 	}
     
-	public override StageState GenerateState(ResultState perviousResult)
+	public override StageState GenerateState(StageState lastStage)
 	{
-		EliminationStageState stateState = new EliminationStageState();
-		GenerateRound(stateState.Rounds, perviousResult);
-		return stateState;
+		//TODO support multi stage tournaments
+		throw new NotImplementedException();
 	}
 }
 
@@ -77,21 +75,12 @@ public class EliminationRoundState : RoundState
 {
 	public EliminationRoundState() : base()
 	{
-		Result = new EliminationResultState();
-	}
-
-	public void AddMatch(MatchState match)
-	{
-		Matches.Add(match);
-		
-		(Result as EliminationResultState).Winners.Add(new Result());
-		(Result as EliminationResultState).Losers.Add(new Result());
 	}
 }
 
 public class EliminationResultState : ResultState
 {
-	public EliminationResultState()
+	public EliminationResultState() :base()
 	{
 	}
 }

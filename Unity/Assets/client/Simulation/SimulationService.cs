@@ -18,6 +18,12 @@ using Bot = JunkyardDogs.Components.Bot;
 
 namespace JunkyardDogs.Simulation
 {
+    public enum BotId
+    {
+        Red,
+        Blue
+    }
+    
     public class SimulationService : Service
     {   
         public const float SimuationStep = 1f / 60f;
@@ -34,8 +40,8 @@ namespace JunkyardDogs.Simulation
         private Bot _redBot, _blueBot;
         private int _ticks;
 
-        private Dictionary<Bot, SimulatedBot> _simulatedBots;
-        public Dictionary<Bot, SimulatedBot> SimulatedBots
+        private Dictionary<BotId, SimulatedBot> _simulatedBots;
+        public Dictionary<BotId, SimulatedBot> SimulatedBots
         {
             get { return _simulatedBots; }
         }
@@ -43,11 +49,16 @@ namespace JunkyardDogs.Simulation
         private List<SimulatedObject> _objectList;
         private List<SimulatedObject> _removeBuffer;
 
+        public Bot GetBot(BotId botId)
+        {
+            return botId == BotId.Red ? _engagement.RedCombatent : _engagement.BlueCombatent;
+        }
+
         public override void StartService(ServiceManager serviceManager)
         {
             base.StartService(serviceManager);
 
-            _simulatedBots = new Dictionary<Bot, SimulatedBot>();
+            _simulatedBots = new Dictionary<BotId, SimulatedBot>();
             _objectList = new List<SimulatedObject>();
             _removeBuffer = new List<SimulatedObject>();
         }
@@ -60,14 +71,14 @@ namespace JunkyardDogs.Simulation
             _rules = engagement.Rules;
 
             _simulatedBots.Clear();
-            _simulatedBots.Add(engagement.BlueCombatent, new SimulatedBot(engagement.BlueCombatent));
-            _simulatedBots.Add(engagement.RedCombatent, new SimulatedBot(engagement.RedCombatent));
+            _simulatedBots.Add(BotId.Blue, new SimulatedBot(engagement.BlueCombatent));
+            _simulatedBots.Add(BotId.Red, new SimulatedBot(engagement.RedCombatent));
 
             _redBot = _engagement.RedCombatent;
             _blueBot = _engagement.BlueCombatent;
 
-            _simulatedBots[_redBot].OnBotDestroyed += OnBotDestroyed;
-            _simulatedBots[_blueBot].OnBotDestroyed += OnBotDestroyed;
+            _simulatedBots[BotId.Red].OnBotDestroyed += OnBotDestroyed;
+            _simulatedBots[BotId.Blue].OnBotDestroyed += OnBotDestroyed;
         }
 
         public void StartSimulation(bool realTime = true)
@@ -76,11 +87,11 @@ namespace JunkyardDogs.Simulation
 
             _ticks = 0;
 
-            _objectList.Add(_simulatedBots[_redBot]);
-            _objectList.Add(_simulatedBots[_blueBot]);
+            _objectList.Add(_simulatedBots[BotId.Red]);
+            _objectList.Add(_simulatedBots[BotId.Blue]);
 
-            _simulatedBots[_redBot].body.position.Set(5, 0);
-            _simulatedBots[_blueBot].body.position.Set(-5, 0);
+            _simulatedBots[BotId.Red].body.position.Set(5, 0);
+            _simulatedBots[BotId.Blue].body.position.Set(-5, 0);
 
             if (realTime)
             {
@@ -147,8 +158,8 @@ namespace JunkyardDogs.Simulation
 
             _ticks++;
 
-            SimulateBot(_simulatedBots[_redBot], _simulatedBots[_blueBot]);
-            SimulateBot(_simulatedBots[_blueBot], _simulatedBots[_redBot]);
+            SimulateBot(_simulatedBots[BotId.Red], _simulatedBots[BotId.Blue]);
+            SimulateBot(_simulatedBots[BotId.Blue], _simulatedBots[BotId.Red]);
             SimulateEnvironment();
             
             if (_ticks * SimuationStep > _engagement.Rules.MatchTimeLimit)

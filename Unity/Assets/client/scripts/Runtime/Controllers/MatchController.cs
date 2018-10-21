@@ -6,6 +6,31 @@ using System.Collections.Generic;
 using System.Collections;
 using WeakReference = Data.WeakReference;
 
+public struct MatchOutcome
+{
+    private SimulationService.Outcome _simulationOutcome;
+    private MatchState _match;
+    private Participant _winner;
+    private Participant _loser;
+
+    public SimulationService.Outcome SimulationOutcome { get { return _simulationOutcome; } }
+    public MatchState Match { get { return _match; } }
+    public Participant Winner { get { return _winner; } }
+    public Participant Loser { get { return _loser; } }
+
+    public MatchOutcome(
+        SimulationService.Outcome simulationOutcome, 
+        MatchState match, 
+        Participant winner, 
+        Participant loser)
+    {
+        _simulationOutcome = simulationOutcome;
+        _match = match;
+        _winner = winner;
+        _loser = loser;
+    }
+}
+
 public class MatchController : MonoBehaviour
 {
     [SerializeField]
@@ -16,7 +41,7 @@ public class MatchController : MonoBehaviour
 
     private SimulationService _simulationService;
     private CameraService _cameraService;
-    private Action _onMatchComplete;
+    private Action<MatchOutcome> _onMatchComplete;
     private MatchState _match;
     private WeakReference _state;
     private Engagement _engagement;
@@ -29,7 +54,7 @@ public class MatchController : MonoBehaviour
         _userService = _serviceManager.GetService<JunkyardUserService>();
     }
     
-    public void RunMatch(MatchState match, Action onMatchComplete, WeakReference state)
+    public void RunMatch(MatchState match, Action<MatchOutcome> onMatchComplete, WeakReference state)
     {
         _state = state;
         _match = match;
@@ -77,14 +102,23 @@ public class MatchController : MonoBehaviour
         {
             yield return 0;
         }
+
+        Participant winner = null;
+        Participant loser = null;
         
         if (_engagement.Outcome.Winner == _engagement.RedCombatent)
         {
-            Debug.Log("WINNER: RED");
+            winner = _match.ParticipantA.Participant;
+            loser = _match.ParticipantB.Participant;
         }
         else
         {
-            Debug.Log("WINNER: Blue");
+            winner = _match.ParticipantB.Participant;
+            loser = _match.ParticipantA.Participant;
         }
+        
+        MatchOutcome outcome= new MatchOutcome(_engagement.Outcome, _match, winner, loser);
+        
+        _onMatchComplete.Invoke(outcome);
     }
 }

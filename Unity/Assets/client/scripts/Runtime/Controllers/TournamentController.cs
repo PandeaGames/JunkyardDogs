@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -11,7 +12,7 @@ using EditorSceneManager = UnityEditor.SceneManagement.EditorSceneManager;
 
 public class TournamentController : MonoBehaviour 
 {
-	[SerializeField] 
+	[SerializeField]
 	private ServiceManager _serviceManager;
 	
 	private WeakReference _tournament;
@@ -19,28 +20,25 @@ public class TournamentController : MonoBehaviour
 	private List<WeakReference> _participants;
 	
 	private JunkyardUserService _userService;
-	private SimulationService _simulationService;
 	private Engagement _engagement;
+	private TournamentState.TournamentStatus _tournamentStatus;
+	private MatchController _matchController;
+	private TournamentState _tournamentState;
 	
 	public void RunTournament(TournamentState tournamentState, WeakReference state)
 	{
 		_userService = _serviceManager.GetService<JunkyardUserService>();
-		_simulationService = _serviceManager.GetService<SimulationService>();
 
 		JunkyardUser user = _userService.User;
 		
 		_state = state;
-		
+
+		_tournamentState = tournamentState;
 		StartTournament(tournamentState);
 	}
 	
 	public void RunTournament(WeakReference tournament, List<WeakReference> participants, WeakReference state)
 	{
-		_userService = _serviceManager.GetService<JunkyardUserService>();
-		_simulationService = _serviceManager.GetService<SimulationService>();
-
-		JunkyardUser user = _userService.User;
-		
 		_tournament = tournament;
 		_participants = participants;
 		_state = state;
@@ -50,19 +48,58 @@ public class TournamentController : MonoBehaviour
 	
 	private void TournamentLoaded(Tournament tournament, WeakReference reference)
 	{
-		TournamentState state =  tournament.GenerateState();
+		_tournamentState =  tournament.GenerateState();
         
 		ParticipantDataUtils.GenerateParticipantsAsync(_participants, (participants) =>
+			{
+				StartCoroutine(CompleteParticipantsCoroutine(participants));
+			}, OnError);
+	}
+
+	private IEnumerator CompleteParticipantsCoroutine(List<Participant> participants)
+	{
+
+		bool searchForUserBots = false;
+
+		do
 		{
-			state.FillWithParticipants(participants);
+			searchForUserBots = false;
+			UserParticipant userParticipant = null;
+			foreach (Participant participant in participants)
+			{
+				userParticipant = participant as UserParticipant;
+				if (userParticipant.Bot == null)
+				{
+					break;
+				}
+			}
 
-			TournamentState.TournamentStatus status = state.GetStatus();
+			if (userParticipant != null && userParticipant.Bot == null)
+			{
+				//searchForUserBots = true;
+				
+				//TODO: load scene and controller that chooses a robot from the user's garage. 
+			}
 
-			StartCoroutine(LoadMatchSceneCoroutine(status));
-			
-			
+			yield return 0;
 
-		}, OnError);
+		} while (searchForUserBots);
+		
+		_tournamentState.FillWithParticipants(participants);
+		RunTournament(_tournamentState, _state);
+	}
+
+	private IEnumerator UnloadMatchSceneCoroutine(Action onComplete)
+	{
+		AsyncOperation asyncLoad = SceneManager.UnloadSceneAsync("client/scenes/gameScenes/Match");
+
+		// Wait until the asynchronous scene fully loads
+		while (!asyncLoad.isDone)
+		{
+			yield return null;
+		}
+
+		onComplete();
 	}
 
 	private IEnumerator LoadMatchSceneCoroutine(TournamentState.TournamentStatus status)
@@ -75,45 +112,46 @@ public class TournamentController : MonoBehaviour
 			yield return null;
 		}
 
-		MatchController matchController = FindObjectOfType<MatchController>();
-			
-		matchController.RunMatch(status.Match, OnMatchComplete, _state);
+		_matchController = FindObjectOfType<MatchController>();
+		_matchController.RunMatch(status.Match, OnMatchComplete, _state);
 	}
 
-	private void OnMatchComplete()
+	private void OnMatchComplete(MatchOutcome outcomed)
 	{
-		
+		outcomed.Match.Winner.Participant = outcomed.Winner;
+		outcomed.Match.Loser.Participant = outcomed.Loser;
+
+		if (_tournamentState.IsComplete())
+		{
+			GameObject.Destroy(_matchController.gameObject);
+			//StartCoroutine(UnloadMatchSceneCoroutine(() => { }));
+		}
+		else
+		{
+			GameObject.Destroy(_matchController.gameObject);
+			StartTournament(_tournamentState);
+			/*StartCoroutine(UnloadMatchSceneCoroutine(() =>
+			{
+				//StartTournament(_tournamentState);
+			}));*/
+		}
 	}
 
 	private void StartTournament(TournamentState tournamentState)
 	{
-		
+		_tournamentStatus = tournamentState.GetStatus();
+
+		if (_tournamentStatus.IsComplete())
+		{
+			Debug.Log("WINNER");
+		}
+		else
+		{
+			StartCoroutine(LoadMatchSceneCoroutine(_tournamentStatus));
+		}
 	}	
 
 	private void OnError()
 	{
-        
-	}
-
-	private void PrepareForBattle(Bot bot)
-	{
-		bot.Agent.States.ForEach((state) => { state.StateWeakReference = _state; });
-	}
-
-	private IEnumerator EndOfBattleCoroutine()
-	{
-		while (_engagement.Outcome == null)
-		{
-			yield return 0;
-		}
-        
-		if (_engagement.Outcome.Winner == _engagement.RedCombatent)
-		{
-			Debug.Log("WINNER: RED");
-		}
-		else
-		{
-			Debug.Log("WINNER: Blue");
-		}
 	}
 }

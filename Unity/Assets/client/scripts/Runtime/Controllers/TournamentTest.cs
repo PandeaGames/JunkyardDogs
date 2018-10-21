@@ -7,20 +7,14 @@ using System.Collections.Generic;
 
 public class TournamentTest : MonoBehaviour
 {
-    [SerializeField, WeakReference(typeof(Tournament))]
-    public WeakReference _tournament;
-    
-    [SerializeField, WeakReference(typeof(JunkyardDogs.Simulation.Knowledge.State))]
-    private WeakReference _state;
-    
-    [SerializeField, WeakReference(typeof(ParticipantData))]
-    public List<WeakReference> _participants;
+    [SerializeField]
+    public TournamentTestData _testData;
 
     [SerializeField]
     private TournamentController _tournamentController;
 
     private void Start()
     {
-        _tournamentController.RunTournament(_tournament, _participants, _state);
+        _tournamentController.RunTournament(_testData.Tournament, _testData.Participants, _testData.State);
     }
 }
