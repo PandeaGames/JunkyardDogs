@@ -373,6 +373,9 @@
                 <e p="Weapon.cs" t="Include" />
               </e>
             </e>
+            <e p="Configuration" t="Include">
+              <e p="BotRenderConfiguration.cs" t="Include" />
+            </e>
             <e p="Entities" t="Include">
               <e p="Competitor.cs" t="Include" />
               <e p="CompetitorProvider.cs" t="Include" />
@@ -507,6 +510,7 @@
             </e>
             <e p="Screens" t="Include">
               <e p="ActionDisplay.cs" t="Include" />
+              <e p="ChooseBotScreen.cs" t="Include" />
               <e p="ChooseCountryScreen.cs" t="Include" />
               <e p="DirectiveDisplay.cs" t="Include" />
               <e p="EditBehaviourScreen.cs" t="Include" />

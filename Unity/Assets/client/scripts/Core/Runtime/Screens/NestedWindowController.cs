@@ -19,7 +19,7 @@ public class NestedWindowController : WindowController
         base.LaunchScreen(sceneId, screenConfig);
     }
 
-    protected override void Back()
+    public override void Back()
     {
         //there is no stack, so no navigation can happen
         if (_stack.Count == 0)

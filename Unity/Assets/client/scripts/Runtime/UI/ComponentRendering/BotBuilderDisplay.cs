@@ -8,26 +8,17 @@ public class BotBuilderDisplay : MonoBehaviour
 {
     public event Action<BotBuilderDisplay> OnSelect;
 
+    [SerializeField] 
+    private BotRenderConfiguration _botRenderConfiguration;
+    
     [SerializeField]
     private CameraAgent _cameraAgent;
 
     [SerializeField]
     private PrefabFactory _botPrefabFactory;
-
-    [SerializeField]
-    private PrefabFactory _componentFactory;
-
-    [SerializeField]
-    private ScriptableObjectFactory _scriptableObjectFactory;
-
-    [SerializeField]
-    private MaterialFactory _materialFactory;
-
+    
     [SerializeField]
     private ServiceManager _serviceManager;
-
-    [SerializeField]
-    private UnityEngine.Material _missingComponentMaterial;
 
     [SerializeField]
     private Collider _collider;
@@ -105,7 +96,7 @@ public class BotBuilderDisplay : MonoBehaviour
         Bot bot = _botBuilder.Bot;
         var chassis = bot.Chassis;
 
-        BotAvatar botAvatar = _scriptableObjectFactory.GetAsset(chassis.Specification) as BotAvatar;
+        BotAvatar botAvatar = _botRenderConfiguration.AvatarFactory.GetAsset(chassis.Specification) as BotAvatar;
 
         BotAvatar.AvatarComponent avatarComponent = botAvatar.GetAvatarComponent(collider);
 
@@ -132,7 +123,7 @@ public class BotBuilderDisplay : MonoBehaviour
                 var choice = response as ChooseFromInventoryDialog.ChooseFromInventoryDialogResponse;
                 _botBuilder.SetWeaponProcessor(choice.Component as WeaponProcessor, location);
                 _junkardUserService.Save();
-                botRenderer.Render(_botBuilder.Bot, _componentFactory, _scriptableObjectFactory, _materialFactory, _missingComponentMaterial);
+                botRenderer.Render(_botBuilder.Bot, _botRenderConfiguration);
             });
         }
         else
@@ -143,7 +134,7 @@ public class BotBuilderDisplay : MonoBehaviour
                 var choice = response as ChooseFromInventoryDialog.ChooseFromInventoryDialogResponse;
                 builder.SetWeapon(choice.Component as JunkyardDogs.Components.Weapon);
                 _junkardUserService.Save();
-                botRenderer.Render(_botBuilder.Bot, _componentFactory, _scriptableObjectFactory, _materialFactory, _missingComponentMaterial);
+                botRenderer.Render(_botBuilder.Bot, _botRenderConfiguration);
             });
         }
     }
@@ -158,7 +149,7 @@ public class BotBuilderDisplay : MonoBehaviour
                 return;
             _botBuilder.SetPlate(choice.Component as JunkyardDogs.Components.Plate, botAvatar.GetPlateLocation(plateObject), botAvatar.GetPlateIndex(plateObject));
             _junkardUserService.Save();
-            botRenderer.Render(_botBuilder.Bot, _componentFactory, _scriptableObjectFactory, _materialFactory, _missingComponentMaterial);
+            botRenderer.Render(_botBuilder.Bot, _botRenderConfiguration);
         });
     }
 
@@ -172,7 +163,7 @@ public class BotBuilderDisplay : MonoBehaviour
         _bot = _botPrefabFactory.InstantiateAsset(chassis);
         _bot.transform.SetParent(transform, false);
         BotRenderer renderer = _bot.AddComponent<BotRenderer>();
-        renderer.Render(_botBuilder.Bot, _componentFactory, _scriptableObjectFactory, _materialFactory, _missingComponentMaterial);
+        renderer.Render(_botBuilder.Bot, _botRenderConfiguration);
     }
 
     public void Blur()

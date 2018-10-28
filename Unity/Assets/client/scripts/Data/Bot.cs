@@ -21,7 +21,7 @@ namespace JunkyardDogs.Components
             Agent = new Agent();
         }
 
-        public Bot(Chassis chassis)
+        public Bot(Chassis chassis) :this()
         {
             Chassis = chassis;
         }

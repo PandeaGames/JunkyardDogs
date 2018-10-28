@@ -112,6 +112,51 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &247787420
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 247787422}
+  - component: {fileID: 247787421}
+  m_Layer: 0
+  m_Name: LineupCameraAgent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &247787421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 247787420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 513845f5c2a28344dbe3485d3bd2c8b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _serviceManager: {fileID: 1809860232}
+  scale: 1
+  _target: {fileID: 0}
+  offset: {x: 0.5, y: 2.5, z: -4}
+  _smoothing: 0.188
+--- !u!4 &247787422
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 247787420}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.30726072, y: 1.1605959, z: -0.005859375}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1619786489}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1169603923
 Prefab:
   m_ObjectHideFlags: 0
@@ -149,19 +194,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 410810, guid: 801c7b012f145e147864873d89f5eec4, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 410810, guid: 801c7b012f145e147864873d89f5eec4, type: 2}
       propertyPath: m_LocalScale.x
-      value: 1.4083232
+      value: 3.0583801
       objectReference: {fileID: 0}
     - target: {fileID: 410810, guid: 801c7b012f145e147864873d89f5eec4, type: 2}
       propertyPath: m_LocalScale.y
-      value: 1.4083234
+      value: 3.0583797
       objectReference: {fileID: 0}
     - target: {fileID: 410810, guid: 801c7b012f145e147864873d89f5eec4, type: 2}
       propertyPath: m_LocalScale.z
-      value: 1.4083234
+      value: 3.0583797
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 801c7b012f145e147864873d89f5eec4, type: 2}
@@ -170,51 +215,34 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 410810, guid: 801c7b012f145e147864873d89f5eec4, type: 2}
   m_PrefabInternal: {fileID: 1169603923}
---- !u!1 &1318710780
+--- !u!1 &1197171678
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 1318710781}
-  - component: {fileID: 1318710782}
+  - component: {fileID: 1197171679}
   m_Layer: 0
-  m_Name: CamAgent
+  m_Name: Lineup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1318710781
+--- !u!4 &1197171679
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1318710780}
-  m_LocalRotation: {x: 0.16727653, y: 0.71171004, z: -0.18152381, w: 0.6576751}
-  m_LocalPosition: {x: -12.37, y: 6.12, z: 0}
+  m_GameObject: {fileID: 1197171678}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -24.09, y: -1.02, z: 0.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1619786489}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 28.582, y: 94.508, z: -0.043}
---- !u!114 &1318710782
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1318710780}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a69c271a6a0093a42b4cb44c3bf4729f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _serviceManager: {fileID: 1809860232}
-  scale: 1
-  _target: {fileID: 1318710781}
-  offset: {x: 0, y: 0, z: 0}
-  _smoothing: 1
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &1619786488
 GameObject:
   m_ObjectHideFlags: 0
@@ -224,9 +252,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1619786489}
   - component: {fileID: 1619786490}
-  - component: {fileID: 1619786491}
   m_Layer: 0
-  m_Name: Match
+  m_Name: ChooseBot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -242,8 +269,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 247787422}
   - {fileID: 1809860231}
-  - {fileID: 1318710781}
+  - {fileID: 1197171679}
   - {fileID: 1169603924}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -256,26 +284,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1619786488}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e30bca07da194a7489c39f7f038d0b9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _serviceManager: {fileID: 1809860232}
-  _cameraAgent: {fileID: 1318710782}
---- !u!114 &1619786491
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1619786488}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26824b66e4754871a57a517b8b584831, type: 3}
+  m_Script: {fileID: 11500000, guid: 40d8c157160947feb7c854df3e28178f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _botRenderConfiguration: {fileID: 11400000, guid: d7af20238d3030046879cf84252424b7,
     type: 2}
   _serviceManager: {fileID: 1809860232}
   _botPrefabFactory: {fileID: 11400000, guid: e976fde8db251f444b07b560f439adf2, type: 2}
+  _cameraAgent: {fileID: 247787421}
+  _botContainer: {fileID: 1197171679}
+  _botLineupOffset: {x: 4, y: 0, z: 0}
 --- !u!1 &1809860230
 GameObject:
   m_ObjectHideFlags: 0
@@ -304,7 +322,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1619786489}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1809860232
 MonoBehaviour:

@@ -59,13 +59,24 @@ public class ScreenTransition
 
 public class WindowController : MonoBehaviour
 {
+    public static WindowController main;
+    
     public event Action OnClose;
 
     [SerializeField]
     private bool _overlapTransitions;
+    
+    [SerializeField]
+    private bool _mainWindow;
 
     private ScreenController _activeScreen;
 
+    private void Awake()
+    {
+        if(main == null && _mainWindow)
+            main = this;
+    }
+    
     protected virtual void Start()
     {
         ScreenController[] screenControllers = GetComponentsInChildren<ScreenController>();
@@ -108,7 +119,7 @@ public class WindowController : MonoBehaviour
         _activeScreen.OnBack -= Back;
     }
 
-    protected virtual void Back()
+    public virtual void Back()
     {
         Close();
     }

@@ -208,6 +208,16 @@ MonoBehaviour:
     - 
     - 
     Flags: 0000
+  - Term: UI.choose
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - Choose
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
   mLanguages:
   - Name: German
     Code: de

@@ -8,31 +8,31 @@ using Material = UnityEngine.Material;
 
 public class BotRenderer : MonoBehaviour
 {
-    public void Render(Bot bot, PrefabFactory componentFactory, ScriptableObjectFactory avatarFactory, MaterialFactory materials, UnityEngine.Material missingComponentMaterial)
+    public void Render(Bot bot, BotRenderConfiguration renderConfiguration)
     {
-        BotAvatar botAvatar = avatarFactory.GetAsset(bot.Chassis.Specification) as BotAvatar;
+        BotAvatar botAvatar = renderConfiguration.AvatarFactory.GetAsset(bot.Chassis.Specification) as BotAvatar;
         Chassis chassis = bot.Chassis;
 
-        RenderPlates(Chassis.PlateLocation.Bottom, chassis, botAvatar, materials, missingComponentMaterial);
-        RenderPlates(Chassis.PlateLocation.Front, chassis, botAvatar, materials, missingComponentMaterial);
-        RenderPlates(Chassis.PlateLocation.Left, chassis, botAvatar, materials, missingComponentMaterial);
-        RenderPlates(Chassis.PlateLocation.Right, chassis, botAvatar, materials, missingComponentMaterial);
-        RenderPlates(Chassis.PlateLocation.Top, chassis, botAvatar, materials, missingComponentMaterial);
+        RenderPlates(Chassis.PlateLocation.Bottom, chassis, botAvatar, renderConfiguration);
+        RenderPlates(Chassis.PlateLocation.Front, chassis, botAvatar, renderConfiguration);
+        RenderPlates(Chassis.PlateLocation.Left, chassis, botAvatar, renderConfiguration);
+        RenderPlates(Chassis.PlateLocation.Right, chassis, botAvatar, renderConfiguration);
+        RenderPlates(Chassis.PlateLocation.Top, chassis, botAvatar, renderConfiguration);
 
-        RenderArmament(bot, Chassis.ArmamentLocation.Front, componentFactory, chassis, botAvatar, materials, missingComponentMaterial);
-        RenderArmament(bot, Chassis.ArmamentLocation.Left, componentFactory, chassis, botAvatar, materials, missingComponentMaterial);
-        RenderArmament(bot, Chassis.ArmamentLocation.Right, componentFactory, chassis, botAvatar, materials, missingComponentMaterial);
-        RenderArmament(bot, Chassis.ArmamentLocation.Top, componentFactory, chassis, botAvatar, materials, missingComponentMaterial);
+        RenderArmament(bot, Chassis.ArmamentLocation.Front, renderConfiguration.ComponentFactory, chassis, botAvatar, renderConfiguration);
+        RenderArmament(bot, Chassis.ArmamentLocation.Left, renderConfiguration.ComponentFactory, chassis, botAvatar, renderConfiguration);
+        RenderArmament(bot, Chassis.ArmamentLocation.Right, renderConfiguration.ComponentFactory, chassis, botAvatar, renderConfiguration);
+        RenderArmament(bot, Chassis.ArmamentLocation.Top, renderConfiguration.ComponentFactory, chassis, botAvatar, renderConfiguration);
 
         Renderer renderer = transform.GetChild(botAvatar.Frame.transform.GetSiblingIndex()).GetComponent<Renderer>();
 
         bot.Chassis.Material.LoadAsync<ScriptableObject>((asset, reference) =>
         {
-            renderer.material = materials.GetAsset(asset);
+            renderer.material = renderConfiguration.Materials.GetAsset(asset);
         }, () => { });
     }
 
-    private void RenderArmament(Bot bot, Chassis.ArmamentLocation location, PrefabFactory componentFactory, Chassis chasiss, BotAvatar botAvatar, MaterialFactory materials, UnityEngine.Material missingComponentMaterial)
+    private void RenderArmament(Bot bot, Chassis.ArmamentLocation location, PrefabFactory componentFactory, Chassis chasiss, BotAvatar botAvatar, BotRenderConfiguration renderConfiguration)
     {
         GameObject avatarArmamentContainer = botAvatar.GetArmamentContainer(location);
         GameObject armamentContainer = null;
@@ -50,7 +50,7 @@ public class BotRenderer : MonoBehaviour
             }
 
             Renderer renderer = armamentContainer.GetComponent<Renderer>();
-            renderer.material = missingComponentMaterial;
+            renderer.material = renderConfiguration.MissingComponentMaterial;
 
             WeaponProcessor processor = bot.Chassis.GetWeaponProcessor(location);
 
@@ -61,7 +61,7 @@ public class BotRenderer : MonoBehaviour
 
                 if(weapon == null)
                 {
-                    renderer.enabled = true;
+                    renderer.enabled = renderConfiguration.MissingComponentMaterial != null;
                     obj = componentFactory.InstantiateAsset(processor.Specification);
                 }
                 else
@@ -74,12 +74,12 @@ public class BotRenderer : MonoBehaviour
             }
             else
             {
-                renderer.enabled = true;
+                renderer.enabled = renderConfiguration.MissingComponentMaterial != null;
             }
         }
     }
 
-    private void RenderPlates(Chassis.PlateLocation plateLocation, Chassis chassis, BotAvatar botAvatar, MaterialFactory materials, UnityEngine.Material missingComponentMaterial)
+    private void RenderPlates(Chassis.PlateLocation plateLocation, Chassis chassis, BotAvatar botAvatar, BotRenderConfiguration renderConfiguration)
     {
         List<JunkyardDogs.Components.Plate> plates = chassis.GetPlateList(plateLocation);
         List<GameObject> avatarPlates = botAvatar.GetPlateList(plateLocation);
@@ -91,18 +91,26 @@ public class BotRenderer : MonoBehaviour
             bool hasPlate = plates.Count > i && plates[i] != null;
             Transform plate = transform.GetChild(index);
             Renderer plateRenderer = plate.GetComponent<Renderer>();
+            plateRenderer.enabled = true;
 
             if(hasPlate)
             {
                 JunkyardDogs.Components.Plate plateComponent = plates[i];
                 plateComponent.Material.LoadAsync<ScriptableObject>((asset, reference) =>
                 {
-                    plateRenderer.material = materials.GetAsset(asset);
+                    plateRenderer.material = renderConfiguration.Materials.GetAsset(asset);
                 }, () => { });
             }
             else
             {
-                plateRenderer.material = missingComponentMaterial;
+                if (renderConfiguration.MissingComponentMaterial != null)
+                {
+                    plateRenderer.material = renderConfiguration.MissingComponentMaterial;
+                }
+                else
+                {
+                    plateRenderer.enabled = false;
+                }
             }
         }
     }

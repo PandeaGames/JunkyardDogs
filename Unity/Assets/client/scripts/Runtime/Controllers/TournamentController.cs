@@ -68,7 +68,7 @@ public class TournamentController : MonoBehaviour
 			foreach (Participant participant in participants)
 			{
 				userParticipant = participant as UserParticipant;
-				if (userParticipant.Bot == null)
+				if (userParticipant != null && userParticipant.Bot == null)
 				{
 					break;
 				}
@@ -76,9 +76,38 @@ public class TournamentController : MonoBehaviour
 
 			if (userParticipant != null && userParticipant.Bot == null)
 			{
-				//searchForUserBots = true;
+				searchForUserBots = true;
 				
 				//TODO: load scene and controller that chooses a robot from the user's garage. 
+				AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("client/scenes/gameScenes/ChooseBot", LoadSceneMode.Additive);
+
+				// Wait until the asynchronous scene fully loads
+				while (!asyncLoad.isDone)
+				{
+					yield return null;
+				}
+				
+				ChooseUserBotController chooseController = FindObjectOfType<ChooseUserBotController>();
+				bool hasError = false;
+				Bot chosenBot = null;
+				
+				chooseController.ChooseBot(bot => { chosenBot = bot; }, () =>
+				{
+					hasError = true;
+				}, () => { hasError = true; });
+
+				yield return new WaitUntil(() => hasError || chosenBot != null);
+
+				if (hasError)
+				{
+					OnError();
+				}
+				else
+				{
+					userParticipant.Bot = chosenBot;
+				}
+
+				Destroy(chooseController.gameObject);
 			}
 
 			yield return 0;

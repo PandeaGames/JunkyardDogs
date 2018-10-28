@@ -20,6 +20,9 @@ public class SimpleFollowAgent : CameraAgent
 
     public virtual void Update()
     {
+        if (_target == null)
+            return;
+        
         Vector3 delta = (_target.position + offset) - transform.position;
         Vector3 position = transform.position + delta * _smoothing;
         transform.position = new Vector3(position.x, position.y, position.z);

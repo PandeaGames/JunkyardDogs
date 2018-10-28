@@ -6,23 +6,14 @@ using JunkyardDogs.Simulation.Simulation;
 
 public class SimpleBotMatchRendering : MonoBehaviour
 {
+    [SerializeField] 
+    private BotRenderConfiguration _botRenderConfiguration;
+    
     [SerializeField]
     private ServiceManager _serviceManager;
     
     [SerializeField]
     private PrefabFactory _botPrefabFactory;
-
-    [SerializeField]
-    private PrefabFactory _componentFactory;
-    
-    [SerializeField]
-    private ScriptableObjectFactory _avatarFactory;
-    
-    [SerializeField]
-    private MaterialFactory _materials;
-
-    [SerializeField]
-    private UnityEngine.Material missingComponentMaterial;
 
     private SimulationService _simulationService;
     private Dictionary<SimulatedBot, BotRenderer> _simulatedBots;
@@ -56,11 +47,7 @@ public class SimpleBotMatchRendering : MonoBehaviour
                 BotRenderer renderer = botObject.AddComponent<BotRenderer>();
                 _simulatedBots.Add(simulationServiceSimulatedBot.Value, renderer);
                 
-                renderer.Render(simulationServiceSimulatedBot.Value.Bot,
-                    _componentFactory,
-                    _avatarFactory,
-                    _materials, 
-                    this.missingComponentMaterial);
+                renderer.Render(simulationServiceSimulatedBot.Value.Bot, _botRenderConfiguration);
             }
         }
 
