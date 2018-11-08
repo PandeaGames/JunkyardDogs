@@ -36,9 +36,9 @@ public class TournamentFormat : ScriptableObject
 	[SerializeField]
 	private List<TournamentStage> _stages;
 	
-	public TournamentState GenerateState()
+	public TournamentState GenerateState(string uid)
 	{
-		TournamentState state = new TournamentState();
+		TournamentState state = new TournamentState(uid);
 
 		for (int i = 0; i < _stages.Count; i++)
 		{

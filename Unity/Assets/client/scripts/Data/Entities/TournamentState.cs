@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Data;
+using UnityEngine.UI.Extensions;
 
 public class TournamentState
 {
@@ -18,10 +19,12 @@ public class TournamentState
     
     public WeakReference TournamentReference { get; set; }
     public List<StageState> StageStates { get; set; }
+    public string Uid  { get; set; }
 
-    public TournamentState()
+    public TournamentState(string uid)
     {
         StageStates = new List<StageState>();
+        Uid = uid;
     }
 
     public bool FillWithParticipants(List<Participant> participants)

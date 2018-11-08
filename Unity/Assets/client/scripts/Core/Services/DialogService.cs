@@ -49,6 +49,7 @@ public class DialogService : Service
     public void DisplayDialog<T>(Dialog.Config config, Dialog.DialogResponseDelegate responseDelegate = null) where T:Dialog
     {
         GameObject prefab = GetDialogPrefab<T>();
+        config.ServiceManager = _manager;
 
         if (prefab == null)
         {

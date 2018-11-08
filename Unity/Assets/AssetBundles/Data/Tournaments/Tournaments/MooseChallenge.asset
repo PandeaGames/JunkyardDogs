@@ -12,3 +12,8 @@ MonoBehaviour:
   m_Name: MooseChallenge
   m_EditorClassIdentifier: 
   _format: {fileID: 11400000, guid: dfa47fdf60b6ecf439ab36a8751c5a7d, type: 2}
+  _participants:
+  - _guid: e0c99f6117aca3d40821dcc9f01b3279
+    _path: Assets/AssetBundles/Data/Competitors/Germany/Florian/FlorianParticipation.asset
+  - _guid: 69a8ff5fa76eccd42b1514819f33ef41
+    _path: Assets/AssetBundles/Data/Tournaments/Participants/UserParticipant.asset

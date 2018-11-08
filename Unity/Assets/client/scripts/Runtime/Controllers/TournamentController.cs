@@ -16,32 +16,40 @@ public class TournamentController : MonoBehaviour
 	private ServiceManager _serviceManager;
 	
 	private WeakReference _tournament;
-	private WeakReference _state;
-	private List<WeakReference> _participants;
-	
 	private JunkyardUserService _userService;
 	private Engagement _engagement;
 	private TournamentState.TournamentStatus _tournamentStatus;
 	private MatchController _matchController;
 	private TournamentState _tournamentState;
+	private RoundState _roundState;
 	
-	public void RunTournament(TournamentState tournamentState, WeakReference state)
+	public void RunTournament(RoundState roundState, Tournament tournament)
 	{
 		_userService = _serviceManager.GetService<JunkyardUserService>();
 
 		JunkyardUser user = _userService.User;
 		
-		_state = state;
+		_roundState = roundState;
+		ParticipantDataUtils.GenerateParticipantsAsync(tournament.Participants, (participants) =>
+		{
+			StartCoroutine(CompleteParticipantsCoroutine(participants));
+		}, OnError);
+		StartRound(roundState);
+	}
+	
+	public void RunTournament(TournamentState tournamentState)
+	{
+		_userService = _serviceManager.GetService<JunkyardUserService>();
 
+		JunkyardUser user = _userService.User;
+		
 		_tournamentState = tournamentState;
 		StartTournament(tournamentState);
 	}
 	
-	public void RunTournament(WeakReference tournament, List<WeakReference> participants, WeakReference state)
+	public void RunTournament(WeakReference tournament)
 	{
 		_tournament = tournament;
-		_participants = participants;
-		_state = state;
 		
 		_tournament.LoadAsync<Tournament>(TournamentLoaded, OnError);
 	}
@@ -50,13 +58,14 @@ public class TournamentController : MonoBehaviour
 	{
 		_tournamentState =  tournament.GenerateState();
         
-		ParticipantDataUtils.GenerateParticipantsAsync(_participants, (participants) =>
+		ParticipantDataUtils.GenerateParticipantsAsync(tournament.Participants, (participants) =>
 			{
-				StartCoroutine(CompleteParticipantsCoroutine(participants));
+				StartCoroutine(CompleteParticipantsCoroutine(participants));_tournamentState.FillWithParticipants(participants);
+				RunTournament(_tournamentState);
 			}, OnError);
 	}
 
-	private IEnumerator CompleteParticipantsCoroutine(List<Participant> participants)
+	private IEnumerator CompleteParticipantsCoroutine(List<Participant> participants, Action onComplete)
 	{
 
 		bool searchForUserBots = false;
@@ -113,9 +122,19 @@ public class TournamentController : MonoBehaviour
 			yield return 0;
 
 		} while (searchForUserBots);
-		
-		_tournamentState.FillWithParticipants(participants);
-		RunTournament(_tournamentState, _state);
+
+		if (_tournamentState == null)
+		{
+			_tournamentState.FillWithParticipants(participants);
+			RunTournament(_tournamentState);
+		}
+		else
+		{
+			_tournamentState.FillWithParticipants(participants);
+			RunTournament(_tournamentState);
+		}
+
+		onComplete();
 	}
 
 	private IEnumerator UnloadMatchSceneCoroutine(Action onComplete)
@@ -131,7 +150,17 @@ public class TournamentController : MonoBehaviour
 		onComplete();
 	}
 
+	private IEnumerator LoadMatchSceneCoroutine(RoundState round)
+	{
+		return LoadMatchSceneCoroutine(round.GetCurrentMatch());
+	}
+
 	private IEnumerator LoadMatchSceneCoroutine(TournamentState.TournamentStatus status)
+	{
+		return LoadMatchSceneCoroutine(status.Match);
+	}
+
+	private IEnumerator LoadMatchSceneCoroutine(MatchState match)
 	{
 		AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("client/scenes/gameScenes/Match", LoadSceneMode.Additive);
 
@@ -142,7 +171,7 @@ public class TournamentController : MonoBehaviour
 		}
 
 		_matchController = FindObjectOfType<MatchController>();
-		_matchController.RunMatch(status.Match, OnMatchComplete, _state);
+		_matchController.RunMatch(match, OnMatchComplete);
 	}
 
 	private void OnMatchComplete(MatchOutcome outcomed)
@@ -150,7 +179,7 @@ public class TournamentController : MonoBehaviour
 		outcomed.Match.Winner.Participant = outcomed.Winner;
 		outcomed.Match.Loser.Participant = outcomed.Loser;
 
-		if (_tournamentState.IsComplete())
+		if (_tournamentState == null ? _roundState.IsComplete():_tournamentState.IsComplete())
 		{
 			GameObject.Destroy(_matchController.gameObject);
 			//StartCoroutine(UnloadMatchSceneCoroutine(() => { }));
@@ -158,13 +187,33 @@ public class TournamentController : MonoBehaviour
 		else
 		{
 			GameObject.Destroy(_matchController.gameObject);
-			StartTournament(_tournamentState);
+			if (_tournamentState == null)
+			{
+				StartRound(_roundState);
+			}
+			else
+			{
+				StartTournament(_tournamentState);
+			}
+			
 			/*StartCoroutine(UnloadMatchSceneCoroutine(() =>
 			{
 				//StartTournament(_tournamentState);
 			}));*/
 		}
 	}
+	
+	private void StartRound(RoundState round)
+	{
+		if (round.IsComplete())
+		{
+			Debug.Log("WINNER");
+		}
+		else
+		{
+			StartCoroutine(LoadMatchSceneCoroutine(round));
+		}
+	}	
 
 	private void StartTournament(TournamentState tournamentState)
 	{

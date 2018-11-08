@@ -43,7 +43,6 @@ public class MatchController : MonoBehaviour
     private CameraService _cameraService;
     private Action<MatchOutcome> _onMatchComplete;
     private MatchState _match;
-    private WeakReference _state;
     private Engagement _engagement;
     private JunkyardUserService _userService;
 
@@ -54,9 +53,8 @@ public class MatchController : MonoBehaviour
         _userService = _serviceManager.GetService<JunkyardUserService>();
     }
     
-    public void RunMatch(MatchState match, Action<MatchOutcome> onMatchComplete, WeakReference state)
+    public void RunMatch(MatchState match, Action<MatchOutcome> onMatchComplete)
     {
-        _state = state;
         _match = match;
         _onMatchComplete = onMatchComplete;
         _cameraService.Focus(_cameraAgent);
@@ -70,9 +68,6 @@ public class MatchController : MonoBehaviour
                 _engagement.BlueCombatent = teamA.Bot;
                 _engagement.RedCombatent = teamB.Bot;
                 _engagement.SetTimeLimit(180);//3 minutes
-                
-                PrepareForBattle(teamA.Bot);
-                PrepareForBattle(teamB.Bot);
                 
                 _engagement.BlueCombatent.LoadAsync(() => _engagement.RedCombatent.LoadAsync(() =>
                 {
@@ -89,11 +84,6 @@ public class MatchController : MonoBehaviour
     private void OnError()
     {
         
-    }
-    
-    private void PrepareForBattle(Bot bot)
-    {
-        bot.Agent.States.ForEach((state) => { state.StateWeakReference = _state; });
     }
 
     private IEnumerator EndOfBattleCoroutine()

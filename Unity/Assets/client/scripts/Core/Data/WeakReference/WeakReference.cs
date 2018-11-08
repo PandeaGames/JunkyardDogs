@@ -113,6 +113,9 @@ namespace Data
             {
                 _cache = request.GetAsset<T>();
                 _loaded = true;
+                
+                if(_cache is IWeakReferenceObject)
+                    (_cache as IWeakReferenceObject).SetReferences(Path, GUID);
 
                 if (onComplete != null)
                     onComplete(_cache as T, this);

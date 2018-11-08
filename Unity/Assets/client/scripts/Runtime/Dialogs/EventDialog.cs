@@ -7,7 +7,6 @@ public class EventDialog : Dialog
     public class EventDialogConfig : Config
     {
         public WeakReference Tournament;
-        public ServiceManager ServiceManager;
     }
     
     [NonSerialized]
@@ -30,7 +29,7 @@ public class EventDialog : Dialog
     {
         TournamentState state = null;
         
-        _user.Tournaments.TryGetTournament(reference, out state);
+        _user.Tournaments.TryGetTournament(tournament, out state);
 
         if (state == null)
         {

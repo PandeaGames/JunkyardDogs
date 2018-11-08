@@ -9,14 +9,22 @@ public class Tournaments
     {
         TournamentStates = new Dictionary<string, TournamentState>();
     }
-
-    public void TryGetTournament(string path, out TournamentState state)
+    
+    public void UpdateTournament(TournamentState state)
     {
-        TournamentStates.TryGetValue(path, out state);
+        if (!TournamentStates.ContainsKey(state.Uid))
+        {
+            TournamentStates.Add(state.Uid, state);
+        }
+    }
+
+    public void TryGetTournament(string guid, out TournamentState state)
+    {
+        TournamentStates.TryGetValue(guid, out state);
     }
     
-    public void TryGetTournament(WeakReference reference, out TournamentState state)
+    public void TryGetTournament(Tournament tournament, out TournamentState state)
     {
-        TryGetTournament(reference.Path, out state);
+        TryGetTournament(tournament.Guid, out state);
     }
 }

@@ -193,12 +193,12 @@ namespace JunkyardDogs.Simulation
         {
             bot.Information.Self.Health = bot.Health;
             bot.Information.Self.Position = bot.body.position;
-            bot.Information.Self.State = bot.State.State.TargetState;
+            bot.Information.Self.State = bot.State.State == null ? default(State):bot.State.State.TargetState;
             bot.Information.Self.Health = bot.Health;
 
             bot.Information.Opponent.Health = opponent.Health;
             bot.Information.Opponent.Position = opponent.body.position;
-            bot.Information.Opponent.State = opponent.State.State.TargetState;
+            bot.Information.Opponent.State =  opponent.State.State == null ? default(State):opponent.State.State.TargetState;
             bot.Information.Opponent.Health = opponent.Health;
 
             SimulateStateTransitions(bot, opponent);

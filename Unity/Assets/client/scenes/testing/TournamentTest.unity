@@ -446,7 +446,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf0b0f87e7464ca5bae95124afea2ae9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _testData: {fileID: 11400000, guid: f56a93e74f60fad4ab2e2a2375b0838d, type: 2}
+  _testData:
+    _guid: 88efe2d08a1fe734b903249d4363e137
+    _path: Assets/AssetBundles/Data/Tournaments/Tournaments/MooseChallenge.asset
   _tournamentController: {fileID: 1878382276}
 --- !u!1001 &1967321481
 Prefab:

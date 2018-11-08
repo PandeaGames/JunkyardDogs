@@ -214,6 +214,7 @@
                   <e p="WeakReference.cs" t="Include" />
                 </e>
                 <e p="ILoadableObject.cs" t="Include" />
+                <e p="IWeakReferenceObject.cs" t="Include" />
                 <e p="WeakReference.cs" t="Include" />
                 <e p="WeakReferenceList.cs" t="Include" />
               </e>

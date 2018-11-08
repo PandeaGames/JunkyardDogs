@@ -7,14 +7,14 @@ using System.Collections.Generic;
 
 public class TournamentTest : MonoBehaviour
 {
-    [SerializeField]
-    public TournamentTestData _testData;
+    [SerializeField, WeakReference(typeof(Tournament))]
+    public WeakReference _testData;
 
     [SerializeField]
     private TournamentController _tournamentController;
 
     private void Start()
     {
-        _tournamentController.RunTournament(_testData.Tournament, _testData.Participants, _testData.State);
+        _tournamentController.RunTournament(_testData);
     }
 }

@@ -13,6 +13,8 @@ public abstract class Dialog : MonoBehaviour
     [Serializable]
     public class Config : ScriptableObject
     {
+        public ServiceManager ServiceManager;
+        
         public Config()
         {
         }
