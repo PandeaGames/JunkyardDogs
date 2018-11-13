@@ -3,6 +3,7 @@ using System.Collections;
 using JunkyardDogs.Specifications;
 using System.Collections.Generic;
 using System;
+using Data;
 
 namespace JunkyardDogs.Components
 {
@@ -131,75 +132,24 @@ namespace JunkyardDogs.Components
             }
         }
 
-        public override void LoadAsync(Action onLoadSuccess, Action onLoadFailed)
+        public override void LoadAsync(LoadSuccess onLoadSuccess, LoadError onLoadFailed)
         {
-            int objectsToLoad = 0;
-            bool hasError = false;
+            Loader loader = new Loader();
+            
+            loader.AppendProvider(FrontPlates);
+            loader.AppendProvider(RightPlates);
+            loader.AppendProvider(LeftPlates);
+            loader.AppendProvider(BackPlates);
+            loader.AppendProvider(TopPlates);
+            
+            loader.AppendProvider(FrontArmament);
+            loader.AppendProvider(RightArmament);
+            loader.AppendProvider(LeftArmament);
+            loader.AppendProvider(TopArmament);
 
-            Action onInternalLoadSuccess = () =>
-            {
-                if (--objectsToLoad <= 0)
-                {
-                    if (hasError)
-                    {
-                        onLoadFailed();
-                    }
-                    else
-                    {
-                        onLoadSuccess();
-                    }
-                }
-            };
-
-            Action onInternalLoadError = () =>
-            {
-                hasError = true;
-
-                if (--objectsToLoad <= 0)
-                {
-                    onLoadFailed();
-                }
-            };
-
-            objectsToLoad++;
-            base.LoadAsync(onInternalLoadSuccess, onInternalLoadError);
-
-            Func<List<Plate>, bool> loadPlates = (plates) =>
-            {
-                if(plates != null)
-                {
-                    plates.ForEach((plate) =>
-                    {
-                        if(plate != null)
-                        {
-                            objectsToLoad++;
-                            plate.LoadAsync(onInternalLoadSuccess, onInternalLoadError);
-                        }
-                    });
-                }
-                return true;
-            };
-
-            loadPlates(RightPlates);
-            loadPlates(LeftPlates);
-            loadPlates(TopPlates);
-            loadPlates(BottomPlates);
-            loadPlates(BackPlates);
-
-            Func<WeaponProcessor, bool> loadWeapon = (weapon) =>
-            {
-                if (weapon != null)
-                {
-                    objectsToLoad++;
-                    weapon.LoadAsync(onInternalLoadSuccess, onInternalLoadError);
-                }
-                return true;
-            };
-
-            loadWeapon(RightArmament);
-            loadWeapon(LeftArmament);
-            loadWeapon(TopArmament);
-            loadWeapon(FrontArmament);
+            loader.AppendProvider(base.LoadAsync);
+            
+            loader.LoadAsync(onLoadSuccess, onLoadFailed);
         }
 
         public List<Plate> GetPlateList(PlateLocation location)

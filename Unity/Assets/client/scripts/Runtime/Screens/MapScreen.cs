@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
-using System.Collections;
+using PandeaGames.Views.Screens;
 using UnityEngine.UI;
 
-public class MapScreen : ScreenController
+public class MapScreen : ScreenView
 {
     [SerializeField]
     private ServiceManager _serviceManager;
@@ -18,10 +18,10 @@ public class MapScreen : ScreenController
 
     private void OnJunkyardButtonPressed()
     {
-        JunkyardScreen.JunkyardConfig config = ScriptableObject.CreateInstance<JunkyardScreen.JunkyardConfig>();
+        //JunkyardScreen.JunkyardConfig config = ScriptableObject.CreateInstance<JunkyardScreen.JunkyardConfig>();
 
-        config.returnScreen = "mapScreen";
+        //config.returnScreen = "mapScreen";
 
-        _window.LaunchScreen("junkyard", config);
+        _window.LaunchScreen("junkyard");
     }
 }

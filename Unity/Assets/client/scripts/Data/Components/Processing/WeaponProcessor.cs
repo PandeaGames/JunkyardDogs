@@ -2,6 +2,7 @@
 using System.Collections;
 using JunkyardDogs.Specifications;
 using System;
+using Data;
 
 namespace JunkyardDogs.Components
 {
@@ -27,44 +28,14 @@ namespace JunkyardDogs.Components
             }
         }
 
-        public override void LoadAsync(Action onLoadSuccess, Action onLoadFailed)
+        public override void LoadAsync(LoadSuccess onLoadSuccess, LoadError onLoadFailed)
         {
-            int objectsToLoad = 0;
-            bool hasError = false;
+            Loader loader = new Loader();
 
-            Action onInternalLoadSuccess = () =>
-            {
-                if (--objectsToLoad <= 0)
-                {
-                    if (hasError)
-                    {
-                        onLoadFailed();
-                    }
-                    else
-                    {
-                        onLoadSuccess();
-                    }
-                }
-            };
-
-            Action onInternalLoadError = () =>
-            {
-                hasError = true;
-
-                if (--objectsToLoad <= 0)
-                {
-                    onLoadFailed();
-                }
-            };
-
-            objectsToLoad++;
-            base.LoadAsync(onInternalLoadSuccess, onInternalLoadError);
-
-            if(Weapon != null)
-            {
-                objectsToLoad++;
-                Weapon.LoadAsync(onInternalLoadSuccess, onInternalLoadError);
-            }
+            loader.AppendProvider(Weapon);
+            loader.AppendProvider(base.LoadAsync);
+            
+            loader.LoadAsync(onLoadSuccess, onLoadFailed);
         }
     }
 }

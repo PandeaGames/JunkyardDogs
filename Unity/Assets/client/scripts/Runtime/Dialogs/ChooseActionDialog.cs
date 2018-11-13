@@ -32,7 +32,7 @@ public class ChooseActionDialog : Dialog
     {
         base.Setup(config, responseDelegate);
         _config = config as ChooseActionDialogConfig;
-        _config.ActionList.LoadAsync<ActionList>(OnActionListLoaded, () => { });
+        _config.ActionList.LoadAssetAsync<ActionList>(OnActionListLoaded, (e) => { });
     }
 
     private void OnActionListLoaded(ActionList list, WeakReference reference)
@@ -53,7 +53,7 @@ public class ChooseActionDialog : Dialog
                     Close();
                 });
             }
-        }, () => { });
+        }, (e) => { });
         //TODO fill list;
     }
 

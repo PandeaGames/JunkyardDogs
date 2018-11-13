@@ -7,6 +7,7 @@ using UnityEngine;
 using WeakReference = Data.WeakReference;
 using JunkyardDogs.Components;
 using JunkyardDogs.Simulation;
+using PandeaGames;
 using UnityEngine.SceneManagement;
 using EditorSceneManager = UnityEditor.SceneManagement.EditorSceneManager;
 
@@ -25,21 +26,21 @@ public class TournamentController : MonoBehaviour
 	
 	public void RunTournament(RoundState roundState, Tournament tournament)
 	{
-		_userService = _serviceManager.GetService<JunkyardUserService>();
+		_userService = Game.Instance.GetService<JunkyardUserService>();
 
 		JunkyardUser user = _userService.User;
 		
 		_roundState = roundState;
 		ParticipantDataUtils.GenerateParticipantsAsync(tournament.Participants, (participants) =>
 		{
-			StartCoroutine(CompleteParticipantsCoroutine(participants));
+			StartCoroutine(CompleteParticipantsCoroutine(participants, () => { }));
 		}, OnError);
 		StartRound(roundState);
 	}
 	
 	public void RunTournament(TournamentState tournamentState)
 	{
-		_userService = _serviceManager.GetService<JunkyardUserService>();
+		_userService = Game.Instance.GetService<JunkyardUserService>();
 
 		JunkyardUser user = _userService.User;
 		
@@ -51,7 +52,7 @@ public class TournamentController : MonoBehaviour
 	{
 		_tournament = tournament;
 		
-		_tournament.LoadAsync<Tournament>(TournamentLoaded, OnError);
+		_tournament.LoadAssetAsync<Tournament>(TournamentLoaded, (e) => { });
 	}
 	
 	private void TournamentLoaded(Tournament tournament, WeakReference reference)
@@ -60,7 +61,7 @@ public class TournamentController : MonoBehaviour
         
 		ParticipantDataUtils.GenerateParticipantsAsync(tournament.Participants, (participants) =>
 			{
-				StartCoroutine(CompleteParticipantsCoroutine(participants));_tournamentState.FillWithParticipants(participants);
+				StartCoroutine(CompleteParticipantsCoroutine(participants, () => { }));_tournamentState.FillWithParticipants(participants);
 				RunTournament(_tournamentState);
 			}, OnError);
 	}

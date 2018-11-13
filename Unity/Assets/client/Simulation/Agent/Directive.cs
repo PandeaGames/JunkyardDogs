@@ -2,6 +2,7 @@
 using System.Collections;
 using JunkyardDogs.Simulation.Behavior;
 using System;
+using Data;
 
 namespace JunkyardDogs.Simulation.Agent
 {
@@ -19,51 +20,11 @@ namespace JunkyardDogs.Simulation.Agent
             throw new NotImplementedException();
         }
 
-        public void LoadAsync(System.Action onLoadSuccess, System.Action onLoadFailed)
+        public void LoadAsync(LoadSuccess onLoadSuccess, LoadError onLoadFailed)
         {
-            int objectsToLoad = 0;
-            bool hasError = false;
-
-            Action<ScriptableObject, Data.WeakReference> onInternalAssetLoadSuccess = (so, refernce) =>
-            {
-                if (--objectsToLoad <= 0)
-                {
-                    if (hasError)
-                    {
-                        onLoadFailed();
-                    }
-                    else
-                    {
-                        onLoadSuccess();
-                    }
-                }
-            };
-
-            System.Action onInternalLoadSuccess = () =>
-            {
-                if (--objectsToLoad <= 0)
-                {
-                    if (hasError)
-                    {
-                        onLoadFailed();
-                    }
-                    else
-                    {
-                        onLoadSuccess();
-                    }
-                }
-            };
-
-            if(ActionWeakReference != null)
-            {
-                objectsToLoad++;
-                ActionWeakReference.LoadAsync<ScriptableObject>(onInternalAssetLoadSuccess, onLoadFailed);
-            }
-
-            if (objectsToLoad == 0)
-            {
-                TaskProvider.Instance.RunTask(NullObjectsLoaded(), () => { onLoadSuccess(); });
-            }
+            Loader loader = new Loader();
+            loader.AppendProvider(ActionWeakReference);
+            loader.LoadAsync(onLoadSuccess, onLoadFailed);
         }
 
         private IEnumerator NullObjectsLoaded()

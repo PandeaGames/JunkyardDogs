@@ -28,26 +28,26 @@ public class SpecificationCatalogue : ScriptableObject
             throw new NotImplementedException();
         }
 
-        public void LoadAsync(Action onLoadSuccess, Action onLoadFailed)
+        public void LoadAsync(LoadSuccess onLoadSuccess, LoadError onLoadFailed)
         {
             if (_specification == null)
             {
-                Task task = Task.Run(onLoadFailed);
+                Task task = Task.Run(() => onLoadFailed(new LoadException("No specification exists")));
             }
             else
             {
-                _specification.LoadAsync<Specification>(
+                _specification.LoadAssetAsync<Specification>(
                     (asset, reference) =>
                     {
-                        _material.LoadAsync<Specification>(
+                        _material.LoadAssetAsync<Specification>(
                         (materialAsset, materialReference) =>
                         {
                             onLoadSuccess();
                             _isLoaded = true;
                         },
-                        onLoadFailed);
+                        (e) => onLoadFailed(new LoadException(e.Message, e)));
                     },
-                    onLoadFailed);
+                    (e) => onLoadFailed(new LoadException(e.Message, e)));
             }
         }
     }

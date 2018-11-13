@@ -24,77 +24,14 @@ namespace JunkyardDogs.Simulation.Agent
             Directives = new List<Directive>();
             Transitions = new List<StateTransition>();
         }
-        
 
-        public void LoadAsync(Action onLoadSuccess, Action onLoadFailed)
+        public void LoadAsync(LoadSuccess onLoadSuccess, LoadError onLoadFailed)
         {
-            int objectsToLoad = 0;
-            bool hasError = false;
-            
-            Action onInternalLoadSuccess = () =>
-            {
-                if (--objectsToLoad <= 0)
-                {
-                    if (hasError)
-                    {
-                        onLoadFailed();
-                    }
-                    else
-                    {
-                        onLoadSuccess();
-                    }
-                }
-            };
-
-            Action onInternalLoadError = () =>
-            {
-                hasError = true;
-
-                if (--objectsToLoad <= 0)
-                {
-                    onLoadFailed();
-                }
-            };
-            
-            Action<ScriptableObject, Data.WeakReference> onInternalAssetLoadSuccess = (so,  refernce) =>
-            {
-                onInternalLoadSuccess();
-            };
-
-            if(StateWeakReference != null)
-            {
-                objectsToLoad++;
-                StateWeakReference.LoadAsync<ScriptableObject>(onInternalAssetLoadSuccess, onLoadFailed);
-            }
-
-            if(Directives != null)
-            {
-                Directives.ForEach((directive) =>
-                {
-                    if (directive != null)
-                    {
-                        objectsToLoad++;
-                        directive.LoadAsync(onInternalLoadSuccess, onInternalLoadError);
-                    }
-                });
-            }
-
-            if (Transitions != null)
-            {
-                Transitions.ForEach((transitions) =>
-                {
-                    if (transitions != null)
-                    {
-                        objectsToLoad++;
-                        transitions.LoadAsync(onInternalLoadSuccess, onInternalLoadError);
-                    }
-                });
-            }
-
-            if (objectsToLoad == 0)
-            {
-                TaskProvider.Instance.RunTask(NullObjectsLoaded(), () => { onLoadSuccess(); });
-            }
+            Loader loader = new Loader();
+            loader.AppendProvider(StateWeakReference);
+            loader.AppendProvider(Directives);
+            loader.AppendProvider(Transitions);
+            loader.LoadAsync(onLoadSuccess, onLoadFailed);
         }
 
         private IEnumerator NullObjectsLoaded()

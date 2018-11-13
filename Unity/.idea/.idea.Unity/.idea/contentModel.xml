@@ -187,134 +187,11 @@
         </e>
       </e>
       <e p="Assets\client" t="Include">
+        <e p="Data" t="Include">
+          <e p="JunkyardStaticDataLoader.cs" t="Include" />
+        </e>
+        <e p="GameLoader.cs" t="Include" />
         <e p="scripts" t="Include">
-          <e p="Core" t="Include">
-            <e p="Assets" t="Include">
-              <e p="Editor" t="Include">
-                <e p="BuildBundles.cs" t="Include" />
-              </e>
-            </e>
-            <e p="Data" t="Include">
-              <e p="AssetBundleUtils.cs" t="Include" />
-              <e p="AssetList.cs" t="Include" />
-              <e p="ConfiguredScreen.cs" t="Include" />
-              <e p="Core.cs" t="Include" />
-              <e p="DialogConfig.cs" t="Include" />
-              <e p="Factories" t="Include">
-                <e p="MaterialFactory.cs" t="Include" />
-                <e p="ObjectFactory.cs" t="Include" />
-                <e p="PrefabFactory.cs" t="Include" />
-                <e p="ScriptableObjectFactory.cs" t="Include" />
-                <e p="SpriteFactory.cs" t="Include" />
-                <e p="StringFactory.cs" t="Include" />
-              </e>
-              <e p="ScreenTransition.cs" t="Include" />
-              <e p="WeakReference" t="Include">
-                <e p="Editor" t="Include">
-                  <e p="WeakReference.cs" t="Include" />
-                </e>
-                <e p="ILoadableObject.cs" t="Include" />
-                <e p="IWeakReferenceObject.cs" t="Include" />
-                <e p="WeakReference.cs" t="Include" />
-                <e p="WeakReferenceList.cs" t="Include" />
-              </e>
-            </e>
-            <e p="Editor" t="Include">
-              <e p="CoreEditorTools.cs" t="Include" />
-              <e p="CoreEditorUtils.cs" t="Include" />
-              <e p="ScreenManagerWindow.cs" t="Include" />
-              <e p="TemplateImporter.cs" t="Include" />
-            </e>
-            <e p="Entities" t="Include">
-              <e p="User.cs" t="Include" />
-            </e>
-            <e p="LoadedScreenCache.cs" t="Include" />
-            <e p="Runtime" t="Include">
-              <e p="Constants.cs" t="Include" />
-              <e p="Controllers" t="Include">
-                <e p="scripts" t="Include">
-                  <e p="CoreController.cs" t="Include" />
-                  <e p="StateMachine.cs" t="Include" />
-                </e>
-              </e>
-              <e p="Gameplay" t="Include">
-                <e p="Camera" t="Include">
-                  <e p="AnchoredFollowAgent.cs" t="Include" />
-                  <e p="CameraAgent.cs" t="Include" />
-                  <e p="CameraMaster.cs" t="Include" />
-                  <e p="SimpleFollowAgent.cs" t="Include" />
-                </e>
-                <e p="Collectables" t="Include">
-                  <e p="Collectable.cs" t="Include" />
-                  <e p="CollectOnTap.cs" t="Include" />
-                  <e p="Collector.cs" t="Include" />
-                </e>
-                <e p="Control" t="Include">
-                  <e p="Hashtable.cs" t="Include" />
-                  <e p="IInputPuppet.cs" t="Include" />
-                  <e p="InputFocusOnStart.cs" t="Include" />
-                  <e p="InputGroup.cs" t="Include" />
-                  <e p="InputMaster.cs" t="Include" />
-                  <e p="InputPuppet.cs" t="Include" />
-                  <e p="PauseGame.cs" t="Include" />
-                  <e p="SimplePointerMaster.cs" t="Include" />
-                </e>
-                <e p="Dialogs" t="Include">
-                  <e p="Dialog.cs" t="Include" />
-                  <e p="DialogStage.cs" t="Include" />
-                  <e p="MessageDialog.cs" t="Include" />
-                  <e p="OptionDisplay.cs" t="Include" />
-                </e>
-                <e p="Pausable.cs" t="Include" />
-                <e p="Scenes" t="Include">
-                  <e p="Garage.cs" t="Include" />
-                </e>
-                <e p="StartGame.cs" t="Include" />
-                <e p="User" t="Include">
-                  <e p="Control" t="Include">
-                    <e p="PlayerControl.cs" t="Include" />
-                  </e>
-                </e>
-                <e p="Utils" t="Include">
-                  <e p="SimpleFollow.cs" t="Include" />
-                </e>
-              </e>
-              <e p="Rendering" t="Include">
-                <e p="SpriteRendererGroupTint.cs" t="Include" />
-              </e>
-              <e p="Screens" t="Include">
-                <e p="NestedWindowController.cs" t="Include" />
-                <e p="ScreenController.cs" t="Include" />
-                <e p="WindowController.cs" t="Include" />
-              </e>
-              <e p="Utils" t="Include">
-                <e p="TaskProvider.cs" t="Include" />
-              </e>
-            </e>
-            <e p="Services" t="Include">
-              <e p="AssetBundleManagerInit.cs" t="Include" />
-              <e p="CameraService.cs" t="Include" />
-              <e p="CollectionService.cs" t="Include" />
-              <e p="DialogService.cs" t="Include" />
-              <e p="Editor" t="Include">
-                <e p="ServiceEditorTools.cs" t="Include" />
-              </e>
-              <e p="InputService.cs" t="Include" />
-              <e p="InputService2D.cs" t="Include" />
-              <e p="PauseService.cs" t="Include" />
-              <e p="PersistentServiceManager.cs" t="Include" />
-              <e p="Service.cs" t="Include" />
-              <e p="ServiceManager.cs" t="Include" />
-              <e p="UserService.cs" t="Include" />
-            </e>
-            <e p="Utils" t="Include">
-              <e p="AssetDatabaseUtility.cs" t="Include" />
-              <e p="CSharpUtils.cs" t="Include" />
-              <e p="Game2DMathUtils.cs" t="Include" />
-              <e p="GenericFactory.cs" t="Include" />
-              <e p="NewBehaviourScript1.cs" t="Include" />
-            </e>
-          </e>
           <e p="Data" t="Include">
             <e p="Behavior" t="Include">
               <e p="Action.cs" t="Include" />
@@ -509,6 +386,9 @@
                 <e p="EventButton.cs" t="Include" />
               </e>
             </e>
+            <e p="Scenes" t="Include">
+              <e p="Garage.cs" t="Include" />
+            </e>
             <e p="Screens" t="Include">
               <e p="ActionDisplay.cs" t="Include" />
               <e p="ChooseBotScreen.cs" t="Include" />
@@ -586,6 +466,19 @@
           <e p="Utils" t="Include">
             <e p="SimulationUtils.cs" t="Include" />
           </e>
+        </e>
+        <e p="ViewControllers" t="Include">
+          <e p="ChooseNationalityViewController.cs" t="Include" />
+          <e p="GameLoadViewController.cs" t="Include" />
+          <e p="JunkyardDogsViewController.cs" t="Include" />
+          <e p="JunkyardFullGameViewController.cs" t="Include" />
+        </e>
+        <e p="ViewModels" t="Include">
+          <e p="JunkyardUserViewModel.cs" t="Include" />
+          <e p="LoadingViewModel.cs" t="Include" />
+        </e>
+        <e p="Views" t="Include">
+          <e p="ChooseNationlaityView.cs" t="Include" />
         </e>
       </e>
       <e p="Assets\Editor" t="Include">
@@ -704,6 +597,157 @@
               <e p="SetLanguageDropdown.cs" t="Include" />
               <e p="StringObfuscator.cs" t="Include" />
             </e>
+          </e>
+        </e>
+      </e>
+      <e p="Assets\PandeaGames" t="Include">
+        <e p="Data" t="Include">
+          <e p="AssetBundleUtils.cs" t="Include" />
+          <e p="AssetList.cs" t="Include" />
+          <e p="ConfiguredScreen.cs" t="Include" />
+          <e p="Core.cs" t="Include" />
+          <e p="DialogConfig.cs" t="Include" />
+          <e p="Factories" t="Include">
+            <e p="MaterialFactory.cs" t="Include" />
+            <e p="ObjectFactory.cs" t="Include" />
+            <e p="PrefabFactory.cs" t="Include" />
+            <e p="ScriptableObjectFactory.cs" t="Include" />
+            <e p="SpriteFactory.cs" t="Include" />
+            <e p="StringFactory.cs" t="Include" />
+          </e>
+          <e p="LoadableConfigurationData.cs" t="Include" />
+          <e p="PandeaGameConfigurationData.cs" t="Include" />
+          <e p="ScreenTransition.cs" t="Include" />
+          <e p="Static" t="Include">
+            <e p="AbstractStaticDataProvider.cs" t="Include" />
+            <e p="IStaticDataProvider.cs" t="Include" />
+            <e p="PandeaGameDataProvider.cs" t="Include" />
+          </e>
+          <e p="WeakReference" t="Include">
+            <e p="Editor" t="Include">
+              <e p="WeakReference.cs" t="Include" />
+            </e>
+            <e p="ILoadableObject.cs" t="Include" />
+            <e p="IWeakReferenceObject.cs" t="Include" />
+            <e p="Loader.cs" t="Include" />
+            <e p="WeakReference.cs" t="Include" />
+            <e p="WeakReferenceList.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Editor" t="Include">
+          <e p="CoreEditorTools.cs" t="Include" />
+          <e p="CoreEditorUtils.cs" t="Include" />
+          <e p="ScreenManagerWindow.cs" t="Include" />
+          <e p="TemplateImporter.cs" t="Include" />
+        </e>
+        <e p="Entities" t="Include">
+          <e p="User.cs" t="Include" />
+        </e>
+        <e p="Game.cs" t="Include" />
+        <e p="LoadedScreenCache.cs" t="Include" />
+        <e p="Runtime" t="Include">
+          <e p="Constants.cs" t="Include" />
+          <e p="Controllers" t="Include">
+            <e p="scripts" t="Include">
+              <e p="CoreController.cs" t="Include" />
+              <e p="StateMachine.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Gameplay" t="Include">
+            <e p="Camera" t="Include">
+              <e p="AnchoredFollowAgent.cs" t="Include" />
+              <e p="CameraAgent.cs" t="Include" />
+              <e p="CameraMaster.cs" t="Include" />
+              <e p="SimpleFollowAgent.cs" t="Include" />
+            </e>
+            <e p="Collectables" t="Include">
+              <e p="Collectable.cs" t="Include" />
+              <e p="CollectOnTap.cs" t="Include" />
+              <e p="Collector.cs" t="Include" />
+            </e>
+            <e p="Control" t="Include">
+              <e p="Hashtable.cs" t="Include" />
+              <e p="IInputPuppet.cs" t="Include" />
+              <e p="InputFocusOnStart.cs" t="Include" />
+              <e p="InputGroup.cs" t="Include" />
+              <e p="InputMaster.cs" t="Include" />
+              <e p="InputPuppet.cs" t="Include" />
+              <e p="PauseGame.cs" t="Include" />
+              <e p="SimplePointerMaster.cs" t="Include" />
+            </e>
+            <e p="Dialogs" t="Include">
+              <e p="Dialog.cs" t="Include" />
+              <e p="MessageDialog.cs" t="Include" />
+              <e p="OptionDisplay.cs" t="Include" />
+            </e>
+            <e p="Pausable.cs" t="Include" />
+            <e p="StartGame.cs" t="Include" />
+            <e p="User" t="Include">
+              <e p="Control" t="Include">
+                <e p="PlayerControl.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Utils" t="Include">
+              <e p="SimpleFollow.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Rendering" t="Include">
+            <e p="SpriteRendererGroupTint.cs" t="Include" />
+          </e>
+          <e p="Utils" t="Include">
+            <e p="TaskProvider.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Services" t="Include">
+          <e p="AbstractService.cs" t="Include" />
+          <e p="AbstractUserService.cs" t="Include" />
+          <e p="AssetBundleManagerInit.cs" t="Include" />
+          <e p="Editor" t="Include">
+            <e p="ServiceEditorTools.cs" t="Include" />
+          </e>
+          <e p="IService.cs" t="Include" />
+          <e p="PauseService.cs" t="Include" />
+        </e>
+        <e p="Singleton.cs" t="Include" />
+        <e p="Utils" t="Include">
+          <e p="AssetDatabaseUtility.cs" t="Include" />
+          <e p="CSharpUtils.cs" t="Include" />
+          <e p="Game2DMathUtils.cs" t="Include" />
+          <e p="GenericFactory.cs" t="Include" />
+          <e p="NewBehaviourScript1.cs" t="Include" />
+          <e p="StateMachines" t="Include">
+            <e p="PandeaGamesFsm.cs" t="Include" />
+          </e>
+        </e>
+        <e p="ViewControllers" t="Include">
+          <e p="AbstractViewController.cs" t="Include" />
+          <e p="AbstractViewControllerFSM.cs" t="Include" />
+          <e p="IViewController.cs" t="Include" />
+        </e>
+        <e p="ViewModels" t="Include">
+          <e p="AbstractUserViewModel.cs" t="Include" />
+          <e p="AbstractViewModel.cs" t="Include" />
+          <e p="CameraViewModel.cs" t="Include" />
+          <e p="IViewModel.cs" t="Include" />
+        </e>
+        <e p="Views" t="Include">
+          <e p="AbstractUnityView.cs" t="Include" />
+          <e p="ContainerView.cs" t="Include" />
+          <e p="IView.cs" t="Include" />
+          <e p="SceneView.cs" t="Include" />
+          <e p="Screens" t="Include">
+            <e p="NestedWindowView.cs" t="Include" />
+            <e p="ScreenView.cs" t="Include" />
+            <e p="WindowView.cs" t="Include" />
+          </e>
+          <e p="Services" t="Include">
+            <e p="CollectionService.cs" t="Include" />
+            <e p="DialogService.cs" t="Include" />
+            <e p="InputService.cs" t="Include" />
+            <e p="InputService2D.cs" t="Include" />
+            <e p="PersistentServiceManager.cs" t="Include" />
+            <e p="Service.cs" t="Include" />
+            <e p="ServiceManager.cs" t="Include" />
           </e>
         </e>
       </e>

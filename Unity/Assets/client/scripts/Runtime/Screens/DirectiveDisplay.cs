@@ -18,9 +18,9 @@ public class DirectiveDisplay : MonoBehaviour {
     public void Render(Directive directive)
     {
         _directive = directive;
-        directive.ActionWeakReference.LoadAsync<Action>((action, reference) =>
+        directive.ActionWeakReference.LoadAssetAsync<Action>((action, reference) =>
         {
             _text.text = action.name;
-        }, () => { });
+        }, (e) => { });
     }
 }

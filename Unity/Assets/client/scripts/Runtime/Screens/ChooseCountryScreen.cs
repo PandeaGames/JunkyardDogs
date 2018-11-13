@@ -3,9 +3,11 @@ using System.Collections;
 using UnityEngine.UI;
 using Data;
 using System;
+using PandeaGames;
+using PandeaGames.Views.Screens;
 using WeakReference = Data.WeakReference;
 
-public class ChooseCountryScreen : ScreenController, ILoadableObject
+public class ChooseCountryScreen : ScreenView, ILoadableObject
 {
     [SerializeField]
     private ServiceManager _serviceManager;
@@ -33,7 +35,7 @@ public class ChooseCountryScreen : ScreenController, ILoadableObject
         return _isLoaded;
     }
 
-    public void LoadAsync(Action onLoadSuccess, Action onLoadFailed)
+    public void LoadAsync(LoadSuccess onLoadSuccess, LoadError onLoadFailed)
     {
         if (_isLoaded )
         {
@@ -48,11 +50,11 @@ public class ChooseCountryScreen : ScreenController, ILoadableObject
 
     }
 
-    public override void Setup(WindowController window, Config config)
+    public override void Setup(WindowView window)
     {
-        base.Setup(window, config);
+        base.Setup(window);
 
-        _junkyardUserService = _serviceManager.GetService<JunkyardUserService>();
+        _junkyardUserService = Game.Instance.GetService<JunkyardUserService>();
         LoadAsync(LoadComplete, null);
     }
 
@@ -75,6 +77,6 @@ public class ChooseCountryScreen : ScreenController, ILoadableObject
     {
         _junkyardUserService.User.Competitor.Nationality = nationalityReference;
         _junkyardUserService.Save();
-        _window.LaunchScreen("junkyard", ScriptableObject.CreateInstance<JunkyardScreen.Config>());
+        _window.LaunchScreen("junkyard");
     }
 }

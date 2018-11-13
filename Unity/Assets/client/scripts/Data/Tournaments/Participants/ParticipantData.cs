@@ -18,7 +18,7 @@ public static class ParticipantDataUtils
     {
         List<ParticipantData> participants = new List<ParticipantData>();
         
-        participantReferences.ForEach((participantReference) => participantReference.LoadAsync<ParticipantData>(
+        participantReferences.ForEach((participantReference) => participantReference.LoadAssetAsync<ParticipantData>(
             (participantData, reference) =>
             {
                 participants.Add(participantData);
@@ -27,7 +27,7 @@ public static class ParticipantDataUtils
                 {
                     onComplete(GenerateParticipants(participants));
                 }
-            }, onError));
+            }, (e) => onError()));
     }
 }
 

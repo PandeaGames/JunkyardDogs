@@ -2,14 +2,14 @@
 using System.Collections;
 using UnityEngine.UI;
 using JunkyardDogs.Components;
-using UnityEngine.UI.Extensions;
+using PandeaGames.Views.Screens;
 
-public class GarageScreen : ScreenController
+public class GarageScreen : ScreenView
 {
-    public class GarageScreenConfig:Config
+    /*public class GarageScreenConfig:Config
     {
         public Garage Garage;
-    }
+    }*/
 
     [SerializeField]
     private ServiceManager _serviceManager;
@@ -23,14 +23,14 @@ public class GarageScreen : ScreenController
     private JunkyardUserService _junkardUserService;
     private DialogService _dialogService;
     private JunkyardUser _user;
-    private GarageScreenConfig _garageScreenConfig;
+   // private GarageScreenConfig _garageScreenConfig;
     private Garage _garage;
 
-    public override void Setup(WindowController window, Config config)
+    public override void Setup(WindowView window)
     {
-        base.Setup(window, config);
+        base.Setup(window);
 
-        _garageScreenConfig = config as GarageScreenConfig;
+        /*_garageScreenConfig = config as GarageScreenConfig;
         _garage = _garageScreenConfig.Garage;
         _junkardUserService = _serviceManager.GetService<JunkyardUserService>();
         _dialogService = _serviceManager.GetService<DialogService>();
@@ -38,7 +38,7 @@ public class GarageScreen : ScreenController
         _user = _junkardUserService.Load();
 
         _newBotButton.onClick.AddListener(OnNewBotClicked);
-        _dismantleButton.onClick.AddListener(_garage.DismantleSelected);
+        _dismantleButton.onClick.AddListener(_garage.DismantleSelected);*/
     }
 
     private void OnNewBotClicked()

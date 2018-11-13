@@ -2,11 +2,12 @@
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
-using JunkyardDogs.Components;
+using PandeaGames;
+using PandeaGames.Views.Screens;
 using SRF.UI.Layout;
 using Component = JunkyardDogs.Components.Component;
 
-public class InventoryScreen : ScreenController
+public class InventoryScreen : ScreenView
 {
     [SerializeField]
     private GameObject _inventoryItemOriginal;
@@ -23,11 +24,11 @@ public class InventoryScreen : ScreenController
     private JunkyardUserService _junkyardUserService;
     private DialogService _dialogService;
 
-    public override void Setup(WindowController window, Config config)
+    public override void Setup(WindowView window)
     {
-        base.Setup(window, config);
+        base.Setup(window);
 
-        _junkyardUserService = _serviceManager.GetService<JunkyardUserService>();
+        _junkyardUserService = Game.Instance.GetService<JunkyardUserService>();
         _dialogService = _serviceManager.GetService<DialogService>();
 
         Inventory inventory = _junkyardUserService.User.Competitor.Inventory;

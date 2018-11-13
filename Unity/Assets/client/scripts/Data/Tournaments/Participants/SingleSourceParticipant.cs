@@ -8,7 +8,7 @@ public class SingleSourceParticipant : Participant
     
     public override void GetTeam(JunkyardUser user, Action<ParticipantTeam> onComplete, Action onError)
     {
-        Source.LoadAsync<CompetitorBlueprintData>((data, refernce) =>
+        Source.LoadAssetAsync<CompetitorBlueprintData>((data, refernce) =>
         {
             data.GetBlueprint().GenerateObject((generatedObject) =>
             {
@@ -19,6 +19,6 @@ public class SingleSourceParticipant : Participant
                 onComplete(team);
 
             }, onError);
-        }, onError);
+        }, (e) => onError());
     }
 }

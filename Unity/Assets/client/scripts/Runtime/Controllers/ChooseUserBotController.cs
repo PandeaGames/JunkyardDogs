@@ -2,6 +2,8 @@
 using JunkyardDogs.Components;
 using System;
 using System.Collections.Generic;
+using PandeaGames;
+using PandeaGames.Views.Screens;
 
 public class ChooseUserBotController : MonoBehaviour, ChooseBotScreen.IChooseBotModel
 {
@@ -24,7 +26,7 @@ public class ChooseUserBotController : MonoBehaviour, ChooseBotScreen.IChooseBot
     private Vector3 _botLineupOffset;
 
     private List<BotRenderer> _renderedBots;
-    private CameraService _cameraService;
+    private CameraViewModel _cameraViewModel;
     private JunkyardUserService _userService;
     private Action<Bot> _onChoose;
     private Action _onCancel;
@@ -34,8 +36,8 @@ public class ChooseUserBotController : MonoBehaviour, ChooseBotScreen.IChooseBot
 
     private void Start()
     {
-        _cameraService = _serviceManager.GetService<CameraService>();
-        _userService = _serviceManager.GetService<JunkyardUserService>();
+        _cameraViewModel = Game.Instance.GetViewModel<CameraViewModel>(0);
+        _userService = Game.Instance.GetService<JunkyardUserService>();
         _renderedBots = new List<BotRenderer>();
     }
     
@@ -53,7 +55,7 @@ public class ChooseUserBotController : MonoBehaviour, ChooseBotScreen.IChooseBot
         int botsToLoad = inventory.Bots.Count;
         bool errorLoading = false;
         
-        Action onBotLoadComplete = () =>
+        LoadSuccess onBotLoadComplete = () =>
         {
             if (--botsToLoad <= 0)
             {
@@ -68,7 +70,7 @@ public class ChooseUserBotController : MonoBehaviour, ChooseBotScreen.IChooseBot
             }
         };
         
-        Action onBotLoadError = () =>
+        LoadError onBotLoadError = (e) =>
         {
             botsToLoad--;
             errorLoading = true;
@@ -79,7 +81,7 @@ public class ChooseUserBotController : MonoBehaviour, ChooseBotScreen.IChooseBot
             bot.LoadAsync(onBotLoadComplete, onBotLoadError);
         }
         
-        _cameraService.Focus(_cameraAgent);
+        _cameraViewModel.Focus(_cameraAgent);
     }
 
     private void OnBotsLoaded(List<Bot> bots)
@@ -101,11 +103,11 @@ public class ChooseUserBotController : MonoBehaviour, ChooseBotScreen.IChooseBot
             _cameraAgent.SetTarget(_renderedBots[0].transform);
         }
 
-        ChooseBotScreen.ChooseBotConfig config = ScriptableObject.CreateInstance<ChooseBotScreen.ChooseBotConfig>();
+        /*ChooseBotScreen.ChooseBotConfig config = ScriptableObject.CreateInstance<ChooseBotScreen.ChooseBotConfig>();
         config.Bots = bots;
-        config.Model = this;
+        config.Model = this;*/
         
-        WindowController.main.LaunchScreen("ChooseBotScreen", config);
+        WindowView.main.LaunchScreen("ChooseBotScreen");
     }
     
     public void Focus(Bot bot)
@@ -115,7 +117,7 @@ public class ChooseUserBotController : MonoBehaviour, ChooseBotScreen.IChooseBot
     
     public void Select(Bot bot)
     {
-        WindowController.main.Back();
+        WindowView.main.Back();
         _onChoose(bot);
     }
 }

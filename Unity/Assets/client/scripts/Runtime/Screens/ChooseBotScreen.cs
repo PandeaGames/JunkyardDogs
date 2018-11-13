@@ -5,20 +5,14 @@ using JunkyardDogs.Components;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
+using PandeaGames.Views.Screens;
 
-public class ChooseBotScreen : ScreenController
+public class ChooseBotScreen : ScreenView
 {
     public interface IChooseBotModel
     {
         void Focus(Bot bot);
         void Select(Bot bot);
-    }
-    
-    
-    public class ChooseBotConfig : Config
-    {
-        public List<Bot> Bots;
-        public IChooseBotModel Model;
     }
 
     [SerializeField]
@@ -28,18 +22,17 @@ public class ChooseBotScreen : ScreenController
     [SerializeField]
     private Button _chooseBtn;
     
-    private ChooseBotConfig _chooseBotConfig;
     private IChooseBotModel _model;
     private List<Bot> _bots;
     private int _index;
     
-    public override void Setup(WindowController window, Config config)
+    public override void Setup(WindowView window)
     {
-        base.Setup(window, config);
+        base.Setup(window);
 
-        _chooseBotConfig = config as ChooseBotConfig;
+        /*_chooseBotConfig = config as ChooseBotConfig;
         _model = _chooseBotConfig.Model;
-        _bots = _chooseBotConfig.Bots;
+        _bots = _chooseBotConfig.Bots;*/
         
         _leftBtn.onClick.AddListener(OnLeftBtn);
         _rightBtn.onClick.AddListener(OnRightBtn);

@@ -3,6 +3,7 @@ using System.Collections;
 using JunkyardDogs.Components;
 using JunkyardDogs.Specifications;
 using System;
+using PandeaGames;
 
 public class BotBuilderDisplay : MonoBehaviour 
 {
@@ -24,7 +25,7 @@ public class BotBuilderDisplay : MonoBehaviour
     private Collider _collider;
 
     private bool _isFocused;
-    private CameraService _cameraService;
+    private CameraViewModel _cameraViewModel;
     private InputService _inputService;
     private BotBuilder _botBuilder;
     private GameObject _bot;
@@ -39,9 +40,9 @@ public class BotBuilderDisplay : MonoBehaviour
 
     public void Setup(BotBuilder botBuilder)
     {
-        _cameraService = _serviceManager.GetService<CameraService>();
+        _cameraViewModel = Game.Instance.GetViewModel<CameraViewModel>(0);
         _inputService = _serviceManager.GetService<InputService>();
-        _junkardUserService = _serviceManager.GetService<JunkyardUserService>();
+        _junkardUserService = Game.Instance.GetService<JunkyardUserService>();
         _dialogService = _serviceManager.GetService<DialogService>();
 
         _user = _junkardUserService.Load();
@@ -55,7 +56,7 @@ public class BotBuilderDisplay : MonoBehaviour
             () =>
             {
                 SetupChassis(( JunkyardDogs.Specifications.Chassis)chassis.Specification);
-            }, () => { });
+            }, (e) => { });
 
         _inputService.OnPointerClick += OnPointerClick;
         _inputService.OnPointerDown += OnPointerDown;

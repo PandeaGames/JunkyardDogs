@@ -5,14 +5,11 @@ using Data;
 using JunkyardDogs.Components;
 using JunkyardDogs.Simulation.Agent;
 using JunkyardDogs.Simulation.Behavior;
+using PandeaGames;
+using PandeaGames.Views.Screens;
 
-public class EditBehaviourScreen : ScreenController
+public class EditBehaviourScreen : ScreenView
 {
-    public class EditBehaviourConfig : Config
-    {
-        public BotBuilder Builder;
-    }
-
     [SerializeField]
     private ServiceManager _serviceManager;
 
@@ -35,16 +32,15 @@ public class EditBehaviourScreen : ScreenController
     private WeakReference _actionList;
 
     private JunkyardUserService _userService;
-    private EditBehaviourConfig _editBehaviourConfig;
     private DialogService _dialogService;
     private InputService _inputService;
     private JunkyardUser _user;
 
-    public override void Setup(WindowController window, Config config)
+    public override void Setup(WindowView window)
     {
-        base.Setup(window, config);
-        _editBehaviourConfig = config as EditBehaviourConfig;
-        _userService = _serviceManager.GetService<JunkyardUserService>();
+        base.Setup(window);
+        //_editBehaviourConfig = config as EditBehaviourConfig;
+        _userService = Game.Instance.GetService<JunkyardUserService>();
         _dialogService = _serviceManager.GetService<DialogService>();
         _user = _userService.Load();
         _doneButton.onClick.AddListener(Back);
@@ -62,7 +58,7 @@ public class EditBehaviourScreen : ScreenController
     {
         List<Dropdown.OptionData> options = new List<Dropdown.OptionData>(); 
         
-        if (_editBehaviourConfig.Builder.Bot.Agent.States.Count == 0)
+        /*if (_editBehaviourConfig.Builder.Bot.Agent.States.Count == 0)
         {
             _editBehaviourConfig.Builder.Bot.Agent.States.Add(new AgentState());
         }
@@ -77,7 +73,7 @@ public class EditBehaviourScreen : ScreenController
 
         _statesDropdown.onValueChanged.AddListener(OnStateSelectionChange);
         
-        RenderAgentState(GetSelectedState());
+        RenderAgentState(GetSelectedState());*/
     }
 
     private void OnStateSelectionChange(int value)
@@ -137,12 +133,12 @@ public class EditBehaviourScreen : ScreenController
 
     private AgentState GetSelectedState()
     {
-        List<AgentState> states = _editBehaviourConfig.Builder.Bot.Agent.States;
+        /*List<AgentState> states = _editBehaviourConfig.Builder.Bot.Agent.States;
         int index = _statesDropdown.value;
         if (states.Count > index)
         {
             return states[index];
-        }
+        }*/
 
         return null;
     }

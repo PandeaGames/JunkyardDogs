@@ -35,21 +35,21 @@ namespace JunkyardDogs.Components
             SpecificationReference = new WeakReference();
         }
 
-        public virtual void LoadAsync(Action onLoadSuccess, Action onLoadFailed)
+        public virtual void LoadAsync(LoadSuccess onLoadSuccess, LoadError onLoadFailed)
         {
             if (SpecificationReference == null)
             {
-                Task task = Task.Run(onLoadFailed);
+                Task task = Task.Run(() => { onLoadFailed(new LoadException("Specification refernence is 'null'")); });
             }
             else
             {
-                SpecificationReference.LoadAsync<Specification>(
+                SpecificationReference.LoadAssetAsync<Specification>(
                     (asset, reference) => 
                     {
                         onLoadSuccess();
                         _isLoaded = true;
                     },
-                    onLoadFailed);
+                    (e) => onLoadFailed(new LoadException("Failed to load weak reference", e)));
             }
         }
 

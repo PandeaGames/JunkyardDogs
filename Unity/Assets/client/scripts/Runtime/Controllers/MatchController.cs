@@ -4,6 +4,7 @@ using UnityEngine;
 using JunkyardDogs.Components;
 using System.Collections.Generic;
 using System.Collections;
+using PandeaGames;
 using WeakReference = Data.WeakReference;
 
 public struct MatchOutcome
@@ -40,7 +41,7 @@ public class MatchController : MonoBehaviour
     private CameraAgent _cameraAgent;
 
     private SimulationService _simulationService;
-    private CameraService _cameraService;
+    private CameraViewModel _cameraViewModel;
     private Action<MatchOutcome> _onMatchComplete;
     private MatchState _match;
     private Engagement _engagement;
@@ -49,15 +50,15 @@ public class MatchController : MonoBehaviour
     private void Awake()
     {
         _simulationService = _serviceManager.GetService<SimulationService>();
-        _cameraService = _serviceManager.GetService<CameraService>();
-        _userService = _serviceManager.GetService<JunkyardUserService>();
+        _cameraViewModel = Game.Instance.GetViewModel<CameraViewModel>(0);
+        _userService = Game.Instance.GetService<JunkyardUserService>();
     }
     
     public void RunMatch(MatchState match, Action<MatchOutcome> onMatchComplete)
     {
         _match = match;
         _onMatchComplete = onMatchComplete;
-        _cameraService.Focus(_cameraAgent);
+        _cameraViewModel.Focus(_cameraAgent);
         
         _match.ParticipantA.Participant.GetTeam(_userService.Load(), teamA =>
         {
@@ -77,11 +78,11 @@ public class MatchController : MonoBehaviour
                     StartCoroutine(EndOfBattleCoroutine());
                 }, OnError), OnError);
                 
-            }, OnError);
-        }, OnError);
+            }, () => { });
+        }, () => { });
     }
     
-    private void OnError()
+    private void OnError(LoadException error)
     {
         
     }

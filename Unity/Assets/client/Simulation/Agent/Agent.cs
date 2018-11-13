@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System;
+using Data;
 
 namespace JunkyardDogs.Simulation.Agent
 {
@@ -21,52 +22,16 @@ namespace JunkyardDogs.Simulation.Agent
             get { return States[DefaultState]; }
         }
 
-        public void LoadAsync(Action onLoadSuccess, Action onLoadFailed)
+        public void LoadAsync(LoadSuccess onLoadSuccess, LoadError onLoadFailed)
         {
-            int objectsToLoad = 0;
-            bool hasError = false;
-
-            Action onInternalLoadSuccess = () =>
+            Loader loader = new Loader();
+            
+            States.ForEach((state) =>
             {
-                if (--objectsToLoad <= 0)
-                {
-                    if (hasError)
-                    {
-                        onLoadFailed();
-                    }
-                    else
-                    {
-                        onLoadSuccess();
-                    }
-                }
-            };
-
-            Action onInternalLoadError = () =>
-            {
-                hasError = true;
-
-                if (--objectsToLoad <= 0)
-                {
-                    onLoadFailed();
-                }
-            };
-
-            if(States != null)
-            {
-                States.ForEach((state) =>
-                {
-                    if (state != null)
-                    {
-                        objectsToLoad++;
-                        state.LoadAsync(onInternalLoadSuccess, onInternalLoadError);
-                    }
-                });
-            }
-
-            if(objectsToLoad == 0)
-            {
-                onLoadSuccess();
-            }
+                loader.AppendProvider(state);
+            });
+            
+            loader.LoadAsync(onLoadSuccess, onLoadFailed);
         }
 
         public bool IsLoaded()

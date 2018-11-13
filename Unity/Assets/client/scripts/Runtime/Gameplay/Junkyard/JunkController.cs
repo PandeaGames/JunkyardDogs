@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using JunkyardDogs.Components;
+using PandeaGames;
 using Random = UnityEngine.Random;
 using WeakReference = Data.WeakReference;
 using Component = JunkyardDogs.Components.Component;
@@ -27,7 +28,7 @@ public class JunkController : MonoBehaviour {
     protected void Start()
     {
         _dialogService = _serviceManager.GetService<DialogService>();
-        _userService = _serviceManager.GetService<JunkyardUserService>();
+        _userService = Game.Instance.GetService<JunkyardUserService>();
         _componentService = _serviceManager.GetService<ComponentInstantiatorService>();
         _user = _userService.User;
         
@@ -64,7 +65,7 @@ public class JunkController : MonoBehaviour {
         });
     }
 
-    private void OnLoadFail()
+    private void OnLoadFail(LoadException e)
     {
 
     }

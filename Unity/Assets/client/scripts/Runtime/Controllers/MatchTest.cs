@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using JunkyardDogs.Components;
 using JunkyardDogs.Simulation;
+using PandeaGames;
 using UnityEngine;
 using UnityEngine.Assertions.Must;
 using WeakReference = Data.WeakReference;
@@ -28,7 +29,7 @@ public class MatchTest : MonoBehaviour
 
     private void Start()
     {
-        _userService = _serviceManager.GetService<JunkyardUserService>();
+        _userService = Game.Instance.GetService<JunkyardUserService>();
         _simulationService = _serviceManager.GetService<SimulationService>();
 
         JunkyardUser user = _userService.User;
@@ -57,7 +58,7 @@ public class MatchTest : MonoBehaviour
 });
     }
 
-    private void OnError()
+    private void OnError(LoadException e)
     {
         
     }

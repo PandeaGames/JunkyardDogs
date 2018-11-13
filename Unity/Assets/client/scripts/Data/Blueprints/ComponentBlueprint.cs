@@ -18,11 +18,11 @@ public class ComponentBlueprint<T> : Blueprint<Component, T> where T:BlueprintDa
     {
         ComponentUtils.GenerateComponent(_specification, (comp) =>
         {
-            _manufacturer.LoadAsync<Manufacturer>((manufacturer, manufacturerReference) =>
+            _manufacturer.LoadAssetAsync<Manufacturer>((manufacturer, manufacturerReference) =>
                 {
                     comp.Manufacturer = _manufacturer;
                     onComplete(comp);
-                }, onError);
+                }, (e) => onError());
         });
     }
 }

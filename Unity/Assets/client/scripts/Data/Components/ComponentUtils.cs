@@ -13,7 +13,7 @@ namespace JunkyardDogs.Components
         public static void GenerateComponent(WeakReference spec, Action<JunkyardDogs.Components.Component> onComplete)
         {
             JunkyardDogs.Components.Component component = null;
-            spec.LoadAsync<ScriptableObject>((asset, reference) =>
+            spec.LoadAssetAsync<ScriptableObject>((asset, reference) =>
             {
                 if(asset is JunkyardDogs.Specifications.Weapon)
                 {
@@ -47,7 +47,7 @@ namespace JunkyardDogs.Components
                 component.SpecificationReference = spec;
 
                 onComplete(component);
-            }, () => { });
+            }, (e) => { });
         }
     }
 }

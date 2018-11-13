@@ -3,13 +3,20 @@ using System.Collections.Generic;
 using System.Collections;
 using JunkyardDogs.Simulation.Knowledge;
 using System;
+using Data;
 
 namespace JunkyardDogs.Simulation.Agent
 {
-    public class StateTransition
+    public class StateTransition : ILoadableObject
     {
+        private bool _isLoaded;
         public List<Data.WeakReference> CriteriaReferences { get; set; }
         public AgentState StateToTransition { get; set; }
+
+        public bool IsLoaded()
+        {
+            return _isLoaded;
+        }
 
         public List<Knowledge.Knowledge> Criteria
         {
@@ -21,73 +28,12 @@ namespace JunkyardDogs.Simulation.Agent
             }
         }
 
-        public void LoadAsync(System.Action onLoadSuccess, System.Action onLoadFailed)
+        public void LoadAsync(LoadSuccess onLoadSuccess, LoadError onLoadFailed)
         {
-            int objectsToLoad = 0;
-            bool hasError = false;
-
-            Action<ScriptableObject, Data.WeakReference> onInternalAssetLoadSuccess = (so, refernce) =>
-            {
-                if (--objectsToLoad <= 0)
-                {
-                    if (hasError)
-                    {
-                        onLoadFailed();
-                    }
-                    else
-                    {
-                        onLoadSuccess();
-                    }
-                }
-            };
-
-            Action onInternalLoadSuccess = () =>
-            {
-                if (--objectsToLoad <= 0)
-                {
-                    if (hasError)
-                    {
-                        onLoadFailed();
-                    }
-                    else
-                    {
-                        onLoadSuccess();
-                    }
-                }
-            };
-
-            Action onInternalLoadError = () =>
-            {
-                hasError = true;
-
-                if (--objectsToLoad <= 0)
-                {
-                    onLoadFailed();
-                }
-            };
-
-            if (CriteriaReferences != null)
-            {
-                CriteriaReferences.ForEach((reference) =>
-                {
-                    if (reference != null)
-                    {
-                        objectsToLoad++;
-                        reference.LoadAsync(onInternalAssetLoadSuccess, onInternalLoadError);
-                    }
-                });
-            }
-
-            if(StateToTransition != null)
-            {
-                objectsToLoad++;
-                StateToTransition.LoadAsync(onInternalLoadSuccess, onInternalLoadError);
-            }
-
-            if (objectsToLoad == 0)
-            {
-                TaskProvider.Instance.RunTask(NullObjectsLoaded(), () => { onLoadSuccess(); });
-            }
+            Loader loader = new Loader();
+            loader.AppendProvider(CriteriaReferences);
+            loader.AppendProvider(StateToTransition);
+            loader.LoadAsync(onLoadSuccess, onLoadFailed);
         }
         private IEnumerator NullObjectsLoaded()
         {

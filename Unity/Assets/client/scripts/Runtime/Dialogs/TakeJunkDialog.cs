@@ -33,7 +33,7 @@ public class TakeJunkDialog : Dialog
     {
         _takeJunkDialogConfig = config as TakeJunkDialogConfig;
 
-        _takeJunkDialogConfig.Component.SpecificationReference.LoadAsync<ScriptableObject>(
+        _takeJunkDialogConfig.Component.SpecificationReference.LoadAssetAsync<ScriptableObject>(
             (asset, reference) => 
             {
                 _componentIcon.sprite = _spriteFactory.GetAsset(asset);

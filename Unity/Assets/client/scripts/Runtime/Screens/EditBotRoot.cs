@@ -1,24 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
 using JunkyardDogs.Components;
+using PandeaGames.Views.Screens;
 
-public class EditBotRoot : ScreenController
+public class EditBotRoot : ScreenView
 {
-    public class EditBotRootConfig : Config
-    {
-        public BotBuilder BuilderDisplay;
-    }
-
     [SerializeField]
     private ServiceManager _serviceManager;
 
-    private EditBotRootConfig _editBotScreenConfig;
+    //private EditBotRootConfig _editBotScreenConfig;
 
-    public override void Setup(WindowController window, Config config)
+    public override void Setup(WindowView window)
     {
-        base.Setup(window, config);
+        base.Setup(window);
 
-        _editBotScreenConfig = config as EditBotRootConfig;
+        //_editBotScreenConfig = config as EditBotRootConfig;
     }
 
     private void OnEditBehaviourButtonClicked()

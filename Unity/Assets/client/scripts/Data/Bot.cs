@@ -4,6 +4,7 @@ using UnityEngine;
 using JunkyardDogs.Components;
 using JunkyardDogs.Simulation.Agent;
 using System;
+using Data;
 
 namespace JunkyardDogs.Components
 {
@@ -26,53 +27,15 @@ namespace JunkyardDogs.Components
             Chassis = chassis;
         }
 
-        public void LoadAsync(Action onLoadSuccess, Action onLoadFailed)
+        public void LoadAsync(LoadSuccess onLoadSuccess, LoadError onLoadFailed)
         {
-            int objectsToLoad = 0;
-            bool hasError = false;
+            Loader loader = new Loader();
 
-            Action onInternalLoadSuccess = () =>
-            {
-                if(--objectsToLoad <= 0)
-                {
-                    if(hasError)
-                    {
-                        onLoadFailed();
-                    }
-                    else
-                    {
-                        onLoadSuccess();
-                    }
-                }
-            };
-
-            Action onInternalLoadError = () =>
-            {
-                hasError = true;
-
-                if (--objectsToLoad <= 0)
-                {
-                    onLoadFailed();
-                }
-            };
-
-            if (Motherboard != null)
-            {
-                objectsToLoad++;
-                Motherboard.LoadAsync(onInternalLoadSuccess, onInternalLoadError);
-            }
-
-            if (Chassis != null)
-            {
-                objectsToLoad++;
-                Chassis.LoadAsync(onInternalLoadSuccess, onInternalLoadError);
-            }
-
-            if (Agent != null)
-            {
-                objectsToLoad++;
-                Agent.LoadAsync(onInternalLoadSuccess, onInternalLoadError);
-            }
+            loader.AppendProvider(Motherboard);
+            loader.AppendProvider(Chassis);
+            loader.AppendProvider(Agent);
+            
+            loader.LoadAsync(onLoadSuccess, onLoadFailed);
         }
 
         public bool IsLoaded()

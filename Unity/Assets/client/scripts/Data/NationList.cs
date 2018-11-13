@@ -29,27 +29,15 @@ public class NationList : ScriptableObject, IEnumerable<WeakReference>, ILoadabl
         return _isLoaded;
     }
 
-    public void LoadAsync(Action onLoadSuccess, Action onLoadFailed)
+    public void LoadAsync(LoadSuccess onLoadSuccess, LoadError onLoadFailed)
     {
         if(_isLoaded)
         {
             return;
         }
 
-        foreach(WeakReference nationReference in _nations)
-        {
-            nationReference.LoadAsync<Nationality>(
-                (Nationality nationality, WeakReference reference) => OnNationLoaded(onLoadSuccess),
-                null);
-        }
-    }
-
-    private void OnNationLoaded(Action onLoadSuccess)
-    {
-        if (++_loadedNations >= _nations.Count)
-        {
-            _isLoaded = true;
-            onLoadSuccess();
-        }
+        Loader loader = new Loader();
+        loader.AppendProvider(_nations);
+        loader.LoadAsync(onLoadSuccess, onLoadFailed);
     }
 }

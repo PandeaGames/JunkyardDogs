@@ -10,16 +10,16 @@ namespace JunkyardDogs.Components
     {
         public WeakReference Material { get; set; }
 
-        public override void LoadAsync(Action onLoadSuccess, Action onLoadFailed)
+        public override void LoadAsync(LoadSuccess onLoadSuccess, LoadError onLoadFailed)
         {
             if (Material != null)
             {
-                SpecificationReference.LoadAsync<Specification>(
+                SpecificationReference.LoadAssetAsync<Specification>(
                     (asset, reference) =>
                     {
                         base.LoadAsync(onLoadSuccess, onLoadFailed);
                     },
-                    onLoadFailed);
+                    (e) => onLoadFailed(new LoadException("Failed to load specification", e)));
             }
             else
             {

@@ -1,4 +1,5 @@
 ﻿using System;
+using PandeaGames;
 using UnityEngine;
 using WeakReference = Data.WeakReference;
 
@@ -20,9 +21,9 @@ public class EventDialog : Dialog
     {
         base.Setup(config, responseDelegate);
         _config = config as EventDialogConfig;
-        _junkyardUserService = _config.ServiceManager.GetService<JunkyardUserService>();
+        _junkyardUserService = Game.Instance.GetService<JunkyardUserService>();
         _user = _junkyardUserService.Load();
-        _config.Tournament.LoadAsync<Tournament>(OnTournamentLoaded, () => { });
+        _config.Tournament.LoadAssetAsync<Tournament>(OnTournamentLoaded, (e) => { });
     }
 
     private void OnTournamentLoaded(Tournament tournament, WeakReference reference)
