@@ -3,7 +3,7 @@ using System.Collections;
 using Data;
 using System;
 using System.Collections.Generic;
-using WeakReference = Data.WeakReference;
+using WeakReference = PandeaGames.Data.WeakReferences.WeakReference;
 
 [Serializable]
 public class Competitor

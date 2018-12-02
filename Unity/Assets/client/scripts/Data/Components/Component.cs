@@ -3,7 +3,7 @@ using System.Collections;
 using JunkyardDogs.Specifications;
 using System;
 using Polenter.Serialization;
-using WeakReference = Data.WeakReference;
+using WeakReference = PandeaGames.Data.WeakReferences.WeakReference;
 using System.Threading.Tasks;
 
 namespace JunkyardDogs.Components

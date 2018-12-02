@@ -1,4 +1,4 @@
-﻿namespace Data
+﻿namespace PandeaGames.Data.WeakReferences
 {
     public interface IWeakReferenceObject
     {

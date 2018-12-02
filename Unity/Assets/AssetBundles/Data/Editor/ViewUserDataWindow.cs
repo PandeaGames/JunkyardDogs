@@ -6,7 +6,7 @@ using UnityEngine;
 using JunkyardDogs.Components;
 using JunkyardDogs.Specifications;
 
-using WeakReference = Data.WeakReference;
+using WeakReference = PandeaGames.Data.WeakReferences.WeakReference;
 using Component = JunkyardDogs.Components.Component;
 
 [Serializable]

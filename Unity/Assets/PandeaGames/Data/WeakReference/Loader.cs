@@ -87,9 +87,16 @@ namespace Data
                 hasError = true;
             };
             
-            foreach (ILoadableObject loadable in _loadables)
+            if (_loadables.Count == 0)
             {
-                loadable.LoadAsync(onComplete, onError);
+                TaskProvider.Instance.DelayedAction(() => onComplete());
+            }
+            else
+            {
+                foreach (ILoadableObject loadable in _loadables)
+                {
+                    loadable.LoadAsync(onComplete, onError);
+                }
             }
         }
     }
@@ -153,7 +160,7 @@ namespace Data
             else
             {
                 groups.Dispose();
-                onLoadSuccess();
+                TaskProvider.Instance.DelayedAction(() => onLoadSuccess());
             }
         }
 
@@ -166,7 +173,7 @@ namespace Data
             }
             else
             {
-                onLoadSuccess();
+                TaskProvider.Instance.DelayedAction(() => onLoadSuccess());
             }
         }
     }

@@ -4,11 +4,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using JunkyardDogs.Components;
+using JunkyardDogs.scripts.Runtime.Dialogs;
 using PandeaGames;
 using Random = UnityEngine.Random;
-using WeakReference = Data.WeakReference;
-using Component = JunkyardDogs.Components.Component;
-
+using WeakReference = PandeaGames.Data.WeakReferences.WeakReference;
 public class JunkController : MonoBehaviour {
 
     [SerializeField]
@@ -57,11 +56,10 @@ public class JunkController : MonoBehaviour {
     {
         ManufacturerUtils.BuildComponent(_specificationCatalogue.Manufacturer, _product, (component) =>
         {
-            TakeJunkDialog.TakeJunkDialogConfig config = ScriptableObject.CreateInstance<TakeJunkDialog.TakeJunkDialogConfig>();
-
-            config.Component = component;
-
-            _dialogService.DisplayDialog<TakeJunkDialog>(config, SelectComponent);
+            TakeJunkDialogViewModel vm = Game.Instance.GetViewModel<TakeJunkDialogViewModel>(0);
+            vm.SetData(new TakeJunkDialogViewModel.Data(component));
+            //vm.OnClose 
+            _dialogService.DisplayDialog<TakeJunkDialog>(vm);
         });
     }
 
@@ -70,11 +68,10 @@ public class JunkController : MonoBehaviour {
 
     }
 
-    private void SelectComponent(Dialog.Response response)
+    private void SelectComponent()
     {
-        TakeJunkDialog.TakeJunkDialogResponse dialogReponse = response as TakeJunkDialog.TakeJunkDialogResponse;
-
-        _user.AddComponent(dialogReponse.Component);
-        _userService.Save();
+        TakeJunkDialogViewModel vm = Game.Instance.GetViewModel<TakeJunkDialogViewModel>(0);
+        //_user.AddComponent(dialogReponse.Component);
+        //_userService.Save();
     }
 }

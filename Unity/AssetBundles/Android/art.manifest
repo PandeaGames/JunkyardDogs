@@ -1,21 +1,81 @@
 ManifestFileVersion: 0
-CRC: 1022651516
+CRC: 1415306820
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 3ce6934175c549b09b8b7dae9aab4928
+    Hash: c2278c369fe2d717ef31aa3dbfa3748f
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 21f0dc8ebad690f009368069428e0a1a
+    Hash: fcdfe4d25eef23c7785d521031bb5b4d
 HashAppended: 0
 ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
 - Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 64
+  Script: {instanceID: 0}
+- Class: 65
+  Script: {instanceID: 0}
+- Class: 90
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: d6ed93d1a6684533ac99de5e499279ac, type: 3}
+- Class: 114
+  Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 1fef8d8284cb879438d68254e2def07a, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 2bc383b2da7c72946a114ca2612ed7bf, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 79f73177c4a6cbb4797db2d81c644424, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 2783ee59a0878da43a7dd161ba94d41c, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: be25e45ceb939b44481a616f2288af51, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 0166818c59ad1eb458b5a3d9663b5ea6, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 328ccc4d9e5409842bd20c839dfee092, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 8d05b97d3903fbd4c93af04f4dfc5590, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 291fecdf8d28f01458f089d71f8921e3, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 184
+  Script: {instanceID: 0}
+- Class: 185
+  Script: {instanceID: 0}
+- Class: 186
   Script: {instanceID: 0}
 - Class: 213
   Script: {instanceID: 0}
+- Class: 223
+  Script: {instanceID: 0}
+- Class: 224
+  Script: {instanceID: 0}
 Assets:
+- Assets/AssetBundles/Art/Bots/RenderConfigs/GarageBotRenderConfig.asset
+- Assets/AssetBundles/Art/Bots/RenderConfigs/MatchBotRenderConfig.asset
 - Assets/AssetBundles/Art/Nationality/Flags/2560_1536/kr.png
 - Assets/AssetBundles/Art/Nationality/Flags/2560_1536/ca.png
 - Assets/AssetBundles/Art/Components/Icons/GenericComponentIcon.png
 - Assets/AssetBundles/Art/Nationality/Flags/2560_1536/de.png
-Dependencies: []
+- Assets/AssetBundles/Art/Views/SimpleWindowView.prefab
+Dependencies:
+- C:/Users/ccove/JunkyardDogs/Unity/AssetBundles/Android/data

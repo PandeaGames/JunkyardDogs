@@ -3,7 +3,7 @@ using UnityEngine;
 using System.Collections;
 using JunkyardDogs.Components;
 using Component = JunkyardDogs.Components.Component;
-using WeakReference = Data.WeakReference;
+using WeakReference = PandeaGames.Data.WeakReferences.WeakReference;
 
 namespace JunkyardDogs.Specifications
 {

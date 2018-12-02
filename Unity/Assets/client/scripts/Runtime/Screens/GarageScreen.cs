@@ -1,61 +1,36 @@
 ﻿using UnityEngine;
 using System.Collections;
+using JunkyardDogs;
 using UnityEngine.UI;
 using JunkyardDogs.Components;
+using JunkyardDogs.scripts.Runtime.Dialogs;
+using PandeaGames;
 using PandeaGames.Views.Screens;
+using JunkyardDogs.scripts.Runtime.Dialogs;
 
 public class GarageScreen : ScreenView
 {
-    /*public class GarageScreenConfig:Config
-    {
-        public Garage Garage;
-    }*/
-
-    [SerializeField]
-    private ServiceManager _serviceManager;
-
     [SerializeField]
     private Button _newBotButton;
     
     [SerializeField]
     private Button _dismantleButton;
 
-    private JunkyardUserService _junkardUserService;
-    private DialogService _dialogService;
-    private JunkyardUser _user;
-   // private GarageScreenConfig _garageScreenConfig;
-    private Garage _garage;
+    private GarageViewModel _viewModel;
 
     public override void Setup(WindowView window)
     {
         base.Setup(window);
 
-        /*_garageScreenConfig = config as GarageScreenConfig;
-        _garage = _garageScreenConfig.Garage;
-        _junkardUserService = _serviceManager.GetService<JunkyardUserService>();
-        _dialogService = _serviceManager.GetService<DialogService>();
+        _viewModel = Game.Instance.GetViewModel<GarageViewModel>(0);
 
-        _user = _junkardUserService.Load();
-
-        _newBotButton.onClick.AddListener(OnNewBotClicked);
-        _dismantleButton.onClick.AddListener(_garage.DismantleSelected);*/
+        _newBotButton.onClick.AddListener(_viewModel.OnNewBotClicked);
+        _dismantleButton.onClick.AddListener(_viewModel.DismantleSelected);
     }
 
-    private void OnNewBotClicked()
+    private void OnDestroy()
     {
-        var dialogConfig = new ChooseFromInventoryDialog.ChooseFromInventoryDialogConfig<Chassis>(_user.Competitor.Inventory);
-        _dialogService.DisplayDialog<ChooseFromInventoryDialog>(dialogConfig, SelectedNewChassis);
-    }
-
-    private void SelectedNewChassis(Dialog.Response response)
-    {
-        var choice = response as ChooseFromInventoryDialog.ChooseFromInventoryDialogResponse;
-
-        if(choice.Component != null)
-        {
-            BotBuilder builder = BotBuilder.CreateNewBot(_user.Competitor.Inventory, choice.Component as Chassis);
-            _junkardUserService.Save();
-            _garage.AddBuilder(builder);
-        }
+        _newBotButton.onClick.RemoveAllListeners();
+        _dismantleButton.onClick.RemoveAllListeners();
     }
 }

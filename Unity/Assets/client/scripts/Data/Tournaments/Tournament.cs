@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using Data;
+using PandeaGames.Data.WeakReferences;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif

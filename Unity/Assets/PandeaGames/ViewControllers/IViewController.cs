@@ -4,5 +4,9 @@ namespace PandeaGames.Views.ViewControllers
     {
         IView GetView();
         void Update();
+        void ShowView();
+        void RemoveView();
+        void Initialize(IViewController parent);
+        IViewController GetParent();
     }
 }

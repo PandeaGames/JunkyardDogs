@@ -4,36 +4,39 @@ using AssetBundles;
 using System;
 using System.Collections;
 using UnityEngine.UI;
-using WeakReference = Data.WeakReference;
+using WeakReference = PandeaGames.Data.WeakReferences.WeakReference;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
 
-public class WeakReferenceException : Exception
+namespace PandeaGames.Data.WeakReferences
 {
-    private static readonly string ExceptionMessage = "Failed to load asset at path '{0}'";
-    private static readonly string TypeExceptionMessage = "Asset at path '{0}' does not match type '{1}' requested.";
-    
-    public WeakReferenceException(WeakReference weakReference) : base(string.Format(ExceptionMessage, weakReference.Path))
+    public class WeakReferenceException : Exception
     {
+        private static readonly string ExceptionMessage = "Failed to load asset at path '{0}'";
+        private static readonly string TypeExceptionMessage = "Asset at path '{0}' does not match type '{1}' requested.";
         
-    }
-    
-    public WeakReferenceException(WeakReference weakReference, Exception innerException) : base(string.Format(ExceptionMessage, weakReference.Path),innerException)
-    {
+        public WeakReferenceException(WeakReference weakReference) : base(string.Format(ExceptionMessage, weakReference.Path))
+        {
+            
+        }
         
-    }
-    
-    public WeakReferenceException(Type type, WeakReference weakReference) : base(string.Format(TypeExceptionMessage, weakReference.Path, type.ToString()))
-    {
+        public WeakReferenceException(WeakReference weakReference, Exception innerException) : base(string.Format(ExceptionMessage, weakReference.Path),innerException)
+        {
+            
+        }
         
-    }
-    
-    public WeakReferenceException(Type type, WeakReference weakReference, Exception innerException) : base(string.Format(TypeExceptionMessage, weakReference.Path, type.ToString()),innerException)
-    {
+        public WeakReferenceException(Type type, WeakReference weakReference) : base(string.Format(TypeExceptionMessage, weakReference.Path, type.ToString()))
+        {
+            
+        }
         
+        public WeakReferenceException(Type type, WeakReference weakReference, Exception innerException) : base(string.Format(TypeExceptionMessage, weakReference.Path, type.ToString()),innerException)
+        {
+            
+        }
     }
-}
+    }
 
 [AttributeUsage(AttributeTargets.All, AllowMultiple = false, Inherited = false)]
 public class WeakReferenceAttribute : PropertyAttribute
@@ -49,7 +52,7 @@ public class WeakReferenceAttribute : PropertyAttribute
 
     public WeakReferenceAttribute()
     {
-        _typeRestriction = typeof(ScriptableObject);
+        _typeRestriction = typeof(UnityEngine.Object);
     }
 
     public WeakReferenceAttribute(Type typeRestriction)
@@ -58,7 +61,7 @@ public class WeakReferenceAttribute : PropertyAttribute
     }
 }
 
-namespace Data
+namespace PandeaGames.Data.WeakReferences
 {
     [Serializable]
     public class WeakReference : ILoadableObject

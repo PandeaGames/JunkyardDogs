@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text.RegularExpressions;
 using UnityEngine;
-using WeakReference = Data.WeakReference;
+using WeakReference = PandeaGames.Data.WeakReferences.WeakReference;
 using JunkyardDogs.Components;
 using JunkyardDogs.Simulation;
 using PandeaGames;
 using UnityEngine.SceneManagement;
-using EditorSceneManager = UnityEditor.SceneManagement.EditorSceneManager;
 
 public class TournamentController : MonoBehaviour 
 {

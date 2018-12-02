@@ -2,7 +2,7 @@
 using System.Collections;
 using JunkyardDogs.Specifications;
 using System;
-using WeakReference = Data.WeakReference;
+using WeakReference = PandeaGames.Data.WeakReferences.WeakReference;
 
 namespace JunkyardDogs.Components
 {

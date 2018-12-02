@@ -1,6 +1,7 @@
 ﻿using PandeaGames.Views.ViewControllers;
 using UnityEngine;
 using PandeaGames;
+using PandeaGames.Views;
 
 namespace JunkyardDogs
 {
@@ -11,7 +12,7 @@ namespace JunkyardDogs
         JunkyardDogs
     }
     
-    public class InitialState : AbstractViewControllerState<JunkyardGameStates>
+    public class SplashState : AbstractViewControllerState<JunkyardGameStates>
     {
         private float _startTicks;
         
@@ -29,7 +30,7 @@ namespace JunkyardDogs
         {
             base.UpdateState();
 
-            if (Time.time - _startTicks > 5)
+            if (Time.time - _startTicks > 2)
             {
                 _fsm.SetState(JunkyardGameStates.Loading);
             }
@@ -39,6 +40,7 @@ namespace JunkyardDogs
     public class LoadingState : AbstractViewControllerState<JunkyardGameStates>
     {
         private JunkyardUserViewModel _viewModel = null;
+        private JunkyardStaticDataLoader loader;
         
         public override void Initialize(AbstractViewControllerFsm<JunkyardGameStates> fsm)
         {
@@ -48,12 +50,23 @@ namespace JunkyardDogs
 
         protected override IViewController GetViewController()
         {
-            return new GameLoadViewController(_fsm);
+            return new GameLoadViewController();
+        }
+
+        public override void EnterState(JunkyardGameStates @from)
+        {
+            loader = new JunkyardStaticDataLoader();
+            loader.LoadAsync(() => {  }, (e) =>
+            {
+                Debug.LogError(e);
+            });
+
+            _viewModel.SetUserData(Game.Instance.GetService<JunkyardUserService>().Load());
         }
 
         public override void UpdateState()
         {
-            if (_viewModel.UserData != null)
+            if (_viewModel.UserData != null && loader.IsLoaded())
             {
                 _fsm.SetState(JunkyardGameStates.JunkyardDogs);
             }
@@ -79,10 +92,21 @@ namespace JunkyardDogs
     {
         public JunkyardFullGameViewController()
         {
-            SetViewStateController<InitialState>(JunkyardGameStates.Splash);
+            SetViewStateController<SplashState>(JunkyardGameStates.Splash);
             SetViewStateController<LoadingState>(JunkyardGameStates.Loading);
             SetViewStateController<JunkyardDogsState>(JunkyardGameStates.JunkyardDogs);
+        }
+
+        public override void Initialize(IViewController parent)
+        {
+            base.Initialize(parent);
+            
             SetInitialState(JunkyardGameStates.Splash);
+        }
+   
+        protected override IView CreateView()
+        {
+            return new JunkyardGameContainer();
         }
     }
 }

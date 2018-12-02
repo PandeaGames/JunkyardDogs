@@ -1,19 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using JunkyardDogs;
+using PandeaGames;
 using UnityEngine.UI;
 using PandeaGames.Views.Screens;
 
 public class EditBotScreen : ScreenView
 {
-    /*public class EditBotScreenConfig : Config
-    {
-        public BotBuilderDisplay BuilderDisplay;
-        public Garage Garage;
-    }*/
-
-    [SerializeField]
-    private ServiceManager _serviceManager;
-
     [SerializeField]
     private Button _exitButton;
 
@@ -23,22 +16,23 @@ public class EditBotScreen : ScreenView
     [SerializeField]
     private Button _dismantleButton;
 
-    private JunkyardUserService _junkardUserService;
-    private DialogService _dialogService;
-    //private EditBotScreenConfig _editBotScreenConfig;
-    private BotBuilderDisplay _builderDisplay;
+    private GarageViewModel _viewModel;
 
     public override void Setup(WindowView window)
     {
         base.Setup(window);
 
-        //_editBotScreenConfig = config as EditBotScreenConfig;
-       /// _builderDisplay = _editBotScreenConfig.BuilderDisplay;
-       /* _junkardUserService = _serviceManager.GetService<JunkyardUserService>();
-        _dialogService = _serviceManager.GetService<DialogService>();
-        _exitButton.onClick.AddListener(() => _editBotScreenConfig.Garage.GoToLineup());
-        _editBehaviourButton.onClick.AddListener(OnEditBehaviourButtonClicked);
-        _dismantleButton.onClick.AddListener(_editBotScreenConfig.Garage.DismantleSelected);*/
+        _viewModel = Game.Instance.GetViewModel<GarageViewModel>(0);
+        _exitButton.onClick.AddListener(() => _viewModel.BlurBotBuilder());
+        _editBehaviourButton.onClick.AddListener(_viewModel.OnEditBehaviourClicked);
+        _dismantleButton.onClick.AddListener(_viewModel.DismantleSelected);
+    }
+
+    private void OnDestroy()
+    {
+        _exitButton.onClick.RemoveAllListeners();
+        _editBehaviourButton.onClick.RemoveAllListeners();
+        _dismantleButton.onClick.RemoveAllListeners();
     }
 
     private void OnEditBehaviourButtonClicked()

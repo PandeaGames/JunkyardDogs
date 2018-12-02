@@ -2,6 +2,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System;
+using WeakReference = PandeaGames.Data.WeakReferences.WeakReference;
 
 public static class ParticipantDataUtils
 {
@@ -14,7 +15,7 @@ public static class ParticipantDataUtils
         return participants;
     }
     
-    public static void GenerateParticipantsAsync(List<Data.WeakReference> participantReferences, Action<List<Participant>> onComplete, Action onError)
+    public static void GenerateParticipantsAsync(List<WeakReference> participantReferences, Action<List<Participant>> onComplete, Action onError)
     {
         List<ParticipantData> participants = new List<ParticipantData>();
         

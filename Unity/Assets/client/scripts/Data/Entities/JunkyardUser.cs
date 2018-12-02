@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using JunkyardDogs.Components;
 using System;
-using WeakReference = Data.WeakReference;
+using WeakReference = PandeaGames.Data.WeakReferences.WeakReference;
 using Component = JunkyardDogs.Components.Component;
 
 [Serializable]

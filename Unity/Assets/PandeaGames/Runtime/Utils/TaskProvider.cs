@@ -1,17 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
+using PandeaGames;
 
-public class TaskProvider : MonoBehaviour
+public class TaskProvider : MonoBehaviourSingleton<TaskProvider>
 {
     public delegate IEnumerator Task();
-    public static TaskProvider Instance;
-
-    // Use this for initialization
-    void Awake()
-    {
-        Instance = this;
-    }
 
     public void RunTask( IEnumerator task, Action onComplete )
     {

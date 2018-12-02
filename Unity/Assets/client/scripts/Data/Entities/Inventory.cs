@@ -1,6 +1,8 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using JunkyardDogs.Components;
 using Component = JunkyardDogs.Components.Component;
 
@@ -31,16 +33,22 @@ public class Inventory : IEnumerable
         Components.Remove(component);
     }
 
-    public List<T> GetComponentsOfType<T>() where T : Component
+    public IEnumerable<T> GetComponentsOfType<T>() where T : Component
     {
-        List<T> results = new List<T>();
-
-        Components.ForEach((component) => {
+        foreach (var component in Components)
+        {
             if (component is T)
-                results.Add(component as T);
-                });
-
-        return results;
+                yield return component as T;
+        }
+    }
+    
+    public IEnumerable<Component> GetComponentsOfType(Type type)
+    {
+        foreach (var component in Components)
+        {
+            if (component != null && component.GetType().Equals(type))
+                yield return component;
+        }
     }
 
     public IEnumerator GetEnumerator()

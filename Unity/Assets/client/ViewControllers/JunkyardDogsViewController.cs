@@ -1,5 +1,6 @@
 ﻿using PandeaGames;
 using PandeaGames.Views.ViewControllers;
+using PandeaGames.Views;
 
 namespace JunkyardDogs
 {
@@ -7,7 +8,8 @@ namespace JunkyardDogs
     {
         EnterGame, 
         ChooseNationality, 
-        WorldMap
+        WorldMap,
+        Garage
     }
 
     public class EnterGameState : AbstractViewControllerState<JunkyardDogsStates>
@@ -34,12 +36,25 @@ namespace JunkyardDogs
     
     public class ChooseNationalityState : AbstractViewControllerState<JunkyardDogsStates>
     {
-        
+        protected override IViewController GetViewController()
+        {
+            var vc = new ChooseNationalityViewController();
+
+            vc.OnNationChosen += () =>
+            {
+                _fsm.SetState(JunkyardDogsStates.WorldMap);
+            };
+            
+            return vc;
+        }
     }
     
     public class WorldMapState : AbstractViewControllerState<JunkyardDogsStates>
     {
-        
+        protected override IViewController GetViewController()
+        {
+            return new WorldMapViewController();
+        }
     }
     
     public class JunkyardDogsViewController : AbstractViewControllerFsm<JunkyardDogsStates>
@@ -49,8 +64,13 @@ namespace JunkyardDogs
             SetViewStateController<EnterGameState>(JunkyardDogsStates.EnterGame);
             SetViewStateController<ChooseNationalityState>(JunkyardDogsStates.ChooseNationality);
             SetViewStateController<WorldMapState>(JunkyardDogsStates.WorldMap);
-            
             SetInitialState(JunkyardDogsStates.EnterGame);
+        }
+        
+        public override void Initialize(IViewController parent)
+        {
+            base.Initialize(parent);
+            
         }
     }
 }

@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using WeakReference = Data.WeakReference;
+using WeakReference = PandeaGames.Data.WeakReferences.WeakReference;
 using System.Collections.Generic;
 
 [CreateAssetMenu(menuName = "TestData/TournamentTestData")]

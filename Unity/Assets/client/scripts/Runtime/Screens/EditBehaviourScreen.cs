@@ -1,18 +1,15 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
-using Data;
-using JunkyardDogs.Components;
+using JunkyardDogs;
 using JunkyardDogs.Simulation.Agent;
-using JunkyardDogs.Simulation.Behavior;
 using PandeaGames;
 using PandeaGames.Views.Screens;
+using Action = JunkyardDogs.Behavior.Action;
+using WeakReference = PandeaGames.Data.WeakReferences.WeakReference;
 
 public class EditBehaviourScreen : ScreenView
 {
-    [SerializeField]
-    private ServiceManager _serviceManager;
-
     [SerializeField]
     private GameObject _directiveGameObject;
     
@@ -28,77 +25,60 @@ public class EditBehaviourScreen : ScreenView
     [SerializeField] 
     private Dropdown _statesDropdown;
 
-    [SerializeField][WeakReference(typeof(ActionList))] 
-    private WeakReference _actionList;
-
-    private JunkyardUserService _userService;
-    private DialogService _dialogService;
-    private InputService _inputService;
-    private JunkyardUser _user;
+    private EditBotBehaviourViewModel _viewModel;
 
     public override void Setup(WindowView window)
     {
         base.Setup(window);
-        //_editBehaviourConfig = config as EditBehaviourConfig;
-        _userService = Game.Instance.GetService<JunkyardUserService>();
-        _dialogService = _serviceManager.GetService<DialogService>();
-        _user = _userService.Load();
-        _doneButton.onClick.AddListener(Back);
-        _newDirectiveButton.onClick.AddListener(OnNewDirectiveClick);
+
+        _viewModel = Game.Instance.GetViewModel<EditBotBehaviourViewModel>(0);
         
-        if (_serviceManager.ServiceExists<InputService>())
-        {
-            _inputService = _serviceManager.GetService<InputService>();
-        }
-        
+        _doneButton.onClick.AddListener(_viewModel.OnDoneClicked);
+        _newDirectiveButton.onClick.AddListener(_viewModel.OnSelectNewDirectiveClicked);
+
         SetupStates();
+    }
+
+    private void OnDestroy()
+    {
+        _viewModel.OnSelectState -= RenderAgentState;
+        _viewModel.OnActionAdded -= OnActionAdded;
+
+        _viewModel = null;
     }
 
     private void SetupStates()
     {
         List<Dropdown.OptionData> options = new List<Dropdown.OptionData>(); 
-        
-        /*if (_editBehaviourConfig.Builder.Bot.Agent.States.Count == 0)
-        {
-            _editBehaviourConfig.Builder.Bot.Agent.States.Add(new AgentState());
-        }
 
         int stateNumber = 0;
-        _editBehaviourConfig.Builder.Bot.Agent.States.ForEach((state) =>
+        _viewModel.Bot.Agent.States.ForEach((state) =>
         {
-            options.Add(new Dropdown.OptionData(state.ToString() + stateNumber++));
+            options.Add(new Dropdown.OptionData((state.ToString() + stateNumber.ToString())));
+            stateNumber++;
         });
+        
+        if (_viewModel.Bot.Agent.States.Count == 0)
+        {
+            _viewModel.Bot.Agent.States.Add(new AgentState());
+        }
         
         _statesDropdown.AddOptions(options);
 
         _statesDropdown.onValueChanged.AddListener(OnStateSelectionChange);
-        
-        RenderAgentState(GetSelectedState());*/
+        _viewModel.OnSelectState += RenderAgentState;
+        _viewModel.OnActionAdded += OnActionAdded;
+        _viewModel.SetSelectedState(0);        
+    }
+
+    private void OnActionAdded(Action action, WeakReference reference)
+    {
+        RenderAgentState(_viewModel.SelectedState);
     }
 
     private void OnStateSelectionChange(int value)
     {
-        RenderAgentState(GetSelectedState());
-    }
-    
-    public override void Transition(ScreenTransition transition)
-    {
-        base.Transition(transition);
-
-        if (_inputService)
-        {
-            _inputService.enabled = transition.Direction == Direction.FROM;
-        }
-    }
-
-    private void OnNewDirectiveClick()
-    {
-        //TODO: Select directive
-
-        var config = ScriptableObject.CreateInstance<ChooseActionDialog.ChooseActionDialogConfig>();
-        config.ActionList = _actionList;
-        
-        _dialogService.DisplayDialog<ChooseActionDialog>(config, SelectedNewAction);
+        _viewModel.SetSelectedState(value);
     }
     
     private void RenderAgentState(AgentState agentState)
@@ -125,49 +105,17 @@ public class EditBehaviourScreen : ScreenView
                 internalButton.onClick.AddListener(() =>
                 {
                     agentState.Directives.Remove(directive);
-                    RenderAgentState(GetSelectedState());
+                    RenderAgentState(_viewModel.SelectedState);
                 });
             }
         });
-    }
-
-    private AgentState GetSelectedState()
-    {
-        /*List<AgentState> states = _editBehaviourConfig.Builder.Bot.Agent.States;
-        int index = _statesDropdown.value;
-        if (states.Count > index)
-        {
-            return states[index];
-        }*/
-
-        return null;
-    }
-    
-    private void SelectedNewAction(Dialog.Response response)
-    {
-        var choice = response as ChooseActionDialog.ChooseActionDialogResponse;
-        //TODO: Add action
-        AgentState state = GetSelectedState();
-        if (state != null && choice.Selection != null)
-        {
-            Directive directive = new Directive();
-            directive.ActionWeakReference = choice.Selection;
-            state.Directives.Add(directive);
-            RenderAgentState(GetSelectedState());
-            _userService.Save();
-        }
-    }
-
-    private void RenderDirectives()
-    {
-        //_editBehaviourConfig.Builder.Bot.Agent.
     }
 
     private void OnSimpleDragAndDropEvent(DragAndDropCell.DropEventDescriptor desc)
     {
         if (desc.triggerType == DragAndDropCell.TriggerType.DropEventEnd)
         {
-            AgentState state = GetSelectedState();
+            AgentState state = _viewModel.SelectedState;
             state.Directives.Clear();
 
             DirectiveDisplay[] directiveDisplays = GetComponentsInChildren<DirectiveDisplay>();
@@ -176,8 +124,6 @@ public class EditBehaviourScreen : ScreenView
             {
                 state.Directives.Add(directiveDisplay.Directive);
             }
-        
-            _userService.Save();
         }
     }
 }

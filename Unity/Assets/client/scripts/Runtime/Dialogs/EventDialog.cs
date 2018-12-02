@@ -1,33 +1,29 @@
 ﻿using System;
+using JunkyardDogs.scripts.Runtime.Dialogs;
 using PandeaGames;
 using UnityEngine;
-using WeakReference = Data.WeakReference;
+using WeakReference = PandeaGames.Data.WeakReferences.WeakReference;
 
-public class EventDialog : Dialog
+public class EventDialog : Dialog<EventDialogViewModel>
 {
-    public class EventDialogConfig : Config
-    {
-        public WeakReference Tournament;
-    }
-    
-    [NonSerialized]
-    private EventDialogConfig _config;
-
-    private JunkyardUserService _junkyardUserService;
     private JunkyardUser _user;
     private Tournament _tournament;
 
-    public override void Setup(Config config, DialogResponseDelegate responseDelegate = null)
+    protected override void Initialize()
     {
-        base.Setup(config, responseDelegate);
-        _config = config as EventDialogConfig;
-        _junkyardUserService = Game.Instance.GetService<JunkyardUserService>();
-        _user = _junkyardUserService.Load();
-        _config.Tournament.LoadAssetAsync<Tournament>(OnTournamentLoaded, (e) => { });
+        base.Initialize();
+        
+        _viewModel.ModelData.TournamentReference.LoadAsync(OnTournamentLoaded, OnLoadError);
     }
 
-    private void OnTournamentLoaded(Tournament tournament, WeakReference reference)
+    private void OnLoadError(LoadException loadException)
     {
+        
+    }
+
+    private void OnTournamentLoaded()
+    {
+        Tournament tournament = _viewModel.ModelData.TournamentReference.Asset as Tournament;
         TournamentState state = null;
         
         _user.Tournaments.TryGetTournament(tournament, out state);

@@ -1,8 +1,7 @@
 ﻿using System;
-using PandeaGames.Data.Static;
 using UnityEngine;
-using UnityStandardAssets.Utility;
-using WeakReference = Data.WeakReference;
+using WeakReference = PandeaGames.Data.WeakReferences.WeakReference;
+using PandeaGames.Data.WeakReferences;
 
 namespace PandeaGames.Data
 {

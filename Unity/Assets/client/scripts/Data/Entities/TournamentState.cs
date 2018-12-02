@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Data;
 using UnityEngine.UI.Extensions;
+using WeakReference = PandeaGames.Data.WeakReferences.WeakReference;
 
 public class TournamentState
 {

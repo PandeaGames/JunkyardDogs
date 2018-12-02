@@ -2,9 +2,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using System;
+using PandeaGames;
+using PandeaGames.Data;
+using PandeaGames.Data.Static;
 using UnityEngine.EventSystems;
 
-public class InputService : Service
+public class InputService : MonoBehaviourSingleton<InputService>
 {
     public delegate void OnMultiPointer(Vector3 cameraPosition, int index, RaycastHit raycast);
     public delegate void OnPointer(Vector3 cameraPosition, RaycastHit raycast);
@@ -39,11 +42,16 @@ public class InputService : Service
 
     private Ray _ray;
 
-    public override void StartService(ServiceManager serviceManager)
+    private void Start()
     {
-        base.StartService(serviceManager);
-
         _touchDown = new Dictionary<int, Vector3>();
+        InputConfig config = Game.Instance.GetStaticDataPovider<PandeaGameDataProvider>().PandeaGameConfigurationData
+            .InputConfig;
+
+        _touchEnabled = config.TouchEnabled;
+        _providePonterRaycast = config.ProvidePonterRaycast;
+        _useTriggersInRaycast = config.UseTriggersInRaycast;
+        _maxRaycastResults = config.MaxRaycastResults;
     }
 
     public void OnDrawGizmos()
@@ -52,10 +60,8 @@ public class InputService : Service
         Gizmos.DrawRay(_ray.origin, _ray.direction * 100);
     }
 
-    public override void EndService(ServiceManager serviceManager)
+    private void OnDestroy()
     {
-        base.EndService(serviceManager);
-
         _touchDown.Clear();
         _touchDown = null;
     }
@@ -84,7 +90,6 @@ public class InputService : Service
         
         if (Input.GetMouseButtonDown(0) && !_pointerDown)
         {
-            Debug.Log("DOWN");
             HandlePointerAction(Input.mousePosition, OnPointerDown);
             _pointerDown = true;
             
@@ -94,17 +99,15 @@ public class InputService : Service
 
         if (Input.GetMouseButtonUp(0) && _pointerDown)
         {
-            Debug.Log("UP");
             HandlePointerAction(Input.mousePosition, OnPointerUp);
             _pointerDown = false;
             TimeSpan timeFromDown = DateTime.UtcNow - _pointerDownTimestamp;
             float clickDistance = Vector3.Distance(_clickDownPosition, Input.mousePosition);
             bool validClickTime = timeFromDown.Milliseconds < _clickTimeSpan;
             bool validClickDistance = clickDistance < _clickDistance;
-            Debug.Log("CLICK CHECK timeFromDown: "+ timeFromDown.Milliseconds + " clickDistance:"+ clickDistance);
+
             if (validClickTime && validClickDistance)
             {
-                Debug.Log("CLICK");
                 HandlePointerAction(Input.mousePosition, OnPointerClick);
             }
         }

@@ -3,6 +3,8 @@ using System.Collections;
 using JunkyardDogs.Components;
 using JunkyardDogs.Specifications;
 using System;
+using JunkyardDogs;
+using JunkyardDogs.scripts.Runtime.Dialogs;
 using PandeaGames;
 
 public class BotBuilderDisplay : MonoBehaviour 
@@ -17,20 +19,17 @@ public class BotBuilderDisplay : MonoBehaviour
 
     [SerializeField]
     private PrefabFactory _botPrefabFactory;
-    
-    [SerializeField]
-    private ServiceManager _serviceManager;
 
     [SerializeField]
     private Collider _collider;
 
     private bool _isFocused;
     private CameraViewModel _cameraViewModel;
+    private GarageViewModel _garageViewModel;
     private InputService _inputService;
     private BotBuilder _botBuilder;
     private GameObject _bot;
     private Vector3 _pointerPosition;
-    private JunkyardUserService _junkardUserService;
     private DialogService _dialogService;
     private JunkyardUser _user;
 
@@ -41,11 +40,10 @@ public class BotBuilderDisplay : MonoBehaviour
     public void Setup(BotBuilder botBuilder)
     {
         _cameraViewModel = Game.Instance.GetViewModel<CameraViewModel>(0);
-        _inputService = _serviceManager.GetService<InputService>();
-        _junkardUserService = Game.Instance.GetService<JunkyardUserService>();
-        _dialogService = _serviceManager.GetService<DialogService>();
+        _inputService = InputService.Instance;
 
-        _user = _junkardUserService.Load();
+        _user = Game.Instance.GetViewModel<JunkyardUserViewModel>(0).UserData;
+        _garageViewModel = Game.Instance.GetViewModel<GarageViewModel>(0);
 
         _botBuilder = botBuilder;
 
@@ -56,7 +54,10 @@ public class BotBuilderDisplay : MonoBehaviour
             () =>
             {
                 SetupChassis(( JunkyardDogs.Specifications.Chassis)chassis.Specification);
-            }, (e) => { });
+            }, (e) =>
+            {
+                Debug.LogError(e);
+            });
 
         _inputService.OnPointerClick += OnPointerClick;
         _inputService.OnPointerDown += OnPointerDown;
@@ -82,10 +83,9 @@ public class BotBuilderDisplay : MonoBehaviour
             if (raycast.collider != null)
             {
                 BotRenderer botRenderer = raycast.collider.transform.parent.GetComponent<BotRenderer>();
-                Debug.Log("Check collider "+ raycast.collider + " botRenderer "+ botRenderer);
+
                 if(botRenderer != null)
                 {
-
                     HandleComponentTouch(botRenderer, raycast.collider.gameObject);
                 }
             }
@@ -118,45 +118,46 @@ public class BotBuilderDisplay : MonoBehaviour
 
         if(builder == null)
         {
-            var dialogConfig = new ChooseFromInventoryDialog.ChooseFromInventoryDialogConfig<WeaponProcessor>(_user.Competitor.Inventory);
-            _dialogService.DisplayDialog<ChooseFromInventoryDialog>(dialogConfig, (Dialog.Response response) =>
+            ChooseFromInventoryViewModel vm = Game.Instance.GetViewModel<ChooseFromInventoryViewModel>();
+            vm.SetData(new ChooseFromInventoryViewModel.Data(typeof(WeaponProcessor), _user.Competitor.Inventory));
+
+            vm.OnClose += (closedModel) =>
             {
-                var choice = response as ChooseFromInventoryDialog.ChooseFromInventoryDialogResponse;
-                _botBuilder.SetWeaponProcessor(choice.Component as WeaponProcessor, location);
-                _junkardUserService.Save();
+                _botBuilder.SetWeaponProcessor(vm.Selected as WeaponProcessor, location);
                 botRenderer.Render(_botBuilder.Bot, _botRenderConfiguration);
-            });
+            };
+            
+            _garageViewModel.ChooseFromInventory(vm);
         }
         else
         {
-            var dialogConfig = new ChooseFromInventoryDialog.ChooseFromInventoryDialogConfig<JunkyardDogs.Components.Weapon>(_user.Competitor.Inventory);
-            _dialogService.DisplayDialog<ChooseFromInventoryDialog>(dialogConfig, (Dialog.Response response) =>
+            ChooseFromInventoryViewModel vm = Game.Instance.GetViewModel<ChooseFromInventoryViewModel>();
+            vm.SetData(new ChooseFromInventoryViewModel.Data(typeof(JunkyardDogs.Components.Weapon), _user.Competitor.Inventory));
+
+            vm.OnClose += (closedModel) =>
             {
-                var choice = response as ChooseFromInventoryDialog.ChooseFromInventoryDialogResponse;
-                builder.SetWeapon(choice.Component as JunkyardDogs.Components.Weapon);
-                _junkardUserService.Save();
+                builder.SetWeapon(closedModel.Selected as JunkyardDogs.Components.Weapon);
                 botRenderer.Render(_botBuilder.Bot, _botRenderConfiguration);
-            });
+            };
+            
+            _garageViewModel.ChooseFromInventory(vm);
         }
     }
 
     private void ReplacePlate(BotAvatar botAvatar, GameObject plateObject, BotRenderer botRenderer)
     {
-        var dialogConfig = new ChooseFromInventoryDialog.ChooseFromInventoryDialogConfig<JunkyardDogs.Components.Plate>(_user.Competitor.Inventory);
-        _dialogService.DisplayDialog<ChooseFromInventoryDialog>(dialogConfig, (Dialog.Response response) =>
-        {
-            var choice = response as ChooseFromInventoryDialog.ChooseFromInventoryDialogResponse;
-            if (choice == null)
-                return;
-            _botBuilder.SetPlate(choice.Component as JunkyardDogs.Components.Plate, botAvatar.GetPlateLocation(plateObject), botAvatar.GetPlateIndex(plateObject));
-            _junkardUserService.Save();
-            botRenderer.Render(_botBuilder.Bot, _botRenderConfiguration);
-        });
-    }
+        ChooseFromInventoryViewModel vm = Game.Instance.GetViewModel<ChooseFromInventoryViewModel>();
+        vm.SetData(new ChooseFromInventoryViewModel.Data(typeof(JunkyardDogs.Components.Plate), _user.Competitor.Inventory));
 
-    private void SelectedNewPlate(Dialog.Response response)
-    {
+        vm.OnClose += (closedModel) =>
+        {
+            if (closedModel.Selected == null)
+                return;
+            _botBuilder.SetPlate(closedModel.Selected as JunkyardDogs.Components.Plate, botAvatar.GetPlateLocation(plateObject), botAvatar.GetPlateIndex(plateObject));
+            botRenderer.Render(_botBuilder.Bot, _botRenderConfiguration);
+        };
         
+        _garageViewModel.ChooseFromInventory(vm);
     }
 
     private void SetupChassis(JunkyardDogs.Specifications.Chassis chassis)

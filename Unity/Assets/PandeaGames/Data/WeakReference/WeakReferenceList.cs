@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 
-namespace Data {
+namespace PandeaGames.Data.WeakReferences {
     public class WeakReferenceList<T> : ScriptableObject,IEnumerable<WeakReference>, ILoadableObject where T:UnityEngine.Object
     {
         [SerializeField][WeakReference]

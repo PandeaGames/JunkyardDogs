@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[CreateAssetMenu(fileName = "DialogConfig", menuName = "Config/DialogConfig", order = 1)]
+[CreateAssetMenu(fileName = "DialogConfig", menuName = "PandeaGaames/Config/DialogConfig", order = 1)]
 public class DialogConfig : ScriptableObject, IEnumerable
 {
     [SerializeField]

@@ -3,18 +3,18 @@ using UnityEditor;
 using System.Collections;
 using System;
 using System.Collections.Generic;
-using WeakReference = Data.WeakReference;
+using PandeaGames.Data.WeakReferences;
 
 [CustomPropertyDrawer(typeof(WeakReferenceAttribute))]
 public class WeakReferenceAttribuiteEditor : PropertyDrawer
 {
-    private Dictionary<SerializedProperty, ScriptableObject> _objectTable = new Dictionary<SerializedProperty, ScriptableObject>();
+    private Dictionary<SerializedProperty, UnityEngine.Object> _objectTable = new Dictionary<SerializedProperty, UnityEngine.Object>();
 
     public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
     {
         WeakReferenceAttribute weakReferenceAttribute = attribute as WeakReferenceAttribute;
 
-        ScriptableObject objectReference;
+        UnityEngine.Object objectReference;
 
         _objectTable.TryGetValue(property, out objectReference);
 
@@ -28,20 +28,22 @@ public class WeakReferenceAttribuiteEditor : PropertyDrawer
         
         if (path != null && !string.IsNullOrEmpty(path.stringValue) && objectReference == null)
         {
-            objectReference = AssetDatabase.LoadAssetAtPath<ScriptableObject>(path.stringValue);
+            objectReference = AssetDatabase.LoadAssetAtPath<UnityEngine.Object>(path.stringValue);
             _objectTable.Add(property, objectReference);
         }
 
         EditorGUI.BeginChangeCheck();
-        objectReference = EditorGUI.ObjectField(position, objectReference, weakReferenceAttribute.TypeRestriction, false) as ScriptableObject;
-
-        if (EditorGUI.EndChangeCheck())
+        objectReference = EditorGUI.ObjectField(position, objectReference, weakReferenceAttribute.TypeRestriction, false);
+        bool endChangeCheck = EditorGUI.EndChangeCheck();
+        
+        if (endChangeCheck)
         {
             string assetPath = AssetDatabase.GetAssetPath(objectReference);
             guid.stringValue = AssetDatabase.AssetPathToGUID(assetPath);
             path.stringValue = assetPath;
         }
-
+        
+        property.serializedObject.ApplyModifiedProperties();
         EditorGUI.EndProperty();
     }
 }

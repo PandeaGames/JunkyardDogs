@@ -22,10 +22,20 @@ namespace PandeaGames.Views.ViewControllers
         public virtual void EnterState(TEnum from)
         {
             _viewController = GetViewController();
+            if (_viewController != null)
+            {
+                _viewController.Initialize(_fsm);
+                _viewController.ShowView();
+            }
+           
         }
         
         public virtual void LeaveState(TEnum to)
         {
+            if (_viewController != null)
+            {
+                _viewController.RemoveView();
+            }
         }
 
         public virtual void UpdateState()
@@ -39,16 +49,16 @@ namespace PandeaGames.Views.ViewControllers
     
     public class AbstractViewControllerFsm<TEnum> : AbstractViewController
     {
+        public event Action<TEnum> OnEnterState;
+        
         private Dictionary<TEnum, AbstractViewControllerState<TEnum>> _states;
         private TEnum _currentState;
+        private TEnum _initialState;
+        private bool _isInInitialState;
         
-        public AbstractViewControllerFsm(AbstractViewController parent) :base(parent)
+        public AbstractViewControllerFsm()
         {
             _states = new Dictionary<TEnum, AbstractViewControllerState<TEnum>>();
-        }
-        
-        public AbstractViewControllerFsm() : this(null)
-        {
         }
 
         protected void SetViewStateController<TState>(TEnum state) where TState : AbstractViewControllerState<TEnum>, new()
@@ -65,7 +75,22 @@ namespace PandeaGames.Views.ViewControllers
 
         protected void SetInitialState(TEnum state)
         {
-            SetState(state, true);
+            _initialState = state;
+            _isInInitialState = true; 
+        }
+
+        public override void ShowView()
+        {
+            base.ShowView();
+
+            if (_isInInitialState)
+            {
+                SetState(_initialState, true);
+            }
+            else
+            {
+                SetState(_currentState);
+            }
         }
 
         private void SetState(TEnum state, bool isInitialState)
@@ -90,6 +115,8 @@ namespace PandeaGames.Views.ViewControllers
 
             Debug.LogFormat("[EnterState] {0}", state);
             newController.EnterState(_currentState);
+            if (OnEnterState != null)
+                OnEnterState(state);
             if(oldController != null && !isInitialState)
                 oldController.LeaveState(state);
 

@@ -3,8 +3,7 @@ using JunkyardDogs.Components;
 using JunkyardDogs.Simulation;
 using PandeaGames;
 using UnityEngine;
-using UnityEngine.Assertions.Must;
-using WeakReference = Data.WeakReference;
+using WeakReference = PandeaGames.Data.WeakReferences.WeakReference;
 
 public class MatchTest : MonoBehaviour
 {

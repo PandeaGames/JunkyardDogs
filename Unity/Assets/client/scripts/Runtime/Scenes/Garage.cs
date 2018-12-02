@@ -4,23 +4,13 @@ using UnityEngine.UI;
 using JunkyardDogs.Components;
 using UnityEngine.UI.Extensions;
 using System.Collections.Generic;
+using JunkyardDogs;
 using PandeaGames;
+using PandeaGames.Views;
 using PandeaGames.Views.Screens;
 
-public enum GarageStates
+public class Garage : MonoBehaviour
 {
-    Lineup,
-    BotFocus
-}
-
-public class Garage : StateMachine<GarageStates>
-{
-    [SerializeField]
-    private ServiceManager _serviceManager;
-
-    [SerializeField]
-    private WindowView _window;
-
     [SerializeField]
     private GameObject _botBuilderDisplayPrefab;
 
@@ -33,101 +23,87 @@ public class Garage : StateMachine<GarageStates>
     [SerializeField]
     private float _spacing;
 
-    private JunkyardUserService _junkardUserService;
-    private DialogService _dialogService;
     private CameraViewModel _cameraViewModel;
     private BotBuilderDisplay _selectedBuilder;
-    private JunkyardUser _user;
     private List<BotBuilderDisplay> _builders;
+    private GarageViewModel _viewModel;
 
     public List<BotBuilderDisplay> Builders { get { return _builders; } }
 
-    protected override void Start()
+    private void Start()
     {
-        _junkardUserService = Game.Instance.GetService<JunkyardUserService>();
-        _cameraViewModel = Game.Instance.GetViewModel<CameraViewModel>(0);
-        _dialogService = _serviceManager.GetService<DialogService>();
         _builders = new List<BotBuilderDisplay>();
+        
+        _viewModel = Game.Instance.GetViewModel<GarageViewModel>(0);
+        _cameraViewModel = Game.Instance.GetViewModel<CameraViewModel>(0);
 
-        _user = _junkardUserService.Load();
+        _viewModel.OnBuilderAdded += AddBuilder;
+        _viewModel.OnBuilderDismantled += RemoveBuilder;
+        _viewModel.OnBuilderFocus += OnBuilderFocus;
+        _viewModel.OnBuilderBlur += OnBuilderBlur;
+        _viewModel.OnBuilderSelected += OnBuilderSelected;
 
-        foreach (Bot bot in _user.Competitor.Inventory.Bots)
+        foreach (var builder in _viewModel.Builders)
         {
-            AddBuilder(bot, _user.Competitor.Inventory);
+            AddBuilder(builder);
         }
-
-        base.Start();
+        
+        _viewModel.SelectBuilder(_viewModel.Builders[0]);
+        _cameraViewModel.Focus(_lineupCameraAgent);
     }
 
-    public void DismantleSelected()
+    private void OnBuilderSelected(BotBuilder builder)
     {
-        if (_selectedBuilder != null)
+        BotBuilderDisplay botBuilderDisplay = _builders.Find((display) => display.BotBuilder == builder);
+        _lineupCameraAgent.SetTarget(botBuilderDisplay.transform);
+    }
+
+    private void OnBuilderBlur()
+    {
+        _cameraViewModel.Focus(_lineupCameraAgent);
+
+        foreach (var builderDisplay in _builders)
         {
-            if (_currentState == GarageStates.BotFocus)
+            builderDisplay.Blur();
+        }
+    }
+
+    private void OnBuilderFocus(BotBuilder obj)
+    {
+        foreach (var builderDisplay in _builders)
+        {
+            if (builderDisplay.BotBuilder == obj)
             {
-                SetState(GarageStates.Lineup);
+                builderDisplay.Focus();
+                _cameraViewModel.Focus(builderDisplay.CameraAgent);
             }
-            
-            _selectedBuilder.BotBuilder.Dismantle();
-            _builders.Remove(_selectedBuilder);
-            GameObject.Destroy(_selectedBuilder.gameObject);
-            if (_builders.Count > 0)
+            else if(builderDisplay.IsFocused)
             {
-                OnSelectBuilder(_builders[0]);
+                builderDisplay.Blur();
             }
-            
-            _junkardUserService.Save();
         }
     }
 
-    protected override void LeaveState(GarageStates state)
+    private void OnDestroy()
     {
-        switch(state)
+        _viewModel.OnBuilderAdded -= AddBuilder;
+        _viewModel.OnBuilderDismantled -= RemoveBuilder;
+        _viewModel.OnBuilderFocus -= OnBuilderFocus;
+        _viewModel.OnBuilderBlur -= OnBuilderBlur;
+    }
+
+    public void RemoveBuilder(BotBuilder builder)
+    {
+        int index = 0;
+
+        BotBuilderDisplay botBuilderDisplay = _builders.Find((display) => display.BotBuilder == builder);
+        _builders.Remove(botBuilderDisplay);
+        Destroy(botBuilderDisplay.gameObject);
+
+        for (int i = 0; i < _builders.Count; i++)
         {
-            case GarageStates.Lineup:
-                break;
-            case GarageStates.BotFocus:
-
-                if(_selectedBuilder)
-                {
-                    _selectedBuilder.Blur();
-                }
-                
-                break;
+            _builders[i].transform.position = new Vector3(0, 0, i * _spacing);
         }
-    }
-
-    protected override void EnterState(GarageStates state)
-    {
-        switch (state)
-        {
-            case GarageStates.Lineup:
-
-                _cameraViewModel.Focus(_lineupCameraAgent);
-                //GarageScreen.GarageScreenConfig config = ScriptableObject.CreateInstance<GarageScreen.GarageScreenConfig>();
-                //config.Garage = this;
-                _window.LaunchScreen("garageScreen");
-                break;
-
-            case GarageStates.BotFocus:
-
-                if(_selectedBuilder)
-                {
-                    _selectedBuilder.Focus();
-                    /*var editConfig = ScriptableObject.CreateInstance<EditBotScreen.EditBotScreenConfig>();
-                    editConfig.BuilderDisplay = _selectedBuilder;
-                    editConfig.Garage = this;*/
-                    _window.LaunchScreen("EditBot");
-                    _cameraViewModel.Focus(_selectedBuilder.CameraAgent);
-                }
-                
-                break;
-        }
-    }
-
-    public void AddBuilder(Bot bot, Inventory inventory)
-    {
-        AddBuilder(new BotBuilder(bot, inventory));
     }
 
     public void AddBuilder(BotBuilder builder)
@@ -139,35 +115,17 @@ public class Garage : StateMachine<GarageStates>
         botBuilderDisplay.transform.position = new Vector3(0, 0, _builders.Count * _spacing);
         _builders.Add(botBuilderDisplay);
         botBuilderDisplay.OnSelect += OnSelectBuilder;
-
-        if(_currentState == GarageStates.Lineup)
-        {
-            _lineupCameraAgent.SetTarget(botBuilderDisplay.transform);
-        }
-    }
-
-    public void GoToLineup()
-    {
-        SetState(GarageStates.Lineup);
     }
 
     private void OnSelectBuilder(BotBuilderDisplay botBuilderDisplay)
     {
-        if(_currentState == GarageStates.Lineup)
+        if (botBuilderDisplay.BotBuilder == _viewModel.SelectedBuilder)
         {
-            if(!botBuilderDisplay.IsFocused)
-            {
-                if(_selectedBuilder == botBuilderDisplay)
-                {
-                    SetState(GarageStates.BotFocus);
-                }
-                else
-                {
-                    _lineupCameraAgent.SetTarget(botBuilderDisplay.transform);
-                }
-            }
-
-            _selectedBuilder = botBuilderDisplay;
+            _viewModel.FocusSelectedBuilder();
+        }
+        else if(!botBuilderDisplay.IsFocused)
+        {
+            _viewModel.SelectBuilder(botBuilderDisplay.BotBuilder);
         }
     }
 }

@@ -49,7 +49,7 @@ namespace JunkyardDogs
     
     public class GameLoadViewController : AbstractViewControllerFsm<LoadingStates>
     {
-        public GameLoadViewController(AbstractViewController parent):base(parent)
+        public GameLoadViewController()
         {
             SetViewStateController<LoadAssetBundlesState>(LoadingStates.AssetBundles);
             SetViewStateController<LoadStaticState>(LoadingStates.StaticData);

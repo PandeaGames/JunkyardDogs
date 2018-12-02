@@ -1,23 +1,13 @@
 ﻿using UnityEngine;
 using JunkyardDogs.Components;
 using System;
+using JunkyardDogs.scripts.Runtime.Dialogs;
 using UnityEngine.UI;
 using Component = JunkyardDogs.Components.Component;
 using TMPro;
 
-public class TakeJunkDialog : Dialog
+public class TakeJunkDialog : Dialog<TakeJunkDialogViewModel>
 {
-    [Serializable]
-    public class TakeJunkDialogResponse : Response
-    {
-        public Component Component;
-    }
-    [Serializable]
-    public class TakeJunkDialogConfig : Config
-    {
-        public Component Component;
-    }
-
     [SerializeField]
     private SpriteFactory _spriteFactory;
 
@@ -27,30 +17,15 @@ public class TakeJunkDialog : Dialog
     [SerializeField]
     private TMP_Text _componentText;
 
-    private TakeJunkDialogConfig _takeJunkDialogConfig = null;
-
-    public override void Setup(Config config, DialogResponseDelegate responseDelegate = null)
+    protected override void Initialize()
     {
-        _takeJunkDialogConfig = config as TakeJunkDialogConfig;
-
-        _takeJunkDialogConfig.Component.SpecificationReference.LoadAssetAsync<ScriptableObject>(
+        _viewModel.ModelData.Component.SpecificationReference.LoadAssetAsync<ScriptableObject>(
             (asset, reference) => 
             {
                 _componentIcon.sprite = _spriteFactory.GetAsset(asset);
                 _componentText.text = asset.name;
             },
             null
-            );
-
-        base.Setup(config, responseDelegate);
-    }
-
-    protected override Response GenerateResponse()
-    {
-        TakeJunkDialogResponse response = new TakeJunkDialogResponse();
-
-        response.Component = _takeJunkDialogConfig.Component;
-
-        return response;
+        );
     }
 }

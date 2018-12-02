@@ -16,7 +16,6 @@ namespace JunkyardDogs.Simulation.Agent
             States = new List<AgentState>();
         }
         
-        
         public AgentState InitialState
         {
             get { return States[DefaultState]; }

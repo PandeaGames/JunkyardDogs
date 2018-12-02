@@ -11,11 +11,7 @@ namespace PandeaGames.Views
         
         public ContainerView()
         {
-            _worldObject = new GameObject();
-            _transform = _worldObject.GetComponent<Transform>();
             
-            _uiObject = new GameObject();
-            _rt = _uiObject.AddComponent<RectTransform>();
         }
 
         public override Transform GetTransform()
@@ -26,6 +22,16 @@ namespace PandeaGames.Views
         public override RectTransform GetRectTransform()
         {
             return _rt;
+        }
+
+        public override void Show()
+        {
+            _worldObject = new GameObject();
+            _worldObject.name = "ContainerView(" + _worldObject.GetInstanceID()+")";
+            _transform = _worldObject.GetComponent<Transform>();
+            
+            _uiObject = new GameObject();
+            _rt = _uiObject.AddComponent<RectTransform>();
         }
     }
 }

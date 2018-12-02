@@ -5,7 +5,7 @@ using JunkyardDogs.Components;
 using System.Collections.Generic;
 using System.Collections;
 using PandeaGames;
-using WeakReference = Data.WeakReference;
+using WeakReference = PandeaGames.Data.WeakReferences.WeakReference;
 
 public struct MatchOutcome
 {

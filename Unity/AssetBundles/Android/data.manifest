@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 3979023457
+CRC: 578787003
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 9aefb4beba4cd9ba7d714808dd3f3a66
+    Hash: fb8a079edd9f267c2ebe533a6527bd9e
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 5a9bd592a16be5bc77455c3a849ef3d6
+    Hash: f5f81b6ee96d47a59cd976ef1c162466
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -40,6 +40,8 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: eba0c660f2ee447f839ec2ea62cb54ff, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: 4f803631e5514e48ba3d0b70d24449a7, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: 4ae6ae314c73cc144a7e07e999e16e28, type: 3}
 - Class: 114
   Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
@@ -66,6 +68,8 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: 394b2a32c8afa0749a8b9719c2f85a99, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: 08900b325c734481bbd6fa27474d898f, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: aedf2342af1176b42bf51f5a3136eb3a, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 2bc383b2da7c72946a114ca2612ed7bf, type: 3}
@@ -76,6 +80,8 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: eb4f58339cb9499fafb3ba9bc4567fd9, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: a242256388ad493fa8f4e8860f33f53f, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: dbd048a32ce64ebc85d6e51aeb3fa178, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: cc9be6c3d71345458834e1098598c5bb, type: 3}
@@ -83,6 +89,8 @@ ClassTypes:
   Script: {fileID: 11500000, guid: 19c408e3f064e184fa5e0d9862ac4d8b, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 5772a094857f41edb95db54e192aec8f, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 6f3405a42d9c7bc4e99fc38edc3e3f95, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: b1d4f20500189514a9ea47afb5cfb85f, type: 3}
 - Class: 114
@@ -173,12 +181,14 @@ Assets:
 - Assets/AssetBundles/Data/Products/Skylabs/Weapons/Deagle.asset
 - Assets/AssetBundles/Data/Simulation/Knowledge/Natural.asset
 - Assets/AssetBundles/Data/Nations/NationTitleLocalization.asset
+- Assets/AssetBundles/Data/Competitors/Germany/Florian/FlorianParticipation.asset
 - Assets/AssetBundles/Data/Products/Skylabs/Materials/Alloy/Steel.asset
 - Assets/AssetBundles/Data/Simulation/Directives/DirectiveAttackTop.asset
 - Assets/AssetBundles/Data/Products/Skylabs/Processors/subprocessor/WeaponChip.asset
 - Assets/AssetBundles/Data/Simulation/Behavior/MoveUp.asset
 - Assets/AssetBundles/Data/Products/Skylabs/Materials/CircuitBoard.asset
 - Assets/AssetBundles/Data/Competitors/Germany/Florian/JagerBot.asset
+- Assets/AssetBundles/Data/Competitors/Germany/Florian/FloriansFavoriteProcessor.asset
 - Assets/AssetBundles/Data/Products/Materials/Alloy/Copper.asset
 - Assets/AssetBundles/Data/Products/Skylabs/Materials/Alloy/Aluminum.asset
 - Assets/AssetBundles/Data/Simulation/Knowledge/Evassive.asset
@@ -200,14 +210,18 @@ Assets:
 - Assets/AssetBundles/Data/Products/Materials/Alloy/Steel.asset
 - Assets/AssetBundles/Data/Simulation/Behavior/AttackRight.asset
 - Assets/AssetBundles/Art/Factories/BotFactory.asset
+- Assets/AssetBundles/Data/Competitors/Germany/Florian/JagerAgent.asset
 - Assets/AssetBundles/Data/Products/Plating/Plate_Thickness03.asset
 - Assets/AssetBundles/Data/Simulation/Behavior/MoveLeft.asset
+- Assets/AssetBundles/Data/Static/ViewStaticData.asset
 - Assets/AssetBundles/Data/Simulation/Directives/DirectiveAttackLeft.asset
 - Assets/AssetBundles/Data/Simulation/Directives/DirectiveAttackRight.asset
 - Assets/AssetBundles/Data/Products/Skylabs/Chassis/Mamoth.asset
 - Assets/AssetBundles/Data/Products/Skylabs/Skylabs.asset
 - Assets/AssetBundles/Data/Tournaments/Tournaments/MooseHerd.asset
+- Assets/AssetBundles/Data/TestData/Tournaments/MooseChallengeTest.asset
 - Assets/AssetBundles/Data/Products/Skylabs/Weapons/Pulse.asset
+- Assets/AssetBundles/Data/Competitors/Germany/Florian/Florian.asset
 - Assets/AssetBundles/Data/Simulation/Behavior/AttackTop.asset
 - Assets/AssetBundles/Data/Products/Skylabs/Weapons/FrickinLaser.asset
 - Assets/AssetBundles/Data/Simulation/Directives/DirectiveMoveRight.asset
@@ -229,6 +243,7 @@ Assets:
 - Assets/AssetBundles/Data/Gameplay/Junkyard/SpecificationCatalogue01.asset
 - Assets/AssetBundles/Data/Nations/FlagsLarge.asset
 - Assets/AssetBundles/Data/Products/Skylabs/Weapons/PulseEmitter.asset
+- Assets/AssetBundles/Data/Competitors/Germany/Florian/FloriansDeagles.asset
 - Assets/AssetBundles/Data/Products/Plating/Plate_Thickness05.asset
 Dependencies:
 - C:/Users/ccove/JunkyardDogs/Unity/AssetBundles/Android/art

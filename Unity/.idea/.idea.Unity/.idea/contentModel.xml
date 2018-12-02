@@ -188,9 +188,18 @@
       </e>
       <e p="Assets\client" t="Include">
         <e p="Data" t="Include">
+          <e p="AssetBundleEnum.cs" t="Include" />
+          <e p="GameStaticDataProvider.cs" t="Include" />
           <e p="JunkyardStaticDataLoader.cs" t="Include" />
+          <e p="MatchTestData.cs" t="Include" />
+          <e p="UnityData" t="Include">
+            <e p="GameStaticData.cs" t="Include" />
+            <e p="ViewStaticData.cs" t="Include" />
+          </e>
+          <e p="ViewStaticDataProvider.cs" t="Include" />
         </e>
         <e p="GameLoader.cs" t="Include" />
+        <e p="GarageTest.cs" t="Include" />
         <e p="scripts" t="Include">
           <e p="Data" t="Include">
             <e p="Behavior" t="Include">
@@ -366,6 +375,13 @@
               <e p="ComponentMessageDialog.cs" t="Include" />
               <e p="EventDialog.cs" t="Include" />
               <e p="TakeJunkDialog.cs" t="Include" />
+              <e p="ViewModels" t="Include">
+                <e p="ChooseActionDialogViewModel.cs" t="Include" />
+                <e p="ChooseFromInventoryViewModel.cs" t="Include" />
+                <e p="ComponentViewModel.cs" t="Include" />
+                <e p="EventDialogViewModel.cs" t="Include" />
+                <e p="TakeJunkDialogViewModel.cs" t="Include" />
+              </e>
             </e>
             <e p="GameBootstrap.cs" t="Include" />
             <e p="Gameplay" t="Include">
@@ -401,6 +417,9 @@
               <e p="InventoryScreen.cs" t="Include" />
               <e p="JunkyardScreen.cs" t="Include" />
               <e p="MapScreen.cs" t="Include" />
+              <e p="ViewModels" t="Include">
+                <e p="EditBotBehaviourViewModel.cs" t="Include" />
+              </e>
             </e>
             <e p="Services" t="Include">
               <e p="JunkyardUserService.cs" t="Include" />
@@ -470,15 +489,41 @@
         <e p="ViewControllers" t="Include">
           <e p="ChooseNationalityViewController.cs" t="Include" />
           <e p="GameLoadViewController.cs" t="Include" />
+          <e p="GarageEditBehaviourViewController.cs" t="Include" />
+          <e p="GarageFocusedViewController.cs" t="Include" />
+          <e p="GarageLineupViewController.cs" t="Include" />
+          <e p="GarageTestViewController.cs" t="Include" />
+          <e p="GarageViewController.cs" t="Include" />
           <e p="JunkyardDogsViewController.cs" t="Include" />
           <e p="JunkyardFullGameViewController.cs" t="Include" />
+          <e p="JunkyardViewController.cs" t="Include" />
+          <e p="MatchTestViewController.cs" t="Include" />
+          <e p="MatchViewController.cs" t="Include" />
+          <e p="PreloadViewController.cs" t="Include" />
+          <e p="StatesCommon" t="Include">
+            <e p="AbstractLoadingState.cs" t="Include" />
+            <e p="SplashState.cs" t="Include" />
+          </e>
+          <e p="WorldMapViewController.cs" t="Include" />
         </e>
         <e p="ViewModels" t="Include">
+          <e p="ChooseNationalityViewModel.cs" t="Include" />
+          <e p="GarageViewModel.cs" t="Include" />
           <e p="JunkyardUserViewModel.cs" t="Include" />
           <e p="LoadingViewModel.cs" t="Include" />
+          <e p="MatchViewModel.cs" t="Include" />
+          <e p="WorldMapViewModel.cs" t="Include" />
         </e>
         <e p="Views" t="Include">
           <e p="ChooseNationlaityView.cs" t="Include" />
+          <e p="GarageEditBehaviourView.cs" t="Include" />
+          <e p="GarageFocusedView.cs" t="Include" />
+          <e p="GarageLineupView.cs" t="Include" />
+          <e p="GarageView.cs" t="Include" />
+          <e p="JunkyardGameContainer.cs" t="Include" />
+          <e p="JunkyardPreloadView.cs" t="Include" />
+          <e p="SimpleWindowView.cs" t="Include" />
+          <e p="WorldMapView.cs" t="Include" />
         </e>
       </e>
       <e p="Assets\Editor" t="Include">
@@ -615,6 +660,7 @@
             <e p="SpriteFactory.cs" t="Include" />
             <e p="StringFactory.cs" t="Include" />
           </e>
+          <e p="InputConfig.cs" t="Include" />
           <e p="LoadableConfigurationData.cs" t="Include" />
           <e p="PandeaGameConfigurationData.cs" t="Include" />
           <e p="ScreenTransition.cs" t="Include" />
@@ -624,6 +670,7 @@
             <e p="PandeaGameDataProvider.cs" t="Include" />
           </e>
           <e p="WeakReference" t="Include">
+            <e p="AssetLoader.cs" t="Include" />
             <e p="Editor" t="Include">
               <e p="WeakReference.cs" t="Include" />
             </e>
@@ -645,12 +692,21 @@
         </e>
         <e p="Game.cs" t="Include" />
         <e p="LoadedScreenCache.cs" t="Include" />
+        <e p="MonoBehaviourSingleton.cs" t="Include" />
         <e p="Runtime" t="Include">
           <e p="Constants.cs" t="Include" />
           <e p="Controllers" t="Include">
             <e p="scripts" t="Include">
               <e p="CoreController.cs" t="Include" />
               <e p="StateMachine.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Dialogs" t="Include">
+            <e p="Dialog.cs" t="Include" />
+            <e p="MessageDialog.cs" t="Include" />
+            <e p="OptionDisplay.cs" t="Include" />
+            <e p="ViewModels" t="Include">
+              <e p="MessageDialogViewModel.cs" t="Include" />
             </e>
           </e>
           <e p="Gameplay" t="Include">
@@ -674,11 +730,6 @@
               <e p="InputPuppet.cs" t="Include" />
               <e p="PauseGame.cs" t="Include" />
               <e p="SimplePointerMaster.cs" t="Include" />
-            </e>
-            <e p="Dialogs" t="Include">
-              <e p="Dialog.cs" t="Include" />
-              <e p="MessageDialog.cs" t="Include" />
-              <e p="OptionDisplay.cs" t="Include" />
             </e>
             <e p="Pausable.cs" t="Include" />
             <e p="StartGame.cs" t="Include" />
@@ -722,9 +773,12 @@
         <e p="ViewControllers" t="Include">
           <e p="AbstractViewController.cs" t="Include" />
           <e p="AbstractViewControllerFSM.cs" t="Include" />
+          <e p="ContainerViewController.cs" t="Include" />
           <e p="IViewController.cs" t="Include" />
         </e>
         <e p="ViewModels" t="Include">
+          <e p="AbstractDialogViewModel.cs" t="Include" />
+          <e p="AbstractStatefulViewModel.cs" t="Include" />
           <e p="AbstractUserViewModel.cs" t="Include" />
           <e p="AbstractViewModel.cs" t="Include" />
           <e p="CameraViewModel.cs" t="Include" />

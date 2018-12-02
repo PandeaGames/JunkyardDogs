@@ -3,12 +3,13 @@ using System.Collections;
 using JunkyardDogs.Simulation.Behavior;
 using System;
 using Data;
+using WeakReference = PandeaGames.Data.WeakReferences.WeakReference;
 
 namespace JunkyardDogs.Simulation.Agent
 {
     public class Directive: ILoadableObject
     {
-        public Data.WeakReference ActionWeakReference { get; set; }
+        public WeakReference ActionWeakReference { get; set; }
 
         public Behavior.Action Action
         {

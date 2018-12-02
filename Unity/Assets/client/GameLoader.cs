@@ -9,6 +9,7 @@ namespace JunkyardDogs
         private void Start()
         {
             _gameView = new JunkyardFullGameViewController();
+            _gameView.ShowView();
         }
 
         private void Update()

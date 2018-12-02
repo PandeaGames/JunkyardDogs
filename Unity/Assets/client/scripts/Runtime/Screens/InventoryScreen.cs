@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using PandeaGames;
 using PandeaGames.Views.Screens;
 using SRF.UI.Layout;
+using PandeaGames.Runtime.Dialogs.ViewModels;
+using JunkyardDogs.scripts.Runtime.Dialogs;
 using Component = JunkyardDogs.Components.Component;
 
 public class InventoryScreen : ScreenView
@@ -57,28 +59,26 @@ public class InventoryScreen : ScreenView
 
     private void OnInventoryButtonPressed(Component component)
     {
-        List<MessageDialog.Option> options = new List<MessageDialog.Option>();
+        List<MessageDialogViewModel.Option> options = new List<MessageDialogViewModel.Option>();
 
-        MessageDialog.Option sellOption = new MessageDialog.Option("Sell");
-        MessageDialog.Option cancel = new MessageDialog.Option("Cancel");
+        MessageDialogViewModel.Option sellOption = new MessageDialogViewModel.Option("Sell");
+        MessageDialogViewModel.Option cancel = new MessageDialogViewModel.Option("Cancel");
 
         options.Add(sellOption);
         options.Add(cancel);
 
-        ComponentMessageDialog.ComponentMessageDialogConfig config = new ComponentMessageDialog.ComponentMessageDialogConfig(options);
-        config.Component = component;
-
-        _dialogService.DisplayDialog<ComponentMessageDialog>(config, (response) =>
+        ComponentViewModel vm = Game.Instance.GetViewModel<ComponentViewModel>(0);
+        
+        vm.SetOptions(options);
+        vm.OnOptionSelected +=(option) =>
         {
-            MessageDialog.MessageDialogResponse messageResponse = response as MessageDialog.MessageDialogResponse;
-
-            if(messageResponse.Choice == sellOption)
+            if(option == sellOption)
             {
                 //TODO: Sell
                 _junkyardUserService.User.Competitor.Inventory.Components.Remove(component);
                 _virtualVerticalLayoutGroup.RemoveItem(component);
                 _junkyardUserService.Save();
             }
-        });
+        };
     }
 }

@@ -2,7 +2,7 @@
 using UnityEngine;
 using JunkyardDogs.Specifications;
 using System;
-using WeakReference = Data.WeakReference;
+using WeakReference = PandeaGames.Data.WeakReferences.WeakReference;
 
 [Serializable]
 public class BotBlueprint : Blueprint<Bot, BotBlueprintData>

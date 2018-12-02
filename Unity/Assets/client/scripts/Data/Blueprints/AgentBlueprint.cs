@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System;
 using JunkyardDogs.Simulation.Agent;
-using WeakReference = Data.WeakReference;
+using WeakReference = PandeaGames.Data.WeakReferences.WeakReference;
 using System.Collections.Generic;
 using Agent = JunkyardDogs.Simulation.Agent.Agent;
 

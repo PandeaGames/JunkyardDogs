@@ -1,29 +1,104 @@
-﻿using UnityEngine;
+﻿using PandeaGames.Views.Screens;
 
 namespace PandeaGames.Views.ViewControllers
 {
     public class AbstractViewController : IViewController
     {
-        protected readonly AbstractViewController _parent;
-        private IView _view;
+        public IViewController parent;
+        protected IView _view;
+
+        public virtual void Initialize(IViewController parent)
+        {
+            this.parent = parent;
+        }
+
+        public IViewController GetParent()
+        {
+            return parent;
+        }
         
-        public AbstractViewController() : this(null)
+        public IView GetView()
+        {
+            if (_view == null)
+            {
+                return CreateView();
+            }
+            else
+            {
+                return _view;
+            }
+        }
+        
+        protected virtual IView CreateView()
+        {
+            return new ContainerView();
+        }
+
+        public WindowView GetParentWindow()
+        {
+            return GetParentWindow(this);
+        }
+        
+        private WindowView GetParentWindow(IViewController viewController)
+        {
+            if (viewController == null)
+                return null;
+            
+            WindowView window = viewController.GetView().GetWindow();
+            
+            if (window != null)
+            {
+                return window;
+            }
+            else
+            {
+                return GetParentWindow(viewController.GetParent());
+            }
+        }
+
+        public virtual void Update()
+        {
+            
+        }
+
+        protected virtual void OnBeforeShow()
         {
             
         }
         
-        public AbstractViewController(AbstractViewController parent)
+        protected virtual void OnAfterShow()
         {
-            _parent = parent;
-            _view = new ContainerView();
+            
         }
 
-        public IView GetView()
+        public virtual void ShowView()
         {
-            return _view;
+            if (_view == null)
+            {
+                OnBeforeShow();
+                _view = GetView();
+                _view.InitializeView(this);
+                _view.LoadAsync(OnViewLoaded, OnViewLoadError);
+            }
         }
 
-        public virtual void Update()
+        public void RemoveView()
+        {
+            if (_view != null)
+            {
+                _view.Destroy();
+            }
+            
+            _view = null;
+            
+        }
+
+        protected virtual void OnViewLoaded()
+        {
+            _view.Show();
+        }
+        
+        protected virtual void  OnViewLoadError(LoadException error)
         {
             
         }

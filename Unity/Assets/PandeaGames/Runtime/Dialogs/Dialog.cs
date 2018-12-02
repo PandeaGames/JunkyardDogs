@@ -1,94 +1,106 @@
 ﻿using UnityEngine;
-using System.Collections;
+using PandeaGames.ViewModels;
 using System;
 using UnityEngine.UI;
 
-public abstract class Dialog : MonoBehaviour
+public interface IDialog
 {
-    public class Response
-    {
-        
-    }
+    event Action<IDialog> OnFocus;
+    event Action<IDialog> OnBlur;
+    event Action<IDialog> OnShow;
+    event Action<IDialog> OnHide;
+    event Action<IDialog> OnClose;
+    event Action<IDialog> OnCancel;
+    
+    void Focus();
+    void Blur();
+    void Show();
+    void Hide();
+    void Close();
+    void Cancel();
+    void Destroy();
+    void Setup(IViewModel vm);
+}
 
-    [Serializable]
-    public class Config : ScriptableObject
-    {
-        public ServiceManager ServiceManager;
-        
-        public Config()
-        {
-        }
-    }
-
-    public delegate void DialogResponseDelegate(Response response);
-    public delegate void DialogDelegate(Dialog dialog);
-
-    public event DialogDelegate OnFocus;
-    public event DialogDelegate OnBlur;
-    public event DialogDelegate OnShow;
-    public event DialogDelegate OnHide;
-    public event DialogDelegate OnClose;
-    public event DialogDelegate OnCancel;
+public abstract class Dialog<TViewModel> : MonoBehaviour, IDialog where TViewModel:AbstractDialogViewModel<TViewModel>, IViewModel
+{
+    public event Action<IDialog> OnFocus;
+    public event Action<IDialog> OnBlur;
+    public event Action<IDialog> OnShow;
+    public event Action<IDialog> OnHide;
+    public event Action<IDialog> OnClose;
+    public event Action<IDialog> OnCancel;
 
     [SerializeField]
     protected Button _closeButton;
 
     [NonSerialized]
-    private DialogResponseDelegate _responseDelegate;
-    [NonSerialized]
-    private Config _config;
+    protected TViewModel _viewModel;
 
-    public virtual void Setup(Config config, DialogResponseDelegate responseDelegate = null) {
-        _config = config;
-        _responseDelegate = responseDelegate;
-
+    public void Setup(IViewModel viewModel)
+    {
+        _viewModel = viewModel as TViewModel;
+        
         if (_closeButton)
         {
             _closeButton.onClick.AddListener(Close);
         }
+
+        Initialize();
     }
+
+    public TViewModel GetViewModel()
+    {
+        return _viewModel;
+    }
+
+    protected virtual void Initialize()
+    {
+        
+    }
+    
 
     public void OnDestroy()
     {
         if (OnFocus != null)
         {
             foreach (Delegate d in OnFocus.GetInvocationList())
-                OnFocus -= (DialogDelegate)d;
+                OnFocus -= (Action<IDialog>)d;
             OnFocus = null;
         }
 
         if (OnBlur != null)
         {
             foreach (Delegate d in OnBlur.GetInvocationList())
-                OnBlur -= (DialogDelegate)d;
+                OnBlur -= (Action<IDialog>)d;
             OnBlur = null;
         }
 
         if (OnShow != null)
         {
             foreach (Delegate d in OnShow.GetInvocationList())
-                OnShow -= (DialogDelegate)d;
+                OnShow -= (Action<IDialog>)d;
             OnShow = null;
         }
 
         if (OnHide != null)
         {
             foreach (Delegate d in OnHide.GetInvocationList())
-                OnHide -= (DialogDelegate)d;
+                OnHide -= (Action<IDialog>)d;
             OnHide = null;
         }
 
         if (OnClose != null)
         {
             foreach (Delegate d in OnClose.GetInvocationList())
-                OnClose -= (DialogDelegate)d;
+                OnClose -= (Action<IDialog>)d;
             OnClose = null;
         }
 
         if (OnCancel != null)
         {
             foreach (Delegate d in OnCancel.GetInvocationList())
-                OnCancel -= (DialogDelegate)d;
+                OnCancel -= (Action<IDialog>)d;
             OnCancel = null;
         }
     }
@@ -97,43 +109,52 @@ public abstract class Dialog : MonoBehaviour
     {
         if (OnFocus != null)
             OnFocus(this);
+        
+        _viewModel.Focus();
     }
 
     public void Blur()
     {
         if (OnBlur != null)
             OnBlur(this);
+        
+        _viewModel.Blur();
     }
 
     public void Show()
     {
         if (OnShow != null)
             OnShow(this);
+        
+        _viewModel.Show();
     }
 
     public void Hide()
     {
         if (OnHide != null)
             OnHide(this);
+        
+        _viewModel.Hide();
     }
 
     public void Close()
     {
         if (OnClose != null)
             OnClose(this);
-
-        if (_responseDelegate != null)
-            _responseDelegate(GenerateResponse());
+        
+        _viewModel.Close();
     }
 
     public void Cancel()
     {
         if (OnCancel != null)
             OnCancel(this);
+        
+        _viewModel.Cancel();
     }
 
-    protected virtual Response GenerateResponse()
+    public void Destroy()
     {
-        return new Response();
+        Destroy(gameObject);
     }
 }

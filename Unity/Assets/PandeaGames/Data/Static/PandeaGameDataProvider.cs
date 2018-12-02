@@ -19,7 +19,7 @@ namespace PandeaGames.Data.Static
             try
             {
                 _pandeaGameConfigurationData = Resources.Load<PandeaGameConfigurationData>(PandeaGameConfigurationDataPath);
-                onLoadSuccess();
+                _pandeaGameConfigurationData.LoadAsync(onLoadSuccess, onLoadFailed);
             }
             catch (Exception e)
             {

@@ -4,13 +4,14 @@ using System.Collections;
 using JunkyardDogs.Simulation.Knowledge;
 using System;
 using Data;
+using WeakReference = PandeaGames.Data.WeakReferences.WeakReference;
 
 namespace JunkyardDogs.Simulation.Agent
 {
     public class StateTransition : ILoadableObject
     {
         private bool _isLoaded;
-        public List<Data.WeakReference> CriteriaReferences { get; set; }
+        public List<WeakReference> CriteriaReferences { get; set; }
         public AgentState StateToTransition { get; set; }
 
         public bool IsLoaded()

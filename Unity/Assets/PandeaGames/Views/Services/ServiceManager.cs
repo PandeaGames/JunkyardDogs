@@ -2,10 +2,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using PandeaGames;
 
 [Serializable]
-public class ServiceManager : MonoBehaviour {
-
+public class ServiceManager : MonoBehaviourSingleton<ServiceManager> {
+    
     [SerializeField]
     private List<Service> _services;
 

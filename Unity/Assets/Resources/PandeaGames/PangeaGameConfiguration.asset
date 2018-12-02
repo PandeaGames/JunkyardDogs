@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1bbb60d2b394981b6808874b93bada2, type: 3}
+  m_Name: PangeaGameConfiguration
+  m_EditorClassIdentifier: 
+  _dialogConfigurationData:
+    _guid: 1b56615eefb40f84caa330ff4c92e4bd
+    _path: Assets/AssetBundles/Data/Gameplay/DialogConfig.asset
+  _inputConfig:
+    _guid: 73bd69b8a9f929e4392dced26955fb3b
+    _path: Assets/AssetBundles/Data/Gameplay/InputConfig.asset

@@ -3,7 +3,7 @@
 namespace JunkyardDogs.Simulation.Behavior
 {
     [CreateAssetMenu]
-    public class ActionList :Data.WeakReferenceList<Action>
+    public class ActionList :PandeaGames.Data.WeakReferences.WeakReferenceList<Action>
     {
 
     }

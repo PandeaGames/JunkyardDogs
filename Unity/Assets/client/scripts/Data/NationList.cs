@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Data;
 using System;
-using WeakReference = Data.WeakReference;
+using WeakReference = PandeaGames.Data.WeakReferences.WeakReference;
 
 [CreateAssetMenu]
 public class NationList : ScriptableObject, IEnumerable<WeakReference>, ILoadableObject

@@ -55,9 +55,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4348881259920368}
   - component: {fileID: 114654254377028336}
-  - component: {fileID: 114407147787366680}
   - component: {fileID: 114835746214761360}
-  - component: {fileID: 114633840190484196}
   - component: {fileID: 114459590522957808}
   m_Layer: 0
   m_Name: PersistantServiceManager
@@ -277,19 +275,6 @@ MonoBehaviour:
   m_InputActionsPerSecond: 10
   m_RepeatDelay: 0.5
   m_ForceModuleActive: 0
---- !u!114 &114407147787366680
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1325783671719014}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76ac47171f6eed143aa98a7a4ffd246c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _isRunning: 1
-  _userDataStorageKeyPrefix: 
 --- !u!114 &114459590522957808
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -366,20 +351,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _stage: {fileID: 224093559325501850}
   _touchBlocker: {fileID: 224134126326084688}
---- !u!114 &114633840190484196
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1325783671719014}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 712986986768c454fbf70151cfe8c6ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _isRunning: 0
-  _activeMaster: {fileID: 0}
-  _activeAgent: {fileID: 0}
 --- !u!114 &114654254377028336
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -392,10 +363,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _services:
-  - {fileID: 114407147787366680}
+  - {fileID: 0}
   - {fileID: 114459590522957808}
   - {fileID: 114835746214761360}
-  - {fileID: 114633840190484196}
+  - {fileID: 0}
 --- !u!114 &114659674519825510
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -435,8 +406,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isRunning: 1
-  _config: {fileID: 11400000, guid: 1b56615eefb40f84caa330ff4c92e4bd, type: 2}
-  _dialogStage: {fileID: 114488769538893098}
+  _stage: {fileID: 0}
+  _touchBlocker: {fileID: 0}
 --- !u!114 &114836059656335052
 MonoBehaviour:
   m_ObjectHideFlags: 1

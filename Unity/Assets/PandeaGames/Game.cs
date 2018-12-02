@@ -54,6 +54,11 @@ namespace PandeaGames
             return GetDependancy<TViewModel, IViewModel>(instanceId:instanceId, lookup:_viewModels);
         }
         
+        public TViewModel GetViewModel<TViewModel>() where TViewModel : class, IViewModel, new()
+        {
+            return new TViewModel();
+        }
+        
         public TStaticDataProvider GetStaticDataPovider<TStaticDataProvider>() where TStaticDataProvider : class, IStaticDataProvider, new()
         {
             return GetDependancy<TStaticDataProvider, IStaticDataProvider>(instanceId:0, lookup:_staticDataProviders);

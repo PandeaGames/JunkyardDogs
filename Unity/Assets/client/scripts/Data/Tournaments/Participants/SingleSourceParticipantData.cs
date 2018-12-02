@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using WeakReference = Data.WeakReference;
+using WeakReference = PandeaGames.Data.WeakReferences.WeakReference;
 
 [CreateAssetMenu(menuName = "Tournaments/Participants/SingleSourceParticipant")]
 public class SingleSourceParticipantData : ParticipantData

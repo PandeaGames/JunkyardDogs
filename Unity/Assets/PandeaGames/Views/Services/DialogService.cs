@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System;
 using PandeaGames;
 using PandeaGames.Data.Static;
+using PandeaGames.ViewModels;
 
 public class DialogService : Service
 {
@@ -27,7 +28,7 @@ public class DialogService : Service
 
         foreach (GameObject dialogPrefab in _config)
         {
-            Dialog dialogComponent = dialogPrefab.GetComponent<Dialog>();
+            IDialog dialogComponent = dialogPrefab.GetComponent<IDialog>();
             MessageDialog messageDialogComponent = dialogPrefab.GetComponent<MessageDialog>();
 
             if (dialogComponent == null)
@@ -59,10 +60,9 @@ public class DialogService : Service
         base.EndService(serviceManager);
     }
 
-    public void DisplayDialog<T>(Dialog.Config config, Dialog.DialogResponseDelegate responseDelegate = null) where T:Dialog
+    public void DisplayDialog<T>(IViewModel viewModel) where T:IDialog
     {
         GameObject prefab = GetDialogPrefab<T>();
-        config.ServiceManager = _manager;
 
         if (prefab == null)
         {
@@ -70,13 +70,13 @@ public class DialogService : Service
             return;
         }
 
-        Debug.Log("Display Dialog type " + typeof(T).Name+" with config "+config);
+        Debug.Log("Display Dialog type " + typeof(T).Name);
         
         GameObject prefabInstance = Instantiate(prefab, _stage);
 
-        Dialog dialog = prefabInstance.GetComponent<Dialog>();
+        IDialog dialog = prefabInstance.GetComponent<IDialog>();
 
-        if (!dialog)
+        if (dialog == null)
         {
             Debug.LogError("Dialog component not found on prefab. Cannot display: " + prefab);
             return;
@@ -85,7 +85,7 @@ public class DialogService : Service
         dialog.OnCancel += OnDialogCancel;
         dialog.OnClose += OnDialogClose;
 
-        dialog.Setup(config, responseDelegate);
+        dialog.Setup(viewModel);
 
         if (_touchBlocker)
         {
@@ -93,7 +93,7 @@ public class DialogService : Service
         }
     }
 
-    public GameObject GetDialogPrefab<T>() where T : Dialog
+    public GameObject GetDialogPrefab<T>() where T : IDialog
     {
         GameObject prefab;
         _dialogLookup.TryGetValue(typeof(T), out prefab);
@@ -106,26 +106,16 @@ public class DialogService : Service
 
         return prefab;
     }
-
-    public T GetDialogComponent<T>() where T : Dialog
-    {
-        GameObject prefab = GetDialogPrefab<T>();
-
-        if (prefab == null)
-            return default(T);
-
-        return prefab.GetComponent<T>();
-    }
     
-    private void BlurDialog(Dialog dialog)
+    private void BlurDialog(IDialog dialog)
     {
         dialog.Blur();
     }
 
-    private void OnDialogClose(Dialog dialog)
+    private void OnDialogClose(IDialog dialog)
     {
         BlurDialog(dialog);
-        Destroy(dialog.gameObject);
+        dialog.Destroy();
 
         if(_touchBlocker)
         {
@@ -133,9 +123,9 @@ public class DialogService : Service
         }
     }
 
-    private void OnDialogCancel(Dialog dialog)
+    private void OnDialogCancel(IDialog dialog)
     {
-        Destroy(dialog.gameObject);
+        dialog.Destroy();
 
         if (_touchBlocker)
         {

@@ -1,5 +1,5 @@
 ﻿using System;
-using WeakReference = Data.WeakReference;
+using WeakReference = PandeaGames.Data.WeakReferences.WeakReference;
 using JunkyardDogs.Components;
 
 public class UserAutoParticipant : Participant
