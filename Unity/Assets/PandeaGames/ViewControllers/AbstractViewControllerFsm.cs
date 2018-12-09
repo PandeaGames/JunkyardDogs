@@ -95,32 +95,35 @@ namespace PandeaGames.Views.ViewControllers
 
         private void SetState(TEnum state, bool isInitialState)
         {
-            if (state.Equals(_currentState) && !isInitialState)
+            TaskProvider.Instance.DelayedAction(() =>
             {
-                return;
-            }
+                if (state.Equals(_currentState) && !isInitialState)
+                {
+                    return;
+                }
             
-            if (!_states.ContainsKey(state))
-            {
-                throw new NotImplementedException(string.Format("State '{0}' has not been implemented by this machine.", state));
-            }
+                if (!_states.ContainsKey(state))
+                {
+                    throw new NotImplementedException(string.Format("State '{0}' has not been implemented by this machine.", state));
+                }
 
-            AbstractViewControllerState<TEnum> newController = _states[state];
-            AbstractViewControllerState<TEnum> oldController = null;
+                AbstractViewControllerState<TEnum> newController = _states[state];
+                AbstractViewControllerState<TEnum> oldController = null;
 
-            if (_states.ContainsKey(_currentState))
-            {
-                oldController = _states[_currentState];
-            }
+                if (_states.ContainsKey(_currentState))
+                {
+                    oldController = _states[_currentState];
+                }
 
-            Debug.LogFormat("[EnterState] {0}", state);
-            newController.EnterState(_currentState);
-            if (OnEnterState != null)
-                OnEnterState(state);
-            if(oldController != null && !isInitialState)
-                oldController.LeaveState(state);
+                Debug.LogFormat("[EnterState] {0}", state);
+                newController.EnterState(_currentState);
+                if (OnEnterState != null)
+                    OnEnterState(state);
+                if(oldController != null && !isInitialState)
+                    oldController.LeaveState(state);
 
-            _currentState = state;
+                _currentState = state;
+            });
         }
 
         public void SetState(TEnum state)

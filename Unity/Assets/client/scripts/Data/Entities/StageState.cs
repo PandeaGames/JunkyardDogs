@@ -29,6 +29,11 @@ public class StageState
     {
         return GetCurrentRound().IsComplete();
     }
+    
+    public IEnumerable<Participant> GetParticipants()
+    {
+        return Rounds[0].GetParticipants();
+    }
 }
 
 public class MatchState
@@ -78,6 +83,32 @@ public class RoundState
         }
         
         return true;
+    }
+
+    public bool HasParticipants()
+    {
+        for (int i = 0; i < Matches.Count; i++)
+        {
+            MatchState match = Matches[i];
+
+            if (match.ParticipantA.Participant == null || match.ParticipantB.Participant == null)
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+    
+    public IEnumerable<Participant> GetParticipants()
+    {
+        for (int i = 0; i < Matches.Count; i++)
+        {
+            MatchState match = Matches[i];
+
+            yield return match.ParticipantA.Participant;
+            yield return match.ParticipantB.Participant;
+        }
     }
 
     public bool IsComplete()

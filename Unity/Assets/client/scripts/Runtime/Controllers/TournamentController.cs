@@ -58,7 +58,8 @@ public class TournamentController : MonoBehaviour
         
 		ParticipantDataUtils.GenerateParticipantsAsync(tournament.Participants, (participants) =>
 			{
-				StartCoroutine(CompleteParticipantsCoroutine(participants, () => { }));_tournamentState.FillWithParticipants(participants);
+				StartCoroutine(CompleteParticipantsCoroutine(participants, () => { }));
+				_tournamentState.FillWithParticipants(participants);
 				RunTournament(_tournamentState);
 			}, OnError);
 	}
@@ -98,10 +99,10 @@ public class TournamentController : MonoBehaviour
 				bool hasError = false;
 				Bot chosenBot = null;
 				
-				chooseController.ChooseBot(bot => { chosenBot = bot; }, () =>
+				/*chooseController.ChooseBot(bot => { chosenBot = bot; }, () =>
 				{
 					hasError = true;
-				}, () => { hasError = true; });
+				}, () => { hasError = true; });*/
 
 				yield return new WaitUntil(() => hasError || chosenBot != null);
 
@@ -169,7 +170,7 @@ public class TournamentController : MonoBehaviour
 		}
 
 		_matchController = FindObjectOfType<MatchController>();
-		_matchController.RunMatch(match, OnMatchComplete);
+		//_matchController.RunMatch(match, OnMatchComplete);
 	}
 
 	private void OnMatchComplete(MatchOutcome outcomed)

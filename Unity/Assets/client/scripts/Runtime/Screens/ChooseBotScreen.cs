@@ -1,7 +1,9 @@
 ﻿
 using System.Collections;
 using System.Collections.Generic;
+using JunkyardDogs;
 using JunkyardDogs.Components;
+using PandeaGames;
 using UnityEngine;
 using UnityEngine.UI;
 using PandeaGames.Views.Screens;
@@ -24,14 +26,17 @@ public class ChooseBotScreen : ScreenView
     private IChooseBotModel _model;
     private List<Bot> _bots;
     private int _index;
+    private JunkyardUserViewModel _userViewModel;
+    private ChooseBotFromInventoryViewModel _chooseViewModel;
     
     public override void Setup(WindowView window)
     {
         base.Setup(window);
 
-        /*_chooseBotConfig = config as ChooseBotConfig;
-        _model = _chooseBotConfig.Model;
-        _bots = _chooseBotConfig.Bots;*/
+        _userViewModel = Game.Instance.GetViewModel<JunkyardUserViewModel>(0);
+        _model = Game.Instance.GetViewModel<ChooseBotFromInventoryViewModel>(0);
+
+        _bots = _userViewModel.UserData.Competitor.Inventory.Bots;
         
         _leftBtn.onClick.AddListener(OnLeftBtn);
         _rightBtn.onClick.AddListener(OnRightBtn);

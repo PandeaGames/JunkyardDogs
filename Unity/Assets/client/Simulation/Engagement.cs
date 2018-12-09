@@ -2,11 +2,12 @@
 using System.Collections;
 using JunkyardDogs.Components;
 using System;
+using Data;
 
 namespace JunkyardDogs.Simulation
 {
     [Serializable]
-    public class Engagement
+    public class Engagement: ILoadableObject
     {
         public SimulationService.Outcome Outcome { get; set; }
         
@@ -21,6 +22,13 @@ namespace JunkyardDogs.Simulation
 
         [SerializeField]
         private double _seed;
+
+        private bool _isLoaded;
+
+        public bool IsLoaded()
+        {
+            return _isLoaded;
+        }
 
         public Bot RedCombatent
         {
@@ -51,6 +59,14 @@ namespace JunkyardDogs.Simulation
         {
             _rules.MatchTimeLimit = timeLimit;
         }
+         
+        public void LoadAsync(LoadSuccess onComplete, LoadError onError)
+        {
+            Loader loader = new Loader();
+            loader.AppendProvider(RedCombatent);
+            loader.AppendProvider(BlueCombatent);
+            loader.LoadAsync(onComplete, onError);
+        }
     }
 
     public enum Initiator
@@ -65,4 +81,5 @@ namespace JunkyardDogs.Simulation
         public Initiator initiator;
         public float MatchTimeLimit;
     }
+
 }

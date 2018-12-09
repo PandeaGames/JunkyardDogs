@@ -1,16 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using JunkyardDogs.Views;
+using PandeaGames.Views;
+using PandeaGames.Views.ViewControllers;
 using UnityEngine;
 
-public class MatchViewController : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+public class MatchViewController : AbstractViewController 
+{
+    protected override IView CreateView()
+    {
+        //TODO Load the bots
+        return new MatchView();
+    }
 }

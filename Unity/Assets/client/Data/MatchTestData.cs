@@ -1,10 +1,13 @@
-﻿using PandeaGames.Data.WeakReferences;
+﻿using System;
 using UnityEngine;
 using System.Collections.Generic;
 using Data;
+using UnityStandardAssets.Utility;
+using WeakReference = PandeaGames.Data.WeakReferences.WeakReference;
 
 namespace JunkyardDogs.Data
 {
+    [CreateAssetMenu(menuName = "TestData/MatchTestData")]
     public class MatchTestData : ScriptableObject, ILoadableObject
     {
         [SerializeField, WeakReference(typeof(ParticipantData))]
@@ -31,6 +34,15 @@ namespace JunkyardDogs.Data
             loader.AppendProvider(_participantRed);
             loader.AppendProvider(_participantBlue);
             loader.LoadAsync(loadSuccess, loadError);
+        }
+
+        public void GetParticipantsAsync(JunkyardUser user, Action<List<ParticipantTeam>> onComplete, Action onError)
+        {
+            ParticipantDataUtils.GenerateParticipantsAsync(
+                new List<WeakReference>(){_participantBlue, _participantRed}, participants =>
+                {
+                    Participant.GetTeam(participants, user, onComplete, onError);
+                }, onError);
         }
     }
 }

@@ -487,7 +487,9 @@
           </e>
         </e>
         <e p="ViewControllers" t="Include">
+          <e p="ChooseBotFromInventoryViewController.cs" t="Include" />
           <e p="ChooseNationalityViewController.cs" t="Include" />
+          <e p="FullMatchViewController.cs" t="Include" />
           <e p="GameLoadViewController.cs" t="Include" />
           <e p="GarageEditBehaviourViewController.cs" t="Include" />
           <e p="GarageFocusedViewController.cs" t="Include" />
@@ -504,17 +506,23 @@
             <e p="AbstractLoadingState.cs" t="Include" />
             <e p="SplashState.cs" t="Include" />
           </e>
+          <e p="TournemantTestViewController.cs" t="Include" />
+          <e p="TournemantViewController.cs" t="Include" />
           <e p="WorldMapViewController.cs" t="Include" />
         </e>
         <e p="ViewModels" t="Include">
+          <e p="ChooseBotFromInventoryViewModel.cs" t="Include" />
           <e p="ChooseNationalityViewModel.cs" t="Include" />
           <e p="GarageViewModel.cs" t="Include" />
           <e p="JunkyardUserViewModel.cs" t="Include" />
           <e p="LoadingViewModel.cs" t="Include" />
+          <e p="MatchTestViewModel.cs" t="Include" />
           <e p="MatchViewModel.cs" t="Include" />
+          <e p="TournamentViewModel.cs" t="Include" />
           <e p="WorldMapViewModel.cs" t="Include" />
         </e>
         <e p="Views" t="Include">
+          <e p="ChooseBotFromInventoryView.cs" t="Include" />
           <e p="ChooseNationlaityView.cs" t="Include" />
           <e p="GarageEditBehaviourView.cs" t="Include" />
           <e p="GarageFocusedView.cs" t="Include" />
@@ -522,7 +530,9 @@
           <e p="GarageView.cs" t="Include" />
           <e p="JunkyardGameContainer.cs" t="Include" />
           <e p="JunkyardPreloadView.cs" t="Include" />
+          <e p="MatchView.cs" t="Include" />
           <e p="SimpleWindowView.cs" t="Include" />
+          <e p="TournamentView.cs" t="Include" />
           <e p="WorldMapView.cs" t="Include" />
         </e>
       </e>

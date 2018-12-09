@@ -4,6 +4,7 @@ using UnityEngine;
 using JunkyardDogs.Components;
 using System.Collections.Generic;
 using System.Collections;
+using JunkyardDogs;
 using PandeaGames;
 using WeakReference = PandeaGames.Data.WeakReferences.WeakReference;
 
@@ -45,41 +46,19 @@ public class MatchController : MonoBehaviour
     private Action<MatchOutcome> _onMatchComplete;
     private MatchState _match;
     private Engagement _engagement;
-    private JunkyardUserService _userService;
+    private MatchViewModel _viewModel;
 
-    private void Awake()
+    private void Start()
     {
+        _viewModel = Game.Instance.GetViewModel<MatchViewModel>(0);
         _simulationService = _serviceManager.GetService<SimulationService>();
         _cameraViewModel = Game.Instance.GetViewModel<CameraViewModel>(0);
-        _userService = Game.Instance.GetService<JunkyardUserService>();
-    }
-    
-    public void RunMatch(MatchState match, Action<MatchOutcome> onMatchComplete)
-    {
-        _match = match;
-        _onMatchComplete = onMatchComplete;
-        _cameraViewModel.Focus(_cameraAgent);
         
-        _match.ParticipantA.Participant.GetTeam(_userService.Load(), teamA =>
-        {
-            _match.ParticipantB.Participant.GetTeam(_userService.Load(), teamB =>
-            {
-                _engagement = new Engagement();
-
-                _engagement.BlueCombatent = teamA.Bot;
-                _engagement.RedCombatent = teamB.Bot;
-                _engagement.SetTimeLimit(180);//3 minutes
-                
-                _engagement.BlueCombatent.LoadAsync(() => _engagement.RedCombatent.LoadAsync(() =>
-                {
-                    _simulationService.SetEngagement(_engagement);
-                    
-                    _simulationService.StartSimulation(true);
-                    StartCoroutine(EndOfBattleCoroutine());
-                }, OnError), OnError);
-                
-            }, () => { });
-        }, () => { });
+        _simulationService.SetEngagement(_viewModel.Engagement);
+        _simulationService.StartSimulation();
+        StartCoroutine(EndOfBattleCoroutine());
+        
+        _cameraViewModel.Focus(_cameraAgent);
     }
     
     private void OnError(LoadException error)
@@ -89,27 +68,12 @@ public class MatchController : MonoBehaviour
 
     private IEnumerator EndOfBattleCoroutine()
     {
-        while (_engagement.Outcome == null)
+        while (_viewModel.Engagement.Outcome == null)
         {
             yield return 0;
         }
 
-        Participant winner = null;
-        Participant loser = null;
-        
-        if (_engagement.Outcome.Winner == _engagement.RedCombatent)
-        {
-            winner = _match.ParticipantA.Participant;
-            loser = _match.ParticipantB.Participant;
-        }
-        else
-        {
-            winner = _match.ParticipantB.Participant;
-            loser = _match.ParticipantA.Participant;
-        }
-        
-        MatchOutcome outcome= new MatchOutcome(_engagement.Outcome, _match, winner, loser);
-        
-        _onMatchComplete.Invoke(outcome);
+        Debug.Log("WINNER");
+        yield break;
     }
 }

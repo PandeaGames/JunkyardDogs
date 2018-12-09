@@ -30,9 +30,7 @@ public class TournamentState
 
     public bool FillWithParticipants(List<Participant> participants)
     {
-        StageState firstStage = StageStates[0];
-        RoundState firstRound = firstStage.Rounds[0];
-
+        RoundState firstRound = GetFirstRound();
         firstRound.FillWithParticipantsRandom(participants);
         
         return false;
@@ -57,6 +55,26 @@ public class TournamentState
     public bool IsComplete()
     {
         return GetCurrentStage().IsComplete();
+    }
+
+    public StageState GetFirstStage()
+    {
+        return StageStates[0];
+    }
+    
+    public RoundState GetFirstRound()
+    {
+        return GetFirstStage().Rounds[0];
+    }
+
+    public bool RequiresParticipants()
+    {
+        return !GetFirstRound().HasParticipants();
+    }
+
+    public IEnumerable<Participant> GetParticipants()
+    {
+        return GetFirstStage().GetParticipants();
     }
 
     public TournamentStatus GetStatus()
