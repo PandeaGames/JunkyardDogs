@@ -218,6 +218,26 @@ MonoBehaviour:
     - 
     - 
     Flags: 0000
+  - Term: UI.play
+    TermType: 0
+    Description: 
+    Languages:
+    - Spiel
+    - Play
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: UI.collect_rewards
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - Collect Rewards
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
   mLanguages:
   - Name: German
     Code: de

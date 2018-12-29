@@ -17,6 +17,9 @@ public class TakeJunkDialog : Dialog<TakeJunkDialogViewModel>
     [SerializeField]
     private TMP_Text _componentText;
 
+    [SerializeField]
+    private Button _takeJunkButton;
+
     protected override void Initialize()
     {
         _viewModel.ModelData.Component.SpecificationReference.LoadAssetAsync<ScriptableObject>(
@@ -27,5 +30,11 @@ public class TakeJunkDialog : Dialog<TakeJunkDialogViewModel>
             },
             null
         );
+        
+        _takeJunkButton.onClick.AddListener(() =>
+        {
+            _viewModel.ShouldTakeComponent = true;
+            Close();
+        });
     }
 }

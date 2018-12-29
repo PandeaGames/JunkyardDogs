@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using JunkyardDogs;
 using UnityEngine;
 using JunkyardDogs.Components;
 using JunkyardDogs.scripts.Runtime.Dialogs;
@@ -23,6 +24,7 @@ public class JunkController : MonoBehaviour {
     private JunkyardUserService _userService;
     private ComponentInstantiatorService _componentService;
     private JunkyardUser _user;
+    private JunkyardViewModel _junkyardViewModel;
 
     protected void Start()
     {
@@ -30,6 +32,7 @@ public class JunkController : MonoBehaviour {
         _userService = Game.Instance.GetService<JunkyardUserService>();
         _componentService = _serviceManager.GetService<ComponentInstantiatorService>();
         _user = _userService.User;
+        _junkyardViewModel = Game.Instance.GetViewModel<JunkyardViewModel>(0);
         
         foreach (Junk junk in _junkList)
         {
@@ -54,18 +57,12 @@ public class JunkController : MonoBehaviour {
 
     private void OnLoadComplete()
     {
-        ManufacturerUtils.BuildComponent(_specificationCatalogue.Manufacturer, _product, (component) =>
-        {
-            TakeJunkDialogViewModel vm = Game.Instance.GetViewModel<TakeJunkDialogViewModel>(0);
-            vm.SetData(new TakeJunkDialogViewModel.Data(component));
-            //vm.OnClose 
-            _dialogService.DisplayDialog<TakeJunkDialog>(vm);
-        });
+        _junkyardViewModel.TakeJunk(_specificationCatalogue.Manufacturer, _product);      
     }
 
     private void OnLoadFail(LoadException e)
     {
-
+        Debug.LogError(e);
     }
 
     private void SelectComponent()

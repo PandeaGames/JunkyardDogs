@@ -3,7 +3,7 @@ using Data;
 
 public class Tournaments
 {
-    public Dictionary<string, TournamentState> TournamentStates;
+    public Dictionary<string, TournamentState> TournamentStates {get;set;}
 
     public Tournaments()
     {
@@ -26,5 +26,11 @@ public class Tournaments
     public void TryGetTournament(Tournament tournament, out TournamentState state)
     {
         TryGetTournament(tournament.Guid, out state);
+    }
+
+    public void ClearTournamentStatus(string guid)
+    {
+        if(TournamentStates.ContainsKey(guid))
+        TournamentStates.Remove(guid);
     }
 }

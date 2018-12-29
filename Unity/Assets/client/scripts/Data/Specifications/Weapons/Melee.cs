@@ -8,6 +8,7 @@ namespace JunkyardDogs.Specifications
     [CreateAssetMenu(fileName = "Melee", menuName = "Specifications/Melee", order = 6)]
     public class Melee : Weapon
     {
+        [SerializeField]
         private MeleeWeapon _meleeWeapon;
 
         public MeleeWeapon MeleeWeapon { get { return _meleeWeapon; } }

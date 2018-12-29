@@ -1,4 +1,6 @@
-﻿using JunkyardDogs.scripts.Runtime.Dialogs;
+﻿using System;
+using System.Runtime.Serialization.Formatters;
+using JunkyardDogs.scripts.Runtime.Dialogs;
 using PandeaGames;
 using PandeaGames.Views.ViewControllers;
 
@@ -127,9 +129,45 @@ namespace JunkyardDogs
     
     public class TournamentRunMatch:AbstractViewControllerState<TournamentStates>
     {
+        private MatchViewModel _matchViewModel;
+        private TournamentViewModel _tournamentViewModel;
+        
+        public TournamentRunMatch()
+        {
+            _matchViewModel = Game.Instance.GetViewModel<MatchViewModel>(0);
+            _tournamentViewModel = Game.Instance.GetViewModel<TournamentViewModel>(0);
+        }
+        
         protected override IViewController GetViewController()
         {
             return new FullMatchViewController();
+        }
+
+        public override void UpdateState()
+        {
+            base.UpdateState();
+
+            if (_matchViewModel.Engagement.Outcome != null)
+            {
+                TournamentState.TournamentStatus status = _tournamentViewModel.State.GetStatus();
+
+                Participant winner =
+                    _matchViewModel.Engagement.Outcome.Winner == _matchViewModel.Engagement.BlueCombatent
+                        ? status.Match.ParticipantA.Participant
+                        : status.Match.ParticipantB.Participant;
+                
+                Participant loser =
+                    _matchViewModel.Engagement.Outcome.Winner == _matchViewModel.Engagement.BlueCombatent
+                        ? status.Match.ParticipantB.Participant
+                        : status.Match.ParticipantA.Participant;
+
+                status.Match.Winner.Participant = winner;
+                status.Match.Loser.Participant = loser;
+                
+                _tournamentViewModel.State.LastMatch = DateTime.UtcNow;
+                
+                _fsm.SetState(TournamentStates.MatchComplete);
+            }
         }
     }
     

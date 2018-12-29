@@ -11,6 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d05b97d3903fbd4c93af04f4dfc5590, type: 3}
   m_Name: SpiralPower
   m_EditorClassIdentifier: 
-  _manufacturer: {fileID: 11400000, guid: 2aeb4c1ba3b2b6c44962fc440c235b76, type: 2}
-  _material: {fileID: 11400000, guid: 66796a819a8882b47908df728f6aa07d, type: 2}
-  _volume: 0
+  _volume: 1
+  _chargeTime: 1
+  _cooldown: 1
+  _meleeWeapon: {fileID: 11400000, guid: 930490cd87e7b3844bcc749c95fb5ef6, type: 2}

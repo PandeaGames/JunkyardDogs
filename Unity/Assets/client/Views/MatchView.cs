@@ -8,5 +8,11 @@ namespace JunkyardDogs.Views
         {
             
         }
+
+        public override void Show()
+        {
+            base.Show();
+            FindWindow().RemoveCurrentScreen();
+        }
     }
 }

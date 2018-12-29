@@ -1,4 +1,7 @@
-﻿using PandeaGames.Views.ViewControllers;
+﻿using JunkyardDogs;
+using JunkyardDogs.scripts.Runtime.Dialogs;
+using JunkyardDogs.Simulation;
+using PandeaGames.Views.ViewControllers;
 using PandeaGames;
 using PandeaGames.Data.WeakReferences;
 using PandeaGames.Views;
@@ -14,15 +17,7 @@ public class WorldMapViewController : AbstractViewController
         );
 
         var vm = Game.Instance.GetViewModel<WorldMapViewModel>(0);
-            
-        vm.OnTournamentTapped += OnTournamentTapped;
-        
         vm.SetData(data);
-    }
-
-    private void OnTournamentTapped(WeakReference obj)
-    {
-       // _view.GetServiceManager().GetService<DialogService>().DisplayDialog<EventDialog>();
     }
 
     protected override IView CreateView()

@@ -1,4 +1,5 @@
-﻿using PandeaGames.Views.ViewControllers;
+﻿using AssetBundles;
+using PandeaGames.Views.ViewControllers;
 using UnityEngine;
 using PandeaGames;
 using PandeaGames.Views;
@@ -8,6 +9,7 @@ namespace JunkyardDogs
     public enum PreloadViewStates
     {
         Splash,
+        AssetBundleLoad,
         Loading,
         PreloadComplete
     }
@@ -16,7 +18,33 @@ namespace JunkyardDogs
     {
         protected override void OnSplashComplete()
         {
-            _fsm.SetState(PreloadViewStates.Loading);
+            _fsm.SetState(PreloadViewStates.AssetBundleLoad);
+        }
+    }
+    
+    public class PreloadAssetBundlesState : AbstractViewControllerState<PreloadViewStates>
+    {
+        private AssetBundleLoadAssetOperation _loadOperation;
+        
+        public override void EnterState(PreloadViewStates from)
+        {
+            string _url = "";
+            #if UNITY_EDITOR
+            _url = "file:///";
+            #endif
+            _url += Application.streamingAssetsPath + "/AssetBundles/";
+            Debug.Log("URL: "+_url);
+            AssetBundleManager.SetSourceAssetBundleURL(_url);
+            
+            _loadOperation = AssetBundleManager.Initialize();
+        }
+
+        public override void UpdateState()
+        {
+            if (_loadOperation == null || _loadOperation.IsDone())
+            {
+                _fsm.SetState(PreloadViewStates.Loading);
+            }
         }
     }
 
@@ -37,13 +65,10 @@ namespace JunkyardDogs
         public PreloadViewController()
         {
             SetViewStateController<PreloadSplashState>(PreloadViewStates.Splash);
+            SetViewStateController<PreloadAssetBundlesState>(PreloadViewStates.AssetBundleLoad);
             SetViewStateController<PreloadState>(PreloadViewStates.Loading);
             SetViewStateController<PreloadCompleteState>(PreloadViewStates.PreloadComplete);
-        }
-
-        public override void Initialize(IViewController parent)
-        {
-            base.Initialize(parent);
+            
             SetInitialState(PreloadViewStates.Splash);
         }
    

@@ -161,8 +161,10 @@ namespace JunkyardDogs.Simulation
             SimulateBot(_simulatedBots[BotId.Red], _simulatedBots[BotId.Blue]);
             SimulateBot(_simulatedBots[BotId.Blue], _simulatedBots[BotId.Red]);
             SimulateEnvironment();
+
+            float passedTime = _ticks * SimuationStep;
             
-            if (_ticks * SimuationStep > _engagement.Rules.MatchTimeLimit)
+            if (passedTime > _engagement.Rules.MatchTimeLimit)
             {
                 int winnerChoice = Random.Range(0, 1);
                 

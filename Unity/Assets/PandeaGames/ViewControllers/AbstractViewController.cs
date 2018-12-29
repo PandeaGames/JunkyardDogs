@@ -1,20 +1,35 @@
 ﻿using PandeaGames.Views.Screens;
+using System.Collections.Generic;
 
 namespace PandeaGames.Views.ViewControllers
 {
     public class AbstractViewController : IViewController
     {
         public IViewController parent;
+        private List<IViewController> _children;
         protected IView _view;
 
         public virtual void Initialize(IViewController parent)
         {
             this.parent = parent;
+            _children = new List<IViewController>();
         }
 
         public IViewController GetParent()
         {
             return parent;
+        }
+
+        public void DisplayChild(IViewController child)
+        {
+            _children.Add(child);
+            child.Initialize(this);
+            child.ShowView();
+        }
+        
+        public void RemoveChild(IViewController child)
+        {
+            
         }
         
         public IView GetView()

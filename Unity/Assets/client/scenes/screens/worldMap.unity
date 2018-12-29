@@ -343,7 +343,6 @@ GameObject:
   m_Component:
   - component: {fileID: 348262209}
   - component: {fileID: 348262207}
-  - component: {fileID: 348262208}
   m_Layer: 0
   m_Name: ServiceManager
   m_TagString: Untagged
@@ -362,24 +361,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f1e2fabbef961b41b021de13f78db04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _services:
-  - {fileID: 348262208}
---- !u!114 &348262208
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 348262206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bd351ca4afd3694f87c077a0473927c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _isRunning: 0
-  _touchEnabled: 0
-  _providePonterRaycast: 1
-  _useTriggersInRaycast: 0
-  _maxRaycastResults: 1
+  _services: []
 --- !u!4 &348262209
 Transform:
   m_ObjectHideFlags: 0
@@ -523,11 +505,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 189ce538b09c4c9abeb2cf1d4c917c24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _serviceManager: {fileID: 348262207}
   _text: {fileID: 924205972}
   _tournament:
     _guid: 88efe2d08a1fe734b903249d4363e137
     _path: Assets/AssetBundles/Data/Tournaments/Tournaments/MooseChallenge.asset
+  _viewModelInstanceId: 0
 --- !u!114 &827746900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -944,11 +926,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 189ce538b09c4c9abeb2cf1d4c917c24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _serviceManager: {fileID: 348262207}
   _text: {fileID: 1531271175}
   _tournament:
     _guid: ba8b4f8bd2ebab94aa9464a18a89f463
     _path: Assets/AssetBundles/Data/Tournaments/Tournaments/MooseHerd.asset
+  _viewModelInstanceId: 0
 --- !u!114 &1268990904
 MonoBehaviour:
   m_ObjectHideFlags: 0

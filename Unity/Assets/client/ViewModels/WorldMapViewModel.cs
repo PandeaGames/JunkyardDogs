@@ -16,6 +16,8 @@ public class WorldMapViewModel : AbstractViewModel
     }
 
     public event Action<WeakReference> OnTournamentTapped;
+    public event Action<TournamentState.TournamentStatus> OnPlayTournament;
+    public event Action OnJunkyardTapped;
 
     private Data _data;
 
@@ -34,6 +36,21 @@ public class WorldMapViewModel : AbstractViewModel
         if (OnTournamentTapped != null)
         {
             OnTournamentTapped(tournament);
+        }
+    }
+    
+    public void TapJunkyard()
+    {
+        if (OnJunkyardTapped != null)
+        {
+            OnJunkyardTapped();
+        }
+    }
+    public void PlayTournament(TournamentState.TournamentStatus status)
+    {
+        if (OnPlayTournament != null)
+        {
+            OnPlayTournament(status);
         }
     }
 }

@@ -21,7 +21,15 @@ public abstract class ObjectManifestEntry<T> : IEnumerable
 
     public bool ContainsKey(ScriptableObject key)
     {
-        return _keys.Contains(key);
+        for (int i = 0; i < _keys.Count; i++)
+        {
+            if (_keys[i].name == key.name)
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 }
 

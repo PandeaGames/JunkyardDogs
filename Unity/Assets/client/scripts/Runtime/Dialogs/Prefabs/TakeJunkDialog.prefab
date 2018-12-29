@@ -287,6 +287,7 @@ MonoBehaviour:
   _spriteFactory: {fileID: 11400000, guid: bcac834490529f04190bb776cc0e0bba, type: 2}
   _componentIcon: {fileID: 114612224550139770}
   _componentText: {fileID: 114577030095386282}
+  _takeJunkButton: {fileID: 114440232941632928}
 --- !u!114 &114440232941632928
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -325,18 +326,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114746828185840220}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 114287493969033638}
-        m_MethodName: Close
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114577030095386282

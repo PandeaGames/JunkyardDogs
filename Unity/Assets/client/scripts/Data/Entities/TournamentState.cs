@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Data;
 using UnityEngine.UI.Extensions;
 using WeakReference = PandeaGames.Data.WeakReferences.WeakReference;
@@ -21,11 +22,16 @@ public class TournamentState
     public WeakReference TournamentReference { get; set; }
     public List<StageState> StageStates { get; set; }
     public string Uid  { get; set; }
+    public DateTime LastMatch { get; set; }
 
     public TournamentState(string uid)
     {
         StageStates = new List<StageState>();
         Uid = uid;
+    }
+    
+    public TournamentState()
+    {
     }
 
     public bool FillWithParticipants(List<Participant> participants)

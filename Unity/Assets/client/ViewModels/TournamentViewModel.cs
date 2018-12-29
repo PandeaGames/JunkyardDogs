@@ -39,7 +39,10 @@ namespace JunkyardDogs
             Tournament.LoadAsync(() =>
             {
                 _tournament = Tournament.Asset as Tournament;
-                _state = _tournament.GenerateState();
+                User.Tournaments.TryGetTournament(_tournament, out _state);
+                
+                if(_state == null)
+                    _state = _tournament.GenerateState();
                 //TODO: Get State from user data if it exists
 
                 if (_state.RequiresParticipants())
@@ -80,7 +83,7 @@ namespace JunkyardDogs
             TournamentState.TournamentStatus status = _state.GetStatus();
             MatchState match = status.Match;
             Engagement engagement = new Engagement();
-            engagement.SetTimeLimit(300);
+            engagement.SetTimeLimit(50);
 
             match.ParticipantA.Participant.GetTeam(User, blueTeam =>
             {

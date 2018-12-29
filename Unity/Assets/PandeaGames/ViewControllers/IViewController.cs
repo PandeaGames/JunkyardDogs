@@ -8,5 +8,7 @@ namespace PandeaGames.Views.ViewControllers
         void RemoveView();
         void Initialize(IViewController parent);
         IViewController GetParent();
+        void DisplayChild(IViewController child);
+        void RemoveChild(IViewController child);
     }
 }

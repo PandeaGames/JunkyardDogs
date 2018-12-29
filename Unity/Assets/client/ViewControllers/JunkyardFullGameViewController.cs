@@ -7,84 +7,38 @@ namespace JunkyardDogs
 {
     public enum JunkyardGameStates
     {
-        Splash,
-        Loading,
+        Preload,
         JunkyardDogs
     }
     
-    public class SplashState : AbstractViewControllerState<JunkyardGameStates>
+    public class PreloadJunkyardState : AbstractViewControllerState<JunkyardGameStates>
     {
-        private float _startTicks;
-        
-        public virtual void Initialize(AbstractViewControllerFsm<JunkyardGameStates> fsm)
-        {
-            base.Initialize(fsm);
-        }
-
-        public override void EnterState(JunkyardGameStates from)
-        {
-            _startTicks = Time.time;
-        }
-
-        public override void UpdateState()
-        {
-            base.UpdateState();
-
-            if (Time.time - _startTicks > 2)
-            {
-                _fsm.SetState(JunkyardGameStates.Loading);
-            }
-        }
-    }
-
-    public class LoadingState : AbstractViewControllerState<JunkyardGameStates>
-    {
-        private JunkyardUserViewModel _viewModel = null;
-        private JunkyardStaticDataLoader loader;
-        
-        public override void Initialize(AbstractViewControllerFsm<JunkyardGameStates> fsm)
-        {
-            base.Initialize(fsm);
-            _viewModel = Game.Instance.GetViewModel<JunkyardUserViewModel>(0);
-        }
-
         protected override IViewController GetViewController()
         {
-            return new GameLoadViewController();
+            PreloadViewController vc = new PreloadViewController();
+            vc.OnEnterState += PreloaderOnEnterState;
+            return vc;
         }
 
-        public override void EnterState(JunkyardGameStates @from)
+        private void PreloaderOnEnterState(PreloadViewStates state)
         {
-            loader = new JunkyardStaticDataLoader();
-            loader.LoadAsync(() => {  }, (e) =>
-            {
-                Debug.LogError(e);
-            });
-
-            _viewModel.SetUserData(Game.Instance.GetService<JunkyardUserService>().Load());
-        }
-
-        public override void UpdateState()
-        {
-            if (_viewModel.UserData != null && loader.IsLoaded())
+            if (state == PreloadViewStates.PreloadComplete)
             {
                 _fsm.SetState(JunkyardGameStates.JunkyardDogs);
             }
-            
-            base.UpdateState();
         }
     }
     
     public class JunkyardDogsState : AbstractViewControllerState<JunkyardGameStates>
     {
-        public override void Initialize(AbstractViewControllerFsm<JunkyardGameStates> fsm)
-        {
-            base.Initialize(fsm);
-        }
-
         protected override IViewController GetViewController()
         {
-            return new JunkyardDogsViewController();
+            ContainerViewController vc = new ContainerViewController(
+                new JunkyardDogsGameViewController(),
+                new JunkyardDogsViewController()
+            );
+
+            return vc;
         }
     }
     
@@ -92,21 +46,10 @@ namespace JunkyardDogs
     {
         public JunkyardFullGameViewController()
         {
-            SetViewStateController<SplashState>(JunkyardGameStates.Splash);
-            SetViewStateController<LoadingState>(JunkyardGameStates.Loading);
+            SetViewStateController<PreloadJunkyardState>(JunkyardGameStates.Preload);
             SetViewStateController<JunkyardDogsState>(JunkyardGameStates.JunkyardDogs);
-        }
-
-        public override void Initialize(IViewController parent)
-        {
-            base.Initialize(parent);
             
-            SetInitialState(JunkyardGameStates.Splash);
-        }
-   
-        protected override IView CreateView()
-        {
-            return new JunkyardGameContainer();
+            SetInitialState(JunkyardGameStates.Preload);
         }
     }
 }

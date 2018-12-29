@@ -1970,8 +1970,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f1e2fabbef961b41b021de13f78db04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _services:
-  - {fileID: 685720646}
+  _services: []
 --- !u!114 &685720646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1983,7 +1982,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bd351ca4afd3694f87c077a0473927c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isRunning: 0
   _touchEnabled: 0
   _providePonterRaycast: 1
   _useTriggersInRaycast: 0

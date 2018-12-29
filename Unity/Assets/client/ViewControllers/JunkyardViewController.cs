@@ -1,13 +1,14 @@
-﻿using PandeaGames.Views.ViewControllers;
+﻿using JunkyardDogs.Views;
 using PandeaGames.Views;
+using PandeaGames.Views.ViewControllers;
 
 namespace JunkyardDogs
 {
-    public class JunkyardViewController : AbstractViewController
+    public class JunkyardViewController: AbstractViewController
     {
         protected override IView CreateView()
         {
-            return new JunkyardGameContainer();
+            return new JunkyardView();
         }
     }
 }

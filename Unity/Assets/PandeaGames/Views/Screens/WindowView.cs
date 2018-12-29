@@ -108,6 +108,12 @@ namespace PandeaGames.Views.Screens
         {
             Close();
         }
+
+        public void RemoveCurrentScreen()
+        {
+            RemoveScreen(_activeScreen, new ScreenTransition(Direction.FROM));
+        }
+        
     
         protected void Close()
         {

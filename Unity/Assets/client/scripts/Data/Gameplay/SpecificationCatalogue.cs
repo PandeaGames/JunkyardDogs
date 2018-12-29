@@ -4,6 +4,7 @@ using System;
 using JunkyardDogs.Specifications;
 using WeakReference = PandeaGames.Data.WeakReferences.WeakReference;
 using System.Threading.Tasks;
+using Material = JunkyardDogs.Specifications.Material;
 
 [Serializable]
 [CreateAssetMenu(fileName = "SpecificationCatalogue", menuName = "GamePlay/SpecificationCatalogue", order = 3)]
@@ -39,7 +40,7 @@ public class SpecificationCatalogue : ScriptableObject
                 _specification.LoadAssetAsync<Specification>(
                     (asset, reference) =>
                     {
-                        _material.LoadAssetAsync<Specification>(
+                        _material.LoadAssetAsync<Material>(
                         (materialAsset, materialReference) =>
                         {
                             onLoadSuccess();

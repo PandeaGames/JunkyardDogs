@@ -12,9 +12,16 @@ namespace JunkyardDogs
             _gameView.ShowView();
         }
 
+        private bool shouldUpdate;
+
         private void Update()
         {
-            _gameView.Update();
+            if (shouldUpdate)
+            {
+                _gameView.Update();
+                
+            }
+            shouldUpdate = !shouldUpdate;
         }
     }
 }

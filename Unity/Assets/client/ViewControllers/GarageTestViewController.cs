@@ -31,7 +31,7 @@ namespace JunkyardDogs
         protected override IViewController GetViewController()
         {
             ContainerViewController vc = new ContainerViewController(
-                new JunkyardViewController(),
+                new JunkyardDogsGameViewController(),
                 new GarageViewController()
                 );
 

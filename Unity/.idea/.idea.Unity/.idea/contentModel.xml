@@ -429,9 +429,11 @@
                 <e p="BotBuilderDisplay.cs" t="Include" />
                 <e p="ComponentDisplay.cs" t="Include" />
               </e>
+              <e p="MatchStateRenderer.cs" t="Include" />
               <e p="Navigation" t="Include">
                 <e p="PanController.cs" t="Include" />
               </e>
+              <e p="TournamentStateRenderer.cs" t="Include" />
             </e>
           </e>
           <e p="Utils" t="Include">
@@ -496,6 +498,7 @@
           <e p="GarageLineupViewController.cs" t="Include" />
           <e p="GarageTestViewController.cs" t="Include" />
           <e p="GarageViewController.cs" t="Include" />
+          <e p="JunkyardDogsGameViewController.cs" t="Include" />
           <e p="JunkyardDogsViewController.cs" t="Include" />
           <e p="JunkyardFullGameViewController.cs" t="Include" />
           <e p="JunkyardViewController.cs" t="Include" />
@@ -515,6 +518,7 @@
           <e p="ChooseNationalityViewModel.cs" t="Include" />
           <e p="GarageViewModel.cs" t="Include" />
           <e p="JunkyardUserViewModel.cs" t="Include" />
+          <e p="JunkyardViewModel.cs" t="Include" />
           <e p="LoadingViewModel.cs" t="Include" />
           <e p="MatchTestViewModel.cs" t="Include" />
           <e p="MatchViewModel.cs" t="Include" />
@@ -530,8 +534,10 @@
           <e p="GarageView.cs" t="Include" />
           <e p="JunkyardGameContainer.cs" t="Include" />
           <e p="JunkyardPreloadView.cs" t="Include" />
+          <e p="JunkyardView.cs" t="Include" />
           <e p="MatchView.cs" t="Include" />
           <e p="SimpleWindowView.cs" t="Include" />
+          <e p="TakeJunkViewModel.cs" t="Include" />
           <e p="TournamentView.cs" t="Include" />
           <e p="WorldMapView.cs" t="Include" />
         </e>

@@ -1,27 +1,19 @@
-﻿using UnityEngine;
+﻿using PandeaGames;
+using UnityEngine;
 using PandeaGames.Views.Screens;
 using UnityEngine.UI;
 
 public class MapScreen : ScreenView
 {
     [SerializeField]
-    private ServiceManager _serviceManager;
-
-    [SerializeField]
     private Button _junkyardButton;
+
+    private WorldMapViewModel _worldMapViewModel;
 
     // Use this for initialization
     void Start()
     {
-        _junkyardButton.onClick.AddListener(OnJunkyardButtonPressed);
-    }
-
-    private void OnJunkyardButtonPressed()
-    {
-        //JunkyardScreen.JunkyardConfig config = ScriptableObject.CreateInstance<JunkyardScreen.JunkyardConfig>();
-
-        //config.returnScreen = "mapScreen";
-
-        _window.LaunchScreen("junkyard");
+        _worldMapViewModel = Game.Instance.GetViewModel<WorldMapViewModel>(0);
+        _junkyardButton.onClick.AddListener(_worldMapViewModel.TapJunkyard);
     }
 }
