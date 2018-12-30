@@ -10,18 +10,28 @@ using UnityEditor;
 [CreateAssetMenu(menuName = "Tournaments/Tournament")]
 public class Tournament : ScriptableObject, IWeakReferenceObject
 {
+    [Header("Format")]
     [SerializeField]
     private TournamentFormat _format;
     
     [SerializeField, WeakReference(typeof(ParticipantData))]
     private List<WeakReference> _participants;
 
+    [SerializeField]
+    private int _roundPaceSeconds;
+
+    [Header("Rewards")]
     [SerializeField] 
     private SpecificationCatalogue _rewards;
 
     [SerializeField] 
     private int _goldReward;
 
+    public int RoundPaceSeconds
+    {
+        get { return _roundPaceSeconds; }
+    }
+    
     private string _guid;
     public string Guid
     {

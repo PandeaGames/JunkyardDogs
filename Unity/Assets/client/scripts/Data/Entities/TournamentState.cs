@@ -98,4 +98,13 @@ public class TournamentState
 
 public static class TournamentStateUtils
 {
+    public static bool IsRoundReady(Tournament tournament, TournamentState state)
+    {
+        return (DateTime.UtcNow - state.LastMatch).TotalSeconds >= tournament.RoundPaceSeconds;
+    }
+    
+    public static float GetRoundReadyPercentage(Tournament tournament, TournamentState state)
+    {
+        return Math.Min(1, (float)(DateTime.UtcNow - state.LastMatch).TotalSeconds / (float)tournament.RoundPaceSeconds);
+    }
 }

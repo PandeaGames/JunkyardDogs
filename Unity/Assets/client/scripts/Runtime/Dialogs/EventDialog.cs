@@ -22,11 +22,15 @@ public class EventDialog : Dialog<EventDialogViewModel>
     
     [SerializeField]
     private Button _collectRewardsButton;
+
+    [SerializeField]
+    private TournamentTimerDisplay _timerDisplay;
     
     private JunkyardUser _user;
     private Tournament _tournament;
     private JunkyardUserViewModel _userViewModel;
     private TournamentState.TournamentStatus _status;
+    private TournamentState _state;
 
     protected override void Initialize()
     {
@@ -45,6 +49,14 @@ public class EventDialog : Dialog<EventDialogViewModel>
         _collectRewardsButton.onClick.AddListener(OnCollectRewards);
     }
 
+    private void Update()
+    {
+        if (_state != null)
+        {
+            _playButton.interactable = TournamentStateUtils.IsRoundReady(_tournament, _state);
+        }
+    }
+
     private void OnLoadError(LoadException loadException)
     {
         
@@ -54,6 +66,7 @@ public class EventDialog : Dialog<EventDialogViewModel>
     {
         Tournament tournament = _viewModel.TournamentReference.Asset as Tournament;
         TournamentState state = null;
+        _tournament = tournament;
         
         _user.Tournaments.TryGetTournament(tournament, out state);
 
@@ -62,6 +75,7 @@ public class EventDialog : Dialog<EventDialogViewModel>
             state = tournament.GenerateState();
         }
 
+        _state = state;
         _status = state.GetStatus();
 
         GameObject tournamentViewInstance = Instantiate(_tournamentView, _tournamentViewContainer, false);
@@ -70,6 +84,7 @@ public class EventDialog : Dialog<EventDialogViewModel>
 
         _collectRewardsButton.gameObject.SetActive(state.IsComplete());
         _playButton.gameObject.SetActive(!state.IsComplete());
+        _timerDisplay.Render(tournament, state);
     }
 
     private void OnCollectRewards()

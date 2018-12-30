@@ -434,6 +434,7 @@
                 <e p="PanController.cs" t="Include" />
               </e>
               <e p="TournamentStateRenderer.cs" t="Include" />
+              <e p="TournamentTimerDisplay.cs" t="Include" />
             </e>
           </e>
           <e p="Utils" t="Include">
