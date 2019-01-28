@@ -17,6 +17,7 @@ MonoBehaviour:
     _path: Assets/AssetBundles/Data/Competitors/Germany/Florian/FlorianParticipation.asset
   - _guid: 69a8ff5fa76eccd42b1514819f33ef41
     _path: Assets/AssetBundles/Data/Tournaments/Participants/UserParticipant.asset
-  _roundPaceSeconds: 10000
+  _roundPaceSeconds: 1000
+  _seasonDelaySeconds: 3000
   _rewards: {fileID: 11400000, guid: 096996d13578a4945a59e020d04873fa, type: 2}
   _goldReward: 100

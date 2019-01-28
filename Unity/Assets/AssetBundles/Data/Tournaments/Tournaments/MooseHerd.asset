@@ -30,5 +30,6 @@ MonoBehaviour:
   - _guid: 4151cf371d1930b4fb6a67e6635f13c8
     _path: Assets/AssetBundles/Data/Tournaments/Participants/UserAutoParticipant_bot0.asset
   _roundPaceSeconds: 1000
+  _seasonDelaySeconds: 3000
   _rewards: {fileID: 11400000, guid: 096996d13578a4945a59e020d04873fa, type: 2}
   _goldReward: 0

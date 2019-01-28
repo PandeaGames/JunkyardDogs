@@ -132,16 +132,22 @@ namespace JunkyardDogs
             SetViewStateController<GarageFocusedState>(GarageViewsStates.Focused);
             SetViewStateController<GarageLineupState>(GarageViewsStates.Lineup);
             SetInitialState(GarageViewsStates.Lineup);
-            
             _viewModel = Game.Instance.GetViewModel<GarageViewModel>(0);
+        }
+
+        public override void ShowView()
+        {
+            base.ShowView();
             _viewModel.SetData(new GarageViewModel.GarageData(Game.Instance.GetService<JunkyardUserService>().Load()));
         }
-        
+
         public override void Initialize(IViewController parent)
         {
             base.Initialize(parent);
             
         }
+        
+        
         
         protected override IView CreateView()
         {

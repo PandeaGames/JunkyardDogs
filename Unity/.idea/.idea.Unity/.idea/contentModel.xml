@@ -431,6 +431,7 @@
               </e>
               <e p="MatchStateRenderer.cs" t="Include" />
               <e p="Navigation" t="Include">
+                <e p="HubTabGroup.cs" t="Include" />
                 <e p="PanController.cs" t="Include" />
               </e>
               <e p="TournamentStateRenderer.cs" t="Include" />
@@ -499,6 +500,7 @@
           <e p="GarageLineupViewController.cs" t="Include" />
           <e p="GarageTestViewController.cs" t="Include" />
           <e p="GarageViewController.cs" t="Include" />
+          <e p="HubViewController.cs" t="Include" />
           <e p="JunkyardDogsGameViewController.cs" t="Include" />
           <e p="JunkyardDogsViewController.cs" t="Include" />
           <e p="JunkyardFullGameViewController.cs" t="Include" />
@@ -518,6 +520,7 @@
           <e p="ChooseBotFromInventoryViewModel.cs" t="Include" />
           <e p="ChooseNationalityViewModel.cs" t="Include" />
           <e p="GarageViewModel.cs" t="Include" />
+          <e p="HubViewModel.cs" t="Include" />
           <e p="JunkyardUserViewModel.cs" t="Include" />
           <e p="JunkyardViewModel.cs" t="Include" />
           <e p="LoadingViewModel.cs" t="Include" />
@@ -777,6 +780,11 @@
           <e p="PauseService.cs" t="Include" />
         </e>
         <e p="Singleton.cs" t="Include" />
+        <e p="UI" t="Include">
+          <e p="SImpleButtonTab.cs" t="Include" />
+          <e p="Tab.cs" t="Include" />
+          <e p="TabGroup.cs" t="Include" />
+        </e>
         <e p="Utils" t="Include">
           <e p="AssetDatabaseUtility.cs" t="Include" />
           <e p="CSharpUtils.cs" t="Include" />
@@ -804,6 +812,7 @@
         <e p="Views" t="Include">
           <e p="AbstractUnityView.cs" t="Include" />
           <e p="ContainerView.cs" t="Include" />
+          <e p="HubView.cs" t="Include" />
           <e p="IView.cs" t="Include" />
           <e p="SceneView.cs" t="Include" />
           <e p="Screens" t="Include">

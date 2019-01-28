@@ -31,6 +31,7 @@ namespace JunkyardDogs.Views
         public override void Destroy()
         {
             _viewModel = null;
+            base.Destroy();
         }
         
         public void OnNewBotClicked()

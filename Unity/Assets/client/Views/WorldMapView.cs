@@ -3,6 +3,7 @@ using PandeaGames;
 using PandeaGames.Data.WeakReferences;
 using PandeaGames.Views;
 using PandeaGames.Views.ViewControllers;
+using UnityEngine;
 
 public class WorldMapView : AbstractUnityView
 {
@@ -12,15 +13,20 @@ public class WorldMapView : AbstractUnityView
     {
         base.InitializeView(controller);
         _worldMapViewModel = Game.Instance.GetViewModel<WorldMapViewModel>(0);
-        var vm = Game.Instance.GetViewModel<WorldMapViewModel>(0); 
-        vm.OnTournamentTapped += OnTournamentTapped;
+        _worldMapViewModel.OnTournamentTapped += OnTournamentTapped;
     }
 
     public override void Show()
     {
         FindWindow().LaunchScreen("worldMap");
     }
-    
+
+    public override void Destroy()
+    {
+        base.Destroy();
+        _worldMapViewModel.OnTournamentTapped -= OnTournamentTapped;
+    }
+
     private void OnTournamentTapped(WeakReference obj)
     {
         EventDialogViewModel vm = Game.Instance.GetViewModel<EventDialogViewModel>();

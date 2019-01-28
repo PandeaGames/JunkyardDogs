@@ -1,5 +1,6 @@
 ﻿using PandeaGames.Views.Screens;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace PandeaGames.Views.ViewControllers
 {
@@ -90,21 +91,26 @@ namespace PandeaGames.Views.ViewControllers
         {
             if (_view == null)
             {
+                Debug.Log("[AbstractViewController]["+_view+"] ShowView Start");
                 OnBeforeShow();
                 _view = GetView();
                 _view.InitializeView(this);
                 _view.LoadAsync(OnViewLoaded, OnViewLoadError);
+                Debug.Log("[AbstractViewController]["+_view+"] ShowView Done");
             }
         }
 
         public void RemoveView()
         {
+            string viewName = _view.ToString();
+            Debug.Log("[AbstractViewController]["+viewName+"] RemoveView Start");
             if (_view != null)
             {
                 _view.Destroy();
             }
             
             _view = null;
+            Debug.Log("[AbstractViewController]["+viewName+"] RemoveView Start");
             
         }
 

@@ -44,6 +44,36 @@ namespace PandeaGames.Views
         {
             
         }
+        
+        public Transform FindParentTransform()
+        {
+            return FindTransform(_viewController.GetParent());
+        }
+        
+        public Transform FindTransform()
+        {
+            return FindTransform(_viewController);
+        }
+        
+        public Transform FindTransform(IViewController viewController)
+        {
+            if (viewController == null)
+                return null;
+            
+            Transform transform = viewController.GetView().GetTransform();
+            IViewController parentViewController = viewController.GetParent();
+            
+            if (transform)
+            {
+                return transform;
+            }
+            else if(parentViewController != null)
+            {
+                return FindTransform(parentViewController);
+            }
+
+            return null;
+        }
 
         public WindowView FindWindow()
         {
@@ -52,6 +82,9 @@ namespace PandeaGames.Views
         
         public WindowView FindWindow(IViewController viewController)
         {
+            if (viewController == null)
+                return null;
+            
             WindowView windowView = viewController.GetView().GetWindow();
             IViewController parentViewController = viewController.GetParent();
             
@@ -74,6 +107,9 @@ namespace PandeaGames.Views
         
         public ServiceManager FindServiceManager(IViewController viewController)
         {
+            if (viewController == null)
+                return null;
+            
             ServiceManager serviceManager = viewController.GetView().GetServiceManager();
             IViewController parentViewController = viewController.GetParent();
             

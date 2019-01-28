@@ -14,3 +14,9 @@ MonoBehaviour:
   _simpleWindowPrefab:
     _guid: af37754ed4c5c3848a15f9ee156c7bf4
     _path: Assets/AssetBundles/Art/Views/SimpleWindowView.prefab
+  _junkyardGameContainer:
+    _guid: 
+    _path: 
+  _hubView:
+    _guid: f0e54d00356e6704caddb5905051d940
+    _path: Assets/AssetBundles/Art/Views/HubView.prefab

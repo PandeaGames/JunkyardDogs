@@ -143,7 +143,7 @@ namespace Data
 
         public Loader AppendProvider(ILoadableObject dataProvider)
         {
-            if (_groups.Count > 0)
+            if (_groups.Count > 0 && dataProvider != null)
             {
                 _groups[_groups.Count - 1].AppendProvider(dataProvider);
             }

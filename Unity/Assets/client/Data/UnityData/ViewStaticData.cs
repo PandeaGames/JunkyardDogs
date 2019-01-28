@@ -19,6 +19,13 @@ public class ViewStaticData : ScriptableObject, ILoadableObject
     {
         get { return _junkyardGameContainer.Asset as GameObject; }
     }
+    
+    [SerializeField, WeakReference(typeof(GameObject))] 
+    private WeakReference _hubView;
+    public GameObject HubView
+    {
+        get { return _hubView.Asset as GameObject; }
+    }
 
     private bool _isLoaded;
 
@@ -32,6 +39,7 @@ public class ViewStaticData : ScriptableObject, ILoadableObject
         Loader loader = new Loader();
         loader.AppendProvider(_simpleWindowPrefab);
         loader.AppendProvider(_junkyardGameContainer);
+        loader.AppendProvider(_hubView);
         loader.LoadAsync(onLoadSuccess, onLoadError);
     }
 }

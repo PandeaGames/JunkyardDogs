@@ -1,36 +1,110 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Data;
+
+public class TournamentMetaState
+{
+    public TournamentState TournamentState { get; set; }
+    public DateTime LastCompleted { get; set; }
+    public int Completions { get; set; }
+
+    public void CompleteTournament()
+    {
+        TournamentState = null;
+        LastCompleted = DateTime.UtcNow;
+        Completions++;
+    }
+
+    public bool CanPlay(Tournament tournament)
+    {
+        if (TournamentState == null)
+        {
+            return (DateTime.UtcNow - LastCompleted).TotalSeconds > tournament.SeasonDelaySeconds;
+        }
+        else
+        {
+            return !TournamentState.IsComplete();
+        }
+    }
+
+    public bool HasState()
+    {
+        return TournamentState != null;
+    }
+}
+
+public static class TournamentMetaStateUtils
+{
+    public static float GetPercentageUntilSeasonBegin(Tournament tournament, TournamentMetaState meta)
+    {
+        return Math.Min(1, (float)(DateTime.UtcNow - meta.LastCompleted).TotalSeconds / (float)tournament.SeasonDelaySeconds);
+    }
+}
 
 public class Tournaments
 {
-    public Dictionary<string, TournamentState> TournamentStates {get;set;}
+    public Dictionary<string, TournamentMetaState> TournamentStates {get;set;}
 
     public Tournaments()
     {
-        TournamentStates = new Dictionary<string, TournamentState>();
+        TournamentStates = new Dictionary<string, TournamentMetaState>();
     }
     
     public void UpdateTournament(TournamentState state)
     {
-        if (!TournamentStates.ContainsKey(state.Uid))
-        {
-            TournamentStates.Add(state.Uid, state);
-        }
+        TournamentMetaState meta = null;
+        TryGetTournamentMeta(state.Uid, out meta);
+        meta.TournamentState = state;
     }
 
     public void TryGetTournament(string guid, out TournamentState state)
     {
-        TournamentStates.TryGetValue(guid, out state);
+        TournamentMetaState tournamentMetaState = null;
+        TournamentStates.TryGetValue(guid, out tournamentMetaState);
+
+        if (tournamentMetaState != null)
+        {
+            state = tournamentMetaState.TournamentState;
+        }
+        else
+        {
+            state = null;
+        }
     }
     
     public void TryGetTournament(Tournament tournament, out TournamentState state)
     {
         TryGetTournament(tournament.Guid, out state);
     }
+    
+    public void TryGetTournamentMeta(string guid, out TournamentMetaState state)
+    {
+        TournamentStates.TryGetValue(guid, out state);
+
+        if (state == null)
+        {
+            state = new TournamentMetaState();
+            TournamentStates.Add(guid, state);
+        }
+    }
+    
+    public void TryGetTournamentMeta(Tournament tournament, out TournamentMetaState state)
+    {
+        TryGetTournamentMeta(tournament.Guid, out state);
+    }
+    
+    public void CompleteTournament(string guid)
+    {
+        TournamentMetaState tournamentMetaState = null;
+        TournamentStates.TryGetValue(guid, out tournamentMetaState);
+
+        if(tournamentMetaState != null)
+            tournamentMetaState.CompleteTournament();
+    }
 
     public void ClearTournamentStatus(string guid)
     {
         if(TournamentStates.ContainsKey(guid))
-        TournamentStates.Remove(guid);
+            TournamentStates.Remove(guid);
     }
 }

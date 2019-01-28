@@ -13,9 +13,8 @@ public class TournamentTimerDisplay : MonoBehaviour
     
     private JunkyardUserViewModel _userViewModel;
 
-    private TournamentState _state;
+    private TournamentMetaState _meta;
     private Tournament _tournament;
-    
 
     private void Awake()
     {
@@ -24,9 +23,9 @@ public class TournamentTimerDisplay : MonoBehaviour
     
     public void Render(Tournament tournament)
     {
-        TournamentState state = null;
+        TournamentMetaState state = null;
         
-        _userViewModel.UserData.Tournaments.TryGetTournament(tournament, out state);
+        _userViewModel.UserData.Tournaments.TryGetTournamentMeta(tournament, out state);
 
         if (state != null)
         {
@@ -34,17 +33,26 @@ public class TournamentTimerDisplay : MonoBehaviour
         }
     }
 
-    public void Render(Tournament tournament, TournamentState state)
+    public void Render(Tournament tournament, TournamentMetaState meta)
     {
         _tournament = tournament;
-        _state = state;
+        _meta = meta;
     }
 
     private void Update()
     {
-        if (_tournament != null && _state != null)
+        if (_tournament != null && _meta != null)
         {
-            float percentage = TournamentStateUtils.GetRoundReadyPercentage(_tournament, _state);
+            float percentage = 0;
+            
+            if (_meta.TournamentState != null)
+            {
+                percentage = TournamentStateUtils.GetRoundReadyPercentage(_tournament, _meta.TournamentState);
+            }
+            else
+            {
+                percentage = TournamentMetaStateUtils.GetPercentageUntilSeasonBegin(_tournament, _meta);
+            }
             
            _fill.anchorMax = new Vector2(0, 1);
             _fill.anchorMin = new Vector2(0, 0);

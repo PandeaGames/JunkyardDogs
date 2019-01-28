@@ -24,17 +24,20 @@ namespace PandeaGames.Views.ViewControllers
             _viewController = GetViewController();
             if (_viewController != null)
             {
+                Debug.Log("[AbstractViewControllerState]["+from+"] EnterState.ShowView Start");
                 _viewController.Initialize(_fsm);
                 _viewController.ShowView();
+                Debug.Log("[AbstractViewControllerState]["+from+"] EnterState.ShowView Done");
             }
-           
         }
         
         public virtual void LeaveState(TEnum to)
         {
             if (_viewController != null)
             {
+                Debug.Log("[AbstractViewControllerState]["+to+"] LeaveState.RemoveView Start");
                 _viewController.RemoveView();
+                Debug.Log("[AbstractViewControllerState]["+to+"] LeaveState.RemoveView Done");
             }
         }
 
@@ -95,8 +98,10 @@ namespace PandeaGames.Views.ViewControllers
 
         private void SetState(TEnum state, bool isInitialState)
         {
-            TaskProvider.Instance.DelayedAction(() =>
-            {
+            //TaskProvider.Instance.DelayedAction(() =>
+            //{
+                Debug.Log("[AbstractViewControllerFsm]["+state+"] SetState Start");
+
                 if (state.Equals(_currentState) && !isInitialState)
                 {
                     return;
@@ -116,14 +121,16 @@ namespace PandeaGames.Views.ViewControllers
                 }
 
                 Debug.LogFormat("[EnterState] {0}", state);
-                newController.EnterState(_currentState);
+                
                 if (OnEnterState != null)
                     OnEnterState(state);
                 if(oldController != null && !isInitialState)
                     oldController.LeaveState(state);
 
                 _currentState = state;
-            });
+                newController.EnterState(_currentState);
+                Debug.Log("[AbstractViewControllerFsm]["+state+"] SetState Done");
+            //});
         }
 
         public void SetState(TEnum state)
@@ -140,38 +147,6 @@ namespace PandeaGames.Views.ViewControllers
                 controller = _states[_currentState];
                 controller.UpdateState();
             }
-        }
-    }
-    
-    public enum TestStates
-    {
-        State1, 
-        State2
-    }
-
-    public class TestState1Controller : AbstractViewControllerState<TestStates>
-    {
-        protected override IViewController GetViewController()
-        {
-            return null;
-        }
-    }
-    
-    public class TestState2Controller : AbstractViewControllerState<TestStates>
-    {
-        protected override IViewController GetViewController()
-        {
-            return null;
-        }
-    }
-
-    public class TestViewController : AbstractViewControllerFsm<TestStates>
-    {
-        public TestViewController()
-        {
-            SetViewStateController<TestState1Controller>(TestStates.State1);
-            SetViewStateController<TestState2Controller>(TestStates.State2);
-            SetInitialState(TestStates.State1);
         }
     }
 }

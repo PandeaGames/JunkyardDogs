@@ -29,6 +29,7 @@ namespace PandeaGames.Views
             _worldObject = new GameObject();
             _worldObject.name = "ContainerView(" + _worldObject.GetInstanceID()+")";
             _transform = _worldObject.GetComponent<Transform>();
+            _transform.SetParent(FindParentTransform());
             
             _uiObject = new GameObject();
             _rt = _uiObject.AddComponent<RectTransform>();

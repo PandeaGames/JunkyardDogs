@@ -8,6 +8,7 @@ namespace JunkyardDogs
     {
         EnterGame, 
         ChooseNationality, 
+        Hub,
         WorldMap,
         Junkyard,
         Tournament,
@@ -31,7 +32,7 @@ namespace JunkyardDogs
             }
             else
             {
-                _fsm.SetState(JunkyardDogsStates.WorldMap);
+                _fsm.SetState(JunkyardDogsStates.Hub);
             }
         }
     }
@@ -44,7 +45,7 @@ namespace JunkyardDogs
 
             vc.OnNationChosen += () =>
             {
-                _fsm.SetState(JunkyardDogsStates.WorldMap);
+                _fsm.SetState(JunkyardDogsStates.Hub);
             };
             
             return vc;
@@ -58,42 +59,11 @@ namespace JunkyardDogs
         public WorldMapState()
         {
             _viewModel = Game.Instance.GetViewModel<WorldMapViewModel>(0);
-            
         }
         
         protected override IViewController GetViewController()
         {
             return new WorldMapViewController();
-        }
-
-        public override void EnterState(JunkyardDogsStates @from)
-        {
-            base.EnterState(@from);
-            _viewModel.OnJunkyardTapped += OnJunkyardTapped;
-            _viewModel.OnPlayTournament += OnPlayTournament;
-        }
-
-        public override void LeaveState(JunkyardDogsStates to)
-        {
-            base.LeaveState(to);
-            _viewModel.OnJunkyardTapped -= OnJunkyardTapped;
-            _viewModel.OnPlayTournament -= OnPlayTournament;
-        }
-
-        private void OnJunkyardTapped()
-        {
-            _fsm.SetState(JunkyardDogsStates.Junkyard);
-        }
-        
-        private void OnPlayTournament(TournamentState.TournamentStatus status)
-        {
-            var vm = Game.Instance.GetViewModel<WorldMapViewModel>(0);
-
-            TournamentViewModel tournamentViewModel = Game.Instance.GetViewModel<TournamentViewModel>(0);
-            tournamentViewModel.User = Game.Instance.GetViewModel<JunkyardUserViewModel>(0).UserData;
-        
-            tournamentViewModel.Tournament = status.Tournament.TournamentReference;
-            _fsm.SetState(JunkyardDogsStates.Tournament);
         }
     }
     
@@ -124,8 +94,47 @@ namespace JunkyardDogs
                 TournamentViewModel tournamentViewModel = Game.Instance.GetViewModel<TournamentViewModel>(0);
                 userModel.UserData.Tournaments.UpdateTournament(tournamentViewModel.State);
                 Game.Instance.GetService<JunkyardUserService>().Save();
-                _fsm.SetState(JunkyardDogsStates.WorldMap);
+                _fsm.SetState(JunkyardDogsStates.Hub);
             }
+        }
+    }
+
+    public class JunkuardHubViewState : AbstractViewControllerState<JunkyardDogsStates>
+    {
+        private WorldMapViewModel _viewModel;
+        
+        public JunkuardHubViewState() :base()
+        {
+            _viewModel = Game.Instance.GetViewModel<WorldMapViewModel>(0);
+        }
+
+        public override void LeaveState(JunkyardDogsStates to)
+        {
+            base.LeaveState(to);
+            _viewModel.OnPlayTournament -= OnPlayTournament;
+        }
+        
+        public override void EnterState(JunkyardDogsStates @from)
+        {
+            base.EnterState(@from);
+            _fsm.GetView().GetWindow().RemoveCurrentScreen();
+            _viewModel.OnPlayTournament += OnPlayTournament;
+        }
+        
+        private void OnPlayTournament(TournamentState.TournamentStatus status)
+        {
+            var vm = Game.Instance.GetViewModel<WorldMapViewModel>(0);
+
+            TournamentViewModel tournamentViewModel = Game.Instance.GetViewModel<TournamentViewModel>(0);
+            tournamentViewModel.User = Game.Instance.GetViewModel<JunkyardUserViewModel>(0).UserData;
+        
+            tournamentViewModel.Tournament = status.Tournament.TournamentReference;
+            _fsm.SetState(JunkyardDogsStates.Tournament);
+        }
+
+        protected override IViewController GetViewController()
+        {
+            return new HubViewController();
         }
     }
     
@@ -135,10 +144,16 @@ namespace JunkyardDogs
         {
             SetViewStateController<EnterGameState>(JunkyardDogsStates.EnterGame);
             SetViewStateController<ChooseNationalityState>(JunkyardDogsStates.ChooseNationality);
+            SetViewStateController<JunkuardHubViewState>(JunkyardDogsStates.Hub);
             SetViewStateController<WorldMapState>(JunkyardDogsStates.WorldMap);
             SetViewStateController<JunkyardState>(JunkyardDogsStates.Junkyard);
             SetViewStateController<JunkyardTournamentState>(JunkyardDogsStates.Tournament);
             SetInitialState(JunkyardDogsStates.EnterGame);
+        }
+                
+        protected override IView CreateView()
+        {
+            return new JunkyardGameContainer();
         }
     }
 }

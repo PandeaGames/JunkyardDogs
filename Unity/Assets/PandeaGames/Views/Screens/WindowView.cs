@@ -98,10 +98,13 @@ namespace PandeaGames.Views.Screens
     
         public void RemoveScreen(ScreenView screen, ScreenTransition transition)
         {
-            _activeScreen.Transition(transition);
-            _activeScreen.OnTransitionComplete += TransitionComplete;
-            _activeScreen.OnExit -= Close;
-            _activeScreen.OnBack -= Back;
+            if (screen != null)
+            {
+                _activeScreen.Transition(transition);
+                _activeScreen.OnTransitionComplete += TransitionComplete;
+                _activeScreen.OnExit -= Close;
+                _activeScreen.OnBack -= Back;
+            }
         }
     
         public virtual void Back()
@@ -112,6 +115,7 @@ namespace PandeaGames.Views.Screens
         public void RemoveCurrentScreen()
         {
             RemoveScreen(_activeScreen, new ScreenTransition(Direction.FROM));
+            _activeScreen = null;
         }
         
     
@@ -138,6 +142,7 @@ namespace PandeaGames.Views.Screens
             
             Scene scene = SceneManager.GetSceneByName(transition.SceneId);
             ActivateScene(scene, transition);
+            SceneManager.UnloadSceneAsync(scene);
         }
     
         private void ActivateScene(Scene scene, ScreenTransition transition)

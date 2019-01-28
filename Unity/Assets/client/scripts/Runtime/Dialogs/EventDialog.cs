@@ -65,10 +65,12 @@ public class EventDialog : Dialog<EventDialogViewModel>
     private void OnTournamentLoaded()
     {
         Tournament tournament = _viewModel.TournamentReference.Asset as Tournament;
+        TournamentMetaState meta = null;
         TournamentState state = null;
         _tournament = tournament;
         
         _user.Tournaments.TryGetTournament(tournament, out state);
+        _user.Tournaments.TryGetTournamentMeta(tournament, out meta);
 
         if (state == null)
         {
@@ -83,8 +85,8 @@ public class EventDialog : Dialog<EventDialogViewModel>
         renderer.Render(state);
 
         _collectRewardsButton.gameObject.SetActive(state.IsComplete());
-        _playButton.gameObject.SetActive(!state.IsComplete());
-        _timerDisplay.Render(tournament, state);
+        _playButton.gameObject.SetActive(meta.CanPlay(tournament));
+        _timerDisplay.Render(tournament, meta);
     }
 
     private void OnCollectRewards()
@@ -101,7 +103,7 @@ public class EventDialog : Dialog<EventDialogViewModel>
                 _user.AddComponent(component);
                 if (components.Count >= rewards.Products.Length)
                 {
-                    _user.Tournaments.ClearTournamentStatus(tournament.Guid);
+                    _user.Tournaments.CompleteTournament(tournament.Guid);
                     Game.Instance.GetService<JunkyardUserService>().Save();
                     Close();
                 }

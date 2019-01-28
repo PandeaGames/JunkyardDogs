@@ -19,6 +19,9 @@ public class Tournament : ScriptableObject, IWeakReferenceObject
 
     [SerializeField]
     private int _roundPaceSeconds;
+    
+    [SerializeField]
+    private int _seasonDelaySeconds;
 
     [Header("Rewards")]
     [SerializeField] 
@@ -30,6 +33,11 @@ public class Tournament : ScriptableObject, IWeakReferenceObject
     public int RoundPaceSeconds
     {
         get { return _roundPaceSeconds; }
+    }
+    
+    public int SeasonDelaySeconds
+    {
+        get { return _seasonDelaySeconds; }
     }
     
     private string _guid;

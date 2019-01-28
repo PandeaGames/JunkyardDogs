@@ -40,7 +40,7 @@ namespace PandeaGames.ViewModels
             }
         }
 
-        protected void SetState(T state)
+        public void SetState(T state)
         {
             SetState(state, false);
         }

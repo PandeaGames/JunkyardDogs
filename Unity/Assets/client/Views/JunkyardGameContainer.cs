@@ -12,7 +12,7 @@ public class JunkyardGameContainer : AbstractUnityView
 
     public override void Show()
     {
-        _unityView = GameObject.Instantiate(_unityViewPrefab);
+        _unityView = GameObject.Instantiate(_unityViewPrefab, FindParentTransform());
         _window = _unityView.GetComponentInChildren<WindowView>();
         _serviceManager = _unityView.GetComponentInChildren<ServiceManager>();
     }
@@ -25,5 +25,10 @@ public class JunkyardGameContainer : AbstractUnityView
             _unityViewPrefab = request.asset as GameObject;
             onLoadSuccess();
         };
+    }
+    
+    public override Transform GetTransform()
+    {
+        return _unityView == null ? null:_unityView.transform;
     }
 }

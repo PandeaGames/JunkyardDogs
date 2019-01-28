@@ -33,10 +33,12 @@ namespace JunkyardDogs
     {
         protected override IViewController GetViewController()
         {
-            ContainerViewController vc = new ContainerViewController(
+            /*ContainerViewController vc = new ContainerViewController(
                 new JunkyardDogsGameViewController(),
                 new JunkyardDogsViewController()
-            );
+            );*/
+            
+            JunkyardDogsViewController vc =  new JunkyardDogsViewController();
 
             return vc;
         }

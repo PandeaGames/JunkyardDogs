@@ -238,6 +238,26 @@ MonoBehaviour:
     - 
     - 
     Flags: 0000
+  - Term: UI.WorldMap
+    TermType: 0
+    Description: 
+    Languages:
+    - Weltkarte
+    - Wold Map
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: UI.garage
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - Garage
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
   mLanguages:
   - Name: German
     Code: de

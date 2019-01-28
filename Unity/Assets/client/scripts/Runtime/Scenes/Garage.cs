@@ -90,6 +90,7 @@ public class Garage : MonoBehaviour
         _viewModel.OnBuilderDismantled -= RemoveBuilder;
         _viewModel.OnBuilderFocus -= OnBuilderFocus;
         _viewModel.OnBuilderBlur -= OnBuilderBlur;
+        _viewModel.OnBuilderSelected -= OnBuilderSelected;
     }
 
     public void RemoveBuilder(BotBuilder builder)

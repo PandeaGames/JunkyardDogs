@@ -3,12 +3,40 @@
   <component name="ChangeListManager">
     <list default="true" id="6b6defc3-a091-4fde-bf1e-c3bdd679481d" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Static/ViewStaticData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Static/ViewStaticData.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Tournaments/Tournaments/MooseChallenge.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Tournaments/Tournaments/MooseChallenge.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Tournaments/Tournaments/MooseHerd.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Tournaments/Tournaments/MooseHerd.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/TournamentState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/TournamentState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/I2/Resources/I2Languages.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/I2/Resources/I2Languages.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PandeaGames/Data/WeakReference/Loader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PandeaGames/Data/WeakReference/Loader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PandeaGames/ViewControllers/AbstractViewController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PandeaGames/ViewControllers/AbstractViewController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PandeaGames/ViewControllers/AbstractViewControllerFsm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PandeaGames/ViewControllers/AbstractViewControllerFsm.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PandeaGames/ViewModels/AbstractStatefulViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PandeaGames/ViewModels/AbstractStatefulViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PandeaGames/Views/AbstractUnityView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PandeaGames/Views/AbstractUnityView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PandeaGames/Views/ContainerView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PandeaGames/Views/ContainerView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PandeaGames/Views/SceneView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PandeaGames/Views/SceneView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PandeaGames/Views/Screens/WindowView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PandeaGames/Views/Screens/WindowView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/JunkyardGameView.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/JunkyardGameView.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/Data/UnityData/ViewStaticData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Data/UnityData/ViewStaticData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/ViewControllers/GarageViewController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/ViewControllers/GarageViewController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/ViewControllers/JunkyardDogsViewController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/ViewControllers/JunkyardDogsViewController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/ViewControllers/JunkyardFullGameViewController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/ViewControllers/JunkyardFullGameViewController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/ViewControllers/StatesCommon/AbstractLoadingState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/ViewControllers/StatesCommon/AbstractLoadingState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/Views/GarageView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Views/GarageView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/Views/JunkyardGameContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Views/JunkyardGameContainer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/Views/JunkyardPreloadView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Views/JunkyardPreloadView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/Views/WorldMapView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Views/WorldMapView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scenes/ScreenBootstrap.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scenes/ScreenBootstrap.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scenes/screens/junkyard.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scenes/screens/junkyard.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scenes/screens/worldMap.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scenes/screens/worldMap.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/Tournaments.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/Tournaments.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Tournament.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Tournament.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Dialogs/EventDialog.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Dialogs/EventDialog.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Dialogs/Prefabs/EventDialog.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Dialogs/Prefabs/EventDialog.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/UI/EventButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/UI/EventButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Scenes/Garage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Scenes/Garage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Screens/JunkyardScreen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Screens/JunkyardScreen.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/TournamentTimerDisplay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/TournamentTimerDisplay.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,249 +47,120 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="EventDialog.cs" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Dialogs/EventDialog.cs">
+      <file leaf-file-name="AbstractViewControllerFsm.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/PandeaGames/ViewControllers/AbstractViewControllerFsm.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="51" column="1" lean-forward="true" selection-start-line="51" selection-start-column="1" selection-end-line="51" selection-end-column="1" />
+            <state relative-caret-position="1815">
+              <caret line="123" column="16" selection-start-line="123" selection-start-column="16" selection-end-line="123" selection-end-column="16" />
               <folding>
-                <marker date="1546154161712" expanded="false" signature="6:328" ph="..." />
-                <marker date="1546154161712" expanded="true" signature="385:3403" ph="{...}" />
-                <marker date="1546154161712" expanded="true" signature="971:1438" ph="{...}" />
-                <marker date="1546154161712" expanded="true" signature="1263:1352" ph="{...}" />
-                <marker date="1546154161712" expanded="true" signature="1465:1620" ph="{...}" />
-                <marker date="1546154161712" expanded="true" signature="1499:1614" ph="{...}" />
-                <marker date="1546154161712" expanded="true" signature="1679:1700" ph="{...}" />
-                <marker date="1546154161712" expanded="true" signature="1739:2539" ph="{...}" />
-                <marker date="1546154161712" expanded="true" signature="1971:2039" ph="{...}" />
-                <marker date="1546154161712" expanded="true" signature="2576:3401" ph="{...}" />
-                <marker date="1546154161712" expanded="true" signature="2882:3395" ph="{...}" />
-                <marker date="1546154161712" expanded="true" signature="2981:3383" ph="{...}" />
-                <marker date="1546154161712" expanded="true" signature="3150:3369" ph="{...}" />
+                <marker date="1548629486922" expanded="false" signature="6:66" ph="..." />
+                <marker date="1548629486922" expanded="true" signature="111:4718" ph="{...}" />
+                <marker date="1548629486922" expanded="true" signature="174:1567" ph="{...}" />
+                <marker date="1548629486922" expanded="true" signature="366:410" ph="{...}" />
+                <marker date="1548629486922" expanded="true" signature="473:518" ph="{...}" />
+                <marker date="1548629486922" expanded="true" signature="578:1003" ph="{...}" />
+                <marker date="1548629486922" expanded="true" signature="680:993" ph="{...}" />
+                <marker date="1548629486922" expanded="true" signature="1061:1387" ph="{...}" />
+                <marker date="1548629486922" expanded="true" signature="1112:1377" ph="{...}" />
+                <marker date="1548629486922" expanded="true" signature="1430:1561" ph="{...}" />
+                <marker date="1548629486922" expanded="true" signature="1481:1551" ph="{...}" />
+                <marker date="1548629486922" expanded="true" signature="1647:4716" ph="{...}" />
+                <marker date="1548629486922" expanded="true" signature="1956:2059" ph="{...}" />
+                <marker date="1548629486922" expanded="true" signature="2184:2487" ph="{...}" />
+                <marker date="1548629486922" expanded="true" signature="2238:2305" ph="{...}" />
+                <marker date="1548629486922" expanded="true" signature="2540:2634" ph="{...}" />
+                <marker date="1548629486922" expanded="true" signature="2675:2921" ph="{...}" />
+                <marker date="1548629486922" expanded="true" signature="2750:2825" ph="{...}" />
+                <marker date="1548629486922" expanded="true" signature="2842:2911" ph="{...}" />
+                <marker date="1548629486922" expanded="true" signature="2986:4310" ph="{...}" />
+                <marker date="1548629486922" expanded="true" signature="3009:3068" ph="/* TaskProvider.Instance.DelayedAction(() =&gt; ... */" />
+                <marker date="1548629486922" expanded="true" signature="3221:3285" ph="{...}" />
+                <marker date="1548629486922" expanded="true" signature="3347:3517" ph="{...}" />
+                <marker date="1548629486922" expanded="true" signature="3731:3827" ph="{...}" />
+                <marker date="1548629486922" expanded="true" signature="4353:4409" ph="{...}" />
+                <marker date="1548629486922" expanded="true" signature="4448:4710" ph="{...}" />
+                <marker date="1548629486922" expanded="true" signature="4577:4700" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TournamentTimerDisplay.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/TournamentTimerDisplay.cs">
+      <file leaf-file-name="ScreenView.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/PandeaGames/Views/Screens/ScreenView.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="42" column="21" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
+            <state relative-caret-position="855">
+              <caret line="59" column="9" selection-start-line="59" selection-start-column="9" selection-end-line="59" selection-end-column="9" />
               <folding>
-                <marker date="1546154079983" expanded="true" signature="11:88" ph="..." />
-                <marker date="1546154079983" expanded="true" signature="140:1437" ph="{...}" />
-                <marker date="1546154079983" expanded="true" signature="415:506" ph="{...}" />
-                <marker date="1546154079983" expanded="true" signature="557:788" ph="{...}" />
-                <marker date="1546154079983" expanded="true" signature="723:782" ph="{...}" />
-                <marker date="1546154079983" expanded="true" signature="858:928" ph="{...}" />
-                <marker date="1546154079983" expanded="true" signature="955:1435" ph="{...}" />
-                <marker date="1546154079983" expanded="true" signature="1012:1429" ph="{...}" />
+                <marker date="1542003716850" expanded="false" signature="6:58" ph="..." />
+                <marker date="1542003716850" expanded="true" signature="95:2047" ph="{...}" />
+                <marker date="1542003716850" expanded="true" signature="141:2045" ph="{...}" />
+                <marker date="1542003716850" expanded="true" signature="501:551" ph="{...}" />
+                <marker date="1542003716850" expanded="true" signature="588:1008" ph="{...}" />
+                <marker date="1542003716850" expanded="true" signature="691:998" ph="{...}" />
+                <marker date="1542003716850" expanded="true" signature="1038:1377" ph="{...}" />
+                <marker date="1542003716850" expanded="true" signature="1117:1367" ph="{...}" />
+                <marker date="1542003716850" expanded="true" signature="1446:1523" ph="{...}" />
+                <marker date="1542003716850" expanded="true" signature="1580:1666" ph="{...}" />
+                <marker date="1542003716850" expanded="true" signature="1711:1821" ph="{...}" />
+                <marker date="1542003716850" expanded="true" signature="1852:1930" ph="{...}" />
+                <marker date="1542003716850" expanded="true" signature="1961:2039" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Tournament.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Tournament.cs">
+      <file leaf-file-name="WindowView.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/PandeaGames/Views/Screens/WindowView.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
+            <state relative-caret-position="256">
+              <caret line="144" column="22" lean-forward="true" selection-start-line="144" selection-start-column="22" selection-end-line="144" selection-end-column="22" />
               <folding>
-                <marker date="1546151158460" expanded="false" signature="6:171" ph="..." />
-                <marker date="1546151158460" expanded="true" signature="299:1698" ph="{...}" />
-                <marker date="1546151158460" expanded="true" signature="730:784" ph="{...}" />
-                <marker date="1546151158460" expanded="true" signature="838:880" ph="{...}" />
-                <marker date="1546151158460" expanded="true" signature="911:959" ph="{...}" />
-                <marker date="1546151158460" expanded="true" signature="1006:1051" ph="{...}" />
-                <marker date="1546151158460" expanded="true" signature="1135:1185" ph="{...}" />
-                <marker date="1546151158460" expanded="true" signature="1242:1382" ph="{...}" />
-                <marker date="1546151158460" expanded="true" signature="1430:1696" ph="{...}" />
+                <marker date="1548630051665" expanded="false" signature="6:127" ph="..." />
+                <marker date="1548630051665" expanded="true" signature="164:5671" ph="{...}" />
+                <marker date="1548630051665" expanded="true" signature="211:248" ph="{...}" />
+                <marker date="1548630051665" expanded="true" signature="306:953" ph="{...}" />
+                <marker date="1548630051665" expanded="true" signature="621:677" ph="{...}" />
+                <marker date="1548630051665" expanded="true" signature="751:839" ph="{...}" />
+                <marker date="1548630051665" expanded="true" signature="922:947" ph="{...}" />
+                <marker date="1548630051665" expanded="true" signature="1007:5669" ph="{...}" />
+                <marker date="1548630051665" expanded="true" signature="1319:1412" ph="{...}" />
+                <marker date="1548630051665" expanded="true" signature="1460:1830" ph="{...}" />
+                <marker date="1548630051665" expanded="true" signature="1639:1712" ph="{...}" />
+                <marker date="1548630051665" expanded="true" signature="1752:1820" ph="{...}" />
+                <marker date="1548630051665" expanded="true" signature="1905:1981" ph="{...}" />
+                <marker date="1548630051665" expanded="true" signature="2043:2289" ph="{...}" />
+                <marker date="1548630051665" expanded="true" signature="2084:2173" ph="{...}" />
+                <marker date="1548630051665" expanded="true" signature="2190:2279" ph="{...}" />
+                <marker date="1548630051665" expanded="true" signature="2375:2676" ph="{...}" />
+                <marker date="1548630051665" expanded="true" signature="2417:2666" ph="{...}" />
+                <marker date="1548630051665" expanded="true" signature="2716:2757" ph="{...}" />
+                <marker date="1548630051665" expanded="true" signature="2800:2933" ph="{...}" />
+                <marker date="1548630051665" expanded="true" signature="2978:3204" ph="{...}" />
+                <marker date="1548630051665" expanded="true" signature="3018:3129" ph="{...}" />
+                <marker date="1548630051665" expanded="true" signature="3281:3786" ph="{...}" />
+                <marker date="1548630051665" expanded="true" signature="3529:3592" ph="{...}" />
+                <marker date="1548630051665" expanded="true" signature="3868:5002" ph="{...}" />
+                <marker date="1548630051665" expanded="true" signature="3990:4143" ph="{...}" />
+                <marker date="1548630051665" expanded="true" signature="4177:4325" ph="{...}" />
+                <marker date="1548630051665" expanded="true" signature="4369:4454" ph="{...}" />
+                <marker date="1548630051665" expanded="true" signature="5073:5106" ph="{...}" />
+                <marker date="1548630051665" expanded="true" signature="5168:5287" ph="{...}" />
+                <marker date="1548630051665" expanded="true" signature="5345:5663" ph="{...}" />
+                <marker date="1548630051665" expanded="true" signature="5550:5613" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Melee.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Weapons/Melee.cs">
+      <file leaf-file-name="MatchView.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/client/Views/MatchView.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+            <state relative-caret-position="210">
+              <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
               <folding>
-                <marker date="1546120142108" expanded="false" signature="6:126" ph="..." />
-                <marker date="1546120142108" expanded="true" signature="165:1085" ph="{...}" />
-                <marker date="1546120142108" expanded="true" signature="287:1083" ph="{...}" />
-                <marker date="1546120142108" expanded="true" signature="570:843" ph="{...}" />
-                <marker date="1546120142108" expanded="true" signature="891:944" ph="{...}" />
-                <marker date="1546120142108" expanded="true" signature="1008:1077" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SimulationService.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/client/Simulation/SimulationService.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="160" column="79" selection-start-line="160" selection-start-column="79" selection-end-line="160" selection-end-column="79" />
-              <folding>
-                <marker date="1546121108303" expanded="true" signature="0:155" ph="/* mass is how dense the material is ... */" />
-                <marker date="1546121108303" expanded="false" signature="163:517" ph="..." />
-                <marker date="1546121108303" expanded="true" signature="552:19633" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="576:614" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="664:18147" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="1264:1327" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="1472:1586" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="1660:1908" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="1966:2550" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="2609:3144" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="2944:3050" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="3067:3134" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="3182:3301" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="3354:3402" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="3454:3587" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="3512:3577" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="3638:4298" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="3696:4288" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="3727:3978" ph="/* TODO: Figure out how to keep simlulation fixed step, ... */" />
-                <marker date="1546121108303" expanded="true" signature="4040:4153" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="4348:4411" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="4455:5386" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="4508:4699" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="5050:5376" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="5422:5752" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="5468:5520" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="5584:5742" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="5827:6554" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="6642:7533" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="6879:7350" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="7079:7187" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="7223:7336" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="7392:7523" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="7614:10156" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="7720:8588" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="8233:8437" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="8486:8574" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="8673:9352" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="8704:8850" ph="/* TODO: get 3 from the speed of the chassis. based on weight and locomotion ... */" />
-                <marker date="1546121108303" expanded="true" signature="9369:10146" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="9554:9634" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="9809:9923" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="9944:10093" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="10268:11628" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="10433:10939" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="11774:12999" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="11876:12845" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="13070:13132" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="13200:13317" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="13361:14420" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="13464:13660" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="13753:14410" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="13971:14396" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="14230:14378" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="14507:17204" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="14918:15155" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="15072:15141" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="15214:15272" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="15332:17167" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="15988:16111" ph="/* var p3 = { x:p1.x - c.x, y: p1.y - c.y}; //shifted line points ... */" />
-                <marker date="1546121108303" expanded="true" signature="16442:16540" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="16948:17102" ph="/* var i1 = { x:t1 + c.x, y:m * t1 + b + c.y }; //intercept point 1 ... */" />
-                <marker date="1546121108303" expanded="true" signature="17262:17615" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="17371:17605" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="17645:18131" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="18027:18121" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="18184:18413" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="18445:18556" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="18596:18690" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="18728:19631" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="18911:18963" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="18994:19050" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="19084:19204" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="19233:19320" ph="{...}" />
-                <marker date="1546121108303" expanded="true" signature="19350:19438" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Engagement.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/client/Simulation/Engagement.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="129">
-              <caret line="57" column="24" selection-start-line="57" selection-start-column="24" selection-end-line="57" selection-end-column="24" />
-              <folding>
-                <marker date="1544390972318" expanded="false" signature="6:101" ph="..." />
-                <marker date="1544390972318" expanded="true" signature="136:1774" ph="{...}" />
-                <marker date="1544390972318" expanded="true" signature="202:1556" ph="{...}" />
-                <marker date="1544390972318" expanded="true" signature="591:641" ph="{...}" />
-                <marker date="1544390972318" expanded="true" signature="674:779" ph="{...}" />
-                <marker date="1544390972318" expanded="true" signature="813:920" ph="{...}" />
-                <marker date="1544390972318" expanded="true" signature="960:1015" ph="{...}" />
-                <marker date="1544390972318" expanded="true" signature="1043:1137" ph="{...}" />
-                <marker date="1544390972318" expanded="true" signature="1069:1127" ph="{...}" />
-                <marker date="1544390972318" expanded="true" signature="1188:1255" ph="{...}" />
-                <marker date="1544390972318" expanded="true" signature="1338:1550" ph="{...}" />
-                <marker date="1544390972318" expanded="true" signature="1583:1622" ph="{...}" />
-                <marker date="1544390972318" expanded="true" signature="1686:1771" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TournamentViewModel.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/client/ViewModels/TournamentViewModel.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="395">
-              <caret line="85" column="40" selection-start-line="85" selection-start-column="40" selection-end-line="85" selection-end-column="40" />
-              <folding>
-                <marker date="1546121229253" expanded="false" signature="6:172" ph="..." />
-                <marker date="1546121229253" expanded="true" signature="196:3193" ph="{...}" />
-                <marker date="1546121229253" expanded="true" signature="203:515" ph="/* private WeakReference _tournament; ... */" />
-                <marker date="1546121229253" expanded="true" signature="594:3191" ph="{...}" />
-                <marker date="1546121229253" expanded="true" signature="752:807" ph="{...}" />
-                <marker date="1546121229253" expanded="true" signature="952:1002" ph="{...}" />
-                <marker date="1546121229253" expanded="true" signature="1076:1990" ph="{...}" />
-                <marker date="1546121229253" expanded="true" signature="1125:1969" ph="{...}" />
-                <marker date="1546121229253" expanded="true" signature="1501:1864" ph="{...}" />
-                <marker date="1546121229253" expanded="true" signature="1630:1779" ph="{...}" />
-                <marker date="1546121229253" expanded="true" signature="1885:1955" ph="{...}" />
-                <marker date="1546121229253" expanded="true" signature="2055:2471" ph="{...}" />
-                <marker date="1546121229253" expanded="true" signature="2195:2433" ph="{...}" />
-                <marker date="1546121229253" expanded="true" signature="2324:2387" ph="{...}" />
-                <marker date="1546121229253" expanded="true" signature="2560:3185" ph="{...}" />
-                <marker date="1546121229253" expanded="true" signature="2857:3164" ph="{...}" />
-                <marker date="1546121229253" expanded="true" signature="3000:3139" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TournamentState.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Entities/TournamentState.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="105" column="47" selection-start-line="105" selection-start-column="24" selection-end-line="105" selection-end-column="47" />
-              <folding>
-                <marker date="1546154053617" expanded="false" signature="6:161" ph="..." />
-                <marker date="1546154053617" expanded="true" signature="191:2230" ph="{...}" />
-                <marker date="1546154053617" expanded="true" signature="228:509" ph="{...}" />
-                <marker date="1546154053617" expanded="true" signature="410:503" ph="{...}" />
-                <marker date="1546154053617" expanded="true" signature="748:825" ph="{...}" />
-                <marker date="1546154053617" expanded="true" signature="859:871" ph="{...}" />
-                <marker date="1546154053617" expanded="true" signature="941:1094" ph="{...}" />
-                <marker date="1546154053617" expanded="true" signature="1135:1415" ph="{...}" />
-                <marker date="1546154053617" expanded="true" signature="1239:1385" ph="{...}" />
-                <marker date="1546154053617" expanded="true" signature="1324:1375" ph="{...}" />
-                <marker date="1546154053617" expanded="true" signature="1445:1504" ph="{...}" />
-                <marker date="1546154053617" expanded="true" signature="1543:1586" ph="{...}" />
-                <marker date="1546154053617" expanded="true" signature="1629:1683" ph="{...}" />
-                <marker date="1546154053617" expanded="true" signature="1723:1786" ph="{...}" />
-                <marker date="1546154053617" expanded="true" signature="1841:1903" ph="{...}" />
-                <marker date="1546154053617" expanded="true" signature="1944:2228" ph="{...}" />
-                <marker date="1546154053617" expanded="true" signature="2272:2699" ph="{...}" />
-                <marker date="1546154053617" expanded="true" signature="2356:2464" ph="{...}" />
-                <marker date="1546154053617" expanded="true" signature="2563:2697" ph="{...}" />
+                <marker date="1546118274235" expanded="true" signature="95:313" ph="{...}" />
+                <marker date="1546118274235" expanded="true" signature="144:177" ph="{...}" />
+                <marker date="1546118274235" expanded="true" signature="214:307" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -271,7 +170,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>.Setup</find>
       <find>_closeButton</find>
       <find>onInternalLoadSuccess</find>
       <find>StateWeakReference</find>
@@ -296,6 +194,12 @@
       <find>_view</find>
       <find>GetTeam</find>
       <find>m_AssetBundleManifest</find>
+      <find>WorldMapViewController</find>
+      <find>LOADING DONE</find>
+      <find>.JunkyardDogs</find>
+      <find>SetState Done</find>
+      <find>_activeScreen</find>
+      <find>SceneManager.UnloadScene</find>
     </findStrings>
     <replaceStrings>
       <replace>WindowView</replace>
@@ -326,7 +230,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/client/Views/JunkyardView.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Screens/EditBotScreen.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/Match/SimpleBotMatchRendering.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/TournemantViewController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/TournemantViewController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Screens/ChooseCountryScreen.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Screens/EditBehaviourScreen.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Screens/GarageScreen.cs" root0="FORCE_HIGHLIGHTING" />
@@ -350,6 +254,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Services/JunkyardUserService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Services/Editor/ServiceEditorTools.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/ComponentRendering/ChassisRenderer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/HubViewController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Scripts/WaterHoseParticles.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Services/PauseService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/C9C46045-1988-4A6A-9389-04A7B265ABE7/f8/57dea6a7/StateMachineBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
@@ -358,15 +263,15 @@
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Services/AssetBundleManagerInit.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/ViewModels/CameraViewModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Views/Services/InputService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Views/Services/DialogService.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/SimulationService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Views/Services/DialogService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/SimulationService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Views/Services/CollectionService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/StatesCommon/AbstractLoadingState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/StatesCommon/AbstractLoadingState.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Views/Services/ServiceManager.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/Views/WorldMapView.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/Views/WorldMapView.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Runtime/Controllers/Scripts/StateMachine.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/JunkyardViewController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/Engagement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/Engagement.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/Agent/Agent.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/Agent/StateTransition.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/Agent/AgentState.cs" root0="SKIP_HIGHLIGHTING" />
@@ -389,7 +294,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/client/Views/GarageEditBehaviourView.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/Simulation/Physics/SimulatedCircleCollider.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/Simulation/Physics/SimulatedBody.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Scenes/Garage.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Scenes/Garage.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/FullMatchViewController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Runtime/Gameplay/Camera/CameraMaster.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Views/GarageFocusedView.cs" root0="FORCE_HIGHLIGHTING" />
@@ -402,13 +307,13 @@
     <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/GarageFocusedViewController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/GarageLineupViewController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/ChassisBlueprint.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/Views/MatchView.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/Views/MatchView.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Runtime/Gameplay/StartGame.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Runtime/Gameplay/Pausable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Screens/ViewModels/EditBotBehaviourViewModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/CompetitorBlueprintData.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Views/Screens/ScreenView.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Views/Screens/WindowView.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Views/Screens/ScreenView.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Views/Screens/WindowView.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/MotherboardBlueprint.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Runtime/Utils/TaskProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/CompetitorBlueprint.cs" root0="FORCE_HIGHLIGHTING" />
@@ -432,7 +337,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Data/Factories/ObjectFactory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/StatesCommon/SplashState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Entities/CompetitorProvider.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/GameLoader.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/GameLoader.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Dialogs/ViewModels/ChooseFromInventoryViewModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/GarageTestViewController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Data/DialogConfig.cs" root0="FORCE_HIGHLIGHTING" />
@@ -440,17 +345,25 @@
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Participants/UserAutoParticipant.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Data/ConfiguredScreen.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Participants/UserAutoParticipantData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9C9F068C-46C6-4FFD-91FD-A7AF157B4D15/0b/40bd1fd4/Monitor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/ViewModels/LoadingViewModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/344DC4D3-F1AD-4180-9DF7-8607B6121A41/fa/46bda9b4/Socket.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/GarageTest.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/ChassisBlueprintData.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CA4C2132-6E0F-4A9B-BAC9-2D72C6B25AB6/07/c48beeaf/Signal`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/TestData/TournamentTestData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Dialogs/ViewModels/ChooseActionDialogViewModel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/GarageViewController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CA4C2132-6E0F-4A9B-BAC9-2D72C6B25AB6/fe/0d0a944b/RProperty`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/GarageViewController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/AssetBundleInitializer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/JunkyardDogsGameViewController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Dialogs/ViewModels/EventDialogViewModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CA4C2132-6E0F-4A9B-BAC9-2D72C6B25AB6/df/ae2446fa/SocketWire.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SimulationTests.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Dialogs/ViewModels/TakeJunkDialogViewModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9C9F068C-46C6-4FFD-91FD-A7AF157B4D15/65/aa288621/ThreadHelper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Data/MatchTestData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9C9F068C-46C6-4FFD-91FD-A7AF157B4D15/82/26f96e8f/ExecutionContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Participants/UserParticipantData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/ViewControllers/ContainerViewController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/AgentBlueprintData.cs" root0="FORCE_HIGHLIGHTING" />
@@ -473,7 +386,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Runtime/Dialogs/ViewModels/MessageDialogViewModel.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Views/Screens/NestedWindowView.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/AssetBundleManager/AssetBundleLoadOperation.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Data/WeakReference/Loader.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Data/WeakReference/Loader.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/PreloadViewController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Controllers/MatchTest.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Data/Static/PandeaGameDataProvider.cs" root0="FORCE_HIGHLIGHTING" />
@@ -494,9 +407,9 @@
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Entities/Inventory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/ViewModels/AbstractDialogViewModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/MatchTestViewController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Entities/JunkyardUser.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Entities/JunkyardUser.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Controllers/MatchController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/ViewControllers/AbstractViewController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/ViewControllers/AbstractViewController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Entities/Competitor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Data/WeakReference/AssetLoader.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Gameplay/SpecificationCatalogue.cs" root0="FORCE_HIGHLIGHTING" />
@@ -515,7 +428,9 @@
     <setting file="file://$PROJECT_DIR$/Assets/client/Data/ViewStaticDataProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Components/PhysicalComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Editor/CoreEditorUtils.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/UI/TabGroup.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Components/Processing/WeaponProcessor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/UI/Tab.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/TournamentFormat.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SimpleDragAndDrop/Scripts/DragAndDropItemProxy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Views/SimpleWindowView.cs" root0="FORCE_HIGHLIGHTING" />
@@ -525,25 +440,29 @@
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Editor/CoreEditorTools.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Data/InputConfig.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/WorldMapViewController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/unity-ui-extensions/Scripts/TabNavigationHelper.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Chassis.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Manufacturer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/ViewModels/AbstractStatefulViewModel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/ViewModels/TournamentViewModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/ViewModels/TournamentViewModel.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/WeaponProcessorBlueprint.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/ViewModels/ChooseBotFromInventoryViewModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/WeaponProcessorBlueprintData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/ViewModels/HubViewModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Participants/Participant.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/PlateBlueprintData.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Weapons/Weapon.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Participants/ParticipantData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Dialogs/EventDialog.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/Navigation/HubTabGroup.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Views/ChooseBotFromInventoryView.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Weapons/ProjectileWeapon.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Weapons/Melee.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Weapons/Melee.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/PlateBlueprint.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Weapons/Assailments/MeleeWeapon.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Views/JunkyardGameContainer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/ChooseBotFromInventoryViewController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/UI/SimpleButtonTab.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/Behavior/ActionList.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Weapons/Assailments/Assailer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Views/TournamentView.cs" root0="FORCE_HIGHLIGHTING" />
@@ -556,6 +475,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/GameLoadViewController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Utils/ComponentInstantiatorService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/TournamentStateRenderer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Views/HubView.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Data/Static/IStaticDataProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/UI/EventButton.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Data/Static/AbstractStaticDataProvider.cs" root0="FORCE_HIGHLIGHTING" />
@@ -569,57 +489,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/Controllers/MatchTest.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/Controllers/TournamentTest.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/ViewControllers/TournemantTestViewController.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/Controllers/TournamentController.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/ViewControllers/ChooseBotFromInventoryViewController.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/Screens/ChooseBotScreen.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/Controllers/ChooseUserBotController.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/ViewModels/ChooseBotFromInventoryViewModel.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Views/ChooseBotFromInventoryView.cs" />
-        <option value="$PROJECT_DIR$/Assets/PandeaGames/ViewControllers/AbstractViewControllerFsm.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/ViewControllers/MatchViewController.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Simulation/Engagement.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/ViewControllers/FullMatchViewController.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/ViewControllers/JunkyardFullGameViewController.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/Screens/JunkyardScreen.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/ViewControllers/JunkyardDogsGameViewController.cs" />
-        <option value="$PROJECT_DIR$/Assets/PandeaGames/ViewControllers/IViewController.cs" />
-        <option value="$PROJECT_DIR$/Assets/PandeaGames/ViewControllers/AbstractViewController.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/Screens/MapScreen.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/ViewControllers/JunkyardViewController.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/ViewModels/JunkyardViewModel.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Views/TakeJunkViewModel.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Views/JunkyardView.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/Junkyard/JunkController.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/Dialogs/TakeJunkDialog.cs" />
-        <option value="$PROJECT_DIR$/Assets/AssetBundleManager/Editor/ExecuteInternalMono.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/ViewControllers/PreloadViewController.cs" />
         <option value="$PROJECT_DIR$/Assets/PandeaGames/Data/Factories/ObjectFactory.cs" />
         <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/TournamentStateRenderer.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Views/WorldMapView.cs" />
         <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/Dialogs/ViewModels/EventDialogViewModel.cs" />
         <option value="$PROJECT_DIR$/Assets/client/ViewModels/WorldMapViewModel.cs" />
         <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/StageState.cs" />
         <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/Controllers/MatchController.cs" />
         <option value="$PROJECT_DIR$/Assets/client/GameLoader.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/ViewControllers/WorldMapViewController.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/ViewControllers/JunkyardDogsViewController.cs" />
         <option value="$PROJECT_DIR$/Assets/client/ViewControllers/TournemantViewController.cs" />
         <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/MatchStateRenderer.cs" />
-        <option value="$PROJECT_DIR$/Assets/PandeaGames/Views/Screens/WindowView.cs" />
         <option value="$PROJECT_DIR$/Assets/client/Views/MatchView.cs" />
         <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Gameplay/SpecificationCatalogue.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/Tournaments.cs" />
         <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Weapons/Assailments/MeleeWeapon.cs" />
         <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Weapons/Melee.cs" />
         <option value="$PROJECT_DIR$/Assets/client/Simulation/SimulationService.cs" />
         <option value="$PROJECT_DIR$/Assets/client/ViewModels/TournamentViewModel.cs" />
         <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Tournament.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/Dialogs/EventDialog.cs" />
         <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/TournamentState.cs" />
         <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/TournamentTimerDisplay.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/Dialogs/EventDialog.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/Tournaments.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/UI/EventButton.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/ViewControllers/WorldMapViewController.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Data/UnityData/ViewStaticData.cs" />
+        <option value="$PROJECT_DIR$/Assets/PandeaGames/Data/WeakReference/Loader.cs" />
+        <option value="$PROJECT_DIR$/Assets/PandeaGames/Views/ContainerView.cs" />
+        <option value="$PROJECT_DIR$/Assets/PandeaGames/Views/AbstractUnityView.cs" />
+        <option value="$PROJECT_DIR$/Assets/PandeaGames/UI/ButtonTab.cs" />
+        <option value="$PROJECT_DIR$/Assets/PandeaGames/UI/SImpleButtonTab.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/Navigation/HubTabMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/ViewModels/HubViewModel.cs" />
+        <option value="$PROJECT_DIR$/Assets/PandeaGames/ViewModels/AbstractStatefulViewModel.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/Navigation/HubTabGroup.cs" />
+        <option value="$PROJECT_DIR$/Assets/PandeaGames/UI/SimpleButtonTab.cs" />
+        <option value="$PROJECT_DIR$/Assets/PandeaGames/UI/Tab.cs" />
+        <option value="$PROJECT_DIR$/Assets/PandeaGames/UI/TabGroup.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Views/GarageView.cs" />
+        <option value="$PROJECT_DIR$/Assets/PandeaGames/Views/SceneView.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/ViewControllers/StatesCommon/AbstractLoadingState.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/ViewControllers/JunkyardFullGameViewController.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Views/JunkyardGameContainer.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/ViewControllers/GarageViewController.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/Scenes/Garage.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Views/WorldMapView.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/ViewControllers/HubViewController.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/Screens/JunkyardScreen.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Views/JunkyardPreloadView.cs" />
+        <option value="$PROJECT_DIR$/Assets/PandeaGames/ViewControllers/AbstractViewController.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/ViewControllers/JunkyardDogsViewController.cs" />
+        <option value="$PROJECT_DIR$/Assets/PandeaGames/Views/HubView.cs" />
+        <option value="$PROJECT_DIR$/Assets/PandeaGames/ViewControllers/AbstractViewControllerFsm.cs" />
+        <option value="$PROJECT_DIR$/Assets/PandeaGames/Views/Screens/WindowView.cs" />
       </list>
     </option>
   </component>
@@ -635,10 +555,9 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="868" />
-    <option name="y" value="808" />
-    <option name="width" value="1280" />
-    <option name="height" value="760" />
+    <option name="x" value="-10" />
+    <option name="width" value="1390" />
+    <option name="height" value="1756" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -648,6 +567,19 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="SolutionExplorer">
+        <subPane>
+          <expand>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="Unity (3 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+        <option name="show-file-system" value="false" />
+        <option name="show-all-items" value="false" />
+      </pane>
       <pane id="UnityExplorer">
         <subPane>
           <expand>
@@ -723,59 +655,11 @@
         <option name="show-hidden-items" value="false" />
       </pane>
       <pane id="Scratches" />
-      <pane id="SolutionExplorer">
-        <subPane>
-          <expand>
-            <path>
-              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="Unity (3 projects)" type="977d5f41:SolutionExplorerNodeRider" />
-            </path>
-            <path>
-              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="Unity (3 projects)" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="Assembly-CSharp" type="977d5f41:SolutionExplorerNodeRider" />
-            </path>
-            <path>
-              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="Unity (3 projects)" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="Assembly-CSharp" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="client" type="977d5f41:SolutionExplorerNodeRider" />
-            </path>
-            <path>
-              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="Unity (3 projects)" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="Assembly-CSharp" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="client" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="scripts" type="977d5f41:SolutionExplorerNodeRider" />
-            </path>
-            <path>
-              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="Unity (3 projects)" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="Assembly-CSharp" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="client" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="scripts" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="Runtime" type="977d5f41:SolutionExplorerNodeRider" />
-            </path>
-            <path>
-              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="Unity (3 projects)" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="Assembly-CSharp" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="client" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="scripts" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="Runtime" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="UI" type="977d5f41:SolutionExplorerNodeRider" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-        <option name="show-file-system" value="false" />
-        <option name="show-all-items" value="false" />
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="Tournament&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/scripts/Data/Tournaments/Tournament.cs&#10;Simulation&#9;null&#9;null&#10;TakeJunk&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/scripts/Runtime/Dialogs/ViewModels/TakeJunkDialogViewModel.cs&#10;MatchView&#9;null&#9;null&#10;TournamentViewContr&#9;null&#9;null&#10;UserPartici&#9;null&#9;null&#10;UserPartic&#9;null&#9;null&#10;Event&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/scripts/Runtime/Dialogs/EventDialog.cs&#10;GameLoader&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/GameLoader.cs&#10;TournamentRender&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/scripts/Runtime/UI/TournamentStateRenderer.cs&#10;MatchControll&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/scripts/Runtime/Controllers/MatchController.cs&#10;JunkyardUser&#9;null&#9;null&#10;WorldMap&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/ViewControllers/WorldMapViewController.cs&#10;JunkyardGame&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/ViewControllers/JunkyardFullGameViewController.cs&#10;ChooseBot&#9;null&#9;null&#10;TournamentTe&#9;null&#9;null&#10;Match&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/ViewControllers/MatchTestViewController.cs&#10;ChooseCoun&#9;null&#9;null&#10;ChooseNation&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/Views/ChooseNationlaityView.cs&#10;AssetManagerI&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/PandeaGames/Services/AssetBundleManagerInit.cs&#10;AssetBundleManager&#9;null&#9;null&#10;ExecuteInternalMono&#9;null&#9;null&#10;Dialog&#9;null&#9;null&#10;TakeJunkDialog&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/scripts/Runtime/Dialogs/TakeJunkDialog.cs&#10;JunkyardView&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/Views/JunkyardView.cs&#10;JunkyardScree&#9;null&#9;null&#10;WindowView&#9;null&#9;null&#10;ChooseUserBot&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/scripts/Runtime/Controllers/ChooseUserBotController.cs&#10;Choose&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/ViewControllers/ChooseBotFromInventoryViewController.cs&#10;TournamentStat&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/scripts/Data/Entities/TournamentState.cs&#10;MatchTestDa&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/Data/MatchTestData.cs&#10;MatchTest&#9;null&#9;null&#10;GarageTest&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/ViewControllers/GarageTestViewController.cs&#10;GarageFoc&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/Views/GarageFocusedView.cs&#10;GarageView&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/Views/GarageView.cs&#10;BotBuilderDisplay&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/scripts/Runtime/UI/ComponentRendering/BotBuilderDisplay.cs&#10;Garage&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/scripts/Runtime/Scenes/Garage.cs&#10;ContainerView&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/PandeaGames/ViewControllers/ContainerViewController.cs&#10;State&#9;null&#9;null&#10;BotBuild&#9;null&#9;null&#10;ChooseFromInventoryViewModel&#9;null&#9;null&#10;InputSer&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/PandeaGames/Views/Services/InputService.cs&#10;Abstract&#9;null&#9;null&#10;JunkyardGameContainer&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/Views/JunkyardGameContainer.cs&#10;GameStart&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/scenes/gameScenes/gameStart.unity&#10;AbstractViewCon&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/PandeaGames/ViewControllers/AbstractViewController.cs&#10;AbstractView&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/PandeaGames/ViewControllers/AbstractViewController.cs&#10;StateMachine&#9;null&#9;null&#10;Asset&#9;null&#9;null&#10;ILoader&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="MatchView&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/Views/MatchView.cs&#10;WindowView&#9;null&#9;null&#10;Abs&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/PandeaGames/ViewControllers/AbstractViewControllerFsm.cs&#10;HubView&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/PandeaGames/Views/HubView.cs&#10;Ju&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/ViewControllers/JunkyardDogsViewController.cs&#10;PreloadView&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/Views/JunkyardPreloadView.cs&#10;Preload&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/ViewControllers/PreloadViewController.cs&#10;JunkyardGame&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/ViewControllers/JunkyardFullGameViewController.cs&#10;Junkyard&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/Views/JunkyardView.cs&#10;MapView&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/Views/WorldMapView.cs&#10;Garage&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/Views/GarageView.cs&#10;GarageView&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/ViewModels/GarageViewModel.cs&#10;JunkyardGameCon&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/Views/JunkyardGameContainer.cs&#10;OnLoadComplete&#9;null&#9;null&#10;GarageViewCon&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/ViewControllers/GarageViewController.cs&#10;GarageViewM&#9;null&#9;null&#10;JunkyardPrel&#9;null&#9;null&#10;AbstractView&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/PandeaGames/Views/AbstractUnityView.cs&#10;WorldMap&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/ViewControllers/WorldMapViewController.cs&#10;Tournament&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/scripts/Data/Tournaments/Tournament.cs&#10;JunkyardUser&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/scripts/Data/Entities/JunkyardUser.cs&#10;Simulation&#9;null&#9;null&#10;TakeJunk&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/scripts/Runtime/Dialogs/ViewModels/TakeJunkDialogViewModel.cs&#10;TournamentViewContr&#9;null&#9;null&#10;UserPartici&#9;null&#9;null&#10;UserPartic&#9;null&#9;null&#10;Event&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/scripts/Runtime/Dialogs/EventDialog.cs&#10;GameLoader&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/GameLoader.cs&#10;TournamentRender&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/scripts/Runtime/UI/TournamentStateRenderer.cs&#10;MatchControll&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/scripts/Runtime/Controllers/MatchController.cs&#10;ChooseBot&#9;null&#9;null&#10;TournamentTe&#9;null&#9;null&#10;Match&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/ViewControllers/MatchTestViewController.cs&#10;ChooseCoun&#9;null&#9;null&#10;ChooseNation&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/Views/ChooseNationlaityView.cs&#10;AssetManagerI&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/PandeaGames/Services/AssetBundleManagerInit.cs&#10;AssetBundleManager&#9;null&#9;null&#10;ExecuteInternalMono&#9;null&#9;null&#10;Dialog&#9;null&#9;null&#10;TakeJunkDialog&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/scripts/Runtime/Dialogs/TakeJunkDialog.cs&#10;JunkyardView&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/Views/JunkyardView.cs&#10;JunkyardScree&#9;null&#9;null&#10;ChooseUserBot&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/scripts/Runtime/Controllers/ChooseUserBotController.cs&#10;Choose&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/ViewControllers/ChooseBotFromInventoryViewController.cs&#10;TournamentStat&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/scripts/Data/Entities/TournamentState.cs&#10;MatchTestDa&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/Data/MatchTestData.cs&#10;MatchTest&#9;null&#9;null&#10;GarageTest&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/ViewControllers/GarageTestViewController.cs&#10;GarageFoc&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/Views/GarageFocusedView.cs&#10;BotBuilderDisplay&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/scripts/Runtime/UI/ComponentRendering/BotBuilderDisplay.cs" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C#" />
   </component>
@@ -855,12 +739,18 @@
       <workItem from="1546052748452" duration="734000" />
       <workItem from="1546053944063" duration="2586000" />
       <workItem from="1546115207024" duration="6645000" />
-      <workItem from="1546150520917" duration="3615000" />
+      <workItem from="1546150520917" duration="3788000" />
+      <workItem from="1546667781113" duration="1167000" />
+      <workItem from="1546669513702" duration="2479000" />
+      <workItem from="1546831767216" duration="2004000" />
+      <workItem from="1547955118689" duration="11240000" />
+      <workItem from="1548609656601" duration="12231000" />
+      <workItem from="1548632755444" duration="636000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="307532000" />
+    <option name="totallyTimeSpent" value="337462000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -873,23 +763,22 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1381" height="885" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="right" id="Errors In Solution" order="3" weight="0.32955405" />
       <window_info anchor="bottom" id="Event Log" order="14" sideWeight="0.5026455" side_tool="true" weight="0.32933334" />
       <window_info anchor="bottom" id="Unit Tests" order="9" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="13" />
+      <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Terminal" order="11" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26455027" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2244898" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Unity" order="10" />
+      <window_info anchor="bottom" id="Unity" order="10" weight="0.32933334" />
       <window_info anchor="right" id="Database" order="4" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.48979592" visible="true" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.48979592" weight="0.50666666" />
       <window_info anchor="bottom" id="NuGet" order="12" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -949,570 +838,551 @@
           </properties>
           <option name="timeStamp" value="257" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/PandeaGames/ViewControllers/ContainerViewController.cs</url>
+          <line>9</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/PandeaGames/ViewControllers/ContainerViewController.cs" initialLine="9">
+            <startOffsets>
+              <startOffset value="316" />
+            </startOffsets>
+            <endOffsets>
+              <endOffset value="333" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="292" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/PandeaGames/ViewControllers/ContainerViewController.cs</url>
+          <line>18</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/PandeaGames/ViewControllers/ContainerViewController.cs" initialLine="18">
+            <startOffsets>
+              <startOffset value="555" />
+            </startOffsets>
+            <endOffsets>
+              <endOffset value="582" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="293" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/PandeaGames/ViewControllers/ContainerViewController.cs</url>
+          <line>15</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/PandeaGames/ViewControllers/ContainerViewController.cs" initialLine="15">
+            <startOffsets>
+              <startOffset value="467" />
+            </startOffsets>
+            <endOffsets>
+              <endOffset value="491" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="301" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/PandeaGames/ViewControllers/ContainerViewController.cs</url>
+          <line>23</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/PandeaGames/ViewControllers/ContainerViewController.cs" initialLine="23">
+            <startOffsets>
+              <startOffset value="662" />
+            </startOffsets>
+            <endOffsets>
+              <endOffset value="687" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="302" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/PandeaGames/ViewControllers/ContainerViewController.cs</url>
+          <line>28</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/PandeaGames/ViewControllers/ContainerViewController.cs" initialLine="28">
+            <startOffsets>
+              <startOffset value="776" />
+            </startOffsets>
+            <endOffsets>
+              <endOffset value="796" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="303" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/PandeaGames/ViewControllers/ContainerViewController.cs</url>
+          <line>34</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/PandeaGames/ViewControllers/ContainerViewController.cs" initialLine="34">
+            <startOffsets>
+              <startOffset value="907" />
+            </startOffsets>
+            <endOffsets>
+              <endOffset value="921" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="304" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/PandeaGames/ViewControllers/ContainerViewController.cs</url>
+          <line>17</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/PandeaGames/ViewControllers/ContainerViewController.cs" initialLine="17">
+            <startOffsets>
+              <startOffset value="517" />
+            </startOffsets>
+            <endOffsets>
+              <endOffset value="542" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="327" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="282" />
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+      <option name="time" value="451" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Assets/PandeaGames/Views/AbstractUnityView.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/client/Data/UnityData/ViewStaticData.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="96" column="30" selection-start-line="96" selection-start-column="30" selection-end-line="96" selection-end-column="30" />
+        <state relative-caret-position="270">
+          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/client/Views/WorldMapView.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/PandeaGames/ViewControllers/AbstractViewController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="22" column="32" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/client/ViewControllers/MatchTestViewController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="33" column="45" selection-start-line="33" selection-start-column="45" selection-end-line="33" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Screens/ChooseBotScreen.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="35" column="8" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/PandeaGames/Runtime/Gameplay/Camera/CameraMaster.cs">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Controllers/ChooseUserBotController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="876">
-          <caret line="89" column="30" lean-forward="true" selection-start-line="89" selection-start-column="30" selection-end-line="89" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/client/ViewModels/WorldMapViewModel.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Dialogs/ViewModels/EventDialogViewModel.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/client/ViewControllers/MatchViewController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="12" column="23" lean-forward="true" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/client/ViewControllers/FullMatchViewController.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/PandeaGames/Views/ContainerView.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="465">
-          <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+          <caret line="31" column="46" selection-start-line="31" selection-start-column="46" selection-end-line="31" selection-end-column="46" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/client/ViewControllers/JunkyardFullGameViewController.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/client/Views/ChooseNationlaityView.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="34" column="9" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
+        <state relative-caret-position="165">
+          <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Entities/StageState.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/client/ViewModels/HubViewModel.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2895">
-          <caret line="194" column="13" selection-start-line="194" selection-start-column="13" selection-end-line="194" selection-end-column="13" />
+        <state relative-caret-position="30">
+          <caret line="2" column="55" selection-start-line="2" selection-start-column="55" selection-end-line="2" selection-end-column="55" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/PandeaGames/ViewControllers/AbstractViewControllerFsm.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/PandeaGames/ViewModels/AbstractStatefulViewModel.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1395">
-          <caret line="95" column="21" selection-start-line="95" selection-start-column="21" selection-end-line="95" selection-end-column="21" />
+        <state relative-caret-position="448">
+          <caret line="39" column="13" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Controllers/MatchController.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/Navigation/HubTabGroup.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="62" column="4" selection-start-line="62" selection-start-column="4" selection-end-line="62" selection-end-column="4" />
+        <state relative-caret-position="103">
+          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/unity-ui-extensions/Scripts/TabNavigationHelper.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="19" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/PandeaGames/UI/TabGroup.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="38" column="48" selection-start-line="38" selection-start-column="48" selection-end-line="38" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/PandeaGames/UI/Tab.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/PandeaGames/UI/SimpleButtonTab.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="24" column="9" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/client/ViewControllers/StatesCommon/SplashState.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="18" column="9" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/client/GameLoader.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="23" column="41" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
+        <state relative-caret-position="135">
+          <caret line="10" column="40" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/TournamentStateRenderer.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/PandeaGames/Views/SceneView.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
+        <state relative-caret-position="240">
+          <caret line="20" column="27" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Participants/UserAutoParticipant.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/client/ViewControllers/StatesCommon/AbstractLoadingState.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        <state relative-caret-position="208">
+          <caret line="36" column="20" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
+          <folding>
+            <marker date="1548610168769" expanded="false" signature="6:92" ph="..." />
+            <marker date="1548610168769" expanded="true" signature="213:1414" ph="{...}" />
+            <marker date="1548610168769" expanded="true" signature="414:547" ph="{...}" />
+            <marker date="1548610168769" expanded="true" signature="611:680" ph="{...}" />
+            <marker date="1548610168769" expanded="true" signature="736:1041" ph="{...}" />
+            <marker date="1548610168769" expanded="true" signature="873:936" ph="{...}" />
+            <marker date="1548610168769" expanded="true" signature="1085:1349" ph="{...}" />
+            <marker date="1548610168769" expanded="true" signature="1232:1294" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/client/ViewControllers/TournemantTestViewController.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/client/Data/JunkyardStaticDataLoader.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="38" column="33" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/client/ViewControllers/WorldMapViewController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/client/ViewControllers/JunkyardDogsViewController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/client/Views/ChooseBotFromInventoryView.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="15" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Participants/Participant.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Participants/UserParticipant.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/client/ViewControllers/ChooseBotFromInventoryViewController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="10" column="41" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/client/ViewModels/ChooseBotFromInventoryViewModel.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="10" column="44" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/MatchStateRenderer.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="34" column="9" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
+        <state relative-caret-position="178">
+          <caret line="16" column="37" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/client/ViewControllers/TournemantViewController.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="160" column="63" selection-start-line="160" selection-start-column="63" selection-end-line="160" selection-end-column="63" />
+        <state relative-caret-position="159">
+          <caret line="94" column="17" selection-start-line="94" selection-start-column="17" selection-end-line="94" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/PandeaGames/Views/Screens/WindowView.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/PandeaGames/ViewControllers/ContainerViewController.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="35">
-          <caret line="111" column="39" selection-start-line="111" selection-start-column="20" selection-end-line="111" selection-end-column="39" />
+        <state relative-caret-position="345">
+          <caret line="23" column="12" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/client/Views/MatchView.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/PandeaGames/Views/Services/DialogService.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/client/ViewControllers/JunkyardDogsGameViewController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/client/Views/SimpleWindowView.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="19" column="11" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/PandeaGames/ViewControllers/IViewController.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
-          <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
+          <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Gameplay/SpecificationCatalogue.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/client/Views/JunkyardGameContainer.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="75" column="5" selection-start-line="75" selection-start-column="5" selection-end-line="75" selection-end-column="5" />
+        <state relative-caret-position="300">
+          <caret line="29" column="43" selection-start-line="29" selection-start-column="43" selection-end-line="29" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/client/ViewControllers/GarageViewController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="131" column="57" selection-start-line="131" selection-start-column="57" selection-end-line="131" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/PandeaGames/Views/AbstractUnityView.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="49" column="12" selection-start-line="49" selection-start-column="12" selection-end-line="49" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/client/Views/WorldMapView.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="7" column="45" lean-forward="true" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Scenes/Garage.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="81" column="38" selection-start-line="81" selection-start-column="38" selection-end-line="81" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Components/BotBuilder.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="47" column="15" selection-start-line="47" selection-start-column="15" selection-end-line="47" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/client/ViewModels/GarageViewModel.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="57" column="23" selection-start-line="57" selection-start-column="23" selection-end-line="57" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/client/Views/GarageView.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/client/ViewControllers/HubViewController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="39" column="5" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/client/ViewControllers/JunkyardViewController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Screens/JunkyardScreen.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="8" column="39" lean-forward="true" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/client/Views/JunkyardView.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="32" column="34" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/client/ViewModels/JunkyardViewModel.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="17" column="41" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Dialogs/ViewModels/TakeJunkDialogViewModel.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="6" selection-start-column="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Entities/Tournaments.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="30" column="37" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Entities/JunkyardUser.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
-          <folding>
-            <marker date="1542520551086" expanded="false" signature="6:245" ph="..." />
-            <marker date="1542520551086" expanded="true" signature="662:728" ph="{...}" />
-            <marker date="1542520551086" expanded="true" signature="755:847" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Weapons/Weapon.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
-          <folding>
-            <marker date="1523681714417" expanded="false" signature="6:75" ph="..." />
-            <marker date="1523681714417" expanded="true" signature="173:851" ph="{...}" />
-            <marker date="1523681714417" expanded="true" signature="482:732" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Weapons/ProjectileWeapon.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
-          <folding>
-            <marker date="1523681708231" expanded="false" signature="6:126" ph="..." />
-            <marker date="1523681708231" expanded="true" signature="320:1138" ph="{...}" />
-            <marker date="1523681708231" expanded="true" signature="493:899" ph="{...}" />
-            <marker date="1523681708231" expanded="true" signature="947:994" ph="{...}" />
-            <marker date="1523681708231" expanded="true" signature="1058:1132" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Weapons/Assailments/Assailer.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-          <folding>
-            <marker date="1515959369465" expanded="false" signature="6:44" ph="..." />
-            <marker date="1515959369465" expanded="true" signature="83:375" ph="{...}" />
-            <marker date="1515959369465" expanded="true" signature="130:373" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Weapons/Assailments/MeleeWeapon.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="6" column="34" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
-          <folding>
-            <marker date="1546120136077" expanded="false" signature="6:44" ph="..." />
-            <marker date="1546120136077" expanded="true" signature="225:342" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/C9C46045-1988-4A6A-9389-04A7B265ABE7/f8/57dea6a7/StateMachineBehaviour.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Weapons/Melee.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
-          <folding>
-            <marker date="1546120142108" expanded="false" signature="6:126" ph="..." />
-            <marker date="1546120142108" expanded="true" signature="165:1085" ph="{...}" />
-            <marker date="1546120142108" expanded="true" signature="287:1083" ph="{...}" />
-            <marker date="1546120142108" expanded="true" signature="570:843" ph="{...}" />
-            <marker date="1546120142108" expanded="true" signature="891:944" ph="{...}" />
-            <marker date="1546120142108" expanded="true" signature="1008:1077" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/client/Simulation/SimulationService.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="160" column="79" selection-start-line="160" selection-start-column="79" selection-end-line="160" selection-end-column="79" />
-          <folding>
-            <marker date="1546121108303" expanded="true" signature="0:155" ph="/* mass is how dense the material is ... */" />
-            <marker date="1546121108303" expanded="false" signature="163:517" ph="..." />
-            <marker date="1546121108303" expanded="true" signature="552:19633" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="576:614" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="664:18147" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="1264:1327" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="1472:1586" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="1660:1908" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="1966:2550" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="2609:3144" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="2944:3050" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="3067:3134" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="3182:3301" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="3354:3402" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="3454:3587" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="3512:3577" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="3638:4298" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="3696:4288" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="3727:3978" ph="/* TODO: Figure out how to keep simlulation fixed step, ... */" />
-            <marker date="1546121108303" expanded="true" signature="4040:4153" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="4348:4411" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="4455:5386" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="4508:4699" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="5050:5376" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="5422:5752" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="5468:5520" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="5584:5742" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="5827:6554" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="6642:7533" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="6879:7350" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="7079:7187" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="7223:7336" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="7392:7523" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="7614:10156" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="7720:8588" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="8233:8437" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="8486:8574" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="8673:9352" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="8704:8850" ph="/* TODO: get 3 from the speed of the chassis. based on weight and locomotion ... */" />
-            <marker date="1546121108303" expanded="true" signature="9369:10146" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="9554:9634" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="9809:9923" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="9944:10093" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="10268:11628" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="10433:10939" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="11774:12999" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="11876:12845" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="13070:13132" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="13200:13317" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="13361:14420" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="13464:13660" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="13753:14410" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="13971:14396" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="14230:14378" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="14507:17204" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="14918:15155" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="15072:15141" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="15214:15272" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="15332:17167" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="15988:16111" ph="/* var p3 = { x:p1.x - c.x, y: p1.y - c.y}; //shifted line points ... */" />
-            <marker date="1546121108303" expanded="true" signature="16442:16540" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="16948:17102" ph="/* var i1 = { x:t1 + c.x, y:m * t1 + b + c.y }; //intercept point 1 ... */" />
-            <marker date="1546121108303" expanded="true" signature="17262:17615" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="17371:17605" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="17645:18131" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="18027:18121" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="18184:18413" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="18445:18556" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="18596:18690" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="18728:19631" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="18911:18963" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="18994:19050" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="19084:19204" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="19233:19320" ph="{...}" />
-            <marker date="1546121108303" expanded="true" signature="19350:19438" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/client/ViewModels/TournamentViewModel.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="85" column="40" selection-start-line="85" selection-start-column="40" selection-end-line="85" selection-end-column="40" />
-          <folding>
-            <marker date="1546121229253" expanded="false" signature="6:172" ph="..." />
-            <marker date="1546121229253" expanded="true" signature="196:3193" ph="{...}" />
-            <marker date="1546121229253" expanded="true" signature="203:515" ph="/* private WeakReference _tournament; ... */" />
-            <marker date="1546121229253" expanded="true" signature="594:3191" ph="{...}" />
-            <marker date="1546121229253" expanded="true" signature="752:807" ph="{...}" />
-            <marker date="1546121229253" expanded="true" signature="952:1002" ph="{...}" />
-            <marker date="1546121229253" expanded="true" signature="1076:1990" ph="{...}" />
-            <marker date="1546121229253" expanded="true" signature="1125:1969" ph="{...}" />
-            <marker date="1546121229253" expanded="true" signature="1501:1864" ph="{...}" />
-            <marker date="1546121229253" expanded="true" signature="1630:1779" ph="{...}" />
-            <marker date="1546121229253" expanded="true" signature="1885:1955" ph="{...}" />
-            <marker date="1546121229253" expanded="true" signature="2055:2471" ph="{...}" />
-            <marker date="1546121229253" expanded="true" signature="2195:2433" ph="{...}" />
-            <marker date="1546121229253" expanded="true" signature="2324:2387" ph="{...}" />
-            <marker date="1546121229253" expanded="true" signature="2560:3185" ph="{...}" />
-            <marker date="1546121229253" expanded="true" signature="2857:3164" ph="{...}" />
-            <marker date="1546121229253" expanded="true" signature="3000:3139" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/client/Simulation/Engagement.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="57" column="24" selection-start-line="57" selection-start-column="24" selection-end-line="57" selection-end-column="24" />
-          <folding>
-            <marker date="1544390972318" expanded="false" signature="6:101" ph="..." />
-            <marker date="1544390972318" expanded="true" signature="136:1774" ph="{...}" />
-            <marker date="1544390972318" expanded="true" signature="202:1556" ph="{...}" />
-            <marker date="1544390972318" expanded="true" signature="591:641" ph="{...}" />
-            <marker date="1544390972318" expanded="true" signature="674:779" ph="{...}" />
-            <marker date="1544390972318" expanded="true" signature="813:920" ph="{...}" />
-            <marker date="1544390972318" expanded="true" signature="960:1015" ph="{...}" />
-            <marker date="1544390972318" expanded="true" signature="1043:1137" ph="{...}" />
-            <marker date="1544390972318" expanded="true" signature="1069:1127" ph="{...}" />
-            <marker date="1544390972318" expanded="true" signature="1188:1255" ph="{...}" />
-            <marker date="1544390972318" expanded="true" signature="1338:1550" ph="{...}" />
-            <marker date="1544390972318" expanded="true" signature="1583:1622" ph="{...}" />
-            <marker date="1544390972318" expanded="true" signature="1686:1771" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/PandeaGames/Runtime/Controllers/Scripts/StateMachine.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-          <folding>
-            <marker date="1533007656834" expanded="false" signature="6:92" ph="..." />
-            <marker date="1533007656834" expanded="true" signature="168:786" ph="{...}" />
-            <marker date="1533007656834" expanded="true" signature="280:328" ph="{...}" />
-            <marker date="1533007656834" expanded="true" signature="385:603" ph="{...}" />
-            <marker date="1533007656834" expanded="true" signature="472:597" ph="{...}" />
-            <marker date="1533007656834" expanded="true" signature="641:685" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8DDA3E33-2B16-497D-8634-252EEEAC0F12/65/ef5fd6e0/Program.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="62" column="36" selection-start-line="62" selection-start-column="36" selection-end-line="62" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Entities/TournamentState.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="105" column="47" selection-start-line="105" selection-start-column="24" selection-end-line="105" selection-end-column="47" />
-          <folding>
-            <marker date="1546154053617" expanded="false" signature="6:161" ph="..." />
-            <marker date="1546154053617" expanded="true" signature="191:2230" ph="{...}" />
-            <marker date="1546154053617" expanded="true" signature="228:509" ph="{...}" />
-            <marker date="1546154053617" expanded="true" signature="410:503" ph="{...}" />
-            <marker date="1546154053617" expanded="true" signature="748:825" ph="{...}" />
-            <marker date="1546154053617" expanded="true" signature="859:871" ph="{...}" />
-            <marker date="1546154053617" expanded="true" signature="941:1094" ph="{...}" />
-            <marker date="1546154053617" expanded="true" signature="1135:1415" ph="{...}" />
-            <marker date="1546154053617" expanded="true" signature="1239:1385" ph="{...}" />
-            <marker date="1546154053617" expanded="true" signature="1324:1375" ph="{...}" />
-            <marker date="1546154053617" expanded="true" signature="1445:1504" ph="{...}" />
-            <marker date="1546154053617" expanded="true" signature="1543:1586" ph="{...}" />
-            <marker date="1546154053617" expanded="true" signature="1629:1683" ph="{...}" />
-            <marker date="1546154053617" expanded="true" signature="1723:1786" ph="{...}" />
-            <marker date="1546154053617" expanded="true" signature="1841:1903" ph="{...}" />
-            <marker date="1546154053617" expanded="true" signature="1944:2228" ph="{...}" />
-            <marker date="1546154053617" expanded="true" signature="2272:2699" ph="{...}" />
-            <marker date="1546154053617" expanded="true" signature="2356:2464" ph="{...}" />
-            <marker date="1546154053617" expanded="true" signature="2563:2697" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Tournament.cs">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
+          <caret line="36" column="9" lean-forward="true" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/client/ViewControllers/PreloadViewController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1080">
+          <caret line="76" column="27" selection-start-line="76" selection-start-column="27" selection-end-line="76" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/PandeaGames/Views/IView.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/client/Views/JunkyardPreloadView.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="32" column="8" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/PandeaGames/ViewControllers/AbstractViewController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="8" column="38" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/PandeaGames/Views/HubView.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/client/ViewControllers/JunkyardDogsViewController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="92" column="40" selection-start-line="92" selection-start-column="40" selection-end-line="92" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/client/ViewControllers/JunkyardFullGameViewController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="31" column="55" selection-start-line="31" selection-start-column="55" selection-end-line="31" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9C9F068C-46C6-4FFD-91FD-A7AF157B4D15/0b/40bd1fd4/Monitor.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="57" column="8" selection-start-line="57" selection-start-column="8" selection-end-line="57" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/344DC4D3-F1AD-4180-9DF7-8607B6121A41/fa/46bda9b4/Socket.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="106">
+          <caret line="3186" column="8" selection-start-line="3186" selection-start-column="8" selection-end-line="3186" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9C9F068C-46C6-4FFD-91FD-A7AF157B4D15/65/aa288621/ThreadHelper.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="106">
+          <caret line="38" column="8" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CA4C2132-6E0F-4A9B-BAC9-2D72C6B25AB6/df/ae2446fa/SocketWire.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="106">
+          <caret line="362" column="14" selection-start-line="362" selection-start-column="14" selection-end-line="362" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CA4C2132-6E0F-4A9B-BAC9-2D72C6B25AB6/fe/0d0a944b/RProperty`1.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="106">
+          <caret line="49" column="10" selection-start-line="49" selection-start-column="10" selection-end-line="49" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CA4C2132-6E0F-4A9B-BAC9-2D72C6B25AB6/07/c48beeaf/Signal`1.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9C9F068C-46C6-4FFD-91FD-A7AF157B4D15/82/26f96e8f/ExecutionContext.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="91">
+          <caret line="267" column="9" lean-forward="true" selection-start-line="267" selection-start-column="9" selection-end-line="267" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/PandeaGames/ViewControllers/AbstractViewControllerFsm.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1815">
+          <caret line="123" column="16" selection-start-line="123" selection-start-column="16" selection-end-line="123" selection-end-column="16" />
           <folding>
-            <marker date="1546151158460" expanded="false" signature="6:171" ph="..." />
-            <marker date="1546151158460" expanded="true" signature="299:1698" ph="{...}" />
-            <marker date="1546151158460" expanded="true" signature="730:784" ph="{...}" />
-            <marker date="1546151158460" expanded="true" signature="838:880" ph="{...}" />
-            <marker date="1546151158460" expanded="true" signature="911:959" ph="{...}" />
-            <marker date="1546151158460" expanded="true" signature="1006:1051" ph="{...}" />
-            <marker date="1546151158460" expanded="true" signature="1135:1185" ph="{...}" />
-            <marker date="1546151158460" expanded="true" signature="1242:1382" ph="{...}" />
-            <marker date="1546151158460" expanded="true" signature="1430:1696" ph="{...}" />
+            <marker date="1548629486922" expanded="false" signature="6:66" ph="..." />
+            <marker date="1548629486922" expanded="true" signature="111:4718" ph="{...}" />
+            <marker date="1548629486922" expanded="true" signature="174:1567" ph="{...}" />
+            <marker date="1548629486922" expanded="true" signature="366:410" ph="{...}" />
+            <marker date="1548629486922" expanded="true" signature="473:518" ph="{...}" />
+            <marker date="1548629486922" expanded="true" signature="578:1003" ph="{...}" />
+            <marker date="1548629486922" expanded="true" signature="680:993" ph="{...}" />
+            <marker date="1548629486922" expanded="true" signature="1061:1387" ph="{...}" />
+            <marker date="1548629486922" expanded="true" signature="1112:1377" ph="{...}" />
+            <marker date="1548629486922" expanded="true" signature="1430:1561" ph="{...}" />
+            <marker date="1548629486922" expanded="true" signature="1481:1551" ph="{...}" />
+            <marker date="1548629486922" expanded="true" signature="1647:4716" ph="{...}" />
+            <marker date="1548629486922" expanded="true" signature="1956:2059" ph="{...}" />
+            <marker date="1548629486922" expanded="true" signature="2184:2487" ph="{...}" />
+            <marker date="1548629486922" expanded="true" signature="2238:2305" ph="{...}" />
+            <marker date="1548629486922" expanded="true" signature="2540:2634" ph="{...}" />
+            <marker date="1548629486922" expanded="true" signature="2675:2921" ph="{...}" />
+            <marker date="1548629486922" expanded="true" signature="2750:2825" ph="{...}" />
+            <marker date="1548629486922" expanded="true" signature="2842:2911" ph="{...}" />
+            <marker date="1548629486922" expanded="true" signature="2986:4310" ph="{...}" />
+            <marker date="1548629486922" expanded="true" signature="3009:3068" ph="/* TaskProvider.Instance.DelayedAction(() =&gt; ... */" />
+            <marker date="1548629486922" expanded="true" signature="3221:3285" ph="{...}" />
+            <marker date="1548629486922" expanded="true" signature="3347:3517" ph="{...}" />
+            <marker date="1548629486922" expanded="true" signature="3731:3827" ph="{...}" />
+            <marker date="1548629486922" expanded="true" signature="4353:4409" ph="{...}" />
+            <marker date="1548629486922" expanded="true" signature="4448:4710" ph="{...}" />
+            <marker date="1548629486922" expanded="true" signature="4577:4700" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/TournamentTimerDisplay.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/PandeaGames/Views/Screens/ScreenView.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="42" column="21" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
+        <state relative-caret-position="855">
+          <caret line="59" column="9" selection-start-line="59" selection-start-column="9" selection-end-line="59" selection-end-column="9" />
           <folding>
-            <marker date="1546154079983" expanded="true" signature="11:88" ph="..." />
-            <marker date="1546154079983" expanded="true" signature="140:1437" ph="{...}" />
-            <marker date="1546154079983" expanded="true" signature="415:506" ph="{...}" />
-            <marker date="1546154079983" expanded="true" signature="557:788" ph="{...}" />
-            <marker date="1546154079983" expanded="true" signature="723:782" ph="{...}" />
-            <marker date="1546154079983" expanded="true" signature="858:928" ph="{...}" />
-            <marker date="1546154079983" expanded="true" signature="955:1435" ph="{...}" />
-            <marker date="1546154079983" expanded="true" signature="1012:1429" ph="{...}" />
+            <marker date="1542003716850" expanded="false" signature="6:58" ph="..." />
+            <marker date="1542003716850" expanded="true" signature="95:2047" ph="{...}" />
+            <marker date="1542003716850" expanded="true" signature="141:2045" ph="{...}" />
+            <marker date="1542003716850" expanded="true" signature="501:551" ph="{...}" />
+            <marker date="1542003716850" expanded="true" signature="588:1008" ph="{...}" />
+            <marker date="1542003716850" expanded="true" signature="691:998" ph="{...}" />
+            <marker date="1542003716850" expanded="true" signature="1038:1377" ph="{...}" />
+            <marker date="1542003716850" expanded="true" signature="1117:1367" ph="{...}" />
+            <marker date="1542003716850" expanded="true" signature="1446:1523" ph="{...}" />
+            <marker date="1542003716850" expanded="true" signature="1580:1666" ph="{...}" />
+            <marker date="1542003716850" expanded="true" signature="1711:1821" ph="{...}" />
+            <marker date="1542003716850" expanded="true" signature="1852:1930" ph="{...}" />
+            <marker date="1542003716850" expanded="true" signature="1961:2039" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Dialogs/EventDialog.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/client/Views/MatchView.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="51" column="1" lean-forward="true" selection-start-line="51" selection-start-column="1" selection-end-line="51" selection-end-column="1" />
+        <state relative-caret-position="210">
+          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
           <folding>
-            <marker date="1546154161712" expanded="false" signature="6:328" ph="..." />
-            <marker date="1546154161712" expanded="true" signature="385:3403" ph="{...}" />
-            <marker date="1546154161712" expanded="true" signature="971:1438" ph="{...}" />
-            <marker date="1546154161712" expanded="true" signature="1263:1352" ph="{...}" />
-            <marker date="1546154161712" expanded="true" signature="1465:1620" ph="{...}" />
-            <marker date="1546154161712" expanded="true" signature="1499:1614" ph="{...}" />
-            <marker date="1546154161712" expanded="true" signature="1679:1700" ph="{...}" />
-            <marker date="1546154161712" expanded="true" signature="1739:2539" ph="{...}" />
-            <marker date="1546154161712" expanded="true" signature="1971:2039" ph="{...}" />
-            <marker date="1546154161712" expanded="true" signature="2576:3401" ph="{...}" />
-            <marker date="1546154161712" expanded="true" signature="2882:3395" ph="{...}" />
-            <marker date="1546154161712" expanded="true" signature="2981:3383" ph="{...}" />
-            <marker date="1546154161712" expanded="true" signature="3150:3369" ph="{...}" />
+            <marker date="1546118274235" expanded="true" signature="95:313" ph="{...}" />
+            <marker date="1546118274235" expanded="true" signature="144:177" ph="{...}" />
+            <marker date="1546118274235" expanded="true" signature="214:307" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/PandeaGames/Views/Screens/WindowView.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="144" column="22" lean-forward="true" selection-start-line="144" selection-start-column="22" selection-end-line="144" selection-end-column="22" />
+          <folding>
+            <marker date="1548630051665" expanded="false" signature="6:127" ph="..." />
+            <marker date="1548630051665" expanded="true" signature="164:5671" ph="{...}" />
+            <marker date="1548630051665" expanded="true" signature="211:248" ph="{...}" />
+            <marker date="1548630051665" expanded="true" signature="306:953" ph="{...}" />
+            <marker date="1548630051665" expanded="true" signature="621:677" ph="{...}" />
+            <marker date="1548630051665" expanded="true" signature="751:839" ph="{...}" />
+            <marker date="1548630051665" expanded="true" signature="922:947" ph="{...}" />
+            <marker date="1548630051665" expanded="true" signature="1007:5669" ph="{...}" />
+            <marker date="1548630051665" expanded="true" signature="1319:1412" ph="{...}" />
+            <marker date="1548630051665" expanded="true" signature="1460:1830" ph="{...}" />
+            <marker date="1548630051665" expanded="true" signature="1639:1712" ph="{...}" />
+            <marker date="1548630051665" expanded="true" signature="1752:1820" ph="{...}" />
+            <marker date="1548630051665" expanded="true" signature="1905:1981" ph="{...}" />
+            <marker date="1548630051665" expanded="true" signature="2043:2289" ph="{...}" />
+            <marker date="1548630051665" expanded="true" signature="2084:2173" ph="{...}" />
+            <marker date="1548630051665" expanded="true" signature="2190:2279" ph="{...}" />
+            <marker date="1548630051665" expanded="true" signature="2375:2676" ph="{...}" />
+            <marker date="1548630051665" expanded="true" signature="2417:2666" ph="{...}" />
+            <marker date="1548630051665" expanded="true" signature="2716:2757" ph="{...}" />
+            <marker date="1548630051665" expanded="true" signature="2800:2933" ph="{...}" />
+            <marker date="1548630051665" expanded="true" signature="2978:3204" ph="{...}" />
+            <marker date="1548630051665" expanded="true" signature="3018:3129" ph="{...}" />
+            <marker date="1548630051665" expanded="true" signature="3281:3786" ph="{...}" />
+            <marker date="1548630051665" expanded="true" signature="3529:3592" ph="{...}" />
+            <marker date="1548630051665" expanded="true" signature="3868:5002" ph="{...}" />
+            <marker date="1548630051665" expanded="true" signature="3990:4143" ph="{...}" />
+            <marker date="1548630051665" expanded="true" signature="4177:4325" ph="{...}" />
+            <marker date="1548630051665" expanded="true" signature="4369:4454" ph="{...}" />
+            <marker date="1548630051665" expanded="true" signature="5073:5106" ph="{...}" />
+            <marker date="1548630051665" expanded="true" signature="5168:5287" ph="{...}" />
+            <marker date="1548630051665" expanded="true" signature="5345:5663" ph="{...}" />
+            <marker date="1548630051665" expanded="true" signature="5550:5613" ph="{...}" />
           </folding>
         </state>
       </provider>

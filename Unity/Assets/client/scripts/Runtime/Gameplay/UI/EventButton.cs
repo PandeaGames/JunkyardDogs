@@ -18,6 +18,9 @@ public class EventButton : MonoBehaviour
     [SerializeField] 
     private uint _viewModelInstanceId;
     
+    [SerializeField]
+    private TournamentTimerDisplay _timerDisplay;
+    
     private Button _button;
     private WorldMapViewModel _vm;
 
@@ -27,10 +30,21 @@ public class EventButton : MonoBehaviour
         _button = GetComponent<Button>();
         _button.onClick.AddListener(onClick);
         _text.text = Path.GetFileName(_tournament.Path);
+        _tournament.LoadAsync(OnTournamentLoaded, OnLoadError);
     }
 
     private void onClick()
     {
         _vm.TapTournament(_tournament);
+    }
+    
+    private void OnLoadError(LoadException loadException)
+    {
+        
+    }
+
+    private void OnTournamentLoaded()
+    {
+        _timerDisplay.Render(_tournament.Asset as Tournament);
     }
 }
