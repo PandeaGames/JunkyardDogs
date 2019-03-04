@@ -3,43 +3,43 @@
   <component name="ChangeListManager">
     <list default="true" id="6b6defc3-a091-4fde-bf1e-c3bdd679481d" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Static/ViewStaticData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Static/ViewStaticData.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Tournaments/Tournaments/MooseChallenge.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Tournaments/Tournaments/MooseChallenge.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Tournaments/Tournaments/MooseHerd.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Tournaments/Tournaments/MooseHerd.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/I2/Resources/I2Languages.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/I2/Resources/I2Languages.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PandeaGames/Data/WeakReference/Loader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PandeaGames/Data/WeakReference/Loader.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PandeaGames/ViewControllers/AbstractViewController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PandeaGames/ViewControllers/AbstractViewController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PandeaGames/ViewControllers/AbstractViewControllerFsm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PandeaGames/ViewControllers/AbstractViewControllerFsm.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PandeaGames/ViewModels/AbstractStatefulViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PandeaGames/ViewModels/AbstractStatefulViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PandeaGames/Views/AbstractUnityView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PandeaGames/Views/AbstractUnityView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PandeaGames/Views/ContainerView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PandeaGames/Views/ContainerView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PandeaGames/Views/SceneView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PandeaGames/Views/SceneView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PandeaGames/Views/Screens/WindowView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PandeaGames/Views/Screens/WindowView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/JunkyardGameView.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/JunkyardGameView.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/Data/UnityData/ViewStaticData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Data/UnityData/ViewStaticData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/ViewControllers/GarageViewController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/ViewControllers/GarageViewController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AssetBundles/Android/Android" beforeDir="false" afterPath="$PROJECT_DIR$/AssetBundles/Android/Android" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AssetBundles/Android/Android.manifest" beforeDir="false" afterPath="$PROJECT_DIR$/AssetBundles/Android/Android.manifest" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AssetBundles/Android/art" beforeDir="false" afterPath="$PROJECT_DIR$/AssetBundles/Android/art" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AssetBundles/Android/art.manifest" beforeDir="false" afterPath="$PROJECT_DIR$/AssetBundles/Android/art.manifest" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AssetBundles/Android/data" beforeDir="false" afterPath="$PROJECT_DIR$/AssetBundles/Android/data" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AssetBundles/Android/data.manifest" beforeDir="false" afterPath="$PROJECT_DIR$/AssetBundles/Android/data.manifest" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetBundleManager/Editor/BuildScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundleManager/Editor/BuildScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetBundleManager/Utility.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundleManager/Utility.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/Skylabs/Locomotion.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Simulation/New Folder.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Tournaments/Participants/UserAutoParticipant_bot0.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Tournaments/Participants/UserAutoParticipant_bot0.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Tournaments/Tournaments 1.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/StaticData.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/I2/Localization/I2Localization_PlayMaker.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Industrial_lights/Models/ceiling_light.fbm.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Industrial_lights/Models/ceiling_light.fbm.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/New folder.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PandeaGames/Runtime/Gameplay/Dialogs/ViewModels.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Editor/JetBrains/JetBrains.Rider.Unity.Editor.Plugin.Repacked.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Editor/JetBrains/JetBrains.Rider.Unity.Editor.Plugin.Repacked.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/PlaymakerIntegration.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/SharpSerializer/SharpSerializer.csproj.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/Core.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/Data/Bot/Parts/Processing.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/Data/Static.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/client/ViewControllers/JunkyardDogsViewController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/ViewControllers/JunkyardDogsViewController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/ViewControllers/JunkyardFullGameViewController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/ViewControllers/JunkyardFullGameViewController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/ViewControllers/StatesCommon/AbstractLoadingState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/ViewControllers/StatesCommon/AbstractLoadingState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/Views/GarageView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Views/GarageView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/Views/JunkyardGameContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Views/JunkyardGameContainer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/Views/JunkyardPreloadView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Views/JunkyardPreloadView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/Views/WorldMapView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Views/WorldMapView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/scenes/ScreenBootstrap.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scenes/ScreenBootstrap.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/scenes/screens/junkyard.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scenes/screens/junkyard.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/scenes/screens/worldMap.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scenes/screens/worldMap.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/Tournaments.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/Tournaments.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Tournament.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Tournament.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Dialogs/EventDialog.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Dialogs/EventDialog.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/UI/EventButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/UI/EventButton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Scenes/Garage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Scenes/Garage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Screens/JunkyardScreen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Screens/JunkyardScreen.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/TournamentTimerDisplay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/TournamentTimerDisplay.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/Views/UnityViews.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scenes/etc.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Data/Bot.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Data/Components/NewFolder1.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Body.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Data.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,120 +47,161 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AbstractViewControllerFsm.cs" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/PandeaGames/ViewControllers/AbstractViewControllerFsm.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1815">
+            <state relative-caret-position="1635">
               <caret line="123" column="16" selection-start-line="123" selection-start-column="16" selection-end-line="123" selection-end-column="16" />
               <folding>
-                <marker date="1548629486922" expanded="false" signature="6:66" ph="..." />
-                <marker date="1548629486922" expanded="true" signature="111:4718" ph="{...}" />
-                <marker date="1548629486922" expanded="true" signature="174:1567" ph="{...}" />
-                <marker date="1548629486922" expanded="true" signature="366:410" ph="{...}" />
-                <marker date="1548629486922" expanded="true" signature="473:518" ph="{...}" />
-                <marker date="1548629486922" expanded="true" signature="578:1003" ph="{...}" />
-                <marker date="1548629486922" expanded="true" signature="680:993" ph="{...}" />
-                <marker date="1548629486922" expanded="true" signature="1061:1387" ph="{...}" />
-                <marker date="1548629486922" expanded="true" signature="1112:1377" ph="{...}" />
-                <marker date="1548629486922" expanded="true" signature="1430:1561" ph="{...}" />
-                <marker date="1548629486922" expanded="true" signature="1481:1551" ph="{...}" />
-                <marker date="1548629486922" expanded="true" signature="1647:4716" ph="{...}" />
-                <marker date="1548629486922" expanded="true" signature="1956:2059" ph="{...}" />
-                <marker date="1548629486922" expanded="true" signature="2184:2487" ph="{...}" />
-                <marker date="1548629486922" expanded="true" signature="2238:2305" ph="{...}" />
-                <marker date="1548629486922" expanded="true" signature="2540:2634" ph="{...}" />
-                <marker date="1548629486922" expanded="true" signature="2675:2921" ph="{...}" />
-                <marker date="1548629486922" expanded="true" signature="2750:2825" ph="{...}" />
-                <marker date="1548629486922" expanded="true" signature="2842:2911" ph="{...}" />
-                <marker date="1548629486922" expanded="true" signature="2986:4310" ph="{...}" />
-                <marker date="1548629486922" expanded="true" signature="3009:3068" ph="/* TaskProvider.Instance.DelayedAction(() =&gt; ... */" />
-                <marker date="1548629486922" expanded="true" signature="3221:3285" ph="{...}" />
-                <marker date="1548629486922" expanded="true" signature="3347:3517" ph="{...}" />
-                <marker date="1548629486922" expanded="true" signature="3731:3827" ph="{...}" />
-                <marker date="1548629486922" expanded="true" signature="4353:4409" ph="{...}" />
-                <marker date="1548629486922" expanded="true" signature="4448:4710" ph="{...}" />
-                <marker date="1548629486922" expanded="true" signature="4577:4700" ph="{...}" />
+                <marker date="1551677346807" expanded="false" signature="6:66" ph="..." />
+                <marker date="1551677346807" expanded="true" signature="111:4718" ph="{...}" />
+                <marker date="1551677346807" expanded="true" signature="174:1567" ph="{...}" />
+                <marker date="1551677346807" expanded="true" signature="366:410" ph="{...}" />
+                <marker date="1551677346807" expanded="true" signature="473:518" ph="{...}" />
+                <marker date="1551677346807" expanded="true" signature="578:1003" ph="{...}" />
+                <marker date="1551677346807" expanded="true" signature="680:993" ph="{...}" />
+                <marker date="1551677346807" expanded="true" signature="1061:1387" ph="{...}" />
+                <marker date="1551677346807" expanded="true" signature="1112:1377" ph="{...}" />
+                <marker date="1551677346807" expanded="true" signature="1430:1561" ph="{...}" />
+                <marker date="1551677346807" expanded="true" signature="1481:1551" ph="{...}" />
+                <marker date="1551677346807" expanded="true" signature="1647:4716" ph="{...}" />
+                <marker date="1551677346807" expanded="true" signature="1956:2059" ph="{...}" />
+                <marker date="1551677346807" expanded="true" signature="2184:2487" ph="{...}" />
+                <marker date="1551677346807" expanded="true" signature="2238:2305" ph="{...}" />
+                <marker date="1551677346807" expanded="true" signature="2540:2634" ph="{...}" />
+                <marker date="1551677346807" expanded="true" signature="2675:2921" ph="{...}" />
+                <marker date="1551677346807" expanded="true" signature="2750:2825" ph="{...}" />
+                <marker date="1551677346807" expanded="true" signature="2842:2911" ph="{...}" />
+                <marker date="1551677346807" expanded="true" signature="2986:4310" ph="{...}" />
+                <marker date="1551677346807" expanded="true" signature="3009:3068" ph="/* TaskProvider.Instance.DelayedAction(() =&gt; ... */" />
+                <marker date="1551677346807" expanded="true" signature="3221:3285" ph="{...}" />
+                <marker date="1551677346807" expanded="true" signature="3347:3517" ph="{...}" />
+                <marker date="1551677346807" expanded="true" signature="3731:3827" ph="{...}" />
+                <marker date="1551677346807" expanded="true" signature="4353:4409" ph="{...}" />
+                <marker date="1551677346807" expanded="true" signature="4448:4710" ph="{...}" />
+                <marker date="1551677346807" expanded="true" signature="4577:4700" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ScreenView.cs" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/PandeaGames/Views/Screens/ScreenView.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="855">
+            <state relative-caret-position="765">
               <caret line="59" column="9" selection-start-line="59" selection-start-column="9" selection-end-line="59" selection-end-column="9" />
               <folding>
-                <marker date="1542003716850" expanded="false" signature="6:58" ph="..." />
-                <marker date="1542003716850" expanded="true" signature="95:2047" ph="{...}" />
-                <marker date="1542003716850" expanded="true" signature="141:2045" ph="{...}" />
-                <marker date="1542003716850" expanded="true" signature="501:551" ph="{...}" />
-                <marker date="1542003716850" expanded="true" signature="588:1008" ph="{...}" />
-                <marker date="1542003716850" expanded="true" signature="691:998" ph="{...}" />
-                <marker date="1542003716850" expanded="true" signature="1038:1377" ph="{...}" />
-                <marker date="1542003716850" expanded="true" signature="1117:1367" ph="{...}" />
-                <marker date="1542003716850" expanded="true" signature="1446:1523" ph="{...}" />
-                <marker date="1542003716850" expanded="true" signature="1580:1666" ph="{...}" />
-                <marker date="1542003716850" expanded="true" signature="1711:1821" ph="{...}" />
-                <marker date="1542003716850" expanded="true" signature="1852:1930" ph="{...}" />
-                <marker date="1542003716850" expanded="true" signature="1961:2039" ph="{...}" />
+                <marker date="1551677346838" expanded="false" signature="6:58" ph="..." />
+                <marker date="1551677346838" expanded="true" signature="95:2047" ph="{...}" />
+                <marker date="1551677346838" expanded="true" signature="141:2045" ph="{...}" />
+                <marker date="1551677346838" expanded="true" signature="501:551" ph="{...}" />
+                <marker date="1551677346838" expanded="true" signature="588:1008" ph="{...}" />
+                <marker date="1551677346838" expanded="true" signature="691:998" ph="{...}" />
+                <marker date="1551677346838" expanded="true" signature="1038:1377" ph="{...}" />
+                <marker date="1551677346838" expanded="true" signature="1117:1367" ph="{...}" />
+                <marker date="1551677346838" expanded="true" signature="1446:1523" ph="{...}" />
+                <marker date="1551677346838" expanded="true" signature="1580:1666" ph="{...}" />
+                <marker date="1551677346838" expanded="true" signature="1711:1821" ph="{...}" />
+                <marker date="1551677346838" expanded="true" signature="1852:1930" ph="{...}" />
+                <marker date="1551677346838" expanded="true" signature="1961:2039" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WindowView.cs" pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/PandeaGames/Views/Screens/WindowView.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="144" column="22" lean-forward="true" selection-start-line="144" selection-start-column="22" selection-end-line="144" selection-end-column="22" />
+            <state relative-caret-position="1845">
+              <caret line="144" column="22" selection-start-line="144" selection-start-column="22" selection-end-line="144" selection-end-column="22" />
               <folding>
-                <marker date="1548630051665" expanded="false" signature="6:127" ph="..." />
-                <marker date="1548630051665" expanded="true" signature="164:5671" ph="{...}" />
-                <marker date="1548630051665" expanded="true" signature="211:248" ph="{...}" />
-                <marker date="1548630051665" expanded="true" signature="306:953" ph="{...}" />
-                <marker date="1548630051665" expanded="true" signature="621:677" ph="{...}" />
-                <marker date="1548630051665" expanded="true" signature="751:839" ph="{...}" />
-                <marker date="1548630051665" expanded="true" signature="922:947" ph="{...}" />
-                <marker date="1548630051665" expanded="true" signature="1007:5669" ph="{...}" />
-                <marker date="1548630051665" expanded="true" signature="1319:1412" ph="{...}" />
-                <marker date="1548630051665" expanded="true" signature="1460:1830" ph="{...}" />
-                <marker date="1548630051665" expanded="true" signature="1639:1712" ph="{...}" />
-                <marker date="1548630051665" expanded="true" signature="1752:1820" ph="{...}" />
-                <marker date="1548630051665" expanded="true" signature="1905:1981" ph="{...}" />
-                <marker date="1548630051665" expanded="true" signature="2043:2289" ph="{...}" />
-                <marker date="1548630051665" expanded="true" signature="2084:2173" ph="{...}" />
-                <marker date="1548630051665" expanded="true" signature="2190:2279" ph="{...}" />
-                <marker date="1548630051665" expanded="true" signature="2375:2676" ph="{...}" />
-                <marker date="1548630051665" expanded="true" signature="2417:2666" ph="{...}" />
-                <marker date="1548630051665" expanded="true" signature="2716:2757" ph="{...}" />
-                <marker date="1548630051665" expanded="true" signature="2800:2933" ph="{...}" />
-                <marker date="1548630051665" expanded="true" signature="2978:3204" ph="{...}" />
-                <marker date="1548630051665" expanded="true" signature="3018:3129" ph="{...}" />
-                <marker date="1548630051665" expanded="true" signature="3281:3786" ph="{...}" />
-                <marker date="1548630051665" expanded="true" signature="3529:3592" ph="{...}" />
-                <marker date="1548630051665" expanded="true" signature="3868:5002" ph="{...}" />
-                <marker date="1548630051665" expanded="true" signature="3990:4143" ph="{...}" />
-                <marker date="1548630051665" expanded="true" signature="4177:4325" ph="{...}" />
-                <marker date="1548630051665" expanded="true" signature="4369:4454" ph="{...}" />
-                <marker date="1548630051665" expanded="true" signature="5073:5106" ph="{...}" />
-                <marker date="1548630051665" expanded="true" signature="5168:5287" ph="{...}" />
-                <marker date="1548630051665" expanded="true" signature="5345:5663" ph="{...}" />
-                <marker date="1548630051665" expanded="true" signature="5550:5613" ph="{...}" />
+                <marker date="1551677346854" expanded="false" signature="6:127" ph="..." />
+                <marker date="1551677346854" expanded="true" signature="164:5671" ph="{...}" />
+                <marker date="1551677346854" expanded="true" signature="211:248" ph="{...}" />
+                <marker date="1551677346854" expanded="true" signature="306:953" ph="{...}" />
+                <marker date="1551677346854" expanded="true" signature="621:677" ph="{...}" />
+                <marker date="1551677346854" expanded="true" signature="751:839" ph="{...}" />
+                <marker date="1551677346854" expanded="true" signature="922:947" ph="{...}" />
+                <marker date="1551677346854" expanded="true" signature="1007:5669" ph="{...}" />
+                <marker date="1551677346854" expanded="true" signature="1319:1412" ph="{...}" />
+                <marker date="1551677346854" expanded="true" signature="1460:1830" ph="{...}" />
+                <marker date="1551677346854" expanded="true" signature="1639:1712" ph="{...}" />
+                <marker date="1551677346854" expanded="true" signature="1752:1820" ph="{...}" />
+                <marker date="1551677346854" expanded="true" signature="1905:1981" ph="{...}" />
+                <marker date="1551677346854" expanded="true" signature="2043:2289" ph="{...}" />
+                <marker date="1551677346854" expanded="true" signature="2084:2173" ph="{...}" />
+                <marker date="1551677346854" expanded="true" signature="2190:2279" ph="{...}" />
+                <marker date="1551677346854" expanded="true" signature="2375:2676" ph="{...}" />
+                <marker date="1551677346854" expanded="true" signature="2417:2666" ph="{...}" />
+                <marker date="1551677346854" expanded="true" signature="2716:2757" ph="{...}" />
+                <marker date="1551677346854" expanded="true" signature="2800:2933" ph="{...}" />
+                <marker date="1551677346854" expanded="true" signature="2978:3204" ph="{...}" />
+                <marker date="1551677346854" expanded="true" signature="3018:3129" ph="{...}" />
+                <marker date="1551677346854" expanded="true" signature="3281:3786" ph="{...}" />
+                <marker date="1551677346854" expanded="true" signature="3529:3592" ph="{...}" />
+                <marker date="1551677346854" expanded="true" signature="3868:5002" ph="{...}" />
+                <marker date="1551677346854" expanded="true" signature="3990:4143" ph="{...}" />
+                <marker date="1551677346854" expanded="true" signature="4177:4325" ph="{...}" />
+                <marker date="1551677346854" expanded="true" signature="4369:4454" ph="{...}" />
+                <marker date="1551677346854" expanded="true" signature="5073:5106" ph="{...}" />
+                <marker date="1551677346854" expanded="true" signature="5168:5287" ph="{...}" />
+                <marker date="1551677346854" expanded="true" signature="5345:5663" ph="{...}" />
+                <marker date="1551677346854" expanded="true" signature="5550:5613" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MatchView.cs" pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/client/ViewControllers/JunkyardDogsViewController.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="28" column="49" selection-start-line="28" selection-start-column="49" selection-end-line="28" selection-end-column="49" />
+              <folding>
+                <marker date="1551680197073" expanded="false" signature="6:84" ph="..." />
+                <marker date="1551680197073" expanded="true" signature="108:5255" ph="{...}" />
+                <marker date="1551680197073" expanded="true" signature="145:289" ph="{...}" />
+                <marker date="1551680197073" expanded="true" signature="372:972" ph="{...}" />
+                <marker date="1551680197073" expanded="true" signature="478:577" ph="{...}" />
+                <marker date="1551680197073" expanded="true" signature="621:966" ph="{...}" />
+                <marker date="1551680197073" expanded="true" signature="759:856" ph="{...}" />
+                <marker date="1551680197073" expanded="true" signature="873:956" ph="{...}" />
+                <marker date="1551680197073" expanded="true" signature="1067:1382" ph="{...}" />
+                <marker date="1551680197073" expanded="true" signature="1136:1376" ph="{...}" />
+                <marker date="1551680197073" expanded="true" signature="1246:1329" ph="{...}" />
+                <marker date="1551680197073" expanded="true" signature="1468:1802" ph="{...}" />
+                <marker date="1551680197073" expanded="true" signature="1560:1655" ph="{...}" />
+                <marker date="1551680197073" expanded="true" signature="1727:1796" ph="{...}" />
+                <marker date="1551680197073" expanded="true" signature="1888:2032" ph="{...}" />
+                <marker date="1551680197073" expanded="true" signature="1957:2026" ph="{...}" />
+                <marker date="1551680197073" expanded="true" signature="2128:2980" ph="{...}" />
+                <marker date="1551680197073" expanded="true" signature="2206:2381" ph="{...}" />
+                <marker date="1551680197073" expanded="true" signature="2438:2974" ph="{...}" />
+                <marker date="1551680197073" expanded="true" signature="2503:2964" ph="{...}" />
+                <marker date="1551680197073" expanded="true" signature="3069:4376" ph="{...}" />
+                <marker date="1551680197073" expanded="true" signature="3176:3271" ph="{...}" />
+                <marker date="1551680197073" expanded="true" signature="3335:3449" ph="{...}" />
+                <marker date="1551680197073" expanded="true" signature="3524:3703" ph="{...}" />
+                <marker date="1551680197073" expanded="true" signature="3791:4242" ph="{...}" />
+                <marker date="1551680197073" expanded="true" signature="4306:4370" ph="{...}" />
+                <marker date="1551680197073" expanded="true" signature="4473:5253" ph="{...}" />
+                <marker date="1551680197073" expanded="true" signature="4523:5116" ph="{...}" />
+                <marker date="1551680197073" expanded="true" signature="5179:5247" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/client/Views/MatchView.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
+            <state relative-caret-position="165">
               <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
               <folding>
-                <marker date="1546118274235" expanded="true" signature="95:313" ph="{...}" />
-                <marker date="1546118274235" expanded="true" signature="144:177" ph="{...}" />
-                <marker date="1546118274235" expanded="true" signature="214:307" ph="{...}" />
+                <marker date="1551677353603" expanded="true" signature="54:315" ph="{...}" />
+                <marker date="1551677353603" expanded="true" signature="95:313" ph="{...}" />
+                <marker date="1551677353603" expanded="true" signature="144:177" ph="{...}" />
+                <marker date="1551677353603" expanded="true" signature="214:307" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -210,281 +251,272 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Dialogs/ChooseFromInventoryDialog.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Services/IService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Dialogs/ComponentMessageDialog.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Dialogs/TakeJunkDialog.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Formats/TournamentFormat.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/Data/GameStaticDataProvider.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Dialogs/ChooseActionDialog.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Game.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Seeding/TournamentSeeding.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Screens/ActionDisplay.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Tournament.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Screens/DirectiveDisplay.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/NewBehaviourScript.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Editor/ImageEffects/ColorCorrectionLookupEditor.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Screens/MapScreen.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Controllers/TournamentController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Screens/EditBotRoot.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/Views/JunkyardView.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Screens/EditBotScreen.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/Match/SimpleBotMatchRendering.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/TournemantViewController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Screens/ChooseCountryScreen.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Screens/EditBehaviourScreen.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Screens/GarageScreen.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Screens/JunkyardScreen.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8DDA3E33-2B16-497D-8634-252EEEAC0F12/65/ef5fd6e0/Program.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Screens/InventoryScreen.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/ViewModels/GarageViewModel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Seeding/RandomSeeding.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Singleton.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Views/IView.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/ViewModels/JunkyardViewModel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/ViewControllers/IViewController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/ViewModels/IViewModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Screens/ViewModels/EditBotBehaviourViewModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SimpleDragAndDrop/Scripts/DragAndDropItemProxy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SimpleDragAndDrop/Scripts/DragAndDropItem.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/GameLoadViewController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SimpleDragAndDrop/Scripts/DragAndDropCell.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/UI/EventButton.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/ViewControllers/ContainerViewController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/Bots/BotRenderer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/AssetBundleManager/AssetBundleLoadOperation.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/Match/SimpleBotMatchRendering.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/Garage/LineupCameraAgent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/GameLoader.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/Junkyard/JunkController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Results/SingleResult.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/Junkyard/Junk.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/ViewModels/ChooseNationalityViewModel.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/Views/GarageView.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/GarageTest.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/AssetBundleManager/AssetBundleManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Services/JunkyardUserService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Services/Editor/ServiceEditorTools.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Controllers/TournamentController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Controllers/ChooseUserBotController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/AssetBundleManager/Editor/ExecuteInternalMono.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Controllers/MatchController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Controllers/MatchTest.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Controllers/TournamentTest.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/Data/GameStaticDataProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/ComponentRendering/ChassisRenderer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/HubViewController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Scripts/WaterHoseParticles.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Services/PauseService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/C9C46045-1988-4A6A-9389-04A7B265ABE7/f8/57dea6a7/StateMachineBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Views/Services/Service.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Services/AbstractUserService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Services/AssetBundleManagerInit.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/ViewModels/CameraViewModel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Views/Services/InputService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Views/Services/DialogService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/Data/JunkyardStaticDataLoader.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/Data/ViewStaticDataProvider.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/Data/AssetBundleEnum.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/Data/MatchTestData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/Data/UnityData/ViewStaticData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/Data/UnityData/GameStaticData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/SimulationService.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Views/Services/CollectionService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/StatesCommon/AbstractLoadingState.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Views/Services/ServiceManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Views/WorldMapView.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Runtime/Controllers/Scripts/StateMachine.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/JunkyardViewController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/Views/ChooseNationlaityView.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/Views/ChooseBotFromInventoryView.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/Views/GarageEditBehaviourView.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/Views/SimpleWindowView.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/Views/GarageLineupView.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/Engagement.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/Views/JunkyardGameContainer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/Agent/Agent.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/Views/JunkyardPreloadView.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/Agent/StateTransition.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/Agent/AgentState.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/TournamentTimerDisplay.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/BotBlueprint.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/Agent/Directive.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/Utils/SimulationUtils.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/ComponentBlueprintData.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Runtime/Dialogs/Dialog.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/Behavior/Attack.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Runtime/Dialogs/OptionDisplay.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Runtime/Dialogs/MessageDialog.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/Behavior/Action.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/Knowledge/Information.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Views/TakeJunkViewModel.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/Views/TournamentView.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/Views/JunkyardView.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/Agent/Directive.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/Views/MatchView.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/Views/GarageView.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/Utils/SimulationUtils.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/Behavior/Attack.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/Views/GarageFocusedView.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/Behavior/Action.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/Behavior/ActionList.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/Knowledge/Information.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/Knowledge/State.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/Knowledge/Knowledge.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/MonoBehaviourSingleton.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Runtime/Gameplay/Control/PauseGame.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/Views/GarageEditBehaviourView.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/Simulation/Physics/SimulatedCircleCollider.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/Simulation/Physics/SimulatedBody.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Scenes/Garage.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/FullMatchViewController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Runtime/Gameplay/Camera/CameraMaster.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/Views/GarageFocusedView.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/Simulation/Physics/SimulatedCollider.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/Views/GarageLineupView.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/AgentBlueprint.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/Simulation/SimulatedObjects/SimulatedBot.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Runtime/Gameplay/Camera/CameraAgent.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/GarageEditBehaviourViewController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/GarageFocusedViewController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/GarageLineupViewController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/ChassisBlueprint.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/Views/MatchView.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Runtime/Gameplay/StartGame.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Runtime/Gameplay/Pausable.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Screens/ViewModels/EditBotBehaviourViewModel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/CompetitorBlueprintData.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Views/Screens/ScreenView.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Views/Screens/WindowView.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/MotherboardBlueprint.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Runtime/Utils/TaskProvider.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/CompetitorBlueprint.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Singleton.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Game.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/ViewModels/TournamentViewModel.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/ViewModels/ChooseNationalityViewModel.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/ViewModels/JunkyardViewModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/ViewModels/MatchTestViewModel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/PhysicalComponentBlueprint.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/Data/JunkyardStaticDataLoader.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Entities/DataCompetitorProvider.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/MatchStateRenderer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/MonoBehaviourSingleton.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/ViewModels/WorldMapViewModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/unity-ui-extensions/Scripts/TabNavigationHelper.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/ViewModels/GarageViewModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/ViewModels/JunkyardUserViewModel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Data/WeakReference/Editor/WeakReference.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/Blueprint.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Data/WeakReference/WeakReference.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/Views/ChooseNationlaityView.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Data/WeakReference/WeakReferenceList.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/ChooseNationalityViewController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Data/WeakReference/ILoadableObject.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/ViewModels/ChooseBotFromInventoryViewModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/ViewModels/HubViewModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/ViewModels/LoadingViewModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/UI/SimpleButtonTab.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/ViewModels/MatchViewModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/UI/Tab.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/JunkyardDogsViewController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Data/WeakReference/IWeakReferenceObject.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Dialogs/ViewModels/ComponentViewModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/TournemantTestViewController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/ChooseBotFromInventoryViewController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/UI/TabGroup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Data/ConfiguredScreen.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/JunkyardViewController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Data/PandeaGameConfigurationData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/MatchTestViewController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/FullMatchViewController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Data/InputConfig.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/GarageEditBehaviourViewController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Data/DialogConfig.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/NationList.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/JunkyardFullGameViewController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Bot.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/MatchViewController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Data/LoadableConfigurationData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/NewBehaviourScript.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/ChooseNationalityViewController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Data/AssetList.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/GarageViewController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/WorldMapViewController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Data/Static/AbstractStaticDataProvider.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/GarageLineupViewController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/GarageFocusedViewController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Data/Static/PandeaGameDataProvider.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/GarageTestViewController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Data/Static/IStaticDataProvider.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/TournemantViewController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Behavior/Behavior.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/AssetBundles/Data/Editor/ViewUserDataWindow.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/PreloadViewController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/JunkyardDogsGameViewController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Behavior/Action.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/HubViewController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Scripts/WaterHoseParticles.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Entities/Inventory.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Entities/TournamentState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/StatesCommon/AbstractLoadingState.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Entities/Tournaments.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Data/Factories/ObjectFactory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/StatesCommon/SplashState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Entities/CompetitorProvider.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/GameLoader.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Dialogs/ViewModels/ChooseFromInventoryViewModel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/GarageTestViewController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Data/DialogConfig.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Data/AssetList.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Participants/UserAutoParticipant.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Data/ConfiguredScreen.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Participants/UserAutoParticipantData.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9C9F068C-46C6-4FFD-91FD-A7AF157B4D15/0b/40bd1fd4/Monitor.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/ViewModels/LoadingViewModel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/344DC4D3-F1AD-4180-9DF7-8607B6121A41/fa/46bda9b4/Socket.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/GarageTest.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/ChassisBlueprintData.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CA4C2132-6E0F-4A9B-BAC9-2D72C6B25AB6/07/c48beeaf/Signal`1.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/TestData/TournamentTestData.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Dialogs/ViewModels/ChooseActionDialogViewModel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CA4C2132-6E0F-4A9B-BAC9-2D72C6B25AB6/fe/0d0a944b/RProperty`1.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/GarageViewController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/AssetBundleInitializer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/JunkyardDogsGameViewController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Dialogs/ViewModels/EventDialogViewModel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CA4C2132-6E0F-4A9B-BAC9-2D72C6B25AB6/df/ae2446fa/SocketWire.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/SimulationTests.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Dialogs/ViewModels/TakeJunkDialogViewModel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9C9F068C-46C6-4FFD-91FD-A7AF157B4D15/65/aa288621/ThreadHelper.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/Data/MatchTestData.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9C9F068C-46C6-4FFD-91FD-A7AF157B4D15/82/26f96e8f/ExecutionContext.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Participants/UserParticipantData.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/ViewControllers/ContainerViewController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/AgentBlueprintData.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Participants/UserParticipant.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Views/SceneView.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Views/AbstractUnityView.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/ViewModels/MatchViewModel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Views/ContainerView.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/BotBlueprintData.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Utils/StateMachines/PandeaGamesFsm.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/ComponentBlueprint.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/MotherboardBlueprintData.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/PhysicalComponentData.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/NationList.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Controllers/ChooseUserBotController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/SimpleDragAndDrop/Scripts/DragAndDropItem.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/JunkyardFullGameViewController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Bot.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/SimpleDragAndDrop/Scripts/DragAndDropCell.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Runtime/Dialogs/ViewModels/MessageDialogViewModel.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Views/Screens/NestedWindowView.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/AssetBundleManager/AssetBundleLoadOperation.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Data/WeakReference/Loader.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/PreloadViewController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Controllers/MatchTest.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Data/Static/PandeaGameDataProvider.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/AssetBundleManager/AssetBundleManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/Editor/BlueprintCustomDrawer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/Views/JunkyardPreloadView.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Participants/SingleSourceParticipantData.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Screens/ChooseBotScreen.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Data/LoadableConfigurationData.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/AssetBundleManager/Editor/ExecuteInternalMono.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Behavior/Behavior.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/BlueprintBase.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/MatchViewController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Participants/SingleSourceParticipant.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/ViewControllers/AbstractViewControllerFsm.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Behavior/Action.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Data/PandeaGameConfigurationData.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Entities/Inventory.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/ViewModels/AbstractDialogViewModel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/MatchTestViewController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Entities/JunkyardUser.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Controllers/MatchController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/ViewControllers/AbstractViewController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Entities/Competitor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Entities/StageState.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Data/WeakReference/ILoadableObject.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Entities/DataCompetitorProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Data/WeakReference/AssetLoader.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Entities/JunkyardUser.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Data/WeakReference/WeakReference.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Data/WeakReference/IWeakReferenceObject.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Data/WeakReference/Loader.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/AssetBundleInitializer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Entities/Competitor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Data/WeakReference/WeakReferenceList.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Gameplay/SpecificationCatalogue.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/TournamentGroup.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Editor/ScreenManagerWindow.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/Data/AssetBundleEnum.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Components/BotBuilder.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/BlueprintData.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Components/Chassis.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/Data/UnityData/ViewStaticData.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Formats/EliminationFormat.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SimulationTests.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/WeaponBlueprintData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Data/WeakReference/Editor/WeakReference.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Editor/ImageEffects/ColorCorrectionLookupEditor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/BlueprintBase.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/PlateBlueprint.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/Blueprint.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/BotBlueprint.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/WeaponBlueprint.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/ChassisBlueprint.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Utils/StateMachines/PandeaGamesFsm.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Views/SceneView.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Views/HubView.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/PhysicalComponentData.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/AgentBlueprintData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/AgentBlueprint.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Views/AbstractUnityView.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Views/ContainerView.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Views/IView.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/CompetitorBlueprint.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/BlueprintData.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/BotBlueprintData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Views/Screens/WindowView.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/MotherboardBlueprintData.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/WeaponProcessorBlueprint.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/ComponentBlueprintData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Views/Screens/ScreenView.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/ComponentBlueprint.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Views/Screens/NestedWindowView.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/WeaponProcessorBlueprintData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Views/Services/ServiceManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Views/Services/CollectionService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/PlateBlueprintData.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Views/Services/DialogService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Views/Services/Service.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/ChassisBlueprintData.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/PhysicalComponentBlueprint.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Views/Services/InputService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/MotherboardBlueprint.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/CompetitorBlueprintData.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/Editor/BlueprintCustomDrawer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Components/BotBuilder.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Editor/CoreEditorUtils.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Editor/TemplateImporter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Editor/CoreEditorTools.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Components/Chassis.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Editor/ScreenManagerWindow.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Components/ComponentUtils.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Components/Component.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/WeaponBlueprint.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/Data/ViewStaticDataProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Components/PhysicalComponent.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Editor/CoreEditorUtils.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/UI/TabGroup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Runtime/Utils/TaskProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Components/Processing/WeaponProcessor.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/UI/Tab.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/TournamentFormat.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/SimpleDragAndDrop/Scripts/DragAndDropItemProxy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/Views/SimpleWindowView.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Editor/TemplateImporter.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/ViewModels/WorldMapViewModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Runtime/Dialogs/MessageDialog.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Runtime/Dialogs/OptionDisplay.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Runtime/Dialogs/Dialog.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Runtime/Dialogs/ViewModels/MessageDialogViewModel.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Components/Processing/Motherboard.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Editor/CoreEditorTools.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Data/InputConfig.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/WorldMapViewController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/unity-ui-extensions/Scripts/TabNavigationHelper.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Runtime/Gameplay/Pausable.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/TournamentGroup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Tournament.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Runtime/Gameplay/StartGame.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/TournamentFormat.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Formats/TournamentFormat.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Formats/EliminationFormat.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Runtime/Gameplay/Camera/CameraAgent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Results/TournamentResult.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Results/SingleResult.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Seeding/TournamentSeeding.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Seeding/RandomSeeding.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Runtime/Gameplay/Camera/CameraMaster.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/TestData/TournamentTestData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Participants/UserAutoParticipant.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Runtime/Gameplay/Control/PauseGame.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Participants/ParticipantData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Participants/Participant.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Participants/UserParticipant.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Participants/UserParticipantData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Participants/SingleSourceParticipantData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Participants/SingleSourceParticipant.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Participants/UserAutoParticipantData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Configuration/BotRenderConfiguration.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Chassis.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Manufacturer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/ViewModels/AbstractStatefulViewModel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/ViewModels/TournamentViewModel.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/WeaponProcessorBlueprint.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/ViewModels/ChooseBotFromInventoryViewModel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/WeaponProcessorBlueprintData.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/ViewModels/HubViewModel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Participants/Participant.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/PlateBlueprintData.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Runtime/Controllers/Scripts/StateMachine.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Services/AssetBundleManagerInit.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Services/IService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Services/AbstractService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Services/AbstractUserService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Weapons/Weapon.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Participants/ParticipantData.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Dialogs/EventDialog.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/Navigation/HubTabGroup.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/Views/ChooseBotFromInventoryView.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Services/PauseService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Services/Editor/ServiceEditorTools.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/ViewModels/AbstractDialogViewModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Weapons/ProjectileWeapon.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/ViewModels/CameraViewModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Weapons/Melee.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/PlateBlueprint.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Weapons/Assailments/MeleeWeapon.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/Views/JunkyardGameContainer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/ChooseBotFromInventoryViewController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/UI/SimpleButtonTab.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/Behavior/ActionList.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Weapons/Assailments/Assailer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/Views/TournamentView.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Entities/StageState.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Entities/TournamentState.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Entities/Tournaments.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/ViewModels/AbstractStatefulViewModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/ViewModels/IViewModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/ViewModels/AbstractViewModel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Controllers/TournamentTest.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/TournemantTestViewController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/GameLoadViewController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Weapons/Assailments/MeleeWeapon.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/ViewModels/AbstractUserViewModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/ViewControllers/IViewController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/ViewControllers/AbstractViewController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/ViewControllers/AbstractViewControllerFsm.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Weapons/Assailments/Assailer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Utils/ComponentInstantiatorService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/TournamentStateRenderer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Views/HubView.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Data/Static/IStaticDataProvider.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/UI/EventButton.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Data/Static/AbstractStaticDataProvider.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Configuration/BotRenderConfiguration.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Services/AbstractService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/MatchStateRenderer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/TournamentTimerDisplay.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/Navigation/HubTabGroup.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/ComponentRendering/BotBuilderDisplay.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/ViewModels/AbstractUserViewModel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Results/TournamentResult.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/Data/UnityData/GameStaticData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Scenes/Garage.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Dialogs/ChooseFromInventoryDialog.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Dialogs/ChooseActionDialog.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Dialogs/ComponentMessageDialog.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Dialogs/EventDialog.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Dialogs/TakeJunkDialog.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Dialogs/ViewModels/TakeJunkDialogViewModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Dialogs/ViewModels/EventDialogViewModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Dialogs/ViewModels/ChooseActionDialogViewModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Dialogs/ViewModels/ComponentViewModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Dialogs/ViewModels/ChooseFromInventoryViewModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Screens/MapScreen.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Screens/ChooseBotScreen.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Screens/GarageScreen.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Screens/JunkyardScreen.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Screens/InventoryScreen.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Screens/DirectiveDisplay.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -536,23 +568,12 @@
         <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/Screens/JunkyardScreen.cs" />
         <option value="$PROJECT_DIR$/Assets/client/Views/JunkyardPreloadView.cs" />
         <option value="$PROJECT_DIR$/Assets/PandeaGames/ViewControllers/AbstractViewController.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/ViewControllers/JunkyardDogsViewController.cs" />
         <option value="$PROJECT_DIR$/Assets/PandeaGames/Views/HubView.cs" />
         <option value="$PROJECT_DIR$/Assets/PandeaGames/ViewControllers/AbstractViewControllerFsm.cs" />
         <option value="$PROJECT_DIR$/Assets/PandeaGames/Views/Screens/WindowView.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/ViewControllers/JunkyardDogsViewController.cs" />
       </list>
     </option>
-  </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
-  <component name="NodePackageJsonFileManager">
-    <packageJsonPaths>
-      <path value="$PROJECT_DIR$/Assets/unity-ui-extensions/package.json" />
-    </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-10" />
@@ -567,19 +588,11 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AssemblyExplorer" />
       <pane id="SolutionExplorer">
-        <subPane>
-          <expand>
-            <path>
-              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="Unity (3 projects)" type="977d5f41:SolutionExplorerNodeRider" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-        <option name="show-file-system" value="false" />
-        <option name="show-all-items" value="false" />
+        <option name="show-all-files" value="false" />
       </pane>
+      <pane id="FileSystemExplorer" />
       <pane id="UnityExplorer">
         <subPane>
           <expand>
@@ -653,11 +666,12 @@
           <select />
         </subPane>
         <option name="show-hidden-items" value="false" />
+        <option name="show-project-names" value="true" />
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
     <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
     <property name="SearchEverywhereHistoryKey" value="MatchView&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/Views/MatchView.cs&#10;WindowView&#9;null&#9;null&#10;Abs&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/PandeaGames/ViewControllers/AbstractViewControllerFsm.cs&#10;HubView&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/PandeaGames/Views/HubView.cs&#10;Ju&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/ViewControllers/JunkyardDogsViewController.cs&#10;PreloadView&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/Views/JunkyardPreloadView.cs&#10;Preload&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/ViewControllers/PreloadViewController.cs&#10;JunkyardGame&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/ViewControllers/JunkyardFullGameViewController.cs&#10;Junkyard&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/Views/JunkyardView.cs&#10;MapView&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/Views/WorldMapView.cs&#10;Garage&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/Views/GarageView.cs&#10;GarageView&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/ViewModels/GarageViewModel.cs&#10;JunkyardGameCon&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/Views/JunkyardGameContainer.cs&#10;OnLoadComplete&#9;null&#9;null&#10;GarageViewCon&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/ViewControllers/GarageViewController.cs&#10;GarageViewM&#9;null&#9;null&#10;JunkyardPrel&#9;null&#9;null&#10;AbstractView&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/PandeaGames/Views/AbstractUnityView.cs&#10;WorldMap&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/ViewControllers/WorldMapViewController.cs&#10;Tournament&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/scripts/Data/Tournaments/Tournament.cs&#10;JunkyardUser&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/scripts/Data/Entities/JunkyardUser.cs&#10;Simulation&#9;null&#9;null&#10;TakeJunk&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/scripts/Runtime/Dialogs/ViewModels/TakeJunkDialogViewModel.cs&#10;TournamentViewContr&#9;null&#9;null&#10;UserPartici&#9;null&#9;null&#10;UserPartic&#9;null&#9;null&#10;Event&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/scripts/Runtime/Dialogs/EventDialog.cs&#10;GameLoader&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/GameLoader.cs&#10;TournamentRender&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/scripts/Runtime/UI/TournamentStateRenderer.cs&#10;MatchControll&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/scripts/Runtime/Controllers/MatchController.cs&#10;ChooseBot&#9;null&#9;null&#10;TournamentTe&#9;null&#9;null&#10;Match&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/ViewControllers/MatchTestViewController.cs&#10;ChooseCoun&#9;null&#9;null&#10;ChooseNation&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/Views/ChooseNationlaityView.cs&#10;AssetManagerI&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/PandeaGames/Services/AssetBundleManagerInit.cs&#10;AssetBundleManager&#9;null&#9;null&#10;ExecuteInternalMono&#9;null&#9;null&#10;Dialog&#9;null&#9;null&#10;TakeJunkDialog&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/scripts/Runtime/Dialogs/TakeJunkDialog.cs&#10;JunkyardView&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/Views/JunkyardView.cs&#10;JunkyardScree&#9;null&#9;null&#10;ChooseUserBot&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/scripts/Runtime/Controllers/ChooseUserBotController.cs&#10;Choose&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/ViewControllers/ChooseBotFromInventoryViewController.cs&#10;TournamentStat&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/scripts/Data/Entities/TournamentState.cs&#10;MatchTestDa&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/Data/MatchTestData.cs&#10;MatchTest&#9;null&#9;null&#10;GarageTest&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/ViewControllers/GarageTestViewController.cs&#10;GarageFoc&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/Views/GarageFocusedView.cs&#10;BotBuilderDisplay&#9;FILE&#9;file://C:/Users/ccove/JunkyardDogs/Unity/Assets/client/scripts/Runtime/UI/ComponentRendering/BotBuilderDisplay.cs" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -675,10 +689,18 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <method v="2" />
     </configuration>
   </component>
   <component name="SvnConfiguration">
@@ -746,11 +768,12 @@
       <workItem from="1547955118689" duration="11240000" />
       <workItem from="1548609656601" duration="12231000" />
       <workItem from="1548632755444" duration="636000" />
+      <workItem from="1551679856932" duration="383000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="337462000" />
+    <option name="totallyTimeSpent" value="337845000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -764,38 +787,39 @@
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1381" height="885" extended-state="6" />
     <layout>
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Errors In Solution" order="3" weight="0.32955405" />
-      <window_info anchor="bottom" id="Event Log" order="14" sideWeight="0.5026455" side_tool="true" weight="0.32933334" />
-      <window_info anchor="bottom" id="Unit Tests" order="9" />
-      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="13" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Terminal" order="11" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2244898" />
-      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Unity" order="10" weight="0.32933334" />
-      <window_info anchor="right" id="Database" order="4" />
+      <window_info id="Capture Tool" />
+      <window_info id="Image Layers" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22751322" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.48979592" weight="0.50666666" />
-      <window_info anchor="bottom" id="NuGet" order="12" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4973545" weight="0.32933334" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.48979592" weight="0.5059603" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Unit Tests" order="9" />
+      <window_info anchor="bottom" id="Unity" order="10" weight="0.32933334" />
+      <window_info anchor="bottom" id="Terminal" order="11" />
+      <window_info anchor="bottom" id="NuGet" order="12" />
+      <window_info anchor="bottom" id="Version Control" order="13" />
+      <window_info anchor="bottom" id="Event Log" order="14" sideWeight="0.5026455" side_tool="true" weight="0.32933334" />
+      <window_info anchor="right" id="Capture Analysis" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4973545" weight="0.32933334" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Errors In Solution" order="3" weight="0.32955405" />
+      <window_info anchor="right" id="Database" order="4" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -804,10 +828,10 @@
           <line>27</line>
           <properties documentPath="$PROJECT_DIR$/Assets/client/ViewControllers/GameLoadViewController.cs" initialLine="27">
             <startOffsets>
-              <startOffset value="688" />
+              <option value="688" />
             </startOffsets>
             <endOffsets>
-              <endOffset value="726" />
+              <option value="726" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="255" />
@@ -817,10 +841,10 @@
           <line>20</line>
           <properties documentPath="$PROJECT_DIR$/Assets/client/ViewControllers/GameLoadViewController.cs" initialLine="20">
             <startOffsets>
-              <startOffset value="477" />
+              <option value="477" />
             </startOffsets>
             <endOffsets>
-              <endOffset value="526" />
+              <option value="526" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="256" />
@@ -830,10 +854,10 @@
           <line>36</line>
           <properties documentPath="$PROJECT_DIR$/Assets/client/ViewControllers/GameLoadViewController.cs" initialLine="36">
             <startOffsets>
-              <startOffset value="928" />
+              <option value="928" />
             </startOffsets>
             <endOffsets>
-              <endOffset value="993" />
+              <option value="993" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="257" />
@@ -843,10 +867,10 @@
           <line>9</line>
           <properties documentPath="$PROJECT_DIR$/Assets/PandeaGames/ViewControllers/ContainerViewController.cs" initialLine="9">
             <startOffsets>
-              <startOffset value="316" />
+              <option value="316" />
             </startOffsets>
             <endOffsets>
-              <endOffset value="333" />
+              <option value="333" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="292" />
@@ -856,10 +880,10 @@
           <line>18</line>
           <properties documentPath="$PROJECT_DIR$/Assets/PandeaGames/ViewControllers/ContainerViewController.cs" initialLine="18">
             <startOffsets>
-              <startOffset value="555" />
+              <option value="555" />
             </startOffsets>
             <endOffsets>
-              <endOffset value="582" />
+              <option value="582" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="293" />
@@ -869,10 +893,10 @@
           <line>15</line>
           <properties documentPath="$PROJECT_DIR$/Assets/PandeaGames/ViewControllers/ContainerViewController.cs" initialLine="15">
             <startOffsets>
-              <startOffset value="467" />
+              <option value="467" />
             </startOffsets>
             <endOffsets>
-              <endOffset value="491" />
+              <option value="491" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="301" />
@@ -882,10 +906,10 @@
           <line>23</line>
           <properties documentPath="$PROJECT_DIR$/Assets/PandeaGames/ViewControllers/ContainerViewController.cs" initialLine="23">
             <startOffsets>
-              <startOffset value="662" />
+              <option value="662" />
             </startOffsets>
             <endOffsets>
-              <endOffset value="687" />
+              <option value="687" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="302" />
@@ -895,10 +919,10 @@
           <line>28</line>
           <properties documentPath="$PROJECT_DIR$/Assets/PandeaGames/ViewControllers/ContainerViewController.cs" initialLine="28">
             <startOffsets>
-              <startOffset value="776" />
+              <option value="776" />
             </startOffsets>
             <endOffsets>
-              <endOffset value="796" />
+              <option value="796" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="303" />
@@ -908,10 +932,10 @@
           <line>34</line>
           <properties documentPath="$PROJECT_DIR$/Assets/PandeaGames/ViewControllers/ContainerViewController.cs" initialLine="34">
             <startOffsets>
-              <startOffset value="907" />
+              <option value="907" />
             </startOffsets>
             <endOffsets>
-              <endOffset value="921" />
+              <option value="921" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="304" />
@@ -921,19 +945,19 @@
           <line>17</line>
           <properties documentPath="$PROJECT_DIR$/Assets/PandeaGames/ViewControllers/ContainerViewController.cs" initialLine="17">
             <startOffsets>
-              <startOffset value="517" />
+              <option value="517" />
             </startOffsets>
             <endOffsets>
-              <endOffset value="542" />
+              <option value="542" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="327" />
         </line-breakpoint>
+        <breakpoint enabled="true" suspend="NONE" type="DotNet Exception Breakpoints">
+          <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />
+          <option name="timeStamp" value="328" />
+        </breakpoint>
       </breakpoints>
-      <breakpoints-dialog>
-        <breakpoints-dialog />
-      </breakpoints-dialog>
-      <option name="time" value="451" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -1213,13 +1237,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/client/ViewControllers/JunkyardDogsViewController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="92" column="40" selection-start-line="92" selection-start-column="40" selection-end-line="92" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/client/ViewControllers/JunkyardFullGameViewController.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
@@ -1227,162 +1244,159 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9C9F068C-46C6-4FFD-91FD-A7AF157B4D15/0b/40bd1fd4/Monitor.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="57" column="8" selection-start-line="57" selection-start-column="8" selection-end-line="57" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/344DC4D3-F1AD-4180-9DF7-8607B6121A41/fa/46bda9b4/Socket.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="3186" column="8" selection-start-line="3186" selection-start-column="8" selection-end-line="3186" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9C9F068C-46C6-4FFD-91FD-A7AF157B4D15/65/aa288621/ThreadHelper.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="38" column="8" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CA4C2132-6E0F-4A9B-BAC9-2D72C6B25AB6/df/ae2446fa/SocketWire.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="362" column="14" selection-start-line="362" selection-start-column="14" selection-end-line="362" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CA4C2132-6E0F-4A9B-BAC9-2D72C6B25AB6/fe/0d0a944b/RProperty`1.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="49" column="10" selection-start-line="49" selection-start-column="10" selection-end-line="49" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CA4C2132-6E0F-4A9B-BAC9-2D72C6B25AB6/07/c48beeaf/Signal`1.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9C9F068C-46C6-4FFD-91FD-A7AF157B4D15/82/26f96e8f/ExecutionContext.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="91">
-          <caret line="267" column="9" lean-forward="true" selection-start-line="267" selection-start-column="9" selection-end-line="267" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9C9F068C-46C6-4FFD-91FD-A7AF157B4D15/0b/40bd1fd4/Monitor.cs" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/344DC4D3-F1AD-4180-9DF7-8607B6121A41/fa/46bda9b4/Socket.cs" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9C9F068C-46C6-4FFD-91FD-A7AF157B4D15/65/aa288621/ThreadHelper.cs" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CA4C2132-6E0F-4A9B-BAC9-2D72C6B25AB6/df/ae2446fa/SocketWire.cs" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CA4C2132-6E0F-4A9B-BAC9-2D72C6B25AB6/fe/0d0a944b/RProperty`1.cs" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CA4C2132-6E0F-4A9B-BAC9-2D72C6B25AB6/07/c48beeaf/Signal`1.cs" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9C9F068C-46C6-4FFD-91FD-A7AF157B4D15/82/26f96e8f/ExecutionContext.cs" />
     <entry file="file://$PROJECT_DIR$/Assets/PandeaGames/ViewControllers/AbstractViewControllerFsm.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1815">
+        <state relative-caret-position="1635">
           <caret line="123" column="16" selection-start-line="123" selection-start-column="16" selection-end-line="123" selection-end-column="16" />
           <folding>
-            <marker date="1548629486922" expanded="false" signature="6:66" ph="..." />
-            <marker date="1548629486922" expanded="true" signature="111:4718" ph="{...}" />
-            <marker date="1548629486922" expanded="true" signature="174:1567" ph="{...}" />
-            <marker date="1548629486922" expanded="true" signature="366:410" ph="{...}" />
-            <marker date="1548629486922" expanded="true" signature="473:518" ph="{...}" />
-            <marker date="1548629486922" expanded="true" signature="578:1003" ph="{...}" />
-            <marker date="1548629486922" expanded="true" signature="680:993" ph="{...}" />
-            <marker date="1548629486922" expanded="true" signature="1061:1387" ph="{...}" />
-            <marker date="1548629486922" expanded="true" signature="1112:1377" ph="{...}" />
-            <marker date="1548629486922" expanded="true" signature="1430:1561" ph="{...}" />
-            <marker date="1548629486922" expanded="true" signature="1481:1551" ph="{...}" />
-            <marker date="1548629486922" expanded="true" signature="1647:4716" ph="{...}" />
-            <marker date="1548629486922" expanded="true" signature="1956:2059" ph="{...}" />
-            <marker date="1548629486922" expanded="true" signature="2184:2487" ph="{...}" />
-            <marker date="1548629486922" expanded="true" signature="2238:2305" ph="{...}" />
-            <marker date="1548629486922" expanded="true" signature="2540:2634" ph="{...}" />
-            <marker date="1548629486922" expanded="true" signature="2675:2921" ph="{...}" />
-            <marker date="1548629486922" expanded="true" signature="2750:2825" ph="{...}" />
-            <marker date="1548629486922" expanded="true" signature="2842:2911" ph="{...}" />
-            <marker date="1548629486922" expanded="true" signature="2986:4310" ph="{...}" />
-            <marker date="1548629486922" expanded="true" signature="3009:3068" ph="/* TaskProvider.Instance.DelayedAction(() =&gt; ... */" />
-            <marker date="1548629486922" expanded="true" signature="3221:3285" ph="{...}" />
-            <marker date="1548629486922" expanded="true" signature="3347:3517" ph="{...}" />
-            <marker date="1548629486922" expanded="true" signature="3731:3827" ph="{...}" />
-            <marker date="1548629486922" expanded="true" signature="4353:4409" ph="{...}" />
-            <marker date="1548629486922" expanded="true" signature="4448:4710" ph="{...}" />
-            <marker date="1548629486922" expanded="true" signature="4577:4700" ph="{...}" />
+            <marker date="1551677346807" expanded="false" signature="6:66" ph="..." />
+            <marker date="1551677346807" expanded="true" signature="111:4718" ph="{...}" />
+            <marker date="1551677346807" expanded="true" signature="174:1567" ph="{...}" />
+            <marker date="1551677346807" expanded="true" signature="366:410" ph="{...}" />
+            <marker date="1551677346807" expanded="true" signature="473:518" ph="{...}" />
+            <marker date="1551677346807" expanded="true" signature="578:1003" ph="{...}" />
+            <marker date="1551677346807" expanded="true" signature="680:993" ph="{...}" />
+            <marker date="1551677346807" expanded="true" signature="1061:1387" ph="{...}" />
+            <marker date="1551677346807" expanded="true" signature="1112:1377" ph="{...}" />
+            <marker date="1551677346807" expanded="true" signature="1430:1561" ph="{...}" />
+            <marker date="1551677346807" expanded="true" signature="1481:1551" ph="{...}" />
+            <marker date="1551677346807" expanded="true" signature="1647:4716" ph="{...}" />
+            <marker date="1551677346807" expanded="true" signature="1956:2059" ph="{...}" />
+            <marker date="1551677346807" expanded="true" signature="2184:2487" ph="{...}" />
+            <marker date="1551677346807" expanded="true" signature="2238:2305" ph="{...}" />
+            <marker date="1551677346807" expanded="true" signature="2540:2634" ph="{...}" />
+            <marker date="1551677346807" expanded="true" signature="2675:2921" ph="{...}" />
+            <marker date="1551677346807" expanded="true" signature="2750:2825" ph="{...}" />
+            <marker date="1551677346807" expanded="true" signature="2842:2911" ph="{...}" />
+            <marker date="1551677346807" expanded="true" signature="2986:4310" ph="{...}" />
+            <marker date="1551677346807" expanded="true" signature="3009:3068" ph="/* TaskProvider.Instance.DelayedAction(() =&gt; ... */" />
+            <marker date="1551677346807" expanded="true" signature="3221:3285" ph="{...}" />
+            <marker date="1551677346807" expanded="true" signature="3347:3517" ph="{...}" />
+            <marker date="1551677346807" expanded="true" signature="3731:3827" ph="{...}" />
+            <marker date="1551677346807" expanded="true" signature="4353:4409" ph="{...}" />
+            <marker date="1551677346807" expanded="true" signature="4448:4710" ph="{...}" />
+            <marker date="1551677346807" expanded="true" signature="4577:4700" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/PandeaGames/Views/Screens/ScreenView.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="855">
+        <state relative-caret-position="765">
           <caret line="59" column="9" selection-start-line="59" selection-start-column="9" selection-end-line="59" selection-end-column="9" />
           <folding>
-            <marker date="1542003716850" expanded="false" signature="6:58" ph="..." />
-            <marker date="1542003716850" expanded="true" signature="95:2047" ph="{...}" />
-            <marker date="1542003716850" expanded="true" signature="141:2045" ph="{...}" />
-            <marker date="1542003716850" expanded="true" signature="501:551" ph="{...}" />
-            <marker date="1542003716850" expanded="true" signature="588:1008" ph="{...}" />
-            <marker date="1542003716850" expanded="true" signature="691:998" ph="{...}" />
-            <marker date="1542003716850" expanded="true" signature="1038:1377" ph="{...}" />
-            <marker date="1542003716850" expanded="true" signature="1117:1367" ph="{...}" />
-            <marker date="1542003716850" expanded="true" signature="1446:1523" ph="{...}" />
-            <marker date="1542003716850" expanded="true" signature="1580:1666" ph="{...}" />
-            <marker date="1542003716850" expanded="true" signature="1711:1821" ph="{...}" />
-            <marker date="1542003716850" expanded="true" signature="1852:1930" ph="{...}" />
-            <marker date="1542003716850" expanded="true" signature="1961:2039" ph="{...}" />
+            <marker date="1551677346838" expanded="false" signature="6:58" ph="..." />
+            <marker date="1551677346838" expanded="true" signature="95:2047" ph="{...}" />
+            <marker date="1551677346838" expanded="true" signature="141:2045" ph="{...}" />
+            <marker date="1551677346838" expanded="true" signature="501:551" ph="{...}" />
+            <marker date="1551677346838" expanded="true" signature="588:1008" ph="{...}" />
+            <marker date="1551677346838" expanded="true" signature="691:998" ph="{...}" />
+            <marker date="1551677346838" expanded="true" signature="1038:1377" ph="{...}" />
+            <marker date="1551677346838" expanded="true" signature="1117:1367" ph="{...}" />
+            <marker date="1551677346838" expanded="true" signature="1446:1523" ph="{...}" />
+            <marker date="1551677346838" expanded="true" signature="1580:1666" ph="{...}" />
+            <marker date="1551677346838" expanded="true" signature="1711:1821" ph="{...}" />
+            <marker date="1551677346838" expanded="true" signature="1852:1930" ph="{...}" />
+            <marker date="1551677346838" expanded="true" signature="1961:2039" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/client/Views/MatchView.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
+        <state relative-caret-position="165">
           <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
           <folding>
-            <marker date="1546118274235" expanded="true" signature="95:313" ph="{...}" />
-            <marker date="1546118274235" expanded="true" signature="144:177" ph="{...}" />
-            <marker date="1546118274235" expanded="true" signature="214:307" ph="{...}" />
+            <marker date="1551677353603" expanded="true" signature="54:315" ph="{...}" />
+            <marker date="1551677353603" expanded="true" signature="95:313" ph="{...}" />
+            <marker date="1551677353603" expanded="true" signature="144:177" ph="{...}" />
+            <marker date="1551677353603" expanded="true" signature="214:307" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/PandeaGames/Views/Screens/WindowView.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="144" column="22" lean-forward="true" selection-start-line="144" selection-start-column="22" selection-end-line="144" selection-end-column="22" />
+        <state relative-caret-position="1845">
+          <caret line="144" column="22" selection-start-line="144" selection-start-column="22" selection-end-line="144" selection-end-column="22" />
           <folding>
-            <marker date="1548630051665" expanded="false" signature="6:127" ph="..." />
-            <marker date="1548630051665" expanded="true" signature="164:5671" ph="{...}" />
-            <marker date="1548630051665" expanded="true" signature="211:248" ph="{...}" />
-            <marker date="1548630051665" expanded="true" signature="306:953" ph="{...}" />
-            <marker date="1548630051665" expanded="true" signature="621:677" ph="{...}" />
-            <marker date="1548630051665" expanded="true" signature="751:839" ph="{...}" />
-            <marker date="1548630051665" expanded="true" signature="922:947" ph="{...}" />
-            <marker date="1548630051665" expanded="true" signature="1007:5669" ph="{...}" />
-            <marker date="1548630051665" expanded="true" signature="1319:1412" ph="{...}" />
-            <marker date="1548630051665" expanded="true" signature="1460:1830" ph="{...}" />
-            <marker date="1548630051665" expanded="true" signature="1639:1712" ph="{...}" />
-            <marker date="1548630051665" expanded="true" signature="1752:1820" ph="{...}" />
-            <marker date="1548630051665" expanded="true" signature="1905:1981" ph="{...}" />
-            <marker date="1548630051665" expanded="true" signature="2043:2289" ph="{...}" />
-            <marker date="1548630051665" expanded="true" signature="2084:2173" ph="{...}" />
-            <marker date="1548630051665" expanded="true" signature="2190:2279" ph="{...}" />
-            <marker date="1548630051665" expanded="true" signature="2375:2676" ph="{...}" />
-            <marker date="1548630051665" expanded="true" signature="2417:2666" ph="{...}" />
-            <marker date="1548630051665" expanded="true" signature="2716:2757" ph="{...}" />
-            <marker date="1548630051665" expanded="true" signature="2800:2933" ph="{...}" />
-            <marker date="1548630051665" expanded="true" signature="2978:3204" ph="{...}" />
-            <marker date="1548630051665" expanded="true" signature="3018:3129" ph="{...}" />
-            <marker date="1548630051665" expanded="true" signature="3281:3786" ph="{...}" />
-            <marker date="1548630051665" expanded="true" signature="3529:3592" ph="{...}" />
-            <marker date="1548630051665" expanded="true" signature="3868:5002" ph="{...}" />
-            <marker date="1548630051665" expanded="true" signature="3990:4143" ph="{...}" />
-            <marker date="1548630051665" expanded="true" signature="4177:4325" ph="{...}" />
-            <marker date="1548630051665" expanded="true" signature="4369:4454" ph="{...}" />
-            <marker date="1548630051665" expanded="true" signature="5073:5106" ph="{...}" />
-            <marker date="1548630051665" expanded="true" signature="5168:5287" ph="{...}" />
-            <marker date="1548630051665" expanded="true" signature="5345:5663" ph="{...}" />
-            <marker date="1548630051665" expanded="true" signature="5550:5613" ph="{...}" />
+            <marker date="1551677346854" expanded="false" signature="6:127" ph="..." />
+            <marker date="1551677346854" expanded="true" signature="164:5671" ph="{...}" />
+            <marker date="1551677346854" expanded="true" signature="211:248" ph="{...}" />
+            <marker date="1551677346854" expanded="true" signature="306:953" ph="{...}" />
+            <marker date="1551677346854" expanded="true" signature="621:677" ph="{...}" />
+            <marker date="1551677346854" expanded="true" signature="751:839" ph="{...}" />
+            <marker date="1551677346854" expanded="true" signature="922:947" ph="{...}" />
+            <marker date="1551677346854" expanded="true" signature="1007:5669" ph="{...}" />
+            <marker date="1551677346854" expanded="true" signature="1319:1412" ph="{...}" />
+            <marker date="1551677346854" expanded="true" signature="1460:1830" ph="{...}" />
+            <marker date="1551677346854" expanded="true" signature="1639:1712" ph="{...}" />
+            <marker date="1551677346854" expanded="true" signature="1752:1820" ph="{...}" />
+            <marker date="1551677346854" expanded="true" signature="1905:1981" ph="{...}" />
+            <marker date="1551677346854" expanded="true" signature="2043:2289" ph="{...}" />
+            <marker date="1551677346854" expanded="true" signature="2084:2173" ph="{...}" />
+            <marker date="1551677346854" expanded="true" signature="2190:2279" ph="{...}" />
+            <marker date="1551677346854" expanded="true" signature="2375:2676" ph="{...}" />
+            <marker date="1551677346854" expanded="true" signature="2417:2666" ph="{...}" />
+            <marker date="1551677346854" expanded="true" signature="2716:2757" ph="{...}" />
+            <marker date="1551677346854" expanded="true" signature="2800:2933" ph="{...}" />
+            <marker date="1551677346854" expanded="true" signature="2978:3204" ph="{...}" />
+            <marker date="1551677346854" expanded="true" signature="3018:3129" ph="{...}" />
+            <marker date="1551677346854" expanded="true" signature="3281:3786" ph="{...}" />
+            <marker date="1551677346854" expanded="true" signature="3529:3592" ph="{...}" />
+            <marker date="1551677346854" expanded="true" signature="3868:5002" ph="{...}" />
+            <marker date="1551677346854" expanded="true" signature="3990:4143" ph="{...}" />
+            <marker date="1551677346854" expanded="true" signature="4177:4325" ph="{...}" />
+            <marker date="1551677346854" expanded="true" signature="4369:4454" ph="{...}" />
+            <marker date="1551677346854" expanded="true" signature="5073:5106" ph="{...}" />
+            <marker date="1551677346854" expanded="true" signature="5168:5287" ph="{...}" />
+            <marker date="1551677346854" expanded="true" signature="5345:5663" ph="{...}" />
+            <marker date="1551677346854" expanded="true" signature="5550:5613" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/client/ViewControllers/JunkyardDogsViewController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="28" column="49" selection-start-line="28" selection-start-column="49" selection-end-line="28" selection-end-column="49" />
+          <folding>
+            <marker date="1551680197073" expanded="false" signature="6:84" ph="..." />
+            <marker date="1551680197073" expanded="true" signature="108:5255" ph="{...}" />
+            <marker date="1551680197073" expanded="true" signature="145:289" ph="{...}" />
+            <marker date="1551680197073" expanded="true" signature="372:972" ph="{...}" />
+            <marker date="1551680197073" expanded="true" signature="478:577" ph="{...}" />
+            <marker date="1551680197073" expanded="true" signature="621:966" ph="{...}" />
+            <marker date="1551680197073" expanded="true" signature="759:856" ph="{...}" />
+            <marker date="1551680197073" expanded="true" signature="873:956" ph="{...}" />
+            <marker date="1551680197073" expanded="true" signature="1067:1382" ph="{...}" />
+            <marker date="1551680197073" expanded="true" signature="1136:1376" ph="{...}" />
+            <marker date="1551680197073" expanded="true" signature="1246:1329" ph="{...}" />
+            <marker date="1551680197073" expanded="true" signature="1468:1802" ph="{...}" />
+            <marker date="1551680197073" expanded="true" signature="1560:1655" ph="{...}" />
+            <marker date="1551680197073" expanded="true" signature="1727:1796" ph="{...}" />
+            <marker date="1551680197073" expanded="true" signature="1888:2032" ph="{...}" />
+            <marker date="1551680197073" expanded="true" signature="1957:2026" ph="{...}" />
+            <marker date="1551680197073" expanded="true" signature="2128:2980" ph="{...}" />
+            <marker date="1551680197073" expanded="true" signature="2206:2381" ph="{...}" />
+            <marker date="1551680197073" expanded="true" signature="2438:2974" ph="{...}" />
+            <marker date="1551680197073" expanded="true" signature="2503:2964" ph="{...}" />
+            <marker date="1551680197073" expanded="true" signature="3069:4376" ph="{...}" />
+            <marker date="1551680197073" expanded="true" signature="3176:3271" ph="{...}" />
+            <marker date="1551680197073" expanded="true" signature="3335:3449" ph="{...}" />
+            <marker date="1551680197073" expanded="true" signature="3524:3703" ph="{...}" />
+            <marker date="1551680197073" expanded="true" signature="3791:4242" ph="{...}" />
+            <marker date="1551680197073" expanded="true" signature="4306:4370" ph="{...}" />
+            <marker date="1551680197073" expanded="true" signature="4473:5253" ph="{...}" />
+            <marker date="1551680197073" expanded="true" signature="4523:5116" ph="{...}" />
+            <marker date="1551680197073" expanded="true" signature="5179:5247" ph="{...}" />
           </folding>
         </state>
       </provider>

@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 3909064498
+CRC: 2369944671
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 73cbe12636aadfbce73aebb5a19d3035
+    Hash: ec8c73b9b43f14b28d1d14b74213d3d0
   TypeTreeHash:
     serializedVersion: 2
     Hash: f232f687cba8b9213f0741f351b69ecd
@@ -93,4 +93,4 @@ Assets:
 - Assets/AssetBundles/Art/Nationality/Flags/2560_1536/de.png
 - Assets/AssetBundles/Art/Views/SimpleWindowView.prefab
 Dependencies:
-- C:/Users/ccove/JunkyardDogs/Unity/AssetBundles/Android/data
+- C:/Users/ccove/JunkyardDogs/Unity/AssetBundles/Windows/data

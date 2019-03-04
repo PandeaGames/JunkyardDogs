@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 404956542
+CRC: 2083386728
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: db5f00bdef83896d4a2906e37266a4f6
+    Hash: 2105b8647683d7b690493f4584d69438
   TypeTreeHash:
     serializedVersion: 2
     Hash: 497fe1aef0df03c909e8d96b14f67ade
@@ -251,4 +251,4 @@ Assets:
 - Assets/AssetBundles/Data/Competitors/Germany/Florian/FloriansDeagles.asset
 - Assets/AssetBundles/Data/Products/Plating/Plate_Thickness05.asset
 Dependencies:
-- C:/Users/ccove/JunkyardDogs/Unity/AssetBundles/Android/art
+- C:/Users/ccove/JunkyardDogs/Unity/AssetBundles/Windows/art

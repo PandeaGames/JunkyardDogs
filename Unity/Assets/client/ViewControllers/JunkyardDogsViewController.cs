@@ -26,7 +26,7 @@ namespace JunkyardDogs
 
         public override void UpdateState()
         {
-            if (_viewModel.UserData.Competitor.Nationality.Asset == null)
+            if (_viewModel.UserData.Competitor.Nationality == null || _viewModel.UserData.Competitor.Nationality.Asset == null)
             {
                 _fsm.SetState(JunkyardDogsStates.ChooseNationality);
             }
