@@ -4,6 +4,7 @@ using JunkyardDogs.Components;
 using JunkyardDogs.Specifications;
 using System;
 using JunkyardDogs;
+using JunkyardDogs.Data;
 using JunkyardDogs.scripts.Runtime.Dialogs;
 using PandeaGames;
 
@@ -16,9 +17,6 @@ public class BotBuilderDisplay : MonoBehaviour
     
     [SerializeField]
     private CameraAgent _cameraAgent;
-
-    [SerializeField]
-    private PrefabFactory _botPrefabFactory;
 
     [SerializeField]
     private Collider _collider;
@@ -49,18 +47,11 @@ public class BotBuilderDisplay : MonoBehaviour
 
         Bot bot = botBuilder.Bot;
         var chassis = bot.Chassis;
-
-        bot.LoadAsync(
-            () =>
-            {
-                SetupChassis(( JunkyardDogs.Specifications.Chassis)chassis.Specification);
-            }, (e) =>
-            {
-                Debug.LogError(e);
-            });
-
+        
         _inputService.OnPointerClick += OnPointerClick;
         _inputService.OnPointerDown += OnPointerDown;
+        
+        SetupChassis(( JunkyardDogs.Specifications.Chassis)chassis.Specification);
     }
 
     private void OnPointerDown(Vector3 cameraPosition, RaycastHit raycast)
@@ -162,7 +153,7 @@ public class BotBuilderDisplay : MonoBehaviour
 
     private void SetupChassis(JunkyardDogs.Specifications.Chassis chassis)
     {
-        _bot = _botPrefabFactory.InstantiateAsset(chassis);
+        _bot = Game.Instance.GetStaticDataPovider<GameStaticDataProvider>().GameDataStaticData.BotPrefabFactory.InstantiateAsset(chassis);
         _bot.transform.SetParent(transform, false);
         BotRenderer renderer = _bot.AddComponent<BotRenderer>();
         renderer.Render(_botBuilder.Bot, _botRenderConfiguration);

@@ -49,6 +49,79 @@ public class BotAvatar : ScriptableObject
         return GetAvatarComponent(component.transform.GetSiblingIndex());
     }
 
+    public void ApplyAvatar(GameObject root)
+    {
+        FrontPlates = new List<GameObject>();
+        LeftPlates = new List<GameObject>();
+        RightPlates = new List<GameObject>();
+        BackPlates = new List<GameObject>();
+        TopPlates = new List<GameObject>();
+        BottomPlates = new List<GameObject>();
+        
+        ApplyTranform(root);
+    }
+
+    private void ApplyTranform(GameObject t)
+    {
+        string tName = t.name;
+        
+        if (tName.Contains("Chassis"))
+        {
+            Frame = t;
+        }
+        else if (tName.Contains("Plate"))
+        {
+            if (tName.Contains("Front"))
+            {
+                FrontPlates.Add(t);
+            }
+            else if (tName.Contains("Left"))
+            {
+                LeftPlates.Add(t);
+            }
+            else if (tName.Contains("Right"))
+            {
+                RightPlates.Add(t);
+            }
+            else if (tName.Contains("Back"))
+            {
+                BackPlates.Add(t);
+            }
+            else if (tName.Contains("Top"))
+            {
+                TopPlates.Add(t);
+            }
+            else if (tName.Contains("Bottom"))
+            {
+                BottomPlates.Add(t);
+            }
+        }
+        else if (tName.Contains("Weapon"))
+        {
+            if (tName.Contains("Top"))
+            {
+                TopArmament = t;
+            }
+            else if (tName.Contains("Front"))
+            {
+                FrontArmament = t;
+            }
+            else if (tName.Contains("Left"))
+            {
+                LeftArmament = t;
+            }
+            else if (tName.Contains("Right"))
+            {
+                RightArmament = t;
+            }
+        }
+
+        for (int i = 0; i < t.transform.childCount; i++)
+        {
+            ApplyTranform(t.transform.GetChild(i).gameObject);
+        }
+    }
+
     public AvatarComponent GetAvatarComponent(int index)
     {
         if (FrontPlates.Find((avatarComponent) => avatarComponent.transform.GetSiblingIndex() == index) || 

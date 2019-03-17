@@ -3,15 +3,13 @@ using System.Collections;
 using Data;
 using System;
 using System.Collections.Generic;
+using JunkyardDogs.Data;
 using WeakReference = PandeaGames.Data.WeakReferences.WeakReference;
 
 [Serializable]
 public class Competitor
 {
-    [SerializeField]
-    private WeakReference _nationality;
-
-    public WeakReference Nationality { get { return _nationality; } set { _nationality = value; } }
+    public NationalityStaticDataReference Nationality { get; set;}
     public Inventory Inventory { get; set; }
     public Record Record { get; set; }
 
@@ -19,5 +17,6 @@ public class Competitor
     {
         Inventory = new Inventory();
         Record = new Record();
+        Nationality = new NationalityStaticDataReference();
     }
 }

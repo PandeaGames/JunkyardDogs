@@ -27,15 +27,5 @@ namespace JunkyardDogs.Components
                 Weapon = null;
             }
         }
-
-        public override void LoadAsync(LoadSuccess onLoadSuccess, LoadError onLoadFailed)
-        {
-            Loader loader = new Loader();
-
-            loader.AppendProvider(Weapon);
-            loader.AppendProvider(base.LoadAsync);
-            
-            loader.LoadAsync(onLoadSuccess, onLoadFailed);
-        }
     }
 }

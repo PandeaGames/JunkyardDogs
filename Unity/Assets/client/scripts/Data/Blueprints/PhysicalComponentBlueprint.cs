@@ -2,22 +2,20 @@
 using JunkyardDogs.Specifications;
 using System;
 using JunkyardDogs.Components;
+using JunkyardDogs.Data;
 using Component = JunkyardDogs.Components.Component;
 using WeakReference = PandeaGames.Data.WeakReferences.WeakReference;
 
 [Serializable]
 public abstract class PhysicalComponentBlueprint<T> : ComponentBlueprint<T> where T:PhysicalComponentBlueprintData
 {
-    [SerializeField][WeakReference(typeof(JunkyardDogs.Specifications.Material))]
-    private WeakReference _material;
+    [SerializeField]
+    private MaterialStaticDataReference _material;
 
-    protected override void DoGenerate(int seed, Action<Component> onComplete, Action onError)
+    protected override Component DoGenerate(int seed)
     {
-        base.DoGenerate(seed, (component) =>
-        {
-            PhysicalComponent physicalComponent = component as PhysicalComponent;
-            physicalComponent.Material = _material;
-            onComplete(physicalComponent);
-        }, () => { });
+        PhysicalComponent physicalComponent = base.DoGenerate(seed) as PhysicalComponent;
+        physicalComponent.Material = _material;
+        return physicalComponent;
     }
 }

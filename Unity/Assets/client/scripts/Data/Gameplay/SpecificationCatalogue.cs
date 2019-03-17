@@ -4,6 +4,7 @@ using System;
 using JunkyardDogs.Specifications;
 using WeakReference = PandeaGames.Data.WeakReferences.WeakReference;
 using System.Threading.Tasks;
+using JunkyardDogs.Data;
 using Material = JunkyardDogs.Specifications.Material;
 
 [Serializable]
@@ -11,52 +12,22 @@ using Material = JunkyardDogs.Specifications.Material;
 public class SpecificationCatalogue : ScriptableObject
 {
     [Serializable]
-    public class Product : ILoadableObject
+    public class Product
     {
-        [SerializeField][WeakReference(typeof(Specification))]
-        private WeakReference _specification;
+        [SerializeField, StaticDataReference(path:SpecificationDataProvider.FULL_PATH)]
+        private SpecificationStaticDataReference _specification;
 
-        [SerializeField][WeakReference(typeof(JunkyardDogs.Specifications.Material))]
-        private WeakReference _material;
+        [SerializeField][StaticDataReference(path:MaterialDataProvider.FULL_PATH)]
+        private MaterialStaticDataReference _material;
 
-        public WeakReference Specification { get { return _specification; } }
-        public WeakReference Material { get { return _material; } }
-
-        private bool _isLoaded;
-
-        public bool IsLoaded()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void LoadAsync(LoadSuccess onLoadSuccess, LoadError onLoadFailed)
-        {
-            if (_specification == null)
-            {
-                Task task = Task.Run(() => onLoadFailed(new LoadException("No specification exists")));
-            }
-            else
-            {
-                _specification.LoadAssetAsync<Specification>(
-                    (asset, reference) =>
-                    {
-                        _material.LoadAssetAsync<Material>(
-                        (materialAsset, materialReference) =>
-                        {
-                            onLoadSuccess();
-                            _isLoaded = true;
-                        },
-                        (e) => onLoadFailed(new LoadException(e.Message, e)));
-                    },
-                    (e) => onLoadFailed(new LoadException(e.Message, e)));
-            }
-        }
+        public SpecificationStaticDataReference Specification { get { return _specification; } }
+        public MaterialStaticDataReference Material { get { return _material; } }
     }
 
-    [SerializeField][WeakReference(typeof(Manufacturer))]
-    private WeakReference _manufacturer;
+    [SerializeField][StaticDataReference(path:ManufacturerDataProvider.FULL_PATH)]
+    private ManufacturerStaticDataReference _manufacturer;
 
-    public WeakReference Manufacturer
+    public ManufacturerStaticDataReference Manufacturer
     {
         get
         {

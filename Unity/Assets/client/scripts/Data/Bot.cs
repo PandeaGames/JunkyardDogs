@@ -9,13 +9,11 @@ using Data;
 namespace JunkyardDogs.Components
 {
     [Serializable]
-    public class Bot:ILoadableObject
+    public class Bot
     {
         public Motherboard Motherboard { get; set; }
         public Chassis Chassis { get; set; }
         public Agent Agent { get; set; }
-
-        private bool _isLoaded;
 
         public Bot()
         {
@@ -25,22 +23,6 @@ namespace JunkyardDogs.Components
         public Bot(Chassis chassis) :this()
         {
             Chassis = chassis;
-        }
-
-        public void LoadAsync(LoadSuccess onLoadSuccess, LoadError onLoadFailed)
-        {
-            Loader loader = new Loader();
-
-            loader.AppendProvider(Motherboard);
-            loader.AppendProvider(Chassis);
-            loader.AppendProvider(Agent);
-            
-            loader.LoadAsync(onLoadSuccess, onLoadFailed);
-        }
-
-        public bool IsLoaded()
-        {
-            return _isLoaded;
         }
     }
 }

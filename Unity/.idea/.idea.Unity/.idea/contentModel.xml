@@ -190,9 +190,22 @@
       <e p="Assets\client" t="Include">
         <e p="Data" t="Include">
           <e p="AssetBundleEnum.cs" t="Include" />
+          <e p="CompetitorBlueprintDataProvider.cs" t="Include" />
+          <e p="CompetitorBlueprintDataSource.cs" t="Include" />
           <e p="GameStaticDataProvider.cs" t="Include" />
           <e p="JunkyardStaticDataLoader.cs" t="Include" />
+          <e p="ManufactuererDataSource.cs" t="Include" />
+          <e p="ManufacturerDataProvider.cs" t="Include" />
           <e p="MatchTestData.cs" t="Include" />
+          <e p="MaterialDataProvider.cs" t="Include" />
+          <e p="MaterialDataSource.cs" t="Include" />
+          <e p="NationalityDataProvider.cs" t="Include" />
+          <e p="NationalityDataSource.cs" t="Include" />
+          <e p="ParticipantDataProvider.cs" t="Include" />
+          <e p="ParticipantDataSource.cs" t="Include" />
+          <e p="SpecificationDataProvider.cs" t="Include" />
+          <e p="SpecificationDataSource.cs" t="Include" />
+          <e p="StaticDataReferences.cs" t="Include" />
           <e p="UnityData" t="Include">
             <e p="GameStaticData.cs" t="Include" />
             <e p="ViewStaticData.cs" t="Include" />
@@ -686,9 +699,18 @@
           <e p="PandeaGameConfigurationData.cs" t="Include" />
           <e p="ScreenTransition.cs" t="Include" />
           <e p="Static" t="Include">
+            <e p="AbstractScriptableObjectStaticData.cs" t="Include" />
             <e p="AbstractStaticDataProvider.cs" t="Include" />
+            <e p="BundledStaticDataReferenceDirectory.cs" t="Include" />
+            <e p="Editor" t="Include">
+              <e p="StaticDataReferenceAttribute.cs" t="Include" />
+              <e p="StaticDataReferencePropertyDrawer.cs" t="Include" />
+            </e>
+            <e p="IStaticDataDirectorySource.cs" t="Include" />
             <e p="IStaticDataProvider.cs" t="Include" />
             <e p="PandeaGameDataProvider.cs" t="Include" />
+            <e p="StaticDataReference.cs" t="Include" />
+            <e p="StaticDataReferenceDirectory.cs" t="Include" />
           </e>
           <e p="WeakReference" t="Include">
             <e p="AssetLoader.cs" t="Include" />
@@ -832,6 +854,39 @@
           </e>
         </e>
       </e>
+      <e p="Assets\RapidSheetData" t="Include">
+        <e p="Examples" t="Include">
+          <e p="scripts" t="Include">
+            <e p="RapidSheetDataExample.cs" t="Include" />
+            <e p="RapidSheetDataExampleView.cs" t="Include" />
+          </e>
+        </e>
+        <e p="scripts" t="Include">
+          <e p="Editor" t="Include">
+            <e p="RSDAssetInspector.cs" t="Include" />
+          </e>
+          <e p="IRSDConverter.cs" t="Include" />
+          <e p="IRSDSerializer.cs" t="Include" />
+          <e p="RSDAsset.cs" t="Include" />
+          <e p="RSDFetchRequest.cs" t="Include" />
+          <e p="ThirdParty" t="Include">
+            <e p="LitJson" t="Include">
+              <e p="IJsonWrapper.cs" t="Include" />
+              <e p="JsonData.cs" t="Include" />
+              <e p="JsonException.cs" t="Include" />
+              <e p="JsonMapper.cs" t="Include" />
+              <e p="JsonMockWrapper.cs" t="Include" />
+              <e p="JsonReader.cs" t="Include" />
+              <e p="JsonWriter.cs" t="Include" />
+              <e p="Lexer.cs" t="Include" />
+              <e p="ParserToken.cs" t="Include" />
+            </e>
+            <e p="MiniJSON" t="Include">
+              <e p="MiniJSON.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
       <e p="Assets\SampleScenes" t="Include">
         <e p="Menu" t="Include">
           <e p="scripts" t="Include">
@@ -864,6 +919,16 @@
         </e>
       </e>
       <e p="Assets\SimulationTests.cs" t="Include" />
+      <e p="Assets\Smooth! Orbit Cam" t="Include">
+        <e p="Demo_Scene_Objects" t="Include">
+          <e p="demo_GUI.cs" t="Include" />
+          <e p="showValues.cs" t="Include" />
+        </e>
+        <e p="scripts" t="Include">
+          <e p="SmoothOrbitCam.cs" t="Include" />
+          <e p="SmoothOrbitViewchanger.cs" t="Include" />
+        </e>
+      </e>
       <e p="Assets\Standard Assets" t="Include">
         <e p="Characters" t="Include">
           <e p="FirstPersonCharacter" t="Include">
@@ -1242,6 +1307,9 @@
         </e>
       </e>
       <e p="Assets\ThirdParty" t="Include">
+        <e p="Planet Earth Free" t="Include">
+          <e p="SpinFree.cs" t="Include" />
+        </e>
         <e p="SharpSerializer" t="Include">
           <e p="Advanced" t="Include">
             <e p="Binary" t="Include">
@@ -1599,9 +1667,7 @@
       <e p="Library" t="ExcludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="packages" t="ExcludeRecursive" />
-      <e p="Temp" t="ExcludeRecursive">
-        <e p="bin" t="ExcludeRecursive" />
-      </e>
+      <e p="Temp\bin" t="ExcludeRecursive" />
       <e p="Unity.sln" t="IncludeFlat" />
     </e>
   </component>

@@ -85,15 +85,10 @@ namespace JunkyardDogs
             Engagement engagement = new Engagement();
             engagement.SetTimeLimit(50);
 
-            match.ParticipantA.Participant.GetTeam(User, blueTeam =>
-            {
-                engagement.BlueCombatent = blueTeam.Bot;
-                match.ParticipantB.Participant.GetTeam(User, redTeam =>
-                {
-                    engagement.RedCombatent = redTeam.Bot;
-                    onComplete(engagement);
-                }, onError);
-            }, onError);
+            engagement.BlueCombatent = match.ParticipantA.Participant.GetTeam(User).Bot;
+            engagement.RedCombatent = match.ParticipantB.Participant.GetTeam(User).Bot;
+            
+            onComplete(engagement);
         }
     }
 }

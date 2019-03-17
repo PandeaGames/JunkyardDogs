@@ -51,36 +51,10 @@ public class ChooseUserBotController : MonoBehaviour
         Competitor competitor = _userViewModel.UserData.Competitor;
         Inventory inventory = competitor.Inventory;
 
-        int botsToLoad = inventory.Bots.Count;
         bool errorLoading = false;
-        
-        LoadSuccess onBotLoadComplete = () =>
-        {
-            if (--botsToLoad <= 0)
-            {
-                if (errorLoading)
-                {
-                    //onError();
-                }
-                else
-                {
-                    OnBotsLoaded(inventory.Bots);
-                }
-            }
-        };
-        
-        LoadError onBotLoadError = (e) =>
-        {
-            botsToLoad--;
-            errorLoading = true;
-        };
-        
-        foreach (Bot bot in inventory.Bots)
-        {
-            bot.LoadAsync(onBotLoadComplete, onBotLoadError);
-        }
-        
+  
         _cameraViewModel.Focus(_cameraAgent);
+        OnBotsLoaded(inventory.Bots);
     }
 
     private void OnBotsLoaded(List<Bot> bots)

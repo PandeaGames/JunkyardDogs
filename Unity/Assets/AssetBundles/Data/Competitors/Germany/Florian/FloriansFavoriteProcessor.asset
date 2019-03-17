@@ -14,22 +14,18 @@ MonoBehaviour:
   _blueprint:
     _blueprintBase: {fileID: 0}
     _specification:
-      _guid: 5c1887b105ba514408a1d552cd6d6e61
-      _path: Assets/AssetBundles/Data/Products/Skylabs/Processors/subprocessor/WeaponChip.asset
+      _id: 
     _manufacturer:
       _guid: 2aeb4c1ba3b2b6c44962fc440c235b76
       _path: Assets/AssetBundles/Data/Products/Skylabs/Skylabs.asset
     _material:
-      _guid: 7455743319f2c4f43bea1a52ad46747a
-      _path: Assets/AssetBundles/Data/Products/Skylabs/Materials/Alloy/Aluminum.asset
+      _id: 
     _weapon:
       _blueprintBase: {fileID: 11400000, guid: da26b5af324069f4a83553feed2cf80d, type: 2}
       _specification:
-        _guid: 
-        _path: 
+        _id: 
       _manufacturer:
         _guid: 
         _path: 
       _material:
-        _guid: 
-        _path: 
+        _id: 

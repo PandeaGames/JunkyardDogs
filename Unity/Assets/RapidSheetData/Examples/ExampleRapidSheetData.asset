@@ -1,0 +1,97 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7580e91ba8c57d64db9a909183b608b8, type: 3}
+  m_Name: ExampleRapidSheetData
+  m_EditorClassIdentifier: 
+  _serverURL: https://rapid-sheet-data-service.herokuapp.com/
+  _spreadsheetId: 1Uuu26oeYNCDQnmgI141TP0ixi2n8QF4PZJL69EX77jE
+  _sheets:
+  - _sheetName: Game Data
+    _targetClass: Lib.RapidSheetData.Examples.GameDOB, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    _majorDimension: 1
+  - _sheetName: Character Data
+    _targetClass: Lib.RapidSheetData.Examples.CharacterDOB, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    _majorDimension: 0
+  - _sheetName: Weapon Data
+    _targetClass: Lib.RapidSheetData.Examples.WeaponDOB, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    _majorDimension: 0
+  - _sheetName: Level Data
+    _targetClass: Lib.RapidSheetData.Examples.LevelDOB, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    _majorDimension: 0
+  - _sheetName: Example Data
+    _targetClass: Lib.RapidSheetData.Examples.ExampleDOB, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    _majorDimension: 0
+  _cachedJsonData: '{"Game Data":[{"ID":"Release","PlayerInitGold":"100","NumberOfStartingPlayers":"3","DaytimeLength":"30.5","NightimeLength":"20.75","StartingLevel":"lvl0_fools_march"},{"ID":"Development","PlayerInitGold":"50","NumberOfStartingPlayers":"1","DaytimeLength":"15.5","NightimeLength":"8.25","StartingLevel":"lvl1_galadoneh"}],"Character
+    Data":[{"Id":"ch01_adril","Name":"Adril Genmys","Description":"Gray, straight
+    hair hangs over a round, friendly face. Lidded green eyes, set thightly within
+    their sockets, watch merrily over the farms they''ve come to love for so long.\nA
+    moustache and goatee gracefully compliments his eyes and hair and leaves a satisfying
+    memory of his luck in battles.\nThere''s something seductive about him, perhaps
+    it''s his sense of humor or perhaps it''s simply a feeling of indifference. \nBut
+    nonetheless, people tend to worship him, while hoping he will one day be their
+    leader.","Strength":"3","Dexterity":"5","Intelligence":"2","Profession":"Assasin","CanDance":"FALSE","InitialItems":"it01_piece_maker"},{"Id":"ch02_diccon","Name":"Diccon
+    the Keen","Description":"Black, short hair tight in a ponytail reveals a craggy,
+    lived-in face. Heavy gray eyes, set gracefully within their sockets, watch delicately
+    over the village they''ve come to appreciate for so long. \nThere''s something
+    charming about him, perhaps it''s his good looks or perhaps it''s simply his painful
+    past. But nonetheless, people tend to ask him about his latest victory, while
+    spreading rumors about him behind his back.","Strength":"7","Dexterity":"2","Intelligence":"1","Profession":"Blocker","CanDance":"TRUE","InitialItems":"it05_ravager,it06_oathkeeper"},{"Id":"ch03_indigo","Name":"Indigo
+    Storm","Description":"Black, straight hair gently hangs over a round, wild face.
+    Squinting hazel eyes, set buried within their sockets, watch intently over the
+    farms they''ve nearly died for for so long.\n\nThere''s something charming about
+    her, perhaps it''s her tenderness or perhaps it''s simply a feeling of regret.
+    But nonetheless, people tend to keep their distance, while learning as much about
+    her as possible.","Strength":"2","Dexterity":"3","Intelligence":"5","Profession":"Healer","CanDance":"TRUE","InitialItems":"it04_gs_spire"}],"Weapon
+    Data":[{"Id":"it01_piece_maker","Name":"Piece Maker, Razor of Silence","Description":"With
+    a single, sharp edge this weapon is the perfect choice for slicing and dicing
+    while also offering you a way to effectively block attacks.","WeaponType":"Knife","Attack":"2","AttackSpeed":"4"},{"Id":"it02_skyfire","Name":"Skyfire,
+    Heavy Crossbow of Riddles","Description":"This skillfully created compound crossbow
+    has been superbly constructed of reinforced firewood. \nIts string is made from
+    superior boar gut, \nit''s an uncommon material around these parts of the world.","WeaponType":"Crossbow","Attack":"3","AttackSpeed":"3"},{"Id":"it03_big_bertha","Name":"Big
+    Bertha","Description":"This weapon is terrifying, but commissioned for many around
+    the world and known for its deadly accuracy.","WeaponType":"Rifle","Attack":"4","AttackSpeed":"2"},{"Id":"it04_gs_spire","Name":"Ghastly
+    Sagewood Spire","Description":"The bottom ends in a simple twirl made of wood
+    and has been decorated with embedded crystals in the shape of leaves, they seem
+    to be living and thriving on magical powers.","WeaponType":"Stave","Attack":"4","AttackSpeed":"4"},{"Id":"it05_ravager","Name":"Singed
+    Ravager","Description":"This weapon is used by higher ranked guards. \nThe capable
+    hands of the country''s greatest defenders deserve nothing less than this weapon''s
+    excellence.","WeaponType":"Axe","Attack":"5","AttackSpeed":"1"},{"Id":"it06_oathkeeper","Name":"Oathkeeper","Description":"The
+    shield''s edges are reinforced with thick metal plating and have been decorated
+    with intricate metalwork.\n\nIts center is garnished with complex metalwork and
+    symmetrical paintwork.","WeaponType":"Shield","Attack":"","AttackSpeed":"","Defense":"4","BlockChance":"20"}],"Level
+    Data":[{"Id":"lvl0_fools_march","LevelName":"Fool''s March","Description":"Established
+    behind a thicket, the settlement of Fool''s March is home to vikings lead by Knight
+    Adwell.\nThis settlement wasn''t built by a thicket by accident, as it has natural
+    defences, which is of great importance to the people of Fool''s March and its
+    success.\n\nFool''s March has a hurting economy, which is mainly supported by
+    baking, farming and animal training. But their biggest strengths are complex crafting
+    and refined carpenting.\nHowever, Fool''s March lacks people skilled in hunting."},{"Id":"lvl1_galadoneh","LevelName":"Galadoneh","Description":"Based
+    on top of a cave, the town of Galadoneh is home to blood elves lead by Agent Elmon.\nThis
+    town wasn''t built by a cave by accident, as it has magical properties, which
+    is of great importance to the people of Galadoneh and its success.\n\nGaladoneh
+    has an unhealthy economy, which is mainly supported by fletching, cooking and
+    war. But their biggest strengths are delicate tailoring and a strong defence.\nHowever,
+    Galadoneh lacks people skilled in beer brewing."}],"Example Data":[{"IntProp":"42","FloatProp":"91.28","StringProp":"test
+    string","BoolProp":"TRUE","EnumProp":"second","IntField":"43","FloatField":"91.28","StringField":"test
+    string","BoolField":"TRUE","EnumField":"second","IntListField":"1,1,2,3,5,8,13,21","FloatListField":"1,1,2,3,5,8,13,21","StringListField":"one,
+    two, three, ","BoolListField":"false, true, 0"},{"IntProp":"5.5","FloatProp":"2.4","StringProp":"two","BoolProp":"TRUE","EnumProp":"second","IntField":"5.5","FloatField":"2.4","StringField":"two","BoolField":"TRUE","EnumField":"second","IntListField":"5","FloatListField":"","StringListField":"one,
+    two, three, ","BoolListField":"-1, 0, 1, false, true, invalid"},{"IntProp":"8","FloatProp":"3.14","StringProp":"three","BoolProp":"0","EnumProp":"THIRD","IntField":"8","FloatField":"3.14","StringField":"three","BoolField":"0","EnumField":"THIRD","IntListField":"","FloatListField":"","StringListField":",
+    , ","BoolListField":"true, false"},{"IntProp":"13","FloatProp":"4.4","StringProp":"four","BoolProp":"1","EnumProp":"-1","IntField":"13","FloatField":"4.4","StringField":"four","BoolField":"1","EnumField":"-1","IntListField":"2.1,
+    3, 3.4, 7, -1","FloatListField":"","StringListField":",","BoolListField":"false,
+    true"},{"IntProp":"21","FloatProp":"5.765","StringProp":"five","BoolProp":"5","EnumProp":"x","IntField":"21","FloatField":"5.765","StringField":"five","BoolField":"5","EnumField":"x","IntListField":"","FloatListField":"","StringListField":"five","BoolListField":"0,
+    0, 1, 1, 90"},{"IntProp":"34","FloatProp":"8.76543","StringProp":"six","BoolProp":"-1","EnumProp":"8","IntField":"34","FloatField":"8.76543","StringField":"six","BoolField":"-1","EnumField":"8","IntListField":"1,
+    2, 2003","FloatListField":"","StringListField":"","BoolListField":"-1, -1, -2.4,
+    5, 0, false, bit"}]}'

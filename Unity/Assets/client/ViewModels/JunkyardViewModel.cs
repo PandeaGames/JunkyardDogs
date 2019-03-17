@@ -1,5 +1,6 @@
 ﻿using System;
 using JunkyardDogs.Components;
+using JunkyardDogs.Data;
 using JunkyardDogs.Specifications;
 using PandeaGames.ViewModels;
 using WeakReference = PandeaGames.Data.WeakReferences.WeakReference;
@@ -13,15 +14,9 @@ namespace JunkyardDogs
         public JunkyardUser User;
         
 
-        public void TakeJunk(WeakReference manufacturer, SpecificationCatalogue.Product product)
+        public void TakeJunk(ManufacturerStaticDataReference manufacturer, SpecificationCatalogue.Product product)
         {
-            ManufacturerUtils.BuildComponent(manufacturer, product, (component) =>
-            {
-                if (OnTakeJunk != null)
-                {
-                    OnTakeJunk(component);
-                }
-            });
+            OnTakeJunk(ManufacturerUtils.BuildComponent(manufacturer, product.Specification, product.Material));
         }
     }
 }

@@ -2,6 +2,7 @@
 using UnityEngine;
 using System.Collections;
 using JunkyardDogs.Components;
+using JunkyardDogs.Data;
 using Component = JunkyardDogs.Components.Component;
 using WeakReference = PandeaGames.Data.WeakReferences.WeakReference;
 
@@ -9,26 +10,24 @@ namespace JunkyardDogs.Specifications
 {
     public class ManufacturerUtils
     {
-        public static void BuildComponent(WeakReference manufacturer, SpecificationCatalogue.Product product, Action<Component> onComplete)
+        public static Component BuildComponent(ManufacturerStaticDataReference manufacturer, SpecificationCatalogue.Product product)
         {
-            BuildComponent(manufacturer, product.Specification, product.Material, onComplete);
+            return BuildComponent(manufacturer, product.Specification, product.Material);
         }
 
-        public static void BuildComponent(WeakReference manufacturer, WeakReference spec, WeakReference material, Action<Component> onComplete)
+        public static Component BuildComponent(ManufacturerStaticDataReference manufacturer, SpecificationStaticDataReference spec, MaterialStaticDataReference material)
         {
-            ComponentUtils.GenerateComponent(spec, (component) =>
+            Component component = ComponentUtils.GenerateComponent(spec);
+            PhysicalComponent physicalComponent = component as PhysicalComponent;
+
+            component.Manufacturer = manufacturer;
+
+            if (physicalComponent != null)
             {
-                PhysicalComponent physicalComponent = component as PhysicalComponent;
+                physicalComponent.Material = material;
+            }
 
-                component.Manufacturer = manufacturer;
-
-                if (physicalComponent != null)
-                {
-                    physicalComponent.Material = material;
-                }
-
-                onComplete(component);
-            }); 
+            return component;
         }
     }
 

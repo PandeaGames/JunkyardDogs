@@ -2,13 +2,17 @@
 using UnityEngine;
 using JunkyardDogs.Specifications;
 using System;
+using JunkyardDogs.Data;
+using JunkyardDogs.Simulation.Agent;
+using Chassis = JunkyardDogs.Components.Chassis;
+using Motherboard = JunkyardDogs.Components.Motherboard;
 using WeakReference = PandeaGames.Data.WeakReferences.WeakReference;
 
 [Serializable]
 public class BotBlueprint : Blueprint<Bot, BotBlueprintData>
 {
-    [SerializeField][WeakReference(typeof(Manufacturer))]
-    private WeakReference _manufacturer;
+    [SerializeField]
+    private ManufacturerStaticDataReference _manufacturer;
     
     [SerializeField]
     private ChassisBlueprint _chassis; 
@@ -19,25 +23,19 @@ public class BotBlueprint : Blueprint<Bot, BotBlueprintData>
     [SerializeField]
     private AgentBlueprint _agent; 
 
-    protected override void DoGenerate(int seed, Action<Bot> onComplete, Action onError)
+    protected override Bot DoGenerate(int seed)
     {
-        _chassis.Generate((chassis) =>
-        {
-            _agent.Generate((agent) =>
-            {
-                _motherboard.Generate((motherboard) =>
-                {
-                    chassis.Manufacturer = _manufacturer;
+        Chassis chassis = (Chassis)_chassis.Generate();
+        Agent agent = (Agent) _agent.Generate();
+        Motherboard motherboard = (Motherboard)_motherboard.Generate();
+        
+        chassis.Manufacturer = _manufacturer;
 
-                    Bot bot = new Bot();
+        Bot bot = new Bot();
 
-                    bot.Chassis = chassis as JunkyardDogs.Components.Chassis;
-                    bot.Agent = agent;
-                    
-                    onComplete(bot);
+        bot.Chassis = chassis;
+        bot.Agent = agent;
 
-                }, onError);
-            }, onError);
-        }, onError);
+        return bot;
     }
 }

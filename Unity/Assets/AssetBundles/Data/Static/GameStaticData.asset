@@ -11,6 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9e06f00715e4f98b340a52983c8e32f, type: 3}
   m_Name: GameStaticData
   m_EditorClassIdentifier: 
-  _nations:
-    _guid: e1668a7eb71ea54439d3430dc301898f
-    _path: Assets/AssetBundles/Data/Nations/NationList.asset
+  _actionList:
+    _guid: 338088a5bcaa5614ea03d24595ddea10
+    _path: Assets/AssetBundles/Data/Simulation/Behavior/List.asset
+  _botPrefabFactory: {fileID: 11400000, guid: e976fde8db251f444b07b560f439adf2, type: 2}

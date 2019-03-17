@@ -2,27 +2,23 @@
 using JunkyardDogs.Specifications;
 using System;
 using JunkyardDogs.Components;
+using JunkyardDogs.Data;
+using PandeaGames.Data.Static;
+
 using WeakReference = PandeaGames.Data.WeakReferences.WeakReference;
 using Component = JunkyardDogs.Components.Component;
 
 [Serializable]
 public class ComponentBlueprint<T> : Blueprint<Component, T> where T:BlueprintData
-{
-    [SerializeField][WeakReference(typeof(Specification))]
-    private WeakReference _specification;
-            
+{   
+    /*[StaticDataReference(path:SpecificationDataProvider.FULL_PATH)]*/[SerializeField]
+    private SpecificationStaticDataReference _specification;
+    
     [SerializeField][WeakReference(typeof(Manufacturer))]
     private WeakReference _manufacturer;
         
-    protected override void DoGenerate(int seed, Action<Component> onComplete, Action onError)
+    protected override Component DoGenerate(int seed)
     {
-        ComponentUtils.GenerateComponent(_specification, (comp) =>
-        {
-            _manufacturer.LoadAssetAsync<Manufacturer>((manufacturer, manufacturerReference) =>
-                {
-                    comp.Manufacturer = _manufacturer;
-                    onComplete(comp);
-                }, (e) => onError());
-        });
+        return ComponentUtils.GenerateComponent(_specification);
     }
 }

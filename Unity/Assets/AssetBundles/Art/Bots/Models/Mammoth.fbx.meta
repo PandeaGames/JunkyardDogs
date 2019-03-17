@@ -1,0 +1,154 @@
+fileFormatVersion: 2
+guid: 75f1b1461b5f407489ab7f31f62f8631
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Chassis
+    100002: Doodad
+    100004: //RootNode
+    100006: Plate_Bottom_01
+    100008: Plate_Front_01
+    100010: Plate_Left_01
+    100012: Plate_Left_02
+    100014: Plate_Right_01
+    100016: Plate_Right_02
+    100018: Plate_Top_01
+    100020: Plate_Top_02
+    100022: Weapon_Left
+    100024: Weapon_Right
+    100026: Weapon_Top
+    400000: Chassis
+    400002: Doodad
+    400004: //RootNode
+    400006: Plate_Bottom_01
+    400008: Plate_Front_01
+    400010: Plate_Left_01
+    400012: Plate_Left_02
+    400014: Plate_Right_01
+    400016: Plate_Right_02
+    400018: Plate_Top_01
+    400020: Plate_Top_02
+    400022: Weapon_Left
+    400024: Weapon_Right
+    400026: Weapon_Top
+    2100000: lambert1
+    2300000: Chassis
+    2300002: Doodad
+    2300004: Plate_Bottom_01
+    2300006: Plate_Front_01
+    2300008: Plate_Left_01
+    2300010: Plate_Left_02
+    2300012: Plate_Right_01
+    2300014: Plate_Right_02
+    2300016: Plate_Top_01
+    2300018: Plate_Top_02
+    2300020: Weapon_Left
+    2300022: Weapon_Right
+    2300024: Weapon_Top
+    3300000: Chassis
+    3300002: Doodad
+    3300004: Plate_Bottom_01
+    3300006: Plate_Front_01
+    3300008: Plate_Left_01
+    3300010: Plate_Left_02
+    3300012: Plate_Right_01
+    3300014: Plate_Right_02
+    3300016: Plate_Top_01
+    3300018: Plate_Top_02
+    3300020: Weapon_Left
+    3300022: Weapon_Right
+    3300024: Weapon_Top
+    4300000: Plate_Right_01
+    4300002: Plate_Right_02
+    4300004: Plate_Front_01
+    4300006: Plate_Top_01
+    4300008: Plate_Top_02
+    4300010: Chassis
+    4300012: Plate_Bottom_01
+    4300014: Plate_Left_01
+    4300016: Plate_Left_02
+    4300018: Weapon_Right
+    4300020: Weapon_Top
+    4300022: Weapon_Left
+    4300024: Doodad
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

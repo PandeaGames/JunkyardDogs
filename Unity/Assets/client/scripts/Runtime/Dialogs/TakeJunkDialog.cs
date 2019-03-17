@@ -22,14 +22,8 @@ public class TakeJunkDialog : Dialog<TakeJunkDialogViewModel>
 
     protected override void Initialize()
     {
-        _viewModel.ModelData.Component.SpecificationReference.LoadAssetAsync<ScriptableObject>(
-            (asset, reference) => 
-            {
-                _componentIcon.sprite = _spriteFactory.GetAsset(asset);
-                _componentText.text = asset.name;
-            },
-            null
-        );
+        _componentIcon.sprite = _spriteFactory.GetAsset( _viewModel.ModelData.Component.SpecificationReference.Data);
+        _componentText.text = _viewModel.ModelData.Component.SpecificationReference.Data.name;
         
         _takeJunkButton.onClick.AddListener(() =>
         {

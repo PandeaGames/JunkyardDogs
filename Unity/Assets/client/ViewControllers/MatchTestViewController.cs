@@ -49,25 +49,16 @@ namespace JunkyardDogs
 			base.EnterState(@from);
 
 			Engagement engagement = null;
-			
-			_viewModel.TestData.GetParticipantsAsync(_userViewModel.UserData, (participantTeams) =>
-			{
-				engagement = new Engagement();
+			var teams = _viewModel.TestData.GetParticipants(_userViewModel.UserData);
 
-				engagement.BlueCombatent = participantTeams[0].Bot;
-				engagement.RedCombatent = participantTeams[1].Bot;
-				engagement.SetTimeLimit(180);//3 minutes
-            
-				Loader loader = new Loader();
-				loader.AppendProvider(engagement.BlueCombatent);
-				loader.AppendProvider(engagement.RedCombatent);
-				loader.LoadAsync(() =>
-				{
-					_matchViewModel.Engagement = engagement;
-					_fsm.SetState(MatchTestViewStates.Match);
-				}, (error) => { });
-            
-			}, () => { });
+			engagement = new Engagement();
+
+			engagement.BlueCombatent = teams[0].Bot;
+			engagement.RedCombatent = teams[1].Bot;
+			engagement.SetTimeLimit(180);//3 minutes
+        
+			_matchViewModel.Engagement = engagement;
+			_fsm.SetState(MatchTestViewStates.Match);
 		}
 	}
 

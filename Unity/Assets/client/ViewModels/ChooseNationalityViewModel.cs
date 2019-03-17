@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using JunkyardDogs.Data;
 using PandeaGames.ViewModels;
 using PandeaGames.Data.WeakReferences;
 using WeakReference = PandeaGames.Data.WeakReferences.WeakReference;
@@ -7,10 +9,10 @@ public class ChooseNationalityViewModel : AbstractViewModel
 {
     public struct Data
     {
-        public readonly NationList NationList;
+        public readonly List<NationalityStaticDataReference> NationList;
         public readonly JunkyardUser User;
         
-        public Data(NationList nationList, 
+        public Data(List<NationalityStaticDataReference> nationList, 
             JunkyardUser user)
         {
             NationList = nationList;
@@ -18,17 +20,17 @@ public class ChooseNationalityViewModel : AbstractViewModel
         }
     }
     
-    public event Action<WeakReference> OnNationChanged;
+    public event Action<NationalityStaticDataReference> OnNationChanged;
 
     private Data _data;
     
-    private WeakReference _chosenNationality;
-    public WeakReference ChosenNationality
+    private NationalityStaticDataReference _chosenNationality;
+    public NationalityStaticDataReference ChosenNationality
     {
         get { return _chosenNationality; }
     }
     
-    public NationList NationList
+    public List<NationalityStaticDataReference> NationList
     {
         get { return _data.NationList; }
     }
@@ -46,7 +48,7 @@ public class ChooseNationalityViewModel : AbstractViewModel
         _data = data;
     }
 
-    public void SetChosenNationality(WeakReference nationlity)
+    public void SetChosenNationality(NationalityStaticDataReference nationlity)
     {
         _chosenNationality = nationlity;
 

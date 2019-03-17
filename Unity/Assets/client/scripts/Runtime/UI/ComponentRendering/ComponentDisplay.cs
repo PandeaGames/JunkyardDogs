@@ -29,13 +29,7 @@ public class ComponentDisplay : MonoBehaviour, IVirtualView
     // Use this for initialization
     public void RenderComponent(Component component)
     {
-        component.SpecificationReference.LoadAssetAsync<ScriptableObject>(
-            (asset, reference) =>
-            {
-                _componentIcon.sprite = _spriteFactory.GetAsset(asset);
-                _componentName.text = asset.name;
-            },
-            null
-            );
+        _componentIcon.sprite = _spriteFactory.GetAsset(component.SpecificationReference.Data);
+        _componentName.text = component.SpecificationReference.Data.name;
     }
 }

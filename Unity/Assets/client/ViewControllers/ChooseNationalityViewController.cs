@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using JunkyardDogs.Data;
 using JunkyardDogs.Views;
 using PandeaGames;
@@ -14,11 +15,18 @@ namespace JunkyardDogs
         
         protected override void OnBeforeShow()
         {
-            GameStaticDataProvider dataProvider = Game.Instance.GetStaticDataPovider<GameStaticDataProvider>();
+            NationalityDataProvider dataProvider = Game.Instance.GetStaticDataPovider<NationalityDataProvider>();
             JunkyardUser user = Game.Instance.GetService<JunkyardUserService>().User;
+
+            var dataList = new List<NationalityStaticDataReference>();
+
+            foreach (var refernce in dataProvider)
+            {
+                dataList.Add(refernce);
+            }
             
             ChooseNationalityViewModel.Data data = new ChooseNationalityViewModel.Data(
-                dataProvider.GameDataStaticData.Nations,
+                dataList,
                 user
                 );
 
@@ -33,7 +41,7 @@ namespace JunkyardDogs
             return new ChooseNationlaityView();
         }
 
-        private void OnChooseNation(WeakReference reference)
+        private void OnChooseNation(NationalityStaticDataReference reference)
         {
             Game.Instance.GetService<JunkyardUserService>().User.Competitor.Nationality = reference;
 

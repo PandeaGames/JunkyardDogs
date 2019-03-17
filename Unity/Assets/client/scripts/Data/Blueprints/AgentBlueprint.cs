@@ -31,7 +31,7 @@ public class AgentBlueprint : Blueprint<Agent, AgentBlueprintData>
     [SerializeField]
     private List<AgentStateBlueprint> _states;
     
-    protected override void DoGenerate(int seed, Action<Agent> onComplete, Action onError)
+    protected override Agent DoGenerate(int seed)
     {
         Agent agent = new Agent();
         
@@ -48,7 +48,7 @@ public class AgentBlueprint : Blueprint<Agent, AgentBlueprintData>
                 state.Directives.Add(directive);
             });
         });
-        
-        TaskProvider.Instance.DelayedAction(() => onComplete(agent));
+
+        return agent;
     }
 }

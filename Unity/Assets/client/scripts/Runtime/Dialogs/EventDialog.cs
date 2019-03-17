@@ -97,17 +97,16 @@ public class EventDialog : Dialog<EventDialogViewModel>
         _user.Cash += tournament.GoldReward;
         foreach (var product in rewards.Products)
         {
-            ManufacturerUtils.BuildComponent(rewards.Manufacturer, product, component =>
+            Component component =
+            ManufacturerUtils.BuildComponent(rewards.Manufacturer, product.Specification, product.Material);
+            components.Add(component);
+            _user.AddComponent(component);
+            if (components.Count >= rewards.Products.Length)
             {
-                components.Add(component);
-                _user.AddComponent(component);
-                if (components.Count >= rewards.Products.Length)
-                {
-                    _user.Tournaments.CompleteTournament(tournament.Guid);
-                    Game.Instance.GetService<JunkyardUserService>().Save();
-                    Close();
-                }
-            });
+                _user.Tournaments.CompleteTournament(tournament.Guid);
+                Game.Instance.GetService<JunkyardUserService>().Save();
+                Close();
+            }
         }
     }
 }

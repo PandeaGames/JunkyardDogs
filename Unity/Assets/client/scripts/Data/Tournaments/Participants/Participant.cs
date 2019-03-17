@@ -26,21 +26,16 @@ public struct ParticipantTeam
 
 public abstract class Participant
 {
-        public static void GetTeam(List<Participant> participants, JunkyardUser user, Action<List<ParticipantTeam>> onComplete, Action onError)
+        public static List<ParticipantTeam> GetTeam(List<Participant> participants, JunkyardUser user)
         {
                 List<ParticipantTeam> output = new List<ParticipantTeam>();
                 
                 participants.ForEach((participant) =>
                 {
-                        participant.GetTeam(user, (team) =>
-                        {
-                                output.Add(team);
-                                if (output.Count == participants.Count)
-                                {
-                                        onComplete(output);
-                                }
-                        }, onError);
+                        output.Add(participant.GetTeam(user));
                 });
+
+                return output;
         }
-        public abstract void GetTeam(JunkyardUser user,  Action<ParticipantTeam> onComplete, Action onError);
+        public abstract ParticipantTeam GetTeam(JunkyardUser user);
 }

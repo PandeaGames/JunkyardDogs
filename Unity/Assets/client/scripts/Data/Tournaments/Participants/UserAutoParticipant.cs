@@ -6,12 +6,9 @@ public class UserAutoParticipant : Participant
 {
     public int BotIndex { get; set; }
     
-    public override void GetTeam(JunkyardUser user, Action<ParticipantTeam> onComplete, Action onError)
+    public override ParticipantTeam GetTeam(JunkyardUser user)
     {
-        TaskProvider.Instance.DelayedAction(() =>
-        {
-            ParticipantTeam team = new ParticipantTeam(user.Competitor, user.Competitor.Inventory.Bots[BotIndex]);
-            onComplete(team);
-        });
+        ParticipantTeam team = new ParticipantTeam(user.Competitor, user.Competitor.Inventory.Bots[BotIndex]);
+        return team;
     }
 }

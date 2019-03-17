@@ -44,11 +44,18 @@ public class HubViewController : AbstractViewControllerFsm<HubStates>
         SetInitialState(HubStates.MainMap);
         
         Game.Instance.GetViewModel<HubViewModel>(0).OnEnterState += OnEnterHubState;
+        
     }
 
     private void OnEnterHubState(HubStates state)
     {
         SetState(state);
+        Game.Instance.GetService<JunkyardUserService>().Save();
+    }
+
+    protected override void OnAfterShow()
+    {
+        base.OnAfterShow();
     }
 
     protected override IView CreateView()

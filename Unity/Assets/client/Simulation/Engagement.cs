@@ -7,7 +7,7 @@ using Data;
 namespace JunkyardDogs.Simulation
 {
     [Serializable]
-    public class Engagement: ILoadableObject
+    public class Engagement
     {
         public SimulationService.Outcome Outcome { get; set; }
         
@@ -58,14 +58,6 @@ namespace JunkyardDogs.Simulation
         public void SetTimeLimit(float timeLimit)
         {
             _rules.MatchTimeLimit = timeLimit;
-        }
-         
-        public void LoadAsync(LoadSuccess onComplete, LoadError onError)
-        {
-            Loader loader = new Loader();
-            loader.AppendProvider(RedCombatent);
-            loader.AppendProvider(BlueCombatent);
-            loader.LoadAsync(onComplete, onError);
         }
     }
 

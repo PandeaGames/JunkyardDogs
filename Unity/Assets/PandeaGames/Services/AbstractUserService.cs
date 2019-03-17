@@ -10,6 +10,11 @@ public static class UserServiceUtils
     public const string USER_DATA_KEY = "user_data";
     public const string USER_DATA_BACKUP_KEY = "user_data_backup";
 
+    public static string SAVE_FILE_PATH
+    {
+        get { return string.Format("{0}/{1}", Application.persistentDataPath, "UserData.data"); }
+    }
+
     public static void ClearUserData()
     {
         ClearUserData(string.Empty);
@@ -17,7 +22,10 @@ public static class UserServiceUtils
 
     public static void ClearUserData(string prefix)
     {
-        PlayerPrefs.DeleteKey(string.Format("{0}{1}", prefix, UserServiceUtils.USER_DATA_KEY));
+        if (File.Exists(SAVE_FILE_PATH))
+        {
+            File.Delete(SAVE_FILE_PATH);
+        }
     }
 
     public static T Load<T>(string prefix) where T : User, new()
@@ -41,17 +49,16 @@ public static class UserServiceUtils
 
         try
         {
-            string location = string.Format("{0}{1}", prefix, UserServiceUtils.USER_DATA_KEY);
-            if (!PlayerPrefs.HasKey(location))
+            if (!File.Exists(SAVE_FILE_PATH))
             {
-                throw new Exception("There is no user data saved at "+ location);
+                throw new Exception("There is no user data saved at "+ SAVE_FILE_PATH);
             }
+            
+            Debug.Log("Loading user from "+ SAVE_FILE_PATH);
+            
+            FileStream fileStream = File.Open(SAVE_FILE_PATH, FileMode.Open);
 
-            string savedData = PlayerPrefs.GetString(location);
-
-            Debug.Log("Loading user from "+ location);
-
-            using (var stream = GenerateStreamFromString(savedData))
+            using (var stream = fileStream)
             {
                 user = serializer.Deserialize(stream) as T;
             }
@@ -77,22 +84,17 @@ public static class UserServiceUtils
     }
 
     public static void Save(User user, SharpSerializer serializer, string prefix)
-    {
+    {   
         try
         {
-            MemoryStream stream = new MemoryStream();
-            serializer.Serialize(user, stream);
+            FileStream fileStream = File.Open(SAVE_FILE_PATH, FileMode.OpenOrCreate);
 
-            string serializedString;
-
-            stream.Position = 0;
-            using (var reader = new StreamReader(stream))
+            using (var reader = fileStream)
             {
-                serializedString = reader.ReadToEnd();
+                serializer.Serialize(user, fileStream);
             }
 
-            PlayerPrefs.SetString(string.Format("{0}{1}", prefix, UserServiceUtils.USER_DATA_KEY), serializedString);
-            Debug.Log("User Data saved at "+ string.Format("{0}{1}", prefix, UserServiceUtils.USER_DATA_KEY) + ": " + user.UID);
+            Debug.Log("User Data saved at "+ SAVE_FILE_PATH + ": " + user.UID);
         }
         catch (Exception e)
         {

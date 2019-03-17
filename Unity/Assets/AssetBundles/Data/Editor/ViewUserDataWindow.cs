@@ -56,9 +56,9 @@ public class ViewUserDataWindow : EditorWindow
 
     private void OnUserGUI(JunkyardUser user)
     {
-        Competitor competitor = user.Competitor;
+       /* Competitor competitor = user.Competitor;
         Inventory inventory = competitor.Inventory;
-        WeakReference nationalityReference = competitor.Nationality;
+        //WeakReference nationalityReference = competitor.Nationality;
 
         Nationality nationality = null;
 
@@ -99,7 +99,7 @@ public class ViewUserDataWindow : EditorWindow
                 nationalityReference.Asset = nationality;
             }
             nationalityReference.Asset = nationality;
-        }
+        }*/
     }
 
     private void OnReloadData()

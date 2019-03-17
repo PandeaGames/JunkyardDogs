@@ -49,10 +49,8 @@ public class JunkController : MonoBehaviour {
         int choice = (int)Random.Range(0, length);
 
         _product = _products[choice];
-
-        _product.LoadAsync(OnLoadComplete, OnLoadFail);
-
         Destroy(junk.gameObject);
+        OnLoadComplete();
     }
 
     private void OnLoadComplete()

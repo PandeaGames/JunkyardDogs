@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: BotFactory
   m_EditorClassIdentifier: 
   _manifest:
-  - _value: {fileID: 100002, guid: 7e67833773f929446a0115d1bfe23f17, type: 3}
+  - _value: {fileID: 100004, guid: 75f1b1461b5f407489ab7f31f62f8631, type: 3}
     _keys:
     - {fileID: 11400000, guid: a94f08ca2c2963d478be94476d338885, type: 2}
-  _default: {fileID: 100002, guid: 7e67833773f929446a0115d1bfe23f17, type: 3}
+  _default: {fileID: 100004, guid: 75f1b1461b5f407489ab7f31f62f8631, type: 3}

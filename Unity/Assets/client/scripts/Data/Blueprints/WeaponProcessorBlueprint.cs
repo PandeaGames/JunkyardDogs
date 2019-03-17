@@ -13,18 +13,14 @@ public class WeaponProcessorBlueprint : PhysicalComponentBlueprint<WeaponProcess
     [SerializeField] 
     private WeaponBlueprint _weapon;
     
-    protected override void DoGenerate(int seed, Action<Component> onComplete, Action onError)
+    protected override Component DoGenerate(int seed)
     {
-        base.DoGenerate(seed, (component) =>
-        {
-            WeaponProcessor processor = component as WeaponProcessor;
-            
-            _weapon.Generate(seed, weapon =>
-            {
-                processor.Weapon = weapon as JunkyardDogs.Components.Weapon;
-                onComplete(processor);
-            }, onError);
-            
-        }, onError);
+        Component component = base.DoGenerate(seed);
+        
+        WeaponProcessor processor = component as WeaponProcessor;
+        JunkyardDogs.Components.Weapon weapon = _weapon.Generate(seed) as JunkyardDogs.Components.Weapon;
+        processor.Weapon = weapon;
+
+        return component;
     }
 }

@@ -132,26 +132,6 @@ namespace JunkyardDogs.Components
             }
         }
 
-        public override void LoadAsync(LoadSuccess onLoadSuccess, LoadError onLoadFailed)
-        {
-            Loader loader = new Loader();
-            
-            loader.AppendProvider(FrontPlates);
-            loader.AppendProvider(RightPlates);
-            loader.AppendProvider(LeftPlates);
-            loader.AppendProvider(BackPlates);
-            loader.AppendProvider(TopPlates);
-            
-            loader.AppendProvider(FrontArmament);
-            loader.AppendProvider(RightArmament);
-            loader.AppendProvider(LeftArmament);
-            loader.AppendProvider(TopArmament);
-
-            loader.AppendProvider(base.LoadAsync);
-            
-            loader.LoadAsync(onLoadSuccess, onLoadFailed);
-        }
-
         public List<Plate> GetPlateList(PlateLocation location)
         {
             switch (location)

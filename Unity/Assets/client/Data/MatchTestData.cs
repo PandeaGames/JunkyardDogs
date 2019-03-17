@@ -8,13 +8,13 @@ using WeakReference = PandeaGames.Data.WeakReferences.WeakReference;
 namespace JunkyardDogs.Data
 {
     [CreateAssetMenu(menuName = "TestData/MatchTestData")]
-    public class MatchTestData : ScriptableObject, ILoadableObject
+    public class MatchTestData : ScriptableObject
     {
-        [SerializeField, WeakReference(typeof(ParticipantData))]
-        private WeakReference _participantBlue;
+        [SerializeField, StaticDataReference(path:ParticipantDataProvider.FULL_PATH)]
+        private ParticipantStaticDataReference _participantBlue;
         
-        [SerializeField, WeakReference(typeof(ParticipantData))]
-        private WeakReference _participantRed;
+        [SerializeField, StaticDataReference(path:ParticipantDataProvider.FULL_PATH)]
+        private ParticipantStaticDataReference _participantRed;
 
         private bool _isLoaded;
 
@@ -23,26 +23,19 @@ namespace JunkyardDogs.Data
             return _isLoaded;
         }
         
-        public List<WeakReference> GetParicipants()
+        public List<ParticipantStaticDataReference> GetParicipants()
         {
-            return new List<WeakReference>(){_participantBlue, _participantRed};
+            return new List<ParticipantStaticDataReference>(){_participantBlue, _participantRed};
         }
 
-        public void LoadAsync(LoadSuccess loadSuccess, LoadError loadError)
+        public List<ParticipantTeam> GetParticipants(JunkyardUser user)
         {
-            Loader loader = new Loader();
-            loader.AppendProvider(_participantRed);
-            loader.AppendProvider(_participantBlue);
-            loader.LoadAsync(loadSuccess, loadError);
-        }
+            var participants = ParticipantDataUtils.GenerateParticipants(
+                new List<ParticipantStaticDataReference>() {_participantBlue, _participantRed});
 
-        public void GetParticipantsAsync(JunkyardUser user, Action<List<ParticipantTeam>> onComplete, Action onError)
-        {
-            ParticipantDataUtils.GenerateParticipantsAsync(
-                new List<WeakReference>(){_participantBlue, _participantRed}, participants =>
-                {
-                    Participant.GetTeam(participants, user, onComplete, onError);
-                }, onError);
+            List<ParticipantTeam> teams = Participant.GetTeam(participants, user);
+
+            return teams;
         }
     }
 }

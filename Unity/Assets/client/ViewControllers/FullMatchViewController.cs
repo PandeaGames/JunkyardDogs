@@ -21,11 +21,7 @@ namespace JunkyardDogs
         public override void EnterState(FullMatchStates @from)
         {
             base.EnterState(@from);
-            
-            _matchViewModel.Engagement.LoadAsync(() =>
-            {
-                _fsm.SetState(FullMatchStates.Match);
-            }, (error) => { });
+            _fsm.SetState(FullMatchStates.Match);
         }
     }
     

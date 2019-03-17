@@ -14,8 +14,7 @@ MonoBehaviour:
   _blueprint:
     _blueprintBase: {fileID: 0}
     _nationality:
-      _guid: 66dcb958f403299419f540261837ad7c
-      _path: Assets/AssetBundles/Data/Nations/Germany.asset
+      _id: Canada
     _bots:
     - _blueprintBase: {fileID: 11400000, guid: 21feb282c1c1db24ab1b6791184ffc7e, type: 2}
       _manufacturer:
@@ -26,6 +25,8 @@ MonoBehaviour:
         _specification:
           _guid: 
           _path: 
+        _specificationStatic:
+          _id: 
         _manufacturer:
           _guid: 
           _path: 
@@ -43,6 +44,8 @@ MonoBehaviour:
           _specification:
             _guid: 
             _path: 
+          _specificationStatic:
+            _id: 
           _manufacturer:
             _guid: 
             _path: 
@@ -50,13 +53,25 @@ MonoBehaviour:
             _guid: 
             _path: 
           _weapon:
-            _guid: 
-            _path: 
+            _blueprintBase: {fileID: 0}
+            _specification:
+              _guid: 
+              _path: 
+            _specificationStatic:
+              _id: 
+            _manufacturer:
+              _guid: 
+              _path: 
+            _material:
+              _guid: 
+              _path: 
         _frontArmament:
           _blueprintBase: {fileID: 0}
           _specification:
             _guid: 
             _path: 
+          _specificationStatic:
+            _id: 
           _manufacturer:
             _guid: 
             _path: 
@@ -64,13 +79,25 @@ MonoBehaviour:
             _guid: 
             _path: 
           _weapon:
-            _guid: 
-            _path: 
+            _blueprintBase: {fileID: 0}
+            _specification:
+              _guid: 
+              _path: 
+            _specificationStatic:
+              _id: 
+            _manufacturer:
+              _guid: 
+              _path: 
+            _material:
+              _guid: 
+              _path: 
         _leftArmament:
           _blueprintBase: {fileID: 0}
           _specification:
             _guid: 
             _path: 
+          _specificationStatic:
+            _id: 
           _manufacturer:
             _guid: 
             _path: 
@@ -78,13 +105,25 @@ MonoBehaviour:
             _guid: 
             _path: 
           _weapon:
-            _guid: 
-            _path: 
+            _blueprintBase: {fileID: 0}
+            _specification:
+              _guid: 
+              _path: 
+            _specificationStatic:
+              _id: 
+            _manufacturer:
+              _guid: 
+              _path: 
+            _material:
+              _guid: 
+              _path: 
         _rightArmament:
           _blueprintBase: {fileID: 0}
           _specification:
             _guid: 
             _path: 
+          _specificationStatic:
+            _id: 
           _manufacturer:
             _guid: 
             _path: 
@@ -92,13 +131,25 @@ MonoBehaviour:
             _guid: 
             _path: 
           _weapon:
-            _guid: 
-            _path: 
+            _blueprintBase: {fileID: 0}
+            _specification:
+              _guid: 
+              _path: 
+            _specificationStatic:
+              _id: 
+            _manufacturer:
+              _guid: 
+              _path: 
+            _material:
+              _guid: 
+              _path: 
       _motherboard:
         _blueprintBase: {fileID: 0}
         _specification:
           _guid: 
           _path: 
+        _specificationStatic:
+          _id: 
         _manufacturer:
           _guid: 
           _path: 

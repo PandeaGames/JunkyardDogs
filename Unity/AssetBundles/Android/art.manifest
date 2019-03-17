@@ -1,17 +1,19 @@
 ManifestFileVersion: 0
-CRC: 3909064498
+CRC: 2727657390
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 73cbe12636aadfbce73aebb5a19d3035
+    Hash: 688b7669444977469d36f7b8b5f160de
   TypeTreeHash:
     serializedVersion: 2
-    Hash: f232f687cba8b9213f0741f351b69ecd
+    Hash: 38cea3abe3a398ffbe745f0fcbe97d31
 HashAppended: 0
 ClassTypes:
 - Class: 1
   Script: {instanceID: 0}
 - Class: 4
+  Script: {instanceID: 0}
+- Class: 20
   Script: {instanceID: 0}
 - Class: 21
   Script: {instanceID: 0}
@@ -27,47 +29,53 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 65
   Script: {instanceID: 0}
+- Class: 81
+  Script: {instanceID: 0}
 - Class: 114
-  Script: {fileID: 1453722849, guid: 89f0137620f6af44b9ba852b4190e64e, type: 3}
+  Script: {fileID: 11500000, guid: d0df6711f99f4ac092257ae28ba1ce7a, type: 3}
 - Class: 114
-  Script: {fileID: -667331979, guid: 89f0137620f6af44b9ba852b4190e64e, type: 3}
+  Script: {fileID: 11500000, guid: f2e86eb1f3a797047811c2c4557b5479, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: d6ed93d1a6684533ac99de5e499279ac, type: 3}
 - Class: 114
   Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 - Class: 114
   Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 - Class: 114
-  Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-- Class: 114
   Script: {fileID: -405508275, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: 0166818c59ad1eb458b5a3d9663b5ea6, type: 3}
+  Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 1fef8d8284cb879438d68254e2def07a, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: 2783ee59a0878da43a7dd161ba94d41c, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: 291fecdf8d28f01458f089d71f8921e3, type: 3}
-- Class: 114
   Script: {fileID: 11500000, guid: 2bc383b2da7c72946a114ca2612ed7bf, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: 328ccc4d9e5409842bd20c839dfee092, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: 344445a89b4f74a0e9a0a766903df87e, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: 5f1e2fabbef961b41b021de13f78db04, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: 79f73177c4a6cbb4797db2d81c644424, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 832891565c0d4387a08a22e2e9b59ba0, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: 8d05b97d3903fbd4c93af04f4dfc5590, type: 3}
+  Script: {fileID: 1453722849, guid: 89f0137620f6af44b9ba852b4190e64e, type: 3}
+- Class: 114
+  Script: {fileID: -667331979, guid: 89f0137620f6af44b9ba852b4190e64e, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 79f73177c4a6cbb4797db2d81c644424, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 344445a89b4f74a0e9a0a766903df87e, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 2783ee59a0878da43a7dd161ba94d41c, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 5f1e2fabbef961b41b021de13f78db04, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: be25e45ceb939b44481a616f2288af51, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: d0df6711f99f4ac092257ae28ba1ce7a, type: 3}
+  Script: {fileID: 11500000, guid: 0166818c59ad1eb458b5a3d9663b5ea6, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: d6ed93d1a6684533ac99de5e499279ac, type: 3}
+  Script: {fileID: 11500000, guid: 328ccc4d9e5409842bd20c839dfee092, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 8d05b97d3903fbd4c93af04f4dfc5590, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 291fecdf8d28f01458f089d71f8921e3, type: 3}
 - Class: 115
+  Script: {instanceID: 0}
+- Class: 124
   Script: {instanceID: 0}
 - Class: 184
   Script: {instanceID: 0}
@@ -86,6 +94,7 @@ ClassTypes:
 Assets:
 - Assets/AssetBundles/Art/Views/HubView.prefab
 - Assets/AssetBundles/Art/Bots/RenderConfigs/GarageBotRenderConfig.asset
+- Assets/AssetBundles/Art/Views/EarthNavigation.prefab
 - Assets/AssetBundles/Art/Bots/RenderConfigs/MatchBotRenderConfig.asset
 - Assets/AssetBundles/Art/Nationality/Flags/2560_1536/kr.png
 - Assets/AssetBundles/Art/Nationality/Flags/2560_1536/ca.png

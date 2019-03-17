@@ -1,11 +1,12 @@
-﻿using UnityEngine;
+﻿using JunkyardDogs.Data;
+using UnityEngine;
 using WeakReference = PandeaGames.Data.WeakReferences.WeakReference;
 
 [CreateAssetMenu(menuName = "Tournaments/Participants/SingleSourceParticipant")]
 public class SingleSourceParticipantData : ParticipantData
 {   
-    [SerializeField, WeakReference(typeof(CompetitorBlueprintData))]
-    private WeakReference _competitor;
+    [SerializeField, StaticDataReference(path:CompetitorBlueprintDataProvider.FULL_PATH)]
+    private CompetitorBlueprintStaticDataReference _competitor;
 
     [SerializeField]
     private int _botIndex;

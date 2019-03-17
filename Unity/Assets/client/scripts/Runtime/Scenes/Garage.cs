@@ -47,8 +47,12 @@ public class Garage : MonoBehaviour
         {
             AddBuilder(builder);
         }
+
+        if (_viewModel.Builders.Count > 0)
+        {
+            _viewModel.SelectBuilder(_viewModel.Builders[0]);
+        }
         
-        _viewModel.SelectBuilder(_viewModel.Builders[0]);
         _cameraViewModel.Focus(_lineupCameraAgent);
     }
 

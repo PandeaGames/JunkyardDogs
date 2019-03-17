@@ -1,24 +1,16 @@
 ﻿using System;
+using JunkyardDogs.Data;
 using WeakReference = PandeaGames.Data.WeakReferences.WeakReference;
 
 public class SingleSourceParticipant : Participant
 {
-    public WeakReference Source { get; set; }
+    public CompetitorBlueprintStaticDataReference Source { get; set; }
     public int BotIndex { get; set; }
     
-    public override void GetTeam(JunkyardUser user, Action<ParticipantTeam> onComplete, Action onError)
+    public override ParticipantTeam GetTeam(JunkyardUser user)
     {
-        Source.LoadAssetAsync<CompetitorBlueprintData>((data, refernce) =>
-        {
-            data.GetBlueprint().GenerateObject((generatedObject) =>
-            {
-                
-                Competitor competitor = generatedObject as Competitor;
-                ParticipantTeam team = new ParticipantTeam(competitor, competitor.Inventory.Bots[BotIndex]);
-
-                onComplete(team);
-
-            }, onError);
-        }, (e) => onError());
+        Competitor competitor = Source.Data.GetBlueprint().GenerateObject() as Competitor;
+        ParticipantTeam team = new ParticipantTeam(competitor, competitor.Inventory.Bots[BotIndex]);
+        return team;
     }
 }

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using JunkyardDogs.Data;
 using UnityEngine.UI;
 using PandeaGames;
 using PandeaGames.Views.Screens;
@@ -32,9 +33,9 @@ public class ChooseCountryScreen : ScreenView
 
     private void LoadComplete()
     {
-        foreach (WeakReference nationalityReference in _viewModel.NationList)
+        foreach (NationalityStaticDataReference nationalityReference in _viewModel.NationList)
         {
-            Nationality nationality = nationalityReference.Asset as Nationality;
+            Nationality nationality = nationalityReference.Data;
             GameObject nationEntry = Instantiate(_nationEntryPrefab);
             nationEntry.SetActive(true);
             nationEntry.transform.SetParent(_listContainer.transform);
@@ -45,7 +46,7 @@ public class ChooseCountryScreen : ScreenView
         }
     }
 
-    private void OnNationClick(WeakReference nationalityReference)
+    private void OnNationClick(NationalityStaticDataReference nationalityReference)
     {
         //_junkyardUserService.User.Competitor.Nationality = nationalityReference;
         _viewModel.SetChosenNationality(nationalityReference);

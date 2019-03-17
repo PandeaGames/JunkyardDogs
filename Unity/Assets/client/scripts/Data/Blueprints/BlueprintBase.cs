@@ -9,6 +9,6 @@ public abstract class BlueprintBase
 
     public abstract bool isValidData(BlueprintData data);
 
-    public abstract void GenerateObject(Action<System.Object> onComplete, Action onError);
-    public abstract void GenerateObject(int seed, Action<System.Object> onComplete, Action onError);
+    public abstract System.Object GenerateObject();
+    public abstract System.Object GenerateObject(int seed);
 }

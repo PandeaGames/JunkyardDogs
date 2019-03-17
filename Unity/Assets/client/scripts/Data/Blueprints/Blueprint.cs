@@ -8,37 +8,37 @@ public abstract class Blueprint<T, K> : BlueprintBase where K:BlueprintData
         return data is K;
     }
     
-    protected void DoGenerate(Action<T> onComplete, Action onError)
+    protected T DoGenerate()
     {
-        DoGenerate(0, onComplete, onError);
+        return DoGenerate(0);
     }
     
-    protected abstract void DoGenerate(int seed, Action<T> onComplete, Action onError);
+    protected abstract T DoGenerate(int seed);
     
-    public void Generate(Action<T> onComplete, Action onError)
+    public T Generate()
     {
-        Generate(0, onComplete, onError);
+        return Generate(0);
     }
 
-    public override void GenerateObject(Action<System.Object> onComplete, Action onError)
+    public override System.Object GenerateObject()
     {
-        Generate((obj) => { onComplete(obj); },onError);
+        return Generate();
     }
     
-    public override void GenerateObject(int seed,Action<System.Object> onComplete, Action onError)
+    public override System.Object GenerateObject(int seed)
     {
-        Generate(seed, (obj) => { onComplete(obj); },onError);
+        return Generate(seed);
     }
     
-    public void Generate(int seed, Action<T> onComplete, Action onError)
+    public T Generate(int seed)
     {
         if (_blueprintBase)
         {
-            _blueprintBase.GetBlueprint().GenerateObject(seed, (obj) => { onComplete((T)obj); }, onError);
+            return (T)_blueprintBase.GetBlueprint().GenerateObject(seed);
         }
         else
         {
-            DoGenerate(seed, onComplete, onError);
+            return DoGenerate(seed);
         }
     }
 }

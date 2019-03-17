@@ -5,25 +5,23 @@ using System;
 using Polenter.Serialization;
 using WeakReference = PandeaGames.Data.WeakReferences.WeakReference;
 using System.Threading.Tasks;
+using JunkyardDogs.Data;
 
 namespace JunkyardDogs.Components
 {
     [Serializable]
-    public class Component : ILoadableObject
+    public class Component
     {
-        private bool _isLoaded;
-        private bool _isLoading;
+        public SpecificationStaticDataReference SpecificationReference { get; set; }
 
-        public WeakReference SpecificationReference { get; set; }
-
-        public WeakReference Manufacturer { get; set; }
+        public ManufacturerStaticDataReference Manufacturer { get; set; }
 
         [ExcludeFromSerialization]
         public Specification Specification
         {
             get
             {
-                return SpecificationReference.Asset as Specification;
+                return SpecificationReference.Data;
             }
         }
 
@@ -32,30 +30,7 @@ namespace JunkyardDogs.Components
 
         public Component()
         {
-            SpecificationReference = new WeakReference();
-        }
-
-        public virtual void LoadAsync(LoadSuccess onLoadSuccess, LoadError onLoadFailed)
-        {
-            if (SpecificationReference == null)
-            {
-                Task task = Task.Run(() => { onLoadFailed(new LoadException("Specification refernence is 'null'")); });
-            }
-            else
-            {
-                SpecificationReference.LoadAssetAsync<Specification>(
-                    (asset, reference) => 
-                    {
-                        onLoadSuccess();
-                        _isLoaded = true;
-                    },
-                    (e) => onLoadFailed(new LoadException("Failed to load weak reference", e)));
-            }
-        }
-
-        public bool IsLoaded()
-        {
-            return _isLoaded;
+            SpecificationReference = new SpecificationStaticDataReference();
         }
 
         public virtual void Dismantle(Inventory inventory)
