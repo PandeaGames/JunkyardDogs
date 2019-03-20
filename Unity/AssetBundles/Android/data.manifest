@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 744959402
+CRC: 473913629
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: dd487b8b36f06ae75c480cbc2ba6afe8
+    Hash: ada75b405ae2b3790b011f0fe15681b9
   TypeTreeHash:
     serializedVersion: 2
-    Hash: ddcc24600a18407b172ca38ca7538c07
+    Hash: 7cc76161a471a43921524cd3714e25ab
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -31,8 +31,6 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 114
   Script: {fileID: 11500000, guid: b9e06f00715e4f98b340a52983c8e32f, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: 333e9c107faf2a3449cd64de62d2ef60, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 0833d720b03f4ba4691b17c7949e2ab1, type: 3}
 - Class: 114
@@ -207,7 +205,6 @@ Assets:
 - Assets/AssetBundles/Data/Nations/NationTitleLocalization.asset
 - Assets/AssetBundles/Data/Competitors/Germany/Florian/FlorianParticipation.asset
 - Assets/AssetBundles/Data/Products/Skylabs/Materials/Alloy/Steel.asset
-- Assets/AssetBundles/Data/Simulation/Directives/DirectiveAttackTop.asset
 - Assets/AssetBundles/Data/Products/Skylabs/Processors/subprocessor/WeaponChip.asset
 - Assets/AssetBundles/Data/Simulation/Behavior/MoveUp.asset
 - Assets/AssetBundles/Data/Products/Skylabs/Materials/CircuitBoard.asset
@@ -222,17 +219,13 @@ Assets:
 - Assets/AssetBundles/Data/Simulation/Behavior/List.asset
 - Assets/AssetBundles/Data/Competitors/ParticipantDataSource.asset
 - Assets/AssetBundles/Data/Simulation/Behavior/MoveRight.asset
-- Assets/AssetBundles/Data/Simulation/Directives/DirectiveMoveLeft.asset
 - Assets/AssetBundles/Data/Simulation/Knowledge/CloseRange.asset
 - Assets/AssetBundles/Data/Tournaments/Participants/UserAutoParticipant_bot0.asset
-- Assets/AssetBundles/Data/Simulation/Directives/DirectiveMoveBack.asset
 - Assets/AssetBundles/Data/Products/Skylabs/Plating/PremiumSteelPlate.asset
 - Assets/AssetBundles/Data/Products/Plating/Plate_Thickness04.asset
 - Assets/AssetBundles/Data/Nations/Germany.asset
 - Assets/AssetBundles/Data/Nations/Canada.asset
-- Assets/AssetBundles/Data/Simulation/Directives/DirectiveAttackFront.asset
 - Assets/AssetBundles/Data/Gameplay/InputConfig.asset
-- Assets/AssetBundles/Data/Simulation/Directives/DirectiveMoveForward.asset
 - Assets/AssetBundles/Data/Products/Materials/Alloy/Steel.asset
 - Assets/AssetBundles/Data/Simulation/Behavior/AttackRight.asset
 - Assets/AssetBundles/Art/Factories/BotFactory.asset
@@ -240,8 +233,6 @@ Assets:
 - Assets/AssetBundles/Data/Products/Plating/Plate_Thickness03.asset
 - Assets/AssetBundles/Data/Simulation/Behavior/MoveLeft.asset
 - Assets/AssetBundles/Data/Static/ViewStaticData.asset
-- Assets/AssetBundles/Data/Simulation/Directives/DirectiveAttackLeft.asset
-- Assets/AssetBundles/Data/Simulation/Directives/DirectiveAttackRight.asset
 - Assets/AssetBundles/Data/Products/Skylabs/Chassis/Mamoth.asset
 - Assets/AssetBundles/Data/Products/Skylabs/Skylabs.asset
 - Assets/AssetBundles/Data/Competitors/CompetitorBlueprintDataSource.asset
@@ -252,7 +243,6 @@ Assets:
 - Assets/AssetBundles/Data/Simulation/Behavior/AttackTop.asset
 - Assets/AssetBundles/Data/Nations/NationalityDataSource.asset
 - Assets/AssetBundles/Data/Products/Skylabs/Weapons/FrickinLaser.asset
-- Assets/AssetBundles/Data/Simulation/Directives/DirectiveMoveRight.asset
 - Assets/AssetBundles/Data/Simulation/Knowledge/FarRange.asset
 - Assets/AssetBundles/Data/Products/Skylabs/Weapons/SpiralPower.asset
 - Assets/AssetBundles/Data/Products/Plating/Plate_Thickness01.asset
