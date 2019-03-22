@@ -9,10 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7caa6c356cc64bfb988dec28f0173b83, type: 3}
-  m_Name: BalanceManagerData
+  m_Script: {fileID: 11500000, guid: 2783ee59a0878da43a7dd161ba94d41c, type: 3}
+  m_Name: Aluminum
   m_EditorClassIdentifier: 
-  _googleSheetURL: 
-  _balanceData:
-  - {fileID: 11400000, guid: e93c8763c32b8a84bbd095b01f560e3d, type: 2}
-  - {fileID: 11400000, guid: cec1086a0e360704faeb61279a4108ec, type: 2}
+  _density: 1

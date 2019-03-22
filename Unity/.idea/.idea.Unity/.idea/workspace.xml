@@ -2,500 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b6defc3-a091-4fde-bf1e-c3bdd679481d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssetBundles/Android/Android" beforeDir="false" afterPath="$PROJECT_DIR$/AssetBundles/Android/Android" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssetBundles/Android/Android.manifest" beforeDir="false" afterPath="$PROJECT_DIR$/AssetBundles/Android/Android.manifest" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssetBundles/Android/art" beforeDir="false" afterPath="$PROJECT_DIR$/AssetBundles/Android/art" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssetBundles/Android/art.manifest" beforeDir="false" afterPath="$PROJECT_DIR$/AssetBundles/Android/art.manifest" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssetBundles/Android/data" beforeDir="false" afterPath="$PROJECT_DIR$/AssetBundles/Android/data" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AssetBundles/Android/data.manifest" beforeDir="false" afterPath="$PROJECT_DIR$/AssetBundles/Android/data.manifest" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/2K Realistic Rusty Metal Substance/Rusty Metal.sbsar.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2K Realistic Rusty Metal Substance/Rusty Metal.sbsar.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/2K Realistic Rusty Metal Substance/Scenes/Demo1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2K Realistic Rusty Metal Substance/Scenes/Demo1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/2K Realistic Rusty Metal Substance/Scenes/Demo2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/2K Realistic Rusty Metal Substance/Scenes/Demo2.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Art/Views/EarthNavigation.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Art/Views/EarthNavigation.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Nations/Canada.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Nations/Canada.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Nations/Germany.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Nations/Germany.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Nations/NationalityDataSource.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Nations/NationalityDataSource.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Simulation/Directives.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Simulation/Directives/DirectiveAttackFront.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Simulation/Directives/DirectiveAttackFront.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Simulation/Directives/DirectiveAttackLeft.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Simulation/Directives/DirectiveAttackLeft.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Simulation/Directives/DirectiveAttackRight.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Simulation/Directives/DirectiveAttackRight.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Simulation/Directives/DirectiveAttackTop.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Simulation/Directives/DirectiveAttackTop.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Simulation/Directives/DirectiveMoveBack.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Simulation/Directives/DirectiveMoveBack.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Simulation/Directives/DirectiveMoveForward.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Simulation/Directives/DirectiveMoveForward.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Simulation/Directives/DirectiveMoveLeft.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Simulation/Directives/DirectiveMoveLeft.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Simulation/Directives/DirectiveMoveRight.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Simulation/Directives/DirectiveMoveRight.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/GlassRefraction.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/GlassRefraction/Materials.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/GlassRefraction/Materials/GlassRefractive.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/GlassRefraction/Materials/GlassRefractive.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/GlassRefraction/Shaders.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/GlassRefraction/Shaders/GlassStainedBumpDistort.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/GlassRefraction/Shaders/GlassStainedBumpDistort.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/GlassRefraction/Textures.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/GlassRefraction/Textures/GlassStainedAlbedo.tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/GlassRefraction/Textures/GlassStainedAlbedo.tif.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/GlassRefraction/Textures/GlassStainedNormals.tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/GlassRefraction/Textures/GlassStainedNormals.tif.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/Antialiasing.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/Antialiasing.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/Bloom.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/Bloom.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/BloomAndFlares.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/BloomAndFlares.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/BloomOptimized.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/BloomOptimized.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/Blur.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/Blur.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/BlurOptimized.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/BlurOptimized.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/CameraMotionBlur.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/CameraMotionBlur.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/ColorCorrectionCurves.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/ColorCorrectionCurves.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/ColorCorrectionLookup.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/ColorCorrectionLookup.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/ColorCorrectionRamp.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/ColorCorrectionRamp.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/ContrastEnhance.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/ContrastEnhance.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/ContrastStretch.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/ContrastStretch.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/CreaseShading.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/CreaseShading.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/DepthOfField.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/DepthOfField.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/DepthOfFieldDeprecated.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/DepthOfFieldDeprecated.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/EdgeDetection.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/EdgeDetection.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/Fisheye.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/Fisheye.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/GlobalFog.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/GlobalFog.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/Grayscale.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/Grayscale.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/ImageEffectBase.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/ImageEffectBase.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/ImageEffects.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/ImageEffects.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/MotionBlur.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/MotionBlur.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/NoiseAndGrain.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/NoiseAndGrain.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/NoiseAndScratches.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/NoiseAndScratches.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/PostEffectsBase.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/PostEffectsBase.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/PostEffectsHelper.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/PostEffectsHelper.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/Quads.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/Quads.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/ScreenOverlay.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/ScreenOverlay.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/ScreenSpaceAmbientObscurance.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/ScreenSpaceAmbientObscurance.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/ScreenSpaceAmbientOcclusion.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/ScreenSpaceAmbientOcclusion.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/SepiaTone.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/SepiaTone.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/SunShafts.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/SunShafts.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/TiltShift.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/TiltShift.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/Tonemapping.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/Tonemapping.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/Triangles.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/Triangles.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/Twirl.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/Twirl.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/VignetteAndChromaticAberration.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/VignetteAndChromaticAberration.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/Vortex.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Scripts/Vortex.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/BlendModesOverlay.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/BlendModesOverlay.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/BlurEffectConeTaps.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/BlurEffectConeTaps.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/CameraMotionBlur.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/CameraMotionBlur.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/CameraMotionBlurDX11.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/CameraMotionBlurDX11.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/ChromaticAberrationShader.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/ChromaticAberrationShader.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/ColorCorrection3DLut.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/ColorCorrection3DLut.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/ColorCorrectionCurves.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/ColorCorrectionCurves.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/ColorCorrectionCurvesSimple.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/ColorCorrectionCurvesSimple.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/ColorCorrectionEffect.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/ColorCorrectionEffect.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/ColorCorrectionSelective.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/ColorCorrectionSelective.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/Contrast Stretch.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/Contrast Stretch/Adaptation.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/Contrast Stretch/Adaptation.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/Contrast Stretch/Apply.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/Contrast Stretch/Apply.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/Contrast Stretch/Luminance.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/Contrast Stretch/Luminance.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/Contrast Stretch/MinMaxReduction.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/Contrast Stretch/MinMaxReduction.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/ContrastComposite.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/ContrastComposite.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/ConvertDepth.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/ConvertDepth.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/CreaseApply.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/CreaseApply.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/EdgeDetectNormals.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/EdgeDetectNormals.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/FisheyeShader.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/FisheyeShader.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/GlobalFog.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/GlobalFog.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/GrayscaleEffect.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/GrayscaleEffect.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/MotionBlur.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/MotionBlur.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/MotionBlurClear.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/MotionBlurClear.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/NoiseAndGrain.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/NoiseAndGrain.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/NoiseAndGrainDX11.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/NoiseAndGrainDX11.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/NoiseEffectShaderRGB.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/NoiseEffectShaderRGB.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/NoiseEffectShaderYUV.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/NoiseEffectShaderYUV.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/PrepareSunShaftsBlur.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/PrepareSunShaftsBlur.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/RadialBlur.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/RadialBlur.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/SSAOShader.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/SSAOShader.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/ScreenSpaceAmbientObscurance.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/ScreenSpaceAmbientObscurance.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/SepiaToneEffect.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/SepiaToneEffect.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/ShowAlphaChannel.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/ShowAlphaChannel.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/SimpleClear.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/SimpleClear.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/SunShaftsComposite.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/SunShaftsComposite.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/Tonemapper.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/Tonemapper.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/TwirlEffect.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/TwirlEffect.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/VignettingShader.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/VignettingShader.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/VortexEffect.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/VortexEffect.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/_Antialiasing.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/_Antialiasing/DLAA.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/_Antialiasing/DLAA.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/_Antialiasing/FXAA2.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/_Antialiasing/FXAA2.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/_Antialiasing/FXAA3Console.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/_Antialiasing/FXAA3Console.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/_Antialiasing/FXAAPreset2.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/_Antialiasing/FXAAPreset2.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/_Antialiasing/FXAAPreset3.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/_Antialiasing/FXAAPreset3.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/_Antialiasing/NFAA.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/_Antialiasing/NFAA.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/_Antialiasing/SSAA.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/_Antialiasing/SSAA.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/_BloomAndFlares.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/_BloomAndFlares/Blend.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/_BloomAndFlares/Blend.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/_BloomAndFlares/BlendForBloom.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/_BloomAndFlares/BlendForBloom.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/_BloomAndFlares/BlendOneOne.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/_BloomAndFlares/BlendOneOne.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/_BloomAndFlares/BlurAndFlares.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/_BloomAndFlares/BlurAndFlares.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/_BloomAndFlares/BrightPassFilter.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/_BloomAndFlares/BrightPassFilter.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/_BloomAndFlares/BrightPassFilter2.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/_BloomAndFlares/BrightPassFilter2.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/_BloomAndFlares/LensFlareCreate.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/_BloomAndFlares/LensFlareCreate.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/_BloomAndFlares/MobileBloom.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/_BloomAndFlares/MobileBloom.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/_BloomAndFlares/MobileBlur.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/_BloomAndFlares/MobileBlur.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/_BloomAndFlares/MultiPassHollywoodFlares.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/_BloomAndFlares/MultiPassHollywoodFlares.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/_BloomAndFlares/SeparableBlurPlus.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/_BloomAndFlares/SeparableBlurPlus.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/_BloomAndFlares/VignetteShader.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/_BloomAndFlares/VignetteShader.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/_DepthOfField.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/_DepthOfField/Bokeh34.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/_DepthOfField/Bokeh34.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/_DepthOfField/DepthOfField34.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/_DepthOfField/DepthOfField34.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/_DepthOfField/DepthOfFieldDX11.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/_DepthOfField/DepthOfFieldDX11.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/_DepthOfField/DepthOfFieldScatter.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/_DepthOfField/DepthOfFieldScatter.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/_DepthOfField/SeparableBlur.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/_DepthOfField/SeparableBlur.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/_DepthOfField/SeparableWeightedBlurDof34.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/_DepthOfField/SeparableWeightedBlurDof34.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/_DepthOfField/TiltShiftHdrLensBlur.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/_DepthOfField/TiltShiftHdrLensBlur.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/frag_ao.cginc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Shaders/frag_ao.cginc.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Textures.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Textures/ContrastEnhanced3D16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Textures/ContrastEnhanced3D16.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Textures/HexShape.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Textures/HexShape.psd.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Textures/MotionBlurJitter.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Textures/MotionBlurJitter.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Textures/Neutral3D16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Textures/Neutral3D16.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Textures/Noise.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Textures/Noise.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Textures/NoiseAndGrain.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Textures/NoiseAndGrain.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Textures/NoiseEffectGrain.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Textures/NoiseEffectGrain.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Textures/NoiseEffectScratch.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Textures/NoiseEffectScratch.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Textures/RandomVectors.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Textures/RandomVectors.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Textures/SphereShape.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Textures/SphereShape.psd.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Textures/VignetteMask.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Textures/VignetteMask.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Textures/color correction ramp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Textures/color correction ramp.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Textures/grayscale ramp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ImageEffects/Textures/grayscale ramp.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/LightCookies.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/LightCookies/Textures.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/LightCookies/Textures/FlashlightCookie.tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/LightCookies/Textures/FlashlightCookie.tif.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/LightCookies/Textures/FlashlightIrregularCookie.tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/LightCookies/Textures/FlashlightIrregularCookie.tif.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/LightCookies/Textures/LightHardCookie.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/LightCookies/Textures/LightHardCookie.psd.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/LightCookies/Textures/LightSoftCookie.tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/LightCookies/Textures/LightSoftCookie.tif.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/LightCookies/Textures/LightSquareCookie.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/LightCookies/Textures/LightSquareCookie.psd.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/LightFlares.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/LightFlares/Flares.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/LightFlares/Flares/50mmZoom.flare" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/LightFlares/Flares/50mmZoom.flare.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/LightFlares/Flares/FlareSmall.flare" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/LightFlares/Flares/FlareSmall.flare.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/LightFlares/Flares/Sun.flare" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/LightFlares/Flares/Sun.flare.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/LightFlares/Materials.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/LightFlares/Materials/Flare50mm.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/LightFlares/Materials/Flare50mm.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/LightFlares/Textures.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/LightFlares/Textures/Flare50mm.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/LightFlares/Textures/Flare50mm.psd.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/LightFlares/Textures/FlareStar.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/LightFlares/Textures/FlareStar.psd.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/Projectors.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/Projectors/Guidelines.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/Projectors/Guidelines.txt.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/Projectors/Materials.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/Projectors/Materials/GridProjector.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/Projectors/Materials/GridProjector.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/Projectors/Materials/LightProjector.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/Projectors/Materials/LightProjector.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/Projectors/Materials/ShadowProjector.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/Projectors/Materials/ShadowProjector.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/Projectors/Prefabs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/Projectors/Prefabs/BlobLightProjector.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/Projectors/Prefabs/BlobLightProjector.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/Projectors/Prefabs/BlobShadowProjector.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/Projectors/Prefabs/BlobShadowProjector.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/Projectors/Prefabs/GridProjector.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/Projectors/Prefabs/GridProjector.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/Projectors/Shaders.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/Projectors/Shaders/ProjectorLight.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/Projectors/Shaders/ProjectorLight.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/Projectors/Shaders/ProjectorMultiply.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/Projectors/Shaders/ProjectorMultiply.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/Projectors/Textures.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/Projectors/Textures/Falloff.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/Projectors/Textures/Falloff.psd.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/Projectors/Textures/Grid.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/Projectors/Textures/Grid.psd.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/Projectors/Textures/Light.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/Projectors/Textures/Light.psd.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/Projectors/Textures/Shadow.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/Projectors/Textures/Shadow.psd.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/TessellationShaders.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/TessellationShaders/Materials.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/TessellationShaders/Materials/TesselatedBumpSpecular.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/TessellationShaders/Materials/TesselatedBumpSpecular.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/TessellationShaders/Materials/TesselatedBumpSpecularDisplacement.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/TessellationShaders/Materials/TesselatedBumpSpecularDisplacement.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/TessellationShaders/Materials/TesselatedBumpSpecularSmooth.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/TessellationShaders/Materials/TesselatedBumpSpecularSmooth.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/TessellationShaders/Models.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/TessellationShaders/Models/LowPolySphere.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/TessellationShaders/Models/LowPolySphere.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/TessellationShaders/Scenes.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/TessellationShaders/Scenes/TessellationSample.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/TessellationShaders/Scenes/TessellationSample.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/TessellationShaders/Shaders.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/TessellationShaders/Shaders/BumpedSpecularDisplacement.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/TessellationShaders/Shaders/BumpedSpecularDisplacement.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/TessellationShaders/Shaders/BumpedSpecularSmooth.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/TessellationShaders/Shaders/BumpedSpecularSmooth.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/TessellationShaders/Textures.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/TessellationShaders/Textures/CliffHeight.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/TessellationShaders/Textures/CliffHeight.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/TessellationShaders/Textures/CliffNormals.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/TessellationShaders/Textures/CliffNormals.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ToonShading.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ToonShading/Materials.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ToonShading/Materials/ToonBasic.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ToonShading/Materials/ToonBasic.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ToonShading/Materials/ToonBasicOutline.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ToonShading/Materials/ToonBasicOutline.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ToonShading/Materials/ToonLit.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ToonShading/Materials/ToonLit.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ToonShading/Materials/ToonLitOutline.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ToonShading/Materials/ToonLitOutline.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ToonShading/Shaders.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ToonShading/Shaders/ToonBasic.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ToonShading/Shaders/ToonBasic.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ToonShading/Shaders/ToonBasicOutline.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ToonShading/Shaders/ToonBasicOutline.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ToonShading/Shaders/ToonLit.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ToonShading/Shaders/ToonLit.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ToonShading/Shaders/ToonLitOutline.shader" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ToonShading/Shaders/ToonLitOutline.shader.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ToonShading/Textures.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ToonShading/Textures/ToonLit.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ToonShading/Textures/ToonLit.psd.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ToonShading/Textures/UtilToonGradient.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Camera_effects/Effects/ToonShading/Textures/UtilToonGradient.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/ImageEffects.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/ImageEffects/AntialiasingEditor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/ImageEffects/AntialiasingEditor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/ImageEffects/BloomAndFlaresEditor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/ImageEffects/BloomAndFlaresEditor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/ImageEffects/BloomEditor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/ImageEffects/BloomEditor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/ImageEffects/CameraMotionBlurEditor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/ImageEffects/CameraMotionBlurEditor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/ImageEffects/ColorCorrectionCurvesEditor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/ImageEffects/ColorCorrectionCurvesEditor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/ImageEffects/ColorCorrectionLookupEditor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/ImageEffects/ColorCorrectionLookupEditor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/ImageEffects/DepthOfFieldDeprecatedEditor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/ImageEffects/DepthOfFieldDeprecatedEditor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/ImageEffects/DepthOfFieldEditor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/ImageEffects/DepthOfFieldEditor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/ImageEffects/EdgeDetectionEditor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/ImageEffects/EdgeDetectionEditor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/ImageEffects/NoiseAndGrainEditor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/ImageEffects/NoiseAndGrainEditor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/ImageEffects/SunShaftsEditor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/ImageEffects/SunShaftsEditor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/ImageEffects/TonemappingEditor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/ImageEffects/TonemappingEditor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/ImageEffects/VignetteAndChromaticAberrationEditor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/ImageEffects/VignetteAndChromaticAberrationEditor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Industrial_lights/Models/ceiling_light.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Industrial_lights/Models/ceiling_light.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Modular_tubes/Models/Pipes.FBX.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Modular_tubes/Models/Pipes.FBX.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RapidSheetData.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RapidSheetData/Documentation.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RapidSheetData/Documentation.pdf.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RapidSheetData/Examples.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RapidSheetData/Examples/ExampleRapidSheetData.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RapidSheetData/Examples/ExampleRapidSheetData.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RapidSheetData/Examples/Scenes.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RapidSheetData/Examples/Scenes/RapidSheetData Example Scene.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RapidSheetData/Examples/Scenes/RapidSheetData Example Scene.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RapidSheetData/Examples/Scripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RapidSheetData/Examples/Scripts/RapidSheetDataExample.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RapidSheetData/Examples/Scripts/RapidSheetDataExample.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RapidSheetData/Examples/Scripts/RapidSheetDataExampleView.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RapidSheetData/Examples/Scripts/RapidSheetDataExampleView.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RapidSheetData/RapidSheetData_service.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RapidSheetData/RapidSheetData_service.zip.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RapidSheetData/Scripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RapidSheetData/Scripts/Editor.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RapidSheetData/Scripts/Editor/RSDAssetInspector.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RapidSheetData/Scripts/Editor/RSDAssetInspector.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RapidSheetData/Scripts/IRSDConverter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RapidSheetData/Scripts/IRSDConverter.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RapidSheetData/Scripts/IRSDSerializer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RapidSheetData/Scripts/IRSDSerializer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RapidSheetData/Scripts/RSDAsset.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RapidSheetData/Scripts/RSDAsset.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RapidSheetData/Scripts/RSDFetchRequest.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RapidSheetData/Scripts/RSDFetchRequest.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RapidSheetData/Scripts/Thirdparty.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RapidSheetData/Scripts/Thirdparty/LitJson.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RapidSheetData/Scripts/Thirdparty/LitJson/IJsonWrapper.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RapidSheetData/Scripts/Thirdparty/LitJson/IJsonWrapper.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RapidSheetData/Scripts/Thirdparty/LitJson/JsonData.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RapidSheetData/Scripts/Thirdparty/LitJson/JsonData.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RapidSheetData/Scripts/Thirdparty/LitJson/JsonException.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RapidSheetData/Scripts/Thirdparty/LitJson/JsonException.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RapidSheetData/Scripts/Thirdparty/LitJson/JsonMapper.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RapidSheetData/Scripts/Thirdparty/LitJson/JsonMapper.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RapidSheetData/Scripts/Thirdparty/LitJson/JsonMockWrapper.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RapidSheetData/Scripts/Thirdparty/LitJson/JsonMockWrapper.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RapidSheetData/Scripts/Thirdparty/LitJson/JsonReader.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RapidSheetData/Scripts/Thirdparty/LitJson/JsonReader.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RapidSheetData/Scripts/Thirdparty/LitJson/JsonWriter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RapidSheetData/Scripts/Thirdparty/LitJson/JsonWriter.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RapidSheetData/Scripts/Thirdparty/LitJson/Lexer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RapidSheetData/Scripts/Thirdparty/LitJson/Lexer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RapidSheetData/Scripts/Thirdparty/LitJson/ParserToken.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RapidSheetData/Scripts/Thirdparty/LitJson/ParserToken.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RapidSheetData/Scripts/Thirdparty/MiniJSON.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RapidSheetData/Scripts/Thirdparty/MiniJSON/MiniJSON.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/RapidSheetData/Scripts/Thirdparty/MiniJSON/MiniJSON.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SampleScenes/Models/GroundObstacles.FBX.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SampleScenes/Models/GroundObstacles.FBX.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SampleScenes/Models/GroundRunway.FBX.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SampleScenes/Models/GroundRunway.FBX.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shader/Hologram/Perso.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shader/Hologram/Perso.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Smooth! Orbit Cam/Demo_Scene_Objects/sattelite_001.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Smooth! Orbit Cam/Demo_Scene_Objects/sattelite_001.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Smooth! Orbit Cam/Prefab/CameraSystem.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Smooth! Orbit Cam/Prefab/CameraSystem.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Smooth! Orbit Cam/demo_scene_orbit_cam.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Smooth! Orbit Cam/demo_scene_orbit_cam.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Smooth! Orbit Cam/demo_scene_viewchanger.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Smooth! Orbit Cam/demo_scene_viewchanger.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Models/Ethan.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Standard Assets/Characters/ThirdPersonCharacter/Models/Ethan.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/Planet Earth Free/Demo.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ThirdParty/Planet Earth Free/Demo.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/Planet Earth Free/Models/Planet3968Tris.FBX.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ThirdParty/Planet Earth Free/Models/Planet3968Tris.FBX.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/Planet Earth Free/Models/Planet960Tris.FBX.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ThirdParty/Planet Earth Free/Models/Planet960Tris.FBX.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/Planet Earth Free/Prefabs/EarthHigh.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ThirdParty/Planet Earth Free/Prefabs/EarthHigh.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/Planet Earth Free/Prefabs/EarthLow.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ThirdParty/Planet Earth Free/Prefabs/EarthLow.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/Planet Earth Free/Prefabs/EarthMedium.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ThirdParty/Planet Earth Free/Prefabs/EarthMedium.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/Data/Balance/NationBalanceData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Data/Balance/NationBalanceData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/Data/Balance/StaticDataReferenceBalanceData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Data/Balance/StaticDataReferenceBalanceData.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Data/Gameplay/Nationality.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Data/Gameplay/Nationality.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UnityPackageManager/manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/SharpSerializer.3.0.1/SharpSerializer.3.0.1.nupkg" beforeDir="false" afterPath="$PROJECT_DIR$/packages/SharpSerializer.3.0.1/SharpSerializer.3.0.1.nupkg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Materials/Material.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Materials/Material.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -522,7 +32,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/client/Data/Balance/BalanceManagerData.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="33">
+            <state relative-caret-position="120">
               <caret line="17" column="9" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
               <folding>
                 <marker date="1552878289286" expanded="false" signature="23:69" ph="..." />
@@ -539,7 +49,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Google Sheets For Unity/Examples/Spreadsheet Example/SpreadsheetsExample.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-5">
+            <state relative-caret-position="1305">
               <caret line="158" column="12" selection-start-line="158" selection-start-column="12" selection-end-line="158" selection-end-column="45" />
               <folding>
                 <marker date="1552877819006" expanded="false" signature="6:32" ph="..." />
@@ -572,11 +82,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/client/Data/Balance/Editor/BalanceDataManagerEditor.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="123">
-              <caret line="33" column="17" lean-forward="true" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
+              <caret line="35" column="17" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
               <folding>
                 <marker date="1553060807575" expanded="false" signature="6:79" ph="..." />
                 <marker date="1553060807575" expanded="true" signature="123:4783" ph="{...}" />
@@ -613,11 +123,63 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/client/Data/Balance/MaterialBalanceData.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="325">
+              <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+              <folding>
+                <marker date="1553267598099" expanded="true" signature="7:146" ph="..." />
+                <marker date="1553267598099" expanded="true" signature="223:342" ph="{...}" />
+                <marker date="1553267598099" expanded="true" signature="307:340" ph="{...}" />
+                <marker date="1553267598099" expanded="true" signature="479:938" ph="{...}" />
+                <marker date="1553267598099" expanded="true" signature="619:657" ph="{...}" />
+                <marker date="1553267598099" expanded="true" signature="703:855" ph="{...}" />
+                <marker date="1553267598099" expanded="true" signature="901:936" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/client/Data/Balance/NationBalanceData.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="355">
+              <caret line="29" column="23" lean-forward="true" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
+              <folding>
+                <marker date="1553266869605" expanded="false" signature="23:130" ph="..." />
+                <marker date="1553266869605" expanded="true" signature="167:1024" ph="{...}" />
+                <marker date="1553266869605" expanded="true" signature="251:371" ph="{...}" />
+                <marker date="1553266869605" expanded="true" signature="320:365" ph="{...}" />
+                <marker date="1553266869605" expanded="true" signature="523:1022" ph="{...}" />
+                <marker date="1553266869605" expanded="true" signature="663:800" ph="{...}" />
+                <marker date="1553266869605" expanded="true" signature="858:905" ph="{...}" />
+                <marker date="1553266869605" expanded="true" signature="959:1016" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Gameplay/Nationality.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="5" column="43" lean-forward="true" selection-start-line="5" selection-start-column="43" selection-end-line="5" selection-end-column="84" />
+              <folding>
+                <marker date="1553267152958" expanded="false" signature="6:77" ph="..." />
+                <marker date="1553267152958" expanded="true" signature="253:541" ph="{...}" />
+                <marker date="1553267152958" expanded="true" signature="313:359" ph="{...}" />
+                <marker date="1553267152958" expanded="true" signature="404:539" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/PandeaGames/Data/Static/AbstractScriptableObjectStaticData.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
+            <state relative-caret-position="165">
+              <caret line="15" column="12" lean-forward="true" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
               <folding>
                 <marker date="1552875642330" expanded="false" signature="6:127" ph="..." />
                 <marker date="1552875642330" expanded="true" signature="162:1176" ph="{...}" />
@@ -633,25 +195,40 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/client/Data/Balance/NationBalanceData.cs">
+        <entry file="file://$PROJECT_DIR$/Assets/client/Data/Balance/StaticDataReferenceBalanceData.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="63" column="17" lean-forward="true" selection-start-line="63" selection-start-column="17" selection-end-line="63" selection-end-column="17" />
+            <state relative-caret-position="240">
+              <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
               <folding>
-                <marker date="1553060121147" expanded="true" signature="23:130" ph="..." />
-                <marker date="1553060121147" expanded="true" signature="167:2636" ph="{...}" />
-                <marker date="1553060121147" expanded="true" signature="226:266" ph="{...}" />
-                <marker date="1553060121147" expanded="true" signature="397:2634" ph="{...}" />
-                <marker date="1553060121147" expanded="true" signature="537:674" ph="{...}" />
-                <marker date="1553060121147" expanded="true" signature="732:779" ph="{...}" />
-                <marker date="1553060121147" expanded="true" signature="833:1800" ph="{...}" />
-                <marker date="1553060121147" expanded="true" signature="1170:1690" ph="{...}" />
-                <marker date="1553060121147" expanded="true" signature="1319:1599" ph="{...}" />
-                <marker date="1553060121147" expanded="true" signature="1898:2179" ph="{...}" />
-                <marker date="1553060121147" expanded="true" signature="1962:2143" ph="{...}" />
-                <marker date="1553060121147" expanded="true" signature="2053:2129" ph="{...}" />
-                <marker date="1553060121147" expanded="true" signature="2224:2628" ph="{...}" />
-                <marker date="1553060121147" expanded="true" signature="2356:2579" ph="{...}" />
+                <marker date="1553267193031" expanded="true" signature="23:147" ph="..." />
+                <marker date="1553267193031" expanded="true" signature="184:2641" ph="{...}" />
+                <marker date="1553267193031" expanded="true" signature="242:342" ph="{...}" />
+                <marker date="1553267193031" expanded="true" signature="389:430" ph="{...}" />
+                <marker date="1553267193031" expanded="true" signature="736:2639" ph="{...}" />
+                <marker date="1553267193031" expanded="true" signature="938:1877" ph="{...}" />
+                <marker date="1553267193031" expanded="true" signature="1260:1767" ph="{...}" />
+                <marker date="1553267193031" expanded="true" signature="1401:1692" ph="{...}" />
+                <marker date="1553267193031" expanded="true" signature="1969:2229" ph="{...}" />
+                <marker date="1553267193031" expanded="true" signature="2025:2193" ph="{...}" />
+                <marker date="1553267193031" expanded="true" signature="2110:2179" ph="{...}" />
+                <marker date="1553267193031" expanded="true" signature="2274:2633" ph="{...}" />
+                <marker date="1553267193031" expanded="true" signature="2405:2584" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Materials/Material.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="6" column="84" selection-start-line="6" selection-start-column="84" selection-end-line="6" selection-end-column="84" />
+              <folding>
+                <marker date="1553267412338" expanded="false" signature="6:44" ph="..." />
+                <marker date="1553267412338" expanded="true" signature="116:793" ph="{...}" />
+                <marker date="1553267412338" expanded="true" signature="300:791" ph="{...}" />
+                <marker date="1553267412338" expanded="true" signature="429:527" ph="{...}" />
+                <marker date="1553267412338" expanded="true" signature="586:785" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -978,7 +555,9 @@
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/ViewControllers/AbstractViewController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/ViewControllers/AbstractViewControllerFsm.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Weapons/Assailments/Assailer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Materials/Material.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Utils/ComponentInstantiatorService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/Data/Balance/MaterialBalanceData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/TournamentStateRenderer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/MatchStateRenderer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/TournamentTimerDisplay.cs" root0="FORCE_HIGHLIGHTING" />
@@ -1008,8 +587,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Manufacturer.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Components/PhysicalComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/PhysicalComponentBlueprint.cs" />
         <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Bot.cs" />
         <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Participants/Participant.cs" />
@@ -1052,13 +629,15 @@
         <option value="$PROJECT_DIR$/Assets/client/Data/BalanceData.cs" />
         <option value="$PROJECT_DIR$/Assets/client/Data/Balance/StaticDataReferenceBalanceSheet.cs" />
         <option value="$PROJECT_DIR$/Assets/PandeaGames/Data/Static/AbstractScriptableObjectStaticData.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Gameplay/Nationality.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Data/Balance/StaticDataReferenceBalanceData.cs" />
         <option value="$PROJECT_DIR$/Assets/Google Sheets For Unity/Examples/Spreadsheet Example/SpreadsheetsExample.cs" />
         <option value="$PROJECT_DIR$/Assets/client/Data/Balance/BalanceManagerData.cs" />
         <option value="$PROJECT_DIR$/Assets/client/Data/Balance/BalanceData.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Data/Balance/NationBalanceData.cs" />
         <option value="$PROJECT_DIR$/Assets/client/Data/Balance/Editor/BalanceDataManagerEditor.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Data/Balance/NationBalanceData.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Gameplay/Nationality.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Data/Balance/StaticDataReferenceBalanceData.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Materials/Material.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Data/Balance/MaterialBalanceData.cs" />
       </list>
     </option>
   </component>
@@ -1152,6 +731,88 @@
       </pane>
       <pane id="FileSystemExplorer" />
       <pane id="SolutionExplorer">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="Unity" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="Unity" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Assembly-CSharp" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="Unity" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Assembly-CSharp" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Assets" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="Unity" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Assembly-CSharp" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Assets" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="client" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="Unity" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Assembly-CSharp" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Assets" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="client" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Data" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="Unity" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Assembly-CSharp" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Assets" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="client" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Data" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Balance" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="Unity" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Assembly-CSharp" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Assets" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="client" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="scripts" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="Unity" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Assembly-CSharp" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Assets" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="client" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="scripts" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Data" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="Unity" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Assembly-CSharp" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Assets" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="client" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="scripts" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Data" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Specifications" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="Unity" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Assembly-CSharp" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Assets" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="client" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="scripts" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Data" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Specifications" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Materials" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
         <option name="show-all-files" value="false" />
       </pane>
       <pane id="AssemblyExplorer" />
@@ -1261,11 +922,12 @@
       <workItem from="1552847821140" duration="3106000" />
       <workItem from="1552873583943" duration="6964000" />
       <workItem from="1553058831857" duration="1969000" />
+      <workItem from="1553265486530" duration="2288000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="387286000" />
+    <option name="totallyTimeSpent" value="389574000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1278,9 +940,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1381" height="885" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24640967" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25018898" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
@@ -1288,7 +949,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4973545" weight="0.32847682" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.48979592" visible="true" weight="0.5059603" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.48979592" weight="0.5059603" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -1467,37 +1128,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Participants/ParticipantData.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-          <folding>
-            <marker date="1552273421459" expanded="false" signature="7:161" ph="..." />
-            <marker date="1552273421459" expanded="true" signature="203:1520" ph="{...}" />
-            <marker date="1552273421459" expanded="true" signature="301:507" ph="{...}" />
-            <marker date="1552273421459" expanded="true" signature="623:834" ph="{...}" />
-            <marker date="1552273421459" expanded="true" signature="985:1518" ph="{...}" />
-            <marker date="1552273421459" expanded="true" signature="1236:1491" ph="{...}" />
-            <marker date="1552273421459" expanded="true" signature="1373:1477" ph="{...}" />
-            <marker date="1552273421459" expanded="true" signature="1578:1632" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/ComponentRendering/ComponentDisplay.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
-          <folding>
-            <marker date="1552273818570" expanded="false" signature="6:153" ph="..." />
-            <marker date="1552273818570" expanded="true" signature="214:864" ph="{...}" />
-            <marker date="1552273818570" expanded="true" signature="439:591" ph="{...}" />
-            <marker date="1552273818570" expanded="true" signature="525:585" ph="{...}" />
-            <marker date="1552273818570" expanded="true" signature="680:862" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/client/scripts/Utils/ComponentInstantiatorService.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -2250,50 +1880,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Gameplay/Nationality.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="11" column="5" lean-forward="true" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
-          <folding>
-            <marker date="1552876993305" expanded="false" signature="6:77" ph="..." />
-            <marker date="1552876993305" expanded="true" signature="212:352" ph="{...}" />
-            <marker date="1552876993305" expanded="true" signature="293:339" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/client/Data/Balance/StaticDataReferenceBalanceData.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="6" column="95" selection-start-line="6" selection-start-column="95" selection-end-line="6" selection-end-column="95" />
-          <folding>
-            <marker date="1552877065377" expanded="false" signature="23:66" ph="..." />
-            <marker date="1552877065377" expanded="true" signature="103:394" ph="{...}" />
-            <marker date="1552877065377" expanded="true" signature="310:392" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/PandeaGames/Data/Static/AbstractScriptableObjectStaticData.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
-          <folding>
-            <marker date="1552875642330" expanded="false" signature="6:127" ph="..." />
-            <marker date="1552875642330" expanded="true" signature="162:1176" ph="{...}" />
-            <marker date="1552875642330" expanded="true" signature="305:1174" ph="{...}" />
-            <marker date="1552875642330" expanded="true" signature="378:602" ph="{...}" />
-            <marker date="1552875642330" expanded="true" signature="493:557" ph="{...}" />
-            <marker date="1552875642330" expanded="true" signature="755:885" ph="{...}" />
-            <marker date="1552875642330" expanded="true" signature="1005:1168" ph="{...}" />
-            <marker date="1552875642330" expanded="true" signature="1056:1158" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/client/Data/Balance/BalanceManagerData.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="33">
+        <state relative-caret-position="120">
           <caret line="17" column="9" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
           <folding>
             <marker date="1552878289286" expanded="false" signature="23:69" ph="..." />
@@ -2306,32 +1895,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/client/Data/Balance/NationBalanceData.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="63" column="17" lean-forward="true" selection-start-line="63" selection-start-column="17" selection-end-line="63" selection-end-column="17" />
-          <folding>
-            <marker date="1553060121147" expanded="true" signature="23:130" ph="..." />
-            <marker date="1553060121147" expanded="true" signature="167:2636" ph="{...}" />
-            <marker date="1553060121147" expanded="true" signature="226:266" ph="{...}" />
-            <marker date="1553060121147" expanded="true" signature="397:2634" ph="{...}" />
-            <marker date="1553060121147" expanded="true" signature="537:674" ph="{...}" />
-            <marker date="1553060121147" expanded="true" signature="732:779" ph="{...}" />
-            <marker date="1553060121147" expanded="true" signature="833:1800" ph="{...}" />
-            <marker date="1553060121147" expanded="true" signature="1170:1690" ph="{...}" />
-            <marker date="1553060121147" expanded="true" signature="1319:1599" ph="{...}" />
-            <marker date="1553060121147" expanded="true" signature="1898:2179" ph="{...}" />
-            <marker date="1553060121147" expanded="true" signature="1962:2143" ph="{...}" />
-            <marker date="1553060121147" expanded="true" signature="2053:2129" ph="{...}" />
-            <marker date="1553060121147" expanded="true" signature="2224:2628" ph="{...}" />
-            <marker date="1553060121147" expanded="true" signature="2356:2579" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Google Sheets For Unity/Examples/Spreadsheet Example/SpreadsheetsExample.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5">
+        <state relative-caret-position="1305">
           <caret line="158" column="12" selection-start-line="158" selection-start-column="12" selection-end-line="158" selection-end-column="45" />
           <folding>
             <marker date="1552877819006" expanded="false" signature="6:32" ph="..." />
@@ -2366,7 +1932,7 @@
     <entry file="file://$PROJECT_DIR$/Assets/client/Data/Balance/Editor/BalanceDataManagerEditor.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="123">
-          <caret line="33" column="17" lean-forward="true" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
+          <caret line="35" column="17" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
           <folding>
             <marker date="1553060807575" expanded="false" signature="6:79" ph="..." />
             <marker date="1553060807575" expanded="true" signature="123:4783" ph="{...}" />
@@ -2398,6 +1964,105 @@
             <marker date="1553060807575" expanded="true" signature="4282:4751" ph="{...}" />
             <marker date="1553060807575" expanded="true" signature="4400:4733" ph="{...}" />
             <marker date="1553060807575" expanded="true" signature="4579:4711" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/PandeaGames/Data/Static/AbstractScriptableObjectStaticData.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="15" column="12" lean-forward="true" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+          <folding>
+            <marker date="1552875642330" expanded="false" signature="6:127" ph="..." />
+            <marker date="1552875642330" expanded="true" signature="162:1176" ph="{...}" />
+            <marker date="1552875642330" expanded="true" signature="305:1174" ph="{...}" />
+            <marker date="1552875642330" expanded="true" signature="378:602" ph="{...}" />
+            <marker date="1552875642330" expanded="true" signature="493:557" ph="{...}" />
+            <marker date="1552875642330" expanded="true" signature="755:885" ph="{...}" />
+            <marker date="1552875642330" expanded="true" signature="1005:1168" ph="{...}" />
+            <marker date="1552875642330" expanded="true" signature="1056:1158" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/client/Data/Balance/StaticDataReferenceBalanceData.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+          <folding>
+            <marker date="1553267193031" expanded="true" signature="23:147" ph="..." />
+            <marker date="1553267193031" expanded="true" signature="184:2641" ph="{...}" />
+            <marker date="1553267193031" expanded="true" signature="242:342" ph="{...}" />
+            <marker date="1553267193031" expanded="true" signature="389:430" ph="{...}" />
+            <marker date="1553267193031" expanded="true" signature="736:2639" ph="{...}" />
+            <marker date="1553267193031" expanded="true" signature="938:1877" ph="{...}" />
+            <marker date="1553267193031" expanded="true" signature="1260:1767" ph="{...}" />
+            <marker date="1553267193031" expanded="true" signature="1401:1692" ph="{...}" />
+            <marker date="1553267193031" expanded="true" signature="1969:2229" ph="{...}" />
+            <marker date="1553267193031" expanded="true" signature="2025:2193" ph="{...}" />
+            <marker date="1553267193031" expanded="true" signature="2110:2179" ph="{...}" />
+            <marker date="1553267193031" expanded="true" signature="2274:2633" ph="{...}" />
+            <marker date="1553267193031" expanded="true" signature="2405:2584" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Materials/Material.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="6" column="84" selection-start-line="6" selection-start-column="84" selection-end-line="6" selection-end-column="84" />
+          <folding>
+            <marker date="1553267412338" expanded="false" signature="6:44" ph="..." />
+            <marker date="1553267412338" expanded="true" signature="116:793" ph="{...}" />
+            <marker date="1553267412338" expanded="true" signature="300:791" ph="{...}" />
+            <marker date="1553267412338" expanded="true" signature="429:527" ph="{...}" />
+            <marker date="1553267412338" expanded="true" signature="586:785" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Gameplay/Nationality.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="5" column="43" lean-forward="true" selection-start-line="5" selection-start-column="43" selection-end-line="5" selection-end-column="84" />
+          <folding>
+            <marker date="1553267152958" expanded="false" signature="6:77" ph="..." />
+            <marker date="1553267152958" expanded="true" signature="253:541" ph="{...}" />
+            <marker date="1553267152958" expanded="true" signature="313:359" ph="{...}" />
+            <marker date="1553267152958" expanded="true" signature="404:539" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/client/Data/Balance/NationBalanceData.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="29" column="23" lean-forward="true" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
+          <folding>
+            <marker date="1553266869605" expanded="false" signature="23:130" ph="..." />
+            <marker date="1553266869605" expanded="true" signature="167:1024" ph="{...}" />
+            <marker date="1553266869605" expanded="true" signature="251:371" ph="{...}" />
+            <marker date="1553266869605" expanded="true" signature="320:365" ph="{...}" />
+            <marker date="1553266869605" expanded="true" signature="523:1022" ph="{...}" />
+            <marker date="1553266869605" expanded="true" signature="663:800" ph="{...}" />
+            <marker date="1553266869605" expanded="true" signature="858:905" ph="{...}" />
+            <marker date="1553266869605" expanded="true" signature="959:1016" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/client/Data/Balance/MaterialBalanceData.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+          <folding>
+            <marker date="1553267598099" expanded="true" signature="7:146" ph="..." />
+            <marker date="1553267598099" expanded="true" signature="223:342" ph="{...}" />
+            <marker date="1553267598099" expanded="true" signature="307:340" ph="{...}" />
+            <marker date="1553267598099" expanded="true" signature="479:938" ph="{...}" />
+            <marker date="1553267598099" expanded="true" signature="619:657" ph="{...}" />
+            <marker date="1553267598099" expanded="true" signature="703:855" ph="{...}" />
+            <marker date="1553267598099" expanded="true" signature="901:936" ph="{...}" />
           </folding>
         </state>
       </provider>

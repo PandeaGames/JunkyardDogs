@@ -3,12 +3,17 @@ using System.Collections;
 using JunkyardDogs.Data.Balance;
 
 [CreateAssetMenu(fileName = "Nationality", menuName = "GamePlay/Nationality", order = 3)]
-public class Nationality : ScriptableObject
+public class Nationality : ScriptableObject, IStaticDataBalance<NationBalanceObject>
 {
-    #if UNITY_EDITOR
     public void ApplyBalance(NationBalanceObject balance)
     {
         this.name = balance.name;
     }
-    #endif
+
+    public NationBalanceObject GetBalance()
+    {
+        NationBalanceObject balance = new NationBalanceObject();
+        balance.name = this.name;
+        return balance;
+    }
 }
