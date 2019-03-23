@@ -18,7 +18,7 @@ namespace JunkyardDogs.Data.Balance
     }
     
     [CreateAssetMenu]
-    public class NationBalanceData : StaticDataReferenceBalanceData<NationalityDataSource, Nationality, NationBalanceObject>
+    public class NationBalanceData : StaticDataReferenceBalanceData<NationalityDataSource, Nationality, NationBalanceObject, Nationality, NationBalanceObject>
     {
         public const string NATION_DATA_PATH = "Assets/AssetBundles/Data/Nations/";
         

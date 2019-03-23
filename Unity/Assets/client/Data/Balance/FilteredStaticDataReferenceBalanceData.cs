@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace JunkyardDogs.Data.Balance
 {
-    public abstract class FilteredStaticDataReferenceBalanceData<TStaticDataList, TUnityDataBase, TBalanceObjectBase, TUnityData,TBalanceObject>
+   /* public abstract class FilteredStaticDataReferenceBalanceData<TStaticDataList, TUnityDataBase, TBalanceObjectBase, TUnityData,TBalanceObject>
         :StaticDataReferenceBalanceData<TStaticDataList, TUnityDataBase,TBalanceObjectBase>
         where TStaticDataList : AbstractScriptableObjectStaticData<TUnityDataBase>
         where TUnityData : ScriptableObject, IStaticDataBalance<TBalanceObject>, TUnityDataBase
@@ -13,5 +13,5 @@ namespace JunkyardDogs.Data.Balance
         where TBalanceObject : IStaticDataBalanceObject
         where TBalanceObjectBase : IStaticDataBalanceObject
     {
-    }
+    }*/
 }

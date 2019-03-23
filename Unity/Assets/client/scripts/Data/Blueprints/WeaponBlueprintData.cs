@@ -1,13 +1,11 @@
-﻿using UnityEngine;
+﻿using JunkyardDogs.Components;
+using UnityEngine;
 
 [CreateAssetMenu(menuName = "Blueprints/WeaponBlueprintData")]
-public class WeaponBlueprintData : PhysicalComponentBlueprintData
+public class WeaponBlueprintData : PhysicalComponentBlueprintData<Weapon>
 {
-    [SerializeField]
-    private WeaponBlueprint _blueprint;
-    
-    public override BlueprintBase GetBlueprint()
+    public override Weapon DoGenerate(int seed)
     {
-        return _blueprint;
+        throw new System.NotImplementedException();
     }
 }

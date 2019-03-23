@@ -16,7 +16,7 @@ public struct MaterialBalanceObject:IStaticDataBalanceObject
     }
 }
 [CreateAssetMenu]
-public class MaterialBalanceData : StaticDataReferenceBalanceData<MaterialDataSource, Material, MaterialBalanceObject>
+public class MaterialBalanceData : StaticDataReferenceBalanceData<MaterialDataSource, Material, MaterialBalanceObject, Material, MaterialBalanceObject>
 {
     public const string DATA_PATH = "Assets/AssetBundles/Data/Products/Materials/";
     

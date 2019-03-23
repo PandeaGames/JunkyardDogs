@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d05b97d3903fbd4c93af04f4dfc5590, type: 3}
-  m_Name: SpiralPower
+  m_Script: {fileID: 11500000, guid: 1e898c12224211543892380af52f98a0, type: 3}
+  m_Name: Plate_Thickness06
   m_EditorClassIdentifier: 
-  _volume: 1
-  _chargeTime: 1
-  _cooldown: 1
-  _meleeWeapon: {fileID: 11400000, guid: 930490cd87e7b3844bcc749c95fb5ef6, type: 2}
+  _volume: 3
+  _thickness: 10

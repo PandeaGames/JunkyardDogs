@@ -1,13 +1,19 @@
-﻿using UnityEngine;
+﻿using JunkyardDogs.Components;
+using UnityEngine;
 
 [CreateAssetMenu(menuName = "Blueprints/WeaponProcessorBlueprintData")]
-public class WeaponProcessorBlueprintData : PhysicalComponentBlueprintData
+public class WeaponProcessorBlueprintData : PhysicalComponentBlueprintData<WeaponProcessor>
 {
-    [SerializeField]
-    private WeaponProcessorBlueprint _blueprint;
+    [Header("Weapon")]
+    [SerializeField] 
+    private WeaponBlueprintData _weapon;
     
-    public override BlueprintBase GetBlueprint()
+    public override WeaponProcessor DoGenerate(int seed)
     {
-        return _blueprint;
+        WeaponProcessor processor = new WeaponProcessor();
+        Weapon weapon = _weapon.DoGenerate(seed);
+        processor.Weapon = weapon;
+
+        return processor;
     }
 }

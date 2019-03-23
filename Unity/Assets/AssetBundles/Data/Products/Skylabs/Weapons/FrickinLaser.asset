@@ -3,16 +3,15 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2bc383b2da7c72946a114ca2612ed7bf, type: 3}
   m_Name: FrickinLaser
   m_EditorClassIdentifier: 
-  _manufacturer: {fileID: 11400000, guid: 2aeb4c1ba3b2b6c44962fc440c235b76, type: 2}
-  _material: {fileID: 11400000, guid: 66796a819a8882b47908df728f6aa07d, type: 2}
   _volume: 1
   _chargeTime: 1
   _cooldown: 1

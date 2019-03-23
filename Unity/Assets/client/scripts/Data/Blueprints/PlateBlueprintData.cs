@@ -1,13 +1,11 @@
 ﻿
+using JunkyardDogs.Components;
 using UnityEngine;
 
-public class PlateBlueprintData : PhysicalComponentBlueprintData
+public class PlateBlueprintData : PhysicalComponentBlueprintData<Plate>
 {
-    [SerializeField]
-    private PlateBlueprint _blueprint;
-    
-    public override BlueprintBase GetBlueprint()
+    public override Plate DoGenerate(int seed)
     {
-        return _blueprint;
+        throw new System.NotImplementedException();
     }
 }

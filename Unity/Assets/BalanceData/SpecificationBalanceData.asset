@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d57eb9a208d4990a83f3a9f798d56e9, type: 3}
   m_Name: SpecificationBalanceData
   m_EditorClassIdentifier: 
-  TableName: 
-  _dataList: {fileID: 0}
+  TableName: Specifications
+  AllowImport: 0
+  _dataList: {fileID: 11400000, guid: c3c0a0612bd21da4a8cc42c81eb8fce2, type: 2}

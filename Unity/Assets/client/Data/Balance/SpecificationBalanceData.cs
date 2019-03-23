@@ -16,7 +16,7 @@ public struct SpecificationBalanceObject:IStaticDataBalanceObject
     }
 }
 [CreateAssetMenu]
-public class SpecificationBalanceData : StaticDataReferenceBalanceData<SpecificationDataSource, Specification, SpecificationBalanceObject>
+public class SpecificationBalanceData : StaticDataReferenceBalanceData<SpecificationDataSource, Specification, SpecificationBalanceObject, Specification, SpecificationBalanceObject>
 {
     public const string DATA_PATH = "Assets/AssetBundles/Data/Products/";
     

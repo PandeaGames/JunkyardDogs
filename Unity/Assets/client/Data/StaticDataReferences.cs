@@ -7,32 +7,37 @@ using Material = JunkyardDogs.Specifications.Material;
 namespace JunkyardDogs.Data
 {
     [Serializable]
-    public class NationalityStaticDataReference : StaticDataReference<Nationality, NationalityStaticDataReference, NationalityDataProvider>
+    public class NationalityStaticDataReference : StaticDataReference<Nationality, Nationality, NationalityStaticDataReference, NationalityDataProvider>
     {
     }
     
     [Serializable]
-    public class SpecificationStaticDataReference : StaticDataReference<Specification, SpecificationStaticDataReference, SpecificationDataProvider>
+    public class SpecificationStaticDataReference : StaticDataReference<Specification,Specification, SpecificationStaticDataReference, SpecificationDataProvider>
     {
     }
     
     [Serializable]
-    public class ManufacturerStaticDataReference : StaticDataReference<Manufacturer, ManufacturerStaticDataReference, ManufacturerDataProvider>
+    public class ManufacturerStaticDataReference : StaticDataReference<Manufacturer, Manufacturer, ManufacturerStaticDataReference, ManufacturerDataProvider>
     {
     }
     
     [Serializable]
-    public class MaterialStaticDataReference : StaticDataReference<Material, MaterialStaticDataReference, MaterialDataProvider>
+    public class MaterialStaticDataReference : StaticDataReference<Material, Material, MaterialStaticDataReference, MaterialDataProvider>
     {
     }
     
     [Serializable]
-    public class CompetitorBlueprintStaticDataReference : StaticDataReference<CompetitorBlueprintData, CompetitorBlueprintStaticDataReference, CompetitorBlueprintDataProvider>
+    public class CompetitorBlueprintStaticDataReference : StaticDataReference<CompetitorBlueprintData, CompetitorBlueprintData, CompetitorBlueprintStaticDataReference, CompetitorBlueprintDataProvider>
     {
     }
     
     [Serializable]
-    public class ParticipantStaticDataReference : StaticDataReference<ParticipantData, ParticipantStaticDataReference, ParticipantDataProvider>
+    public class ParticipantStaticDataReference : StaticDataReference<ParticipantData, ParticipantData, ParticipantStaticDataReference, ParticipantDataProvider>
+    {
+    }
+    
+    [Serializable]
+    public class WeaponStaticDataReference : StaticDataReference<Specification, Weapon, WeaponStaticDataReference, WeaponDataProvider>
     {
     }
 }

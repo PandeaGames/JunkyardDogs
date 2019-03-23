@@ -2,7 +2,7 @@ using PandeaGames.Data.Static;
 
 namespace JunkyardDogs.Data
 {
-    public class NationalityDataProvider : BundledStaticDataReferenceDirectory<Nationality, NationalityStaticDataReference, NationalityDataProvider>
+    public class NationalityDataProvider : BundledStaticDataReferenceDirectory<Nationality, Nationality, NationalityStaticDataReference, NationalityDataProvider>
     {
         public const string FULL_PATH = "Assets/AssetBundles/Data/Nations/NationalityDataSource.asset";
         

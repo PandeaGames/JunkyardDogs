@@ -5,10 +5,11 @@ using UnityEngine;
 namespace JunkyardDogs.Data.Balance
 {
     [Serializable]
-    public struct PhysicalSpecificationBalanceObject:IStaticDataBalanceObject
+    public struct PlateBalanceObject:IStaticDataBalanceObject
     {
         public string name;
         public float volume;
+        public float thickness;
         public string GetDataUID()
         {
             return name;
@@ -16,10 +17,10 @@ namespace JunkyardDogs.Data.Balance
     }
     
     [CreateAssetMenu]
-    public class PhysicalSpecificationBalanceData : StaticDataReferenceBalanceData<SpecificationDataSource, Specification,
-        SpecificationBalanceObject, PhysicalSpecification, PhysicalSpecificationBalanceObject>
+    public class PlateBalanceData : StaticDataReferenceBalanceData<SpecificationDataSource, Specification,
+        SpecificationBalanceObject, Plate, PlateBalanceObject>
     {
-        public const string DATA_PATH = "Assets/AssetBundles/Data/Products/";
+        public const string DATA_PATH = "Assets/AssetBundles/Data/Products/Plating/";
 
         protected override string GetNewDataFolder()
         {

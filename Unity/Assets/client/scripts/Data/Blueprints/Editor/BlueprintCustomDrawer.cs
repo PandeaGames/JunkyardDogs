@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEditor;
 using System.Collections.Generic;
 
-[CustomPropertyDrawer(typeof(BlueprintBase), true)]
+/*[CustomPropertyDrawer(typeof(BlueprintBase), true)]
 public class BlueprintCustomDrawer : PropertyDrawer
 {    
     public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
@@ -36,4 +36,4 @@ public class BlueprintCustomDrawer : PropertyDrawer
             return 16;
         }
     }
-}
+}*/

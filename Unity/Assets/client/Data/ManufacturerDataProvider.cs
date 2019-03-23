@@ -5,7 +5,7 @@ using UnityEngine;
 namespace JunkyardDogs.Data
 {
     [CreateAssetMenu]
-    public class ManufacturerDataProvider : BundledStaticDataReferenceDirectory<Manufacturer, ManufacturerStaticDataReference, ManufacturerDataProvider>
+    public class ManufacturerDataProvider : BundledStaticDataReferenceDirectory<Manufacturer, Manufacturer, ManufacturerStaticDataReference, ManufacturerDataProvider>
     {
         public const string FULL_PATH = "Assets/AssetBundles/Data/Products/ManufactuererDataSource.asset";
         

@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: ManufacturerBalance
   m_EditorClassIdentifier: 
   TableName: Manufacturer
+  AllowImport: 1
   _dataList: {fileID: 11400000, guid: 2079979e23b8d774a824eedd1f7d4f78, type: 2}

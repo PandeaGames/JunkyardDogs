@@ -1,6 +1,11 @@
 ﻿using UnityEngine;
 
-public abstract class BlueprintData : ScriptableObject
+public abstract class BlueprintData<TGeneratedData> : ScriptableObject
 {
-    public abstract BlueprintBase GetBlueprint();
+    public TGeneratedData DoGenerate()
+    {
+        return DoGenerate(0);
+    }
+    
+    public abstract TGeneratedData DoGenerate(int seed);
 }

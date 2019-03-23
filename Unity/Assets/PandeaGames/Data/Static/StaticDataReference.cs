@@ -25,10 +25,11 @@ public class StaticDataReferenceAttribute : PropertyAttribute
     }
 }
 [Serializable]
-public class StaticDataReference<TData, TReference, TDirectory>
-    where TData:Object 
-    where TReference:StaticDataReference<TData, TReference, TDirectory>, new()
-    where TDirectory:StaticDataReferenceDirectory<TData, TReference, TDirectory>, new()
+public class StaticDataReference<TDataBase, TData, TReference, TDirectory>
+    where TDataBase:Object
+    where TData:TDataBase 
+    where TReference:StaticDataReference<TDataBase, TData, TReference, TDirectory>, new()
+    where TDirectory:StaticDataReferenceDirectory<TDataBase, TData, TReference, TDirectory>, new()
 {
     [SerializeField]
     private string _id;
@@ -45,7 +46,7 @@ public class StaticDataReference<TData, TReference, TDirectory>
             if (string.IsNullOrEmpty(ID))
                 return null;
                 
-            return Game.Instance.GetStaticDataPovider<TDirectory>().FindData(ID); 
+            return Game.Instance.GetStaticDataPovider<TDirectory>().FindData(ID) as TData; 
         }
     }
 }

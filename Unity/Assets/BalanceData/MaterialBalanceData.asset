@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: MaterialBalanceData
   m_EditorClassIdentifier: 
   TableName: Materials
+  AllowImport: 1
   _dataList: {fileID: 11400000, guid: ef898911023d68f419d0535df5cb2251, type: 2}

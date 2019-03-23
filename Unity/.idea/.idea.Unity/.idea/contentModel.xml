@@ -76,6 +76,7 @@
               <e p="MaterialBalanceData.cs" t="Include" />
               <e p="NationBalanceData.cs" t="Include" />
               <e p="PhysicalSpecificationBalanceData.cs" t="Include" />
+              <e p="PlateBalanceData.cs" t="Include" />
               <e p="SpecificationBalanceData.cs" t="Include" />
               <e p="StaticDataReferenceBalanceData.cs" t="Include" />
             </e>
@@ -113,31 +114,19 @@
                 <e p="StateTransition.cs" t="Include" />
               </e>
               <e p="Blueprints" t="Include">
-                <e p="AgentBlueprint.cs" t="Include" />
                 <e p="AgentBlueprintData.cs" t="Include" />
-                <e p="Blueprint.cs" t="Include" />
-                <e p="BlueprintBase.cs" t="Include" />
                 <e p="BlueprintData.cs" t="Include" />
-                <e p="BotBlueprint.cs" t="Include" />
                 <e p="BotBlueprintData.cs" t="Include" />
-                <e p="ChassisBlueprint.cs" t="Include" />
                 <e p="ChassisBlueprintData.cs" t="Include" />
-                <e p="CompetitorBlueprint.cs" t="Include" />
                 <e p="CompetitorBlueprintData.cs" t="Include" />
-                <e p="ComponentBlueprint.cs" t="Include" />
                 <e p="ComponentBlueprintData.cs" t="Include" />
                 <e p="Editor" t="Include">
                   <e p="BlueprintCustomDrawer.cs" t="Include" />
                 </e>
-                <e p="MotherboardBlueprint.cs" t="Include" />
                 <e p="MotherboardBlueprintData.cs" t="Include" />
-                <e p="PhysicalComponentBlueprint.cs" t="Include" />
                 <e p="PhysicalComponentData.cs" t="Include" />
-                <e p="PlateBlueprint.cs" t="Include" />
                 <e p="PlateBlueprintData.cs" t="Include" />
-                <e p="WeaponBlueprint.cs" t="Include" />
                 <e p="WeaponBlueprintData.cs" t="Include" />
-                <e p="WeaponProcessorBlueprint.cs" t="Include" />
                 <e p="WeaponProcessorBlueprintData.cs" t="Include" />
               </e>
               <e p="Bot.cs" t="Include" />

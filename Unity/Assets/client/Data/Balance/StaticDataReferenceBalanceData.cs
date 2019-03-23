@@ -19,10 +19,13 @@ namespace JunkyardDogs.Data.Balance
         string GetDataUID();
     }
     
-    public abstract class StaticDataReferenceBalanceData<TStaticDataList, TUnityData, TBalanceObject> : BalanceData 
-        where TStaticDataList:AbstractScriptableObjectStaticData<TUnityData> 
-        where TUnityData:ScriptableObject, IStaticDataBalance<TBalanceObject> 
-        where TBalanceObject:IStaticDataBalanceObject
+    public abstract class StaticDataReferenceBalanceData<TStaticDataList, TUnityDataBase, TBalanceObjectBase, TUnityData,TBalanceObject>
+        :BalanceData
+        where TStaticDataList : AbstractScriptableObjectStaticData<TUnityDataBase>
+        where TUnityData : ScriptableObject, IStaticDataBalance<TBalanceObject>, TUnityDataBase
+        where TUnityDataBase : ScriptableObject
+        where TBalanceObject : IStaticDataBalanceObject
+        where TBalanceObjectBase : IStaticDataBalanceObject
     {
         [SerializeField]
         protected TStaticDataList _dataList;
@@ -50,27 +53,43 @@ namespace JunkyardDogs.Data.Balance
 
             Debug.LogFormat("{0} Data found. Parsing.", balanceObjects.Length);
             
-            foreach (TBalanceObject nationBalanceObj in balanceObjects)
-            {
-                TUnityData nationality = FindData(nationBalanceObj, _dataList.Data);
+            foreach (TBalanceObject balanceObj in balanceObjects)
+            {   
+                TUnityData data = FindData(balanceObj, _dataList.Data);
 
-                if (nationality == null)
+                if (data == null && AllowDataCreationOnImport)
                 {
-                    nationality = ScriptableObject.CreateInstance<TUnityData>();
-                    AssetDatabase.CreateAsset(nationality, GetNewDataFolder() + nationBalanceObj.GetDataUID()+".asset");
-                    _dataList.Data.Add(nationality);
+                    data = ScriptableObject.CreateInstance<TUnityData>();
+                    AssetDatabase.CreateAsset(data, GetNewDataFolder() + balanceObj.GetDataUID()+".asset");
+                    _dataList.Data.Add(data);
                 }
 
-                nationality.ApplyBalance(nationBalanceObj);
+                if (data)
+                {
+                    data.ApplyBalance(balanceObj);
+                }
             }
             
             EditorUtility.SetDirty(_dataList);
             AssetDatabase.SaveAssets();
         }
         
-        protected TUnityData FindData(TBalanceObject balance, List<TUnityData> list)
+        protected TUnityData FindData(TBalanceObject balance, List<TUnityDataBase> list)
         {
-            foreach (TUnityData data in list)
+            foreach (TUnityDataBase data in list)
+            {
+                if (data != null && data.name == balance.GetDataUID() && data is TUnityData)
+                {
+                    return (TUnityData) data;
+                }
+            }
+
+            return null;
+        }
+        
+        protected TUnityDataBase FindData(TBalanceObjectBase balance, List<TUnityDataBase> list)
+        {
+            foreach (TUnityDataBase data in list)
             {
                 if (data != null && data.name == balance.GetDataUID())
                 {
@@ -85,10 +104,14 @@ namespace JunkyardDogs.Data.Balance
         {
             List<RowData> rowData = new List<RowData>();
 
-            foreach (TUnityData unityData in _dataList.Data)
+            foreach (TUnityDataBase unityDataBase in _dataList.Data)
             {
-                TBalanceObject data = unityData.GetBalance();
-                rowData.Add(new RowData(data.GetDataUID(), JsonUtility.ToJson(data)));
+                if (unityDataBase is TUnityData)
+                {
+                    TUnityData unityData = (TUnityData) unityDataBase;
+                    TBalanceObject data = unityData.GetBalance();
+                    rowData.Add(new RowData(data.GetDataUID(), JsonUtility.ToJson(data)));
+                }
             }
 
             return rowData.ToArray();

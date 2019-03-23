@@ -6,11 +6,12 @@ using Object = UnityEngine.Object;
 
 namespace PandeaGames.Data.Static
 {
-    public class StaticDataReferenceDirectory<TData, TReference, TDirectory> : AbstractStaticDataProvider, 
+    public class StaticDataReferenceDirectory<TDataBase, TData, TReference, TDirectory> : AbstractStaticDataProvider, 
         IEnumerable<TReference> 
-        where TData:Object
-        where TReference:StaticDataReference<TData, TReference, TDirectory>, new()
-        where TDirectory:StaticDataReferenceDirectory<TData, TReference, TDirectory>, new()
+        where TDataBase:Object
+        where TData:TDataBase
+        where TReference:StaticDataReference<TDataBase, TData, TReference, TDirectory>, new()
+        where TDirectory:StaticDataReferenceDirectory<TDataBase, TData, TReference, TDirectory>, new()
     {
         private Dictionary<string, TData> _dataLookup;
 
@@ -19,10 +20,15 @@ namespace PandeaGames.Data.Static
             LoadSourceDataAsync((source) =>
             {
                 _dataLookup = new Dictionary<string, TData>();
-                
+
                 foreach (StaticDataEntry<TData> entry in source)
                 {
-                    _dataLookup.Add(entry.ID, entry.Data);
+                    TData data = entry as TData;
+
+                    if (data != null)
+                    {
+                        _dataLookup.Add(entry.ID, entry.Data);
+                    }
                 }
 
                 onLoadSuccess();

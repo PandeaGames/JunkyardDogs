@@ -1,13 +1,8 @@
-﻿using UnityEngine;
+﻿using JunkyardDogs.Components;
+using UnityEngine;
 
 [CreateAssetMenu(menuName = "Blueprints/Motherboard Blueprint")]
-public class MotherboardBlueprintData : BlueprintData
+public class MotherboardBlueprintData : ComponentBlueprintData<Motherboard>
 {
-    [SerializeField]
-    private MotherboardBlueprint _blueprint;
-    
-    public override BlueprintBase GetBlueprint()
-    {
-        return _blueprint;
-    }
+  
 }

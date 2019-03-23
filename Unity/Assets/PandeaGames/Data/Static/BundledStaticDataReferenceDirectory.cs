@@ -4,10 +4,11 @@ using Object = UnityEngine.Object;
 
 namespace PandeaGames.Data.Static
 {
-    public class BundledStaticDataReferenceDirectory<TData, TReference, TDirectory> : StaticDataReferenceDirectory<TData, TReference, TDirectory>
-        where TData:Object
-        where TReference:StaticDataReference<TData, TReference, TDirectory>, new()
-        where TDirectory:StaticDataReferenceDirectory<TData, TReference, TDirectory>, new()
+    public class BundledStaticDataReferenceDirectory<TDataBase, TData, TReference, TDirectory> : StaticDataReferenceDirectory<TDataBase, TData, TReference, TDirectory>
+        where TDataBase:Object
+        where TData:TDataBase 
+        where TReference:StaticDataReference<TDataBase, TData, TReference, TDirectory>, new()
+        where TDirectory:StaticDataReferenceDirectory<TDataBase, TData, TReference, TDirectory>, new()
     {
         private string _bundleName;
         private string _path;

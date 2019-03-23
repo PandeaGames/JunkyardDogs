@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: NationBalanceData
   m_EditorClassIdentifier: 
   TableName: Nationality
+  AllowImport: 1
   _dataList: {fileID: 11400000, guid: 8b3e599ce23be664c9fb59b339f512f8, type: 2}

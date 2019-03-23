@@ -9,10 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d05b97d3903fbd4c93af04f4dfc5590, type: 3}
-  m_Name: SpiralPower
+  m_Script: {fileID: 11500000, guid: f5160fb952be46fc8b069255817762f7, type: 3}
+  m_Name: PhysicalSpecificationBalanceData
   m_EditorClassIdentifier: 
-  _volume: 1
-  _chargeTime: 1
-  _cooldown: 1
-  _meleeWeapon: {fileID: 11400000, guid: 930490cd87e7b3844bcc749c95fb5ef6, type: 2}
+  TableName: Physical Components
+  AllowImport: 1
+  _dataList: {fileID: 11400000, guid: c3c0a0612bd21da4a8cc42c81eb8fce2, type: 2}

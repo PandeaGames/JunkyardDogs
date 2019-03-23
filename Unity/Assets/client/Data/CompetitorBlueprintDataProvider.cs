@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace JunkyardDogs.Data
 {
-    public class CompetitorBlueprintDataProvider : BundledStaticDataReferenceDirectory<CompetitorBlueprintData, CompetitorBlueprintStaticDataReference, CompetitorBlueprintDataProvider>
+    public class CompetitorBlueprintDataProvider : BundledStaticDataReferenceDirectory<CompetitorBlueprintData, CompetitorBlueprintData, CompetitorBlueprintStaticDataReference, CompetitorBlueprintDataProvider>
     {
         public const string FULL_PATH = "Assets/AssetBundles/Data/Competitors/CompetitorBlueprintDataSource.asset";
         
