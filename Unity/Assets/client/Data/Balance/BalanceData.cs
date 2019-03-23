@@ -21,6 +21,9 @@ namespace JunkyardDogs.Data.Balance
         
         [SerializeField]
         public string TableName;
+
+        [SerializeField]
+        public bool AllowImport;
      //PlayerInfo[] players = JsonHelper.ArrayFromJson<PlayerInfo>(rawJSon);
      protected TBalanceObject[] Parse<TBalanceObject>(string json)
      {

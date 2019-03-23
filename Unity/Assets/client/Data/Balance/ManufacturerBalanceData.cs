@@ -2,23 +2,24 @@
 using System;
 using JunkyardDogs.Data;
 using JunkyardDogs.Data.Balance;
+using JunkyardDogs.Specifications;
 using UnityEngine;
 using Material = JunkyardDogs.Specifications.Material;
 
 [Serializable]
-public struct MaterialBalanceObject:IStaticDataBalanceObject
+public struct ManufacturerBalanceObject:IStaticDataBalanceObject
 {
     public string name;
-    public double density;
+    public string nationality;
     public string GetDataUID()
     {
         return name;
     }
 }
 [CreateAssetMenu]
-public class MaterialBalanceData : StaticDataReferenceBalanceData<MaterialDataSource, Material, MaterialBalanceObject>
+public class ManufacturerBalanceData : StaticDataReferenceBalanceData<ManufactuererDataSource, Manufacturer, ManufacturerBalanceObject>
 {
-    public const string DATA_PATH = "Assets/AssetBundles/Data/Products/Materials/";
+    public const string DATA_PATH = "Assets/AssetBundles/Data/Products/";
     
     protected override string GetNewDataFolder()
     {

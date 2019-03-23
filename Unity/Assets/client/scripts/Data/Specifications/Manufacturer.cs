@@ -3,6 +3,7 @@ using UnityEngine;
 using System.Collections;
 using JunkyardDogs.Components;
 using JunkyardDogs.Data;
+using JunkyardDogs.Data.Balance;
 using Component = JunkyardDogs.Components.Component;
 using WeakReference = PandeaGames.Data.WeakReferences.WeakReference;
 
@@ -32,12 +33,38 @@ namespace JunkyardDogs.Specifications
     }
 
     [CreateAssetMenu(fileName = "Manufacturer", menuName = "Specifications/Manufacturer", order = 2)]
-    public class Manufacturer : ScriptableObject
+    public class Manufacturer : ScriptableObject, IStaticDataBalance<ManufacturerBalanceObject>
     {
         [SerializeField]
         private Distinction _distinctions;
 
-        [SerializeField]
-        private Nationality _nationality;
+        [SerializeField, StaticDataReference(NationalityDataProvider.FULL_PATH)]
+        private NationalityStaticDataReference _nationality;
+        public NationalityStaticDataReference nationality
+        {
+            get
+            {
+                if (_nationality == null)
+                {
+                    _nationality = new NationalityStaticDataReference();
+                }
+
+                return _nationality;
+            }
+        }
+        
+        public void ApplyBalance(ManufacturerBalanceObject balance)
+        {
+            this.name = balance.name;
+            _nationality.ID = balance.nationality;
+        }
+
+        public ManufacturerBalanceObject GetBalance()
+        {
+            ManufacturerBalanceObject balance = new ManufacturerBalanceObject();
+            balance.name = this.name;
+            balance.nationality = nationality.ID;
+            return balance;
+        }
     }
 }

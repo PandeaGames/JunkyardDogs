@@ -1,5 +1,6 @@
 #if UNITY_EDITOR
 using System.Collections.Generic;
+using System.Reflection;
 using GoogleSheetsForUnity;
 using PandeaGames.Data.Static;
 using UnityEditor;
@@ -18,22 +19,38 @@ namespace JunkyardDogs.Data.Balance
         string GetDataUID();
     }
     
-    public abstract class StaticDataReferenceBalanceData<TStaticDataList, TUnityData, TBalanceObject> : BalanceData where TStaticDataList:AbstractScriptableObjectStaticData<TUnityData> where TUnityData:ScriptableObject, IStaticDataBalance<TBalanceObject> where TBalanceObject:IStaticDataBalanceObject
+    public abstract class StaticDataReferenceBalanceData<TStaticDataList, TUnityData, TBalanceObject> : BalanceData 
+        where TStaticDataList:AbstractScriptableObjectStaticData<TUnityData> 
+        where TUnityData:ScriptableObject, IStaticDataBalance<TBalanceObject> 
+        where TBalanceObject:IStaticDataBalanceObject
     {
         [SerializeField]
         protected TStaticDataList _dataList;
 
         protected abstract string GetNewDataFolder();
-        
-        
+
+        public override string[] GetFieldNames()
+        {
+            FieldInfo[] fields = typeof(TBalanceObject).GetFields(BindingFlags.Public | BindingFlags.Instance);
+            
+            string[] fieldNames = new string[fields.Length];
+
+            for (int i = 0; i < fields.Length; i++)
+            {
+                fieldNames[i] = fields[i].Name;
+            }
+
+            return fieldNames;
+        }
+
         public override void ImportData(string json)
         {
             // Parse from json to the desired object type.            
-            TBalanceObject[] nations = JsonHelper.ArrayFromJson<TBalanceObject>(json);
+            TBalanceObject[] balanceObjects = JsonHelper.ArrayFromJson<TBalanceObject>(json);
 
-            Debug.LogFormat("{0} Nation found. Parsing.", nations.Length);
+            Debug.LogFormat("{0} Data found. Parsing.", balanceObjects.Length);
             
-            foreach (TBalanceObject nationBalanceObj in nations)
+            foreach (TBalanceObject nationBalanceObj in balanceObjects)
             {
                 TUnityData nationality = FindData(nationBalanceObj, _dataList.Data);
 
@@ -51,7 +68,7 @@ namespace JunkyardDogs.Data.Balance
             AssetDatabase.SaveAssets();
         }
         
-        private TUnityData FindData(TBalanceObject balance, List<TUnityData> list)
+        protected TUnityData FindData(TBalanceObject balance, List<TUnityData> list)
         {
             foreach (TUnityData data in list)
             {
@@ -68,9 +85,9 @@ namespace JunkyardDogs.Data.Balance
         {
             List<RowData> rowData = new List<RowData>();
 
-            foreach (TUnityData nationality in _dataList.Data)
+            foreach (TUnityData unityData in _dataList.Data)
             {
-                TBalanceObject data = nationality.GetBalance();
+                TBalanceObject data = unityData.GetBalance();
                 rowData.Add(new RowData(data.GetDataUID(), JsonUtility.ToJson(data)));
             }
 

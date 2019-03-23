@@ -71,8 +71,12 @@
               <e p="Editor" t="Include">
                 <e p="BalanceDataManagerEditor.cs" t="Include" />
               </e>
+              <e p="FilteredStaticDataReferenceBalanceData.cs" t="Include" />
+              <e p="ManufacturerBalanceData.cs" t="Include" />
               <e p="MaterialBalanceData.cs" t="Include" />
               <e p="NationBalanceData.cs" t="Include" />
+              <e p="PhysicalSpecificationBalanceData.cs" t="Include" />
+              <e p="SpecificationBalanceData.cs" t="Include" />
               <e p="StaticDataReferenceBalanceData.cs" t="Include" />
             </e>
             <e p="CompetitorBlueprintDataProvider.cs" t="Include" />

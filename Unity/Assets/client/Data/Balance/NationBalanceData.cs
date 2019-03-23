@@ -21,14 +21,6 @@ namespace JunkyardDogs.Data.Balance
     public class NationBalanceData : StaticDataReferenceBalanceData<NationalityDataSource, Nationality, NationBalanceObject>
     {
         public const string NATION_DATA_PATH = "Assets/AssetBundles/Data/Nations/";
-
-        public override string[] GetFieldNames()
-        {
-            string[] fieldNames = new string[1];
-            fieldNames[0] = "name";
-
-            return fieldNames;
-        }
         
         public override string GetUIDFieldName()
         {

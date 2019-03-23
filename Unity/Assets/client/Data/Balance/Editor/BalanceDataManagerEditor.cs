@@ -30,10 +30,12 @@ namespace JunkyardDogs.Data.Balance.Editor
             foreach (BalanceData balanceData in (target as BalanceManagerData).BalanceData)
             {
                 EditorGUILayout.LabelField(balanceData.TableName);
+                EditorGUI.BeginDisabledGroup(!balanceData.AllowImport);
                 if (GUILayout.Button("Import"))
                 {
                     OnImport(balanceData);
                 }
+                EditorGUI.EndDisabledGroup();
             
                 if (GUILayout.Button("Export"))
                 {

@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1038089e1f9093f4180a3b3d0fc9df65, type: 3}
-  m_Name: Skylabs
+  m_Script: {fileID: 11500000, guid: 02cb21747b3944849f47b8c01362fee8, type: 3}
+  m_Name: ManufacturerBalance
   m_EditorClassIdentifier: 
-  _nationality:
-    _id: Germany
+  TableName: Manufacturer
+  _dataList: {fileID: 11400000, guid: 2079979e23b8d774a824eedd1f7d4f78, type: 2}
