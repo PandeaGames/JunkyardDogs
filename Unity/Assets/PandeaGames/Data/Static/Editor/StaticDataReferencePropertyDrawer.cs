@@ -3,7 +3,7 @@ using PandeaGames.Data.Static;
 using UnityEditor;
 using UnityEngine;
 
-[CustomPropertyDrawer(typeof(StaticDataReferenceAttribute))]
+[CustomPropertyDrawer(typeof(StaticDataReferenceAttribute), useForChildren:true)]
 public class StaticDataReferencePropertyDrawer : PropertyDrawer
 {
     private string[] _options;
@@ -12,30 +12,42 @@ public class StaticDataReferencePropertyDrawer : PropertyDrawer
     {
         StaticDataReferenceAttribute attr = attribute as StaticDataReferenceAttribute;
 
-        List<GUIContent> options = new List<GUIContent>();
-        SerializedProperty idProp = property.FindPropertyRelative("_id");
-
-        int selectedIndex = 0;
-            
-        for (int i = 0; i < attr.IDs.Length; i++)
+        if (attr.IDs.Length == 0)
         {
-            string id = attr.IDs[i];
-            if (id.Equals(idProp.stringValue))
+            Rect fieldEntryPosition = position;
+            fieldEntryPosition.xMin = EditorGUIUtility.labelWidth + 15;
+            
+            EditorGUI.LabelField(position, label);
+            EditorGUI.LabelField(fieldEntryPosition, "- no data available -");
+        }
+        else
+        {
+            List<GUIContent> options = new List<GUIContent>();
+            SerializedProperty idProp = property.FindPropertyRelative("_id");
+
+            int selectedIndex = 0;
+            
+            for (int i = 0; i < attr.IDs.Length; i++)
             {
-                selectedIndex = i;
+                string id = attr.IDs[i];
+                if (id.Equals(idProp.stringValue))
+                {
+                    selectedIndex = i;
+                }
             }
-        }
             
-        foreach (string id in attr.IDs)
-        {
-            options.Add(new GUIContent(id));
-        }
+            foreach (string id in attr.IDs)
+            {
+                options.Add(new GUIContent(id));
+            }
             
-        selectedIndex = EditorGUI.Popup(position ,label,selectedIndex, options.ToArray());
+            selectedIndex = EditorGUI.Popup(position ,label,selectedIndex, options.ToArray());
 
-        idProp.stringValue = attr.IDs[selectedIndex];
+            idProp.stringValue = attr.IDs[selectedIndex];
             
-        property.serializedObject.ApplyModifiedProperties();
+            property.serializedObject.ApplyModifiedProperties();
+        }
+        
     }
 
     public override float GetPropertyHeight(SerializedProperty property, GUIContent label)

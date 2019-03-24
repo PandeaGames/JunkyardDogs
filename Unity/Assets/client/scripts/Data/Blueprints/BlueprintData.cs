@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public abstract class BlueprintData<TGeneratedData> : ScriptableObject
+public abstract class BlueprintData<TGeneratedData> : BlueprintDataBase
 {
     public TGeneratedData DoGenerate()
     {

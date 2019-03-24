@@ -13,11 +13,7 @@ namespace JunkyardDogs.Simulation.Agent
         private bool _isLoaded;
         public List<WeakReference> CriteriaReferences { get; set; }
         public AgentState StateToTransition { get; set; }
-
-        public bool IsLoaded()
-        {
-            return _isLoaded;
-        }
+        public bool IsLoaded { get; private set; }
 
         public List<Knowledge.Knowledge> Criteria
         {

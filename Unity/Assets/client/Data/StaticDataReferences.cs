@@ -1,4 +1,5 @@
 using System;
+using JunkyardDogs.Simulation.Knowledge;
 using JunkyardDogs.Specifications;
 using PandeaGames.Data.Static;
 using UnityEngine;
@@ -27,7 +28,47 @@ namespace JunkyardDogs.Data
     }
     
     [Serializable]
-    public class CompetitorBlueprintStaticDataReference : StaticDataReference<CompetitorBlueprintData, CompetitorBlueprintData, CompetitorBlueprintStaticDataReference, CompetitorBlueprintDataProvider>
+    public class CompetitorBlueprintStaticDataReference : StaticDataReference<BlueprintDataBase, CompetitorBlueprintData, CompetitorBlueprintStaticDataReference, CompetitorBlueprintDataProvider>
+    {
+    }
+    
+    [Serializable]
+    public class BlueprintStaticDataReference : StaticDataReference<BlueprintDataBase, BlueprintDataBase, BlueprintStaticDataReference, BlueprintDataProvider>
+    {
+    }
+    
+    [Serializable]
+    public class WeaponBlueprintStaticDataReference : StaticDataReference<BlueprintDataBase, WeaponBlueprintData, WeaponBlueprintStaticDataReference, WeaponBlueprintDataProvider>
+    {
+    }
+    
+    [Serializable]
+    public class AgentBlueprintStaticDataReference : StaticDataReference<BlueprintDataBase, AgentBlueprintData, AgentBlueprintStaticDataReference, AgentBlueprintDataProvider>
+    {
+    }
+    
+    [Serializable]
+    public class PlateBlueprintStaticDataReference : StaticDataReference<BlueprintDataBase, PlateBlueprintData, PlateBlueprintStaticDataReference, PlateBlueprintDataProvider>
+    {
+    }
+    
+    [Serializable]
+    public class MotherboardBlueprintStaticDataReference : StaticDataReference<BlueprintDataBase, MotherboardBlueprintData, MotherboardBlueprintStaticDataReference, MotherboardBlueprintDataProvider>
+    {
+    }
+    
+    [Serializable]
+    public class BotBlueprintStaticDataReference : StaticDataReference<BlueprintDataBase, BotBlueprintData, BotBlueprintStaticDataReference, BotBlueprintDataProvider>
+    {
+    }
+    
+    [Serializable]
+    public class WeaponProcessorBlueprintStaticDataReference : StaticDataReference<BlueprintDataBase, WeaponProcessorBlueprintData, WeaponProcessorBlueprintStaticDataReference, WeaponProcessorBlueprintDataProvider>
+    {
+    }
+    
+    [Serializable]
+    public class ChassisBlueprintStaticDataReference : StaticDataReference<BlueprintDataBase, ChassisBlueprintData, ChassisBlueprintStaticDataReference, ChassisBlueprintDataProvider>
     {
     }
     
@@ -40,4 +81,91 @@ namespace JunkyardDogs.Data
     public class WeaponStaticDataReference : StaticDataReference<Specification, Weapon, WeaponStaticDataReference, WeaponDataProvider>
     {
     }
+    
+    [Serializable]
+    public class StateKnowledgeStaticDataReference : StaticDataReference<State, State, StateKnowledgeStaticDataReference, StateKnowledgeStaticDataProvider>
+    {
+    }
+
+    [Serializable]
+    public class ActionStaticDataReference : StaticDataReference<Behavior.Action, Behavior.Action, ActionStaticDataReference, ActionStaticDataProvider>
+    {
+    }
+    
+    /*------------------------------------------------------------------*/
+    /*----------------------------- Attributes -------------------------*/
+    /*------------------------------------------------------------------*/
+    
+    public class BotBlueprintStaticDataReferenceAttribute : StaticDataReferenceAttribute
+    {
+        public BotBlueprintStaticDataReferenceAttribute() : base(BlueprintDataProvider.FULL_PATH, typeof(BotBlueprintData))
+        {
+            
+        }
+    }
+    
+    public class MotherboardBlueprintStaticDataReferenceAttribute : StaticDataReferenceAttribute
+    {
+        public MotherboardBlueprintStaticDataReferenceAttribute() : base(BlueprintDataProvider.FULL_PATH, typeof(MotherboardBlueprintData))
+        {
+            
+        }
+    }
+    
+    public class ChassisBlueprintStaticDataReferenceAttribute : StaticDataReferenceAttribute
+    {
+        public ChassisBlueprintStaticDataReferenceAttribute() : base(BlueprintDataProvider.FULL_PATH, typeof(ChassisBlueprintData))
+        {
+            
+        }
+    }
+    
+    public class PlateBlueprintStaticDataReferenceAttribute : StaticDataReferenceAttribute
+    {
+        public PlateBlueprintStaticDataReferenceAttribute() : base(BlueprintDataProvider.FULL_PATH, typeof(PlateBlueprintData))
+        {
+            
+        }
+    }
+    
+    public class AgentBlueprintStaticDataReferenceAttribute : StaticDataReferenceAttribute
+    {
+        public AgentBlueprintStaticDataReferenceAttribute() : base(BlueprintDataProvider.FULL_PATH, typeof(AgentBlueprintData))
+        {
+            
+        }
+    }
+    
+    public class WeaponBlueprintStaticDataReferenceAttribute : StaticDataReferenceAttribute
+    {
+        public WeaponBlueprintStaticDataReferenceAttribute() : base(BlueprintDataProvider.FULL_PATH, typeof(WeaponBlueprintData))
+        {
+            
+        }
+    }
+    
+    public class CompetitorBlueprintStaticDataReferenceAttribute : StaticDataReferenceAttribute
+    {
+        public CompetitorBlueprintStaticDataReferenceAttribute() : base(BlueprintDataProvider.FULL_PATH, typeof(CompetitorBlueprintData))
+        {
+            
+        }
+    }
+    
+    public class WeaponProcessorBlueprintStaticDataReferenceAttribute : StaticDataReferenceAttribute
+    {
+        public WeaponProcessorBlueprintStaticDataReferenceAttribute() : base(BlueprintDataProvider.FULL_PATH, typeof(WeaponProcessorBlueprintData))
+        {
+            
+        }
+    }
+    
+    public class StateKnowledgeStaticDataReferenceAttribute : StaticDataReferenceAttribute
+    {
+        public StateKnowledgeStaticDataReferenceAttribute() : base(StateKnowledgeStaticDataProvider.FULL_PATH, typeof(State))
+        {
+            
+        }
+    }
 }
+

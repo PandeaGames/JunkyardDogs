@@ -20,5 +20,5 @@ public delegate void LoadSuccess();
 public interface ILoadableObject
 {
     void LoadAsync(LoadSuccess onLoadSuccess, LoadError onLoadFailed);
-    bool IsLoaded();
+    bool IsLoaded { get; }
 }

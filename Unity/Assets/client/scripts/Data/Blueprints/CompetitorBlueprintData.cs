@@ -10,8 +10,8 @@ public class CompetitorBlueprintData : BlueprintData<Competitor>
     [SerializeField, StaticDataReference(path:NationalityDataProvider.FULL_PATH)]
     private NationalityStaticDataReference _nationality;
     
-    [SerializeField]
-    private List<BotBlueprintData> _bots;
+    [SerializeField, BotBlueprintStaticDataReference]
+    private List<BotBlueprintStaticDataReference> _bots;
 
     public override Competitor DoGenerate(int seed)
     {
@@ -24,7 +24,7 @@ public class CompetitorBlueprintData : BlueprintData<Competitor>
         _bots.ForEach((botBlueprint =>
         {
             itemsToLoad++;
-            Bot bot = botBlueprint.DoGenerate(seed);
+            Bot bot = botBlueprint.Data.DoGenerate(seed);
             competitor.Inventory.Bots.Add(bot);
         }));
 

@@ -12,7 +12,7 @@ public class NationList : ScriptableObject, IEnumerable<WeakReference>, ILoadabl
     private List<WeakReference> _nations;
 
     private int _loadedNations;
-    private bool _isLoaded = false;
+    public bool IsLoaded { get; private set; }
 
     public IEnumerator GetEnumerator()
     {
@@ -24,14 +24,9 @@ public class NationList : ScriptableObject, IEnumerable<WeakReference>, ILoadabl
         return ((IEnumerable<WeakReference>)_nations).GetEnumerator();
     }
 
-    bool ILoadableObject.IsLoaded()
-    {
-        return _isLoaded;
-    }
-
     public void LoadAsync(LoadSuccess onLoadSuccess, LoadError onLoadFailed)
     {
-        if(_isLoaded)
+        if(IsLoaded)
         {
             return;
         }

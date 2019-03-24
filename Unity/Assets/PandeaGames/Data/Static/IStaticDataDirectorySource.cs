@@ -18,6 +18,8 @@ namespace PandeaGames.Data.Static
     public interface IStaticDataDirectorySource
     {
         string[] GetIDs();
+        string[] GetIDs(Type filterType);
+        string[] GetIDs<TFilterType>();
     }
     
     public interface IStaticDataDirectorySource<TData> : IEnumerable<StaticDataEntry<TData>>, IStaticDataDirectorySource

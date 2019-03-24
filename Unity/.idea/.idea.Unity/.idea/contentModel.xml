@@ -64,6 +64,8 @@
         </e>
         <e p="client" t="Include">
           <e p="Data" t="Include">
+            <e p="ActionDataSource.cs" t="Include" />
+            <e p="ActionStaticDataProvider.cs" t="Include" />
             <e p="AssetBundleEnum.cs" t="Include" />
             <e p="Balance" t="Include">
               <e p="BalanceData.cs" t="Include" />
@@ -80,8 +82,8 @@
               <e p="SpecificationBalanceData.cs" t="Include" />
               <e p="StaticDataReferenceBalanceData.cs" t="Include" />
             </e>
-            <e p="CompetitorBlueprintDataProvider.cs" t="Include" />
-            <e p="CompetitorBlueprintDataSource.cs" t="Include" />
+            <e p="BlueprintDataProvider.cs" t="Include" />
+            <e p="BlueprintDataSource.cs" t="Include" />
             <e p="GameStaticDataProvider.cs" t="Include" />
             <e p="JunkyardStaticDataLoader.cs" t="Include" />
             <e p="ManufactuererDataSource.cs" t="Include" />
@@ -95,6 +97,8 @@
             <e p="ParticipantDataSource.cs" t="Include" />
             <e p="SpecificationDataProvider.cs" t="Include" />
             <e p="SpecificationDataSource.cs" t="Include" />
+            <e p="StateKnowledgeStaticDataProvider.cs" t="Include" />
+            <e p="StateKnowledgeStaticDataSource.cs" t="Include" />
             <e p="StaticDataReferences.cs" t="Include" />
             <e p="UnityData" t="Include">
               <e p="GameStaticData.cs" t="Include" />
@@ -116,6 +120,7 @@
               <e p="Blueprints" t="Include">
                 <e p="AgentBlueprintData.cs" t="Include" />
                 <e p="BlueprintData.cs" t="Include" />
+                <e p="BlueprintDataBase.cs" t="Include" />
                 <e p="BotBlueprintData.cs" t="Include" />
                 <e p="ChassisBlueprintData.cs" t="Include" />
                 <e p="CompetitorBlueprintData.cs" t="Include" />
@@ -584,6 +589,7 @@
               <e p="AbstractScriptableObjectStaticData.cs" t="Include" />
               <e p="AbstractStaticDataProvider.cs" t="Include" />
               <e p="BundledStaticDataReferenceDirectory.cs" t="Include" />
+              <e p="ChildStaticDataReferenceDirectory.cs" t="Include" />
               <e p="Editor" t="Include">
                 <e p="StaticDataReferenceAttribute.cs" t="Include" />
                 <e p="StaticDataReferencePropertyDrawer.cs" t="Include" />

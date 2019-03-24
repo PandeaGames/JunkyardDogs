@@ -7,12 +7,7 @@ namespace Data
 {
     public class AnonymousProvider : ILoadableObject
     {
-        private bool _isLoaded;
-
-        public bool IsLoaded()
-        {
-            return _isLoaded;
-        }
+        public bool IsLoaded { get; private set; }
 
         private Action<LoadSuccess, LoadError> _action;
         
@@ -25,7 +20,7 @@ namespace Data
         {
             _action.Invoke(() =>
             {
-                _isLoaded = true;
+                IsLoaded = true;
                 onLoadSuccess();
             }, onLoadError);
         }
@@ -33,12 +28,7 @@ namespace Data
     
     public class LoaderGroup : ILoadableObject
     {
-        private bool _isLoaded;
-
-        public bool IsLoaded()
-        {
-            return _isLoaded;
-        }
+        public bool IsLoaded { get; private set; }
         
         private List<ILoadableObject> _loadables;
 
@@ -103,12 +93,7 @@ namespace Data
     
     public class Loader : ILoadableObject
     {
-        private bool _isLoaded;
-
-        public bool IsLoaded()
-        {
-            return _isLoaded;
-        }
+        public bool IsLoaded { get; private set; }
 
         private List<LoaderGroup> _groups;
 

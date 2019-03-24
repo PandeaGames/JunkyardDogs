@@ -7,18 +7,13 @@ namespace PandeaGames.Data
 {
     public abstract class LoadableConfigurationData : ScriptableObject, ILoadableObject
     {
-        private bool _isLoaded;
+        public bool IsLoaded { get; private set; }
 
         protected abstract WeakReference[] WeakReferences();
 
         protected virtual void AdjunctLoad(LoadSuccess onComplete, LoadError onError)
         {
             onComplete();
-        }
-        
-        public bool IsLoaded()
-        {
-            return _isLoaded;
         }
 
         public void LoadAsync(LoadSuccess onComplete, LoadError onError)

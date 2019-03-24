@@ -10,7 +10,6 @@ namespace PandeaGames.Views
         Transform GetTransform();
         RectTransform GetRectTransform();
         void LoadAsync(LoadSuccess onLoadSuccess, LoadError onLoadError);
-        bool IsLoaded();
         void Destroy();
         WindowView FindWindow();
         ServiceManager FindServiceManager();

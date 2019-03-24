@@ -30,10 +30,7 @@ namespace PandeaGames.Views
             onLoadSuccess();
         }
 
-        public bool IsLoaded()
-        {
-            return true;
-        }
+        public bool IsLoaded { get; private set; }
 
         public virtual void Destroy()
         {

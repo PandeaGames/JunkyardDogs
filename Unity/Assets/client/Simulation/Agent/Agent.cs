@@ -10,6 +10,7 @@ namespace JunkyardDogs.Simulation.Agent
     {
         public List<AgentState> States { get; set; }
         private int DefaultState { get; set; }
+        public bool IsLoaded { get; private set; }
 
         public Agent()
         {
@@ -31,11 +32,6 @@ namespace JunkyardDogs.Simulation.Agent
             });
             
             loader.LoadAsync(onLoadSuccess, onLoadFailed);
-        }
-
-        public bool IsLoaded()
-        {
-            throw new NotImplementedException();
         }
     }
 }

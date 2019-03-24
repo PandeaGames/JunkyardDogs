@@ -34,7 +34,7 @@ namespace JunkyardDogs
 
         public override void UpdateState()
         {
-            bool isLoadingCompleted = _viewModel.UserData != null && loader.IsLoaded();
+            bool isLoadingCompleted = _viewModel.UserData != null && loader.IsLoaded;
             
             if (isLoadingCompleted)
             {

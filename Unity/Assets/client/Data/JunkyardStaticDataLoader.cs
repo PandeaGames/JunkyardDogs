@@ -5,12 +5,7 @@ using PandeaGames.Data.Static;
 
 public class JunkyardStaticDataLoader : ILoadableObject
 {
-    private bool _isLoaded;
-
-    public bool IsLoaded()
-    {
-        return _isLoaded;
-    }
+    public bool IsLoaded { get; private set; }
     
     private Loader _loader;
     
@@ -23,13 +18,13 @@ public class JunkyardStaticDataLoader : ILoadableObject
         _loader.AppendProvider(Game.Instance.GetStaticDataPovider<NationalityDataProvider>());
         _loader.AppendProvider(Game.Instance.GetStaticDataPovider<SpecificationDataProvider>());
         _loader.AppendProvider(Game.Instance.GetStaticDataPovider<ParticipantDataProvider>());
-        _loader.AppendProvider(Game.Instance.GetStaticDataPovider<CompetitorBlueprintDataProvider>());
+        _loader.AppendProvider(Game.Instance.GetStaticDataPovider<BlueprintDataProvider>());
         _loader.AppendProvider(Game.Instance.GetStaticDataPovider<MaterialDataProvider>());
     }
 
     public void LoadAsync(LoadSuccess onLoadSuccess, LoadError onLoadError)
     {
-        _loader.LoadAsync(() => { _isLoaded = true;
+        _loader.LoadAsync(() => { IsLoaded = true;
             onLoadSuccess();
         }, onLoadError);
     }

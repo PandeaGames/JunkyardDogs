@@ -6,14 +6,15 @@ using Object = UnityEngine.Object;
 
 namespace PandeaGames.Data.Static
 {
-    public abstract class AbstractScriptableObjectStaticData<TData> : ScriptableObject, IStaticDataDirectorySource<TData> where TData:Object
+    public abstract class AbstractScriptableObjectStaticData<TData> : ScriptableObject,
+        IStaticDataDirectorySource<TData> where TData : Object
     {
         public List<TData> Data;
 
         public string[] GetIDs()
         {
             List<string> ids = new List<string>();
-            
+
             foreach (TData data in Data)
             {
                 ids.Add(data.name);
@@ -21,7 +22,48 @@ namespace PandeaGames.Data.Static
 
             return ids.ToArray();
         }
-        
+
+        public string[] GetIDs<TSubData>()
+        {
+            List<string> ids = new List<string>();
+
+            foreach (TData data in Data)
+            {
+                if (data is TSubData)
+                {
+                    ids.Add(data.name);
+                }
+            }
+
+            return ids.ToArray();
+        }
+
+        public string[] GetIDs(Type filterType)
+        {
+            List<string> ids = new List<string>();
+
+            foreach (TData data in Data)
+            {
+                if (data.GetType().IsAssignableFrom (filterType))
+                {
+                    ids.Add(data.name);
+                }
+            }
+
+            return ids.ToArray();
+        }
+
+    public IEnumerator<TSubData> GetData<TSubData>() where TSubData:TData
+        {
+            foreach (TData data in Data)
+            {
+                if (data is TSubData)
+                {
+                    yield return data as TSubData;
+                }
+            }
+        }
+
         // Explicit for IEnumerable because weakly typed collections are Bad
         System.Collections.IEnumerator IEnumerable.GetEnumerator()
         {

@@ -12,8 +12,8 @@ public abstract class ComponentBlueprintData<TGeneratedData> : BlueprintData<TGe
     [StaticDataReference(path:SpecificationDataProvider.FULL_PATH),SerializeField]
     private SpecificationStaticDataReference _specification;
     
-    [SerializeField][WeakReference(typeof(Manufacturer))]
-    private WeakReference _manufacturer;
+    [SerializeField, StaticDataReference(path:ManufacturerDataProvider.FULL_PATH)]
+    private ManufacturerStaticDataReference _manufacturer;
         
     public override TGeneratedData DoGenerate(int seed)
     {

@@ -13,13 +13,7 @@ namespace JunkyardDogs.Data
         }
     }
     
-    public class WeaponDataProvider: BundledStaticDataReferenceDirectory<Specification, Weapon, WeaponStaticDataReference, WeaponDataProvider>
+    public class WeaponDataProvider: ChildStaticDataReferenceDirectory<Specification, Weapon, SpecificationStaticDataReference, WeaponStaticDataReference, SpecificationDataProvider, WeaponDataProvider>
     {
-        public const string FULL_PATH = "Assets/AssetBundles/Data/Products/SpecificationDataSource.asset";
-        
-        public WeaponDataProvider() : base("data", "SpecificationDataSource")
-        {
-            
-        }
     }
 }

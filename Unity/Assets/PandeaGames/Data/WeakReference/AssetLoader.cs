@@ -5,7 +5,6 @@ namespace Data
 {
     public class AssetLoader : ILoadableObject
     {
-        private bool _isLoaded;
         private string _bundle;
         private string _path;
         private UnityEngine.Object _asset;
@@ -14,10 +13,7 @@ namespace Data
             get { return _asset; }
         }
 
-        public bool IsLoaded()
-        {
-            return _isLoaded;
-        }
+        public bool IsLoaded { get; private set; }
 
         public AssetLoader(string bundle, string path)
         {
@@ -39,7 +35,7 @@ namespace Data
                 TaskProvider.Instance.RunTask(request, () =>
                 {
                     _asset = request.GetAsset<UnityEngine.Object>();
-                    _isLoaded = true;
+                    IsLoaded = true;
 
                     if (_asset is ILoadableObject)
                     {

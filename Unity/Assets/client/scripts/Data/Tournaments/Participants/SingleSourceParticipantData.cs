@@ -5,7 +5,7 @@ using WeakReference = PandeaGames.Data.WeakReferences.WeakReference;
 [CreateAssetMenu(menuName = "Tournaments/Participants/SingleSourceParticipant")]
 public class SingleSourceParticipantData : ParticipantData
 {   
-    [SerializeField, StaticDataReference(path:CompetitorBlueprintDataProvider.FULL_PATH)]
+    [SerializeField, CompetitorBlueprintStaticDataReference]
     private CompetitorBlueprintStaticDataReference _competitor;
 
     [SerializeField]

@@ -27,12 +27,7 @@ namespace JunkyardDogs
 
         private Tournament _tournament;
         private TournamentState _state;
-        private bool _isLoaded;
-
-        public bool IsLoaded()
-        {
-            return _isLoaded;
-        }
+        public bool IsLoaded { get; private set; }
 
         public void LoadAsync(LoadSuccess onComplete, LoadError onError)
         {

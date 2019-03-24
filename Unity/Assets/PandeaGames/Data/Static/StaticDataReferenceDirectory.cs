@@ -6,7 +6,7 @@ using Object = UnityEngine.Object;
 
 namespace PandeaGames.Data.Static
 {
-    public class StaticDataReferenceDirectory<TDataBase, TData, TReference, TDirectory> : AbstractStaticDataProvider, 
+    public abstract class StaticDataReferenceDirectory<TDataBase, TData, TReference, TDirectory> : AbstractStaticDataProvider, 
         IEnumerable<TReference> 
         where TDataBase:Object
         where TData:TDataBase
@@ -54,13 +54,9 @@ namespace PandeaGames.Data.Static
             }
         }
 
-        protected virtual void LoadSourceDataAsync(Action<IStaticDataDirectorySource<TData>> onLoadSuccess,
-            LoadError onLoadFailed)
-        {
-            throw new NotImplementedException("Child classes must implement LoadSourceDataAsync");
-        }
+        protected abstract void LoadSourceDataAsync(Action<IStaticDataDirectorySource<TData>> onLoadSuccess, LoadError onLoadFailed);
 
-        public TData FindData(string ID)
+        public virtual TData FindData(string ID)
         {
             try
             {

@@ -9,7 +9,7 @@ namespace PandeaGames.Data.WeakReferences {
         [SerializeField][WeakReference]
         private List<WeakReference> _list;
 
-        private bool _isLoaded;
+        public bool IsLoaded { get; private set; }
     
         public void LoadAsync(LoadSuccess onLoadSuccess, LoadError onLoadFailed)
         {
@@ -22,7 +22,7 @@ namespace PandeaGames.Data.WeakReferences {
                     {
                         if (++loaded >= _list.Count)
                         {
-                            _isLoaded = true;
+                            IsLoaded = true;
                             onLoadSuccess();
                         }
                     }, (exception) => { onLoadFailed(new LoadException("Failed to load asset in list.", exception)); });
@@ -38,11 +38,6 @@ namespace PandeaGames.Data.WeakReferences {
         IEnumerator IEnumerable.GetEnumerator()
         {
             return this.GetEnumerator();
-        }
-    
-        public bool IsLoaded()
-        {
-            return _isLoaded;
         }
     }
 

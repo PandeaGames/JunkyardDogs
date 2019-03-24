@@ -4,7 +4,7 @@ using UnityEngine;
 namespace JunkyardDogs.Data
 {
     [CreateAssetMenu]
-    public class CompetitorBlueprintDataSource : AbstractScriptableObjectStaticData<CompetitorBlueprintData>
+    public class BlueprintDataSource : AbstractScriptableObjectStaticData<BlueprintDataBase>
     {
         
     }

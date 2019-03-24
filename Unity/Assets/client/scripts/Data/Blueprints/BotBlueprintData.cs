@@ -9,20 +9,20 @@ public class BotBlueprintData : BlueprintData<Bot>
     [SerializeField, StaticDataReference(ManufacturerDataProvider.FULL_PATH)]
     private ManufacturerStaticDataReference _manufacturer;
     
-    [SerializeField]
-    private ChassisBlueprintData _chassis; 
+    [SerializeField, ChassisBlueprintStaticDataReference]
+    private ChassisBlueprintStaticDataReference _chassis; 
     
-    [SerializeField]
-    private MotherboardBlueprintData _motherboard; 
+    [SerializeField, MotherboardBlueprintStaticDataReference]
+    private MotherboardBlueprintStaticDataReference _motherboard; 
     
-    [SerializeField]
-    private AgentBlueprintData _agent; 
+    [SerializeField, AgentBlueprintStaticDataReference]
+    private AgentBlueprintStaticDataReference _agent; 
 
     public override Bot DoGenerate(int seed)
     {
-        Chassis chassis = _chassis.DoGenerate(seed);
-        Agent agent = _agent.DoGenerate();
-        Motherboard motherboard = _motherboard.DoGenerate(seed);
+        Chassis chassis = _chassis.Data.DoGenerate(seed);
+        Agent agent = _agent.Data.DoGenerate();
+        Motherboard motherboard = _motherboard.Data.DoGenerate(seed);
         
         chassis.Manufacturer = _manufacturer;
 

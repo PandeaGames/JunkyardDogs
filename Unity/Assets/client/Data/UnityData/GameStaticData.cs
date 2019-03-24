@@ -25,13 +25,7 @@ public class GameStaticData : ScriptableObject, ILoadableObject
         get { return _actionList; }
     }
     
-
-    private bool _isLoaded;
-
-    public bool IsLoaded()
-    {
-        return _isLoaded;
-    }
+    public bool IsLoaded { get; private set; }
 
     public void LoadAsync(LoadSuccess onLoadSuccess, LoadError onLoadError)
     {
@@ -44,7 +38,7 @@ public class GameStaticData : ScriptableObject, ILoadableObject
 
             secondaryLoader.LoadAsync(() =>
             {
-                _isLoaded = true;
+                IsLoaded = true;
                 onLoadSuccess();
             }, onLoadError);
             

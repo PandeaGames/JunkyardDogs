@@ -76,12 +76,7 @@ namespace PandeaGames.Data.WeakReferences
 
         private string _bundleCache;
         private UnityEngine.Object _cache;
-        private bool _loaded;
-
-        public bool IsLoaded()
-        {
-            return _loaded;
-        }
+        public bool IsLoaded { get; private set; }
 
         [ExcludeFromSerialization]
         public UnityEngine.Object Asset {
@@ -146,7 +141,7 @@ namespace PandeaGames.Data.WeakReferences
             {
                 TaskProvider.Instance.DelayedAction(() =>
                 {
-                    _loaded = true;
+                    IsLoaded = true;
 
                     if (onComplete != null)
                         onComplete(this);
@@ -169,7 +164,7 @@ namespace PandeaGames.Data.WeakReferences
                 {
                 
                     _cache = request.GetAsset<UnityEngine.Object>();
-                    _loaded = true;
+                    IsLoaded = true;
                 
                     if(_cache is IWeakReferenceObject)
                         (_cache as IWeakReferenceObject).SetReferences(Path, GUID);

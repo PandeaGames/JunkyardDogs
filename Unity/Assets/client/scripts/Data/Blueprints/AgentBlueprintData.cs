@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using JunkyardDogs.Data;
 using JunkyardDogs.Simulation.Agent;
 using UnityEngine;
 using WeakReference = PandeaGames.Data.WeakReferences.WeakReference;
@@ -13,15 +14,15 @@ public class AgentBlueprintData : BlueprintData<Agent>
         [SerializeField, WeakReference(typeof(JunkyardDogs.Simulation.Behavior.Action))]
         private List<WeakReference> _directiveActions;
         
-        [SerializeField, WeakReference(typeof(JunkyardDogs.Simulation.Knowledge.State))]
-        private WeakReference _state;
+        [SerializeField, StateKnowledgeStaticDataReference]
+        private StateKnowledgeStaticDataReference _state;
         
         public List<WeakReference> DirectiveActions
         {
             get { return _directiveActions; }
         }
         
-        public WeakReference State
+        public StateKnowledgeStaticDataReference State
         {
             get { return _state; }
         }

@@ -10,15 +10,11 @@ namespace JunkyardDogs.Simulation.Agent
     public class Directive: ILoadableObject
     {
         public WeakReference ActionWeakReference { get; set; }
+        public bool IsLoaded { get; private set; }
 
         public Behavior.Action Action
         {
             get { return ActionWeakReference.Asset as Behavior.Action; }
-        }
-
-        public bool IsLoaded()
-        {
-            throw new NotImplementedException();
         }
 
         public void LoadAsync(LoadSuccess onLoadSuccess, LoadError onLoadFailed)

@@ -27,12 +27,7 @@ public class ViewStaticData : ScriptableObject, ILoadableObject
         get { return _hubView.Asset as GameObject; }
     }
 
-    private bool _isLoaded;
-
-    public bool IsLoaded()
-    {
-        return _isLoaded;
-    }
+    public bool IsLoaded { get; private set; }
 
     public void LoadAsync(LoadSuccess onLoadSuccess, LoadError onLoadError)
     {

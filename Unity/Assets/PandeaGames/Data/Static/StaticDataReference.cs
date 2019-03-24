@@ -23,7 +23,17 @@ public class StaticDataReferenceAttribute : PropertyAttribute
         IDs = source.GetIDs();
 #endif
     }
+    
+    public StaticDataReferenceAttribute(string path, Type filterType)
+    {
+#if UNITY_EDITOR
+        Object requestResult = AssetDatabase.LoadAssetAtPath<UnityEngine.Object>(path);
+        IStaticDataDirectorySource source = requestResult as IStaticDataDirectorySource;
+        IDs = source.GetIDs(filterType);
+#endif
+    }
 }
+
 [Serializable]
 public class StaticDataReference<TDataBase, TData, TReference, TDirectory>
     where TDataBase:Object
@@ -46,7 +56,7 @@ public class StaticDataReference<TDataBase, TData, TReference, TDirectory>
             if (string.IsNullOrEmpty(ID))
                 return null;
                 
-            return Game.Instance.GetStaticDataPovider<TDirectory>().FindData(ID) as TData; 
+            return Game.Instance.GetStaticDataPovider<TDirectory>().FindData(ID); 
         }
     }
 }
