@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Data;
+using JunkyardDogs.Data;
 using UnityEngine.UI.Extensions;
 using WeakReference = PandeaGames.Data.WeakReferences.WeakReference;
 
@@ -19,7 +20,7 @@ public class TournamentState
         }
     }
     
-    public WeakReference TournamentReference { get; set; }
+    public TournamentStaticDataReference TournamentReference { get; set; }
     public List<StageState> StageStates { get; set; }
     public string Uid  { get; set; }
     public DateTime LastMatch { get; set; }

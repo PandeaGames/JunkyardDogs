@@ -2,10 +2,10 @@
 using JunkyardDogs.Components;
 using PandeaGames.ViewModels;
 using JunkyardDogs.Simulation.Agent;
-using JunkyardDogs.Simulation.Behavior;
 using System;
 using System.Collections.Generic;
-using Action = System.Action;
+using JunkyardDogs.Data;
+using JunkyardDogs.Simulation.Behavior;
 using WeakReference = PandeaGames.Data.WeakReferences.WeakReference;
 
 namespace JunkyardDogs
@@ -15,7 +15,7 @@ namespace JunkyardDogs
         public event System.Action OnSelectNewDirective;
         public event System.Action OnDone;
         public event System.Action<AgentState> OnSelectState; 
-        public event System.Action<JunkyardDogs.Behavior.Action, WeakReference> OnActionAdded; 
+        public event System.Action<BehaviorAction, ActionStaticDataReference> OnActionAdded; 
         
         public Bot Bot;
         public WeakReference ActionList;
@@ -49,7 +49,7 @@ namespace JunkyardDogs
             }
         }
         
-        public void AdddNewAction(WeakReference action)
+        public void AdddNewAction(ActionStaticDataReference action)
         {
             //TODO: Add action
             if (SelectedState != null && action != null)
@@ -60,7 +60,7 @@ namespace JunkyardDogs
                 
                 if (OnActionAdded != null)
                 {
-                    OnActionAdded(action.Asset as JunkyardDogs.Behavior.Action, action);
+                    OnActionAdded(action.Data, action);
                 }
             }
         }

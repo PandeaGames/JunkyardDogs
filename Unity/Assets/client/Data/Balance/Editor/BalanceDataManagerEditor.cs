@@ -112,10 +112,17 @@ namespace JunkyardDogs.Data.Balance.Editor
 
                 foreach (BalanceData balanceData in (target as BalanceManagerData).BalanceData)
                 {
-                    // Check if the type is correct.
-                    if (string.Compare(dataContainer.objType, balanceData.TableName) == 0)
+                    try
                     {
-                        balanceData.ImportData(rawJSon);
+                        // Check if the type is correct.
+                        if (string.Compare(dataContainer.objType, balanceData.TableName) == 0)
+                        {
+                            balanceData.ImportData(rawJSon);
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        Debug.LogErrorFormat("There was an error applying balance against {0}:\n", balanceData.name);
                     }
                 }
             }

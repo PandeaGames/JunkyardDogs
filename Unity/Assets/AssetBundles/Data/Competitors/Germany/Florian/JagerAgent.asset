@@ -3,28 +3,15 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 42853550c9f84b91b9e53ca6721ff6a3, type: 3}
   m_Name: JagerAgent
   m_EditorClassIdentifier: 
-  _blueprint:
-    _blueprintBase: {fileID: 0}
-    _states:
-    - _directiveActions:
-      - _guid: 5b0af0d916d990a4a90306a8a85e08c8
-        _path: Assets/AssetBundles/Data/Simulation/Behavior/MoveLeft.asset
-      - _guid: 5b0af0d916d990a4a90306a8a85e08c8
-        _path: Assets/AssetBundles/Data/Simulation/Behavior/MoveLeft.asset
-      - _guid: c2a57ede4f2dda34dacd24289c1e2c18
-        _path: Assets/AssetBundles/Data/Simulation/Behavior/AttackFront.asset
-      - _guid: c2a57ede4f2dda34dacd24289c1e2c18
-        _path: Assets/AssetBundles/Data/Simulation/Behavior/AttackFront.asset
-      - _guid: fb48eebe053ebff458e37173970408bf
-        _path: Assets/AssetBundles/Data/Simulation/Behavior/MoveBack.asset
-      _state:
-        _guid: 73eeb1a3ba11d3d439dae0512e62bbfe
-        _path: Assets/AssetBundles/Data/Simulation/Knowledge/Evassive.asset
+  _directiveActions: []
+  _state:
+    _id: Aggressive

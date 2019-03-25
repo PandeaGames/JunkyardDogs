@@ -36,8 +36,6 @@ public class EventDialog : Dialog<EventDialogViewModel>
     {
         base.Initialize();
         _userViewModel = Game.Instance.GetViewModel<JunkyardUserViewModel>(0);
-        _viewModel.TournamentReference.LoadAsync(OnTournamentLoaded, OnLoadError);
-
         _user = _userViewModel.UserData;
         
         _playButton.onClick.AddListener(() =>
@@ -47,6 +45,7 @@ public class EventDialog : Dialog<EventDialogViewModel>
         });
         
         _collectRewardsButton.onClick.AddListener(OnCollectRewards);
+        OnTournamentLoaded();
     }
 
     private void Update()
@@ -57,14 +56,9 @@ public class EventDialog : Dialog<EventDialogViewModel>
         }
     }
 
-    private void OnLoadError(LoadException loadException)
-    {
-        
-    }
-
     private void OnTournamentLoaded()
     {
-        Tournament tournament = _viewModel.TournamentReference.Asset as Tournament;
+        Tournament tournament = _viewModel.TournamentReference.Data;
         TournamentMetaState meta = null;
         TournamentState state = null;
         _tournament = tournament;
@@ -91,7 +85,7 @@ public class EventDialog : Dialog<EventDialogViewModel>
 
     private void OnCollectRewards()
     {
-        Tournament tournament = _viewModel.TournamentReference.Asset as Tournament;
+        Tournament tournament = _viewModel.TournamentReference.Data as Tournament;
         SpecificationCatalogue rewards = tournament.Rewards;
         List<Component> components = new List<Component>();
         _user.Cash += tournament.GoldReward;

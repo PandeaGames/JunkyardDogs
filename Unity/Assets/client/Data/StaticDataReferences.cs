@@ -88,7 +88,22 @@ namespace JunkyardDogs.Data
     }
 
     [Serializable]
-    public class ActionStaticDataReference : StaticDataReference<Behavior.Action, Behavior.Action, ActionStaticDataReference, ActionStaticDataProvider>
+    public class ActionStaticDataReference : StaticDataReference<BehaviorAction, BehaviorAction, ActionStaticDataReference, ActionStaticDataProvider>
+    {
+    }
+    
+    [Serializable]
+    public class TournamentStaticDataReference : StaticDataReference<Tournament, Tournament, TournamentStaticDataReference, TournamentDataProvider>
+    {
+    }
+    
+    [Serializable]
+    public class TournamentFormatStaticDataReference : StaticDataReference<TournamentFormat, TournamentFormat, TournamentFormatStaticDataReference, TournamentFormatDataProvider>
+    {
+    }
+    
+    [Serializable]
+    public class StageFormatStaticDataReference : StaticDataReference<StageFormat, StageFormat, StageFormatStaticDataReference,StageFormatDataProvider>
     {
     }
     
@@ -163,6 +178,46 @@ namespace JunkyardDogs.Data
     public class StateKnowledgeStaticDataReferenceAttribute : StaticDataReferenceAttribute
     {
         public StateKnowledgeStaticDataReferenceAttribute() : base(StateKnowledgeStaticDataProvider.FULL_PATH, typeof(State))
+        {
+            
+        }
+    }
+    
+    public class ParticipantStaticDataReferenceAttribute : StaticDataReferenceAttribute
+    {
+        public ParticipantStaticDataReferenceAttribute() : base(ParticipantDataProvider.FULL_PATH, typeof(ParticipantData))
+        {
+            
+        }
+    }
+    
+    public class ActionStaticDataReferenceAttribute : StaticDataReferenceAttribute
+    {
+        public ActionStaticDataReferenceAttribute() : base(ActionStaticDataProvider.FULL_PATH, typeof(BehaviorAction))
+        {
+            
+        }
+    }
+    
+    public class TournamentStaticDataReferenceAttribute : StaticDataReferenceAttribute
+    {
+        public TournamentStaticDataReferenceAttribute() : base(TournamentDataProvider.FULL_PATH, typeof(Tournament))
+        {
+            
+        }
+    }
+    
+    public class TournamentFormatStaticDataReferenceAttribute : StaticDataReferenceAttribute
+    {
+        public TournamentFormatStaticDataReferenceAttribute() : base(TournamentFormatDataProvider.FULL_PATH, typeof(TournamentFormat))
+        {
+            
+        }
+    }
+    
+    public class StageFormatStaticDataReferenceAttribute : StaticDataReferenceAttribute
+    {
+        public StageFormatStaticDataReferenceAttribute() : base(StageFormatDataProvider.FULL_PATH, typeof(StageFormat))
         {
             
         }

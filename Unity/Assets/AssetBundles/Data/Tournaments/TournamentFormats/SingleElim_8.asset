@@ -3,8 +3,9 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -14,5 +15,6 @@ MonoBehaviour:
   _participants: 8
   _stages:
   - _seeding: {fileID: 11400000, guid: 56010f7869763ed44ade7cd38fe34550, type: 2}
-    _format: {fileID: 11400000, guid: ca0a84300ed878f42b5386210e71139b, type: 2}
+    _format:
+      _id: SingleElim_1g
     _result: {fileID: 11400000, guid: f2435c5795c74fb45a887fc424d964c1, type: 2}

@@ -3,30 +3,18 @@ using System.Collections;
 using JunkyardDogs.Simulation.Behavior;
 using System;
 using Data;
+using JunkyardDogs.Data;
 using WeakReference = PandeaGames.Data.WeakReferences.WeakReference;
 
 namespace JunkyardDogs.Simulation.Agent
 {
-    public class Directive: ILoadableObject
+    public class Directive
     {
-        public WeakReference ActionWeakReference { get; set; }
-        public bool IsLoaded { get; private set; }
+        public ActionStaticDataReference ActionWeakReference { get; set; }
 
-        public Behavior.Action Action
+        public BehaviorAction BehaviorAction
         {
-            get { return ActionWeakReference.Asset as Behavior.Action; }
-        }
-
-        public void LoadAsync(LoadSuccess onLoadSuccess, LoadError onLoadFailed)
-        {
-            Loader loader = new Loader();
-            loader.AppendProvider(ActionWeakReference);
-            loader.LoadAsync(onLoadSuccess, onLoadFailed);
-        }
-
-        private IEnumerator NullObjectsLoaded()
-        {
-            yield return 0;
+            get { return ActionWeakReference.Data; }
         }
     }
 }

@@ -23,7 +23,7 @@ namespace PandeaGames.Data.Static
 
                 foreach (StaticDataEntry<TData> entry in source)
                 {
-                    TData data = entry as TData;
+                    TData data = entry.Data;
 
                     if (data != null)
                     {

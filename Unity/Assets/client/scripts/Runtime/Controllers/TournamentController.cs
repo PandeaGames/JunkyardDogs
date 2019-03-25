@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using WeakReference = PandeaGames.Data.WeakReferences.WeakReference;
 using JunkyardDogs.Components;
+using JunkyardDogs.Data;
 using JunkyardDogs.Simulation;
 using PandeaGames;
 using UnityEngine.SceneManagement;
@@ -24,14 +25,18 @@ public class TournamentController : MonoBehaviour
 	public void RunTournament(RoundState roundState, Tournament tournament)
 	{
 		_userService = Game.Instance.GetService<JunkyardUserService>();
-
-		JunkyardUser user = _userService.User;
 		
 		_roundState = roundState;
-		ParticipantDataUtils.GenerateParticipantsAsync(tournament.Participants, (participants) =>
+		
+		List<Participant> participants = new List<Participant>();
+
+		foreach (ParticipantStaticDataReference participantReference in tournament.Participants)
 		{
-			StartCoroutine(CompleteParticipantsCoroutine(participants, () => { }));
-		}, OnError);
+			participants.Add(participantReference.Data.GetParticipant());
+		}
+
+		StartCoroutine(CompleteParticipantsCoroutine(participants, () => { }));
+		
 		StartRound(roundState);
 	}
 	
@@ -55,13 +60,16 @@ public class TournamentController : MonoBehaviour
 	private void TournamentLoaded(Tournament tournament, WeakReference reference)
 	{
 		_tournamentState =  tournament.GenerateState();
-        
-		ParticipantDataUtils.GenerateParticipantsAsync(tournament.Participants, (participants) =>
-			{
-				StartCoroutine(CompleteParticipantsCoroutine(participants, () => { }));
-				_tournamentState.FillWithParticipants(participants);
-				RunTournament(_tournamentState);
-			}, OnError);
+		List<Participant> participants = new List<Participant>();
+
+		foreach (ParticipantStaticDataReference participantReference in tournament.Participants)
+		{
+			participants.Add(participantReference.Data.GetParticipant());
+		}
+		
+		StartCoroutine(CompleteParticipantsCoroutine(participants, () => { }));
+		_tournamentState.FillWithParticipants(participants);
+		RunTournament(_tournamentState);
 	}
 
 	private IEnumerator CompleteParticipantsCoroutine(List<Participant> participants, Action onComplete)

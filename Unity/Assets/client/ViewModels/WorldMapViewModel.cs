@@ -1,4 +1,5 @@
 ﻿using System;
+using JunkyardDogs.Data;
 using PandeaGames.ViewModels;
 using WeakReference = PandeaGames.Data.WeakReferences.WeakReference;
 
@@ -15,7 +16,7 @@ public class WorldMapViewModel : AbstractViewModel
         }
     }
 
-    public event Action<WeakReference> OnTournamentTapped;
+    public event Action<TournamentStaticDataReference> OnTournamentTapped;
     public event Action<TournamentState.TournamentStatus> OnPlayTournament;
     public event Action OnJunkyardTapped;
 
@@ -31,7 +32,7 @@ public class WorldMapViewModel : AbstractViewModel
         _data = data;
     }
     
-    public void TapTournament(WeakReference tournament)
+    public void TapTournament(TournamentStaticDataReference tournament)
     {
         if (OnTournamentTapped != null)
         {

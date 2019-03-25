@@ -290,7 +290,7 @@ namespace JunkyardDogs.Simulation
                 }
 
                 Directive directive = directives[bot.DirectiveIndex];
-                ActionResult result = directive.Action.GetResult();
+                ActionResult result = directive.BehaviorAction.GetResult();
 
                 if (result.attack)
                 {

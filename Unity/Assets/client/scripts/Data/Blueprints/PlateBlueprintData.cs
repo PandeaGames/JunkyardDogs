@@ -1,11 +1,27 @@
 ﻿
 using JunkyardDogs.Components;
+using JunkyardDogs.Data;
+using JunkyardDogs.Data.Balance;
 using UnityEngine;
 
-public class PlateBlueprintData : PhysicalComponentBlueprintData<Plate>
+[CreateAssetMenu(menuName = "Blueprints/Plate")]
+public class PlateBlueprintData : PhysicalComponentBlueprintData<Plate>, IStaticDataBalance<PlateBlueprintBalanceObject>
 {
-    public override Plate DoGenerate(int seed)
+    public void ApplyBalance(PlateBlueprintBalanceObject balance)
     {
-        throw new System.NotImplementedException();
+        name = balance.name;
+        _specification = new SpecificationStaticDataReference();
+        _specification.ID = balance.specification;
+        _manufacturer = new ManufacturerStaticDataReference();
+        _manufacturer.ID = balance.manufacturer;
+    }
+
+    public PlateBlueprintBalanceObject GetBalance()
+    {
+        PlateBlueprintBalanceObject balance = new PlateBlueprintBalanceObject();
+        balance.name = name;
+        balance.specification = _specification == null ? string.Empty : _specification.ID;
+        balance.manufacturer = _manufacturer == null ? string.Empty : _manufacturer.ID;
+        return balance;
     }
 }

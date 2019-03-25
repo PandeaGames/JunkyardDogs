@@ -1,11 +1,26 @@
 ﻿using JunkyardDogs.Components;
+using JunkyardDogs.Data;
+using JunkyardDogs.Data.Balance;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Blueprints/WeaponBlueprintData")]
-public class WeaponBlueprintData : PhysicalComponentBlueprintData<Weapon>
+public class WeaponBlueprintData : PhysicalComponentBlueprintData<Weapon>, IStaticDataBalance<WeaponBlueprintBalanceObject>
 {
-    public override Weapon DoGenerate(int seed)
+    public void ApplyBalance(WeaponBlueprintBalanceObject balance)
     {
-        throw new System.NotImplementedException();
+        name = balance.name;
+        _specification = new SpecificationStaticDataReference();
+        _specification.ID = balance.specification;
+        _manufacturer = new ManufacturerStaticDataReference();
+        _manufacturer.ID = balance.manufacturer;
+    }
+
+    public WeaponBlueprintBalanceObject GetBalance()
+    {
+        WeaponBlueprintBalanceObject balance = new WeaponBlueprintBalanceObject();
+        balance.name = name;
+        balance.specification = _specification == null ? string.Empty : _specification.ID;
+        balance.manufacturer = _manufacturer == null ? string.Empty : _manufacturer.ID;
+        return balance;
     }
 }

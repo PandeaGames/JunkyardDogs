@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using Data;
+using JunkyardDogs.Data;
 using PandeaGames;
 using TMPro;
 using UnityEngine;
@@ -12,8 +13,8 @@ public class EventButton : MonoBehaviour
     [SerializeField]
     private TMP_Text _text;
 
-    [SerializeField, WeakReference(typeof(Tournament))]
-    private WeakReference _tournament;
+    [SerializeField, TournamentStaticDataReference]
+    private TournamentStaticDataReference _tournament;
 
     [SerializeField] 
     private uint _viewModelInstanceId;
@@ -29,22 +30,17 @@ public class EventButton : MonoBehaviour
         _vm = Game.Instance.GetViewModel<WorldMapViewModel>(_viewModelInstanceId);
         _button = GetComponent<Button>();
         _button.onClick.AddListener(onClick);
-        _text.text = Path.GetFileName(_tournament.Path);
-        _tournament.LoadAsync(OnTournamentLoaded, OnLoadError);
+        _text.text = Path.GetFileName(_tournament.Data.name);
+        OnTournamentLoaded();
     }
 
     private void onClick()
     {
         _vm.TapTournament(_tournament);
     }
-    
-    private void OnLoadError(LoadException loadException)
-    {
-        
-    }
 
     private void OnTournamentLoaded()
     {
-        _timerDisplay.Render(_tournament.Asset as Tournament);
+        _timerDisplay.Render(_tournament.Data);
     }
 }

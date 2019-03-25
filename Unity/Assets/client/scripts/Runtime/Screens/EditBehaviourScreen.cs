@@ -2,10 +2,11 @@
 using UnityEngine.UI;
 using System.Collections.Generic;
 using JunkyardDogs;
+using JunkyardDogs.Data;
 using JunkyardDogs.Simulation.Agent;
 using PandeaGames;
 using PandeaGames.Views.Screens;
-using Action = JunkyardDogs.Behavior.Action;
+using JunkyardDogs.Simulation.Behavior;
 using WeakReference = PandeaGames.Data.WeakReferences.WeakReference;
 
 public class EditBehaviourScreen : ScreenView
@@ -71,7 +72,7 @@ public class EditBehaviourScreen : ScreenView
         _viewModel.SetSelectedState(0);        
     }
 
-    private void OnActionAdded(Action action, WeakReference reference)
+    private void OnActionAdded(BehaviorAction behaviorAction, ActionStaticDataReference reference)
     {
         RenderAgentState(_viewModel.SelectedState);
     }

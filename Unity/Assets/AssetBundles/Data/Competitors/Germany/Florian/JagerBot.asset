@@ -14,6 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _manufacturer:
     _id: Skylabs
-  _chassis: {fileID: 0}
-  _motherboard: {fileID: 0}
-  _agent: {fileID: 0}
+  _chassis:
+    _id: JagerChassis
+  _motherboard:
+    _id: 
+  _agent:
+    _id: JagerAgent

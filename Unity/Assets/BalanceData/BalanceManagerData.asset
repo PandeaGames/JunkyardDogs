@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7caa6c356cc64bfb988dec28f0173b83, type: 3}
   m_Name: BalanceManagerData
   m_EditorClassIdentifier: 
-  _googleSheetURL: 
   _balanceData:
   - {fileID: 11400000, guid: e93c8763c32b8a84bbd095b01f560e3d, type: 2}
   - {fileID: 11400000, guid: cec1086a0e360704faeb61279a4108ec, type: 2}
@@ -20,3 +19,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 362565f0c80437b4e925471eee31a5e9, type: 2}
   - {fileID: 11400000, guid: 3a26f4b6b5ce5f24eac0fc8ca99478fc, type: 2}
   - {fileID: 11400000, guid: 1414fca62d4305442b968d8ae3cd6760, type: 2}
+  - {fileID: 11400000, guid: 54beb804a1a7994498cb7ad6d1bdfe76, type: 2}
+  - {fileID: 11400000, guid: 492a697c927002f4b993c727ce517d04, type: 2}
+  - {fileID: 11400000, guid: 16e03727fb22ed94a9f7298edda7c0c6, type: 2}
+  - {fileID: 11400000, guid: f0fe7207f656acd4896d8fb5c6eaa8fb, type: 2}
+  - {fileID: 11400000, guid: 9b36c44ce35cfa545b45137fa4e8e6d7, type: 2}
+  - {fileID: 11400000, guid: 9d49773afe84e21489aab0e788bc9664, type: 2}
+  - {fileID: 11400000, guid: 72e2a2ecd66f66844b5379b9c604aede, type: 2}
+  - {fileID: 11400000, guid: a4ea3c29d7a1e7b47b35c827d4d58ca7, type: 2}
+  - {fileID: 11400000, guid: 55f047832c0a7734a952115a088db9c6, type: 2}

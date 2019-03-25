@@ -15,4 +15,6 @@ MonoBehaviour:
   _nationality:
     _id: Germany
   _bots:
-  - {fileID: 0}
+  - _id: JagerBot
+  - _id: JagerBot
+  - _id: JagerBot

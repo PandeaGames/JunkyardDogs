@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using System;
+using JunkyardDogs.Data.Balance;
 
 [CreateAssetMenu(menuName = "Tournaments/Formats/EliminationFormat")]
-public class EliminationFormat : StageFormat
+public class EliminationFormat : StageFormat, IStaticDataBalance<EliminationFormatBalanceObject>
 {
 	[Range(1, 10)][SerializeField]
 	private int _eliminations = 1;
@@ -60,6 +61,24 @@ public class EliminationFormat : StageFormat
 	{
 		//TODO support multi stage tournaments
 		throw new NotImplementedException();
+	}
+
+	public void ApplyBalance(EliminationFormatBalanceObject balance)
+	{
+		name = balance.name;
+		_eliminations = balance.eliminations;
+		_groups = balance.groups;
+	}
+
+	public EliminationFormatBalanceObject GetBalance()
+	{
+		EliminationFormatBalanceObject balance = new EliminationFormatBalanceObject();
+
+		balance.name = name;
+		balance.groups = _groups;
+		balance.eliminations = _eliminations;
+
+		return balance;
 	}
 }
 

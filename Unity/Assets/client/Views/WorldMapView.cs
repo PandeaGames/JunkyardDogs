@@ -1,4 +1,5 @@
-﻿using JunkyardDogs.scripts.Runtime.Dialogs;
+﻿using JunkyardDogs.Data;
+using JunkyardDogs.scripts.Runtime.Dialogs;
 using PandeaGames;
 using PandeaGames.Data.WeakReferences;
 using PandeaGames.Views;
@@ -27,7 +28,7 @@ public class WorldMapView : AbstractUnityView
         _worldMapViewModel.OnTournamentTapped -= OnTournamentTapped;
     }
 
-    private void OnTournamentTapped(WeakReference obj)
+    private void OnTournamentTapped(TournamentStaticDataReference obj)
     {
         EventDialogViewModel vm = Game.Instance.GetViewModel<EventDialogViewModel>();
         vm.TournamentReference = obj;

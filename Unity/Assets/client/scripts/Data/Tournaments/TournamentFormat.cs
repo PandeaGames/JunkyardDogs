@@ -2,23 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using JunkyardDogs.Data;
+using JunkyardDogs.Data.Balance;
 using WeakReference = PandeaGames.Data.WeakReferences.WeakReference;
 
 [Serializable]
 public class TournamentStage
 {
-	[SerializeField] 
-	private TournamentSeeding _seeding;
+	/*[SerializeField] 
+	private TournamentSeeding _seeding;*/
 	
-	[SerializeField] 
-	private StageFormat _format;
+	[SerializeField, StageFormatStaticDataReference] 
+	private StageFormatStaticDataReference _format;
 
-	[SerializeField]
-	private TournamentResult _result;
+	/*[SerializeField]
+	private TournamentResult _result;*/
 
 	public StageState GenerateState(int participants)
 	{
-		return _format.GenerateState(participants);
+		return _format.Data.GenerateState(participants);
 	}
 	
 	public StageState GenerateState(StageState lastStage)
@@ -28,8 +30,14 @@ public class TournamentStage
 	}
 }
 
+[Serializable]
+public struct StagesContainer
+{
+	public List<TournamentStage> stages;
+}
+
 [CreateAssetMenu(menuName = "Tournaments/TournamentFormat")]
-public class TournamentFormat : ScriptableObject
+public class TournamentFormat : ScriptableObject, IStaticDataBalance<TournamentFormatBalanceObject>
 {
 	[SerializeField] private int _participants;
 	
@@ -60,5 +68,27 @@ public class TournamentFormat : ScriptableObject
 		}
 		
 		return state;
+	}
+
+	public void ApplyBalance(TournamentFormatBalanceObject balance)
+	{
+		name = balance.name;
+		_participants = balance.participants;
+		StagesContainer stagesContainer = JsonUtility.FromJson<StagesContainer>(balance.stages);
+		_stages = stagesContainer.stages;
+	}
+
+	public TournamentFormatBalanceObject GetBalance()
+	{
+		TournamentFormatBalanceObject balance = new TournamentFormatBalanceObject();
+
+		StagesContainer stagesContainer = new StagesContainer();
+		stagesContainer.stages = _stages;
+		
+		balance.stages = JsonUtility.ToJson(stagesContainer);
+		balance.name = name;
+		balance.participants = _participants;
+		
+		return balance;
 	}
 }

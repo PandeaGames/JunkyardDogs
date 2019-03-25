@@ -17,8 +17,12 @@ namespace JunkyardDogs.Data.Balance
     }
     
     [CreateAssetMenu]
-    public class PlateBalanceData : StaticDataReferenceBalanceData<SpecificationDataSource, Specification,
-        SpecificationBalanceObject, Plate, PlateBalanceObject>
+    public class PlateBalanceData : StaticDataReferenceBalanceData<
+        SpecificationDataSource, 
+        Specification,
+        SpecificationBalanceObject, 
+        Plate, 
+        PlateBalanceObject>
     {
         public const string DATA_PATH = "Assets/AssetBundles/Data/Products/Plating/";
 

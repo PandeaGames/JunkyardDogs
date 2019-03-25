@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 using AssetBundles;
 using Object = UnityEngine.Object;
 
@@ -24,7 +25,10 @@ namespace PandeaGames.Data.Static
             AssetBundleLoadAssetOperation request = AssetBundleManager.LoadAssetAsync(_bundleName, _path, typeof(UnityEngine.Object));
 
             if (request == null)
+            {
+                onLoadFailed(new LoadException(string.Format("Failed to load source data at path {0}", _path)));
                 return;
+            }
 
             TaskProvider.Instance.RunTask(request, () =>
             {

@@ -10,6 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 08f38499cf0c4d309bd7af019bf3a4e3, type: 3}
-  m_Name: StateKnowledgeStaticDataSource
+  m_Name: StateKnowledgeDataSource
   m_EditorClassIdentifier: 
-  Data: []
+  Data:
+  - {fileID: 11400000, guid: 0039daf0d35f8394983aeefe2779664f, type: 2}
+  - {fileID: 11400000, guid: 73eeb1a3ba11d3d439dae0512e62bbfe, type: 2}
+  - {fileID: 11400000, guid: a9545211e8276124ab3d1824fabc26b1, type: 2}

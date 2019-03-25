@@ -44,7 +44,10 @@ namespace PandeaGames.Data.Static
 
             foreach (TData data in Data)
             {
-                if (data.GetType().IsAssignableFrom (filterType))
+                Type dataType = data.GetType();
+                bool isValid =filterType.IsAssignableFrom(dataType);
+                
+                if (isValid)
                 {
                     ids.Add(data.name);
                 }

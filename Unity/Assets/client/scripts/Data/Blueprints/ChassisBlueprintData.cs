@@ -1,10 +1,12 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using JunkyardDogs.Components;
 using JunkyardDogs.Data;
+using JunkyardDogs.Data.Balance;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Blueprints/ChassisBlueprint")]
-public class ChassisBlueprintData : PhysicalComponentBlueprintData<Chassis>
+public class ChassisBlueprintData : PhysicalComponentBlueprintData<Chassis>, IStaticDataBalance<ChassisBlueprintBalanceObject>
 {
     [Header("Plates")]
     
@@ -31,13 +33,13 @@ public class ChassisBlueprintData : PhysicalComponentBlueprintData<Chassis>
     [SerializeField, WeaponProcessorBlueprintStaticDataReference]
     private WeaponProcessorBlueprintStaticDataReference _topArmament;
 
-    [SerializeField, WeaponBlueprintStaticDataReference]
+    [SerializeField, WeaponProcessorBlueprintStaticDataReference]
     private WeaponProcessorBlueprintStaticDataReference _frontArmament;
 
-    [SerializeField, WeaponBlueprintStaticDataReference]
+    [SerializeField, WeaponProcessorBlueprintStaticDataReference]
     private WeaponProcessorBlueprintStaticDataReference _leftArmament;
 
-    [SerializeField, WeaponBlueprintStaticDataReference]
+    [SerializeField, WeaponProcessorBlueprintStaticDataReference]
     private WeaponProcessorBlueprintStaticDataReference _rightArmament;
 
     public override Chassis DoGenerate(int seed)
@@ -94,6 +96,67 @@ public class ChassisBlueprintData : PhysicalComponentBlueprintData<Chassis>
             {
                 plates[i] = reference.Data.DoGenerate(seed);
             }
+        }
+    }
+
+    public void ApplyBalance(ChassisBlueprintBalanceObject balance)
+    {
+        name = balance.name;
+        
+        _specification = new SpecificationStaticDataReference();
+        _specification.ID = balance.specification;
+        _manufacturer = new ManufacturerStaticDataReference();
+        _manufacturer.ID = balance.manufacturer;
+        
+        _topArmament = new WeaponProcessorBlueprintStaticDataReference();
+        _topArmament.ID = balance.topArmament;
+        _leftArmament = new WeaponProcessorBlueprintStaticDataReference();
+        _leftArmament.ID = balance.leftArmament;
+        _rightArmament = new WeaponProcessorBlueprintStaticDataReference();
+        _rightArmament.ID = balance.rightArmament;
+        _frontArmament = new WeaponProcessorBlueprintStaticDataReference();
+        _frontArmament.ID = balance.frontArmament;
+
+        ApplyPlateBalance(balance.frontPlates, out _frontPlates);
+        ApplyPlateBalance(balance.leftPlates, out _leftPlates);
+        ApplyPlateBalance(balance.rightPlates, out _rightPlates);
+        ApplyPlateBalance(balance.backPlates, out _backPlates);
+        ApplyPlateBalance(balance.topPlates, out _topPlates);
+        ApplyPlateBalance(balance.bottomPlates, out _bottomPlates);
+    }
+
+    public ChassisBlueprintBalanceObject GetBalance()
+    {
+        ChassisBlueprintBalanceObject balance = new ChassisBlueprintBalanceObject();
+        balance.name = name;
+        balance.specification = _specification == null ? string.Empty : _specification.ID;
+        balance.manufacturer = _manufacturer == null ? string.Empty : _manufacturer.ID;
+
+        balance.topArmament = _topArmament == null ? string.Empty : _topArmament.ID;
+        balance.leftArmament = _leftArmament == null ? string.Empty : _leftArmament.ID;
+        balance.rightArmament = _rightArmament == null ? string.Empty : _rightArmament.ID;
+        balance.frontArmament = _frontArmament == null ? string.Empty : _frontArmament.ID;
+
+        balance.frontPlates = string.Join(BalanceData.ListDelimiter, _frontPlates);
+        balance.leftPlates = string.Join(BalanceData.ListDelimiter, _leftPlates);
+        balance.rightPlates = string.Join(BalanceData.ListDelimiter, _rightPlates);
+        balance.backPlates = string.Join(BalanceData.ListDelimiter, _backPlates);
+        balance.topPlates = string.Join(BalanceData.ListDelimiter, _topPlates);
+        balance.bottomPlates = string.Join(BalanceData.ListDelimiter, _bottomPlates);
+        
+        return balance;
+    }
+
+    private void ApplyPlateBalance(string balanceInput, out List<PlateBlueprintStaticDataReference> plates)
+    {
+        plates = new List<PlateBlueprintStaticDataReference>();
+        string[] balanceInputList = balanceInput.Split(BalanceData.ListDelimiterChar);
+
+        foreach (string plateId in balanceInputList)
+        {
+            PlateBlueprintStaticDataReference reference = new PlateBlueprintStaticDataReference();
+            reference.ID = plateId;
+            plates.Add(reference);
         }
     }
 }

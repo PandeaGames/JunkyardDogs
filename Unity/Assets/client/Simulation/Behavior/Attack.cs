@@ -13,7 +13,7 @@ namespace JunkyardDogs.Simulation.Behavior
     }
 
     [CreateAssetMenu(fileName = "Attack", menuName = "Simulation/Behavior/Attack", order = 2)]
-    public class Attack : Action
+    public class Attack : BehaviorAction
     {
         [SerializeField]
         private WeaponSlot _weaponSlot;

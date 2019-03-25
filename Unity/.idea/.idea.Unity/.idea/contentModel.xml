@@ -68,19 +68,30 @@
             <e p="ActionStaticDataProvider.cs" t="Include" />
             <e p="AssetBundleEnum.cs" t="Include" />
             <e p="Balance" t="Include">
+              <e p="AgentBlueprintBalanceData.cs" t="Include" />
               <e p="BalanceData.cs" t="Include" />
               <e p="BalanceManagerData.cs" t="Include" />
+              <e p="BlueprintBalanceData.cs" t="Include" />
+              <e p="BotBlueprintBalanceData.cs" t="Include" />
+              <e p="ChassisBlueprintBalanceData.cs" t="Include" />
+              <e p="CompetitorBlueprintBalanceData.cs" t="Include" />
               <e p="Editor" t="Include">
                 <e p="BalanceDataManagerEditor.cs" t="Include" />
               </e>
+              <e p="EliminationFormatBalanceData.cs" t="Include" />
               <e p="FilteredStaticDataReferenceBalanceData.cs" t="Include" />
               <e p="ManufacturerBalanceData.cs" t="Include" />
               <e p="MaterialBalanceData.cs" t="Include" />
               <e p="NationBalanceData.cs" t="Include" />
               <e p="PhysicalSpecificationBalanceData.cs" t="Include" />
               <e p="PlateBalanceData.cs" t="Include" />
+              <e p="PlateBlueprintBalanceData.cs" t="Include" />
               <e p="SpecificationBalanceData.cs" t="Include" />
               <e p="StaticDataReferenceBalanceData.cs" t="Include" />
+              <e p="TournamentBalanceData.cs" t="Include" />
+              <e p="TournamentFormatBalanceData.cs" t="Include" />
+              <e p="WeaponBlueprintBalanceData.cs" t="Include" />
+              <e p="WeaponProcessorBlueprintBalanceData.cs" t="Include" />
             </e>
             <e p="BlueprintDataProvider.cs" t="Include" />
             <e p="BlueprintDataSource.cs" t="Include" />
@@ -97,9 +108,15 @@
             <e p="ParticipantDataSource.cs" t="Include" />
             <e p="SpecificationDataProvider.cs" t="Include" />
             <e p="SpecificationDataSource.cs" t="Include" />
+            <e p="StageFormatDataProvider.cs" t="Include" />
+            <e p="StageFormatDataSource.cs" t="Include" />
             <e p="StateKnowledgeStaticDataProvider.cs" t="Include" />
             <e p="StateKnowledgeStaticDataSource.cs" t="Include" />
             <e p="StaticDataReferences.cs" t="Include" />
+            <e p="TournamentDataProvider.cs" t="Include" />
+            <e p="TournamentDataSource.cs" t="Include" />
+            <e p="TournamentFormatDataProvider.cs" t="Include" />
+            <e p="TournamentFormatDataSource.cs" t="Include" />
             <e p="UnityData" t="Include">
               <e p="GameStaticData.cs" t="Include" />
               <e p="ViewStaticData.cs" t="Include" />
@@ -111,8 +128,6 @@
           <e p="scripts" t="Include">
             <e p="Data" t="Include">
               <e p="Behavior" t="Include">
-                <e p="Action.cs" t="Include" />
-                <e p="Behavior.cs" t="Include" />
                 <e p="Range.cs" t="Include" />
                 <e p="State.cs" t="Include" />
                 <e p="StateTransition.cs" t="Include" />
@@ -350,9 +365,9 @@
               <e p="StateTransition.cs" t="Include" />
             </e>
             <e p="Behavior" t="Include">
-              <e p="Action.cs" t="Include" />
               <e p="ActionList.cs" t="Include" />
               <e p="Attack.cs" t="Include" />
+              <e p="BehaviorAction.cs" t="Include" />
               <e p="Movement.cs" t="Include" />
             </e>
             <e p="EffectAction.cs" t="Include" />
@@ -699,6 +714,9 @@
           <e p="Utils" t="Include">
             <e p="AssetDatabaseUtility.cs" t="Include" />
             <e p="CSharpUtils.cs" t="Include" />
+            <e p="Extensions" t="Include">
+              <e p="ListExtensions.cs" t="Include" />
+            </e>
             <e p="Game2DMathUtils.cs" t="Include" />
             <e p="GenericFactory.cs" t="Include" />
             <e p="NewBehaviourScript1.cs" t="Include" />

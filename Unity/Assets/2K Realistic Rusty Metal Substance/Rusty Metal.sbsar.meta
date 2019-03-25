@@ -33,7 +33,7 @@ ScriptedImporter:
     11400008: graph0
   externalObjects: {}
   userData: 
-  assetBundleName: 
+  assetBundleName: data
   assetBundleVariant: 
   script: {fileID: 232528478, guid: 43a8bbf65be290d44ba52b94476242b9, type: 3}
   version: 17
@@ -135,7 +135,7 @@ ScriptedImporter:
       textureHeight: 512
       textureFormat: 0
       bGenerateOnLoad: 0
-    material: {instanceID: 0}
+    material: {fileID: 2100000, guid: 5577837317db0064b951a05b9b3a62be, type: 3}
     generatedTextures: []
   - graphLabel: Metal_1
     prototypeName: Metal
@@ -232,7 +232,7 @@ ScriptedImporter:
       textureHeight: 512
       textureFormat: 0
       bGenerateOnLoad: 0
-    material: {instanceID: 0}
+    material: {fileID: 2100002, guid: 5577837317db0064b951a05b9b3a62be, type: 3}
     generatedTextures: []
   - graphLabel: Metal_2
     prototypeName: Metal
@@ -329,7 +329,7 @@ ScriptedImporter:
       textureHeight: 512
       textureFormat: 0
       bGenerateOnLoad: 0
-    material: {instanceID: 0}
+    material: {fileID: 2100004, guid: 5577837317db0064b951a05b9b3a62be, type: 3}
     generatedTextures: []
   - graphLabel: Metal_3
     prototypeName: Metal
@@ -428,5 +428,5 @@ ScriptedImporter:
       textureHeight: 512
       textureFormat: 0
       bGenerateOnLoad: 0
-    material: {instanceID: 0}
+    material: {fileID: 2100006, guid: 5577837317db0064b951a05b9b3a62be, type: 3}
     generatedTextures: []

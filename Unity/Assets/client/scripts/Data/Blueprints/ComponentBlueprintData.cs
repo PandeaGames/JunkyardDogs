@@ -10,13 +10,13 @@ using WeakReference = PandeaGames.Data.WeakReferences.WeakReference;
 public abstract class ComponentBlueprintData<TGeneratedData> : BlueprintData<TGeneratedData> where TGeneratedData:Component
 {
     [StaticDataReference(path:SpecificationDataProvider.FULL_PATH),SerializeField]
-    private SpecificationStaticDataReference _specification;
+    protected SpecificationStaticDataReference _specification;
     
     [SerializeField, StaticDataReference(path:ManufacturerDataProvider.FULL_PATH)]
-    private ManufacturerStaticDataReference _manufacturer;
+    protected ManufacturerStaticDataReference _manufacturer;
         
     public override TGeneratedData DoGenerate(int seed)
     {
-        return ComponentUtils.GenerateComponent(_specification) as TGeneratedData;
+        return ComponentUtils.GenerateComponent(_specification, _manufacturer) as TGeneratedData;
     }
 }

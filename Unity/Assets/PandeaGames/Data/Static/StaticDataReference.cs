@@ -49,6 +49,11 @@ public class StaticDataReference<TDataBase, TData, TReference, TDirectory>
         set { _id = value; }
     }
 
+    public override string ToString()
+    {
+        return ID;
+    }
+
     public TData Data
     {
         get

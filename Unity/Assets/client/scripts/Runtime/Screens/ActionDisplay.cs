@@ -8,7 +8,7 @@ public class ActionDisplay : MonoBehaviour {
     [SerializeField]
     private TMP_Text _text;
 
-    public void Render(Action directive)
+    public void Render(BehaviorAction directive)
     {
         _text.text = directive.name;
     }

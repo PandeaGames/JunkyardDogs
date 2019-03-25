@@ -1,9 +1,12 @@
-#if UNITY_EDITOR
+
 using System.Collections.Generic;
+using System.IO;
 using System.Reflection;
 using GoogleSheetsForUnity;
 using PandeaGames.Data.Static;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
 
 namespace JunkyardDogs.Data.Balance
@@ -48,6 +51,7 @@ namespace JunkyardDogs.Data.Balance
 
         public override void ImportData(string json)
         {
+#if UNITY_EDITOR
             // Parse from json to the desired object type.            
             TBalanceObject[] balanceObjects = JsonHelper.ArrayFromJson<TBalanceObject>(json);
 
@@ -59,9 +63,17 @@ namespace JunkyardDogs.Data.Balance
 
                 if (data == null && AllowDataCreationOnImport)
                 {
+
                     data = ScriptableObject.CreateInstance<TUnityData>();
+
+                    if (!Directory.Exists(GetNewDataFolder()))
+                    {
+                        Debug.LogError("Directory Does not Exist");
+                    }
+                    
                     AssetDatabase.CreateAsset(data, GetNewDataFolder() + balanceObj.GetDataUID()+".asset");
                     _dataList.Data.Add(data);
+                    
                 }
 
                 if (data)
@@ -72,6 +84,7 @@ namespace JunkyardDogs.Data.Balance
             
             EditorUtility.SetDirty(_dataList);
             AssetDatabase.SaveAssets();
+#endif
         }
         
         protected TUnityData FindData(TBalanceObject balance, List<TUnityDataBase> list)
@@ -118,4 +131,3 @@ namespace JunkyardDogs.Data.Balance
         }
     }
 }
-#endif

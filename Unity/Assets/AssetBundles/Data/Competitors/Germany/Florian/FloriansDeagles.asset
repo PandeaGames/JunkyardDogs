@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: FloriansDeagles
   m_EditorClassIdentifier: 
   _specification:
-    _id: Plate_Thickness01
+    _id: Deagle
   _manufacturer:
-    _guid: 
-    _path: 
+    _id: Skylabs

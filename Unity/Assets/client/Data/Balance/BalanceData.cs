@@ -1,4 +1,4 @@
-#if UNITY_EDITOR
+
 using GoogleSheetsForUnity;
 using UnityEngine;
 
@@ -7,6 +7,8 @@ namespace JunkyardDogs.Data.Balance
     [CreateAssetMenu]
     public abstract class BalanceData: ScriptableObject
     {
+        public const string ListDelimiter = ",";
+        public const char ListDelimiterChar = ',';
         public struct RowData
         {
             public string UID;
@@ -27,8 +29,8 @@ namespace JunkyardDogs.Data.Balance
         
         [SerializeField]
         public bool AllowDataCreationOnImport;
-     //PlayerInfo[] players = JsonHelper.ArrayFromJson<PlayerInfo>(rawJSon);
-     protected TBalanceObject[] Parse<TBalanceObject>(string json)
+
+        protected TBalanceObject[] Parse<TBalanceObject>(string json)
      {
          TBalanceObject[] data = JsonHelper.ArrayFromJson<TBalanceObject>(json);
          return data;
@@ -41,4 +43,3 @@ namespace JunkyardDogs.Data.Balance
 
     }
 }
-#endif

@@ -31,7 +31,6 @@ namespace JunkyardDogs.Simulation.Agent
         public void LoadAsync(LoadSuccess onLoadSuccess, LoadError onLoadFailed)
         {
             Loader loader = new Loader();
-            loader.AppendProvider(Directives);
             loader.AppendProvider(Transitions);
             loader.LoadAsync(onLoadSuccess, onLoadFailed);
         }

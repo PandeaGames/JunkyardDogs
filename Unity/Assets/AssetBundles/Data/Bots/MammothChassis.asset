@@ -3,22 +3,30 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fa97e88fbf7e4ba0827b64b450dc3694, type: 3}
   m_Name: MammothChassis
   m_EditorClassIdentifier: 
-  _blueprint:
-    _blueprintBase: {fileID: 0}
-    _specification:
-      _guid: 
-      _path: 
-    _manufacturer:
-      _guid: 
-      _path: 
-    _material:
-      _guid: 
-      _path: 
+  _specification:
+    _id: Plate_Thickness01
+  _manufacturer:
+    _id: Skylabs
+  _frontPlates: []
+  _leftPlates: []
+  _rightPlates: []
+  _backPlates: []
+  _topPlates: []
+  _bottomPlates: []
+  _topArmament:
+    _id: FloriansFavoriteProcessor
+  _frontArmament:
+    _id: FloriansFavoriteProcessor
+  _leftArmament:
+    _id: FloriansFavoriteProcessor
+  _rightArmament:
+    _id: FloriansFavoriteProcessor

@@ -33,7 +33,9 @@ public class ChooseCountryScreen : ScreenView
 
     private void LoadComplete()
     {
-        foreach (NationalityStaticDataReference nationalityReference in _viewModel.NationList)
+        NationalityDataProvider provider = Game.Instance.GetStaticDataPovider<NationalityDataProvider>();
+        
+        foreach (NationalityStaticDataReference nationalityReference in provider)
         {
             Nationality nationality = nationalityReference.Data;
             GameObject nationEntry = Instantiate(_nationEntryPrefab);

@@ -12,7 +12,7 @@ namespace JunkyardDogs.Simulation.Behavior
     }
 
     [CreateAssetMenu(fileName = "Movement", menuName = "Simulation/Behavior/Movement", order = 2)]
-    public class Movement : Action
+    public class Movement : BehaviorAction
     {
         [SerializeField]
         private MovementDirection _movementDirection;

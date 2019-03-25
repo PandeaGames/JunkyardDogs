@@ -31,9 +31,7 @@ namespace JunkyardDogs
         public override void EnterState(TournamentStates @from)
         {
             base.EnterState(@from);
-            _viewModel.LoadAsync(() => 
-                _fsm.SetState(TournamentStates.FillParticipants)
-                , exception => { });
+            _fsm.SetState(TournamentStates.FillParticipants);
         }
     }
     

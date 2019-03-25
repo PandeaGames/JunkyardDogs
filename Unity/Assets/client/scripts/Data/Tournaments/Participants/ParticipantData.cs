@@ -24,22 +24,6 @@ public static class ParticipantDataUtils
 
         return participants;
     }
-    
-    public static void GenerateParticipantsAsync(List<WeakReference> participantReferences, Action<List<Participant>> onComplete, Action onError)
-    {
-        List<ParticipantData> participants = new List<ParticipantData>();
-        
-        participantReferences.ForEach((participantReference) => participantReference.LoadAssetAsync<ParticipantData>(
-            (participantData, reference) =>
-            {
-                participants.Add(participantData);
-
-                if (participantReferences.Count == participants.Count)
-                {
-                    onComplete(GenerateParticipants(participants));
-                }
-            }, (e) => onError()));
-    }
 }
 
 public abstract class ParticipantData : ScriptableObject
