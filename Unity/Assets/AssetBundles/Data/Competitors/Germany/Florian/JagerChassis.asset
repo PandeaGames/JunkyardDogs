@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: JagerChassis
   m_EditorClassIdentifier: 
   _specification:
-    _id: Plate_Thickness01
+    _id: Mamoth
   _manufacturer:
     _id: Skylabs
-  _frontPlates: []
+  _frontPlates:
+  - _id: JagerPlate
   _leftPlates: []
   _rightPlates: []
   _backPlates: []
@@ -25,8 +26,8 @@ MonoBehaviour:
   _topArmament:
     _id: FloriansFavoriteProcessor
   _frontArmament:
-    _id: FloriansDeagles
+    _id: FloriansFavoriteProcessor
   _leftArmament:
-    _id: FloriansDeagles
+    _id: FloriansFavoriteProcessor
   _rightArmament:
-    _id: FloriansDeagles
+    _id: FloriansFavoriteProcessor

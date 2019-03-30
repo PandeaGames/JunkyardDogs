@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47335a9182524d01a0b8486cdce0c3bb, type: 3}
+  m_Name: WeaponBalanceData
+  m_EditorClassIdentifier: 
+  TableName: Weapons
+  AllowImport: 1
+  AllowDataCreationOnImport: 0
+  _dataList: {fileID: 11400000, guid: c3c0a0612bd21da4a8cc42c81eb8fce2, type: 2}

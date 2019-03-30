@@ -68,35 +68,54 @@
             <e p="ActionStaticDataProvider.cs" t="Include" />
             <e p="AssetBundleEnum.cs" t="Include" />
             <e p="Balance" t="Include">
-              <e p="AgentBlueprintBalanceData.cs" t="Include" />
+              <e p="BalanceData" t="Include">
+                <e p="AgentBlueprintBalanceData.cs" t="Include" />
+                <e p="BlueprintBalanceData.cs" t="Include" />
+                <e p="BotBlueprintBalanceData.cs" t="Include" />
+                <e p="ChassisBlueprintBalanceData.cs" t="Include" />
+                <e p="CompetitorBlueprintBalanceData.cs" t="Include" />
+                <e p="EliminationFormatBalanceData.cs" t="Include" />
+                <e p="LootCrateBalanceData.cs" t="Include" />
+                <e p="ManufacturerBalanceData.cs" t="Include" />
+                <e p="MaterialBalanceData.cs" t="Include" />
+                <e p="NationBalanceData.cs" t="Include" />
+                <e p="PhysicalSpecificationBalanceData.cs" t="Include" />
+                <e p="PlateBalanceData.cs" t="Include" />
+                <e p="PlateBlueprintBalanceData.cs" t="Include" />
+                <e p="SpecificationBalanceData.cs" t="Include" />
+                <e p="TournamentBalanceData.cs" t="Include" />
+                <e p="TournamentFormatBalanceData.cs" t="Include" />
+                <e p="WeaponBalanceData.cs" t="Include" />
+                <e p="WeaponBlueprintBalanceData.cs" t="Include" />
+                <e p="WeaponProcessorBlueprintBalanceData.cs" t="Include" />
+                <e p="WeightedLootCrateBalanceData.cs" t="Include" />
+              </e>
               <e p="BalanceData.cs" t="Include" />
               <e p="BalanceManagerData.cs" t="Include" />
-              <e p="BlueprintBalanceData.cs" t="Include" />
-              <e p="BotBlueprintBalanceData.cs" t="Include" />
-              <e p="ChassisBlueprintBalanceData.cs" t="Include" />
-              <e p="CompetitorBlueprintBalanceData.cs" t="Include" />
               <e p="Editor" t="Include">
                 <e p="BalanceDataManagerEditor.cs" t="Include" />
               </e>
-              <e p="EliminationFormatBalanceData.cs" t="Include" />
               <e p="FilteredStaticDataReferenceBalanceData.cs" t="Include" />
-              <e p="ManufacturerBalanceData.cs" t="Include" />
-              <e p="MaterialBalanceData.cs" t="Include" />
-              <e p="NationBalanceData.cs" t="Include" />
-              <e p="PhysicalSpecificationBalanceData.cs" t="Include" />
-              <e p="PlateBalanceData.cs" t="Include" />
-              <e p="PlateBlueprintBalanceData.cs" t="Include" />
-              <e p="SpecificationBalanceData.cs" t="Include" />
               <e p="StaticDataReferenceBalanceData.cs" t="Include" />
-              <e p="TournamentBalanceData.cs" t="Include" />
-              <e p="TournamentFormatBalanceData.cs" t="Include" />
-              <e p="WeaponBlueprintBalanceData.cs" t="Include" />
-              <e p="WeaponProcessorBlueprintBalanceData.cs" t="Include" />
             </e>
             <e p="BlueprintDataProvider.cs" t="Include" />
             <e p="BlueprintDataSource.cs" t="Include" />
             <e p="GameStaticDataProvider.cs" t="Include" />
             <e p="JunkyardStaticDataLoader.cs" t="Include" />
+            <e p="Loot" t="Include">
+              <e p="AbstractLootCrateData.cs" t="Include" />
+              <e p="AbstractLootData.cs" t="Include" />
+              <e p="BlueprintLootData.cs" t="Include" />
+              <e p="ILoot.cs" t="Include" />
+              <e p="ILootCrateConsumer.cs" t="Include" />
+              <e p="LootCrateData.cs" t="Include" />
+              <e p="LootData.cs" t="Include" />
+              <e p="WeightedLootCrateData.cs" t="Include" />
+            </e>
+            <e p="LootCrateDataProvider.cs" t="Include" />
+            <e p="LootCrateDataSource.cs" t="Include" />
+            <e p="LootDataProvider.cs" t="Include" />
+            <e p="LootDataSource.cs" t="Include" />
             <e p="ManufactuererDataSource.cs" t="Include" />
             <e p="ManufacturerDataProvider.cs" t="Include" />
             <e p="MatchTestData.cs" t="Include" />

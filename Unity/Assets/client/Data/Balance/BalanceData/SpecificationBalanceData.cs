@@ -7,7 +7,7 @@ using UnityEngine;
 using Material = JunkyardDogs.Specifications.Material;
 
 [Serializable]
-public struct SpecificationBalanceObject:IStaticDataBalanceObject
+public class SpecificationBalanceObject:IStaticDataBalanceObject
 {
     public string name;
     public string GetDataUID()

@@ -9,6 +9,8 @@ namespace JunkyardDogs.Data.Balance
     {
         public const string ListDelimiter = ",";
         public const char ListDelimiterChar = ',';
+        public const char DataDelimiterChar = ':';
+        public const string DataDelimiter = ":";
         public struct RowData
         {
             public string UID;

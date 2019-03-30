@@ -107,9 +107,27 @@ namespace JunkyardDogs.Data
     {
     }
     
+    [Serializable]
+    public class LootStaticDataReference : StaticDataReference<AbstractLootData, AbstractLootData, LootStaticDataReference,LootDataProvider>
+    {
+    }
+    
+    [Serializable]
+    public class LootCrateStaticDataReference : StaticDataReference<AbstractLootCrateData, AbstractLootCrateData, LootCrateStaticDataReference,LootCrateDataProvider>
+    {
+    }
+    
     /*------------------------------------------------------------------*/
     /*----------------------------- Attributes -------------------------*/
     /*------------------------------------------------------------------*/
+    
+    public class BlueprintStaticDataReferenceAttribute : StaticDataReferenceAttribute
+    {
+        public BlueprintStaticDataReferenceAttribute() : base(BlueprintDataProvider.FULL_PATH, typeof(BlueprintDataBase))
+        {
+            
+        }
+    }
     
     public class BotBlueprintStaticDataReferenceAttribute : StaticDataReferenceAttribute
     {
@@ -218,6 +236,22 @@ namespace JunkyardDogs.Data
     public class StageFormatStaticDataReferenceAttribute : StaticDataReferenceAttribute
     {
         public StageFormatStaticDataReferenceAttribute() : base(StageFormatDataProvider.FULL_PATH, typeof(StageFormat))
+        {
+            
+        }
+    }
+    
+    public class LootStaticDataReferenceAttribute : StaticDataReferenceAttribute
+    {
+        public LootStaticDataReferenceAttribute() : base(LootDataProvider.FULL_PATH, typeof(AbstractLootData))
+        {
+            
+        }
+    }
+    
+    public class LootCrateStaticDataReferenceAttribute : StaticDataReferenceAttribute
+    {
+        public LootCrateStaticDataReferenceAttribute() : base(LootCrateDataProvider.FULL_PATH, typeof(AbstractLootCrateData))
         {
             
         }
