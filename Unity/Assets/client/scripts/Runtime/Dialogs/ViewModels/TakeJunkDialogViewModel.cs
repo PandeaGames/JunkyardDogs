@@ -10,16 +10,16 @@ namespace JunkyardDogs.scripts.Runtime.Dialogs
     {
         public struct Data
         {
-            public readonly Component Component;
+            public readonly ILoot[] Loot;
 
-            public Data(Component component)
+            public Data(ILoot[] loot)
             {
-                Component = component;
+                Loot = loot;
             }
         }
         
         public Data ModelData;
-        public bool ShouldTakeComponent;
+        public bool ShouldTakeLoot;
 
         public void SetData(Data modelData)
         {

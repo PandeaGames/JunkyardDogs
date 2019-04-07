@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using JunkyardDogs.Data;
 using UnityEngine;
 
 public class Junk : MonoBehaviour {
@@ -9,14 +10,14 @@ public class Junk : MonoBehaviour {
 
     public JunkDelegate OnClick;
 
-    [SerializeField]
-    private SpecificationCatalogue _catalogue;
+    [SerializeField, LootCrateStaticDataReference]
+    private LootCrateStaticDataReference _lootCrate;
 
-    public SpecificationCatalogue Catalogue
+    public LootCrateStaticDataReference LootCrate
     {
         get
         {
-            return _catalogue;
+            return _lootCrate;
         }
     }
 

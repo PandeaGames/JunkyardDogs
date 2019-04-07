@@ -9,14 +9,21 @@ namespace JunkyardDogs
 {
     public class JunkyardViewModel : AbstractViewModel
     {
-        public event Action<Component> OnTakeJunk;
+        public event Action<ILoot[]> OnTakeJunk;
         
         public JunkyardUser User;
         
 
-        public void TakeJunk(ManufacturerStaticDataReference manufacturer, SpecificationCatalogue.Product product)
+        public void TakeJunk(LootCrateStaticDataReference lootCrate)
         {
-            OnTakeJunk(ManufacturerUtils.BuildComponent(manufacturer, product.Specification, product.Material));
+            ILoot[]  loot = lootCrate.Data.GetLoot();
+
+            if (loot.Length == 0)
+            {
+                throw new IndexOutOfRangeException("Crate did not have any contents");
+            }
+
+            OnTakeJunk(loot);
         }
     }
 }

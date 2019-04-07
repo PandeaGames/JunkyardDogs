@@ -63,6 +63,11 @@
           </e>
         </e>
         <e p="client" t="Include">
+          <e p="Build" t="Include">
+            <e p="Editor" t="Include">
+              <e p="Build.cs" t="Include" />
+            </e>
+          </e>
           <e p="Data" t="Include">
             <e p="ActionDataSource.cs" t="Include" />
             <e p="ActionStaticDataProvider.cs" t="Include" />
@@ -75,6 +80,7 @@
                 <e p="ChassisBlueprintBalanceData.cs" t="Include" />
                 <e p="CompetitorBlueprintBalanceData.cs" t="Include" />
                 <e p="EliminationFormatBalanceData.cs" t="Include" />
+                <e p="LootBalanceData.cs" t="Include" />
                 <e p="LootCrateBalanceData.cs" t="Include" />
                 <e p="ManufacturerBalanceData.cs" t="Include" />
                 <e p="MaterialBalanceData.cs" t="Include" />
@@ -91,6 +97,7 @@
                 <e p="WeightedLootCrateBalanceData.cs" t="Include" />
               </e>
               <e p="BalanceData.cs" t="Include" />
+              <e p="BalanceDataUtilites.cs" t="Include" />
               <e p="BalanceManagerData.cs" t="Include" />
               <e p="Editor" t="Include">
                 <e p="BalanceDataManagerEditor.cs" t="Include" />
@@ -100,16 +107,24 @@
             </e>
             <e p="BlueprintDataProvider.cs" t="Include" />
             <e p="BlueprintDataSource.cs" t="Include" />
+            <e p="Currency" t="Include">
+              <e p="Currency.cs" t="Include" />
+              <e p="CurrencyData.cs" t="Include" />
+            </e>
+            <e p="CurrencyDataProvider.cs" t="Include" />
+            <e p="CurrencyDataSource.cs" t="Include" />
             <e p="GameStaticDataProvider.cs" t="Include" />
             <e p="JunkyardStaticDataLoader.cs" t="Include" />
             <e p="Loot" t="Include">
               <e p="AbstractLootCrateData.cs" t="Include" />
               <e p="AbstractLootData.cs" t="Include" />
               <e p="BlueprintLootData.cs" t="Include" />
+              <e p="CurrencyLootData.cs" t="Include" />
               <e p="ILoot.cs" t="Include" />
               <e p="ILootCrateConsumer.cs" t="Include" />
               <e p="LootCrateData.cs" t="Include" />
               <e p="LootData.cs" t="Include" />
+              <e p="LootUtilities.cs" t="Include" />
               <e p="WeightedLootCrateData.cs" t="Include" />
             </e>
             <e p="LootCrateDataProvider.cs" t="Include" />
@@ -204,6 +219,7 @@
                 <e p="StageState.cs" t="Include" />
                 <e p="Tournaments.cs" t="Include" />
                 <e p="TournamentState.cs" t="Include" />
+                <e p="Wallet.cs" t="Include" />
               </e>
               <e p="Gameplay" t="Include">
                 <e p="Nationality.cs" t="Include" />
@@ -735,6 +751,7 @@
             <e p="CSharpUtils.cs" t="Include" />
             <e p="Extensions" t="Include">
               <e p="ListExtensions.cs" t="Include" />
+              <e p="TypeExtensions.cs" t="Include" />
             </e>
             <e p="Game2DMathUtils.cs" t="Include" />
             <e p="GenericFactory.cs" t="Include" />

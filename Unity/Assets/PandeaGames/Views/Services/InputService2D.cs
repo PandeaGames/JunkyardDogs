@@ -47,10 +47,13 @@ public class InputService2D : Service
 
     protected virtual void Update()
     {
-        HandlePointers();
+        if (IsRunning)
+        {
+            HandlePointers();
 
-        if (_touchEnabled)
-            HandleTouches();
+            if (_touchEnabled)
+                HandleTouches();
+        }
     }
 
     private void HandlePointers()

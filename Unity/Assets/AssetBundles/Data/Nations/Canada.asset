@@ -12,3 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79364c380c289744f8ccf9b3740a2355, type: 3}
   m_Name: Canada
   m_EditorClassIdentifier: 
+  Distinctions:
+  - _type: 0
+    _value: 20
+  - _type: 1
+    _value: -10

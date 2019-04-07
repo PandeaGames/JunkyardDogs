@@ -26,6 +26,9 @@ public class JunkyardStaticDataLoader : ILoadableObject
         _loader.AppendProvider(Game.Instance.GetStaticDataPovider<TournamentDataProvider>());
         _loader.AppendProvider(Game.Instance.GetStaticDataPovider<TournamentFormatDataProvider>());
         _loader.AppendProvider(Game.Instance.GetStaticDataPovider<StageFormatDataProvider>());
+        _loader.AppendProvider(Game.Instance.GetStaticDataPovider<LootCrateDataProvider>());
+        _loader.AppendProvider(Game.Instance.GetStaticDataPovider<CurrencyDataProvider>());
+        _loader.AppendProvider(Game.Instance.GetStaticDataPovider<LootDataProvider>());
     }
 
     public void LoadAsync(LoadSuccess onLoadSuccess, LoadError onLoadError)

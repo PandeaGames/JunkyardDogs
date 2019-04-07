@@ -1,15 +1,6 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System;
 
-public class JunkyardUserService : AbstractUserService<JunkyardUser>, ILootCrateConsumer
+public class JunkyardUserService : AbstractUserService<JunkyardUser>
 {
-    public void Consume(AbstractLootCrateData crateData)
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public void Consume(ILoot[] crateContents)
-    {
-        throw new System.NotImplementedException();
-    }
+    
 }

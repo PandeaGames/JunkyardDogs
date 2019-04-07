@@ -5,9 +5,11 @@ using UnityEngine;
 
 namespace JunkyardDogs.Data.Balance
 {
-  //  [CreateAssetMenu(NEW_FILE_NAME, MENU_ROOT_PATH + "Balance Manager Data", 0)]
+    [CreateAssetMenu(menuName = MENU_NAME)]
     public class BalanceManagerData : ScriptableObject
     {
+        private const string MENU_NAME =  BalanceDataUtilites.BALANCE_MENU_FOLDER + "Balance Manager Data";
+        
         public const string MENU_ROOT_PATH = "Balance/";
         public const string NEW_FILE_NAME = "Balance Manager Data";
         

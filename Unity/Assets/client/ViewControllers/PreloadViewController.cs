@@ -32,18 +32,27 @@ namespace JunkyardDogs
             #if UNITY_EDITOR
             _url = "file:///";
             #endif
-            _url += Application.streamingAssetsPath + "/AssetBundles/";
+            _url += Application.streamingAssetsPath + "/";
             Debug.Log("URL: "+_url);
             AssetBundleManager.SetSourceAssetBundleURL(_url);
             
             _loadOperation = AssetBundleManager.Initialize();
         }
 
+        private bool wasCompleted = false;
+
         public override void UpdateState()
         {
-            if (_loadOperation == null || _loadOperation.IsDone())
+            if (wasCompleted)
             {
+                Debug.Log("PreloadAssetBundlesState DONE "+_loadOperation);
                 _fsm.SetState(PreloadViewStates.Loading);
+            }
+            
+            Debug.Log("PreloadAssetBundlesState "+_loadOperation);
+            if (_loadOperation != null && _loadOperation.IsDone())
+            {
+                wasCompleted = true;
             }
         }
     }

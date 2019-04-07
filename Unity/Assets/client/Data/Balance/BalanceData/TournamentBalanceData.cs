@@ -12,6 +12,7 @@ public struct TournamentBalanceObject:IStaticDataBalanceObject
     public string participants;
     public int roundPaceSeconds;
     public int seasonDelaySeconds;
+    public string lootCrateRewards;
     
     public string GetDataUID()
     {

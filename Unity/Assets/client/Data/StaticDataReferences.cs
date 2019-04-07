@@ -117,6 +117,11 @@ namespace JunkyardDogs.Data
     {
     }
     
+    [Serializable]
+    public class CurrencyStaticDataReference : StaticDataReference<CurrencyData, CurrencyData, CurrencyStaticDataReference,CurrencyDataProvider>
+    {
+    }
+    
     /*------------------------------------------------------------------*/
     /*----------------------------- Attributes -------------------------*/
     /*------------------------------------------------------------------*/
@@ -252,6 +257,14 @@ namespace JunkyardDogs.Data
     public class LootCrateStaticDataReferenceAttribute : StaticDataReferenceAttribute
     {
         public LootCrateStaticDataReferenceAttribute() : base(LootCrateDataProvider.FULL_PATH, typeof(AbstractLootCrateData))
+        {
+            
+        }
+    }
+    
+    public class CurrencyStaticDataReferenceAttribute : StaticDataReferenceAttribute
+    {
+        public CurrencyStaticDataReferenceAttribute() : base(CurrencyDataProvider.FULL_PATH, typeof(CurrencyData))
         {
             
         }

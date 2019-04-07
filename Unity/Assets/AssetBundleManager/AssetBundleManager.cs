@@ -78,7 +78,16 @@ namespace AssetBundles
 		// AssetBundleManifest object which can be used to load the dependecies and check suitable assetBundle variants.
 		public static AssetBundleManifest AssetBundleManifestObject
 		{
-			set {m_AssetBundleManifest = value; }
+			set
+			{
+				Debug.Log("AssetBundleManifestObject set "+value);
+				m_AssetBundleManifest = value;
+			}
+		}
+
+		public void Start()
+		{
+			Debug.Log("AssetBundleManager start ");
 		}
 	
 		private static void Log(LogType logType, string text)
@@ -246,6 +255,7 @@ namespace AssetBundles
 		// Remaps the asset bundle name to the best fitting asset bundle variant.
 		static protected string RemapVariantName(string assetBundleName)
 		{
+			Debug.Log("RemapVariantName "+assetBundleName + " m_AssetBundleManifest: "+m_AssetBundleManifest);
 			string[] bundlesWithVariant = m_AssetBundleManifest.GetAllAssetBundlesWithVariant();
 
 			string[] split = assetBundleName.Split('.');

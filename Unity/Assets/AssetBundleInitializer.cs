@@ -6,7 +6,11 @@ using UnityEngine;
 public class AssetBundleInitializer : MonoBehaviour {
 
     // Use this for initialization
-    void Start() => AssetBundleManager.Initialize();
+    private void Start()
+    {
+	    Debug.Log("AssetBundleInitializer");
+	    AssetBundleManager.Initialize();
+    }
 
     // Update is called once per frame
     void Update () {

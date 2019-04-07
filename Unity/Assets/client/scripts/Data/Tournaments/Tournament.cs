@@ -4,6 +4,7 @@ using Data;
 using JunkyardDogs.Data;
 using JunkyardDogs.Data.Balance;
 using PandeaGames.Data.WeakReferences;
+using UnityEngine.Serialization;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -24,12 +25,8 @@ public class Tournament : ScriptableObject, IStaticDataBalance<TournamentBalance
     [SerializeField]
     private int _seasonDelaySeconds;
 
-    [Header("Rewards")]
-    [SerializeField]
-    private SpecificationCatalogue _rewards;
-
-    [SerializeField] 
-    private int _goldReward;
+    [SerializeField, LootCrateStaticDataReference]
+    private List<LootCrateStaticDataReference> _lootCrateRewardsPerStage;
 
     public int RoundPaceSeconds
     {
@@ -46,22 +43,17 @@ public class Tournament : ScriptableObject, IStaticDataBalance<TournamentBalance
     {
         get { return name; }
     }
-    
-    public int GoldReward
-    {
-        get { return _goldReward; }
-    }
-    
-    public SpecificationCatalogue Rewards
-    {
-        get { return _rewards; }
-    }
 
     private WeakReference _reference;
 
     public List<ParticipantStaticDataReference> Participants
     {
         get { return _participants; }
+    }
+    
+    public List<LootCrateStaticDataReference> LootCrateRewardsPerStage
+    {
+        get { return _lootCrateRewardsPerStage; }
     }
     
     public TournamentState GenerateState()
@@ -80,6 +72,7 @@ public class Tournament : ScriptableObject, IStaticDataBalance<TournamentBalance
     {
         _format = new TournamentFormatStaticDataReference();
         _participants = new List<ParticipantStaticDataReference>();
+        _lootCrateRewardsPerStage = new List<LootCrateStaticDataReference>();
 
         _roundPaceSeconds = balance.roundPaceSeconds;
         _seasonDelaySeconds = balance.seasonDelaySeconds;
@@ -94,6 +87,15 @@ public class Tournament : ScriptableObject, IStaticDataBalance<TournamentBalance
             reference.ID = participantId;
             _participants.Add(reference);
         }
+        
+        string[] lootCrateRewards = balance.lootCrateRewards.Split(BalanceData.ListDelimiterChar);
+
+        foreach (string lootCrateId in lootCrateRewards)
+        {
+            LootCrateStaticDataReference reference = new LootCrateStaticDataReference();
+            reference.ID = lootCrateId;
+            _lootCrateRewardsPerStage.Add(reference);
+        }
     }
 
     public TournamentBalanceObject GetBalance()
@@ -105,6 +107,7 @@ public class Tournament : ScriptableObject, IStaticDataBalance<TournamentBalance
         balance.roundPaceSeconds = _roundPaceSeconds;
         balance.seasonDelaySeconds = _seasonDelaySeconds;
         balance.participants = string.Join(BalanceData.ListDelimiter, _participants);
+        balance.lootCrateRewards = string.Join(BalanceData.ListDelimiter, _lootCrateRewardsPerStage);
 
         return balance;
     }

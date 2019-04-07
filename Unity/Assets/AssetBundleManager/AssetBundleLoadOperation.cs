@@ -208,7 +208,9 @@ namespace AssetBundles
 			
 			if (m_Request != null && m_Request.isDone)
 			{
-				AssetBundleManager.AssetBundleManifestObject = GetAsset<AssetBundleManifest>();
+				AssetBundleManifest manifest = GetAsset<AssetBundleManifest>();
+				Debug.Log("AssetBundleLoadManifestOperation DONE "+manifest);
+				AssetBundleManager.AssetBundleManifestObject = manifest;
 				return false;
 			}
 			else

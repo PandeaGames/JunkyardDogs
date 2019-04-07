@@ -2,6 +2,7 @@
 using PandeaGames.Views.ViewControllers;
 using AssetBundles;
 using PandeaGames;
+using UnityEngine;
 
 namespace JunkyardDogs
 {
@@ -23,8 +24,10 @@ namespace JunkyardDogs
 
         public override void UpdateState()
         {
+            Debug.Log("LoadAssetBundlesState UpdateState");
             if (_loadOperation == null || _loadOperation.IsDone())
             {
+                Debug.Log("LoadAssetBundlesState UpdateState DONE");
                 _fsm.SetState(LoadingStates.UserData);
             }
         }

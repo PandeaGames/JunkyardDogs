@@ -5,6 +5,7 @@
 //W = M & G
 //M = D * V
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
@@ -15,6 +16,7 @@ using JunkyardDogs.Simulation.Behavior;
 using JunkyardDogs.Components;
 using JunkyardDogs.Simulation.Simulation;
 using Bot = JunkyardDogs.Components.Bot;
+using Random = UnityEngine.Random;
 
 namespace JunkyardDogs.Simulation
 {
@@ -23,6 +25,38 @@ namespace JunkyardDogs.Simulation
         Red,
         Blue
     }
+
+    public enum DistinctionType
+    {
+        Attack,
+        Weight,
+        Defense
+    }
+
+    [Serializable]
+    public struct Distinction
+    {
+        [SerializeField] private DistinctionType _type;
+
+        [SerializeField] private int _value;
+
+        public DistinctionType Type
+        {
+            get { return _type; }
+            set { _type = value; }
+        }
+
+        public int Value
+        {
+        get {
+            return _value;
+        }
+
+        set {
+            _value = value;
+        }
+    }
+}
     
     public class SimulationService : Service
     {   

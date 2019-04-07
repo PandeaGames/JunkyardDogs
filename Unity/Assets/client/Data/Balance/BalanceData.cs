@@ -4,9 +4,11 @@ using UnityEngine;
 
 namespace JunkyardDogs.Data.Balance
 {
-    [CreateAssetMenu]
+    [CreateAssetMenu(menuName = MENU_NAME)]
     public abstract class BalanceData: ScriptableObject
     {
+        private const string MENU_NAME =  BalanceDataUtilites.BALANCE_MENU_FOLDER + "Balance Data";
+        
         public const string ListDelimiter = ",";
         public const char ListDelimiterChar = ',';
         public const char DataDelimiterChar = ':';

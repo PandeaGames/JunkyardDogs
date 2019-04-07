@@ -15,9 +15,9 @@ MonoBehaviour:
   _loot:
   - loot:
       _id: PlateLootItem
-    weight: 10
+    weight: 100
   - loot:
       _id: PlateLootItem
-    weight: 1000
+    weight: 10
   _lootQuantity: 1
-  _pickWithRepetition: 1
+  _pickWithRepetition: 0

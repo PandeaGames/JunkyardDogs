@@ -86,21 +86,9 @@ public class EventDialog : Dialog<EventDialogViewModel>
     private void OnCollectRewards()
     {
         Tournament tournament = _viewModel.TournamentReference.Data as Tournament;
-        SpecificationCatalogue rewards = tournament.Rewards;
-        List<Component> components = new List<Component>();
-        _user.Cash += tournament.GoldReward;
-        foreach (var product in rewards.Products)
-        {
-            Component component =
-            ManufacturerUtils.BuildComponent(rewards.Manufacturer, product.Specification, product.Material);
-            components.Add(component);
-            _user.AddComponent(component);
-            if (components.Count >= rewards.Products.Length)
-            {
-                _user.Tournaments.CompleteTournament(tournament.Guid);
-                Game.Instance.GetService<JunkyardUserService>().Save();
-                Close();
-            }
-        }
+        _user.Consume(tournament.LootCrateRewardsPerStage[0].Data, 0);
+        _user.Tournaments.CompleteTournament(tournament.Guid);
+        Game.Instance.GetService<JunkyardUserService>().Save();
+        Close();
     }
 }

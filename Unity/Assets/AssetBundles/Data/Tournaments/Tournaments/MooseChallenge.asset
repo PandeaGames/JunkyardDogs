@@ -19,5 +19,6 @@ MonoBehaviour:
   - _id: FlorianParticipation
   _roundPaceSeconds: 1000
   _seasonDelaySeconds: 3000
-  _rewards: {fileID: 11400000, guid: 096996d13578a4945a59e020d04873fa, type: 2}
-  _goldReward: 100
+  _lootCrateRewardsPerStage:
+  - _id: JunkyardCrateData
+  - _id: WeightedJunkyardCrate

@@ -34,7 +34,18 @@ namespace PandeaGames.Data.Static
             {
                 Object requestResult = request.GetAsset<UnityEngine.Object>();
                 IStaticDataDirectorySource<TData> source = requestResult as IStaticDataDirectorySource<TData>;
-                onLoadSuccess(source);
+
+                if (source == null)
+                {
+                    onLoadFailed(new LoadException(string.Format("Failed to cast loaded data source at path '{0}' into source type {1} and data type {2}", 
+                        _path,
+                        typeof(IStaticDataDirectorySource),
+                        typeof(TData))));
+                }
+                else
+                {
+                    onLoadSuccess(source);
+                }
             });
         }
     }

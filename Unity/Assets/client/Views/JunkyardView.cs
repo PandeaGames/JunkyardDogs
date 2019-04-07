@@ -33,19 +33,19 @@ namespace JunkyardDogs.Views
             _junkyardViewModel.OnTakeJunk -= OnTakeJunk;
         }
 
-        private void OnTakeJunk(Component component)
+        private void OnTakeJunk(ILoot[] loot)
         {
             TakeJunkDialogViewModel vm = Game.Instance.GetViewModel<TakeJunkDialogViewModel>();
-            vm.SetData(new TakeJunkDialogViewModel.Data(component));
+            vm.SetData(new TakeJunkDialogViewModel.Data(loot));
             vm.OnClose += OnTakeJunkClose; 
             FindServiceManager().GetService<DialogService>().DisplayDialog<TakeJunkDialog>(vm);
         }
 
         private void OnTakeJunkClose(TakeJunkDialogViewModel dialog)
         {
-            if (dialog.ShouldTakeComponent)
+            if (dialog.ShouldTakeLoot)
             {
-                _userModel.UserData.AddComponent(dialog.ModelData.Component);
+                _userModel.UserData.Consume(dialog.ModelData.Loot, 0);
             }
         }
     }

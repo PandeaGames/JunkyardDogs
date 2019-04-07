@@ -25,16 +25,39 @@ public class LootCrateData : AbstractLootCrateData, IStaticDataBalance<LootCrate
     public void ApplyBalance(LootCrateBalanceObject balance)
     {
         name = balance.name;
+        List<LootStaticDataReference> list = new List<LootStaticDataReference>();
 
-        string[] lootIds = balance.loot.Split(BalanceData.ListDelimiterChar);
-        _lootData = new LootStaticDataReference[_lootData.Length];
+        ImportLoot(list, balance.Loot01);
+        ImportLoot(list, balance.Loot02);
+        ImportLoot(list, balance.Loot03);
+        ImportLoot(list, balance.Loot04);
+        ImportLoot(list, balance.Loot05);
+        ImportLoot(list, balance.Loot06);
+        ImportLoot(list, balance.Loot07);
+        ImportLoot(list, balance.Loot08);
+        ImportLoot(list, balance.Loot09);
+        ImportLoot(list, balance.Loot10);
+        ImportLoot(list, balance.Loot11);
+        ImportLoot(list, balance.Loot12);
+        ImportLoot(list, balance.Loot13);
+        ImportLoot(list, balance.Loot14);
+        ImportLoot(list, balance.Loot15);
+        ImportLoot(list, balance.Loot16);
+        ImportLoot(list, balance.Loot17);
+        ImportLoot(list, balance.Loot18);
+        ImportLoot(list, balance.Loot19);
+        ImportLoot(list, balance.Loot20);
+        
+        _lootData = list.ToArray();
+    }
 
-        for (int i = 0;i<lootIds.Length; i++)
+    private void ImportLoot(List<LootStaticDataReference> list, string lootId)
+    {
+        if (!string.IsNullOrEmpty(lootId))
         {
-            string lootId = lootIds[i];
             LootStaticDataReference reference = new LootStaticDataReference();
             reference.ID = lootId;
-            _lootData[i] = reference;
+            list.Add(reference);
         }
     }
 
@@ -42,7 +65,7 @@ public class LootCrateData : AbstractLootCrateData, IStaticDataBalance<LootCrate
     {
         LootCrateBalanceObject balance = new LootCrateBalanceObject();
         balance.name = name;
-        balance.loot = string.Join(BalanceData.ListDelimiter, new List<LootStaticDataReference>(_lootData));
+        //balance.loot = string.Join(BalanceData.ListDelimiter, new List<LootStaticDataReference>(_lootData));
 
         return balance;
     }

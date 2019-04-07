@@ -22,12 +22,15 @@ public class TakeJunkDialog : Dialog<TakeJunkDialogViewModel>
 
     protected override void Initialize()
     {
-        _componentIcon.sprite = _spriteFactory.GetAsset( _viewModel.ModelData.Component.SpecificationReference.Data);
-        _componentText.text = _viewModel.ModelData.Component.SpecificationReference.Data.name;
+        ILoot loot = _viewModel.ModelData.Loot[0];
+        Component component = LootUtilities.TryCreateComponentFromLoot(loot, 0);
+        
+        _componentIcon.sprite = _spriteFactory.GetAsset( component.SpecificationReference.Data);
+        _componentText.text = component.SpecificationReference.Data.name;
         
         _takeJunkButton.onClick.AddListener(() =>
         {
-            _viewModel.ShouldTakeComponent = true;
+            _viewModel.ShouldTakeLoot = true;
             Close();
         });
     }

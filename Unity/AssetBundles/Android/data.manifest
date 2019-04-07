@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 2414511859
+CRC: 569724127
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: e7a616969a84744af031c0feb953fa7c
+    Hash: e8e0ec798939e1c11ee73692a9774c1d
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 60d409d468aba2394f343c04d2140a84
+    Hash: 25b4c7047d110aade806a9b63fa422f1
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -40,6 +40,8 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: 0833d720b03f4ba4691b17c7949e2ab1, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: 746d52301fd24baab51a18e8bbbbdce6, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: 42853550c9f84b91b9e53ca6721ff6a3, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: eba0c660f2ee447f839ec2ea62cb54ff, type: 3}
@@ -52,11 +54,15 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: 4ae6ae314c73cc144a7e07e999e16e28, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: 47335a9182524d01a0b8486cdce0c3bb, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: b1613eb13f2945d780d8fef25fba5f7f, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: d6ed93d1a6684533ac99de5e499279ac, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 30ba71e198fe48a395dd05bd9891eb75, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: f204b2e10f2149079e468e4219b62d51, type: 3}
 - Class: 114
   Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 - Class: 114
@@ -82,6 +88,8 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: 1e898c12224211543892380af52f98a0, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: 1b3a6d12741a47b08c412e63ef4f4669, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: 394b2a32c8afa0749a8b9719c2f85a99, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 08900b325c734481bbd6fa27474d898f, type: 3}
@@ -100,6 +108,8 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: eb4f58339cb9499fafb3ba9bc4567fd9, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: 3fa3ed333c724892b14fb8f405b5376d, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: a242256388ad493fa8f4e8860f33f53f, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: dbd048a32ce64ebc85d6e51aeb3fa178, type: 3}
@@ -111,6 +121,8 @@ ClassTypes:
   Script: {fileID: 11500000, guid: f48d532433a545589921444de8dc653c, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 6a2f233495ea4338acab41212a5c01ac, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: eae09144a768475a87e229a45c190330, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: fc2de154d0034630ac252617977fba32, type: 3}
 - Class: 114
@@ -154,6 +166,8 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: aad5f737036a81c4ea43a9404e168ba5, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: 618f4047fb694953ab58517c512655b1, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: 2c569057ac781074b8ae652816158b37, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 79f73177c4a6cbb4797db2d81c644424, type: 3}
@@ -163,6 +177,10 @@ ClassTypes:
   Script: {fileID: 82445006, guid: 16ea688720e474944a4e808112b45ba4, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 4616b887cfd7d074b9479c1aa29e691a, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: bc3dd8979f88757499bad0e14d31b1ec, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: d9beadb7030a4a6496a71d2ff3c963f8, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 0ea50dc75883c514b9a275b478e7382a, type: 3}
 - Class: 114
@@ -181,6 +199,8 @@ ClassTypes:
   Script: {fileID: 11500000, guid: fe60c5f819838e2409f2638a7dd4da28, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: bfc0cc29a9b24951818a061bbd526b5c, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: e3651639d7ae4aa5ab9bf16466bd1e81, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 876302494e2244cc88264d649be53ee5, type: 3}
 - Class: 114
@@ -208,6 +228,8 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: 2d402aaaf48d4146860139ffc98dc85c, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: b67b1eda08874bf983a80ad0d047eb58, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: 750d20fa396d80145ad933ba83bf9665, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: e774f14bdec23194f9db265633ad69b8, type: 3}
@@ -230,11 +252,15 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: a1bbb60d2b394981b6808874b93bada2, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: a9dc921d194b45688987bfb9d478426b, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: 2779725d2f4d54f488ab381fd831228d, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: a514d07d94b74691ac0492753c971366, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 8d05b97d3903fbd4c93af04f4dfc5590, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 1084621e10ed45758ef4ba69e70847d5, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: d036234ef5194ef883322bffbdca4638, type: 3}
 - Class: 114
@@ -260,17 +286,9 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: 1fb8e5bf0056419d90df7fa42680438a, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: 701641cfdc7b4faf9f6d6a9574108bb6, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: 291fecdf8d28f01458f089d71f8921e3, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: eae09144a768475a87e229a45c190330, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: e3651639d7ae4aa5ab9bf16466bd1e81, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: f204b2e10f2149079e468e4219b62d51, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: b67b1eda08874bf983a80ad0d047eb58, type: 3}
-- Class: 114
-  Script: {fileID: 11500000, guid: a9dc921d194b45688987bfb9d478426b, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 128
@@ -283,6 +301,7 @@ ClassTypes:
   Script: {instanceID: 0}
 Assets:
 - Assets/AssetBundles/Data/Tournaments/Formats/SingleElim_1g.asset
+- Assets/AssetBundles/Data/Currency/CurrencyDataSource.asset
 - Assets/AssetBundles/Data/Tournaments/Tournaments/MooseChallenge.asset
 - Assets/TextMesh Pro/Examples & Extras/Resources/Color Gradient Presets/Light to
   Dark Green - Vertical.asset
@@ -325,6 +344,7 @@ Assets:
 - Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset
 - Assets/AssetBundles/Data/Simulation/Behavior/AttackLeft.asset
 - Assets/BalanceData/ChassisBlueprintBalanceData.asset
+- Assets/AssetBundles/Data/Loot/LootDataSource.asset
 - Assets/AssetBundles/Data/Products/Plating/Plate_Thickness02.asset
 - Assets/TextMesh Pro/Editor Resources/TMPro_DarkSkin.guiskin
 - Assets/StompyRobot/SRDebugger/UI/Styles/DefaultConsoleAltRow.asset
@@ -348,6 +368,7 @@ Assets:
 - Assets/AssetBundles/Art/Components/BotMaterialFactory.asset
 - Assets/AssetBundles/Data/Tournaments/Results/Single.asset
 - Assets/AssetBundles/Data/Products/Skylabs/Plating/PremiumSteelPlate.asset
+- Assets/AssetBundles/Data/Loot/LootCrateDataSource.asset
 - Assets/AssetBundles/Data/TestData/Tournaments/UserBotMooseChallengeTest.asset
 - Assets/BalanceData/AgentBlueprintBalanceData.asset
 - Assets/StompyRobot/SRDebugger/usr/Resources/SRDebugger/Settings.asset

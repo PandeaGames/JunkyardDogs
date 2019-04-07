@@ -13,15 +13,20 @@ namespace AssetBundles
 	{
 		public static string overloadedDevelopmentServerURL = "";
 	
-		public static void BuildAssetBundles()
+		public static void BuildAssetBundles(string rootPath)
 		{
 			// Choose the output path according to the build target.
-			string outputPath = Path.Combine(Utility.AssetBundlesOutputPath,  Utility.GetPlatformName());
+			string outputPath = Path.Combine(rootPath,  Utility.GetPlatformName());
 			if (!Directory.Exists(outputPath) )
 				Directory.CreateDirectory (outputPath);
 	
 			//@TODO: use append hash... (Make sure pipeline works correctly with it.)
 			BuildPipeline.BuildAssetBundles (outputPath, BuildAssetBundleOptions.None, EditorUserBuildSettings.activeBuildTarget);
+		}
+		
+		public static void BuildAssetBundles()
+		{
+			BuildAssetBundles(Utility.AssetBundlesOutputPath);
 		}
 	
 		public static void WriteServerURL()
