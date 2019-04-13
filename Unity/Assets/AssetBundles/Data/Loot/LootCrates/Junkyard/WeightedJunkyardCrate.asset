@@ -17,7 +17,7 @@ MonoBehaviour:
       _id: PlateLootItem
     weight: 100
   - loot:
-      _id: PlateLootItem
-    weight: 10
+      _id: JagerChassisLoot
+    weight: 50
   _lootQuantity: 1
   _pickWithRepetition: 0

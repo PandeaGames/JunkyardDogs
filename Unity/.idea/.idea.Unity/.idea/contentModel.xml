@@ -76,6 +76,7 @@
               <e p="BalanceData" t="Include">
                 <e p="AgentBlueprintBalanceData.cs" t="Include" />
                 <e p="BlueprintBalanceData.cs" t="Include" />
+                <e p="BlueprintLootBalanceData.cs" t="Include" />
                 <e p="BotBlueprintBalanceData.cs" t="Include" />
                 <e p="ChassisBlueprintBalanceData.cs" t="Include" />
                 <e p="CompetitorBlueprintBalanceData.cs" t="Include" />
@@ -88,6 +89,7 @@
                 <e p="PhysicalSpecificationBalanceData.cs" t="Include" />
                 <e p="PlateBalanceData.cs" t="Include" />
                 <e p="PlateBlueprintBalanceData.cs" t="Include" />
+                <e p="SingleSourceParticipantBalanceData.cs" t="Include" />
                 <e p="SpecificationBalanceData.cs" t="Include" />
                 <e p="TournamentBalanceData.cs" t="Include" />
                 <e p="TournamentFormatBalanceData.cs" t="Include" />

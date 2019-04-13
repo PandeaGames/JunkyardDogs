@@ -107,6 +107,8 @@ public class ChassisBlueprintData : PhysicalComponentBlueprintData<Chassis>, ISt
         _specification.ID = balance.specification;
         _manufacturer = new ManufacturerStaticDataReference();
         _manufacturer.ID = balance.manufacturer;
+        Material = new MaterialStaticDataReference();
+        Material.ID = balance.material;
         
         _topArmament = new WeaponProcessorBlueprintStaticDataReference();
         _topArmament.ID = balance.topArmament;
@@ -131,6 +133,7 @@ public class ChassisBlueprintData : PhysicalComponentBlueprintData<Chassis>, ISt
         balance.name = name;
         balance.specification = _specification == null ? string.Empty : _specification.ID;
         balance.manufacturer = _manufacturer == null ? string.Empty : _manufacturer.ID;
+        
 
         balance.topArmament = _topArmament == null ? string.Empty : _topArmament.ID;
         balance.leftArmament = _leftArmament == null ? string.Empty : _leftArmament.ID;

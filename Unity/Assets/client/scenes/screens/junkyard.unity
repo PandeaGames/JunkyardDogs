@@ -217,7 +217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lootCrate:
-    _id: JunkyardCrateData
+    _id: WeightedJunkyardCrate
   _availability: 1
 --- !u!114 &19647738
 MonoBehaviour:
@@ -361,7 +361,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lootCrate:
-    _id: JunkyardCrateData
+    _id: WeightedJunkyardCrate
   _availability: 1
 --- !u!114 &121132167
 MonoBehaviour:
@@ -505,7 +505,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lootCrate:
-    _id: JunkyardCrateData
+    _id: WeightedJunkyardCrate
   _availability: 1
 --- !u!114 &154749527
 MonoBehaviour:
@@ -649,7 +649,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lootCrate:
-    _id: JunkyardCrateData
+    _id: WeightedJunkyardCrate
   _availability: 1
 --- !u!114 &166901885
 MonoBehaviour:
@@ -793,7 +793,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lootCrate:
-    _id: JunkyardCrateData
+    _id: WeightedJunkyardCrate
   _availability: 1
 --- !u!114 &175360503
 MonoBehaviour:
@@ -937,7 +937,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lootCrate:
-    _id: JunkyardCrateData
+    _id: WeightedJunkyardCrate
   _availability: 1
 --- !u!114 &231847468
 MonoBehaviour:
@@ -1081,7 +1081,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lootCrate:
-    _id: JunkyardCrateData
+    _id: WeightedJunkyardCrate
   _availability: 1
 --- !u!114 &233452682
 MonoBehaviour:
@@ -1225,7 +1225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lootCrate:
-    _id: JunkyardCrateData
+    _id: WeightedJunkyardCrate
   _availability: 1
 --- !u!114 &279678015
 MonoBehaviour:
@@ -1369,7 +1369,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lootCrate:
-    _id: JunkyardCrateData
+    _id: WeightedJunkyardCrate
   _availability: 1
 --- !u!114 &338068278
 MonoBehaviour:
@@ -1513,7 +1513,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lootCrate:
-    _id: JunkyardCrateData
+    _id: WeightedJunkyardCrate
   _availability: 1
 --- !u!114 &502908205
 MonoBehaviour:
@@ -1781,7 +1781,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lootCrate:
-    _id: JunkyardCrateData
+    _id: WeightedJunkyardCrate
   _availability: 1
 --- !u!114 &615110469
 MonoBehaviour:
@@ -1925,7 +1925,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lootCrate:
-    _id: JunkyardCrateData
+    _id: WeightedJunkyardCrate
   _availability: 1
 --- !u!114 &763986095
 MonoBehaviour:
@@ -2069,7 +2069,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lootCrate:
-    _id: JunkyardCrateData
+    _id: WeightedJunkyardCrate
   _availability: 1
 --- !u!114 &824497175
 MonoBehaviour:
@@ -2274,7 +2274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lootCrate:
-    _id: JunkyardCrateData
+    _id: WeightedJunkyardCrate
   _availability: 1
 --- !u!114 &1392715699
 MonoBehaviour:
@@ -2562,7 +2562,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lootCrate:
-    _id: JunkyardCrateData
+    _id: WeightedJunkyardCrate
   _availability: 1
 --- !u!114 &1449235011
 MonoBehaviour:
@@ -2706,7 +2706,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lootCrate:
-    _id: JunkyardCrateData
+    _id: WeightedJunkyardCrate
   _availability: 1
 --- !u!114 &1478493789
 MonoBehaviour:
@@ -2850,7 +2850,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lootCrate:
-    _id: JunkyardCrateData
+    _id: WeightedJunkyardCrate
   _availability: 1
 --- !u!114 &1582489674
 MonoBehaviour:
@@ -2994,7 +2994,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lootCrate:
-    _id: JunkyardCrateData
+    _id: WeightedJunkyardCrate
   _availability: 1
 --- !u!114 &1670084061
 MonoBehaviour:
@@ -3138,7 +3138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lootCrate:
-    _id: JunkyardCrateData
+    _id: WeightedJunkyardCrate
   _availability: 1
 --- !u!114 &1716849726
 MonoBehaviour:
@@ -3412,7 +3412,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lootCrate:
-    _id: JunkyardCrateData
+    _id: WeightedJunkyardCrate
   _availability: 1
 --- !u!114 &2007176206
 MonoBehaviour:

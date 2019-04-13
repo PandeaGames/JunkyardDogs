@@ -9,14 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fb8e5bf0056419d90df7fa42680438a, type: 3}
-  m_Name: JagerBot
+  m_Script: {fileID: 11500000, guid: 1084621e10ed45758ef4ba69e70847d5, type: 3}
+  m_Name: NewCrateData
   m_EditorClassIdentifier: 
-  _manufacturer:
-    _id: Skylabs
-  _chassis:
-    _id: JagerChassis
-  _motherboard:
-    _id: HimmelMotherboard
-  _agent:
-    _id: JagerAgent
+  _lootData:
+  - _id: PlateLootItem
+  - _id: PlateLootItem
+  - _id: JagerChassisLoot

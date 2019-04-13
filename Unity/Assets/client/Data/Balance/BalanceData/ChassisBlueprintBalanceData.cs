@@ -9,6 +9,7 @@ public struct ChassisBlueprintBalanceObject:IStaticDataBalanceObject
     public string name;
     public string specification;
     public string manufacturer;
+    public string material;
     
     public string frontPlates;
     public string leftPlates;
@@ -28,14 +29,15 @@ public struct ChassisBlueprintBalanceObject:IStaticDataBalanceObject
     }
 }
 
-[CreateAssetMenu]
+[CreateAssetMenu(menuName = MENU_NAME)]
 public class ChassisBlueprintBalanceData : StaticDataReferenceBalanceData<
     BlueprintDataSource, 
-    BlueprintDataBase, 
-    BlueprintBalanceObject,
+    BlueprintDataBase,
     ChassisBlueprintData, 
     ChassisBlueprintBalanceObject>
 {
+    private const string MENU_NAME =  BalanceDataUtilites.BALANCE_MENU_FOLDER + "ChassisBlueprintBalanceData";
+
     public const string DATA_PATH = "Assets/AssetBundles/Data/Blueprints/Components/Chassis/";
     
     public override string GetUIDFieldName()

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30ba71e198fe48a395dd05bd9891eb75, type: 3}
   m_Name: ChassisBlueprintBalanceData
   m_EditorClassIdentifier: 
-  TableName: 
-  AllowImport: 0
-  AllowDataCreationOnImport: 0
-  _dataList: {fileID: 0}
+  TableName: Chassis Blueprints
+  AllowImport: 1
+  AllowDataCreationOnImport: 1
+  _dataList: {fileID: 11400000, guid: b1f8de3b0ccb0544c87198ee00eca05e, type: 2}

@@ -16,3 +16,5 @@ MonoBehaviour:
     _id: Deagle
   _manufacturer:
     _id: Skylabs
+  Material:
+    _id: Copper

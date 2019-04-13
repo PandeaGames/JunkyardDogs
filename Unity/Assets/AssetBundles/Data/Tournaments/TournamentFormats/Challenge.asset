@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _participants: 2
   _stages:
-  - _format:
+  - format:
       _id: SingleElim_1g

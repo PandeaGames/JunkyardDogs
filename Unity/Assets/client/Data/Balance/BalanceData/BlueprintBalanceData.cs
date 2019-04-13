@@ -15,14 +15,14 @@ public struct BlueprintBalanceObject:IStaticDataBalanceObject
     }
 }
 
-[CreateAssetMenu]
+[CreateAssetMenu(menuName = MENU_NAME)]
 public class BlueprintBalanceData : StaticDataReferenceBalanceData<
     BlueprintDataSource, 
-    BlueprintDataBase, 
-    BlueprintBalanceObject,
+    BlueprintDataBase,
     BlueprintDataBase, 
     BlueprintBalanceObject>
 {
+    private const string MENU_NAME =  BalanceDataUtilites.BALANCE_MENU_FOLDER + "BlueprintBalanceData";
     public const string DATA_PATH = "Assets/AssetBundles/Data/Blueprints";
     
     public override string GetUIDFieldName()

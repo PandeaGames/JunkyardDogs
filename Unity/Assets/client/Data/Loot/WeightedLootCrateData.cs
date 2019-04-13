@@ -124,6 +124,7 @@ public class WeightedLootCrateData : AbstractLootCrateData, IStaticDataBalance<W
             LootStaticDataReference lootItemReference = new LootStaticDataReference();
             lootItemReference.ID = lootId;
             item.weight = weight;
+            item.loot = lootItemReference;
             list.Add(item);
         }
     }

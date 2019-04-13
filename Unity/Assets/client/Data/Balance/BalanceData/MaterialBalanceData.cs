@@ -15,9 +15,15 @@ public struct MaterialBalanceObject:IStaticDataBalanceObject
         return name;
     }
 }
-[CreateAssetMenu]
-public class MaterialBalanceData : StaticDataReferenceBalanceData<MaterialDataSource, Material, MaterialBalanceObject, Material, MaterialBalanceObject>
+[CreateAssetMenu(menuName = MENU_NAME)]
+public class MaterialBalanceData : StaticDataReferenceBalanceData<
+    MaterialDataSource, 
+    Material,
+    Material, 
+    MaterialBalanceObject>
 {
+    private const string MENU_NAME =  BalanceDataUtilites.BALANCE_MENU_FOLDER + "MaterialBalanceData";
+
     public const string DATA_PATH = "Assets/AssetBundles/Data/Products/Materials/";
     
     protected override string GetNewDataFolder()

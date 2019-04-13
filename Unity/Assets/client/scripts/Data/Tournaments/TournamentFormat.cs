@@ -13,14 +13,14 @@ public class TournamentStage
 	private TournamentSeeding _seeding;*/
 	
 	[SerializeField, StageFormatStaticDataReference] 
-	private StageFormatStaticDataReference _format;
+	public StageFormatStaticDataReference format;
 
 	/*[SerializeField]
 	private TournamentResult _result;*/
 
 	public StageState GenerateState(int participants)
 	{
-		return _format.Data.GenerateState(participants);
+		return format.Data.GenerateState(participants);
 	}
 	
 	public StageState GenerateState(StageState lastStage)
@@ -74,8 +74,8 @@ public class TournamentFormat : ScriptableObject, IStaticDataBalance<TournamentF
 	{
 		name = balance.name;
 		_participants = balance.participants;
-		StagesContainer stagesContainer = JsonUtility.FromJson<StagesContainer>(balance.stages);
-		_stages = stagesContainer.stages;
+		//StagesContainer stagesContainer = JsonUtility.FromJson<StagesContainer>(balance.stages);
+		//_stages = stagesContainer.stages;
 	}
 
 	public TournamentFormatBalanceObject GetBalance()
@@ -84,11 +84,29 @@ public class TournamentFormat : ScriptableObject, IStaticDataBalance<TournamentF
 
 		StagesContainer stagesContainer = new StagesContainer();
 		stagesContainer.stages = _stages;
+
+		_stages = new List<TournamentStage>();
 		
-		balance.stages = JsonUtility.ToJson(stagesContainer);
+		ImportStage(_stages, balance.stage_01);
+		ImportStage(_stages, balance.stage_02);
+		ImportStage(_stages, balance.stage_03);
+		ImportStage(_stages, balance.stage_04);
+		ImportStage(_stages, balance.stage_05);
+		
 		balance.name = name;
 		balance.participants = _participants;
 		
 		return balance;
+	}
+
+	private void ImportStage(List<TournamentStage> tournamentStage, string stageId)
+	{
+		if (!string.IsNullOrEmpty(stageId))
+		{
+			TournamentStage stage = new TournamentStage();
+			stage.format = new StageFormatStaticDataReference();
+			stage.format.ID = stageId;
+			tournamentStage.Add(stage);
+		}
 	}
 }

@@ -16,14 +16,15 @@ namespace JunkyardDogs.Data.Balance
         }
     }
     
-    [CreateAssetMenu]
+    [CreateAssetMenu(menuName = MENU_NAME)]
     public class PlateBalanceData : StaticDataReferenceBalanceData<
         SpecificationDataSource, 
         Specification,
-        SpecificationBalanceObject, 
         Plate, 
         PlateBalanceObject>
     {
+
+        private const string MENU_NAME =  BalanceDataUtilites.BALANCE_MENU_FOLDER + "PlateBalanceData";
         public const string DATA_PATH = "Assets/AssetBundles/Data/Products/Plating/";
 
         protected override string GetNewDataFolder()

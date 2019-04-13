@@ -16,13 +16,32 @@ MonoBehaviour:
     _id: Mamoth
   _manufacturer:
     _id: Skylabs
+  Material:
+    _id: Steel
   _frontPlates:
   - _id: JagerPlate
-  _leftPlates: []
-  _rightPlates: []
-  _backPlates: []
-  _topPlates: []
-  _bottomPlates: []
+  - _id: JagerPlate
+  - _id: JagerPlate
+  - _id: JagerPlate
+  - _id: JagerPlate
+  _leftPlates:
+  - _id: JagerPlate
+  - _id: JagerPlate
+  - _id: JagerPlate
+  - _id: JagerPlate
+  _rightPlates:
+  - _id: JagerPlate
+  - _id: JagerPlate
+  - _id: JagerPlate
+  _backPlates:
+  - _id: JagerPlate
+  _topPlates:
+  - _id: JagerPlate
+  - _id: JagerPlate
+  _bottomPlates:
+  - _id: JagerPlate
+  - _id: JagerPlate
+  - _id: JagerPlate
   _topArmament:
     _id: FloriansFavoriteProcessor
   _frontArmament:

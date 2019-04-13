@@ -9,6 +9,7 @@ public struct WeaponBlueprintBalanceObject:IStaticDataBalanceObject
     public string name;
     public string specification;
     public string manufacturer;
+    public string material;
     
     public string GetDataUID()
     {
@@ -16,14 +17,15 @@ public struct WeaponBlueprintBalanceObject:IStaticDataBalanceObject
     }
 }
 
-[CreateAssetMenu]
+[CreateAssetMenu(menuName = MENU_NAME)]
 public class WeaponBlueprintBalanceData : StaticDataReferenceBalanceData<
     BlueprintDataSource, 
-    BlueprintDataBase, 
-    BlueprintBalanceObject,
+    BlueprintDataBase,
     WeaponBlueprintData, 
     WeaponBlueprintBalanceObject>
 {
+    private const string MENU_NAME =  BalanceDataUtilites.BALANCE_MENU_FOLDER + "WeaponBlueprintBalanceData";
+
     public const string DATA_PATH = "Assets/AssetBundles/Data/Blueprints/Components/Weapons/";
     
     public override string GetUIDFieldName()

@@ -9,6 +9,7 @@ public struct PlateBlueprintBalanceObject:IStaticDataBalanceObject
     public string name;
     public string specification;
     public string manufacturer;
+    public string material;
     
     public string GetDataUID()
     {
@@ -16,14 +17,15 @@ public struct PlateBlueprintBalanceObject:IStaticDataBalanceObject
     }
 }
 
-[CreateAssetMenu]
+[CreateAssetMenu(menuName = MENU_NAME)]
 public class PlateBlueprintBalanceData : StaticDataReferenceBalanceData<
     BlueprintDataSource, 
-    BlueprintDataBase, 
-    BlueprintBalanceObject,
+    BlueprintDataBase,
     PlateBlueprintData, 
     PlateBlueprintBalanceObject>
 {
+    private const string MENU_NAME =  BalanceDataUtilites.BALANCE_MENU_FOLDER + "PlateBlueprintBalanceData";
+
     public const string DATA_PATH = "Assets/AssetBundles/Data/Blueprints/Components/Plates/";
     
     public override string GetUIDFieldName()

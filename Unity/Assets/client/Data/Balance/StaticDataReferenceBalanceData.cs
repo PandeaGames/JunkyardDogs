@@ -22,13 +22,12 @@ namespace JunkyardDogs.Data.Balance
         string GetDataUID();
     }
     
-    public abstract class StaticDataReferenceBalanceData<TStaticDataList, TUnityDataBase, TBalanceObjectBase, TUnityData,TBalanceObject>
+    public abstract class StaticDataReferenceBalanceData<TStaticDataList, TUnityDataBase, TUnityData,TBalanceObject>
         :BalanceData
         where TStaticDataList : AbstractScriptableObjectStaticData<TUnityDataBase>
         where TUnityData : ScriptableObject, IStaticDataBalance<TBalanceObject>, TUnityDataBase
         where TUnityDataBase : ScriptableObject
         where TBalanceObject : IStaticDataBalanceObject
-        where TBalanceObjectBase : IStaticDataBalanceObject
     {
         [SerializeField]
         protected TStaticDataList _dataList;
@@ -94,19 +93,6 @@ namespace JunkyardDogs.Data.Balance
                 if (data != null && data.name == balance.GetDataUID() && data is TUnityData)
                 {
                     return (TUnityData) data;
-                }
-            }
-
-            return null;
-        }
-        
-        protected TUnityDataBase FindData(TBalanceObjectBase balance, List<TUnityDataBase> list)
-        {
-            foreach (TUnityDataBase data in list)
-            {
-                if (data != null && data.name == balance.GetDataUID())
-                {
-                    return data;
                 }
             }
 

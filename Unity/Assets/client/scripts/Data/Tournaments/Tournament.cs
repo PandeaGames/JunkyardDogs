@@ -27,6 +27,9 @@ public class Tournament : ScriptableObject, IStaticDataBalance<TournamentBalance
 
     [SerializeField, LootCrateStaticDataReference]
     private List<LootCrateStaticDataReference> _lootCrateRewardsPerStage;
+    
+    [SerializeField, LootCrateStaticDataReference]
+    private LootCrateStaticDataReference _lootCrateRewards;
 
     public int RoundPaceSeconds
     {
@@ -79,22 +82,54 @@ public class Tournament : ScriptableObject, IStaticDataBalance<TournamentBalance
 
         _format.ID = balance.format;
 
-        string[] participants = balance.participants.Split(BalanceData.ListDelimiterChar);
+        _lootCrateRewards = new LootCrateStaticDataReference();
+        _lootCrateRewards.ID = balance.lootCrateRewards;
+        
+        List<ParticipantStaticDataReference> list = new List<ParticipantStaticDataReference>();
 
-        foreach (string participantId in participants)
+        ImportParticipant(list, balance.participant01);
+        ImportParticipant(list, balance.participant02);
+        ImportParticipant(list, balance.participant03);
+        ImportParticipant(list, balance.participant04);
+        ImportParticipant(list, balance.participant05);
+        ImportParticipant(list, balance.participant06);
+        ImportParticipant(list, balance.participant07);
+        ImportParticipant(list, balance.participant08);
+        ImportParticipant(list, balance.participant09);
+        ImportParticipant(list, balance.participant10);
+        ImportParticipant(list, balance.participant11);
+        ImportParticipant(list, balance.participant12);
+        ImportParticipant(list, balance.participant13);
+        ImportParticipant(list, balance.participant14);
+        ImportParticipant(list, balance.participant15);
+        ImportParticipant(list, balance.participant16);
+        ImportParticipant(list, balance.participant17);
+        ImportParticipant(list, balance.participant18);
+        ImportParticipant(list, balance.participant19);
+        ImportParticipant(list, balance.participant20);
+        ImportParticipant(list, balance.participant21);
+        ImportParticipant(list, balance.participant22);
+        ImportParticipant(list, balance.participant23);
+        ImportParticipant(list, balance.participant24);
+        ImportParticipant(list, balance.participant25);
+        ImportParticipant(list, balance.participant26);
+        ImportParticipant(list, balance.participant27);
+        ImportParticipant(list, balance.participant28);
+        ImportParticipant(list, balance.participant29);
+        ImportParticipant(list, balance.participant30);
+        ImportParticipant(list, balance.participant31);
+
+        _participants = list;
+
+    }
+
+    private void ImportParticipant(List<ParticipantStaticDataReference> list, string participantId)
+    {
+        if (!string.IsNullOrEmpty(participantId))
         {
             ParticipantStaticDataReference reference = new ParticipantStaticDataReference();
             reference.ID = participantId;
-            _participants.Add(reference);
-        }
-        
-        string[] lootCrateRewards = balance.lootCrateRewards.Split(BalanceData.ListDelimiterChar);
-
-        foreach (string lootCrateId in lootCrateRewards)
-        {
-            LootCrateStaticDataReference reference = new LootCrateStaticDataReference();
-            reference.ID = lootCrateId;
-            _lootCrateRewardsPerStage.Add(reference);
+            list.Add(reference);
         }
     }
 
@@ -106,7 +141,6 @@ public class Tournament : ScriptableObject, IStaticDataBalance<TournamentBalance
         balance.format = _format == null ? string.Empty : _format.ID;
         balance.roundPaceSeconds = _roundPaceSeconds;
         balance.seasonDelaySeconds = _seasonDelaySeconds;
-        balance.participants = string.Join(BalanceData.ListDelimiter, _participants);
         balance.lootCrateRewards = string.Join(BalanceData.ListDelimiter, _lootCrateRewardsPerStage);
 
         return balance;

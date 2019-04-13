@@ -15,9 +15,11 @@ namespace JunkyardDogs.Data.Balance
         }
     }
     
-    [CreateAssetMenu]
-    public class PhysicalSpecificationBalanceData : StaticDataReferenceBalanceData<SpecificationDataSource, Specification,
-        SpecificationBalanceObject, PhysicalSpecification, PhysicalSpecificationBalanceObject>
+    public class PhysicalSpecificationBalanceData : StaticDataReferenceBalanceData<
+        SpecificationDataSource, 
+        Specification,
+        PhysicalSpecification,
+        PhysicalSpecificationBalanceObject>
     {
         public const string DATA_PATH = "Assets/AssetBundles/Data/Products/";
 

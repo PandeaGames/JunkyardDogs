@@ -18,14 +18,16 @@ public struct CompetitorBalanceObject:IStaticDataBalanceObject
     }
 }
 
-[CreateAssetMenu]
+[CreateAssetMenu(menuName = MENU_NAME)]
 public class CompetitorBlueprintBalanceData : StaticDataReferenceBalanceData<
     BlueprintDataSource, 
-    BlueprintDataBase, 
-    BlueprintBalanceObject,
+    BlueprintDataBase,
     CompetitorBlueprintData, 
     CompetitorBalanceObject>
 {
+    private const string MENU_NAME =  BalanceDataUtilites.BALANCE_MENU_FOLDER + "CompetitorBlueprintBalanceData";
+
+    
     public override string GetUIDFieldName()
     {
         return "name";

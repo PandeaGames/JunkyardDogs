@@ -1,11 +1,12 @@
 ﻿using System;
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using JunkyardDogs.Components;
 using JunkyardDogs.Data;
 using JunkyardDogs.Data.Balance;
 using Component = JunkyardDogs.Components.Component;
-using WeakReference = PandeaGames.Data.WeakReferences.WeakReference;
+using JunkyardDogs.Simulation;
 
 namespace JunkyardDogs.Specifications
 {
@@ -36,7 +37,7 @@ namespace JunkyardDogs.Specifications
     public class Manufacturer : ScriptableObject, IStaticDataBalance<ManufacturerBalanceObject>
     {
         [SerializeField]
-        private Distinction _distinctions;
+        private List<Simulation.Distinction> _distinctions;
 
         [SerializeField, StaticDataReference(NationalityDataProvider.FULL_PATH)]
         private NationalityStaticDataReference _nationality;
@@ -55,8 +56,28 @@ namespace JunkyardDogs.Specifications
         
         public void ApplyBalance(ManufacturerBalanceObject balance)
         {
-            this.name = balance.name;
+            name = balance.name;
             _nationality.ID = balance.nationality;
+
+            _distinctions = new List<Simulation.Distinction>();
+
+            ImportDistinction(_distinctions, balance.distinctionId_01, balance.distinctionValue_01);
+            ImportDistinction(_distinctions, balance.distinctionId_02, balance.distinctionValue_02);
+            ImportDistinction(_distinctions, balance.distinctionId_03, balance.distinctionValue_03);
+            ImportDistinction(_distinctions, balance.distinctionId_04, balance.distinctionValue_04);
+            ImportDistinction(_distinctions, balance.distinctionId_05, balance.distinctionValue_05);
+
+        }
+
+        private void ImportDistinction(List<Simulation.Distinction> list, string distinctionId, int distinctionValue)
+        {
+            if (!string.IsNullOrEmpty(distinctionId))
+            {
+                Simulation.Distinction Distinction = new Simulation.Distinction();
+                Distinction.Type = (DistinctionType) Enum.Parse(typeof (DistinctionType), distinctionId);
+                Distinction.Value = distinctionValue;
+                list.Add(Distinction);
+            }
         }
 
         public ManufacturerBalanceObject GetBalance()

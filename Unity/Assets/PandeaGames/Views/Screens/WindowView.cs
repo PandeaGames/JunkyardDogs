@@ -181,6 +181,9 @@ namespace PandeaGames.Views.Screens
             rt.anchorMin = Vector2.zero;
             rt.anchorMax = Vector2.one;
             rt.sizeDelta = Vector2.zero;
+            rt.localScale = Vector2.one;
+            rt.offsetMax = Vector2.zero;
+            rt.offsetMin = Vector2.zero;
     
             StartCoroutine(UnloadScene(scene));
         }

@@ -15,9 +15,15 @@ public class SpecificationBalanceObject:IStaticDataBalanceObject
         return name;
     }
 }
-[CreateAssetMenu]
-public class SpecificationBalanceData : StaticDataReferenceBalanceData<SpecificationDataSource, Specification, SpecificationBalanceObject, Specification, SpecificationBalanceObject>
+[CreateAssetMenu(menuName = MENU_NAME)]
+public class SpecificationBalanceData : StaticDataReferenceBalanceData<
+    SpecificationDataSource, 
+    Specification, 
+    Specification,
+    SpecificationBalanceObject>
 {
+    private const string MENU_NAME =  BalanceDataUtilites.BALANCE_MENU_FOLDER + "PlateBlueprintBalanceData";
+
     public const string DATA_PATH = "Assets/AssetBundles/Data/Products/";
     
     protected override string GetNewDataFolder()

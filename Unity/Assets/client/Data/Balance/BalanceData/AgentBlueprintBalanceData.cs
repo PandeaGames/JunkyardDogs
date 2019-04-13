@@ -18,14 +18,14 @@ public struct AgentBlueprintBalanceObject:IStaticDataBalanceObject
         return name;
     }
 }
-[CreateAssetMenu]
+[CreateAssetMenu(menuName = MENU_NAME)]
 public class AgentBlueprintBalanceData : StaticDataReferenceBalanceData<
     BlueprintDataSource, 
-    BlueprintDataBase, 
-    BlueprintBalanceObject,
+    BlueprintDataBase,
     AgentBlueprintData, 
     AgentBlueprintBalanceObject>
 {
+    private const string MENU_NAME =  BalanceDataUtilites.BALANCE_MENU_FOLDER + "AgentBlueprintBalanceData";
     public const string DATA_PATH = "Assets/AssetBundles/Data/Blueprints/";
     
     protected override string GetNewDataFolder()

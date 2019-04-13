@@ -43,6 +43,11 @@ public abstract class ObjectFactory<T, K> : ScriptableObject where K: ObjectMani
 
     public T GetAsset(ScriptableObject obj)
     {
+        if (obj == null)
+        {
+            throw new NullReferenceException("Trying to retrieve assets with 'null' as input.");
+        }
+        
         T result;
         K manifestEntry = _manifest.Find((entry) => 
         {

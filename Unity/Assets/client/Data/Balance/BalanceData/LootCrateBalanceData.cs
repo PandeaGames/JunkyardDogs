@@ -34,14 +34,15 @@ public struct LootCrateBalanceObject:IStaticDataBalanceObject
     }
 }
 
-[CreateAssetMenu]
+[CreateAssetMenu(menuName = MENU_NAME)]
 public class LootCrateBalanceData : StaticDataReferenceBalanceData<
     LootCrateDataSource, 
-    AbstractLootCrateData, 
-    LootCrateBalanceObject,
+    AbstractLootCrateData,
     LootCrateData,
     LootCrateBalanceObject>
 {
+    private const string MENU_NAME =  BalanceDataUtilites.BALANCE_MENU_FOLDER + "LootCrateBalanceData";
+
     public const string DATA_PATH = "Assets/AssetBundles/Data/Loot/LootCrates/";
     
     public override string GetUIDFieldName()

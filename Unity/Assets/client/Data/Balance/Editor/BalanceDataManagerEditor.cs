@@ -29,6 +29,11 @@ namespace JunkyardDogs.Data.Balance.Editor
             
             foreach (BalanceData balanceData in (target as BalanceManagerData).BalanceData)
             {
+                if (balanceData == null)
+                {
+                    continue;
+                }    
+                    
                 EditorGUILayout.LabelField(balanceData.TableName);
                 EditorGUI.BeginDisabledGroup(!balanceData.AllowImport);
                 if (GUILayout.Button("Import"))
@@ -123,6 +128,7 @@ namespace JunkyardDogs.Data.Balance.Editor
                     catch (Exception e)
                     {
                         Debug.LogErrorFormat("There was an error applying balance against {0}:\n", balanceData.name);
+                        break;
                     }
                 }
             }

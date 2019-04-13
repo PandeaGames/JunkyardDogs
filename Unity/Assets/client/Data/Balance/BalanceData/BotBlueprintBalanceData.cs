@@ -18,14 +18,14 @@ namespace JunkyardDogs.Data.Balance
         }
     }
     
-    [CreateAssetMenu]
+    [CreateAssetMenu(menuName = MENU_NAME)]
     public class BotBlueprintBalanceData : StaticDataReferenceBalanceData<
         BlueprintDataSource, 
         BlueprintDataBase, 
-        BotBlueprintBalanceObject,
         BotBlueprintData, 
         BotBlueprintBalanceObject>
     {
+        private const string MENU_NAME =  BalanceDataUtilites.BALANCE_MENU_FOLDER + "BotBlueprintBalanceData";
         public const string DATA_PATH = "Assets/AssetBundles/Data/Blueprints/Bots/";
     
         public override string GetUIDFieldName()

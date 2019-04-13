@@ -14,7 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _participants: 8
   _stages:
-  - _seeding: {fileID: 11400000, guid: 56010f7869763ed44ade7cd38fe34550, type: 2}
-    _format:
+  - format:
       _id: SingleElim_1g
-    _result: {fileID: 11400000, guid: f2435c5795c74fb45a887fc424d964c1, type: 2}

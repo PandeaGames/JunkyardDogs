@@ -3,8 +3,9 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -12,10 +13,10 @@ MonoBehaviour:
   m_Name: BotMaterialFactory
   m_EditorClassIdentifier: 
   _manifest:
-  - _value: {fileID: -1835797696, guid: 5577837317db0064b951a05b9b3a62be, type: 3}
+  - _value: {fileID: 2100004, guid: 5577837317db0064b951a05b9b3a62be, type: 3}
     _keys:
     - {fileID: 11400000, guid: 109234c210077a64cbea19632db02d82, type: 2}
-  - _value: {fileID: -1835797696, guid: 5577837317db0064b951a05b9b3a62be, type: 3}
+  - _value: {fileID: 2100000, guid: 5577837317db0064b951a05b9b3a62be, type: 3}
     _keys:
     - {fileID: 11400000, guid: 854865d8acc975b479ea9c2a7b603f4e, type: 2}
-  _default: {fileID: 1724162302, guid: 5577837317db0064b951a05b9b3a62be, type: 3}
+  _default: {fileID: 2100006, guid: 5577837317db0064b951a05b9b3a62be, type: 3}

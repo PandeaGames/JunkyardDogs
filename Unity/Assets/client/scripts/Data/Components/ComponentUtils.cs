@@ -11,7 +11,7 @@ namespace JunkyardDogs.Components
 {
     public static class ComponentUtils
     {
-        public static Component GenerateComponent(SpecificationStaticDataReference spec, ManufacturerStaticDataReference manufacturer = null)
+        public static Component GenerateComponent(SpecificationStaticDataReference spec, ManufacturerStaticDataReference manufacturer = null, MaterialStaticDataReference material = null)
         {
             JunkyardDogs.Components.Component component = null;
 
@@ -46,6 +46,14 @@ namespace JunkyardDogs.Components
 
             component.Manufacturer = manufacturer;
             component.SpecificationReference = spec;
+            
+            PhysicalComponent physicalComponent = component as PhysicalComponent;
+
+            if (physicalComponent != null)
+            {
+                physicalComponent.Material = material;
+            }
+            
             return component;
         }
     }

@@ -15,5 +15,5 @@ MonoBehaviour:
   webServiceUrl: https://script.google.com/macros/s/AKfycbwwepFzM5eHdOQmvgvhhMqbw55qRPpJ9J7FagepLDrhKLag0fFJ/exec
   spreadsheetId: 1mJ8jayKT1Efx_9-RPh697xGHineI_bfgATrryZP8PB8
   servicePassword: v:a:@h2Z5}xNy&UT
-  timeOutLimit: 15
+  timeOutLimit: 100
   usePOST: 1

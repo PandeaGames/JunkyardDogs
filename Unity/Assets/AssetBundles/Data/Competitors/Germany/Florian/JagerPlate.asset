@@ -16,3 +16,5 @@ MonoBehaviour:
     _id: Plate_Thickness01
   _manufacturer:
     _id: Skylabs
+  Material:
+    _id: Steel

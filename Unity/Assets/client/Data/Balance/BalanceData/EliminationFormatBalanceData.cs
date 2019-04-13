@@ -17,14 +17,15 @@ public struct EliminationFormatBalanceObject:IStaticDataBalanceObject
     }
 }
 
-[CreateAssetMenu]
+[CreateAssetMenu(menuName = MENU_NAME)]
 public class EliminationFormatBalanceData : StaticDataReferenceBalanceData<
     StageFormatDataSource, 
-    StageFormat, 
-    EliminationFormatBalanceObject,
+    StageFormat,
     EliminationFormat, 
     EliminationFormatBalanceObject>
 {
+    private const string MENU_NAME =  BalanceDataUtilites.BALANCE_MENU_FOLDER + "EliminationFormatBalanceData";
+
     public const string DATA_PATH = "Assets/AssetBundles/Data/Tournaments/Formats/";
     
     public override string GetUIDFieldName()

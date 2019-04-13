@@ -12,15 +12,15 @@ public class WeaponBalanceObject:SpecificationBalanceObject
     public double chargeTime;
 }
 
-[CreateAssetMenu]
+[CreateAssetMenu(menuName = MENU_NAME)]
 public class WeaponBalanceData : StaticDataReferenceBalanceData<
     SpecificationDataSource, 
-    Specification, 
-    BlueprintBalanceObject,
-    Weapon, 
+    Specification,
+    Weapon,
     WeaponBalanceObject>
-
 {
+    private const string MENU_NAME =  BalanceDataUtilites.BALANCE_MENU_FOLDER + "WeaponBalanceData";
+
     public const string NEW_DATA_PATH = "Assets/AssetBundles/Data/Products/Weapons/";
     
     public override string GetUIDFieldName()

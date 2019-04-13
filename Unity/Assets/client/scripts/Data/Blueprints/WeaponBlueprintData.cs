@@ -13,6 +13,8 @@ public class WeaponBlueprintData : PhysicalComponentBlueprintData<Weapon>, IStat
         _specification.ID = balance.specification;
         _manufacturer = new ManufacturerStaticDataReference();
         _manufacturer.ID = balance.manufacturer;
+        Material = new MaterialStaticDataReference();
+        Material.ID = balance.material;
     }
 
     public WeaponBlueprintBalanceObject GetBalance()

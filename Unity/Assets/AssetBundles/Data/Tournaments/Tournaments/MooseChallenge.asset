@@ -22,3 +22,5 @@ MonoBehaviour:
   _lootCrateRewardsPerStage:
   - _id: JunkyardCrateData
   - _id: WeightedJunkyardCrate
+  _lootCrateRewards:
+    _id: JunkyardCrateData

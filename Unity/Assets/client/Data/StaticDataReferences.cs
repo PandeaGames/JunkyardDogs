@@ -214,6 +214,14 @@ namespace JunkyardDogs.Data
         }
     }
     
+    public class MaterialStaticDataReferenceAttribute : StaticDataReferenceAttribute
+    {
+        public MaterialStaticDataReferenceAttribute() : base(MaterialDataProvider.FULL_PATH, typeof(Material))
+        {
+            
+        }
+    }
+    
     public class ActionStaticDataReferenceAttribute : StaticDataReferenceAttribute
     {
         public ActionStaticDataReferenceAttribute() : base(ActionStaticDataProvider.FULL_PATH, typeof(BehaviorAction))
