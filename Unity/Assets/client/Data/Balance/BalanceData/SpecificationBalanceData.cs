@@ -15,6 +15,7 @@ public class SpecificationBalanceObject:IStaticDataBalanceObject
         return name;
     }
 }
+
 [CreateAssetMenu(menuName = MENU_NAME)]
 public class SpecificationBalanceData : StaticDataReferenceBalanceData<
     SpecificationDataSource, 

@@ -91,7 +91,8 @@ namespace JunkyardDogs
         public override void LeaveState(TournamentStates to)
         {
             base.LeaveState(to);
-            
+
+            _userViewModel.UserData.Tournaments.UpdateTournament(_tournamentViewModel.State);
             _viewModel.OnBotChosen -= OnBotChosen;
         }
 

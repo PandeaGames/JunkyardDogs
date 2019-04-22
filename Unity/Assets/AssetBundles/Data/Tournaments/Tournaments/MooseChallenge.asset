@@ -15,12 +15,10 @@ MonoBehaviour:
   _format:
     _id: Challenge
   _participants:
-  - _id: FlorianParticipation
+  - _id: UserParticipant
   - _id: FlorianParticipation
   _roundPaceSeconds: 1000
   _seasonDelaySeconds: 3000
-  _lootCrateRewardsPerStage:
-  - _id: JunkyardCrateData
-  - _id: WeightedJunkyardCrate
+  _lootCrateRewardsPerStage: []
   _lootCrateRewards:
-    _id: JunkyardCrateData
+    _id: NewCrateData

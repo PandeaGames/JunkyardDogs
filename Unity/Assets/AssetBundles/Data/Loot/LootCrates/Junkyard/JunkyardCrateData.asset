@@ -15,4 +15,4 @@ MonoBehaviour:
   _lootData:
   - _id: JagerChassisLoot
   - _id: PlateLootItem
-  - _id: PlateLootItem
+  - _id: JagerChassisLoot

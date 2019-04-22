@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68abebd609424dcd992463be3f8fd280, type: 3}
+  m_Name: PulseWeaponBalanceData
+  m_EditorClassIdentifier: 
+  TableName: Pulse Weapon Balance
+  AllowImport: 1
+  AllowDataCreationOnImport: 1
+  _dataList: {fileID: 11400000, guid: c3c0a0612bd21da4a8cc42c81eb8fce2, type: 2}

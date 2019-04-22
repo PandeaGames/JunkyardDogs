@@ -318,25 +318,33 @@ namespace JunkyardDogs.Simulation
 
                 List<Directive> directives = state.Directives;
 
-                if (bot.DirectiveIndex == directives.Count)
+                if (directives.Count != 0)
                 {
-                    bot.DirectiveIndex = 0;
-                }
+                    
+                    if (bot.DirectiveIndex == directives.Count)
+                    {
+                        bot.DirectiveIndex = 0;
+                    }
+                
+                    Directive directive = directives[bot.DirectiveIndex];
 
-                Directive directive = directives[bot.DirectiveIndex];
-                ActionResult result = directive.BehaviorAction.GetResult();
-
-                if (result.attack)
-                {
-                    ExecuteAttackDirective(bot, opponent, result.weaponSlot);
+                    if (directive.BehaviorAction != null)
+                    {
+                        ActionResult result = directive.BehaviorAction.GetResult();
+    
+                        if (result.attack)
+                        {
+                            ExecuteAttackDirective(bot, opponent, result.weaponSlot);
+                        }
+                        else
+                        {
+                            bot.LastMovementCommand = SimulationTime();
+                            bot.MovementAction = result;
+                        }
+                    }
+    
+                    bot.DirectiveIndex++;
                 }
-                else
-                {
-                    bot.LastMovementCommand = SimulationTime();
-                    bot.MovementAction = result;
-                }
-
-                bot.DirectiveIndex++;
             }
         }
 

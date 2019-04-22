@@ -86,7 +86,7 @@ public class EventDialog : Dialog<EventDialogViewModel>
     private void OnCollectRewards()
     {
         Tournament tournament = _viewModel.TournamentReference.Data as Tournament;
-        _user.Consume(tournament.LootCrateRewardsPerStage[0].Data, 0);
+        _user.Consume(tournament.LootCrateRewards.Data.GetLoot(), 0);
         _user.Tournaments.CompleteTournament(tournament.Guid);
         Game.Instance.GetService<JunkyardUserService>().Save();
         Close();

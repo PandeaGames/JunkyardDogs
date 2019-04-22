@@ -36,8 +36,16 @@ namespace PandeaGames.Views.ViewControllers
             if (_viewController != null)
             {
                 Debug.Log("[AbstractViewControllerState]["+to+"] LeaveState.RemoveView Start");
-                _viewController.RemoveView();
+                RemoveView();
                 Debug.Log("[AbstractViewControllerState]["+to+"] LeaveState.RemoveView Done");
+            }
+        }
+
+        public virtual void RemoveView()
+        {
+            if (_viewController != null)
+            {
+                _viewController.RemoveView();
             }
         }
 
@@ -63,6 +71,21 @@ namespace PandeaGames.Views.ViewControllers
         {
             _states = new Dictionary<TEnum, AbstractViewControllerState<TEnum>>();
         }
+
+        public override void RemoveView()
+        {
+            AbstractViewControllerState<TEnum> vc = null;
+
+            _states.TryGetValue(_currentState, out vc);
+
+            if (vc != null)
+            {
+                vc.RemoveView();
+            }
+            
+            base.RemoveView();
+        }
+        
 
         protected void SetViewStateController<TState>(TEnum state) where TState : AbstractViewControllerState<TEnum>, new()
         {

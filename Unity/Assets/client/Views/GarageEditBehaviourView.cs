@@ -34,6 +34,7 @@ namespace JunkyardDogs.Views
         private void SelectedNewAction(ChooseActionDialogViewModel vm)
         {
             _viewModel.AdddNewAction(vm.Selection);
+            vm.OnClose -= SelectedNewAction;
         }
     }
 }

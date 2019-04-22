@@ -22,7 +22,7 @@ namespace JunkyardDogs.Data.Balance
         string GetDataUID();
     }
     
-    public abstract class StaticDataReferenceBalanceData<TStaticDataList, TUnityDataBase, TUnityData,TBalanceObject>
+    public abstract class StaticDataReferenceBalanceData<TStaticDataList, TUnityDataBase, TUnityData, TBalanceObject>
         :BalanceData
         where TStaticDataList : AbstractScriptableObjectStaticData<TUnityDataBase>
         where TUnityData : ScriptableObject, IStaticDataBalance<TBalanceObject>, TUnityDataBase
@@ -78,6 +78,7 @@ namespace JunkyardDogs.Data.Balance
                 if (data)
                 {
                     data.ApplyBalance(balanceObj);
+                    EditorUtility.SetDirty(data);
                 }
             }
             

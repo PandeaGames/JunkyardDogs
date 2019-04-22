@@ -71,6 +71,19 @@ ModelImporter:
     4300020: Weapon_Top
     4300022: Weapon_Left
     4300024: Doodad
+    6400000: Chassis
+    6400002: Doodad
+    6400004: Plate_Bottom_01
+    6400006: Plate_Front_01
+    6400008: Plate_Left_01
+    6400010: Plate_Left_02
+    6400012: Plate_Right_01
+    6400014: Plate_Right_02
+    6400016: Plate_Top_01
+    6400018: Plate_Top_02
+    6400020: Weapon_Left
+    6400022: Weapon_Right
+    6400024: Weapon_Top
     9500000: //RootNode
   externalObjects: {}
   materials:
@@ -105,7 +118,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
@@ -124,7 +137,7 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 0
-    previousCalculatedGlobalScale: 0.01
+    previousCalculatedGlobalScale: 1
     hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60

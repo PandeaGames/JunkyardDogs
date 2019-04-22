@@ -8,10 +8,10 @@ namespace JunkyardDogs.Specifications
     public abstract class Weapon : PhysicalSpecification, IStaticDataBalance<WeaponBalanceObject>
     {
         [SerializeField]
-        private double _chargeTime;
+        protected double _chargeTime;
 
         [SerializeField]
-        private double _cooldown;
+        protected double _cooldown;
 
         public double ChargeTime { get { return _chargeTime; } }
         public double Cooldown { get { return _cooldown; } }

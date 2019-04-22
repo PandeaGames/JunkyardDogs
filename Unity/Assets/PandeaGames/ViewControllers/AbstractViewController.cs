@@ -100,18 +100,18 @@ namespace PandeaGames.Views.ViewControllers
             }
         }
 
-        public void RemoveView()
+        public virtual void RemoveView()
         {
-            string viewName = _view.ToString();
-            Debug.Log("[AbstractViewController]["+viewName+"] RemoveView Start");
             if (_view != null)
             {
                 _view.Destroy();
+                
+                string viewName = _view.ToString();
+                Debug.Log("[AbstractViewController]["+viewName+"] RemoveView Start");
+                
+                _view = null;
+                Debug.Log("[AbstractViewController]["+viewName+"] RemoveView Start");
             }
-            
-            _view = null;
-            Debug.Log("[AbstractViewController]["+viewName+"] RemoveView Start");
-            
         }
 
         protected virtual void OnViewLoaded()

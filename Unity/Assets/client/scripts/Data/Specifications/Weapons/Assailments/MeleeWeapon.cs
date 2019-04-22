@@ -1,5 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
+using JunkyardDogs.Data.Balance;
+using JunkyardDogs.Simulation;
+
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 namespace JunkyardDogs.Specifications
 {

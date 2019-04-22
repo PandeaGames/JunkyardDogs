@@ -8,10 +8,14 @@ namespace JunkyardDogs.Data.Balance.Editor
     [CustomEditor(typeof(BalanceManagerData))]
     public class BalanceDataManagerEditor : UnityEditor.Editor
     {
+        private bool isImporting;
+        
         public override void OnInspectorGUI()
         {
             base.OnInspectorGUI();
 
+            EditorGUI.BeginDisabledGroup(isImporting);
+            
             if (GUILayout.Button("Import All"))
             {
                 OnImport();
@@ -52,6 +56,8 @@ namespace JunkyardDogs.Data.Balance.Editor
                     OnCreate(balanceData);
                 }
             }
+            
+            EditorGUI.EndDisabledGroup();
         }
         
         private void OnEnable()
@@ -69,12 +75,17 @@ namespace JunkyardDogs.Data.Balance.Editor
         private void OnImport(BalanceData balanceData)
         {
             Drive.GetTable(balanceData.TableName, false);
+            isImporting = true;
+            EditorUtility.DisplayProgressBar("Importing", "Importing '" +balanceData.name+"' tables from Google Drive",0f);
+
         }
 
         private void OnImport()
         {
             // Get all objects from table 'PlayerInfo'.
             Drive.GetAllTables(false);
+            isImporting = true;
+            EditorUtility.DisplayProgressBar("Importing", "Importing all tables from Google Drive",0f);
         }
 
         private void OnExport(BalanceData balanceData)
@@ -112,6 +123,7 @@ namespace JunkyardDogs.Data.Balance.Editor
             // First check the type of answer.
             if (dataContainer.QueryType == Drive.QueryType.getTable)
             {
+                EditorUtility.DisplayProgressBar("Importing", "Applying data",0.5f);
                 string rawJSon = dataContainer.payload;
                 Debug.Log(rawJSon);
 
@@ -131,11 +143,17 @@ namespace JunkyardDogs.Data.Balance.Editor
                         break;
                     }
                 }
+                
+                AssetDatabase.SaveAssets();
+                EditorUtility.ClearProgressBar();
+                EditorUtility.DisplayDialog("Complete", "Import Complete", "OK");
+                isImporting = false;
             }
             
             // First check the type of answer.
             if (dataContainer.QueryType == Drive.QueryType.getAllTables)
             {
+                EditorUtility.DisplayProgressBar("Importing", "Applying data",0.5f);
                 string rawJSon = dataContainer.payload;
 
                 // The response for this query is a json list of objects that hold tow fields:
@@ -154,6 +172,11 @@ namespace JunkyardDogs.Data.Balance.Editor
                         }
                     }
                 }
+                
+                AssetDatabase.SaveAssets();
+                EditorUtility.ClearProgressBar();
+                EditorUtility.DisplayDialog("Complete", "Import Complete", "OK");
+                isImporting = false;
             }
         }
     }

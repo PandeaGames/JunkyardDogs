@@ -76,6 +76,9 @@ public class ChassisBlueprintData : PhysicalComponentBlueprintData<Chassis>, ISt
         return chassis;
     }
 
+
+   
+
     private void FillPlates(List<PlateBlueprintStaticDataReference> dataReferences, List<Plate> plates, int seed)
     {
         while (plates.Count > dataReferences.Count)
@@ -118,13 +121,38 @@ public class ChassisBlueprintData : PhysicalComponentBlueprintData<Chassis>, ISt
         _rightArmament.ID = balance.rightArmament;
         _frontArmament = new WeaponProcessorBlueprintStaticDataReference();
         _frontArmament.ID = balance.frontArmament;
+        
+       _frontPlates = new List<PlateBlueprintStaticDataReference>();
+       _leftPlates = new List<PlateBlueprintStaticDataReference>();
+       _rightPlates = new List<PlateBlueprintStaticDataReference>();
+       _backPlates = new List<PlateBlueprintStaticDataReference>();
+       _topPlates = new List<PlateBlueprintStaticDataReference>();
+       _bottomPlates = new List<PlateBlueprintStaticDataReference>();
 
-        ApplyPlateBalance(balance.frontPlates, out _frontPlates);
-        ApplyPlateBalance(balance.leftPlates, out _leftPlates);
-        ApplyPlateBalance(balance.rightPlates, out _rightPlates);
-        ApplyPlateBalance(balance.backPlates, out _backPlates);
-        ApplyPlateBalance(balance.topPlates, out _topPlates);
-        ApplyPlateBalance(balance.bottomPlates, out _bottomPlates);
+       ImportPlate(_frontPlates, balance.frontPlates01, 0);
+       ImportPlate(_frontPlates, balance.frontPlates02, 1);
+       ImportPlate(_frontPlates, balance.frontPlates03, 2);
+       
+       ImportPlate(_leftPlates, balance.leftPlates01, 0);
+       ImportPlate(_leftPlates, balance.leftPlates02, 1);
+       ImportPlate(_leftPlates, balance.leftPlates03, 2);
+       
+       ImportPlate(_rightPlates, balance.rightPlates01, 0);
+       ImportPlate(_rightPlates, balance.rightPlates02, 1);
+       ImportPlate(_rightPlates, balance.rightPlates03, 2);
+       
+       ImportPlate(_backPlates, balance.backPlates01, 0);
+       ImportPlate(_backPlates, balance.backPlates02, 1);
+       ImportPlate(_backPlates, balance.backPlates03, 2);
+       
+       ImportPlate(_topPlates, balance.topPlates01, 0);
+       ImportPlate(_topPlates, balance.topPlates02, 1);
+       ImportPlate(_topPlates, balance.topPlates03, 2);
+      
+       ImportPlate(_bottomPlates, balance.bottomPlates01, 0);
+       ImportPlate(_bottomPlates, balance.bottomPlates02, 1);
+       ImportPlate(_bottomPlates, balance.bottomPlates03, 2);
+       
     }
 
     public ChassisBlueprintBalanceObject GetBalance()
@@ -140,12 +168,14 @@ public class ChassisBlueprintData : PhysicalComponentBlueprintData<Chassis>, ISt
         balance.rightArmament = _rightArmament == null ? string.Empty : _rightArmament.ID;
         balance.frontArmament = _frontArmament == null ? string.Empty : _frontArmament.ID;
 
-        balance.frontPlates = string.Join(BalanceData.ListDelimiter, _frontPlates);
+        /*balance.frontPlates = string.Join(BalanceData.ListDelimiter, _frontPlates);
         balance.leftPlates = string.Join(BalanceData.ListDelimiter, _leftPlates);
         balance.rightPlates = string.Join(BalanceData.ListDelimiter, _rightPlates);
         balance.backPlates = string.Join(BalanceData.ListDelimiter, _backPlates);
         balance.topPlates = string.Join(BalanceData.ListDelimiter, _topPlates);
-        balance.bottomPlates = string.Join(BalanceData.ListDelimiter, _bottomPlates);
+        balance.bottomPlates = string.Join(BalanceData.ListDelimiter, _bottomPlates);*/
+        
+        
         
         return balance;
     }
@@ -160,6 +190,21 @@ public class ChassisBlueprintData : PhysicalComponentBlueprintData<Chassis>, ISt
             PlateBlueprintStaticDataReference reference = new PlateBlueprintStaticDataReference();
             reference.ID = plateId;
             plates.Add(reference);
+        }
+    }
+    
+    private void ImportPlate(List<PlateBlueprintStaticDataReference> list, string plateId, int plateIndex)
+    {
+        if (!string.IsNullOrEmpty(plateId))
+        {
+            while (list.Count <= plateIndex)
+            {
+                list.Add(null);
+            }
+            
+            PlateBlueprintStaticDataReference reference = new PlateBlueprintStaticDataReference();
+            reference.ID = plateId;
+            list[plateIndex] = reference;
         }
     }
 }

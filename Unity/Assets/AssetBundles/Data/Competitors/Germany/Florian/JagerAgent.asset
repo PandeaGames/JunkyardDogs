@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42853550c9f84b91b9e53ca6721ff6a3, type: 3}
   m_Name: JagerAgent
   m_EditorClassIdentifier: 
-  _directiveActions: []
+  _directiveActions:
+  - _id: 
   _state:
     _id: Aggressive

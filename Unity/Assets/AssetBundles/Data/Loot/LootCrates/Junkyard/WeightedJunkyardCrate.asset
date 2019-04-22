@@ -17,7 +17,13 @@ MonoBehaviour:
       _id: PlateLootItem
     weight: 100
   - loot:
-      _id: JagerChassisLoot
+      _id: Loot_Chassis_SkylabsJunkMamoth
     weight: 50
+  - loot:
+      _id: Loot_EmptySkylabsWeaponProcessor
+    weight: 75
+  - loot:
+      _id: Loot_FloriansDeagles
+    weight: 100
   _lootQuantity: 1
   _pickWithRepetition: 0

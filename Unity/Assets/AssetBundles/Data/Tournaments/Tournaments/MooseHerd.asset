@@ -15,7 +15,7 @@ MonoBehaviour:
   _format:
     _id: SingleElim_8
   _participants:
-  - _id: FlorianParticipation
+  - _id: UserParticipant
   - _id: FlorianParticipation
   - _id: FlorianParticipation
   - _id: FlorianParticipation
@@ -25,5 +25,6 @@ MonoBehaviour:
   - _id: FlorianParticipation
   _roundPaceSeconds: 1000
   _seasonDelaySeconds: 3000
-  _lootCrateRewardsPerStage:
-  - _id: JunkyardCrateData
+  _lootCrateRewardsPerStage: []
+  _lootCrateRewards:
+    _id: WeightedJunkyardCrate

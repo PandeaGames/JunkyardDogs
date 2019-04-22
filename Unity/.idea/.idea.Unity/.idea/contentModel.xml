@@ -81,14 +81,19 @@
                 <e p="ChassisBlueprintBalanceData.cs" t="Include" />
                 <e p="CompetitorBlueprintBalanceData.cs" t="Include" />
                 <e p="EliminationFormatBalanceData.cs" t="Include" />
+                <e p="HitscanWeaponBalanceData.cs" t="Include" />
                 <e p="LootBalanceData.cs" t="Include" />
                 <e p="LootCrateBalanceData.cs" t="Include" />
                 <e p="ManufacturerBalanceData.cs" t="Include" />
                 <e p="MaterialBalanceData.cs" t="Include" />
+                <e p="MeleeWeaponBalanceData.cs" t="Include" />
+                <e p="MortarWeaponBalanceData.cs" t="Include" />
                 <e p="NationBalanceData.cs" t="Include" />
                 <e p="PhysicalSpecificationBalanceData.cs" t="Include" />
                 <e p="PlateBalanceData.cs" t="Include" />
                 <e p="PlateBlueprintBalanceData.cs" t="Include" />
+                <e p="ProjectileWeaponBalanceData.cs" t="Include" />
+                <e p="PulseWeaponBalanceData.cs" t="Include" />
                 <e p="SingleSourceParticipantBalanceData.cs" t="Include" />
                 <e p="SpecificationBalanceData.cs" t="Include" />
                 <e p="TournamentBalanceData.cs" t="Include" />

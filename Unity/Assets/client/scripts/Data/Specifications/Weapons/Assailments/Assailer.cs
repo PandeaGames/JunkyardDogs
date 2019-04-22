@@ -11,7 +11,9 @@ namespace JunkyardDogs.Specifications
         [SerializeField]
         private Effect[] _effects;
 
-        public int Damage { get { return _damage; } }
+        public int Damage { get { return _damage; }
+            set { _damage = value; }
+        }
         public Effect[] Effects { get { return _effects; } }
     }
 }

@@ -21,17 +21,10 @@ MonoBehaviour:
   _frontPlates:
   - _id: JagerPlate
   - _id: JagerPlate
-  - _id: JagerPlate
-  - _id: JagerPlate
-  - _id: JagerPlate
   _leftPlates:
   - _id: JagerPlate
   - _id: JagerPlate
-  - _id: JagerPlate
-  - _id: JagerPlate
   _rightPlates:
-  - _id: JagerPlate
-  - _id: JagerPlate
   - _id: JagerPlate
   _backPlates:
   - _id: JagerPlate
@@ -39,8 +32,6 @@ MonoBehaviour:
   - _id: JagerPlate
   - _id: JagerPlate
   _bottomPlates:
-  - _id: JagerPlate
-  - _id: JagerPlate
   - _id: JagerPlate
   _topArmament:
     _id: FloriansFavoriteProcessor

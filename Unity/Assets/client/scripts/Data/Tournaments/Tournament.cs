@@ -31,6 +31,11 @@ public class Tournament : ScriptableObject, IStaticDataBalance<TournamentBalance
     [SerializeField, LootCrateStaticDataReference]
     private LootCrateStaticDataReference _lootCrateRewards;
 
+    public LootCrateStaticDataReference LootCrateRewards
+    {
+        get { return _lootCrateRewards; }
+    }
+
     public int RoundPaceSeconds
     {
         get { return _roundPaceSeconds; }

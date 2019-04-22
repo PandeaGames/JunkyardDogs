@@ -54,6 +54,15 @@ public class BotBuilderDisplay : MonoBehaviour
         SetupChassis(( JunkyardDogs.Specifications.Chassis)chassis.Specification);
     }
 
+    private void OnDestroy()
+    {
+        if (_inputService != null)
+        {
+            _inputService.OnPointerMove -= OnPointerMove;
+            _inputService = null;
+        }
+    }
+
     private void OnPointerDown(Vector3 cameraPosition, RaycastHit raycast)
     {
         _pointerPosition = cameraPosition;
@@ -163,6 +172,7 @@ public class BotBuilderDisplay : MonoBehaviour
     {
         _isFocused = false;
         _bot.transform.rotation.Set(0, 0, 0, 0);
+        _inputService.OnPointerMove -= OnPointerMove;
         _collider.enabled = true;
     }
 
@@ -182,7 +192,6 @@ public class BotBuilderDisplay : MonoBehaviour
             //_bot.transform.rotation.SetAxisAngle(Vector3.down, _bot.transform.rotation.eulerAngles.y + delta.x);
             _bot.transform.rotation = Quaternion.AngleAxis(_bot.transform.rotation.eulerAngles.y + delta * 10, Vector3.up);
             _pointerPosition = cameraPosition;
-            //Debug.Log("_bot.transform.rotation.eulerAngles.y [" + _bot.transform.rotation.eulerAngles.y + "] delta.x[" + delta.x + "]");
         }
     }
 }

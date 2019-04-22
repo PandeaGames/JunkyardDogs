@@ -13,8 +13,13 @@ public class WeaponProcessorBlueprintData : PhysicalComponentBlueprintData<Weapo
     public override WeaponProcessor DoGenerate(int seed)
     {
         WeaponProcessor processor = base.DoGenerate(seed);
-        Weapon weapon = _weapon.Data.DoGenerate(seed);
-        processor.Weapon = weapon;
+
+        if (_weapon != null && _weapon.Data != null)
+        {
+            Weapon weapon = _weapon.Data.DoGenerate(seed);
+            processor.Weapon = weapon;
+        }
+        
         return processor;
     }
 

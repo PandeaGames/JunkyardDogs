@@ -53,7 +53,7 @@ public class Tournaments
     public void UpdateTournament(TournamentState state)
     {
         TournamentMetaState meta = null;
-        TryGetTournamentMeta(state.Uid, out meta);
+        TryGetTournamentMeta(state.TournamentReference.ID, out meta);
         meta.TournamentState = state;
     }
 

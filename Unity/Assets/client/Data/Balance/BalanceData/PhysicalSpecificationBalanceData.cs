@@ -1,36 +1,30 @@
 using System;
+using JunkyardDogs.Data;
+using JunkyardDogs.Data.Balance;
 using JunkyardDogs.Specifications;
 using UnityEngine;
 
-namespace JunkyardDogs.Data.Balance
+[Serializable]
+public class PhysicalSpecificationBalanceObject:SpecificationBalanceObject
 {
-    [Serializable]
-    public struct PhysicalSpecificationBalanceObject:IStaticDataBalanceObject
+    public float volume;
+}
+
+public class PhysicalSpecificationBalanceData : StaticDataReferenceBalanceData<
+    SpecificationDataSource, 
+    Specification,
+    PhysicalSpecification,
+    PhysicalSpecificationBalanceObject>
+{
+    public const string DATA_PATH = "Assets/AssetBundles/Data/Products/";
+
+    protected override string GetNewDataFolder()
     {
-        public string name;
-        public float volume;
-        public string GetDataUID()
-        {
-            return name;
-        }
+        return DATA_PATH;
     }
-    
-    public class PhysicalSpecificationBalanceData : StaticDataReferenceBalanceData<
-        SpecificationDataSource, 
-        Specification,
-        PhysicalSpecification,
-        PhysicalSpecificationBalanceObject>
+
+    public override string GetUIDFieldName()
     {
-        public const string DATA_PATH = "Assets/AssetBundles/Data/Products/";
-
-        protected override string GetNewDataFolder()
-        {
-            return DATA_PATH;
-        }
-
-        public override string GetUIDFieldName()
-        {
-            return "name";
-        }
+        return "name";
     }
 }
