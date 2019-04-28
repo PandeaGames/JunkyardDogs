@@ -164,6 +164,9 @@
             </e>
             <e p="ViewStaticDataProvider.cs" t="Include" />
           </e>
+          <e p="Factories" t="Include">
+            <e p="JunkyardDogs3DFactory.cs" t="Include" />
+          </e>
           <e p="GameLoader.cs" t="Include" />
           <e p="GarageTest.cs" t="Include" />
           <e p="scripts" t="Include">
@@ -379,10 +382,13 @@
                 <e p="JunkyardUserService.cs" t="Include" />
               </e>
               <e p="UI" t="Include">
+                <e p="ComponentLightbox.cs" t="Include" />
                 <e p="ComponentRendering" t="Include">
                   <e p="BotBuilderDisplay.cs" t="Include" />
                   <e p="ComponentDisplay.cs" t="Include" />
                 </e>
+                <e p="ComponentTextureProvider.cs" t="Include" />
+                <e p="LightboxCamera.cs" t="Include" />
                 <e p="MatchStateRenderer.cs" t="Include" />
                 <e p="Navigation" t="Include">
                   <e p="HubTabGroup.cs" t="Include" />
@@ -494,6 +500,7 @@
             <e p="JunkyardPreloadView.cs" t="Include" />
             <e p="JunkyardView.cs" t="Include" />
             <e p="MatchView.cs" t="Include" />
+            <e p="PreloaderView.cs" t="Include" />
             <e p="SimpleWindowView.cs" t="Include" />
             <e p="TakeJunkViewModel.cs" t="Include" />
             <e p="TournamentView.cs" t="Include" />
@@ -819,6 +826,11 @@
             <e p="ParticleSceneControls.cs" t="Include" />
             <e p="PlaceTargetWithMouse.cs" t="Include" />
             <e p="SlowMoButton.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Screen keying" t="Include">
+          <e p="Shader" t="Include">
+            <e p="ScreenKeying.shader" t="Include" />
           </e>
         </e>
         <e p="Shader" t="Include">

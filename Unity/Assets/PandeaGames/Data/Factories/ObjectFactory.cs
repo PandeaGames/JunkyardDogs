@@ -41,7 +41,7 @@ public abstract class ObjectFactory<T, K> : ScriptableObject where K: ObjectMani
     [SerializeField]
     private T _default;
 
-    public T GetAsset(ScriptableObject obj)
+    public virtual T GetAsset(ScriptableObject obj)
     {
         if (obj == null)
         {

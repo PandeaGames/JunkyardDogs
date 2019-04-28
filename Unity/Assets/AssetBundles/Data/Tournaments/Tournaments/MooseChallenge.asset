@@ -17,8 +17,8 @@ MonoBehaviour:
   _participants:
   - _id: UserParticipant
   - _id: FlorianParticipation
-  _roundPaceSeconds: 1000
-  _seasonDelaySeconds: 3000
+  _roundPaceSeconds: 10
+  _seasonDelaySeconds: 30
   _lootCrateRewardsPerStage: []
   _lootCrateRewards:
     _id: NewCrateData

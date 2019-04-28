@@ -89,6 +89,7 @@ public class DialogService : Service
 
         if (_touchBlocker)
         {
+            InputService.Instance.Enabled = false;
             _touchBlocker.gameObject.SetActive(true);
         }
     }
@@ -119,6 +120,7 @@ public class DialogService : Service
 
         if(_touchBlocker)
         {
+            InputService.Instance.Enabled = true;
             _touchBlocker.gameObject.SetActive(false);
         }
     }
@@ -129,6 +131,7 @@ public class DialogService : Service
 
         if (_touchBlocker)
         {
+            InputService.Instance.Enabled = true;
             _touchBlocker.gameObject.SetActive(false);
         }
     }

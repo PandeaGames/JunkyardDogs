@@ -20,6 +20,20 @@ public class GameStaticData : ScriptableObject, ILoadableObject
         get { return _botPrefabFactory; }
     }
     
+    [SerializeField]
+    private PrefabFactory _componentPrefabFactory;
+    public PrefabFactory ComponentPrefabFactory
+    {
+        get { return _componentPrefabFactory; }
+    }
+    
+    [SerializeField]
+    private Material _lightboxKeyMaterial;
+    public Material LightboxKeyMaterial
+    {
+        get { return _lightboxKeyMaterial; }
+    }
+    
     public WeakReference ActionListRef
     {
         get { return _actionList; }

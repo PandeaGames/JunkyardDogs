@@ -33,5 +33,19 @@ public class TakeJunkDialog : Dialog<TakeJunkDialogViewModel>
             _viewModel.ShouldTakeLoot = true;
             Close();
         });
+
+        ComponentTextureProvider.Instance.GetComponentTexture(component, OnTextureFound, OnError);
+    }
+
+    private void OnTextureFound(Texture2D texture)
+    {
+        _componentIcon.material.SetTexture("Video (RGB)", texture);
+        _componentIcon.material.SetTexture("Base (RGB)", texture);
+        _componentIcon.sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0, 0), _componentIcon.sprite.pixelsPerUnit);
+    }
+
+    private void OnError()
+    {
+        
     }
 }

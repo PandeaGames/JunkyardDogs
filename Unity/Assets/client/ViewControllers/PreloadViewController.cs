@@ -45,11 +45,9 @@ namespace JunkyardDogs
         {
             if (wasCompleted)
             {
-                Debug.Log("PreloadAssetBundlesState DONE "+_loadOperation);
                 _fsm.SetState(PreloadViewStates.Loading);
             }
             
-            Debug.Log("PreloadAssetBundlesState "+_loadOperation);
             if (_loadOperation != null && _loadOperation.IsDone())
             {
                 wasCompleted = true;

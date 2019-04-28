@@ -25,5 +25,11 @@ MonoBehaviour:
   - loot:
       _id: Loot_FloriansDeagles
     weight: 100
+  - loot:
+      _id: Loot_SkylabsSpiralPower
+    weight: 100
+  - loot:
+      _id: Loot_SkylabsLaser
+    weight: 100
   _lootQuantity: 1
   _pickWithRepetition: 0

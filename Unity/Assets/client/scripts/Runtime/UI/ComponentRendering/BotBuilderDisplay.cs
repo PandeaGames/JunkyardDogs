@@ -22,7 +22,6 @@ public class BotBuilderDisplay : MonoBehaviour
     private Collider _collider;
 
     private bool _isFocused;
-    private CameraViewModel _cameraViewModel;
     private GarageViewModel _garageViewModel;
     private InputService _inputService;
     private BotBuilder _botBuilder;
@@ -37,7 +36,6 @@ public class BotBuilderDisplay : MonoBehaviour
 
     public void Setup(BotBuilder botBuilder)
     {
-        _cameraViewModel = Game.Instance.GetViewModel<CameraViewModel>(0);
         _inputService = InputService.Instance;
 
         _user = Game.Instance.GetViewModel<JunkyardUserViewModel>(0).UserData;
@@ -59,6 +57,7 @@ public class BotBuilderDisplay : MonoBehaviour
         if (_inputService != null)
         {
             _inputService.OnPointerMove -= OnPointerMove;
+            _inputService.OnPointerClick -= OnPointerClick;
             _inputService = null;
         }
     }
@@ -70,6 +69,7 @@ public class BotBuilderDisplay : MonoBehaviour
 
     private void OnPointerClick(Vector3 cameraPosition, RaycastHit raycast)
     {
+        Debug.Log("BotBuilderDisplayOnPointerClick");
         if(!_isFocused)
         {
             if (raycast.collider == _collider)

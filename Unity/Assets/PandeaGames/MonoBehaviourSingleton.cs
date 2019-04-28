@@ -2,23 +2,23 @@
 
 namespace PandeaGames
 {
-    public class MonoBehaviourSingleton<T> :MonoBehaviour where  T:MonoBehaviour, new()
+    public class MonoBehaviourSingleton<TBehaviour> :MonoBehaviour where  TBehaviour:MonoBehaviour, new()
     {
-        private static T instance;
+        private static TBehaviour instance;
         
-        public static T Instance
+        public static TBehaviour Instance
         {
             get
             {
                 if (instance == null)
                 {
-                    T instanceInScene = GameObject.FindObjectOfType<T>();
+                    TBehaviour instanceInScene = GameObject.FindObjectOfType<TBehaviour>();
 
                     if (instanceInScene == null)
                     {
                         GameObject gameObject = new GameObject();
-                        gameObject.name = typeof(T).ToString();
-                        instance = gameObject.AddComponent<T>();
+                        gameObject.name = typeof(TBehaviour).ToString();
+                        instance = gameObject.AddComponent<TBehaviour>();
                     }
                     else
                     {

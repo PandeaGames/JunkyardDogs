@@ -58,6 +58,13 @@ public class HubViewController : AbstractViewControllerFsm<HubStates>
         base.OnAfterShow();
     }
 
+    public override void RemoveView()
+    {
+        base.RemoveView();
+        
+        Game.Instance.GetViewModel<HubViewModel>(0).OnEnterState -= OnEnterHubState;
+    }
+
     protected override IView CreateView()
     {
         return new HubView();

@@ -50,10 +50,12 @@ public class StaticDataReferencePropertyDrawer : PropertyDrawer
             string id = attr.IDs[i];
             if (id.Equals(idProp.stringValue))
             {
-                selectedIndex = i;
+                selectedIndex = i + 1;
             }
         }
             
+        options.Add(new GUIContent("-none-"));
+        
         foreach (string id in attr.IDs)
         {
             options.Add(new GUIContent(id));
@@ -61,7 +63,14 @@ public class StaticDataReferencePropertyDrawer : PropertyDrawer
             
         selectedIndex = EditorGUI.Popup(position ,label,selectedIndex, options.ToArray());
 
-        idProp.stringValue = attr.IDs[selectedIndex];
+        if (selectedIndex == 0)
+        {
+            idProp.stringValue = string.Empty;
+        }
+        else
+        {
+            idProp.stringValue = attr.IDs[selectedIndex - 1];
+        }
             
         property.serializedObject.ApplyModifiedProperties();
     }

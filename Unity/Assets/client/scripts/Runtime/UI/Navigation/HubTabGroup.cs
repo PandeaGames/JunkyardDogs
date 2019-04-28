@@ -15,6 +15,12 @@ public class HubTabGroup : TabGroup
         OnIndexChanged += OnTabIndexChanged;
     }
 
+    private void OnDestroy()
+    {
+        _vm.OnEnterState -= OnEnterHubState;
+        OnIndexChanged -= OnTabIndexChanged;
+    }
+    
     private void OnTabIndexChanged(int index)
     {
         _vm.SetState((HubStates)Enum.ToObject(typeof(HubStates) , index));

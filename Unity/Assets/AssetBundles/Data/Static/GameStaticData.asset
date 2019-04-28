@@ -3,8 +3,9 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -15,3 +16,7 @@ MonoBehaviour:
     _guid: 338088a5bcaa5614ea03d24595ddea10
     _path: Assets/AssetBundles/Data/Simulation/Behavior/List.asset
   _botPrefabFactory: {fileID: 11400000, guid: e976fde8db251f444b07b560f439adf2, type: 2}
+  _componentPrefabFactory: {fileID: 11400000, guid: c1cb9df1efef84146801652c461013a4,
+    type: 2}
+  _lightboxKeyMaterial: {fileID: 2100000, guid: 17129c3a69bd8f943a473fc582253b5c,
+    type: 2}

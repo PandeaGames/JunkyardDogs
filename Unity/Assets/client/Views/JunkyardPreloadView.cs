@@ -14,6 +14,7 @@ public class JunkyardPreloadView : AbstractUnityView
     {
         _unityView = GameObject.Instantiate(_unityViewPrefab, FindParentTransform());
         _window = _unityView.GetComponentInChildren<WindowView>();
+        FindWindow().LaunchScreen("preloader");
     }
     
     public override void LoadAsync(LoadSuccess onLoadSuccess, LoadError onLoadError)
@@ -28,10 +29,7 @@ public class JunkyardPreloadView : AbstractUnityView
 
     public override void Destroy()
     {
-        Debug.Log("JunkyardPreloadView Destroy Start");
         base.Destroy();
-        
         GameObject.Destroy(_unityView);
-        Debug.Log("JunkyardPreloadView Destroy Done");
     }
 }

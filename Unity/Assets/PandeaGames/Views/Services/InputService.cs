@@ -21,6 +21,8 @@ public class InputService : MonoBehaviourSingleton<InputService>
     public event OnMultiPointer OnMultiPointerUp;
     public event OnMultiPointer OnMultiPointerMove;
 
+    [SerializeField] 
+    private bool _enabled = true;
     [SerializeField]
     private bool _touchEnabled;
     [SerializeField]
@@ -41,6 +43,15 @@ public class InputService : MonoBehaviourSingleton<InputService>
     private float _clickDistance = 40;
 
     private Ray _ray;
+
+    public bool Enabled
+    {
+        get
+        {
+            return _enabled;
+        }
+        set { _enabled = value; }
+    }
 
     private void Start()
     {
@@ -68,7 +79,7 @@ public class InputService : MonoBehaviourSingleton<InputService>
 
     protected virtual void Update()
     {
-        if (EventSystem.current.IsPointerOverGameObject())
+        if (! _enabled)
         {
             return;
         }
