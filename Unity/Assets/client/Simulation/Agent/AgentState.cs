@@ -13,7 +13,7 @@ namespace JunkyardDogs.Simulation.Agent
     {
         public bool IsLoaded { get; private set; }
         public StateKnowledgeStaticDataReference StateWeakReference { get; set; }
-        public List<Directive> Directives { get; set; }
+        public List<ActionDirective> Directives { get; set; }
         public List<StateTransition> Transitions { set; get; }
 
         public Knowledge.State State
@@ -24,7 +24,7 @@ namespace JunkyardDogs.Simulation.Agent
         public AgentState()
         {
             StateWeakReference = new StateKnowledgeStaticDataReference();
-            Directives = new List<Directive>();
+            Directives = new List<ActionDirective>();
             Transitions = new List<StateTransition>();
         }
 

@@ -20,17 +20,17 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 827c9cd4a3943534f909ac6473e17288, type: 3}
+        m_Texture: {fileID: 2800000, guid: 8d18d8b50cb9a394398de62fa9d2d902, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _VideoTex:
-        m_Texture: {fileID: 2800000, guid: f588d850485d0ae479d73cf3bd0b7b00, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _Multiple: 0.395
-    - _Radix: 0.487
+    - _Multiple: 0.377
+    - _Radix: 0.39
     - _SynType: 1
     - _Turn: 0
     m_Colors:
-    - _RefColor: {r: 0, g: 1, b: 0, a: 1}
+    - _RefColor: {r: 0.078431375, g: 0.64705884, b: 0.007843138, a: 1}

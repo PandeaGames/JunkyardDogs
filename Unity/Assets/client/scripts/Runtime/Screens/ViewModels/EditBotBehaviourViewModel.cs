@@ -54,9 +54,9 @@ namespace JunkyardDogs
             //TODO: Add action
             if (SelectedState != null && action != null)
             {
-                Directive directive = new Directive();
-                directive.ActionWeakReference = action;
-                SelectedState.Directives.Add(directive);
+                ActionDirective actionDirective = new ActionDirective();
+                actionDirective.ActionWeakReference = action;
+                SelectedState.Directives.Add(actionDirective);
                 
                 if (OnActionAdded != null)
                 {

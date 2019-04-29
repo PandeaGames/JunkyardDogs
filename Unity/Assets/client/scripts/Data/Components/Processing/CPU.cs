@@ -8,11 +8,11 @@ namespace JunkyardDogs.Components
     [Serializable]
     public class CPU : Component
     {
-        public Quirk[] Quirks { get; set; }
+        public DirectiveExpansion[] Directives { get; set; }
 
         public CPU()
         {
-
+            
         }
     }
 }

@@ -25,9 +25,9 @@ public class AgentBlueprintData : BlueprintData<Agent>, IStaticDataBalance<Agent
             
         _directiveActions.ForEach((directionAction) =>
         {
-            Directive directive = new Directive();
-            directive.ActionWeakReference = directionAction;
-            state.Directives.Add(directive);
+            ActionDirective actionDirective = new ActionDirective();
+            actionDirective.ActionWeakReference = directionAction;
+            state.Directives.Add(actionDirective);
         });
 
         return agent;

@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 using JunkyardDogs.Components;
 
 namespace JunkyardDogs.Specifications
@@ -8,6 +7,18 @@ namespace JunkyardDogs.Specifications
     public class CPU : Processor
     {
         [SerializeField]
-        private Quirk[] _quirks;
+        private Distinction[] _quirks;
+
+        [SerializeField]
+        public int Aggressiveness;
+        
+        [SerializeField]
+        public int Evasiveness;
+        
+        [SerializeField]
+        public int Cautiousness;
+
+        [SerializeField]
+        public int DirectiveSlotCount;
     }
 }

@@ -123,7 +123,7 @@ public class EditBehaviourScreen : ScreenView
         
             foreach (var directiveDisplay in directiveDisplays)
             {
-                state.Directives.Add(directiveDisplay.Directive);
+                state.Directives.Add(directiveDisplay.ActionDirective);
             }
         }
     }

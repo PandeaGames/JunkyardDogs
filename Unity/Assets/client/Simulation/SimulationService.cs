@@ -33,6 +33,36 @@ namespace JunkyardDogs.Simulation
         Defense
     }
 
+    public enum CPUStat
+    {
+        Aggressiveness,
+        Evasiveness, 
+        Cautiousness
+    }
+
+    public enum DirectiveCondition
+    {
+        LowHealth,
+        UnderHalfHealth,
+        BeginningOfMatch,
+        CloseProximity,
+        FarProximity,
+        ProjectileIncomming
+    }
+
+    public enum DirectiveAction
+    {
+        IncreaseAggression,
+        DecreaseAggression,
+        MeleeAttack
+    }
+
+    public struct CPUDirective
+    {
+        public DirectiveCondition Condition;
+        public DirectiveAction Action;
+    }
+
     [Serializable]
     public struct Distinction
     {
@@ -316,7 +346,7 @@ namespace JunkyardDogs.Simulation
             {
                 AgentState state = bot.State;
 
-                List<Directive> directives = state.Directives;
+                List<ActionDirective> directives = state.Directives;
 
                 if (directives.Count != 0)
                 {
@@ -326,11 +356,11 @@ namespace JunkyardDogs.Simulation
                         bot.DirectiveIndex = 0;
                     }
                 
-                    Directive directive = directives[bot.DirectiveIndex];
+                    ActionDirective actionDirective = directives[bot.DirectiveIndex];
 
-                    if (directive.BehaviorAction != null)
+                    if (actionDirective.BehaviorAction != null)
                     {
-                        ActionResult result = directive.BehaviorAction.GetResult();
+                        ActionResult result = actionDirective.BehaviorAction.GetResult();
     
                         if (result.attack)
                         {

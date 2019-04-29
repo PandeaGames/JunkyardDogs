@@ -8,7 +8,7 @@ using WeakReference = PandeaGames.Data.WeakReferences.WeakReference;
 
 namespace JunkyardDogs.Simulation.Agent
 {
-    public class Directive
+    public class ActionDirective
     {
         public ActionStaticDataReference ActionWeakReference { get; set; }
 

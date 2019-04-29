@@ -12,6 +12,7 @@ namespace JunkyardDogs.Components
     public class Bot
     {
         public Motherboard Motherboard { get; set; }
+        public CPU CPU { get; set; }
         public Chassis Chassis { get; set; }
         public Agent Agent { get; set; }
 

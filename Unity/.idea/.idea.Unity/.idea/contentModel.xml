@@ -46,6 +46,13 @@
           <e p="Utility.cs" t="Include" />
         </e>
         <e p="AssetBundles" t="Include">
+          <e p="Art" t="Include">
+            <e p="Bots" t="Include">
+              <e p="Materials" t="Include">
+                <e p="KeyShader.shader" t="Include" />
+              </e>
+            </e>
+          </e>
           <e p="Data" t="Include">
             <e p="Editor" t="Include">
               <e p="ViewUserDataWindow.cs" t="Include" />
@@ -207,6 +214,7 @@
                 <e p="Processing" t="Include">
                   <e p="CircuitBoard.cs" t="Include" />
                   <e p="CPU.cs" t="Include" />
+                  <e p="DirectiveExpansion.cs" t="Include" />
                   <e p="Motherboard.cs" t="Include" />
                   <e p="Quirk.cs" t="Include" />
                   <e p="SubProcessor.cs" t="Include" />
@@ -257,6 +265,7 @@
                 <e p="Processing" t="Include">
                   <e p="CircuitBoard.cs" t="Include" />
                   <e p="CPU.cs" t="Include" />
+                  <e p="DirectiveExpansion.cs" t="Include" />
                   <e p="Motherboard.cs" t="Include" />
                   <e p="Processor.cs" t="Include" />
                   <e p="SubProcessor.cs" t="Include" />
@@ -407,9 +416,9 @@
           </e>
           <e p="Simulation" t="Include">
             <e p="Agent" t="Include">
+              <e p="ActionDirective.cs" t="Include" />
               <e p="Agent.cs" t="Include" />
               <e p="AgentState.cs" t="Include" />
-              <e p="Directive.cs" t="Include" />
               <e p="StateTransition.cs" t="Include" />
             </e>
             <e p="Behavior" t="Include">

@@ -9,15 +9,15 @@ public class DirectiveDisplay : MonoBehaviour {
     [SerializeField]
     private TMP_Text _text;
 
-    private Directive _directive;
-    public Directive Directive
+    private ActionDirective _actionDirective;
+    public ActionDirective ActionDirective
     {
-        get { return _directive; }
+        get { return _actionDirective; }
     }
     
-    public void Render(Directive directive)
+    public void Render(ActionDirective actionDirective)
     {
-        _directive = directive;
-        _text.text = _directive.BehaviorAction.name;
+        _actionDirective = actionDirective;
+        _text.text = _actionDirective.BehaviorAction.name;
     }
 }
