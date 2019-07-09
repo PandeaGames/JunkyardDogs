@@ -18,20 +18,42 @@ public class BotBlueprintData : BlueprintData<Bot>, IStaticDataBalance<BotBluepr
     
     [SerializeField, AgentBlueprintStaticDataReference]
     private AgentBlueprintStaticDataReference _agent; 
+    
+    [SerializeField, CPUStaticDataReference]
+    private SpecificationStaticDataReference _cpu;
+
+    [SerializeField, DirectiveStaticDataReference]
+    private SpecificationStaticDataReference _directive01;
+    
+    [SerializeField, DirectiveStaticDataReference]
+    private SpecificationStaticDataReference _directive02;
+    
+    [SerializeField, DirectiveStaticDataReference]
+    private SpecificationStaticDataReference _directive03;
 
     public override Bot DoGenerate(int seed)
     {
         Chassis chassis = _chassis.Data.DoGenerate(seed);
         Agent agent = _agent.Data.DoGenerate();
         Motherboard motherboard = _motherboard.Data.DoGenerate(seed);
-        
+        CPU cpu = (CPU) ComponentUtils.GenerateComponent(_cpu, _manufacturer);
+        Directive directive01 = (Directive) ComponentUtils.GenerateComponent(_directive01, _manufacturer);
+        Directive directive02 = (Directive) ComponentUtils.GenerateComponent(_directive02, _manufacturer);
+        Directive directive03 = (Directive) ComponentUtils.GenerateComponent(_directive03, _manufacturer);
+
         chassis.Manufacturer = _manufacturer;
 
         Bot bot = new Bot();
         bot.Motherboard = motherboard;
+        bot.CPU = cpu;
 
         bot.Chassis = chassis;
         bot.Agent = agent;
+        
+        cpu.Directives = new Directive[3];
+        cpu.Directives[0] = directive01;
+        cpu.Directives[1] = directive02;
+        cpu.Directives[2] = directive03;
 
         return bot;
     }
@@ -49,6 +71,8 @@ public class BotBlueprintData : BlueprintData<Bot>, IStaticDataBalance<BotBluepr
         _chassis.ID = balance.chassis;
         _motherboard.ID = balance.motherboard;
         _agent.ID = balance.agent;
+        
+        
     }
 
     public BotBlueprintBalanceObject GetBalance()

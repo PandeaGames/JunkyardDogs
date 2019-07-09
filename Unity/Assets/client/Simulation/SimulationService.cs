@@ -57,6 +57,14 @@ namespace JunkyardDogs.Simulation
         MeleeAttack
     }
 
+    public enum Directive
+    {
+        None,
+        DodgeProjectiles,
+        DodgeAllProjectiles,
+        TankProjectiles
+    }
+
     public struct CPUDirective
     {
         public DirectiveCondition Condition;

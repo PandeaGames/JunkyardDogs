@@ -20,3 +20,8 @@ MonoBehaviour:
     _id: HimmelMotherboard
   _agent:
     _id: JagerAgent
+  _cpu:
+    _id: Himmel-i9
+  _directive01: 0
+  _directive02: 0
+  _directive03: 0

@@ -8,11 +8,24 @@ namespace JunkyardDogs.Components
     [Serializable]
     public class CPU : Component
     {
-        public DirectiveExpansion[] Directives { get; set; }
+        public Directive[] Directives { get; set; }
 
         public CPU()
         {
             
+        }
+
+        public Specifications.CPU Spec
+        {
+            get
+            {
+                return SpecificationReference.Data as Specifications.CPU;
+            }
+        }
+        
+        public int GetAttribute(Specifications.CPU.CPUAttribute attribute)
+        {
+            return Spec.GetAttribute(attribute);
         }
     }
 }

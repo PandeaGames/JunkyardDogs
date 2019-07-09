@@ -16,4 +16,8 @@ namespace JunkyardDogs.Data
     public class WeaponDataProvider: ChildStaticDataReferenceDirectory<Specification, Weapon, SpecificationStaticDataReference, WeaponStaticDataReference, SpecificationDataProvider, WeaponDataProvider>
     {
     }
+    
+    public class CPUDataProvider: ChildStaticDataReferenceDirectory<Specification, CPU, SpecificationStaticDataReference, CPUStaticDataReference, SpecificationDataProvider, CPUDataProvider>
+    {
+    }
 }

@@ -83,6 +83,11 @@ namespace JunkyardDogs.Data
     }
     
     [Serializable]
+    public class CPUStaticDataReference : StaticDataReference<Specification, CPU, CPUStaticDataReference, CPUDataProvider>
+    {
+    }
+    
+    [Serializable]
     public class StateKnowledgeStaticDataReference : StaticDataReference<State, State, StateKnowledgeStaticDataReference, StateKnowledgeStaticDataProvider>
     {
     }
@@ -129,6 +134,22 @@ namespace JunkyardDogs.Data
     public class BlueprintStaticDataReferenceAttribute : StaticDataReferenceAttribute
     {
         public BlueprintStaticDataReferenceAttribute() : base(BlueprintDataProvider.FULL_PATH, typeof(BlueprintDataBase))
+        {
+            
+        }
+    }
+    
+    public class CPUStaticDataReferenceAttribute : StaticDataReferenceAttribute
+    {
+        public CPUStaticDataReferenceAttribute() : base(SpecificationDataProvider.FULL_PATH, typeof(CPU))
+        {
+            
+        }
+    }
+    
+    public class DirectiveStaticDataReferenceAttribute : StaticDataReferenceAttribute
+    {
+        public DirectiveStaticDataReferenceAttribute() : base(SpecificationDataProvider.FULL_PATH, typeof(Specifications.Directive))
         {
             
         }

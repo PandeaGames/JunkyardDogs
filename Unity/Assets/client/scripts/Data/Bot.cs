@@ -25,5 +25,10 @@ namespace JunkyardDogs.Components
         {
             Chassis = chassis;
         }
+        
+        public int GetCPUAttribute(Specifications.CPU.CPUAttribute attribute)
+        {
+            return CPU.GetAttribute(attribute);
+        }
     }
 }

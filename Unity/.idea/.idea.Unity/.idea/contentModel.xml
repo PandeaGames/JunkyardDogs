@@ -82,11 +82,14 @@
             <e p="Balance" t="Include">
               <e p="BalanceData" t="Include">
                 <e p="AgentBlueprintBalanceData.cs" t="Include" />
+                <e p="BalanceDataUtils.cs" t="Include" />
                 <e p="BlueprintBalanceData.cs" t="Include" />
                 <e p="BlueprintLootBalanceData.cs" t="Include" />
                 <e p="BotBlueprintBalanceData.cs" t="Include" />
                 <e p="ChassisBlueprintBalanceData.cs" t="Include" />
                 <e p="CompetitorBlueprintBalanceData.cs" t="Include" />
+                <e p="CPUBalanceData.cs" t="Include" />
+                <e p="DirectiveBalanceData.cs" t="Include" />
                 <e p="EliminationFormatBalanceData.cs" t="Include" />
                 <e p="HitscanWeaponBalanceData.cs" t="Include" />
                 <e p="LootBalanceData.cs" t="Include" />
@@ -214,7 +217,7 @@
                 <e p="Processing" t="Include">
                   <e p="CircuitBoard.cs" t="Include" />
                   <e p="CPU.cs" t="Include" />
-                  <e p="DirectiveExpansion.cs" t="Include" />
+                  <e p="Directive.cs" t="Include" />
                   <e p="Motherboard.cs" t="Include" />
                   <e p="Quirk.cs" t="Include" />
                   <e p="SubProcessor.cs" t="Include" />
@@ -265,6 +268,7 @@
                 <e p="Processing" t="Include">
                   <e p="CircuitBoard.cs" t="Include" />
                   <e p="CPU.cs" t="Include" />
+                  <e p="Directive.cs" t="Include" />
                   <e p="DirectiveExpansion.cs" t="Include" />
                   <e p="Motherboard.cs" t="Include" />
                   <e p="Processor.cs" t="Include" />
@@ -427,6 +431,24 @@
               <e p="BehaviorAction.cs" t="Include" />
               <e p="Movement.cs" t="Include" />
             </e>
+            <e p="DecisionMakers" t="Include">
+              <e p="DecisionEvents.cs" t="Include" />
+              <e p="DecisionMoveBackwards.cs" t="Include" />
+              <e p="DecisionMoveForward.cs" t="Include" />
+              <e p="DecisionMoveLeft.cs" t="Include" />
+              <e p="DecisionMoveRight.cs" t="Include" />
+              <e p="DecisionStartWeaponCharge.cs" t="Include" />
+              <e p="DecisionStrafe.cs" t="Include" />
+              <e p="DecisionStunned.cs" t="Include" />
+              <e p="DecisionWeapon.cs" t="Include" />
+              <e p="DecisionWeaponCharge.cs" t="Include" />
+              <e p="DecisionWeaponCoolDown.cs" t="Include" />
+              <e p="DecisionWeaponFire.cs" t="Include" />
+              <e p="IDecisionMaker.cs" t="Include" />
+              <e p="Logic.cs" t="Include" />
+              <e p="WeightedDecisionEvent.cs" t="Include" />
+            </e>
+            <e p="DecisionMakers.cs" t="Include" />
             <e p="EffectAction.cs" t="Include" />
             <e p="Engagement.cs" t="Include" />
             <e p="Knowledge" t="Include">
@@ -436,6 +458,16 @@
               <e p="Range.cs" t="Include" />
               <e p="State.cs" t="Include" />
             </e>
+            <e p="SimObjects" t="Include">
+              <e p="SimBot.cs" t="Include" />
+              <e p="SimObject.cs" t="Include" />
+              <e p="SimPhysicsObject.cs" t="Include" />
+            </e>
+            <e p="SimulatedEngagement.cs" t="Include" />
+            <e p="SimulatedEngagementEvents.cs" t="Include" />
+            <e p="SimulatedEngagementResult.cs" t="Include" />
+            <e p="SimulatedEngagementsObjects.cs" t="Include" />
+            <e p="SimulatedPhysics.cs" t="Include" />
             <e p="Simulation" t="Include">
               <e p="Physics" t="Include">
                 <e p="SimulatedBody.cs" t="Include" />
@@ -454,6 +486,8 @@
                 <e p="SimulatedPulse.cs" t="Include" />
               </e>
             </e>
+            <e p="SimulationRecording.cs" t="Include" />
+            <e p="SimulationRunner.cs" t="Include" />
             <e p="SimulationService.cs" t="Include" />
             <e p="Utils" t="Include">
               <e p="SimulationUtils.cs" t="Include" />

@@ -13,8 +13,12 @@ namespace JunkyardDogs.Specifications
         [SerializeField]
         protected double _cooldown;
 
+        [SerializeField]
+        protected double _power;
+
         public double ChargeTime { get { return _chargeTime; } }
         public double Cooldown { get { return _cooldown; } }
+        public double Power { get { return _power; } }
 
         public virtual AttackActionResult GetResult()
         {

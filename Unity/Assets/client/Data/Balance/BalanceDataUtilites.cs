@@ -39,6 +39,24 @@ public static class BalanceDataUtilites
         return returnData;
     }
     
+    public static string EncodeEnumSingle<TEnum>(TEnum data)
+    {
+        string enumValueName = Enum.GetName(typeof(TEnum), data);
+        return enumValueName;
+    }
+
+    public static TEnum DecodeEnumSingle<TEnum>(string data)
+    {
+        if (string.IsNullOrEmpty(data))
+        {
+            return default(TEnum);
+        }
+
+        TEnum enumValue = (TEnum) Enum.Parse(typeof(TEnum), data);
+
+        return enumValue;
+    }
+
     public static EnumValue<TEnum>[] DecodeEnum<TEnum>(string data)
     {
         if (string.IsNullOrEmpty(data))

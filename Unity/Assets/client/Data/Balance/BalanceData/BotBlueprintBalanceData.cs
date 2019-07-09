@@ -11,6 +11,10 @@ namespace JunkyardDogs.Data.Balance
         public string chassis;
         public string agent;
         public string manufacturer;
+        public string cpu;
+        public string directive01;
+        public string directive02;
+        public string directive03;
         
         public string GetDataUID()
         {

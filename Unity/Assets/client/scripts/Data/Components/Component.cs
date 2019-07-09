@@ -33,6 +33,11 @@ namespace JunkyardDogs.Components
             SpecificationReference = new SpecificationStaticDataReference();
         }
 
+        public TSpec GetSpec<TSpec>() where TSpec : Specification
+        {
+            return Specification as TSpec;
+        }
+
         public virtual void Dismantle(Inventory inventory)
         {
             inventory.AddComponent(this);
