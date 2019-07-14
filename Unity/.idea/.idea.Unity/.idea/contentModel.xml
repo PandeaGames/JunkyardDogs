@@ -459,10 +459,20 @@
               <e p="State.cs" t="Include" />
             </e>
             <e p="SimObjects" t="Include">
+              <e p="ISimAttack.cs" t="Include" />
+              <e p="SimAttackObject.cs" t="Include" />
               <e p="SimBot.cs" t="Include" />
+              <e p="SimHitscanShot.cs" t="Include" />
+              <e p="SimMeleeAttack.cs" t="Include" />
+              <e p="SimMortarAttackObject.cs" t="Include" />
               <e p="SimObject.cs" t="Include" />
+              <e p="SimPhysicalAttackObject.cs" t="Include" />
               <e p="SimPhysicsObject.cs" t="Include" />
+              <e p="SimProjectile.cs" t="Include" />
+              <e p="SimProjectileAttackObject.cs" t="Include" />
             </e>
+            <e p="SimulatedAttacks.cs" t="Include" />
+            <e p="SimulatedCollisions.cs" t="Include" />
             <e p="SimulatedEngagement.cs" t="Include" />
             <e p="SimulatedEngagementEvents.cs" t="Include" />
             <e p="SimulatedEngagementResult.cs" t="Include" />

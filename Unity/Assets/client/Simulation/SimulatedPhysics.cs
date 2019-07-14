@@ -51,8 +51,16 @@ namespace JunkyardDogs.Simulation
             foreach(SimObject simulated in engagement.Objects)
             {
                 SimPhysicsObject simulatedPhysicsObj = simulated as SimPhysicsObject;
-                if(simulatedPhysicsObj != null)
-                    simulatedPhysicsObj.position += simulatedPhysicsObj.velocityPerSecond * SimulatedEngagement.SimuationStep;
+                if (simulatedPhysicsObj != null)
+                {
+                    float angle = simulatedPhysicsObj.body.rotation.eulerAngles.y;
+
+                    Vector2 vector = new Vector2(
+                        Mathf.Cos(angle) * simulatedPhysicsObj.body.velocityPerSecond.x,
+                        Mathf.Sin(angle) * simulatedPhysicsObj.body.velocityPerSecond.y);
+
+                    simulatedPhysicsObj.body.position += vector * SimulatedEngagement.SimuationStep;
+                }
             }
 
             //Calculate collisions
@@ -60,7 +68,7 @@ namespace JunkyardDogs.Simulation
             {
                 SimObject simulated = engagement.Objects[i];
                 SimPhysicsObject simulatedPhysicsObj = simulated as SimPhysicsObject;
-                if (simulatedPhysicsObj == null || simulatedPhysicsObj.collider == null)
+                if (!IsValidForCollision(simulatedPhysicsObj))
                     continue;
 
                 for (int j = i + 1; j < engagement.Objects.Count; j++)
@@ -68,7 +76,7 @@ namespace JunkyardDogs.Simulation
                     SimObject other = engagement.Objects[j];
                     SimPhysicsObject otherSimulatedPhysicsObj = other as SimPhysicsObject;
 
-                    if (otherSimulatedPhysicsObj == null || otherSimulatedPhysicsObj.collider == null)
+                    if (!IsValidForCollision(otherSimulatedPhysicsObj))
                         continue;
                          
                     if(DoesCollide(simulatedPhysicsObj.collider, otherSimulatedPhysicsObj.collider))
@@ -77,6 +85,20 @@ namespace JunkyardDogs.Simulation
                     }
                 }
             }
+        }
+
+        private bool IsValidForCollision(SimPhysicsObject simObject)
+        {
+            if (simObject == null)
+            {
+                return false;
+            }
+            else if (simObject.body != null && simObject.collider != null)
+            {
+                return simObject.body.doesCollide;
+            }
+
+            return false;
         }
         
         private bool DoesCollide(SimulatedCollider collider, SimulatedCollider other)

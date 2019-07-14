@@ -37,6 +37,11 @@ namespace JunkyardDogs.Components
         {
             return Specification as TSpec;
         }
+        
+        public bool IsSpec<TSpec>() where TSpec : Specification
+        {
+            return Specification is TSpec;
+        }
 
         public virtual void Dismantle(Inventory inventory)
         {

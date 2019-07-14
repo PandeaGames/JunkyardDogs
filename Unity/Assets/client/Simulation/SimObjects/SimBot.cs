@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using JunkyardDogs.Components;
+using UnityEngine.UI.Extensions;
 using Weapon = JunkyardDogs.Specifications.Weapon;
 
 namespace JunkyardDogs.Simulation
@@ -23,15 +25,35 @@ namespace JunkyardDogs.Simulation
                     List<IDecisionMaker> decisionMakersList = new List<IDecisionMaker>();
                     
                     Type type = typeof(IDecisionMaker);
-                    IEnumerable<Type> types = AppDomain.CurrentDomain.GetAssemblies()
-                        .SelectMany(s => s.GetTypes())
-                        .Where(p => type.IsAssignableFrom(p) && type.IsClass && !type.IsAbstract);
+
+                    Assembly[] asemblies = AppDomain.CurrentDomain.GetAssemblies();
+                    List<Type> foundDecisionMakerTypes = new List<Type>();
                     
-                    foreach (Type foundType in types)
+                    foreach (Assembly assembly in asemblies)
+                    {
+                        Type[] typesInAssembly = assembly.GetTypes();
+
+                        foreach (Type typeInAssembly in typesInAssembly)
+                        {
+                            bool IsAssignableFrom = type.IsAssignableFrom(typeInAssembly);
+                            bool isDecisionMaker = IsAssignableFrom;
+                            isDecisionMaker &= typeInAssembly.IsClass;
+                            isDecisionMaker &= !typeInAssembly.IsAbstract;
+
+                            if (isDecisionMaker)
+                            {
+                                foundDecisionMakerTypes.Add(typeInAssembly);
+                            }
+                        }
+                    }
+                    
+                    foreach (Type foundType in foundDecisionMakerTypes)
                     {
                         IDecisionMaker handlerInstance = (IDecisionMaker)Activator.CreateInstance(foundType);
                         decisionMakersList.Add(handlerInstance);
                     }
+
+                    DecisionMakersCache = decisionMakersList.ToArray();
                 }
                 
                 return DecisionMakersCache;
@@ -58,7 +80,7 @@ namespace JunkyardDogs.Simulation
         
         public Bot bot;
         public SimBot opponent;
-        public int DamageTaken;
+        public double DamageTaken;
         public double StunStartTick = -1;
         public double StunLength;
         
@@ -89,10 +111,15 @@ namespace JunkyardDogs.Simulation
                 return _weightedDecisionsCache;
             }
         }
+
+        public double RemainingHealth
+        {
+            get { return bot.TotalHealth - DamageTaken; }
+        }
         
         public Type[] EventsToHandle()
         {
-            return new Type[] { typeof(SimLogicEvent) };
+            return new Type[] { typeof(SimLogicEvent), typeof(SimCollisionEvent) };
         }
         
         public void OnSimEvent(SimulatedEngagement engagement, SimEvent simEvent)
@@ -101,6 +128,24 @@ namespace JunkyardDogs.Simulation
             {
                 OnSimEvent(engagement, simEvent as SimLogicEvent);
             }
+        }
+
+        public override void OnCollision(SimPhysicsObject other)
+        {
+            base.OnCollision(other);
+
+            SimPhysicalAttackObject simPhysicalAttackObject = other as SimPhysicalAttackObject;
+
+            if (simPhysicalAttackObject != null && simPhysicalAttackObject.SimBot == opponent)
+            {
+                HitByAttack(other as SimPhysicalAttackObject);
+            }
+        }
+
+        private void HitByAttack(SimPhysicalAttackObject attack)
+        {
+            DamageTaken += attack.Damage;
+            engagement.SendEvent(new SimDamageTakenEvent(this, attack.Damage));
         }
 
         public void OnSimEvent(SimulatedEngagement engagement, SimLogicEvent simEvent)
@@ -140,7 +185,7 @@ namespace JunkyardDogs.Simulation
                     return 0;
                 }
                 
-                return a.Weight > b.Weight ? 1:-1;
+                return a.Weight < b.Weight ? 1:-1;
             });
 
             return weightedDecisions.ToArray();
@@ -297,7 +342,7 @@ namespace JunkyardDogs.Simulation
                     decisionStartWeaponChargeWeightedDecision.DecisionMaker as DecisionStartWeaponCharge;
 
                 int simulationTicksSinceWeaponChargeStart =
-                    engagement.CurrentStep - decisionStartWeaponChargeWeightedDecision.simulationTick;
+                    (engagement.CurrentStep - 1) - decisionStartWeaponChargeWeightedDecision.simulationTick;
                 int numberOfChargeDecisionsSinceStartedCharging = CountLastDecisionsOfType<DecisionWeaponCharge>(simulationTicksSinceWeaponChargeStart);
                 bool hasChargingBeenInterrupted =
                     simulationTicksSinceWeaponChargeStart > numberOfChargeDecisionsSinceStartedCharging;

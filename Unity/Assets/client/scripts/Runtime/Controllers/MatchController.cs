@@ -33,7 +33,7 @@ public struct MatchOutcome
     }
 }
 
-public class MatchController : MonoBehaviour
+public class MatchController : MonoBehaviour, ISimulatedEngagementListener
 {
     [SerializeField]
     private ServiceManager _serviceManager;
@@ -54,9 +54,12 @@ public class MatchController : MonoBehaviour
         _simulationService = _serviceManager.GetService<SimulationService>();
         _cameraViewModel = Game.Instance.GetViewModel<CameraViewModel>(0);
         
-        _simulationService.SetEngagement(_viewModel.Engagement);
-        _simulationService.StartSimulation();
+        //_simulationService.SetEngagement(_viewModel.Engagement);
+       // _simulationService.StartSimulation();
         StartCoroutine(EndOfBattleCoroutine());
+        SimulatedEngagement simulation = new SimulatedEngagement(_viewModel.Engagement, this);
+
+        while (!simulation.Step());
         
         _cameraViewModel.Focus(_cameraAgent);
     }
@@ -75,5 +78,20 @@ public class MatchController : MonoBehaviour
        
         Debug.Log("WINNER");
         yield break;
+    }
+
+    public void StepStart()
+    {
+        
+    }
+
+    public void StepComplete()
+    {
+        
+    }
+
+    public void OnEvent(SimulatedEngagement simulatedEngagement, SimEvent e)
+    {
+        
     }
 }

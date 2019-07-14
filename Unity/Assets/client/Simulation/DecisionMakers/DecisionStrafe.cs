@@ -81,7 +81,10 @@ namespace JunkyardDogs.Simulation
         {
             //apply velocity
             Vector2 vector = new Vector2(_direction == StrafeDirection.Left ? -1:1, 0);
-            simBot.velocityPerSecond = vector;
+            simBot.body.velocityPerSecond = vector;
+            
+            simBot.body.rotation.SetLookRotation(simBot.opponent.body.position);
+            
             engagement.SendEvent(new MoveDecisionEvent(simBot, vector));
         }
     }

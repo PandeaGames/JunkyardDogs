@@ -26,6 +26,8 @@ namespace JunkyardDogs.Simulation
             logic.wasShotFiredInHowManyDecisions = wasShotFiredInHowManyDecisions;
 
             logic.wasShotFiredRecently = simBot.DecisionWasOfType<DecisionWeaponFire>(logic.wasShotFiredInHowManyDecisions);
+            logic.wasShotFiredRecently |= simBot.DecisionWasOfType<DecisionStartWeaponCharge>(logic.wasShotFiredInHowManyDecisions);
+            logic.wasShotFiredRecently |= simBot.DecisionWasOfType<DecisionWeaponCharge>(logic.wasShotFiredInHowManyDecisions);
             logic.aggressiveness = simBot.bot.GetCPUAttribute(CPU.CPUAttribute.Aggressiveness);
             
             if (logic.wasShotFiredRecently)
@@ -42,7 +44,7 @@ namespace JunkyardDogs.Simulation
 
         protected override void MakeDecision(SimBot simBot, SimulatedEngagement engagement, Weapon weapon)
         {
-            throw new System.NotImplementedException();
+            engagement.SendEvent(new WeaponStartChargeDecisionEvent(simBot, _armamentLocation));
         }
     }
 

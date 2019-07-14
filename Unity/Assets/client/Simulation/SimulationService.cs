@@ -312,7 +312,7 @@ namespace JunkyardDogs.Simulation
 
         private void ExecuteDirectives(SimulatedBot bot, SimulatedBot opponent)
         {
-            bot.body.velocity = Vector2.zero;
+            bot.body.velocityPerSecond = Vector2.zero;
 
             if (bot.DelayedAttackAction != null)
             {
@@ -345,7 +345,7 @@ namespace JunkyardDogs.Simulation
 
                 float finalAngle = moveAngle + angle;
 
-                bot.body.velocity.Set(
+                bot.body.velocityPerSecond.Set(
                     Mathf.Cos(finalAngle) * 3,
                     Mathf.Sin(finalAngle) * 3
                     );
@@ -473,7 +473,7 @@ namespace JunkyardDogs.Simulation
             foreach(SimulatedObject simulated in _objectList)
             {
                 if(simulated.body != null)
-                    simulated.body.position += simulated.body.velocity * SimuationStep;
+                    simulated.body.position += simulated.body.velocityPerSecond * SimuationStep;
 
                 simulated.Update();
             }

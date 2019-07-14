@@ -5,6 +5,7 @@ using JunkyardDogs.Components;
 using UnityEngine;
 using UnityEngine.UI.Extensions;
 using EventHandlersTable = System.Collections.Generic.Dictionary<System.Type, System.Collections.Generic.List<JunkyardDogs.Simulation.ISimulatedEngagementEventHandler>>;
+using Random = UnityEngine.Random;
 
 namespace JunkyardDogs.Simulation
 {
@@ -43,6 +44,8 @@ namespace JunkyardDogs.Simulation
         }
 
         public List<SimObject> Objects;
+        private List<SimObject> ObjectsMarkedForInstantiation;
+        private List<SimObject> ObjectsMarkedForRemoval;
 
         private EventHandlersTable _eventHandlers;
 
@@ -106,6 +109,9 @@ namespace JunkyardDogs.Simulation
         public SimulatedEngagement(Engagement engagement, ISimulatedEngagementListener listener)
         {
             Objects = new List<SimObject>();
+            ObjectsMarkedForInstantiation = new List<SimObject>();
+            ObjectsMarkedForRemoval = new List<SimObject>();
+            
             _engagement = engagement;
             _listener = listener;
             _eventHandlers = GetEventHandlers();
@@ -113,35 +119,56 @@ namespace JunkyardDogs.Simulation
 
         public bool Step()
         {
-            bool isFirstStep = _step == 0;
-            if (isFirstStep)
+            bool isSimulationComplete = _engagement.Outcome != null;
+            if (!isSimulationComplete)
             {
-                SimBot botRed = new SimBot(this);
-                SimBot botBlue = new SimBot(this);
+                bool isFirstStep = _step == 0;
+                if (isFirstStep)
+                {
+                    SimBot botRed = new SimBot(this);
+                    SimBot botBlue = new SimBot(this);
                 
-                botRed.bot = _engagement.RedCombatent;
-                botBlue.bot = _engagement.BlueCombatent;
+                    botRed.bot = _engagement.RedCombatent;
+                    botBlue.bot = _engagement.BlueCombatent;
                 
-                botRed.opponent = botBlue;
-                botBlue.opponent = botRed;
+                    botRed.opponent = botBlue;
+                    botBlue.opponent = botRed;
                 
-                Instantiate(botBlue);
-                Instantiate(botRed);
+                    Add(botBlue);
+                    Add(botRed);
+                }
+            
+                SyncronizObjectsBeforeStep();
+                _listener.StepStart();
+                SendEvent(new SimLogicEvent());
+                SendEvent(new SimPostLogicEvent());
+                _listener.StepComplete();
+                _step++;
+                ProcessEndOfMatchOutcom();
+                isSimulationComplete = _engagement.Outcome != null;
             }
             
-            bool isSimulationComplete = false;
-            _listener.StepStart();
-            SendEvent(new SimLogicEvent());
-            SendEvent(new SimPostLogicEvent());
-            _listener.StepComplete();
-            _step++;
             return isSimulationComplete;
+        }
+
+        private void ProcessEndOfMatchOutcom()
+        {
+            if (CurrentSeconds > _engagement.Rules.MatchTimeLimit)
+            {
+                int winnerChoice = Random.Range(0, 1);
+                
+                Bot winner = winnerChoice == 0 ? _engagement.RedCombatent:_engagement.BlueCombatent;
+                Bot loser = _engagement.RedCombatent == winner ? _engagement.BlueCombatent : _engagement.RedCombatent;
+
+                _engagement.Outcome = new SimulationService.Outcome(winner, loser, (float)CurrentSeconds);
+            }
         }
 
         public void SendEvent(SimEvent simEvent)
         {
+            Type eventType = simEvent.GetType();
             List<ISimulatedEngagementEventHandler> handlers = null;
-            _eventHandlers.TryGetValue(typeof(SimEvent), out handlers);
+            _eventHandlers.TryGetValue(eventType, out handlers);
 
             if (handlers != null)
             {
@@ -152,28 +179,63 @@ namespace JunkyardDogs.Simulation
             }
             
             _listener.OnEvent(this, simEvent);
+            OnEvent(simEvent);
         }
 
-        public void Instantiate(SimObject simObj)
+        private void OnEvent(SimEvent simEvent)
         {
-            Objects.Add(simObj);
-            SendEvent(new SimInstantiationEvent(simObj));
-            
-            if (simObj is ISimulatedEngagementEventHandler)
+            Debug.Log(simEvent);
+            if (simEvent is SimDamageTakenEvent)
             {
-                AddEventHandler(_eventHandlers, simObj as ISimulatedEngagementEventHandler);
+                OnEvent(simEvent as SimDamageTakenEvent);
             }
         }
         
-        public void Destroy(SimObject simObj)
+        private void OnEvent(SimDamageTakenEvent simEvent)
         {
-            Objects.Remove(simObj);
-            SendEvent(new SimDestroyEvent(simObj));
-            
-            if (simObj is ISimulatedEngagementEventHandler)
+            if (simEvent.simBot.RemainingHealth <= 0)
             {
-                RemoveEventHandler(_eventHandlers, simObj as ISimulatedEngagementEventHandler);
+                _engagement.Outcome = new SimulationService.Outcome(simEvent.simBot.bot, simEvent.simBot.opponent.bot, (float)CurrentSeconds);
             }
+        }
+
+        private void SyncronizObjectsBeforeStep()
+        {
+            foreach (SimObject simObj in ObjectsMarkedForRemoval)
+            {
+                SendEvent(new SimDestroyEvent(simObj));
+            
+                if (simObj is ISimulatedEngagementEventHandler)
+                {
+                    RemoveEventHandler(_eventHandlers, simObj as ISimulatedEngagementEventHandler);
+                }
+
+                Objects.Remove(simObj);
+            }
+            
+            foreach (SimObject simObj in ObjectsMarkedForInstantiation)
+            {
+                SendEvent(new SimInstantiationEvent(simObj));
+            
+                if (simObj is ISimulatedEngagementEventHandler)
+                {
+                    AddEventHandler(_eventHandlers, simObj as ISimulatedEngagementEventHandler);
+                }
+            }
+            
+            Objects.AddRange(ObjectsMarkedForInstantiation);
+            ObjectsMarkedForRemoval.Clear();
+            ObjectsMarkedForInstantiation.Clear();
+        }
+
+        public void Add(SimObject simObj)
+        {
+            ObjectsMarkedForInstantiation.Add(simObj);
+        }
+        
+        public void MarkForRemoval(SimObject simObj)
+        {
+            ObjectsMarkedForRemoval.Add(simObj);
         }
     }
 }

@@ -38,7 +38,7 @@ namespace JunkyardDogs.Simulation
             logic.numberOfPreviousForwardDecisionsToCheck = numberOfPreviousForwardDecisionsToCheck;
             logic.numberOfPreviousForwardDecisionsCap = numberOfPreviousForwardDecisionsCap;
             
-            logic.distance = Vector2.Distance(simBot.position, simBot.opponent.position);
+            logic.distance = Vector2.Distance(simBot.body.position, simBot.opponent.body.position);
             logic.clampedDistancedForProximity = Mathf.Min(logic.distance, logic.clampedDistance);
             logic.proximityMultiplier = 1 + logic.clampedDistancedForProximity * logic.distanceProximityMultiplier;
 
@@ -77,7 +77,8 @@ namespace JunkyardDogs.Simulation
         public void MakeDecision(SimBot simBot, SimulatedEngagement engagement)
         {
             Vector2 vector = new Vector2(0, 1);
-            simBot.velocityPerSecond = vector;
+            simBot.body.velocityPerSecond = vector;
+            simBot.body.rotation.SetLookRotation(simBot.opponent.body.position);
             engagement.SendEvent(new MoveDecisionEvent(simBot, vector));
         }
     }

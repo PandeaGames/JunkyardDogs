@@ -8,5 +8,10 @@ namespace JunkyardDogs.Simulation
         {
             this.engagement = engagement;
         }
+
+        public virtual void OnDrawGizmos()
+        {
+            
+        }
     }
 }

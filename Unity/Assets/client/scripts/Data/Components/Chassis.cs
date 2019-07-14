@@ -197,5 +197,14 @@ namespace JunkyardDogs.Components
                     return null;
             }
         }
+        
+        public Weapon GetArmament(ArmamentLocation armamentLocation)
+        {
+            WeaponProcessor processor = GetWeaponProcessor(armamentLocation);
+            if (processor != null)
+                return processor.Weapon;
+
+            return null;
+        }
     }
 }

@@ -15,6 +15,9 @@ namespace JunkyardDogs.Specifications
         [SerializeField]
         private Bullet _shell;
         public Bullet Shell { get { return _shell; } }
+        
+        public float Speed { get { return _shell.Speed; } }
+        public float Radius { get { return _shell.Radius; } }
 
         public override AttackActionResult GetResult()
         {

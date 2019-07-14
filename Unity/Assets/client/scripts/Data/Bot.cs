@@ -30,5 +30,26 @@ namespace JunkyardDogs.Components
         {
             return CPU.GetAttribute(attribute);
         }
+
+        public Weapon GetArmament(Chassis.ArmamentLocation armamentLocation)
+        {
+            if (Chassis != null)
+                return Chassis.GetArmament(armamentLocation);
+
+            return null;
+        }
+        
+        public WeaponProcessor GetWeaponProcesor(Chassis.ArmamentLocation armamentLocation)
+        {
+            if (Chassis != null)
+                return Chassis.GetWeaponProcessor(armamentLocation);
+
+            return null;
+        }
+
+        public int TotalHealth
+        {
+            get { return 100; }
+        }
     }
 }

@@ -15,33 +15,46 @@ namespace JunkyardDogs.Components
         {
             JunkyardDogs.Components.Component component = null;
 
-            if(spec.Data is JunkyardDogs.Specifications.Weapon)
+            Specification specData = spec.Data;
+
+            if (specData == null)
+            {
+                return null;
+                //throw new NullReferenceException("Specification data is null");
+            }
+            
+            if(specData is JunkyardDogs.Specifications.Weapon)
             {
                 component = new JunkyardDogs.Components.Weapon();
             }
-            else if (spec.Data is JunkyardDogs.Specifications.Chassis)
+            else if (specData is JunkyardDogs.Specifications.Chassis)
             {
                 component = new JunkyardDogs.Components.Chassis();
             }
-            else if (spec.Data is JunkyardDogs.Specifications.WeaponChip)
+            else if (specData is JunkyardDogs.Specifications.WeaponChip)
             {
                 component = new JunkyardDogs.Components.WeaponProcessor();
             }
-            else if (spec.Data is JunkyardDogs.Specifications.SubProcessor)
+            else if (specData is JunkyardDogs.Specifications.SubProcessor)
             {
                 component = new JunkyardDogs.Components.SubProcessor();
             }
-            else if (spec.Data is JunkyardDogs.Specifications.Plate)
+            else if (specData is JunkyardDogs.Specifications.Plate)
             {
                 component = new JunkyardDogs.Components.Plate();
             }
-            else if (spec.Data is JunkyardDogs.Specifications.CPU)
+            else if (specData is JunkyardDogs.Specifications.CPU)
             {
                 component = new JunkyardDogs.Components.CPU();
             }
-            else if (spec.Data is JunkyardDogs.Specifications.CircuitBoard)
+            else if (specData is JunkyardDogs.Specifications.CircuitBoard)
             {
                 component = new JunkyardDogs.Components.CircuitBoard();
+            }
+
+            if (component == null)
+            {
+                throw new NotSupportedException(string.Format("Specification type [{0}] could not be made into a component. It is not supported.", specData.GetType()));
             }
 
             component.Manufacturer = manufacturer;

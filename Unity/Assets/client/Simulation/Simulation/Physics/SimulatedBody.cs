@@ -6,7 +6,9 @@ namespace JunkyardDogs.Simulation.Simulation
     public class SimulatedBody
     {
         public Vector2 position;
-        public Vector2 velocity;
+        public Vector2 velocityPerSecond;
+        public Quaternion rotation;
+        public bool doesCollide = true;
         
         public Vector3 PositionToWorld()
         {

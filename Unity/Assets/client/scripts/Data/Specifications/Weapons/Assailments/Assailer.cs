@@ -3,7 +3,7 @@ using System.Collections;
 
 namespace JunkyardDogs.Specifications
 {
-    public class Assailer : ScriptableObject
+    public class Assailer : PhysicalSpecification
     {
         [SerializeField]
         private int _damage;

@@ -42,7 +42,7 @@ namespace JunkyardDogs.Simulation
             logic.numberOfPreviousBackwardDecisionsCap = numberOfPreviousBackwardDecisionsCap;  
             
             //calculate proximity multiplier
-            logic.distance = Vector2.Distance(simBot.position, simBot.opponent.position);
+            logic.distance = Vector2.Distance(simBot.body.position, simBot.opponent.body.position);
             logic.clampedDistancedForProximity = Math.Min(logic.distance, logic.clampedDistance);
             logic.invertedClampedDistancedForProximity = logic.clampedDistance - logic.clampedDistancedForProximity;
             logic.proximityMultiplier = 1 + logic.invertedClampedDistancedForProximity * logic.distanceProximityMultiplier;
@@ -82,7 +82,8 @@ namespace JunkyardDogs.Simulation
         public void MakeDecision(SimBot simBot, SimulatedEngagement engagement)
         {
             Vector2 vector = new Vector2(0, -1);
-            simBot.velocityPerSecond = vector;
+            simBot.body.velocityPerSecond = vector;
+            simBot.body.rotation.SetLookRotation(simBot.opponent.body.position);
             engagement.SendEvent(new MoveDecisionEvent(simBot, vector));
         }
     }

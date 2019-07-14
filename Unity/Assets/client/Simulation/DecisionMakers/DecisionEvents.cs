@@ -15,10 +15,22 @@ namespace JunkyardDogs.Simulation
 
     public abstract class WeaponDecisionEvent : DecisionEvent
     {
+        public readonly SimBot simBot;
         public readonly Chassis.ArmamentLocation armamentLocation;
+
+        public Weapon Weapon
+        {
+            get { return simBot.bot.GetArmament(armamentLocation); }
+        }
+        
+        public WeaponProcessor WeaponProcessor
+        {
+            get { return simBot.bot.GetWeaponProcesor(armamentLocation); }
+        }
 
         public WeaponDecisionEvent(SimBot simBot, Chassis.ArmamentLocation armamentLocation) : base(simBot)
         {
+            this.simBot = simBot;
             this.armamentLocation = armamentLocation;
         }
     }

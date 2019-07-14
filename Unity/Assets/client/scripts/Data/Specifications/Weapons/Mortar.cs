@@ -15,6 +15,15 @@ namespace JunkyardDogs.Specifications
         private MortarShell _shell;
 
         public MortarShell Shell { get { return _shell; } }
+        public float Radius
+        {
+            get { return _shell.Radius; }
+        }
+        
+        public float Speed
+        {
+            get { return _shell.Speed; }
+        }
 
         public override AttackActionResult GetResult()
         {
