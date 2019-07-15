@@ -83,6 +83,8 @@ namespace JunkyardDogs.Simulation
         public double DamageTaken;
         public double StunStartTick = -1;
         public double StunLength;
+
+        private List<WeightedDecision[]> weightedDecisionHistory = new List<WeightedDecision[]>();
         
         private List<WeightedDecision> _decisionsCache;
         public List<WeightedDecision> Decisions
@@ -157,6 +159,7 @@ namespace JunkyardDogs.Simulation
             
             if (hasDecisions)
             {
+                weightedDecisionHistory.Add(weightedDecisions);
                 WeightedDecision bestDecision = weightedDecisions[0];
             
                 bestDecision.DecisionMaker.MakeDecision(this, engagement);
@@ -189,6 +192,38 @@ namespace JunkyardDogs.Simulation
             });
 
             return weightedDecisions.ToArray();
+        }
+        
+        public bool IsLastDecisionOfType<TDecision>(Type[] typeFilters) where TDecision : IDecisionMaker
+        {
+            for (int i = Decisions.Count - 1; i >= 0; i--)
+            {
+                IDecisionMaker decision = Decisions[i].DecisionMaker;
+                Type decisionType = decision.GetType();
+
+                bool isTargetType = decision is TDecision;
+                bool isFilteredType = false;
+
+                foreach (Type filteredType in typeFilters)
+                {
+                    if (filteredType.IsAssignableFrom(decisionType))
+                    {
+                        isFilteredType = true;
+                        break;
+                    }
+                }
+
+                if (isTargetType)
+                {
+                    return true;
+                }
+                else if(!isFilteredType)
+                {
+                    break;
+                }
+            }
+
+            return false;
         }
 
         public bool IsLastDecisionOfType<TDecision>() where TDecision : IDecisionMaker
@@ -341,21 +376,28 @@ namespace JunkyardDogs.Simulation
                 DecisionStartWeaponCharge decisionStartWeaponCharge =
                     decisionStartWeaponChargeWeightedDecision.DecisionMaker as DecisionStartWeaponCharge;
 
-                int simulationTicksSinceWeaponChargeStart =
-                    (engagement.CurrentStep - 1) - decisionStartWeaponChargeWeightedDecision.simulationTick;
-                int numberOfChargeDecisionsSinceStartedCharging = CountLastDecisionsOfType<DecisionWeaponCharge>(simulationTicksSinceWeaponChargeStart);
-                bool hasChargingBeenInterrupted =
-                    simulationTicksSinceWeaponChargeStart > numberOfChargeDecisionsSinceStartedCharging;
+                if (decisionStartWeaponCharge.armamentLocation == position)
+                {
+                    int simulationTicksSinceWeaponChargeStart =
+                        (engagement.CurrentStep - 1) - decisionStartWeaponChargeWeightedDecision.simulationTick;
+                    int numberOfChargeDecisionsSinceStartedCharging = CountLastDecisionsOfType<DecisionWeaponCharge>(simulationTicksSinceWeaponChargeStart);
+                    bool hasChargingBeenInterrupted =
+                        simulationTicksSinceWeaponChargeStart > numberOfChargeDecisionsSinceStartedCharging;
                 
-                double timeOfStartCharge =
-                    engagement.ConvertStepsToSeconds(decisionStartWeaponChargeWeightedDecision.simulationTick);
-                double timeOfChargeComplete =
-                    timeOfStartCharge + decisionStartWeaponCharge.GetWeapon(this).GetSpec<Weapon>().ChargeTime;
+                    double timeOfStartCharge =
+                        engagement.ConvertStepsToSeconds(decisionStartWeaponChargeWeightedDecision.simulationTick);
+                    double timeOfChargeComplete =
+                        timeOfStartCharge + decisionStartWeaponCharge.GetWeapon(this).GetSpec<Weapon>().ChargeTime;
 
-                bool isCharging = timeOfChargeComplete > engagement.CurrentSeconds;
-                isCharging |= isLastDecisisonToStartWeaponCharge;
-                isCharging &= !hasChargingBeenInterrupted;
-                return isCharging;
+                    bool isCharging = timeOfChargeComplete > engagement.CurrentSeconds;
+                    isCharging |= isLastDecisisonToStartWeaponCharge;
+                    isCharging &= !hasChargingBeenInterrupted;
+                    return isCharging;
+                }
+                else
+                {
+                    return false;
+                }
             }
 
             return false;

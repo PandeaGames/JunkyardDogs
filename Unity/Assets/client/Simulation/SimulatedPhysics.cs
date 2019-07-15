@@ -25,7 +25,7 @@ namespace JunkyardDogs.Simulation
         
         public Type[] EventsToHandle()
         {
-            return new Type[] {typeof(SimCollisionEvent)};
+            return new Type[] {typeof(SimCollisionEvent), typeof(SimPostLogicEvent)};
         }
 
         public void OnSimEvent(SimulatedEngagement engagement, SimEvent simEvent)
@@ -59,7 +59,7 @@ namespace JunkyardDogs.Simulation
                         Mathf.Cos(angle) * simulatedPhysicsObj.body.velocityPerSecond.x,
                         Mathf.Sin(angle) * simulatedPhysicsObj.body.velocityPerSecond.y);
 
-                    simulatedPhysicsObj.body.position += vector * SimulatedEngagement.SimuationStep;
+                    simulatedPhysicsObj.body.position = simulatedPhysicsObj.body.position + (vector * SimulatedEngagement.SimuationStep);
                 }
             }
 

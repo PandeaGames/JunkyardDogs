@@ -38,7 +38,7 @@ namespace JunkyardDogs.Simulation
 
             logic.clampedDistance = clampedDistance;
             logic.clampedDistancedForProximity = distanceProximityMultiplier;
-            logic.numberOfPreviousBackwardDecisions = numberOfPreviousBackwardDecisionsToCheck;
+            logic.numberOfPreviousBackwardDecisionsToCheck = numberOfPreviousBackwardDecisionsToCheck;
             logic.numberOfPreviousBackwardDecisionsCap = numberOfPreviousBackwardDecisionsCap;  
             
             //calculate proximity multiplier

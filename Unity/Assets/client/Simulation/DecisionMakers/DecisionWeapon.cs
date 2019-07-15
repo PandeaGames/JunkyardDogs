@@ -7,6 +7,11 @@ namespace JunkyardDogs.Simulation
     {
         protected Chassis.ArmamentLocation _armamentLocation;
 
+        public Chassis.ArmamentLocation armamentLocation
+        {
+            get { return _armamentLocation; }
+        }
+
         public DecisionWeapon(Chassis.ArmamentLocation armamentLocation)
         {
             _armamentLocation = armamentLocation;

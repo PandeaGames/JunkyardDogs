@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using JunkyardDogs.Components;
 using UnityEngine;
 using UnityEngine.UI.Extensions;
@@ -58,14 +59,28 @@ namespace JunkyardDogs.Simulation
         {
             EventHandlersTable eventHandlers = new EventHandlersTable();
             Type type = typeof(ISimulatedEngagementGlobalEventHandler);
-            IEnumerable<Type> types = AppDomain.CurrentDomain.GetAssemblies()
-                .SelectMany(s => s.GetTypes())
-                .Where(p => type.IsAssignableFrom(p) && type.IsClass);
-
-            foreach (Type foundType in types)
+            
+            Assembly[] asemblies = AppDomain.CurrentDomain.GetAssemblies();
+            List<Type> foundDecisionMakerTypes = new List<Type>();
+                    
+            foreach (Assembly assembly in asemblies)
             {
-                ISimulatedEngagementGlobalEventHandler handlerInstance = (ISimulatedEngagementGlobalEventHandler)Activator.CreateInstance(foundType);
-                AddEventHandler(eventHandlers, handlerInstance);
+                Type[] typesInAssembly = assembly.GetTypes();
+
+                foreach (Type typeInAssembly in typesInAssembly)
+                {
+                    bool IsAssignableFrom = type.IsAssignableFrom(typeInAssembly);
+                    bool isGlobalEventHandler = IsAssignableFrom;
+                    isGlobalEventHandler &= typeInAssembly.IsClass;
+                    isGlobalEventHandler &= !typeInAssembly.IsAbstract;
+
+                    if (isGlobalEventHandler)
+                    {
+                        ISimulatedEngagementGlobalEventHandler handlerInstance = (ISimulatedEngagementGlobalEventHandler)Activator.CreateInstance(typeInAssembly);
+                        AddEventHandler(eventHandlers, handlerInstance);
+                        foundDecisionMakerTypes.Add(typeInAssembly);
+                    }
+                }
             }
 
             return eventHandlers;

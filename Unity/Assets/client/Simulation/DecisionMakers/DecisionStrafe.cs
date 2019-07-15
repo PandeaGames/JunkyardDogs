@@ -19,7 +19,6 @@ namespace JunkyardDogs.Simulation
             public int numberOfPreviousStrafeDecisions;
             public int numberOfPreviousConcurrentStrafeDecisions;
             public int evasiveness;
-            public int weight;
         }
 
         private const int numberOfPreviousStrafeDecisionsToCheck = 100;

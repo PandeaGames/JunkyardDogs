@@ -1,17 +1,60 @@
+using System;
 using JunkyardDogs.Components;
+using UnityEngine.UI.Extensions;
 
 namespace JunkyardDogs.Simulation
 {
-    public abstract class DecisionWeaponFire : DecisionWeapon 
+    public abstract class DecisionWeaponFire : DecisionWeapon
     {
+        public class DecisionWeaponFireLogic : Logic
+        {
+            public int lastWeaponChargeDecisionTick = -1;
+            public bool isChargingSameWeapon;
+            public double lastWeaponChargeTime = -1;
+            public bool wasChargingWeapon;
+            public int chargeTicks;
+            public double chargeTime;
+            public bool isWeaponChargeComplete;
+        }
+        
+        
         public DecisionWeaponFire(Chassis.ArmamentLocation armamentLocation) : base(armamentLocation)
         {
             
+    
         }
         
         protected override Logic GetDecisionWeight(SimBot simBot, SimulatedEngagement engagement, Weapon weapon)
         {
-            return new Logic();
+            DecisionWeaponFireLogic logic = new DecisionWeaponFireLogic();
+
+            logic.wasChargingWeapon =
+                simBot.IsLastDecisionOfType<DecisionStartWeaponCharge>(new Type[] {typeof(DecisionWeaponCharge)});
+
+            if (logic.wasChargingWeapon)
+            {
+                SimBot.WeightedDecision lastStartWeaponChargeDecision =
+                    simBot.GetLastWeightedDecisionOfType<DecisionStartWeaponCharge>();
+                DecisionStartWeaponCharge decisionStartWeaponCharge =
+                    lastStartWeaponChargeDecision.DecisionMaker as DecisionStartWeaponCharge;
+
+                logic.isChargingSameWeapon = decisionStartWeaponCharge.armamentLocation == _armamentLocation;
+
+                if (logic.isChargingSameWeapon)
+                {
+                    logic.lastWeaponChargeDecisionTick = lastStartWeaponChargeDecision.simulationTick;
+                    logic.lastWeaponChargeTime = decisionStartWeaponCharge.GetWeapon(simBot)
+                        .GetSpec<Specifications.Weapon>().ChargeTime;
+
+                    logic.chargeTicks = engagement.CurrentStep - logic.lastWeaponChargeDecisionTick;
+                    logic.chargeTime = engagement.ConvertStepsToSeconds(logic.chargeTicks);
+                    logic.isWeaponChargeComplete = logic.chargeTime > logic.lastWeaponChargeTime;
+                }
+
+                logic.weight = logic.isWeaponChargeComplete ? (int)HardDecisions.FireWeapon : -1;
+            }
+            
+            return logic;
         }
 
         protected override void MakeDecision(SimBot simBot, SimulatedEngagement engagement, Weapon weapon)

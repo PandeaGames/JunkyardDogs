@@ -5,7 +5,8 @@ namespace JunkyardDogs.Simulation
         Movement = 1000,
         PoweringWeapon = 1001,
         CooldownWeapon = 1002,
-        Stunned = 1003
+        Stunned = 1003,
+        FireWeapon = 1002
     }
     
     public interface IDecisionMaker
