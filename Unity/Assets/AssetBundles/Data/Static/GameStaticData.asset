@@ -15,6 +15,9 @@ MonoBehaviour:
   _actionList:
     _guid: 338088a5bcaa5614ea03d24595ddea10
     _path: Assets/AssetBundles/Data/Simulation/Behavior/List.asset
+  _worldView:
+    _guid: b8fa1b41afc93ab4ea06fe1d6120bb3e
+    _path: Assets/AssetBundles/Art/Views/EarthNavigation.prefab
   _botPrefabFactory: {fileID: 11400000, guid: e976fde8db251f444b07b560f439adf2, type: 2}
   _componentPrefabFactory: {fileID: 11400000, guid: c1cb9df1efef84146801652c461013a4,
     type: 2}

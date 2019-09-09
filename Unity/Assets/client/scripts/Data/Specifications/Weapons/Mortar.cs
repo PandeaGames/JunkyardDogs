@@ -65,6 +65,7 @@ namespace JunkyardDogs.Specifications
             _shell.Damage = balance.damage;
             _cooldown = balance.cooldown;
             _chargeTime = balance.chargeTime;
+            _armourPiercing = balance.armourPiercing;
             _shell.ApplyBalance(balance);
         }
 

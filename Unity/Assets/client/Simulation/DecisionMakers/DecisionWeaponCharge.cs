@@ -21,11 +21,11 @@ namespace JunkyardDogs.Simulation
             
             if (simBot.IsChargingWeapon(_armamentLocation))
             {
-                logic.weight = (int) HardDecisions.PoweringWeapon;
+                logic.priority = (int) DecisionPriority.PoweringWeapon;
             }
             else
             {
-                logic.weight = -1;
+                logic.priority = (int) DecisionPriority.None;
             }
 
             return logic;

@@ -25,8 +25,17 @@ public static class LootUtilities
         {
             return (loot as MotherboardBlueprintData).DoGenerate(seed);
         }
+        else if(loot is CPUBlueprintData)
+         {
+             return (loot as CPUBlueprintData).DoGenerate(seed);
+         }
+         else if(loot is DirectiveBlueprintData)
+         {
+             return (loot as DirectiveBlueprintData).DoGenerate(seed);
+         }
         else
         {
+            Debug.LogWarning("LootUtilities failed to create component for loot "+loot);
             return null;
         }
     }

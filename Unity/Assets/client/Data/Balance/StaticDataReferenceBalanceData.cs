@@ -68,8 +68,8 @@ namespace JunkyardDogs.Data.Balance
                     if (!Directory.Exists(GetNewDataFolder()))
                     {
                         Directory.CreateDirectory(GetNewDataFolder());
-                        //AssetDatabase.Refresh();
-                        Debug.LogError("Directory Does not Exist");
+                        AssetDatabase.Refresh();
+                        Debug.LogError("Directory Does not Exist: "+GetNewDataFolder());
                     }
                     
                     AssetDatabase.CreateAsset(data, GetNewDataFolder() + balanceObj.GetDataUID()+".asset");

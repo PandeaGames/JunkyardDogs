@@ -23,7 +23,7 @@ public class BlueprintBalanceData : StaticDataReferenceBalanceData<
     BlueprintBalanceObject>
 {
     private const string MENU_NAME =  BalanceDataUtilites.BALANCE_MENU_FOLDER + "BlueprintBalanceData";
-    public const string DATA_PATH = "Assets/AssetBundles/Data/Blueprints";
+    public const string DATA_PATH = "Assets/AssetBundles/Data/Blueprints/";
     
     public override string GetUIDFieldName()
     {

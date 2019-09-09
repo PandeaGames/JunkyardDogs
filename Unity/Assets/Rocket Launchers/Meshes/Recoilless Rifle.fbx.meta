@@ -1,0 +1,123 @@
+fileFormatVersion: 2
+guid: 3b25cfed842e8fe4388d8ebc929be251
+timeCreated: 1458868090
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Recoilless Rifle Ironsight
+    100004: Recoilless Rifle M2      x0.0796    y0.0259
+    100006: Recoilless Rifle M2 Bipod
+    100008: Recoilless Rifle M2 Sightpost
+    100010: Recoilless Rifle M3      x0.0796    y0.0259
+    100012: Recoilless Rifle M3 Bipod
+    100014: Recoilless Rifle M3 Sightpost
+    100016: Recoilless Rifle Rear
+    100018: Recoilless Rifle Shot
+    100020: Recoilless Rifle Trigger
+    400000: //RootNode
+    400002: Recoilless Rifle Ironsight
+    400004: Recoilless Rifle M2      x0.0796    y0.0259
+    400006: Recoilless Rifle M2 Bipod
+    400008: Recoilless Rifle M2 Sightpost
+    400010: Recoilless Rifle M3      x0.0796    y0.0259
+    400012: Recoilless Rifle M3 Bipod
+    400014: Recoilless Rifle M3 Sightpost
+    400016: Recoilless Rifle Rear
+    400018: Recoilless Rifle Shot
+    400020: Recoilless Rifle Trigger
+    2300000: Recoilless Rifle Ironsight
+    2300002: Recoilless Rifle M2      x0.0796    y0.0259
+    2300004: Recoilless Rifle M2 Bipod
+    2300006: Recoilless Rifle M2 Sightpost
+    2300008: Recoilless Rifle M3      x0.0796    y0.0259
+    2300010: Recoilless Rifle M3 Bipod
+    2300012: Recoilless Rifle M3 Sightpost
+    2300014: Recoilless Rifle Rear
+    2300016: Recoilless Rifle Shot
+    2300018: Recoilless Rifle Trigger
+    3300000: Recoilless Rifle Ironsight
+    3300002: Recoilless Rifle M2      x0.0796    y0.0259
+    3300004: Recoilless Rifle M2 Bipod
+    3300006: Recoilless Rifle M2 Sightpost
+    3300008: Recoilless Rifle M3      x0.0796    y0.0259
+    3300010: Recoilless Rifle M3 Bipod
+    3300012: Recoilless Rifle M3 Sightpost
+    3300014: Recoilless Rifle Rear
+    3300016: Recoilless Rifle Shot
+    3300018: Recoilless Rifle Trigger
+    4300000: Recoilless Rifle M3      x0.0796    y0.0259
+    4300002: Recoilless Rifle M3 Bipod
+    4300004: Recoilless Rifle M3 Sightpost
+    4300006: Recoilless Rifle M2      x0.0796    y0.0259
+    4300008: Recoilless Rifle Shot
+    4300010: Recoilless Rifle M2 Bipod
+    4300012: Recoilless Rifle M2 Sightpost
+    4300014: Recoilless Rifle Ironsight
+    4300016: Recoilless Rifle Trigger
+    4300018: Recoilless Rifle Rear
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

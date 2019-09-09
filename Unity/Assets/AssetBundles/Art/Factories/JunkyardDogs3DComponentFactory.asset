@@ -16,7 +16,12 @@ MonoBehaviour:
   - _value: {fileID: 100004, guid: 75f1b1461b5f407489ab7f31f62f8631, type: 3}
     _keys:
     - {fileID: 11400000, guid: a94f08ca2c2963d478be94476d338885, type: 2}
+  - _value: {fileID: 148876, guid: 72747721491bb3441b73f8346d3e3944, type: 3}
+    _keys:
+    - {fileID: 11400000, guid: b83e2086a1508e540bfa70eef839151a, type: 2}
   _default: {fileID: 1419529844681470, guid: cd1aa582cb5323e49b4aaad7a97b861a, type: 3}
   _projectile: {fileID: 100000, guid: 7c977868e761d8245a4e8024ac3661e0, type: 3}
   _melee: {fileID: 100000, guid: 9038019f47abfab45bd8922dff747940, type: 3}
   _hitscan: {fileID: 100000, guid: b5742c35cad19b945bc129c719875b2d, type: 3}
+  _pulseEmitter: {fileID: 1855028180993344, guid: 4d4ceac7b8f3f3e47b7ba4d654832f40,
+    type: 3}

@@ -13,6 +13,13 @@ public class GameStaticData : ScriptableObject, ILoadableObject
         get { return _actionList.Asset as ActionList; }
     }
     
+    [SerializeField][WeakReference(typeof(GameObject))] 
+    private WeakReference _worldView;
+    public GameObject WorldView
+    {
+        get { return _worldView.Asset as GameObject; }
+    }
+    
     [SerializeField]
     private PrefabFactory _botPrefabFactory;
     public PrefabFactory BotPrefabFactory
@@ -45,6 +52,7 @@ public class GameStaticData : ScriptableObject, ILoadableObject
     {
         Loader loader = new Loader();
         loader.AppendProvider(_actionList);
+        loader.AppendProvider(_worldView);
         loader.LoadAsync(() =>
         {
             Loader secondaryLoader = new Loader();

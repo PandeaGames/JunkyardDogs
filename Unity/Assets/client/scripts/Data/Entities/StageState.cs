@@ -30,6 +30,11 @@ public class StageState
         return GetCurrentRound().IsComplete();
     }
     
+    public bool IsUserKnockedOut()
+    {
+        return GetCurrentRound().IsUserKnockedOut();
+    }
+    
     public IEnumerable<Participant> GetParticipants()
     {
         return Rounds[0].GetParticipants();
@@ -55,6 +60,11 @@ public class MatchState
     public bool HasResult()
     {
         return Winner.HasResult() && Loser.HasResult();
+    }
+
+    public bool isUserMatch()
+    {
+        return ParticipantA is UserParticipant || ParticipantB is UserParticipant;
     }
 }
 
@@ -112,7 +122,7 @@ public class RoundState
     }
 
     public bool IsComplete()
-    {
+    {   
         foreach (MatchState match in Matches)
         {
             if (!match.Winner.HasResult())
@@ -122,6 +132,26 @@ public class RoundState
         }
 
         return true;
+    }
+    
+    public bool IsUserKnockedOut()
+    {
+        bool isUserKnockedOut = true;
+        foreach (MatchState match in Matches)
+        {
+            if (match.isUserMatch())
+            {
+                bool didUserWinMatch = match.HasResult() && match.Winner is UserParticipant;
+            
+                if (didUserWinMatch)
+                {
+                    isUserKnockedOut = false;
+                    break;
+                }
+            }
+        }
+
+        return isUserKnockedOut;
     }
     
     public MatchState GetCurrentMatch()

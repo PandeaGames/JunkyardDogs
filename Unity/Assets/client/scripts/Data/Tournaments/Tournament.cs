@@ -69,9 +69,9 @@ public class Tournament : ScriptableObject, IStaticDataBalance<TournamentBalance
         #if UNITY_EDITOR
         _guid = AssetDatabase.AssetPathToGUID(AssetDatabase.GetAssetPath(this));
         #endif
-        TournamentState state = _format.Data.GenerateState(_guid);
+        TournamentState state = _format.Data.GenerateState(Guid);
         state.TournamentReference = new TournamentStaticDataReference();
-        state.TournamentReference.ID = this.name;
+        state.TournamentReference.ID = name;
 
         return state;
     }

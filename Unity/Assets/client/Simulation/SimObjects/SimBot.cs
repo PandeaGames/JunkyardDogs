@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using JunkyardDogs.Components;
+using JunkyardDogs.Simulation.Simulation;
+using UnityEngine;
 using UnityEngine.UI.Extensions;
+using Random = System.Random;
 using Weapon = JunkyardDogs.Specifications.Weapon;
 
 namespace JunkyardDogs.Simulation
@@ -12,7 +15,9 @@ namespace JunkyardDogs.Simulation
     {
         public SimBot(SimulatedEngagement engagement) : base(engagement)
         {
-            
+            SimulatedCircleCollider collider = new SimulatedCircleCollider(body);
+            collider.radius = 0.5f;
+            base.collider = collider;
         }
         
         private static IDecisionMaker[] DecisionMakersCache;
@@ -60,13 +65,27 @@ namespace JunkyardDogs.Simulation
             }
         }
 
+        public struct BodyState
+        {
+            public readonly Vector2 Position;
+            public readonly Vector2 Velocity;
+            public readonly float Rotation;
+
+            public BodyState(Vector2 Position, Vector2 Velocity, float Rotation)
+            {
+                this.Position = Position;
+                this.Velocity = Velocity;
+                this.Rotation = Rotation;
+            }
+        }
+
         public class WeightedDecision
         {
             public readonly Logic logic;
             public readonly int simulationTick;
-            public int Weight
+            public int Priority
             {
-                get { return logic.weight; }
+                get { return logic.priority; }
             }
             public readonly IDecisionMaker DecisionMaker;
             
@@ -85,6 +104,7 @@ namespace JunkyardDogs.Simulation
         public double StunLength;
 
         private List<WeightedDecision[]> weightedDecisionHistory = new List<WeightedDecision[]>();
+        public List<BodyState> BodyStates = new List<BodyState>();
         
         private List<WeightedDecision> _decisionsCache;
         public List<WeightedDecision> Decisions
@@ -156,18 +176,79 @@ namespace JunkyardDogs.Simulation
             WeightedDecision[] weightedDecisions = GetWeightedDecision();
 
             bool hasDecisions = weightedDecisions.Length > 0;
+            body.accelerationPerSecond = Vector2.zero;
             
             if (hasDecisions)
             {
                 weightedDecisionHistory.Add(weightedDecisions);
-                WeightedDecision bestDecision = weightedDecisions[0];
+                WeightedDecision[] weightedDecisionsPlateau = FilterForHIghestWeightedDecisions(weightedDecisions);
+
+                WeightedDecision bestDecision = PickRandomDecision(weightedDecisionsPlateau, engagement.Engagement.Seed);
             
                 bestDecision.DecisionMaker.MakeDecision(this, engagement);
             
                 Decisions.Add(bestDecision);
                 WeightedDecisions.Add(new List<WeightedDecision>(weightedDecisions));
                 engagement.SendEvent(new WeightedDecisionEvent(bestDecision));
+                BodyStates.Add(new BodyState(
+                    body.position,
+                    body.accelerationPerSecond,
+                    body.rotation.deg360
+                    ));
             }
+        }
+
+        private WeightedDecision PickRandomDecision(WeightedDecision[] decisions, int seed)
+        {
+            WeightedDecision choice = null;
+            int totalChangeWeight = 0;
+            for (int i = 0; i < decisions.Length; i++)
+            {
+                totalChangeWeight += decisions[i].logic.weight;
+            }
+
+            UnityEngine.Random.State oldState = UnityEngine.Random.state;
+            UnityEngine.Random.InitState(seed);
+            int pick = UnityEngine.Random.Range(0, totalChangeWeight);
+            UnityEngine.Random.state = oldState;
+            int totalChangeWeightForSearch = 0;
+            
+            for (int i = 0; i < decisions.Length; i++)
+            {
+                totalChangeWeightForSearch += decisions[i].logic.weight;
+
+                if (totalChangeWeightForSearch > pick)
+                {
+                    choice = decisions[i];
+                    break;
+                }
+            }
+
+            return choice;
+        }
+
+        private WeightedDecision[] FilterForHIghestWeightedDecisions(WeightedDecision[] decisions)
+        {
+            List<WeightedDecision> filteredDecisions = new List<WeightedDecision>();
+
+            int highestWeight = -1;
+
+            for (int i = 0; i < decisions.Length; i++)
+            {
+                WeightedDecision weightedDecision = decisions[i];
+                if (weightedDecision.Priority == highestWeight)
+                {
+                    filteredDecisions.Add(weightedDecision);
+                }
+                else if (weightedDecision.Priority > highestWeight)
+                {
+                    highestWeight = weightedDecision.Priority;
+                    filteredDecisions.Clear();
+                    filteredDecisions.Add(weightedDecision);
+                }
+            }
+
+            return filteredDecisions.ToArray();
         }
 
         private WeightedDecision[] GetWeightedDecision()
@@ -183,12 +264,12 @@ namespace JunkyardDogs.Simulation
             
             weightedDecisions.Sort((a, b) => 
             {
-                if (a.Weight == b.Weight)
+                if (a.Priority == b.Priority)
                 {
                     return 0;
                 }
                 
-                return a.Weight < b.Weight ? 1:-1;
+                return a.Priority < b.Priority ? 1:-1;
             });
 
             return weightedDecisions.ToArray();
@@ -335,6 +416,20 @@ namespace JunkyardDogs.Simulation
         public TDecision GetLastOfType<TDecision>() where TDecision : class, IDecisionMaker
         {
             return GetLastOfType<TDecision>(Decisions.Count);
+        }
+        
+        public int TicksSinceLastDecisionOfType<TDecision>() where TDecision : class, IDecisionMaker
+        {
+            int count = Decisions.Count;
+            for (int i = count - 1; i >= 0; i--)
+            {
+                if (Decisions[i].DecisionMaker is TDecision)
+                {
+                    return count - i;
+                }
+            }
+            
+            return count;
         }
         
         public TDecision GetLastOfType<TDecision>(int howManyDecisions) where TDecision : class, IDecisionMaker

@@ -14,11 +14,11 @@ namespace JunkyardDogs.Simulation
 
             if (logic.isStunned)
             {
-                logic.weight = (int) HardDecisions.Stunned;
+                logic.priority = (int) DecisionPriority.Stunned;
             }
             else
             {
-                logic.weight = -1;
+                logic.priority = (int) DecisionPriority.None;
             }
             
             return logic;

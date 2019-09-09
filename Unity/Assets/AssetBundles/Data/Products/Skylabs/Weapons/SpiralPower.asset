@@ -15,4 +15,6 @@ MonoBehaviour:
   _volume: 1
   _chargeTime: 1
   _cooldown: 1
+  _power: 0
+  _armourPiercing: 0
   _meleeWeapon: {fileID: 11400000, guid: 930490cd87e7b3844bcc749c95fb5ef6, type: 2}

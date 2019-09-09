@@ -41,6 +41,19 @@ public abstract class ObjectFactory<T, K> : ScriptableObject where K: ObjectMani
     [SerializeField]
     private T _default;
 
+    public bool HasAsset(ScriptableObject obj)
+    {
+        if (obj == null)
+        {
+            throw new NullReferenceException("Trying to retrieve assets with 'null' as input.");
+        }
+
+        T result;
+        K manifestEntry = _manifest.Find((entry) => { return entry.ContainsKey(obj); });
+
+        return manifestEntry != null;
+    }
+
     public virtual T GetAsset(ScriptableObject obj)
     {
         if (obj == null)

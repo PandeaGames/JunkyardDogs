@@ -13,7 +13,17 @@ namespace JunkyardDogs.Simulation
             projectileWeapon = simBot.bot.GetArmament(armementLocation).GetSpec<ProjectileWeapon>();
             collider = CreateCollider(projectileWeapon);
             body.rotation = simBot.body.rotation;
-            body.velocityPerSecond = new Vector2(0, projectileWeapon.Speed);
+            body.accelerationPerSecond = new Vector2(0, projectileWeapon.Speed);
+        }
+
+        public override void OnCollision(SimPhysicsObject other)
+        {
+            base.OnCollision(other);
+
+            if (other is SimArena)
+            {
+                engagement.MarkForRemoval(this);
+            }
         }
     }
 }

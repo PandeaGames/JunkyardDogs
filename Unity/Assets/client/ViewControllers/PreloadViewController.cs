@@ -4,6 +4,11 @@ using UnityEngine;
 using PandeaGames;
 using PandeaGames.Views;
 
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
+
 namespace JunkyardDogs
 {
     public enum PreloadViewStates
@@ -41,6 +46,17 @@ namespace JunkyardDogs
 
         private bool wasCompleted = false;
 
+        private bool isSimulatedBundles
+        {
+            get
+            {
+#if UNITY_EDITOR
+                return EditorPrefs.GetBool("SimulateAssetBundles");
+                #endif
+                return false;
+            }
+        }
+
         public override void UpdateState()
         {
             if (wasCompleted)
@@ -48,7 +64,12 @@ namespace JunkyardDogs
                 _fsm.SetState(PreloadViewStates.Loading);
             }
             
-            if (_loadOperation != null && _loadOperation.IsDone())
+            #if UNITY_EDITOR
+            if ((_loadOperation != null && _loadOperation.IsDone()) || isSimulatedBundles)
+                #else
+                if (_loadOperation != null && _loadOperation.IsDone())
+#endif
+            
             {
                 wasCompleted = true;
             }

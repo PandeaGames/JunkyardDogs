@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c569057ac781074b8ae652816158b37, type: 3}
   m_Name: Deagle
   m_EditorClassIdentifier: 
-  _volume: 1
+  _volume: 0
   _chargeTime: 1
   _cooldown: 1
+  _power: 0
+  _armourPiercing: 5
   _shell: {fileID: 11400000, guid: 726b7d5ee05f38046b89bf45d8830794, type: 2}

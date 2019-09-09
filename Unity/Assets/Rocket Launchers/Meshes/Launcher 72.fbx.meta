@@ -1,0 +1,127 @@
+fileFormatVersion: 2
+guid: e4ea3a2b77e5a5a43a4d954ff69ae3cb
+timeCreated: 1457990748
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: M72 Shot
+    100004: M72 ShotFired
+    100006: Trigger
+    100008: Launcher 72 Shot
+    100010: Launcher 72 ShotFired
+    100012: Launcher 72 Trigger
+    100014: Launcher 72 Cover
+    100016: Launcher 72 Front Sight
+    100018: Launcher 72 Rear
+    100020: Launcher 72 Sight
+    400000: //RootNode
+    400002: M72 Shot
+    400004: M72 ShotFired
+    400006: Trigger
+    400008: Launcher 72 Shot
+    400010: Launcher 72 ShotFired
+    400012: Launcher 72 Trigger
+    400014: Launcher 72 Cover
+    400016: Launcher 72 Front Sight
+    400018: Launcher 72 Rear
+    400020: Launcher 72 Sight
+    2300000: //RootNode
+    2300002: M72 Shot
+    2300004: M72 ShotFired
+    2300006: Trigger
+    2300008: Launcher 72 Shot
+    2300010: Launcher 72 ShotFired
+    2300012: Launcher 72 Trigger
+    2300014: Launcher 72 Cover
+    2300016: Launcher 72 Front Sight
+    2300018: Launcher 72 Rear
+    2300020: Launcher 72 Sight
+    3300000: //RootNode
+    3300002: M72 Shot
+    3300004: M72 ShotFired
+    3300006: Trigger
+    3300008: Launcher 72 Shot
+    3300010: Launcher 72 ShotFired
+    3300012: Launcher 72 Trigger
+    3300014: Launcher 72 Cover
+    3300016: Launcher 72 Front Sight
+    3300018: Launcher 72 Rear
+    3300020: Launcher 72 Sight
+    4300000: M72 LAW     y0.0848
+    4300002: M72 Shot
+    4300004: Trigger
+    4300006: M72 ShotFired
+    4300008: Launcher 72     y0.0848
+    4300010: Launcher 72 Shot
+    4300012: Launcher 72 Trigger
+    4300014: Launcher 72 ShotFired
+    4300016: Launcher 72 Front Sight
+    4300018: Launcher 72 Sight
+    4300020: Launcher 72 Cover
+    4300022: Launcher 72 Rear
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -176,7 +176,7 @@ public class SmoothOrbitCam : MonoBehaviour
         storedLimit = yMinLimit;
 
         //get pan cam
-        targetPanCam = GetComponentInChildren<Camera>().gameObject;
+        targetPanCam = gameObject;
 
         //get eventsystem
         if (EventSystem.current != null)

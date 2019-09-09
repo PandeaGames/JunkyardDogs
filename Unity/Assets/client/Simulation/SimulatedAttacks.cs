@@ -13,13 +13,13 @@ namespace JunkyardDogs.Simulation
         {
             if (simEvent is WeaponDecisionEvent)
             {
-                OnSimEvent(engagement, simEvent);
+                OnSimEvent(engagement, simEvent as WeaponDecisionEvent);
             }
         }
 
         public Type[] EventsToHandle()
         {
-            return new Type[] { typeof(WeaponDecisionEvent) };
+            return new Type[] { typeof(WeaponFireDecisionEvent) };
         }
 
         public void OnSimEvent(SimulatedEngagement engagement, WeaponDecisionEvent simEvent)
@@ -62,7 +62,7 @@ namespace JunkyardDogs.Simulation
             
             SimulatedBody body = simBot.body;
             SimulatedCircleCollider collider = simBot.collider as SimulatedCircleCollider;
-            float rotation = body.rotation.eulerAngles.y;
+            float rotation = body.rotation.deg;
             
             Vector2 delta = new Vector2(Mathf.Cos(rotation) * collider.radius, Mathf.Sin(rotation) * collider.radius);
             attack.body.position = simBot.body.position + delta;
@@ -78,7 +78,9 @@ namespace JunkyardDogs.Simulation
         
         private void FireWeapon(SimulatedEngagement engagement, SimBot simBot, WeaponProcessor weaponProcessor, PulseEmitter meleeWeapon, WeaponDecisionEvent simEvent)
         {
-            
+            SimPulseAttack projectile = new SimPulseAttack(engagement, simBot, simEvent.armamentLocation);
+            projectile.body.position = simBot.body.position;
+            engagement.Add(projectile);
         }
         
         private void FireWeapon(SimulatedEngagement engagement, SimBot simBot, WeaponProcessor weaponProcessor, Mortar meleeWeapon, WeaponDecisionEvent simEvent)

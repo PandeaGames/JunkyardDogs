@@ -93,7 +93,19 @@ namespace JunkyardDogs
             {
                 JunkyardUserViewModel userModel = Game.Instance.GetViewModel<JunkyardUserViewModel>(0);
                 TournamentViewModel tournamentViewModel = Game.Instance.GetViewModel<TournamentViewModel>(0);
-                userModel.UserData.Tournaments.UpdateTournament(tournamentViewModel.State);
+
+                if (!tournamentViewModel.State.IsComplete())
+                {
+                    if (tournamentViewModel.State.IsUserKnockedOut())
+                    {
+                        userModel.UserData.Tournaments.CompleteTournament(tournamentViewModel.State.Uid);
+                    }
+                    else
+                    {
+                        userModel.UserData.Tournaments.UpdateTournament(tournamentViewModel.State);
+                    }
+                }
+                
                 Game.Instance.GetService<JunkyardUserService>().Save();
                 _fsm.SetState(JunkyardDogsStates.Hub);
             }

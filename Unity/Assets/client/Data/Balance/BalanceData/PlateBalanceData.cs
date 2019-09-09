@@ -10,6 +10,7 @@ namespace JunkyardDogs.Data.Balance
         public string name;
         public float volume;
         public float thickness;
+        public float armour;
         public string GetDataUID()
         {
             return name;

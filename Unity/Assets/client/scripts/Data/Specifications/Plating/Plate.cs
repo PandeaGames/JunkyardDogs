@@ -9,12 +9,15 @@ namespace JunkyardDogs.Specifications
     {
         [SerializeField]
         private float _thickness;
+
+        [SerializeField] private float _armour;
         
         public void ApplyBalance(PlateBalanceObject balance)
         {
             this.name = balance.name;
             this._volume = balance.volume;
             _thickness = balance.thickness;
+            _armour = balance.armour;
         }
 
         public PlateBalanceObject GetBalance()
@@ -23,6 +26,7 @@ namespace JunkyardDogs.Specifications
             balance.name = this.name;
             balance.volume = _volume;
             balance.thickness = _thickness;
+            balance.armour = _armour;
             return balance;
         }
     }

@@ -26,6 +26,8 @@ namespace JunkyardDogs.Components
             Left,
             Right
         }
+        
+        public Engine Engine { get; set; }
 
         public List<Plate> FrontPlates { get; set; }
 

@@ -44,12 +44,10 @@ public class CompetitorBlueprintData : BlueprintData<Competitor>, IStaticDataBal
         name = balance.name;
         _nationality.ID = balance.nationality;
 
-        string[] bots = balance.bots.Split(',');
-
-        for (int i = 0; i < bots.Length; i++)
+        foreach (string botId in balance.bots)
         {
             var reference = new BotBlueprintStaticDataReference();
-            reference.ID = bots[i];
+            reference.ID = botId;
             _bots.Add(reference);
         }
     }
@@ -73,7 +71,7 @@ public class CompetitorBlueprintData : BlueprintData<Competitor>, IStaticDataBal
         CompetitorBalanceObject balance = new CompetitorBalanceObject();
 
         balance.name = name;
-        balance.bots = string.Join(",", botIDs);
+        //balance.bots = string.Join(",", botIDs);
         balance.nationality = _nationality.ID;
 
         return balance;

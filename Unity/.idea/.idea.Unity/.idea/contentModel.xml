@@ -89,8 +89,12 @@
                 <e p="ChassisBlueprintBalanceData.cs" t="Include" />
                 <e p="CompetitorBlueprintBalanceData.cs" t="Include" />
                 <e p="CPUBalanceData.cs" t="Include" />
+                <e p="CPUBlueprintData.cs" t="Include" />
                 <e p="DirectiveBalanceData.cs" t="Include" />
+                <e p="DirectiveBlueprintBalanceData.cs" t="Include" />
                 <e p="EliminationFormatBalanceData.cs" t="Include" />
+                <e p="EngineBalanceData.cs" t="Include" />
+                <e p="EngineBlueprintBalanceData.cs" t="Include" />
                 <e p="HitscanWeaponBalanceData.cs" t="Include" />
                 <e p="LootBalanceData.cs" t="Include" />
                 <e p="LootCrateBalanceData.cs" t="Include" />
@@ -194,9 +198,12 @@
                 <e p="ChassisBlueprintData.cs" t="Include" />
                 <e p="CompetitorBlueprintData.cs" t="Include" />
                 <e p="ComponentBlueprintData.cs" t="Include" />
+                <e p="CPUBlueprintData.cs" t="Include" />
+                <e p="DirectiveBlueprintData.cs" t="Include" />
                 <e p="Editor" t="Include">
                   <e p="BlueprintCustomDrawer.cs" t="Include" />
                 </e>
+                <e p="EngineBlueprintData.cs" t="Include" />
                 <e p="MotherboardBlueprintData.cs" t="Include" />
                 <e p="PhysicalComponentData.cs" t="Include" />
                 <e p="PlateBlueprintData.cs" t="Include" />
@@ -211,6 +218,7 @@
                 <e p="Component.cs" t="Include" />
                 <e p="ComponentUtils.cs" t="Include" />
                 <e p="Distinction.cs" t="Include" />
+                <e p="Engine.cs" t="Include" />
                 <e p="GenericComponent.cs" t="Include" />
                 <e p="PhysicalComponent.cs" t="Include" />
                 <e p="Plate.cs" t="Include" />
@@ -252,6 +260,7 @@
                 <e p="Chassis.cs" t="Include" />
                 <e p="Effect.cs" t="Include" />
                 <e p="Locomotion" t="Include">
+                  <e p="Engine.cs" t="Include" />
                   <e p="NewEditorScript1.cs" t="Include" />
                   <e p="Wheel.cs" t="Include" />
                 </e>
@@ -367,6 +376,12 @@
                 </e>
                 <e p="Match" t="Include">
                   <e p="SimpleBotMatchRendering.cs" t="Include" />
+                  <e p="SimpleProjectileObjectView.cs" t="Include" />
+                  <e p="SimplePulseObjectView.cs" t="Include" />
+                  <e p="SimpleSimulatedBotView.cs" t="Include" />
+                  <e p="SimpleSimulatedEngagement.cs" t="Include" />
+                  <e p="SimpleSimulatedObjectView.cs" t="Include" />
+                  <e p="SimpleSimulatedPhysicsObjectView.cs" t="Include" />
                 </e>
                 <e p="UI" t="Include">
                   <e p="EventButton.cs" t="Include" />
@@ -401,6 +416,7 @@
                   <e p="ComponentDisplay.cs" t="Include" />
                 </e>
                 <e p="ComponentTextureProvider.cs" t="Include" />
+                <e p="DirectiveView.cs" t="Include" />
                 <e p="LightboxCamera.cs" t="Include" />
                 <e p="MatchStateRenderer.cs" t="Include" />
                 <e p="Navigation" t="Include">
@@ -425,6 +441,7 @@
               <e p="AgentState.cs" t="Include" />
               <e p="StateTransition.cs" t="Include" />
             </e>
+            <e p="Arena.cs" t="Include" />
             <e p="Behavior" t="Include">
               <e p="ActionList.cs" t="Include" />
               <e p="Attack.cs" t="Include" />
@@ -437,6 +454,7 @@
               <e p="DecisionMoveForward.cs" t="Include" />
               <e p="DecisionMoveLeft.cs" t="Include" />
               <e p="DecisionMoveRight.cs" t="Include" />
+              <e p="DecisionSimBotStatus.cs" t="Include" />
               <e p="DecisionStartWeaponCharge.cs" t="Include" />
               <e p="DecisionStrafe.cs" t="Include" />
               <e p="DecisionStunned.cs" t="Include" />
@@ -460,6 +478,7 @@
             </e>
             <e p="SimObjects" t="Include">
               <e p="ISimAttack.cs" t="Include" />
+              <e p="SimArena.cs" t="Include" />
               <e p="SimAttackObject.cs" t="Include" />
               <e p="SimBot.cs" t="Include" />
               <e p="SimHitscanShot.cs" t="Include" />
@@ -470,6 +489,7 @@
               <e p="SimPhysicsObject.cs" t="Include" />
               <e p="SimProjectile.cs" t="Include" />
               <e p="SimProjectileAttackObject.cs" t="Include" />
+              <e p="SimPulseAttack.cs" t="Include" />
             </e>
             <e p="SimulatedAttacks.cs" t="Include" />
             <e p="SimulatedCollisions.cs" t="Include" />
@@ -480,6 +500,8 @@
             <e p="SimulatedPhysics.cs" t="Include" />
             <e p="Simulation" t="Include">
               <e p="Physics" t="Include">
+                <e p="SimRotation.cs" t="Include" />
+                <e p="SimulatedArenaCollider.cs" t="Include" />
                 <e p="SimulatedBody.cs" t="Include" />
                 <e p="SimulatedCircleCollider.cs" t="Include" />
                 <e p="SimulatedCollider.cs" t="Include" />
@@ -559,6 +581,22 @@
             <e p="TournamentView.cs" t="Include" />
             <e p="WorldMapView.cs" t="Include" />
           </e>
+        </e>
+        <e p="DirectiveSlotUIView.cs" t="Include" />
+        <e p="EarthNavigation.cs" t="Include" />
+        <e p="Editor" t="Include">
+          <e p="AssemblyUtils.cs" t="Include" />
+          <e p="BodyStateExporter.cs" t="Include" />
+          <e p="DecisionAndWeightExport.cs" t="Include" />
+          <e p="DecisionLogicGroupExporter.cs" t="Include" />
+          <e p="DecisionsAndPriorityExport.cs" t="Include" />
+          <e p="ISimulationTestExporter.cs" t="Include" />
+          <e p="PostProcessor.cs" t="Include" />
+          <e p="PostProcessorConfig.cs" t="Include" />
+          <e p="SimulationTesterWindow.cs" t="Include" />
+          <e p="SimulationTestExporterUtils.cs" t="Include" />
+          <e p="TypeExtensionMehods.cs" t="Include" />
+          <e p="WeightedDecisionsTestExporter.cs" t="Include" />
         </e>
         <e p="Google Sheets For Unity" t="Include">
           <e p="Examples" t="Include">
@@ -762,6 +800,7 @@
                 <e p="AnchoredFollowAgent.cs" t="Include" />
                 <e p="CameraAgent.cs" t="Include" />
                 <e p="CameraMaster.cs" t="Include" />
+                <e p="SimpleAgent.cs" t="Include" />
                 <e p="SimpleFollowAgent.cs" t="Include" />
               </e>
               <e p="Collectables" t="Include">

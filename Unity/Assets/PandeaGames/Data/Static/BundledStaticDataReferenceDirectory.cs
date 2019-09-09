@@ -1,6 +1,7 @@
 using System;
 using System.Diagnostics;
 using AssetBundles;
+using UnityEditor;
 using Object = UnityEngine.Object;
 
 namespace PandeaGames.Data.Static
@@ -19,6 +20,20 @@ namespace PandeaGames.Data.Static
             _bundleName = bundleName;
             _path = path;
         }
+        
+        #if UNITY_EDITOR
+        protected override IStaticDataDirectorySource<TData> LoadSimulatedSource()
+        {
+            string[] guids = AssetDatabase.FindAssets(string.Format("{0}", _path));
+            if (guids.Length > 0)
+            {
+                string path = AssetDatabase.GUIDToAssetPath(guids[0]);
+                return AssetDatabase.LoadAssetAtPath<Object>(path)as IStaticDataDirectorySource<TData>;
+            }
+
+            return null;
+        }
+        #endif
         
         protected override void LoadSourceDataAsync(Action<IStaticDataDirectorySource<TData>> onLoadSuccess, LoadError onLoadFailed)
         {

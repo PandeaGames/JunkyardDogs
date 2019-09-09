@@ -10,6 +10,7 @@ public struct ChassisBlueprintBalanceObject:IStaticDataBalanceObject
     public string specification;
     public string manufacturer;
     public string material;
+    public string engine;
     
     public string frontPlates01;
     public string frontPlates02;

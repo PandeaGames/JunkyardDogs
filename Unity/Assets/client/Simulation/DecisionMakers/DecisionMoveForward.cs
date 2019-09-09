@@ -60,15 +60,16 @@ namespace JunkyardDogs.Simulation
             else
             {
                 bool hasBeenMovingForward = logic.numberOfPreviousConcurrentForwardDecisions > 0;
+                ((Logic) logic).weight = (int) (logic.aggressiveness * logic.proximityMultiplier) + (hasBeenMovingForward ? 2500 : 0);
 
-                if (hasBeenMovingForward)
+               /* if (hasBeenMovingForward)
                 {
                     logic.weight = (int) HardDecisions.Movement;
                 }
                 else
                 {
                     logic.weight = (int) (logic.aggressiveness * logic.proximityMultiplier);
-                }
+                }*/
             }
 
             return logic;
@@ -76,9 +77,10 @@ namespace JunkyardDogs.Simulation
 
         public void MakeDecision(SimBot simBot, SimulatedEngagement engagement)
         {
-            Vector2 vector = new Vector2(0, 1);
-            simBot.body.velocityPerSecond = vector;
-            simBot.body.rotation.SetLookRotation(simBot.opponent.body.position);
+            Vector2 vector = new Vector2(0, simBot.bot.Chassis.Engine.Acceleration);
+            simBot.body.accelerationPerSecond = vector;
+            simBot.body.rotation.SetFromToRotation( simBot.body.position, simBot.opponent.body.position );
+            DecisionStrafe.ClampSpeed(simBot.body, simBot.bot.Chassis.Engine.MaxSpeed);  
             engagement.SendEvent(new MoveDecisionEvent(simBot, vector));
         }
     }

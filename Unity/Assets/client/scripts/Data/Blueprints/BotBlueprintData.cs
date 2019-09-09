@@ -23,13 +23,13 @@ public class BotBlueprintData : BlueprintData<Bot>, IStaticDataBalance<BotBluepr
     private SpecificationStaticDataReference _cpu;
 
     [SerializeField, DirectiveStaticDataReference]
-    private SpecificationStaticDataReference _directive01;
+    private DirectiveBlueprintStaticDataReference _directive01;
     
     [SerializeField, DirectiveStaticDataReference]
-    private SpecificationStaticDataReference _directive02;
+    private DirectiveBlueprintStaticDataReference _directive02;
     
     [SerializeField, DirectiveStaticDataReference]
-    private SpecificationStaticDataReference _directive03;
+    private DirectiveBlueprintStaticDataReference _directive03;
 
     public override Bot DoGenerate(int seed)
     {
@@ -37,9 +37,9 @@ public class BotBlueprintData : BlueprintData<Bot>, IStaticDataBalance<BotBluepr
         Agent agent = _agent.Data.DoGenerate();
         Motherboard motherboard = _motherboard.Data.DoGenerate(seed);
         CPU cpu = (CPU) ComponentUtils.GenerateComponent(_cpu, _manufacturer);
-        Directive directive01 = (Directive) ComponentUtils.GenerateComponent(_directive01, _manufacturer);
-        Directive directive02 = (Directive) ComponentUtils.GenerateComponent(_directive02, _manufacturer);
-        Directive directive03 = (Directive) ComponentUtils.GenerateComponent(_directive03, _manufacturer);
+        Directive directive01 = _directive01.Data == null ? null:_directive01.Data.DoGenerate(seed);
+        Directive directive02 = _directive02.Data == null ? null:_directive02.Data.DoGenerate(seed);
+        Directive directive03 = _directive03.Data == null ? null:_directive03.Data.DoGenerate(seed);
 
         chassis.Manufacturer = _manufacturer;
 
@@ -66,13 +66,20 @@ public class BotBlueprintData : BlueprintData<Bot>, IStaticDataBalance<BotBluepr
         _chassis = new ChassisBlueprintStaticDataReference();
         _motherboard = new MotherboardBlueprintStaticDataReference();
         _agent = new AgentBlueprintStaticDataReference();
+        _cpu = new SpecificationStaticDataReference();
+        _directive01 = new DirectiveBlueprintStaticDataReference();
+        _directive02 = new DirectiveBlueprintStaticDataReference();
+        _directive03 = new DirectiveBlueprintStaticDataReference();
 
         _manufacturer.ID = balance.manufacturer;
         _chassis.ID = balance.chassis;
         _motherboard.ID = balance.motherboard;
         _agent.ID = balance.agent;
-        
-        
+        _cpu.ID = balance.cpu;
+
+        _directive01.ID = balance.directive01;
+        _directive02.ID = balance.directive02;
+        _directive03.ID = balance.directive03;
     }
 
     public BotBlueprintBalanceObject GetBalance()

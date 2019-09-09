@@ -42,6 +42,10 @@ public class JunkyardUser : User, ILootCrateConsumer
             {
                 Consume(loot as Currency);
             }
+            else if (loot is EngineBlueprintData)
+            {
+                Consume(loot as EngineBlueprintData, seed);
+            }
             else if(loot is WeaponBlueprintData)
             {
                 Consume(loot as WeaponBlueprintData, seed);
@@ -66,6 +70,14 @@ public class JunkyardUser : User, ILootCrateConsumer
             {
                 Consume(loot as BotBlueprintData, seed);
             }
+            else if(loot is CPUBlueprintData)
+            {
+                Consume(loot as CPUBlueprintData, seed);
+            }
+            else if(loot is DirectiveBlueprintData)
+            {
+                Consume(loot as DirectiveBlueprintData, seed);
+            }
             else
             {
                 throw new NotSupportedException(string.Format("This type of loot [{0}] is not supported by this consumer. ", loot));
@@ -78,6 +90,11 @@ public class JunkyardUser : User, ILootCrateConsumer
         Wallet.Add(currency);
     }
 
+    private void Consume(EngineBlueprintData blueprint, int seed)
+    {
+        Competitor.Inventory.AddComponent(blueprint.DoGenerate(seed));
+    }
+    
     private void Consume(WeaponBlueprintData blueprint, int seed)
     {
         Competitor.Inventory.AddComponent(blueprint.DoGenerate(seed));
@@ -106,5 +123,15 @@ public class JunkyardUser : User, ILootCrateConsumer
     private void Consume(BotBlueprintData blueprint, int seed)
     {
         Competitor.Inventory.AddBot(blueprint.DoGenerate(seed));
+    }
+    
+    private void Consume(CPUBlueprintData blueprint, int seed)
+    {
+        Competitor.Inventory.AddComponent(blueprint.DoGenerate(seed));
+    }
+    
+    private void Consume(DirectiveBlueprintData blueprint, int seed)
+    {
+        Competitor.Inventory.AddComponent(blueprint.DoGenerate(seed));
     }
 }

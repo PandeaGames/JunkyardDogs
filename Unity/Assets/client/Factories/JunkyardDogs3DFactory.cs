@@ -13,19 +13,33 @@ public class JunkyardDogs3DFactory : PrefabFactory
     [SerializeField] 
     private GameObject _hitscan;
     
+    [SerializeField] 
+    private GameObject _pulseEmitter;
+    
     public override GameObject GetAsset(ScriptableObject obj)
     {
-        if (obj is ProjectileWeapon)
+        if (HasAsset(obj))
         {
-            return _projectile;
+            return base.GetAsset(obj);
         }
-        else if (obj is Melee)
+        else
         {
-            return _melee;
-        }
-        else if (obj is Hitscan)
-        {
-            return _hitscan;
+            if (obj is ProjectileWeapon)
+            {
+                return _projectile;
+            }
+            else if (obj is Melee)
+            {
+                return _melee;
+            }
+            else if (obj is Hitscan)
+            {
+                return _hitscan;
+            }
+            else if (obj is PulseEmitter)
+            {
+                return _pulseEmitter;
+            }
         }
         
         return base.GetAsset(obj);

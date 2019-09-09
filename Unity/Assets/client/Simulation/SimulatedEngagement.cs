@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using JunkyardDogs.Components;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI.Extensions;
 using EventHandlersTable = System.Collections.Generic.Dictionary<System.Type, System.Collections.Generic.List<JunkyardDogs.Simulation.ISimulatedEngagementEventHandler>>;
@@ -39,14 +40,21 @@ namespace JunkyardDogs.Simulation
             get { return _step; }
         }
 
+        public Engagement Engagement
+        {
+            get { return _engagement; }
+        }
+
         public double CurrentSeconds
         {
             get { return ConvertStepsToSeconds(CurrentStep); }
         }
 
+        private int instanceCount;
         public List<SimObject> Objects;
         private List<SimObject> ObjectsMarkedForInstantiation;
         private List<SimObject> ObjectsMarkedForRemoval;
+        public List<SimObject> ObjectHistory;
 
         private EventHandlersTable _eventHandlers;
 
@@ -126,10 +134,45 @@ namespace JunkyardDogs.Simulation
             Objects = new List<SimObject>();
             ObjectsMarkedForInstantiation = new List<SimObject>();
             ObjectsMarkedForRemoval = new List<SimObject>();
+            ObjectHistory = new List<SimObject>();
             
             _engagement = engagement;
             _listener = listener;
             _eventHandlers = GetEventHandlers();
+            
+            _engagement.Arena = new Arena();
+            _engagement.Arena.dimensions = new Vector2(38, 21);
+        }
+        
+        public void OnDrawGizmos()
+        {
+            foreach (SimObject simObject in Objects)
+            {
+                simObject.OnDrawGizmos();
+            }
+
+            Arena arena = _engagement.Arena;
+            //squeedgie stepped on my keyboard
+           // hhhhhhhhhhhhhhhbjkkkkkkkkkkkkkkkkkkk
+           Gizmos.DrawCube(
+               new Vector3(arena.Width / 2, 0, 0),
+               new Vector3(0.3f, 3, arena.Height)
+               );
+           
+           Gizmos.DrawCube(
+               new Vector3(arena.Width / 2 * -1, 0, 0),
+               new Vector3(0.3f, 3, arena.Height)
+           );
+           
+           Gizmos.DrawCube(
+               new Vector3(0, 0, arena.Height / 2 * -1),
+               new Vector3(arena.Width, 3, 0.3f)
+           );
+           
+           Gizmos.DrawCube(
+               new Vector3(0, 0, arena.Height / 2),
+               new Vector3(arena.Width, 3, 0.3f)
+           );
         }
 
         public bool Step()
@@ -140,6 +183,8 @@ namespace JunkyardDogs.Simulation
                 bool isFirstStep = _step == 0;
                 if (isFirstStep)
                 {
+                    SimArena simArena = new SimArena(this, _engagement.Arena);
+                    
                     SimBot botRed = new SimBot(this);
                     SimBot botBlue = new SimBot(this);
                 
@@ -148,9 +193,13 @@ namespace JunkyardDogs.Simulation
                 
                     botRed.opponent = botBlue;
                     botBlue.opponent = botRed;
+                    
+                    botRed.body.position = new Vector2(-5, 0);
+                    botBlue.body.position = new Vector2(5, 0);
                 
                     Add(botBlue);
                     Add(botRed);
+                    Add(simArena);
                 }
             
                 SyncronizObjectsBeforeStep();
@@ -210,7 +259,7 @@ namespace JunkyardDogs.Simulation
         {
             if (simEvent.simBot.RemainingHealth <= 0)
             {
-                _engagement.Outcome = new SimulationService.Outcome(simEvent.simBot.bot, simEvent.simBot.opponent.bot, (float)CurrentSeconds);
+                _engagement.Outcome = new SimulationService.Outcome(simEvent.simBot.opponent.bot, simEvent.simBot.bot, (float)CurrentSeconds);
             }
         }
 
@@ -230,8 +279,8 @@ namespace JunkyardDogs.Simulation
             
             foreach (SimObject simObj in ObjectsMarkedForInstantiation)
             {
+                simObj.SetInstanceID(instanceCount++);
                 SendEvent(new SimInstantiationEvent(simObj));
-            
                 if (simObj is ISimulatedEngagementEventHandler)
                 {
                     AddEventHandler(_eventHandlers, simObj as ISimulatedEngagementEventHandler);
@@ -239,6 +288,7 @@ namespace JunkyardDogs.Simulation
             }
             
             Objects.AddRange(ObjectsMarkedForInstantiation);
+            ObjectHistory.AddRange(ObjectsMarkedForInstantiation);
             ObjectsMarkedForRemoval.Clear();
             ObjectsMarkedForInstantiation.Clear();
         }

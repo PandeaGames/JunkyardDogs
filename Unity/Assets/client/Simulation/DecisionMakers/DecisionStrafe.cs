@@ -1,3 +1,4 @@
+using JunkyardDogs.Simulation.Simulation;
 using JunkyardDogs.Specifications;
 using UnityEngine;
 
@@ -39,8 +40,10 @@ namespace JunkyardDogs.Simulation
         {
             DecisionStrafeLogic logic = new DecisionStrafeLogic();
 
+            logic.evasiveness = simBot.bot.GetCPUAttribute(CPU.CPUAttribute.Evasiveness);
+            
             logic.numberOfPreviousStrafeDecisionsToCheck = numberOfPreviousStrafeDecisionsToCheck;
-            logic.numberOfPreviousStrafeDecisionsCap = numberOfPreviousStrafeDecisionsCap;
+            logic.numberOfPreviousStrafeDecisionsCap = logic.evasiveness;
 
             //calculate event multiplier
             logic.numberOfPreviousStrafeDecisions =
@@ -50,27 +53,26 @@ namespace JunkyardDogs.Simulation
                 simBot.ConcurrentDecisionsOfType<DecisionStrafe>(
                     (strafeDecision) => { return strafeDecision.Direction == _direction; });
 
-            logic.evasiveness = simBot.bot.GetCPUAttribute(CPU.CPUAttribute.Evasiveness);
-
             bool isStrafeMovementCapped =
                 logic.numberOfPreviousStrafeDecisions > logic.numberOfPreviousStrafeDecisionsCap;
 
             if (isStrafeMovementCapped)
             {
-                logic.weight = -1;
+                logic.priority = -1;
             }
             else
             {
                 bool hasBeenStrafing = logic.numberOfPreviousConcurrentStrafeDecisions > 0;
+                logic.weight = (int) logic.evasiveness + (hasBeenStrafing ? 2500 : 0);
 
-                if (hasBeenStrafing)
+               /* if (hasBeenStrafing)
                 {
                     logic.weight = (int) HardDecisions.Movement;
                 }
                 else
                 {
                     logic.weight = (int) (logic.evasiveness);
-                }
+                }*/
             }
 
             return logic;
@@ -79,12 +81,28 @@ namespace JunkyardDogs.Simulation
         public void MakeDecision(SimBot simBot, SimulatedEngagement engagement)
         {
             //apply velocity
-            Vector2 vector = new Vector2(_direction == StrafeDirection.Left ? -1:1, 0);
-            simBot.body.velocityPerSecond = vector;
+            Vector2 vector = new Vector2(_direction == StrafeDirection.Left ? -simBot.bot.Chassis.Engine.Acceleration:simBot.bot.Chassis.Engine.Acceleration, 0);
+            simBot.body.accelerationPerSecond = vector;
             
-            simBot.body.rotation.SetLookRotation(simBot.opponent.body.position);
+            simBot.body.rotation.SetFromToRotation( simBot.body.position, simBot.opponent.body.position);
+            ClampSpeed(simBot.body, simBot.bot.Chassis.Engine.MaxSpeed);  
             
             engagement.SendEvent(new MoveDecisionEvent(simBot, vector));
+        }
+
+        public static void ClampSpeed(SimulatedBody body, float maxSpeed)
+        {
+            float magnitude = body.velocityPerSecond.sqrMagnitude;
+            if (magnitude > maxSpeed)
+            {
+                float modifier = magnitude / maxSpeed;
+                Vector2 newSpeed  =new Vector2(
+                    body.velocityPerSecond.x / modifier,
+                    body.velocityPerSecond.y / modifier
+                    );
+
+                body.velocityPerSecond = newSpeed;
+            }
         }
     }
 }

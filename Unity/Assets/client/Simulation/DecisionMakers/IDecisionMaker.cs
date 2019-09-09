@@ -1,12 +1,14 @@
 namespace JunkyardDogs.Simulation
 {
-    public enum HardDecisions
+    public enum DecisionPriority
     {
-        Movement = 1000,
-        PoweringWeapon = 1001,
-        CooldownWeapon = 1002,
-        Stunned = 1003,
-        FireWeapon = 1002
+        None = -1,
+        Normal = 1,
+        Movement = 2,
+        PoweringWeapon = 3,
+        CooldownWeapon = 4,
+        Stunned = 5,
+        FireWeapon = 6
     }
     
     public interface IDecisionMaker

@@ -10,6 +10,7 @@ namespace JunkyardDogs.Simulation
     public class Engagement
     {
         public SimulationService.Outcome Outcome { get; set; }
+        public Arena Arena { get; set; }
         
         [SerializeField]
         private Bot _redCombatent;
@@ -21,7 +22,7 @@ namespace JunkyardDogs.Simulation
         private RulesOfEngagement _rules;
 
         [SerializeField]
-        private double _seed;
+        private int _seed;
 
         private bool _isLoaded;
 
@@ -45,14 +46,16 @@ namespace JunkyardDogs.Simulation
         public RulesOfEngagement Rules
         {
             get { return _rules; }
+            set { _rules = value; }
         }
 
-        public double Seed
+        public int Seed
         {
             get
             {
                 return _seed;
             }
+            set { _seed = value; }
         }
 
         public void SetTimeLimit(float timeLimit)

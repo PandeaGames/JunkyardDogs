@@ -11,6 +11,7 @@ public class HitscanWeaponBalanceObject:PhysicalSpecificationBalanceObject
     public double cooldown;
     public double chargeTime;
     public int damage;
+    public int armourPiercing;
 }
 
 [CreateAssetMenu(menuName = MENU_NAME)]

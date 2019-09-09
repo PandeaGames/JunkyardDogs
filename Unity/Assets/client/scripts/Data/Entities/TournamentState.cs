@@ -18,6 +18,11 @@ public class TournamentState
         {
             return Tournament == null ? false : Tournament.IsComplete();
         }
+
+        public bool IsUserKnockedOut()
+        {
+            return  Tournament == null ? false : Tournament.IsUserKnockedOut();
+        }
     }
     
     public TournamentStaticDataReference TournamentReference { get; set; }
@@ -62,6 +67,11 @@ public class TournamentState
     public bool IsComplete()
     {
         return GetCurrentStage().IsComplete();
+    }
+    
+    public bool IsUserKnockedOut()
+    {
+        return GetCurrentStage().IsUserKnockedOut();
     }
 
     public StageState GetFirstStage()

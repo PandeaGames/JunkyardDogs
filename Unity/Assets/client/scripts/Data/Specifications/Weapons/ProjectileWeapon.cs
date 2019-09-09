@@ -18,6 +18,7 @@ namespace JunkyardDogs.Specifications
         
         public float Speed { get { return _shell.Speed; } }
         public float Radius { get { return _shell.Radius; } }
+        public override double Power { get { return Shell.Damage; } }
 
         public override AttackActionResult GetResult()
         {
@@ -46,8 +47,10 @@ namespace JunkyardDogs.Specifications
 
         public void ApplyBalance(ProjectileWeaponBalanceObject balance)
         {
+            base.ApplyBalance(balance);
             _volume = balance.volume;
             name = balance.name;
+            _armourPiercing = balance.armourPiercing;
 
             #if UNITY_EDITOR
             if (_shell == null)
@@ -75,6 +78,7 @@ namespace JunkyardDogs.Specifications
             
             balance.cooldown = Cooldown;
             balance.chargeTime = ChargeTime;
+            balance.armourPiercing = _armourPiercing;
 
             return balance;
         }

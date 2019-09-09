@@ -19,21 +19,26 @@ namespace PandeaGames.Data.Static
         {
             LoadSourceDataAsync((source) =>
             {
-                _dataLookup = new Dictionary<string, TData>();
-
-                foreach (StaticDataEntry<TData> entry in source)
-                {
-                    TData data = entry.Data;
-
-                    if (data != null)
-                    {
-                        _dataLookup.Add(entry.ID, entry.Data);
-                    }
-                }
+                PopulateData(source, ref _dataLookup);
 
                 onLoadSuccess();
 
             }, onLoadFailed);
+        }
+
+        private void PopulateData(IStaticDataDirectorySource<TData> source, ref Dictionary<string, TData> dataLookup)
+        {
+            dataLookup = new Dictionary<string, TData>();
+            
+            foreach (StaticDataEntry<TData> entry in source)
+            {
+                TData data = entry.Data;
+
+                if (data != null)
+                {
+                    dataLookup.Add(entry.ID, entry.Data);
+                }
+            }
         }
         
         // Explicit for IEnumerable because weakly typed collections are Bad
@@ -56,8 +61,18 @@ namespace PandeaGames.Data.Static
 
         protected abstract void LoadSourceDataAsync(Action<IStaticDataDirectorySource<TData>> onLoadSuccess, LoadError onLoadFailed);
 
+        #if UNITY_EDITOR
+        protected abstract IStaticDataDirectorySource<TData> LoadSimulatedSource();
         public virtual TData FindData(string ID)
         {
+            if (!Application.isPlaying && _dataLookup == null) 
+            {
+                PopulateData(LoadSimulatedSource(), ref _dataLookup);
+            }
+        #else
+        public virtual TData FindData(string ID)
+        {
+        #endif
             try
             {
                 TData data = _dataLookup[ID];

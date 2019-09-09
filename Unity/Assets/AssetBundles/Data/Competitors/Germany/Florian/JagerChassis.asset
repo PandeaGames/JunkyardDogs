@@ -18,6 +18,8 @@ MonoBehaviour:
     _id: Skylabs
   Material:
     _id: Steel
+  _engine:
+    _id: SkylabsStandardFastEngine
   _frontPlates:
   - _id: JagerPlate
   - _id: JagerPlate

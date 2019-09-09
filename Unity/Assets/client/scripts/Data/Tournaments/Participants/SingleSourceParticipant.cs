@@ -9,6 +9,7 @@ public class SingleSourceParticipant : Participant
     
     public override ParticipantTeam GetTeam(JunkyardUser user)
     {
+            
         Competitor competitor = Source.Data.DoGenerate();
         ParticipantTeam team = new ParticipantTeam(competitor, competitor.Inventory.Bots[BotIndex]);
         return team;

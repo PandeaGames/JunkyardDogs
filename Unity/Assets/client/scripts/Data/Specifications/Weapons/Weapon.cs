@@ -16,9 +16,16 @@ namespace JunkyardDogs.Specifications
         [SerializeField]
         protected double _power;
 
+        [SerializeField] 
+        protected int _armourPiercing;
+
+        [SerializeField] 
+        protected float _stun;
+
         public double ChargeTime { get { return _chargeTime; } }
         public double Cooldown { get { return _cooldown; } }
-        public double Power { get { return _power; } }
+        public virtual double Power { get { return _power; } }
+        public virtual float Stun { get { return _stun; } }
 
         public virtual AttackActionResult GetResult()
         {
@@ -36,6 +43,7 @@ namespace JunkyardDogs.Specifications
         public void ApplyBalance(WeaponBalanceObject balance)
         {
             base.ApplyBalance(balance);
+            _stun = balance.stun;
         }
 
         public WeaponBalanceObject GetBalance()

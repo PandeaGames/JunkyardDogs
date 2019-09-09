@@ -48,6 +48,11 @@ namespace JunkyardDogs.Data
     }
     
     [Serializable]
+    public class DirectiveBlueprintStaticDataReference : StaticDataReference<BlueprintDataBase, DirectiveBlueprintData, DirectiveBlueprintStaticDataReference, DirectiveBlueprintDataProvider>
+    {
+    }
+    
+    [Serializable]
     public class PlateBlueprintStaticDataReference : StaticDataReference<BlueprintDataBase, PlateBlueprintData, PlateBlueprintStaticDataReference, PlateBlueprintDataProvider>
     {
     }
@@ -79,6 +84,11 @@ namespace JunkyardDogs.Data
     
     [Serializable]
     public class WeaponStaticDataReference : StaticDataReference<Specification, Weapon, WeaponStaticDataReference, WeaponDataProvider>
+    {
+    }
+    
+    [Serializable]
+    public class EngineBlueprintStaticDataReference : StaticDataReference<BlueprintDataBase, EngineBlueprintData, EngineBlueprintStaticDataReference, EngineBlueprintDataProvider>
     {
     }
     
@@ -182,6 +192,14 @@ namespace JunkyardDogs.Data
     public class PlateBlueprintStaticDataReferenceAttribute : StaticDataReferenceAttribute
     {
         public PlateBlueprintStaticDataReferenceAttribute() : base(BlueprintDataProvider.FULL_PATH, typeof(PlateBlueprintData))
+        {
+            
+        }
+    }
+    
+    public class EngineBlueprintStaticDataReferenceAttribute : StaticDataReferenceAttribute
+    {
+        public EngineBlueprintStaticDataReferenceAttribute() : base(BlueprintDataProvider.FULL_PATH, typeof(EngineBlueprintData))
         {
             
         }

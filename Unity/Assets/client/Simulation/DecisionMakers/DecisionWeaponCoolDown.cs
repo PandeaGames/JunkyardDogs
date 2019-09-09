@@ -21,11 +21,11 @@ namespace JunkyardDogs.Simulation
             
             if (simBot.IsInWeaponCooldown())
             {
-                logic.weight = (int) HardDecisions.CooldownWeapon;
+                logic.priority = (int) DecisionPriority.CooldownWeapon;
             }
             else
             {
-                logic.weight = -1;
+                logic.priority = (int) DecisionPriority.None;
             }
 
             return logic;

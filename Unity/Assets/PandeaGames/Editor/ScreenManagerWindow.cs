@@ -56,8 +56,8 @@ public class LoadedScreen
 
     public void Export()
     {
-        GameObject screenToMove = GameObject.Instantiate(_duplicateScreen);
-        screenToMove.name = _duplicateScreen.name;
+        GameObject screenToMove = GameObject.Instantiate(_loadedScreenCache._duplicateScreen);
+        screenToMove.name = _loadedScreenCache._duplicateScreen.name;
         screenToMove.SetActive(false);
 
         if (_scene.isLoaded)
@@ -81,7 +81,7 @@ public class LoadedScreen
 
     public void Unload()
     {
-        GameObject.DestroyImmediate(_duplicateScreen);
+        GameObject.DestroyImmediate(_loadedScreenCache._duplicateScreen);
 
         LoadedScreenCache cache = GameObject.FindObjectOfType<LoadedScreenCache>();
 

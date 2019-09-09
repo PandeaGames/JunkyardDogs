@@ -29,6 +29,7 @@ namespace JunkyardDogs
 
         private Tournament _tournament;
         private TournamentState _state;
+        public int Seed;
 
        private TournamentState GetState()
        {
@@ -76,7 +77,8 @@ namespace JunkyardDogs
             TournamentState.TournamentStatus status = GetState().GetStatus();
             MatchState match = status.Match;
             Engagement engagement = new Engagement();
-            engagement.SetTimeLimit(50);
+            engagement.Seed = Seed;
+            engagement.SetTimeLimit(30);
 
             engagement.BlueCombatent = match.ParticipantA.Participant.GetTeam(User).Bot;
             engagement.RedCombatent = match.ParticipantB.Participant.GetTeam(User).Bot;

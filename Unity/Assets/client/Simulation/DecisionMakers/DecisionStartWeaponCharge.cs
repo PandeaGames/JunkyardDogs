@@ -1,3 +1,4 @@
+using System;
 using JunkyardDogs.Components;
 using CPU = JunkyardDogs.Specifications.CPU;
 
@@ -9,7 +10,10 @@ namespace JunkyardDogs.Simulation
         {
             public int wasShotFiredInHowManyDecisions;
             public bool wasShotFiredRecently;
+            public int stepsSinceLastCooldown;
             public int aggressiveness;
+            public bool hasCooldown;
+            public int ticksSinceLastWeaponFire;
         }
 
         private const int wasShotFiredInHowManyDecisions = 50;
@@ -24,18 +28,34 @@ namespace JunkyardDogs.Simulation
             DecisionStartWeaponChargeLogic logic = new DecisionStartWeaponChargeLogic();
 
             logic.wasShotFiredInHowManyDecisions = wasShotFiredInHowManyDecisions;
+            logic.ticksSinceLastWeaponFire = simBot.TicksSinceLastDecisionOfType<DecisionWeaponFire>();
 
             logic.wasShotFiredRecently = simBot.DecisionWasOfType<DecisionWeaponFire>(logic.wasShotFiredInHowManyDecisions);
             logic.wasShotFiredRecently |= simBot.DecisionWasOfType<DecisionStartWeaponCharge>(logic.wasShotFiredInHowManyDecisions);
             logic.wasShotFiredRecently |= simBot.DecisionWasOfType<DecisionWeaponCharge>(logic.wasShotFiredInHowManyDecisions);
+            logic.wasShotFiredRecently |= simBot.DecisionWasOfType<DecisionWeaponCoolDown>(logic.wasShotFiredInHowManyDecisions);
             logic.aggressiveness = simBot.bot.GetCPUAttribute(CPU.CPUAttribute.Aggressiveness);
+
+            logic.weight += logic.ticksSinceLastWeaponFire;
             
             if (logic.wasShotFiredRecently)
             {
-                logic.weight = -1;
+                logic.priority = (int) DecisionPriority.None;
             }
             else
             {
+                SimBot.WeightedDecision cooldownDecisionDecision =
+                    simBot.GetLastWeightedDecisionOfType<DecisionWeaponCoolDown>();
+                logic.hasCooldown = cooldownDecisionDecision != null;
+
+                if (logic.hasCooldown)
+                {
+                    logic.stepsSinceLastCooldown =
+                        simBot.GetLastWeightedDecisionOfType<DecisionWeaponCoolDown>().simulationTick;
+                    logic.weight = (logic.aggressiveness * (1 + logic.stepsSinceLastCooldown/10)) + logic.stepsSinceLastCooldown;
+                }
+                
+               
                 logic.weight = logic.aggressiveness;
             }
 

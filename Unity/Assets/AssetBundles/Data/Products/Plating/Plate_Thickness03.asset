@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _volume: 2
   _thickness: 3
+  _armour: 0

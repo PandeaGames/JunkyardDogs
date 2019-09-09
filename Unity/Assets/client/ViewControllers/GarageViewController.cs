@@ -94,8 +94,6 @@ namespace JunkyardDogs
             {
                 _garageViewModel = Game.Instance.GetViewModel<GarageViewModel>(0);
                 _behaviourViewModel = Game.Instance.GetViewModel<EditBotBehaviourViewModel>(0);
-                _behaviourViewModel.ActionList = Game.Instance.GetStaticDataPovider<GameStaticDataProvider>()
-                    .GameDataStaticData.ActionListRef;
             }
             
             protected override IViewController GetViewController()

@@ -1,0 +1,156 @@
+fileFormatVersion: 2
+guid: 0a22b94088678ca4eaef72e5e1b33c64
+timeCreated: 1457990748
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Fire Selector
+    100002: //RootNode
+    100004: LAW80 Extended
+    100006: LAW80 Shot
+    100008: LAW80 Shot Fired
+    100010: Trigger
+    100012: Launcher 80 Extended
+    100014: Launcher 80 Fire Selector
+    100016: Launcher 80 Shot
+    100018: Launcher 80 Shot Fired
+    100020: Launcher 80 Trigger
+    100022: Launcher 80 Shoulder Pad
+    100024: Launcher 80 Sight
+    100026: Launcher 80 Sight Cover
+    100028: Launcher 80 Rear
+    100030: Launcher 80    x0.0818   y0.0594
+    100032: Launcher 80 Trigger Guard
+    400000: Fire Selector
+    400002: //RootNode
+    400004: LAW80 Extended
+    400006: LAW80 Shot
+    400008: LAW80 Shot Fired
+    400010: Trigger
+    400012: Launcher 80 Extended
+    400014: Launcher 80 Fire Selector
+    400016: Launcher 80 Shot
+    400018: Launcher 80 Shot Fired
+    400020: Launcher 80 Trigger
+    400022: Launcher 80 Shoulder Pad
+    400024: Launcher 80 Sight
+    400026: Launcher 80 Sight Cover
+    400028: Launcher 80 Rear
+    400030: Launcher 80    x0.0818   y0.0594
+    400032: Launcher 80 Trigger Guard
+    2300000: Fire Selector
+    2300002: //RootNode
+    2300004: LAW80 Extended
+    2300006: LAW80 Shot
+    2300008: LAW80 Shot Fired
+    2300010: Trigger
+    2300012: Launcher 80 Extended
+    2300014: Launcher 80 Fire Selector
+    2300016: Launcher 80 Shot
+    2300018: Launcher 80 Shot Fired
+    2300020: Launcher 80 Trigger
+    2300022: Launcher 80 Shoulder Pad
+    2300024: Launcher 80 Sight
+    2300026: Launcher 80 Sight Cover
+    2300028: Launcher 80 Rear
+    2300030: Launcher 80    x0.0818   y0.0594
+    2300032: Launcher 80 Trigger Guard
+    3300000: Fire Selector
+    3300002: //RootNode
+    3300004: LAW80 Extended
+    3300006: LAW80 Shot
+    3300008: LAW80 Shot Fired
+    3300010: Trigger
+    3300012: Launcher 80 Extended
+    3300014: Launcher 80 Fire Selector
+    3300016: Launcher 80 Shot
+    3300018: Launcher 80 Shot Fired
+    3300020: Launcher 80 Trigger
+    3300022: Launcher 80 Shoulder Pad
+    3300024: Launcher 80 Sight
+    3300026: Launcher 80 Sight Cover
+    3300028: Launcher 80 Rear
+    3300030: Launcher 80    x0.0818   y0.0594
+    3300032: Launcher 80 Trigger Guard
+    4300000: LAW80    x0.0818   y0.0594
+    4300002: Fire Selector
+    4300004: LAW80 Extended
+    4300006: LAW80 Shot Fired
+    4300008: LAW80 Shot
+    4300010: Trigger
+    4300012: Launcher 80    x0.0818   y0.0594
+    4300014: Launcher 80 Fire Selector
+    4300016: Launcher 80 Extended
+    4300018: Launcher 80 Shot Fired
+    4300020: Launcher 80 Shot
+    4300022: Launcher 80 Trigger
+    4300024: Launcher 80 Shoulder Pad
+    4300026: Launcher 80 Sight Cover
+    4300028: Launcher 80 Sight
+    4300030: Launcher 80 Rear
+    4300032: Launcher 80 Trigger Guard
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

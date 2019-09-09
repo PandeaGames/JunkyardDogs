@@ -35,10 +35,6 @@ namespace JunkyardDogs.Components
             {
                 component = new JunkyardDogs.Components.WeaponProcessor();
             }
-            else if (specData is JunkyardDogs.Specifications.SubProcessor)
-            {
-                component = new JunkyardDogs.Components.SubProcessor();
-            }
             else if (specData is JunkyardDogs.Specifications.Plate)
             {
                 component = new JunkyardDogs.Components.Plate();
@@ -50,6 +46,14 @@ namespace JunkyardDogs.Components
             else if (specData is JunkyardDogs.Specifications.CircuitBoard)
             {
                 component = new JunkyardDogs.Components.CircuitBoard();
+            }
+            else if (specData is JunkyardDogs.Specifications.Directive)
+            {
+                component = new JunkyardDogs.Components.Directive();
+            }
+            else if (specData is JunkyardDogs.Specifications.Engine)
+            {
+                component = new JunkyardDogs.Components.Engine();
             }
 
             if (component == null)

@@ -12,8 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1038089e1f9093f4180a3b3d0fc9df65, type: 3}
   m_Name: Skylabs
   m_EditorClassIdentifier: 
-  _distinctions:
-  - _type: 0
-    _value: 10
+  _distinctions: []
   _nationality:
     _id: Germany

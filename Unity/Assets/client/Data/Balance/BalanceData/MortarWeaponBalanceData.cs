@@ -13,6 +13,7 @@ public class MortarWeaponBalanceObject:ProjectileWeaponBalanceObject
     public int range;
     public int damage;
     public int radius;
+    public int armourPiercing;
 }
 
 [CreateAssetMenu(menuName = MENU_NAME)]

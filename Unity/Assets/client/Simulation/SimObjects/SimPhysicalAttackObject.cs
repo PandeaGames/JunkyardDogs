@@ -46,6 +46,10 @@ namespace JunkyardDogs.Simulation
             {
                 return CreateCollider(weapon as Mortar);
             }
+            else if (weapon is PulseEmitter)
+            {
+                return CreateCollider(weapon as PulseEmitter);
+            }
 
             return null;
         }
@@ -83,6 +87,13 @@ namespace JunkyardDogs.Simulation
             collider.radius = weapon.Radius;
             return collider;
         }
+        
+        private SimulatedCollider CreateCollider(PulseEmitter weapon)
+        {
+            SimulatedCircleCollider collider = new SimulatedCircleCollider(body);
+            collider.radius = 0.5f;
+            return collider;
+        }
 
         public virtual void OnSimEvent(SimulatedEngagement engagement, SimEvent simEvent)
         {
@@ -103,6 +114,7 @@ namespace JunkyardDogs.Simulation
 
             if (other == simBot.opponent)
             {
+                simBot.opponent.Stun(simBot.bot.GetArmament(armementLocation).GetSpec<Weapon>().Stun);
                 engagement.MarkForRemoval(this);
             }
         }

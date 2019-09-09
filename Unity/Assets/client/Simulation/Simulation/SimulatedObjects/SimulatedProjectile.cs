@@ -21,7 +21,7 @@ namespace JunkyardDogs.Simulation.Simulation
 
                 float angle = Mathf.Atan2(delta.y, delta.x);
 
-                body.velocityPerSecond.Set(
+                body.accelerationPerSecond.Set(
                     Mathf.Cos(angle) * actionResult.ProjectileResult.Velocity,
                     Mathf.Sin(angle) * actionResult.ProjectileResult.Velocity
                     );

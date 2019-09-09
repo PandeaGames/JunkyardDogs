@@ -27,7 +27,7 @@ namespace JunkyardDogs.Specifications
             AttackActionResult.Hitscan histscanResult = result.HitspanResult;
 
             result.DamageOuput = _shell.Damage;
-
+        
             result.HitspanResult = histscanResult;
 
             return result;
@@ -43,6 +43,7 @@ namespace JunkyardDogs.Specifications
             _cooldown = balance.cooldown;
             _volume = balance.volume;
             _chargeTime = balance.chargeTime;
+            _armourPiercing = balance.armourPiercing;
             name = balance.name;
             
 #if UNITY_EDITOR
@@ -64,6 +65,7 @@ namespace JunkyardDogs.Specifications
             balance.volume = _volume;
             balance.cooldown = _cooldown;
             balance.chargeTime = _chargeTime;
+            balance.armourPiercing = _armourPiercing;
 
             if (_shell != null)
             {

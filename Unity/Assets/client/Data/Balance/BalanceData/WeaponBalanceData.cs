@@ -10,6 +10,7 @@ public class WeaponBalanceObject:SpecificationBalanceObject
 {
     public double cooldown;
     public double chargeTime;
+    public float stun;
 }
 
 [CreateAssetMenu(menuName = MENU_NAME)]

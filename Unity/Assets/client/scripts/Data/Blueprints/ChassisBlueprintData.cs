@@ -8,6 +8,9 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Blueprints/ChassisBlueprint")]
 public class ChassisBlueprintData : PhysicalComponentBlueprintData<Chassis>, IStaticDataBalance<ChassisBlueprintBalanceObject>
 {
+    [SerializeField, EngineBlueprintStaticDataReference]
+    private EngineBlueprintStaticDataReference _engine;
+    
     [Header("Plates")]
     
     [SerializeField, PlateBlueprintStaticDataReference]
@@ -45,6 +48,11 @@ public class ChassisBlueprintData : PhysicalComponentBlueprintData<Chassis>, ISt
     public override Chassis DoGenerate(int seed)
     {
         Chassis chassis = base.DoGenerate(seed);
+
+        if (_engine.Data != null)
+        {
+            chassis.Engine = _engine.Data.DoGenerate(seed);
+        }
 
         FillPlates(_frontPlates, chassis.FrontPlates, seed);
         FillPlates(_leftPlates, chassis.LeftPlates, seed);
@@ -106,6 +114,8 @@ public class ChassisBlueprintData : PhysicalComponentBlueprintData<Chassis>, ISt
     {
         name = balance.name;
         
+        _engine = new EngineBlueprintStaticDataReference();
+        _engine.ID = balance.engine;
         _specification = new SpecificationStaticDataReference();
         _specification.ID = balance.specification;
         _manufacturer = new ManufacturerStaticDataReference();

@@ -14,54 +14,48 @@ namespace JunkyardDogs
     {
         public event System.Action OnSelectNewDirective;
         public event System.Action OnDone;
-        public event System.Action<AgentState> OnSelectState; 
-        public event System.Action<BehaviorAction, ActionStaticDataReference> OnActionAdded; 
+        public event Action OnSwapCPU;
+        public event Action OnCPUSwapped;
+        public event Action<int> OnChooseDirective;
+        public event Action<int> OnDirectiveChosen;
         
         public Bot Bot;
-        public WeakReference ActionList;
-        
-        public AgentState SelectedState;
 
         public void OnDoneClicked()
         {
             if (OnDone != null)
                 OnDone();
         }
-        
-        public void OnSelectNewDirectiveClicked()
-        {
-            if (OnSelectNewDirective != null)
-                OnSelectNewDirective();
-        }
-        
-        public void SetSelectedState(int index)
-        {
-            List<AgentState> states = Bot.Agent.States;
 
-            if (states.Count > index)
+        public void SwapCPU()
+        {
+            if (OnSwapCPU != null)
             {
-                SelectedState =  states[index];
-            }
-
-            if (OnSelectState != null)
-            {
-                OnSelectState(SelectedState);
+                OnSwapCPU();
             }
         }
         
-        public void AdddNewAction(ActionStaticDataReference action)
+        public void CPUSwapped()
         {
-            //TODO: Add action
-            if (SelectedState != null && action != null)
+            if (OnCPUSwapped != null)
             {
-                ActionDirective actionDirective = new ActionDirective();
-                actionDirective.ActionWeakReference = action;
-                SelectedState.Directives.Add(actionDirective);
-                
-                if (OnActionAdded != null)
-                {
-                    OnActionAdded(action.Data, action);
-                }
+                OnCPUSwapped();
+            }
+        }
+
+        public void ChooseDirective(int index)
+        {
+            if (OnChooseDirective != null)
+            {
+                OnChooseDirective(index);
+            }
+        }
+
+        public void DirectiveChosen(int index)
+        {
+            if (OnDirectiveChosen != null)
+            {
+                OnDirectiveChosen(index);
             }
         }
     }

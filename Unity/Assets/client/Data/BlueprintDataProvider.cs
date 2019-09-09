@@ -21,6 +21,10 @@ namespace JunkyardDogs.Data
     {
     }
     
+    public class EngineBlueprintDataProvider : ChildStaticDataReferenceDirectory<BlueprintDataBase, EngineBlueprintData, BlueprintStaticDataReference, EngineBlueprintStaticDataReference, BlueprintDataProvider, EngineBlueprintDataProvider>
+    {
+    }
+    
     public class MotherboardBlueprintDataProvider : ChildStaticDataReferenceDirectory<BlueprintDataBase, MotherboardBlueprintData, BlueprintStaticDataReference, MotherboardBlueprintStaticDataReference, BlueprintDataProvider, MotherboardBlueprintDataProvider>
     {
     }
@@ -34,6 +38,10 @@ namespace JunkyardDogs.Data
     }
     
     public class AgentBlueprintDataProvider : ChildStaticDataReferenceDirectory<BlueprintDataBase, AgentBlueprintData, BlueprintStaticDataReference, AgentBlueprintStaticDataReference, BlueprintDataProvider, AgentBlueprintDataProvider>
+    {
+    }
+    
+    public class DirectiveBlueprintDataProvider : ChildStaticDataReferenceDirectory<BlueprintDataBase, DirectiveBlueprintData, BlueprintStaticDataReference, DirectiveBlueprintStaticDataReference, BlueprintDataProvider, DirectiveBlueprintDataProvider>
     {
     }
     

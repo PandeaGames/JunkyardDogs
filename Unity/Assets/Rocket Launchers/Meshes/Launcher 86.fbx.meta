@@ -1,0 +1,236 @@
+fileFormatVersion: 2
+guid: df416f4c65360d546890980e3554e454
+timeCreated: 1457990748
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: CockingHandle
+    100004: Covers
+    100006: Shot Fired
+    100008: Trigger
+    100010: Launcher1 CockingHandle
+    100012: Launcher1 Covers
+    100014: Launcher1 Shot Fired
+    100016: Launcher1 Trigger
+    100018: Launcher1 V1     x0.0723   y0.0883
+    100020: Launcher1 V2     x0.0723   y0.0883
+    100022: Launcher 4 CockingHandle
+    100024: Launcher 4 Covers
+    100026: Launcher 4 Shot Fired
+    100028: Launcher 4 Trigger
+    100030: Launcher 4 V1     x0.0723   y0.0883
+    100032: Launcher 4 V2     x0.0723   y0.0883
+    100034: Launcher 86 Cocking Handle
+    100036: Launcher 86 Covers
+    100038: Launcher 86 Shot Fired
+    100040: Launcher 86 Trigger
+    100042: Launcher 86 V1     x0.0723   y0.0883
+    100044: Launcher 86 V2     x0.0723   y0.0883
+    100046: Launcher 86 V1     x0.0723   y0.0853
+    100048: Launcher 86 V2     x0.0723   y0.0853
+    100050: Launcher 86 Fore Grip
+    100052: Launcher 86 Front Sight
+    100054: Launcher 86 Front Sight Cover
+    100056: Launcher 86 Muzzle Covers
+    100058: Launcher 86 Shoulder Pad
+    100060: Launcher 86 Sight
+    100062: Launcher 86 Sight 2
+    100064: Launcher 86 Sight Cover
+    400000: //RootNode
+    400002: CockingHandle
+    400004: Covers
+    400006: Shot Fired
+    400008: Trigger
+    400010: Launcher1 CockingHandle
+    400012: Launcher1 Covers
+    400014: Launcher1 Shot Fired
+    400016: Launcher1 Trigger
+    400018: Launcher1 V1     x0.0723   y0.0883
+    400020: Launcher1 V2     x0.0723   y0.0883
+    400022: Launcher 4 CockingHandle
+    400024: Launcher 4 Covers
+    400026: Launcher 4 Shot Fired
+    400028: Launcher 4 Trigger
+    400030: Launcher 4 V1     x0.0723   y0.0883
+    400032: Launcher 4 V2     x0.0723   y0.0883
+    400034: Launcher 86 Cocking Handle
+    400036: Launcher 86 Covers
+    400038: Launcher 86 Shot Fired
+    400040: Launcher 86 Trigger
+    400042: Launcher 86 V1     x0.0723   y0.0883
+    400044: Launcher 86 V2     x0.0723   y0.0883
+    400046: Launcher 86 V1     x0.0723   y0.0853
+    400048: Launcher 86 V2     x0.0723   y0.0853
+    400050: Launcher 86 Fore Grip
+    400052: Launcher 86 Front Sight
+    400054: Launcher 86 Front Sight Cover
+    400056: Launcher 86 Muzzle Covers
+    400058: Launcher 86 Shoulder Pad
+    400060: Launcher 86 Sight
+    400062: Launcher 86 Sight 2
+    400064: Launcher 86 Sight Cover
+    2300000: //RootNode
+    2300002: CockingHandle
+    2300004: Covers
+    2300006: Shot Fired
+    2300008: Trigger
+    2300010: Launcher1 CockingHandle
+    2300012: Launcher1 Covers
+    2300014: Launcher1 Shot Fired
+    2300016: Launcher1 Trigger
+    2300018: Launcher1 V1     x0.0723   y0.0883
+    2300020: Launcher1 V2     x0.0723   y0.0883
+    2300022: Launcher 4 CockingHandle
+    2300024: Launcher 4 Covers
+    2300026: Launcher 4 Shot Fired
+    2300028: Launcher 4 Trigger
+    2300030: Launcher 4 V1     x0.0723   y0.0883
+    2300032: Launcher 4 V2     x0.0723   y0.0883
+    2300034: Launcher 86 Cocking Handle
+    2300036: Launcher 86 Covers
+    2300038: Launcher 86 Shot Fired
+    2300040: Launcher 86 Trigger
+    2300042: Launcher 86 V1     x0.0723   y0.0883
+    2300044: Launcher 86 V2     x0.0723   y0.0883
+    2300046: Launcher 86 V1     x0.0723   y0.0853
+    2300048: Launcher 86 V2     x0.0723   y0.0853
+    2300050: Launcher 86 Fore Grip
+    2300052: Launcher 86 Front Sight
+    2300054: Launcher 86 Front Sight Cover
+    2300056: Launcher 86 Muzzle Covers
+    2300058: Launcher 86 Shoulder Pad
+    2300060: Launcher 86 Sight
+    2300062: Launcher 86 Sight 2
+    2300064: Launcher 86 Sight Cover
+    3300000: //RootNode
+    3300002: CockingHandle
+    3300004: Covers
+    3300006: Shot Fired
+    3300008: Trigger
+    3300010: Launcher1 CockingHandle
+    3300012: Launcher1 Covers
+    3300014: Launcher1 Shot Fired
+    3300016: Launcher1 Trigger
+    3300018: Launcher1 V1     x0.0723   y0.0883
+    3300020: Launcher1 V2     x0.0723   y0.0883
+    3300022: Launcher 4 CockingHandle
+    3300024: Launcher 4 Covers
+    3300026: Launcher 4 Shot Fired
+    3300028: Launcher 4 Trigger
+    3300030: Launcher 4 V1     x0.0723   y0.0883
+    3300032: Launcher 4 V2     x0.0723   y0.0883
+    3300034: Launcher 86 Cocking Handle
+    3300036: Launcher 86 Covers
+    3300038: Launcher 86 Shot Fired
+    3300040: Launcher 86 Trigger
+    3300042: Launcher 86 V1     x0.0723   y0.0883
+    3300044: Launcher 86 V2     x0.0723   y0.0883
+    3300046: Launcher 86 V1     x0.0723   y0.0853
+    3300048: Launcher 86 V2     x0.0723   y0.0853
+    3300050: Launcher 86 Fore Grip
+    3300052: Launcher 86 Front Sight
+    3300054: Launcher 86 Front Sight Cover
+    3300056: Launcher 86 Muzzle Covers
+    3300058: Launcher 86 Shoulder Pad
+    3300060: Launcher 86 Sight
+    3300062: Launcher 86 Sight 2
+    3300064: Launcher 86 Sight Cover
+    4300000: AT4     x0.0723   y0.0883
+    4300002: Shot Fired
+    4300004: Covers
+    4300006: CockingHandle
+    4300008: Trigger
+    4300010: Launcher1 V2     x0.0723   y0.0883
+    4300012: Launcher1 V1     x0.0723   y0.0883
+    4300014: Launcher1 Shot Fired
+    4300016: Launcher1 Covers
+    4300018: Launcher1 CockingHandle
+    4300020: Launcher1 Trigger
+    4300022: Launcher 4 V2     x0.0723   y0.0883
+    4300024: Launcher 4 V1     x0.0723   y0.0883
+    4300026: Launcher 4 Shot Fired
+    4300028: Launcher 4 Covers
+    4300030: Launcher 4 CockingHandle
+    4300032: Launcher 4 Trigger
+    4300034: Launcher 86 V2     x0.0723   y0.0883
+    4300036: Launcher 86 V1     x0.0723   y0.0883
+    4300038: Launcher 86 Cocking Handle
+    4300040: Launcher 86 Shot Fired
+    4300042: Launcher 86 Covers
+    4300044: Launcher 86 Trigger
+    4300046: Launcher 86 V2     x0.0723   y0.0853
+    4300048: Launcher 86 V1     x0.0723   y0.0853
+    4300050: Launcher 86 Sight
+    4300052: Launcher 86 Sight 2
+    4300054: Launcher 86 Front Sight
+    4300056: Launcher 86 Sight Cover
+    4300058: Launcher 86 Front Sight Cover
+    4300060: Launcher 86 Fore Grip
+    4300062: Launcher 86 Muzzle Covers
+    4300064: Launcher 86 Shoulder Pad
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

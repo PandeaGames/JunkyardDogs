@@ -3,8 +3,8 @@ using System.Collections;
 
 public class LoadedScreenCache : MonoBehaviour
 {
-    [HideInInspector]
+    //[HideInInspector]
     public string scenePath = string.Empty;
-    [HideInInspector]
+    //[HideInInspector]
     public GameObject _duplicateScreen = null;
 }

@@ -11,6 +11,12 @@ public class BotRenderConfiguration : ScriptableObject
     
     [SerializeField] 
     private MaterialFactory _materials;
+
+    [SerializeField] 
+    public GameObject ProjectilePrefab;
+    
+    [SerializeField] 
+    public GameObject PulsePrefab;
     
     [SerializeField] 
     private Material _missingComponentMaterial;

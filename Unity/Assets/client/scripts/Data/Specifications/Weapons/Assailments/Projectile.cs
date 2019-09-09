@@ -18,6 +18,7 @@ namespace JunkyardDogs.Specifications
         {
             _speed = balance.speed;
             _radius = balance.radius;
+            Damage = balance.damage;
         }
 
         public ProjectileWeaponBalanceObject GetBalance()

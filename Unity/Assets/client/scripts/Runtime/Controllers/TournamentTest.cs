@@ -13,6 +13,9 @@ public class TournamentTest : MonoBehaviour
     [SerializeField, TournamentStaticDataReference]
     public TournamentStaticDataReference _testData;
 
+    [SerializeField]
+    public int Seed;
+
     private TournamentViewModel _viewModel;
     private TournamentTestViewController _vc;
 
@@ -20,8 +23,9 @@ public class TournamentTest : MonoBehaviour
     {
         _viewModel = Game.Instance.GetViewModel<TournamentViewModel>(0);
         _viewModel.Tournament = _testData;
+        _viewModel.Seed = Seed;
         _vc = new TournamentTestViewController();
-        _vc.ShowView(); 
+        _vc.ShowView();
     }
     
     private void Update()

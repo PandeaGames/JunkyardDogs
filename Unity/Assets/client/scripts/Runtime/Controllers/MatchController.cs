@@ -41,12 +41,16 @@ public class MatchController : MonoBehaviour, ISimulatedEngagementListener
     [SerializeField] 
     private CameraAgent _cameraAgent;
 
+    [SerializeField]
+    private SimpleSimulatedEngagement _engagementView;
+
     private SimulationService _simulationService;
     private CameraViewModel _cameraViewModel;
     private Action<MatchOutcome> _onMatchComplete;
     private MatchState _match;
     private Engagement _engagement;
     private MatchViewModel _viewModel;
+    private SimulatedEngagement _simulation;
 
     private void Start()
     {
@@ -57,9 +61,13 @@ public class MatchController : MonoBehaviour, ISimulatedEngagementListener
         //_simulationService.SetEngagement(_viewModel.Engagement);
        // _simulationService.StartSimulation();
         StartCoroutine(EndOfBattleCoroutine());
-        SimulatedEngagement simulation = new SimulatedEngagement(_viewModel.Engagement, this);
+        _simulation = new SimulatedEngagement(_viewModel.Engagement, this);
 
-        while (!simulation.Step());
+        //while (!simulation.Step());
+        
+        #if UNITY_EDITOR
+        WriteSimulationResultsToDisc(_simulation);
+        #endif
         
         _cameraViewModel.Focus(_cameraAgent);
     }
@@ -67,6 +75,22 @@ public class MatchController : MonoBehaviour, ISimulatedEngagementListener
     private void OnError(LoadException error)
     {
         
+    }
+
+    private void Update()
+    {
+        if(!_simulation.Step())
+        {
+            Debug.Log("WINNER");
+        }  
+    }
+
+    private void OnDrawGizmos()
+    {
+        if (_simulation != null)
+        {
+            _simulation.OnDrawGizmos();
+        }
     }
 
     private IEnumerator EndOfBattleCoroutine()
@@ -91,6 +115,11 @@ public class MatchController : MonoBehaviour, ISimulatedEngagementListener
     }
 
     public void OnEvent(SimulatedEngagement simulatedEngagement, SimEvent e)
+    {
+        _engagementView.OnSimEvent(simulatedEngagement, e);
+    }
+
+    private void WriteSimulationResultsToDisc(SimulatedEngagement simulatedEngagement)
     {
         
     }

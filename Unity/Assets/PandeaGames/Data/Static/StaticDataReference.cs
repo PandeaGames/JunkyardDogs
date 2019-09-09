@@ -37,7 +37,7 @@ public class StaticDataReferenceAttribute : PropertyAttribute
 [Serializable]
 public class StaticDataReference<TDataBase, TData, TReference, TDirectory>
     where TDataBase:Object
-    where TData:TDataBase 
+    where TData:TDataBase
     where TReference:StaticDataReference<TDataBase, TData, TReference, TDirectory>, new()
     where TDirectory:StaticDataReferenceDirectory<TDataBase, TData, TReference, TDirectory>, new()
 {
@@ -59,7 +59,11 @@ public class StaticDataReference<TDataBase, TData, TReference, TDirectory>
         get
         {
             if (string.IsNullOrEmpty(ID))
+            {
+                Debug.LogWarningFormat("Failed to load Data of type {0} because the ID is empty.", typeof(TData));
                 return null;
+            }
+                
                 
             return Game.Instance.GetStaticDataPovider<TDirectory>().FindData(ID); 
         }

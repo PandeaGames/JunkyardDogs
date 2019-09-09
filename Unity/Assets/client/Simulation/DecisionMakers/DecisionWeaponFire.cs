@@ -51,7 +51,11 @@ namespace JunkyardDogs.Simulation
                     logic.isWeaponChargeComplete = logic.chargeTime > logic.lastWeaponChargeTime;
                 }
 
-                logic.weight = logic.isWeaponChargeComplete ? (int)HardDecisions.FireWeapon : -1;
+                logic.priority = logic.isWeaponChargeComplete ? (int)DecisionPriority.FireWeapon : (int) DecisionPriority.None;
+            }
+            else
+            {
+                logic.priority = (int) DecisionPriority.None;
             }
             
             return logic;

@@ -50,6 +50,7 @@ namespace JunkyardDogs.Specifications
             _chargeTime = balance.chargeTime;
             _meleeWeapon.Damage = balance.damage;
             _volume = balance.volume;
+            _armourPiercing = balance.armourPiercing;
         }
         
         public MeleeWeaponBalanceObject GetBalance()
@@ -71,6 +72,7 @@ namespace JunkyardDogs.Specifications
             balance.volume = _volume;
             balance.name = name;
             balance.range = _range;
+            balance.armourPiercing = _armourPiercing;
             
             return balance;
         }

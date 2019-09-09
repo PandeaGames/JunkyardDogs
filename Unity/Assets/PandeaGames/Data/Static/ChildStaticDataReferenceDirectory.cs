@@ -12,6 +12,7 @@ public abstract class ChildStaticDataReferenceDirectory<TDataBase, TData, TRefer
     where TDirectoryBase:StaticDataReferenceDirectory<TDataBase, TDataBase, TReferenceBase, TDirectoryBase>, new()
     where TDirectory:StaticDataReferenceDirectory<TDataBase, TData, TReference, TDirectory>, new()
 {
+    private static IStaticDataDirectorySource<TData> cachedDirectoryForEditor;
     protected override void LoadSourceDataAsync(Action<IStaticDataDirectorySource<TData>> onLoadSuccess, LoadError onLoadFailed)
     {
         onLoadSuccess(null);
@@ -26,4 +27,18 @@ public abstract class ChildStaticDataReferenceDirectory<TDataBase, TData, TRefer
     {
         return Game.Instance.GetStaticDataPovider<TDirectoryBase>().FindData(ID) as TData;
     }
+    
+#if UNITY_EDITOR
+    protected override IStaticDataDirectorySource<TData> LoadSimulatedSource()
+    {
+        if (cachedDirectoryForEditor != null)
+        {
+            return cachedDirectoryForEditor;
+        }
+
+        TDirectoryBase directoryBase = new TDirectoryBase();
+        
+        return null;
+    }
+#endif
 }

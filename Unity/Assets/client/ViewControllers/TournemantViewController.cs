@@ -121,6 +121,7 @@ namespace JunkyardDogs
             _tournamentViewModel.GetCurrentEngagement(engagement =>
             {
                 _matchViewModel.Engagement = engagement;
+                engagement.Seed = _tournamentViewModel.Seed;
                 _fsm.SetState(TournamentStates.RunMatch);
             }, () => { });
         }
@@ -130,11 +131,13 @@ namespace JunkyardDogs
     {
         private MatchViewModel _matchViewModel;
         private TournamentViewModel _tournamentViewModel;
+        private JunkyardUserViewModel _userViewModel;
         
         public TournamentRunMatch()
         {
             _matchViewModel = Game.Instance.GetViewModel<MatchViewModel>(0);
             _tournamentViewModel = Game.Instance.GetViewModel<TournamentViewModel>(0);
+            _userViewModel = Game.Instance.GetViewModel<JunkyardUserViewModel>(0);
         }
         
         protected override IViewController GetViewController()
@@ -164,6 +167,7 @@ namespace JunkyardDogs
                 status.Match.Loser.Participant = loser;
                 
                 _tournamentViewModel.State.LastMatch = DateTime.UtcNow;
+                _matchViewModel.MatchComplete();
                 
                 _fsm.SetState(TournamentStates.MatchComplete);
             }

@@ -15,7 +15,7 @@ namespace JunkyardDogs.Simulation
             mortar = simBot.bot.GetArmament(armementLocation).GetSpec<Mortar>();
             collider = CreateCollider(mortar);
             body.rotation = simBot.body.rotation;
-            body.velocityPerSecond = new Vector2(0, mortar.Speed);
+            body.accelerationPerSecond = new Vector2(0, mortar.Speed);
             body.doesCollide = false;
             startPosition = simBot.body.position;
             targetDistance = Vector2.Distance(simBot.body.position, simBot.opponent.body.position);

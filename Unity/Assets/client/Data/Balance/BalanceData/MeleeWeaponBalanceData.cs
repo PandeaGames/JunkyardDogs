@@ -12,6 +12,7 @@ public class MeleeWeaponBalanceObject:PhysicalSpecificationBalanceObject
     public double chargeTime;
     public int range;
     public int damage;
+    public int armourPiercing;
 }
 
 [CreateAssetMenu(menuName = MENU_NAME)]

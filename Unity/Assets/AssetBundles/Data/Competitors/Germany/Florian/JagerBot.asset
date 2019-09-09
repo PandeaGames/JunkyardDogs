@@ -21,7 +21,10 @@ MonoBehaviour:
   _agent:
     _id: JagerAgent
   _cpu:
-    _id: Himmel-i9
-  _directive01: 0
-  _directive02: 0
-  _directive03: 0
+    _id: TestCPU
+  _directive01:
+    _id: 
+  _directive02:
+    _id: 
+  _directive03:
+    _id: 

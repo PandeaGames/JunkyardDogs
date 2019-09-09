@@ -18,6 +18,8 @@ namespace JunkyardDogs.Simulation
     
     public class SimulatedPhysics : ISimulatedEngagementGlobalEventHandler
     {
+        private float friction = 1.25f;
+        
         public static void Step(SimulatedEngagement engagement)
         {
             
@@ -53,13 +55,30 @@ namespace JunkyardDogs.Simulation
                 SimPhysicsObject simulatedPhysicsObj = simulated as SimPhysicsObject;
                 if (simulatedPhysicsObj != null)
                 {
-                    float angle = simulatedPhysicsObj.body.rotation.eulerAngles.y;
+                    simulatedPhysicsObj.body.velocityPerSecond = new Vector2(
+                        simulatedPhysicsObj.body.velocityPerSecond.x + simulatedPhysicsObj.body.accelerationPerSecond.x,
+                        simulatedPhysicsObj.body.velocityPerSecond.y + simulatedPhysicsObj.body.accelerationPerSecond.y
+                        );
+                    
+                    SimRotation velocityAngle = new SimRotation();
+                    velocityAngle.Set(simulatedPhysicsObj.body.velocityPerSecond);
+
+                    SimRotation directionalVelocityAngle = new SimRotation();
+                    directionalVelocityAngle.deg360 = velocityAngle.deg360 -90;
+                    
+                    SimRotation moveAngle = directionalVelocityAngle + simulatedPhysicsObj.body.rotation;
+                    
+                    float angle = moveAngle.rad;
 
                     Vector2 vector = new Vector2(
-                        Mathf.Cos(angle) * simulatedPhysicsObj.body.velocityPerSecond.x,
-                        Mathf.Sin(angle) * simulatedPhysicsObj.body.velocityPerSecond.y);
-
+                        Mathf.Cos(angle) * simulatedPhysicsObj.body.velocityPerSecond.magnitude,
+                        Mathf.Sin(angle) * simulatedPhysicsObj.body.velocityPerSecond.magnitude);
+                    
                     simulatedPhysicsObj.body.position = simulatedPhysicsObj.body.position + (vector * SimulatedEngagement.SimuationStep);
+                    simulatedPhysicsObj.body.velocityPerSecond = new Vector2(
+                        simulatedPhysicsObj.body.velocityPerSecond.x / friction,
+                        simulatedPhysicsObj.body.velocityPerSecond.y / friction
+                    );
                 }
             }
 
@@ -103,64 +122,146 @@ namespace JunkyardDogs.Simulation
         
         private bool DoesCollide(SimulatedCollider collider, SimulatedCollider other)
         {
-            SimulatedCircleCollider colliderCircle = collider as SimulatedCircleCollider;
-            SimulatedCircleCollider otherCircle = other as SimulatedCircleCollider;
-
-            SimulatedLineCollider colliderLine = collider as SimulatedLineCollider;
-            SimulatedLineCollider otherLine = other as SimulatedLineCollider;
-
-            if (colliderCircle != null && otherCircle != null)
+            if (collider is SimulatedCircleCollider)
             {
-                if (Vector2.Distance(colliderCircle.Body.position, otherCircle.Body.position) < colliderCircle.radius + otherCircle.radius)
+                if (other is SimulatedCircleCollider)
+                {
+                    return DoesCollide(collider as SimulatedCircleCollider, other as SimulatedCircleCollider);
+                }
+
+                if (other is SimulatedLineCollider)
+                {
+                    return DoesCollide(collider as SimulatedCircleCollider, other as SimulatedLineCollider);
+                }
+
+                if (other is SimulatedArenaCollider)
+                {
+                    return DoesCollide(collider as SimulatedCircleCollider, other as SimulatedArenaCollider);
+                }
+            }
+            else if (collider is SimulatedLineCollider)
+            {
+                if (other is SimulatedCircleCollider)
+                {
+                    return DoesCollide(other as SimulatedCircleCollider, collider as SimulatedLineCollider);
+                }
+                
+                if (other is SimulatedLineCollider)
                 {
                     return true;
                 }
+                
+                if (other is SimulatedArenaCollider)
+                {
+                    return DoesCollide(collider as SimulatedLineCollider, other as SimulatedArenaCollider);
+                }
             }
-
-            if(colliderLine != null && otherLine != null)
+            else if (collider is SimulatedArenaCollider)
             {
-                return false;
-            }
-
-            if (colliderLine != null || otherLine != null)
-            {
-                SimulatedLineCollider line = colliderLine == null ? otherLine : colliderLine;
-                SimulatedCircleCollider circle = colliderLine == null ? colliderCircle : otherCircle;
-
-                Vector2 p1 = line.Body.position;
-                Vector2 p2 = line.Body.position;
-
-                p2.x += Mathf.Cos(line.angle) * 10;
-                p2.y += Mathf.Sin(line.angle) * 10;
-
-                Vector2 c = circle.Body.position;
-                float r = circle.radius;
-
-                Vector2 p3 = new Vector2(p1.x - c.x, p1.y - c.y);
-                Vector2 p4 = new Vector2(p2.x - c.x, p2.y - c.y);
-                //var p3 = { x:p1.x - c.x, y: p1.y - c.y}; //shifted line points
-                //var p4 = { x:p2.x - c.x, y: p2.y - c.y};
-
-                float m = (p4.y - p3.y) / (p4.x - p3.x); //slope of the line
-                float b = p3.y - m * p3.x; //y-intercept of line
-
-                float underRadical = Mathf.Pow(r, 2) * Mathf.Pow(m, 2) + Mathf.Pow(r, 2) - Mathf.Pow(b, 2); //the value under the square root sign 
-
-                if (underRadical< 0) {
-                    //line completely missed
+                if (other is SimulatedCircleCollider)
+                {
+                    return DoesCollide(other as SimulatedCircleCollider, collider as SimulatedArenaCollider);
+                }
+                
+                if (other is SimulatedLineCollider)
+                {
+                    return DoesCollide(other as SimulatedLineCollider, collider as SimulatedArenaCollider);
+                }
+                
+                if (other is SimulatedArenaCollider)
+                {
                     return false;
-                } else {
-                    float t1 = (-m * b + Mathf.Sqrt(underRadical)) / (Mathf.Pow(m, 2) + 1); //one of the intercept x's
-                    float t2 = (-m * b - Mathf.Sqrt(underRadical)) / (Mathf.Pow(m, 2) + 1); //other intercept's x
-                    Vector2 i1 = new Vector2(t1 + c.x, m * t1 + b + c.y);
-                    Vector2 i2 = new Vector2(t2 + c.x, m * t2 + b + c.y);
-                   // var i1 = { x:t1 + c.x, y:m * t1 + b + c.y }; //intercept point 1
-                    //var i2 = { x:t2 + c.x, y:m * t2 + b + c.y }; //intercept point 2
-                    return true;
                 }
             }
 
             return false;
+        }
+
+        private bool DoesCollide(SimulatedCircleCollider collider, SimulatedCircleCollider other)
+        {
+            return Vector2.Distance(collider.Body.position, other.Body.position) <
+                   collider.radius + other.radius;
+        }
+        
+        private bool DoesCollide(SimulatedCircleCollider circle
+            , SimulatedLineCollider line)
+        {
+            Vector2 p1 = line.Body.position;
+            Vector2 p2 = line.Body.position;
+
+            p2.x += Mathf.Cos(line.angle) * 10;
+            p2.y += Mathf.Sin(line.angle) * 10;
+
+            Vector2 c = circle.Body.position;
+            float r = circle.radius;
+
+            Vector2 p3 = new Vector2(p1.x - c.x, p1.y - c.y);
+            Vector2 p4 = new Vector2(p2.x - c.x, p2.y - c.y);
+            //var p3 = { x:p1.x - c.x, y: p1.y - c.y}; //shifted line points
+            //var p4 = { x:p2.x - c.x, y: p2.y - c.y};
+
+            float m = (p4.y - p3.y) / (p4.x - p3.x); //slope of the line
+            float b = p3.y - m * p3.x; //y-intercept of line
+
+            float underRadical = Mathf.Pow(r, 2) * Mathf.Pow(m, 2) + Mathf.Pow(r, 2) - Mathf.Pow(b, 2); //the value under the square root sign 
+
+            if (underRadical< 0) {
+                //line completely missed
+                return false;
+            } else {
+                float t1 = (-m * b + Mathf.Sqrt(underRadical)) / (Mathf.Pow(m, 2) + 1); //one of the intercept x's
+                float t2 = (-m * b - Mathf.Sqrt(underRadical)) / (Mathf.Pow(m, 2) + 1); //other intercept's x
+                Vector2 i1 = new Vector2(t1 + c.x, m * t1 + b + c.y);
+                Vector2 i2 = new Vector2(t2 + c.x, m * t2 + b + c.y);
+                // var i1 = { x:t1 + c.x, y:m * t1 + b + c.y }; //intercept point 1
+                //var i2 = { x:t2 + c.x, y:m * t2 + b + c.y }; //intercept point 2
+                return true;
+            }
+        }
+        
+        private bool DoesCollide(SimulatedLineCollider collider, SimulatedCircleCollider other)
+        {
+            return DoesCollide(other, collider);
+        }
+        
+        private bool DoesCollide(SimulatedCircleCollider collider, SimulatedArenaCollider other)
+        {
+            if (collider.Body.position.x - collider.radius < other.Arena.Width / -2)
+            {
+                return true;
+            }
+            
+            if (collider.Body.position.x + collider.radius > other.Arena.Width / 2)
+            {
+                return true;
+            }
+            
+            if (collider.Body.position.y - collider.radius < other.Arena.Height / -2)
+            {
+                return true;
+            }
+            
+            if (collider.Body.position.y + collider.radius > other.Arena.Height / 2)
+            {
+                return true;
+            }
+            
+            return false;
+        }
+        
+        private bool DoesCollide(SimulatedArenaCollider collider, SimulatedCircleCollider other)
+        {
+            return DoesCollide(other, collider);
+        }
+        
+        private bool DoesCollide(SimulatedLineCollider collider, SimulatedArenaCollider other)
+        {
+            return true;
+        }
+        
+        private bool DoesCollide(SimulatedArenaCollider collider, SimulatedLineCollider other)
+        {
+            return DoesCollide(other, collider);
         }
     }
 }

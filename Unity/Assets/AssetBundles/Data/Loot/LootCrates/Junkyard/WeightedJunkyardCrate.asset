@@ -31,5 +31,11 @@ MonoBehaviour:
   - loot:
       _id: Loot_SkylabsLaser
     weight: 100
+  - loot:
+      _id: HimmelCPULoot
+    weight: 100
+  - loot:
+      _id: DirectiveSkylabsDodgeProjectiles
+    weight: 1000
   _lootQuantity: 1
   _pickWithRepetition: 0

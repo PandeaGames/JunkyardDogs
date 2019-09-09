@@ -5,6 +5,46 @@ using UnityEngine;
 
 namespace JunkyardDogs.Data.Balance.Editor
 {
+
+    
+    public class BalanceDataManagerEditorWindow : EditorWindow
+    {
+        private static BalanceDataManagerEditorWindow Window;
+        
+        [MenuItem("Junkyard Dogs/Balance Manager")]
+        public static void OpenBalanceEditorWindow()
+        {
+            if (Window == null)
+            {
+                Window = (BalanceDataManagerEditorWindow)EditorWindow.GetWindow(typeof(BalanceDataManagerEditorWindow));
+            }
+            Window.Show();
+        }
+
+        private BalanceManagerData _managerDataCache;
+
+        private BalanceManagerData managerData
+        {
+            get
+            {
+                if (_managerDataCache == null)
+                {
+                    _managerDataCache = AssetDatabase.LoadAssetAtPath<BalanceManagerData>("Assets/BalanceData/BalanceManagerData.asset");
+                }
+
+                return _managerDataCache;
+            }
+        }
+
+        private UnityEditor.Editor editor;
+
+        private void OnGUI()
+        {
+            UnityEditor.Editor.CreateCachedEditor(managerData,  typeof(BalanceDataManagerEditor), ref editor);
+            editor.OnInspectorGUI();
+        }
+    }
+    
     [CustomEditor(typeof(BalanceManagerData))]
     public class BalanceDataManagerEditor : UnityEditor.Editor
     {
@@ -15,7 +55,7 @@ namespace JunkyardDogs.Data.Balance.Editor
             base.OnInspectorGUI();
 
             EditorGUI.BeginDisabledGroup(isImporting);
-            
+            EditorGUILayout.BeginHorizontal();
             if (GUILayout.Button("Import All"))
             {
                 OnImport();
@@ -30,6 +70,7 @@ namespace JunkyardDogs.Data.Balance.Editor
             {
                 OnCreate();
             }
+            EditorGUILayout.EndHorizontal();
             
             foreach (BalanceData balanceData in (target as BalanceManagerData).BalanceData)
             {
@@ -37,7 +78,8 @@ namespace JunkyardDogs.Data.Balance.Editor
                 {
                     continue;
                 }    
-                    
+                
+                EditorGUILayout.BeginHorizontal();
                 EditorGUILayout.LabelField(balanceData.TableName);
                 EditorGUI.BeginDisabledGroup(!balanceData.AllowImport);
                 if (GUILayout.Button("Import"))
@@ -55,6 +97,7 @@ namespace JunkyardDogs.Data.Balance.Editor
                 {
                     OnCreate(balanceData);
                 }
+                EditorGUILayout.EndHorizontal();
             }
             
             EditorGUI.EndDisabledGroup();

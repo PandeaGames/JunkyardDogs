@@ -28,7 +28,7 @@ namespace JunkyardDogs.Simulation
             else
             {
                 Logic logic = new Logic();
-                logic.weight = -1;
+                logic.priority = -1;
                 return logic;
             }
         }
