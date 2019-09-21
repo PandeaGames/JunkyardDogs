@@ -481,6 +481,7 @@
               <e p="SimArena.cs" t="Include" />
               <e p="SimAttackObject.cs" t="Include" />
               <e p="SimBot.cs" t="Include" />
+              <e p="SimBotArenaTrigger.cs" t="Include" />
               <e p="SimHitscanShot.cs" t="Include" />
               <e p="SimMeleeAttack.cs" t="Include" />
               <e p="SimMortarAttackObject.cs" t="Include" />
@@ -597,6 +598,14 @@
           <e p="SimulationTestExporterUtils.cs" t="Include" />
           <e p="TypeExtensionMehods.cs" t="Include" />
           <e p="WeightedDecisionsTestExporter.cs" t="Include" />
+        </e>
+        <e p="Engine Particle" t="Include">
+          <e p="Script" t="Include">
+            <e p="Exit.cs" t="Include" />
+            <e p="ExtendedFlycam.cs" t="Include" />
+            <e p="Particles.cs" t="Include" />
+            <e p="UserCamera.cs" t="Include" />
+          </e>
         </e>
         <e p="Google Sheets For Unity" t="Include">
           <e p="Examples" t="Include">

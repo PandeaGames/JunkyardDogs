@@ -13,10 +13,10 @@ namespace JunkyardDogs.Simulation
         public SimMortarAttackObject(SimulatedEngagement engagement, SimBot simBot, Chassis.ArmamentLocation armementLocation) : base(engagement, simBot, armementLocation)
         {
             mortar = simBot.bot.GetArmament(armementLocation).GetSpec<Mortar>();
-            collider = CreateCollider(mortar);
+            colliders.Add(CreateCollider(mortar));
             body.rotation = simBot.body.rotation;
             body.accelerationPerSecond = new Vector2(0, mortar.Speed);
-            body.doesCollide = false;
+            body.isTrigger = false;
             startPosition = simBot.body.position;
             targetDistance = Vector2.Distance(simBot.body.position, simBot.opponent.body.position);
             targetPosition = simBot.opponent.body.position;
@@ -26,17 +26,17 @@ namespace JunkyardDogs.Simulation
         {
             base.OnSimEvent(engagement, simEvent);
 
-            if (body.doesCollide)
+            if (body.isTrigger)
             {
                 engagement.MarkForRemoval(this);
             }
             
             float distance = Vector2.Distance(simBot.body.position, simBot.opponent.body.position);
 
-            if (distance > targetDistance && !body.doesCollide)
+            if (distance > targetDistance && !body.isTrigger)
             {
                 body.position = targetPosition;
-                body.doesCollide = true;
+                body.isTrigger = true;
             }
         }
     }

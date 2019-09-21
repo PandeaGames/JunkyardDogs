@@ -11,9 +11,10 @@ namespace JunkyardDogs.Simulation
         public SimProjectileAttackObject(SimulatedEngagement engagement, SimBot simBot, Chassis.ArmamentLocation armementLocation) : base(engagement, simBot, armementLocation)
         {
             projectileWeapon = simBot.bot.GetArmament(armementLocation).GetSpec<ProjectileWeapon>();
-            collider = CreateCollider(projectileWeapon);
+            colliders.Add(CreateCollider(projectileWeapon));
             body.rotation = simBot.body.rotation;
             body.accelerationPerSecond = new Vector2(0, projectileWeapon.Speed);
+            body.isTrigger = true;
         }
 
         public override void OnCollision(SimPhysicsObject other)

@@ -17,4 +17,5 @@ MonoBehaviour:
   _cooldown: 1
   _power: 0
   _armourPiercing: 5
+  _stun: 0
   _shell: {fileID: 11400000, guid: 726b7d5ee05f38046b89bf45d8830794, type: 2}

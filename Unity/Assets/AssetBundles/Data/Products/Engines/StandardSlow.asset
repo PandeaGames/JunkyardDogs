@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: StandardSlow
   m_EditorClassIdentifier: 
   _volume: 0
-  acceleration: 0.2
-  maxSpeed: 4
+  acceleration: 2
+  maxSpeed: 10

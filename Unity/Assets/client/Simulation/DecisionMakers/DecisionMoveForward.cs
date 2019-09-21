@@ -5,42 +5,62 @@ namespace JunkyardDogs.Simulation
 {
     public class DecisionMoveForwardLogic : Logic
     {
-        public float clampedDistance;
-        public float distanceProximityMultiplier;
-        public int numberOfPreviousForwardDecisionsToCheck;
-        public int numberOfPreviousForwardDecisionsCap;
-        
-        public float distance;
-        public float clampedDistancedForProximity;
-        public float proximityMultiplier;
-
-        public int numberOfPreviousForwardDecisions;
-        public int numberOfPreviousConcurrentForwardDecisions;
-
         public int aggressiveness;
-
-        public int weight;
+        public int targetDistance;
+        public int distance;
+        public int numberOfPreviousConcurrentBackwardDecisions;
+        public int maxNumberOfTicksForMovement;
+        public bool shouldContinueMoving;
     }
     
     public class DecisionMoveForward : IDecisionMaker
     {
-        private const float clampedDistance = 10;
-        private const float distanceProximityMultiplier = 0.16f;
-        private const int numberOfPreviousForwardDecisionsToCheck = 100;
-        private const int numberOfPreviousForwardDecisionsCap = 20;
+        private const int maxNumberOfTicksForMovement = 20;
         
         public Logic GetDecisionWeight(SimBot simBot, SimulatedEngagement engagement)
         {
             DecisionMoveForwardLogic logic = new DecisionMoveForwardLogic();
 
+            logic.aggressiveness = simBot.bot.GetCPUAttribute(CPU.CPUAttribute.Aggressiveness);
+            logic.distance = (int) Vector2.Distance(simBot.body.position, simBot.opponent.body.position);
+            logic.targetDistance = (10 - logic.aggressiveness) + 1;
+            logic.maxNumberOfTicksForMovement = maxNumberOfTicksForMovement;
+            
+            logic.numberOfPreviousConcurrentBackwardDecisions =
+                simBot.ConcurrentDecisionsOfType<DecisionMoveForward>();
+
+            logic.shouldContinueMoving = logic.numberOfPreviousConcurrentBackwardDecisions > 0 &&
+                                                  logic.distance > logic.targetDistance &&
+                                                  logic.numberOfPreviousConcurrentBackwardDecisions <
+                                                  logic.maxNumberOfTicksForMovement;
+
+            if (logic.shouldContinueMoving)
+            {
+                logic.priority = (int) DecisionPriority.Movement;
+            }
+            else if (logic.targetDistance < logic.distance)
+            {
+                logic.weight = logic.aggressiveness * 5;
+            }
+            else
+            {
+                logic.priority = (int) DecisionPriority.None;
+                //logic.weight = logic.aggressiveness;
+            }
+            
+            /*
             logic.clampedDistance = clampedDistance;
             logic.distanceProximityMultiplier = distanceProximityMultiplier;
             logic.numberOfPreviousForwardDecisionsToCheck = numberOfPreviousForwardDecisionsToCheck;
             logic.numberOfPreviousForwardDecisionsCap = numberOfPreviousForwardDecisionsCap;
             
+            logic.aggressiveness = simBot.bot.GetCPUAttribute(CPU.CPUAttribute.Aggressiveness);
             logic.distance = Vector2.Distance(simBot.body.position, simBot.opponent.body.position);
             logic.clampedDistancedForProximity = Mathf.Min(logic.distance, logic.clampedDistance);
-            logic.proximityMultiplier = 1 + logic.clampedDistancedForProximity * logic.distanceProximityMultiplier;
+            logic.desiredDistance = 2 + (20 * (1 - (float) logic.aggressiveness / 100));
+            logic.distanceDelta = logic.distance - logic.desiredDistance;
+            
+            logic.proximityMultiplier = 1 + logic.distanceDelta * logic.distanceProximityMultiplier;
 
             //calculate event multiplier
             logic.numberOfPreviousForwardDecisions =
@@ -48,19 +68,26 @@ namespace JunkyardDogs.Simulation
             logic.numberOfPreviousConcurrentForwardDecisions =
                 simBot.ConcurrentDecisionsOfType<DecisionMoveForward>();
             
-            logic.aggressiveness = simBot.bot.GetCPUAttribute(CPU.CPUAttribute.Aggressiveness);
 
             bool isMovementCapped =
                 logic.numberOfPreviousForwardDecisions > logic.numberOfPreviousForwardDecisionsCap;
 
             if (isMovementCapped)
             {
-                logic.weight = -1;
+                logic.priority = (int) DecisionPriority.None;
             }
             else
             {
+                //logic.priority = (int) DecisionPriority.Normal;
                 bool hasBeenMovingForward = logic.numberOfPreviousConcurrentForwardDecisions > 0;
-                ((Logic) logic).weight = (int) (logic.aggressiveness * logic.proximityMultiplier) + (hasBeenMovingForward ? 2500 : 0);
+                if (hasBeenMovingForward)
+                {
+                    logic.weight = 2500;
+                }
+                else
+                {
+                    logic.weight = (int)(logic.proximityMultiplier * logic.distanceDelta) * 30;
+                }
 
                /* if (hasBeenMovingForward)
                 {
@@ -69,8 +96,8 @@ namespace JunkyardDogs.Simulation
                 else
                 {
                     logic.weight = (int) (logic.aggressiveness * logic.proximityMultiplier);
-                }*/
-            }
+                }
+            }*/
 
             return logic;
         }

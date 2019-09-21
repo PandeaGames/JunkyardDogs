@@ -6,39 +6,48 @@ namespace JunkyardDogs.Simulation
 {
     public class DecisionMoveBackwardsLogic : Logic
     {
-        //static values
-        public float clampedDistance;
-        public float distanceProximityMultiplier;
-        public int numberOfPreviousBackwardDecisionsToCheck;
-        public int numberOfPreviousBackwardDecisionsCap;
-        
-        //calculate proximity multiplier
-        public float distance;
-        public float clampedDistancedForProximity;
-        public float invertedClampedDistancedForProximity;
-        public float proximityMultiplier;
-
-        //calculate event multiplier
-        public int numberOfPreviousBackwardDecisions;
-        public int numberOfPreviousConcurrentBackwardDecisions;
-
         public int cautiousness;
+        public int targetDistance;
+        public int distance;
+        public int numberOfPreviousConcurrentBackwardDecisions;
+        public int maxNumberOfTicksForMovement;
+        public bool shouldContinueMovingBackwards;
     }
     
     public class DecisionMoveBackwards : IDecisionMaker
     {
-        private const float clampedDistance = 10;
-        private const float distanceProximityMultiplier = 0.25f;
-        private const int numberOfPreviousBackwardDecisionsToCheck = 100;
-        private const int numberOfPreviousBackwardDecisionsCap = 20;
+        private const int maxNumberOfTicksForMovement = 20;
         
         public Logic GetDecisionWeight(SimBot simBot, SimulatedEngagement engagement)
         {
             DecisionMoveBackwardsLogic logic = new DecisionMoveBackwardsLogic();
 
             logic.cautiousness = simBot.bot.GetCPUAttribute(CPU.CPUAttribute.Cautiousness);
+            logic.distance = (int) Vector2.Distance(simBot.body.position, simBot.opponent.body.position);
+            logic.targetDistance = logic.cautiousness;
+            logic.maxNumberOfTicksForMovement = maxNumberOfTicksForMovement;
             
-            logic.clampedDistance = clampedDistance;
+            logic.numberOfPreviousConcurrentBackwardDecisions =
+                simBot.ConcurrentDecisionsOfType<DecisionMoveBackwards>();
+
+            logic.shouldContinueMovingBackwards = logic.numberOfPreviousConcurrentBackwardDecisions > 0 &&
+                                                  logic.numberOfPreviousConcurrentBackwardDecisions <
+                                                  logic.maxNumberOfTicksForMovement;
+
+            if (logic.shouldContinueMovingBackwards)
+            {
+                logic.priority = (int) DecisionPriority.Movement;
+            }
+            else if (logic.targetDistance < logic.distance)
+            {
+                logic.weight = logic.cautiousness;
+            }
+            else
+            {
+                logic.weight = logic.cautiousness * 2;
+            }
+            
+            /*logic.clampedDistance = clampedDistance;
             logic.clampedDistancedForProximity = distanceProximityMultiplier;
             logic.numberOfPreviousBackwardDecisionsToCheck = numberOfPreviousBackwardDecisionsToCheck;
             logic.numberOfPreviousBackwardDecisionsCap = logic.cautiousness;  
@@ -75,8 +84,8 @@ namespace JunkyardDogs.Simulation
                 {
                     logic.weight = (int) HardDecisions.Normal;
                     
-                }*/
-            }
+                }
+            }*/
 
             return logic;
         }

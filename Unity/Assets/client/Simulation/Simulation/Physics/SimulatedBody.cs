@@ -9,7 +9,11 @@ namespace JunkyardDogs.Simulation.Simulation
         public Vector2 accelerationPerSecond;
         public Vector2 velocityPerSecond;
         public SimRotation rotation;
-        public bool doesCollide = true;
+        public Vector2 scale = Vector2.one;
+        public bool isTrigger = false;
+        public bool isStatic;
+        public float mass = 1;
+        
         
         public Vector3 PositionToWorld()
         {

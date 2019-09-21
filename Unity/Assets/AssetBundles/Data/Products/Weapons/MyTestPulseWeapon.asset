@@ -17,6 +17,7 @@ MonoBehaviour:
   _cooldown: 1
   _power: 0
   _armourPiercing: 0
+  _stun: 0
   _pulse: {fileID: 114358634243994838}
   _speed: 1
   _radius: 1

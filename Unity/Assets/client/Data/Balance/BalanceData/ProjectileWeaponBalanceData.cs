@@ -6,15 +6,12 @@ using JunkyardDogs.Specifications;
 using UnityEngine;
 
 [Serializable]
-public class ProjectileWeaponBalanceObject:PhysicalSpecificationBalanceObject
+public class ProjectileWeaponBalanceObject:WeaponBalanceObject
 {
-    public double cooldown;
-    public double chargeTime;
     public float speed;
     public float radius;
     public int damage;
     public int armourPiercing;
-    public float stun;
 }
 
 [CreateAssetMenu(menuName = MENU_NAME)]

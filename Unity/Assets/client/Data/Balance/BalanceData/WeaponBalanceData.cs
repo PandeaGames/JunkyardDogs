@@ -6,7 +6,7 @@ using JunkyardDogs.Specifications;
 using UnityEngine;
 
 [Serializable]
-public class WeaponBalanceObject:SpecificationBalanceObject
+public class WeaponBalanceObject:PhysicalSpecificationBalanceObject
 {
     public double cooldown;
     public double chargeTime;

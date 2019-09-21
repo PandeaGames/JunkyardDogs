@@ -8,6 +8,33 @@ namespace JunkyardDogs.Simulation.Simulation
         public Color gizmosColor = Color.grey;
 
         protected SimulatedBody _body;
+        protected float _x;
+        protected float _y;
+
+        public Vector2 Position
+        {
+            get
+            {
+                return new Vector2(_x, _y);
+            }
+            set
+            {
+                _x = value.x;
+                _y = value.y;
+            }
+        }
+
+        public float x
+        {
+            get { return _x; }
+            set { _x = value; }
+        }
+        
+        public float y
+        {
+            get { return _y; }
+            set { _y = value; }
+        }
 
         public SimulatedBody Body { get { return _body; } }
 

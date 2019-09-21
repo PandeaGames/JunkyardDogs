@@ -13,11 +13,38 @@ namespace JunkyardDogs.Simulation
 {
     public class SimBot : SimPhysicsObject, ISimulatedEngagementEventHandler
     {
+        public enum Side
+        {
+            Top, 
+            Bottom, 
+            Left, 
+            Right
+        }
+
+        private Dictionary<Side, SimBotArenaTrigger> _sideTriggers;
+        
         public SimBot(SimulatedEngagement engagement) : base(engagement)
         {
             SimulatedCircleCollider collider = new SimulatedCircleCollider(body);
             collider.radius = 0.5f;
-            base.collider = collider;
+            colliders.Add(collider);
+            
+            _sideTriggers = new Dictionary<Side, SimBotArenaTrigger>();
+            
+            _sideTriggers[Side.Top] = new SimBotArenaTrigger(engagement);
+            _sideTriggers[Side.Bottom] = new SimBotArenaTrigger(engagement);
+            _sideTriggers[Side.Left] = new SimBotArenaTrigger(engagement);
+            _sideTriggers[Side.Right] = new SimBotArenaTrigger(engagement);
+            
+            engagement.Add(_sideTriggers[Side.Top]);
+            engagement.Add(_sideTriggers[Side.Bottom]);
+            engagement.Add(_sideTriggers[Side.Left]);
+            engagement.Add(_sideTriggers[Side.Right]);
+        }
+
+        public bool IsAgainstArena(Side side)
+        {
+            return _sideTriggers[side].isActive;
         }
         
         private static IDecisionMaker[] DecisionMakersCache;
@@ -170,8 +197,29 @@ namespace JunkyardDogs.Simulation
             engagement.SendEvent(new SimDamageTakenEvent(this, attack.Damage));
         }
 
+        private void PlaceArenaTrigger(float angleOffset, SimBotArenaTrigger trigger)
+        {
+            float angle = body.rotation.deg360 + angleOffset;
+
+            float dx = Mathf.Cos(Mathf.Deg2Rad * angle) * 1;
+            float dy = Mathf.Sin(Mathf.Deg2Rad * angle) * 1;
+            
+            trigger.body.position = new Vector2(body.position.x + dx, body.position.y + dy);
+            trigger.body.rotation.deg360 =  body.rotation.deg360 + angleOffset;
+        }
+
         public void OnSimEvent(SimulatedEngagement engagement, SimLogicEvent simEvent)
         {
+            /*_sideTriggers[Side.Top].body.position = new Vector2(body.position.x, body.position.y - 1);
+            _sideTriggers[Side.Bottom].body.position = new Vector2(body.position.x, body.position.y + 1);
+            _sideTriggers[Side.Left].body.position = new Vector2(body.position.x - 1, body.position.y);
+            _sideTriggers[Side.Right].body.position = new Vector2(body.position.x + 1, body.position.y);*/
+
+            PlaceArenaTrigger(0, _sideTriggers[Side.Top]);
+            PlaceArenaTrigger(180, _sideTriggers[Side.Bottom]);
+            PlaceArenaTrigger(90, _sideTriggers[Side.Left]);
+            PlaceArenaTrigger(-90, _sideTriggers[Side.Right]);
+            
             //MAKE DECISION
             WeightedDecision[] weightedDecisions = GetWeightedDecision();
 
@@ -208,7 +256,7 @@ namespace JunkyardDogs.Simulation
             }
 
             UnityEngine.Random.State oldState = UnityEngine.Random.state;
-            UnityEngine.Random.InitState(seed);
+            UnityEngine.Random.InitState(seed + engagement.CurrentStep);
             int pick = UnityEngine.Random.Range(0, totalChangeWeight);
             UnityEngine.Random.state = oldState;
             int totalChangeWeightForSearch = 0;
@@ -334,6 +382,10 @@ namespace JunkyardDogs.Simulation
                 if (!(decision is TDecision) || !predicateResult)
                 {
                     return (Decisions.Count - 1) - i;
+                }
+                else if (i == 0)
+                {
+                    return Decisions.Count;
                 }
             }
 

@@ -81,7 +81,13 @@ public class DecisionLogicGroupExporter : ISimulationTestGroupExporter
                                 BindingFlags.Public | 
                                 BindingFlags.Instance | 
                                 BindingFlags.NonPublic);
+                        break;
                     }
+                }
+
+                if (fieldInfos != null)
+                {
+                    break;
                 }
             }
 

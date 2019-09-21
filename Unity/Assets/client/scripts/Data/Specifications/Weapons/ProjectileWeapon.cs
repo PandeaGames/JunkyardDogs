@@ -51,6 +51,7 @@ namespace JunkyardDogs.Specifications
             _volume = balance.volume;
             name = balance.name;
             _armourPiercing = balance.armourPiercing;
+            
 
             #if UNITY_EDITOR
             if (_shell == null)

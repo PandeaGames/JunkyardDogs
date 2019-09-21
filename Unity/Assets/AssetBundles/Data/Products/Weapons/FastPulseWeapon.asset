@@ -17,9 +17,10 @@ MonoBehaviour:
   _cooldown: 0.5
   _power: 0
   _armourPiercing: 0
+  _stun: 0
   _pulse: {fileID: 114049743532916778}
-  _speed: 3
-  _radius: 15
+  _speed: 7
+  _radius: 50
 --- !u!114 &114049743532916778
 MonoBehaviour:
   m_ObjectHideFlags: 0

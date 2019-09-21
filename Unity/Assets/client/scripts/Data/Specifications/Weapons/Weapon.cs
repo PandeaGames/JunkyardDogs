@@ -44,6 +44,8 @@ namespace JunkyardDogs.Specifications
         {
             base.ApplyBalance(balance);
             _stun = balance.stun;
+            _cooldown = balance.cooldown;
+            _chargeTime = balance.chargeTime;
         }
 
         public WeaponBalanceObject GetBalance()

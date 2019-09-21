@@ -7,7 +7,7 @@ namespace JunkyardDogs.Simulation
     {
         public SimMeleeAttack(SimulatedEngagement engagement, SimBot simBot, Chassis.ArmamentLocation armementLocation) : base(engagement, simBot, armementLocation)
         {
-            collider = CreateCollider(simBot.bot.GetArmament(armementLocation).GetSpec<Weapon>());
+            colliders.Add(CreateCollider(simBot.bot.GetArmament(armementLocation).GetSpec<Weapon>()));
         }
 
         public override void OnSimEvent(SimulatedEngagement engagement, SimPostLogicEvent simEvent)

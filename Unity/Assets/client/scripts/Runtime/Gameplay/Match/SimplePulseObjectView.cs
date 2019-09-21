@@ -21,9 +21,7 @@ namespace JunkyardDogs.scripts.Runtime.Gameplay.Match
             
         public override void Update()
         {
-            SimulatedCircleCollider circleCollider = _simObject.collider as SimulatedCircleCollider;
-            float localScale = circleCollider.radius * 2;
-            scale = new Vector3(localScale, localScale, localScale);
+            scale = new Vector3(_simObject.body.scale.x, _simObject.body.scale.x, _simObject.body.scale.y);
             base.Update();
         }
     }

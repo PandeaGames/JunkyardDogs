@@ -19,7 +19,7 @@ MonoBehaviour:
     _value: 10
   - _type: 0
     _value: 10
-  Aggressiveness: 80
-  Evasiveness: 80
-  Cautiousness: 80
+  Aggressiveness: 8
+  Evasiveness: 8
+  Cautiousness: 8
   DirectiveSlotCount: 2

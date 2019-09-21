@@ -9,7 +9,7 @@ namespace JunkyardDogs.Simulation
         public SimHitscanShot(SimulatedEngagement engagement, SimBot simBot, Chassis.ArmamentLocation armementLocation) : base(engagement, simBot, armementLocation)
         {
             hitscan = simBot.bot.GetArmament(armementLocation).GetSpec<Hitscan>();
-            collider = CreateCollider(hitscan);
+            colliders.Add(CreateCollider(hitscan));
         }
 
         public override void OnSimEvent(SimulatedEngagement engagement, SimPostLogicEvent simEvent)

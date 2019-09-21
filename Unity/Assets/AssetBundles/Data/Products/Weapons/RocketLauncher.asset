@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: RocketLauncher
   m_EditorClassIdentifier: 
   _volume: 1
-  _chargeTime: 0
-  _cooldown: 0
+  _chargeTime: 1.5
+  _cooldown: 0.5
   _power: 0
   _armourPiercing: 0
+  _stun: 0
   _shell: {fileID: 114578618517062428}
 --- !u!114 &114578618517062428
 MonoBehaviour:
@@ -33,5 +34,5 @@ MonoBehaviour:
   _volume: 0
   _damage: 40
   _effects: []
-  _speed: 1
+  _speed: 1.5
   _radius: 0.4

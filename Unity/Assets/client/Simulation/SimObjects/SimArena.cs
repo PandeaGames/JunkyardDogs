@@ -4,7 +4,7 @@ namespace JunkyardDogs.Simulation
     {
         public SimArena(SimulatedEngagement simulatedEngagement, Arena arena) : base(simulatedEngagement)
         {
-            collider = new SimulatedArenaCollider(body, arena);
+            colliders.Add(new SimulatedArenaCollider(body, arena));
         }
     }
 }

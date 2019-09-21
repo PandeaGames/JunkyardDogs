@@ -61,10 +61,11 @@ namespace JunkyardDogs.Simulation
             SimMeleeAttack attack = new SimMeleeAttack(engagement, simBot, simEvent.armamentLocation);
             
             SimulatedBody body = simBot.body;
-            SimulatedCircleCollider collider = simBot.collider as SimulatedCircleCollider;
+            Rect bounds = simBot.GetBounds();
+            float radius = bounds.width / 2;
             float rotation = body.rotation.deg;
             
-            Vector2 delta = new Vector2(Mathf.Cos(rotation) * collider.radius, Mathf.Sin(rotation) * collider.radius);
+            Vector2 delta = new Vector2(Mathf.Cos(rotation) * radius, Mathf.Sin(rotation) * radius);
             attack.body.position = simBot.body.position + delta;
             engagement.Add(attack);
         }

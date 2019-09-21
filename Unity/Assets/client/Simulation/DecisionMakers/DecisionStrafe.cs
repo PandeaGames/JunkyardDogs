@@ -14,22 +14,21 @@ namespace JunkyardDogs.Simulation
     {
         public class DecisionStrafeLogic : Logic
         {
-            public int numberOfPreviousStrafeDecisionsToCheck;
-            public int numberOfPreviousStrafeDecisionsCap;
-            
-            public int numberOfPreviousStrafeDecisions;
-            public int numberOfPreviousConcurrentStrafeDecisions;
+            public int numberOfPreviousConcurrentDecisions;
+            public int maxNumberOfTicksForMovement;
+            public bool shouldContinueMoving;
             public int evasiveness;
+            public bool arenaOverride;
+            public bool oppositeSideArenaOverride;
         }
-
-        private const int numberOfPreviousStrafeDecisionsToCheck = 100;
-        private const int numberOfPreviousStrafeDecisionsCap = 20;
         
         private StrafeDirection _direction;
         public StrafeDirection Direction
         {
             get { return _direction; }
         }
+        
+        private const int maxNumberOfTicksForMovement = 30;
             
         public DecisionStrafe(StrafeDirection direction)
         {
@@ -41,38 +40,42 @@ namespace JunkyardDogs.Simulation
             DecisionStrafeLogic logic = new DecisionStrafeLogic();
 
             logic.evasiveness = simBot.bot.GetCPUAttribute(CPU.CPUAttribute.Evasiveness);
-            
-            logic.numberOfPreviousStrafeDecisionsToCheck = numberOfPreviousStrafeDecisionsToCheck;
-            logic.numberOfPreviousStrafeDecisionsCap = logic.evasiveness;
+            logic.maxNumberOfTicksForMovement = maxNumberOfTicksForMovement;
 
-            //calculate event multiplier
-            logic.numberOfPreviousStrafeDecisions =
-                simBot.CountLastDecisionsOfType<DecisionStrafe>(logic.numberOfPreviousStrafeDecisionsToCheck,
-                    (strafeDecision) => { return strafeDecision.Direction == _direction; });
-            logic.numberOfPreviousConcurrentStrafeDecisions =
-                simBot.ConcurrentDecisionsOfType<DecisionStrafe>(
-                    (strafeDecision) => { return strafeDecision.Direction == _direction; });
-
-            bool isStrafeMovementCapped =
-                logic.numberOfPreviousStrafeDecisions > logic.numberOfPreviousStrafeDecisionsCap;
-
-            if (isStrafeMovementCapped)
+            if (_direction == StrafeDirection.Left)
             {
-                logic.priority = -1;
+                logic.numberOfPreviousConcurrentDecisions =
+                    simBot.ConcurrentDecisionsOfType<DecisionMoveLeft>();
+                logic.arenaOverride = simBot.IsAgainstArena(SimBot.Side.Left);
+                logic.oppositeSideArenaOverride = simBot.IsAgainstArena(SimBot.Side.Right);
             }
             else
             {
-                bool hasBeenStrafing = logic.numberOfPreviousConcurrentStrafeDecisions > 0;
-                logic.weight = (int) logic.evasiveness + (hasBeenStrafing ? 2500 : 0);
+                logic.numberOfPreviousConcurrentDecisions =
+                    simBot.ConcurrentDecisionsOfType<DecisionMoveRight>();
+                logic.arenaOverride = simBot.IsAgainstArena(SimBot.Side.Right);
+                logic.oppositeSideArenaOverride = simBot.IsAgainstArena(SimBot.Side.Left);
+            }
 
-               /* if (hasBeenStrafing)
-                {
-                    logic.weight = (int) HardDecisions.Movement;
-                }
-                else
-                {
-                    logic.weight = (int) (logic.evasiveness);
-                }*/
+            logic.shouldContinueMoving = logic.numberOfPreviousConcurrentDecisions > 0 &&
+                                                  logic.numberOfPreviousConcurrentDecisions <
+                                                  logic.maxNumberOfTicksForMovement;
+
+            if (logic.arenaOverride)
+            {
+                logic.priority = (int) DecisionPriority.None;
+            }
+            else if (logic.shouldContinueMoving)
+            {
+                logic.priority = (int) DecisionPriority.Movement;
+            }
+            else if(logic.oppositeSideArenaOverride)
+            {
+                logic.weight = logic.evasiveness * 2;
+            }
+            else
+            {
+                logic.weight = logic.evasiveness;
             }
 
             return logic;

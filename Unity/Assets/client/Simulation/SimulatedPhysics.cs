@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using JunkyardDogs.Simulation.Simulation;
 using UnityEngine;
 
@@ -16,9 +17,22 @@ namespace JunkyardDogs.Simulation
         }
     }
     
+    public class SimCollisionExitEvent : SimEvent
+    {
+        public SimPhysicsObject obj1;
+        public SimPhysicsObject obj2;
+
+        public SimCollisionExitEvent(SimPhysicsObject obj1, SimPhysicsObject obj2)
+        {
+            this.obj1 = obj1;
+            this.obj2 = obj2;
+        }
+    }
+    
     public class SimulatedPhysics : ISimulatedEngagementGlobalEventHandler
     {
         private float friction = 1.25f;
+        private Dictionary<SimObject, HashSet<SimObject>> _collisionTable = new Dictionary<SimObject, HashSet<SimObject>>();
         
         public static void Step(SimulatedEngagement engagement)
         {
@@ -27,7 +41,7 @@ namespace JunkyardDogs.Simulation
         
         public Type[] EventsToHandle()
         {
-            return new Type[] {typeof(SimCollisionEvent), typeof(SimPostLogicEvent)};
+            return new Type[] {typeof(SimCollisionEvent), typeof(SimPostLogicEvent), typeof(SimInstantiationEvent), typeof(SimDestroyEvent)};
         }
 
         public void OnSimEvent(SimulatedEngagement engagement, SimEvent simEvent)
@@ -40,11 +54,37 @@ namespace JunkyardDogs.Simulation
             {
                 OnSimEvent(engagement, simEvent as SimPostLogicEvent);
             }
+            else if(simEvent is SimInstantiationEvent)
+            {
+                OnSimEvent(engagement, simEvent as SimInstantiationEvent);
+            }
+            else if(simEvent is SimDestroyEvent)
+            {
+                OnSimEvent(engagement, simEvent as SimDestroyEvent);
+            }
         }
         
         public void OnSimEvent(SimulatedEngagement engagement, SimCollisionEvent simEvent)
         {
             
+        }
+        
+        public void OnSimEvent(SimulatedEngagement engagement, SimInstantiationEvent simEvent)
+        {
+            _collisionTable.Add(simEvent.instance, new HashSet<SimObject>());
+        }
+        
+        public void OnSimEvent(SimulatedEngagement engagement, SimDestroyEvent simEvent)
+        {
+            HashSet<SimObject> hashSet = _collisionTable[simEvent.instance];
+
+            foreach (SimObject other in hashSet)
+            {
+                engagement.SendEvent(new SimCollisionExitEvent(simEvent.instance as SimPhysicsObject, other as SimPhysicsObject));
+            }
+            
+            hashSet.Clear();
+            _collisionTable.Remove(simEvent.instance);
         }
         
         public void OnSimEvent(SimulatedEngagement engagement, SimPostLogicEvent simEvent)
@@ -97,10 +137,23 @@ namespace JunkyardDogs.Simulation
 
                     if (!IsValidForCollision(otherSimulatedPhysicsObj))
                         continue;
-                         
-                    if(DoesCollide(simulatedPhysicsObj.collider, otherSimulatedPhysicsObj.collider))
+                    
+                    if(DoesCollide(simulatedPhysicsObj, otherSimulatedPhysicsObj))
                     {
-                        engagement.SendEvent(new SimCollisionEvent(simulatedPhysicsObj, otherSimulatedPhysicsObj));
+                        ResolveCollision(simulatedPhysicsObj, otherSimulatedPhysicsObj);
+
+                        if (!_collisionTable[simulated].Contains(other))
+                        {
+                            engagement.SendEvent(new SimCollisionEvent(simulatedPhysicsObj, otherSimulatedPhysicsObj));
+                            _collisionTable[simulated].Add(other);
+                            _collisionTable[other].Add(simulated);
+                        }
+                    }
+                    else if(_collisionTable[simulated].Contains(other))
+                    {
+                        engagement.SendEvent(new SimCollisionExitEvent(simulatedPhysicsObj, otherSimulatedPhysicsObj));
+                        _collisionTable[simulated].Remove(other);
+                        _collisionTable[other].Remove(simulated);
                     }
                 }
             }
@@ -112,14 +165,34 @@ namespace JunkyardDogs.Simulation
             {
                 return false;
             }
-            else if (simObject.body != null && simObject.collider != null)
+            else if (simObject.body != null && simObject.colliders != null && simObject.colliders.Count > 0)
             {
-                return simObject.body.doesCollide;
+                return true;
             }
 
             return false;
         }
-        
+
+        private bool DoesCollide(SimPhysicsObject primary, SimPhysicsObject other)
+        {
+            for (int i = 0; i < primary.colliders.Count; i++)
+            {
+                SimulatedCollider collider = primary.colliders[i];
+                
+                for (int j = 0; j < other.colliders.Count; j++)
+                {
+                    SimulatedCollider otherCollider = other.colliders[j];
+
+                    if (DoesCollide(collider, otherCollider))
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
+
         private bool DoesCollide(SimulatedCollider collider, SimulatedCollider other)
         {
             if (collider is SimulatedCircleCollider)
@@ -179,8 +252,12 @@ namespace JunkyardDogs.Simulation
 
         private bool DoesCollide(SimulatedCircleCollider collider, SimulatedCircleCollider other)
         {
-            return Vector2.Distance(collider.Body.position, other.Body.position) <
-                   collider.radius + other.radius;
+            float d = Vector2.Distance(collider.Body.position, other.Body.position);
+            float r1 = collider.radius * collider.Body.scale.x;
+            float r2 = other.radius * other.Body.scale.x;
+            float r = r1 + r2;
+            bool doesCollide = d < r;
+            return doesCollide;
         }
         
         private bool DoesCollide(SimulatedCircleCollider circle
@@ -262,6 +339,177 @@ namespace JunkyardDogs.Simulation
         private bool DoesCollide(SimulatedArenaCollider collider, SimulatedLineCollider other)
         {
             return DoesCollide(other, collider);
+        }
+
+        private void ResolveCollision(SimPhysicsObject primary, SimPhysicsObject other)
+        {
+            if (primary.body.isStatic && other.body.isStatic
+                || primary.body.isTrigger || other.body.isTrigger)
+            {
+                return;
+            }
+            
+            for (int i = 0; i < primary.colliders.Count; i++)
+            {
+                SimulatedCollider collider = primary.colliders[i];
+                
+                for (int j = 0; j < other.colliders.Count; j++)
+                {
+                    SimulatedCollider otherCollider = other.colliders[j];
+                    ResolveCollision(collider, otherCollider);
+                }
+            }
+        }
+        
+        private void ResolveCollision(SimulatedCollider collider, SimulatedCollider other)
+        {
+            if (collider is SimulatedCircleCollider)
+            {
+                if (other is SimulatedCircleCollider)
+                {
+                    ResolveCollision(collider as SimulatedCircleCollider, other as SimulatedCircleCollider);
+                }
+
+                if (other is SimulatedArenaCollider)
+                {
+                    ResolveCollision(collider as SimulatedCircleCollider, other as SimulatedArenaCollider);
+                }
+            }
+            else if (collider is SimulatedArenaCollider)
+            {
+                if (other is SimulatedCircleCollider)
+                {
+                    ResolveCollision(collider as SimulatedArenaCollider, other as SimulatedCircleCollider);
+                }
+            }
+        }
+
+        private void ResolveCollision(SimulatedCircleCollider collider, SimulatedCircleCollider other)
+        {
+            //resolving position
+            var dx 			= other.Body.position.x - collider.Body.position.x;
+            var dy 			= other.Body.position.y - collider.Body.position.y;
+		
+            var a 			= Mathf.Atan2(dy, dx);
+            var d 			= Mathf.Sqrt(dx*dx+dy*dy);
+            var cos 		= Mathf.Cos(a);
+            var sin 		= Mathf.Sin(a);
+		
+            var vd 			= (collider.radius+other.radius) - d;
+		
+            var totalMass 	= collider.Body.mass+other.Body.mass;
+		
+            var c1vd 		= vd*(other.Body.mass/totalMass);
+            var c2vd 		= vd - c1vd;
+		
+            collider.Body.position = new Vector2(collider.Body.position.x-cos*c1vd, collider.Body.position.y-sin*c1vd); 
+            other.Body.position = new Vector2(other.Body.position.x+cos*c2vd, other.Body.position.y+sin*c2vd);
+            
+            /*float totalRadius = collider.radius + other.radius;
+            float distance = Vector2.Distance(collider.Body.position, other.Body.position);
+            float delta = 1 + (1-(distance / totalRadius));
+            float x = collider.Body.position.x - other.Body.position.x;
+            float dx =  x - totalRadius;
+            float y = collider.Body.position.y - other.Body.position.y;
+            float dy =  y - totalRadius;
+            collider.Body.position = new Vector2(collider.Body.position.x - dx / 2, collider.Body.position.y - dy / 2);
+            other.Body.position = new Vector2(other.Body.position.x + dx / 2, other.Body.position.y + dy / 2);
+*/
+        }
+        
+        private void ResolveCollision(SimulatedArenaCollider collider, SimulatedCircleCollider other)
+        {
+            ResolveCollision(other, collider);
+        }
+
+        private struct Dimensions
+        {
+            public float left;
+            public float right;
+            public float top;
+            public float bottom;
+
+            public Dimensions(float left,  float right, float top, float bottom)
+            {
+                this.left = left;
+                this.right = right;
+                this.top = top;
+                this.bottom = bottom;
+            }
+            
+        }
+        
+        private void ResolveCollision(SimulatedCircleCollider collider, SimulatedArenaCollider other)
+        {
+            Dimensions arena = new Dimensions(
+                other.Arena.Width / -2,
+                other.Arena.Width / 2,
+                other.Arena.Height / -2,
+                other.Arena.Height / 2
+                );
+            
+            Dimensions circle = new Dimensions(
+                collider.Body.position.x - collider.radius,
+                collider.Body.position.x + collider.radius,
+                collider.Body.position.y - collider.radius,
+                collider.Body.position.y + collider.radius
+            );
+            
+            if (circle.left < arena.left)
+            {
+                collider.Body.velocityPerSecond = new Vector2(
+                    0,
+                    collider.Body.velocityPerSecond.y
+                );
+                
+                float delta = arena.left - circle.left;
+                collider.Body.position = new Vector2(
+                    collider.Body.position.x + delta,
+                    collider.Body.position.y
+                    );
+            }
+            
+            if (circle.right > arena.right)
+            {
+                collider.Body.velocityPerSecond = new Vector2(
+                    0,
+                    collider.Body.velocityPerSecond.y
+                );
+                
+                float delta = circle.right - arena.right;
+                collider.Body.position = new Vector2(
+                    collider.Body.position.x - delta,
+                    collider.Body.position.y
+                );
+            }
+            
+            if (circle.top < arena.top)
+            {
+                collider.Body.velocityPerSecond = new Vector2(
+                    collider.Body.velocityPerSecond.x,
+                    0
+                );
+                
+                float delta = arena.top - circle.top;
+                collider.Body.position = new Vector2(
+                    collider.Body.position.x,
+                    collider.Body.position.y + delta
+                );
+            }
+            
+            if (circle.bottom > arena.bottom)
+            {
+                collider.Body.velocityPerSecond = new Vector2(
+                    collider.Body.velocityPerSecond.x,
+                    0
+                    );
+                
+                float delta = circle.bottom - arena.bottom;
+                collider.Body.position = new Vector2(
+                    collider.Body.position.x,
+                    collider.Body.position.y - delta
+                );
+            }
         }
     }
 }

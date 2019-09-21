@@ -91,7 +91,7 @@ namespace JunkyardDogs.Simulation
         private SimulatedCollider CreateCollider(PulseEmitter weapon)
         {
             SimulatedCircleCollider collider = new SimulatedCircleCollider(body);
-            collider.radius = 0.5f;
+            collider.radius = 1f;
             return collider;
         }
 

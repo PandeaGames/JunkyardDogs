@@ -45,10 +45,10 @@ MonoBehaviour:
   - _id: T01AkaminaBalancedSteelPlate
   - _id: T01AkaminaBalancedSteelPlate
   _topArmament:
-    _id: 
+    _id: AkaminaProcessorFastPulse
   _frontArmament:
-    _id: 
+    _id: AkaminaProcessorFastPulse
   _leftArmament:
-    _id: 
+    _id: AkaminaProcessorFastPulse
   _rightArmament:
     _id: AkaminaProcessorFastPulse

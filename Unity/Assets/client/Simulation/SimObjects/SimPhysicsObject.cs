@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using JunkyardDogs.Simulation.Simulation;
 using UnityEngine;
 
@@ -5,17 +6,62 @@ namespace JunkyardDogs.Simulation
 {
     public class SimPhysicsObject : SimObject
     {
-        public SimulatedCollider collider;
+        public List<SimulatedCollider> colliders;
         public SimulatedBody body;
         
         public SimPhysicsObject(SimulatedEngagement engagement) : base(engagement)
         {
             body = new SimulatedBody();
+            colliders = new List<SimulatedCollider>();
         }
 
         public virtual void OnCollision(SimPhysicsObject other)
         {
             
+        }
+        
+        public virtual void OnCollisionExit(SimPhysicsObject other)
+        {
+            
+        }
+
+        public Rect GetBounds()
+        {
+            Rect bounds = new Rect();
+
+            foreach (SimulatedCollider collider in colliders)
+            {
+                SimulatedCircleCollider circleCollider = collider as SimulatedCircleCollider;
+
+                if (circleCollider != null)
+                {
+                    if (bounds.x > circleCollider.x - circleCollider.radius)
+                    {
+                        bounds.x = circleCollider.x - circleCollider.radius;
+                    }
+                    
+                    if (bounds.x + bounds.width < circleCollider.x + circleCollider.radius)
+                    {
+                        float adjustment = bounds.x < 0 ? bounds.x * -1 : 0;
+                        float adjustedX = bounds.x + adjustment;
+                        bounds.width = adjustedX -(circleCollider.x + circleCollider.radius);
+                    }
+                    
+                    if (bounds.y > circleCollider.y - circleCollider.radius)
+                    {
+                        bounds.y = circleCollider.y - circleCollider.radius;
+                    }
+                    
+                    if (bounds.y + bounds.height < circleCollider.y + circleCollider.radius)
+                    {
+                        float adjustment = bounds.y < 0 ? bounds.y * -1 : 0;
+                        float adjustedX = bounds.y + adjustment;
+                        bounds.height = adjustedX -(circleCollider.y + circleCollider.radius);
+                    }
+                }
+            }
+
+            return bounds;
         }
         
         public override void OnDrawGizmos()
@@ -38,9 +84,12 @@ namespace JunkyardDogs.Simulation
                 );
             Gizmos.color = oldColor;
             
-            if (collider != null)
+            if (colliders != null)
             {
-                collider.OnDrawGizmos();
+                foreach (SimulatedCollider collider in colliders)
+                {
+                    collider.OnDrawGizmos();
+                }
             }
         }
     }

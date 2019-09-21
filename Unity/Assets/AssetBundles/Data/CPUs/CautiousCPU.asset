@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CautiousCPU
   m_EditorClassIdentifier: 
   _distinctions: []
-  Aggressiveness: 40
-  Evasiveness: 40
-  Cautiousness: 80
+  Aggressiveness: 2
+  Evasiveness: 1
+  Cautiousness: 8
   DirectiveSlotCount: 2
