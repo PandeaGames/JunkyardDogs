@@ -134,6 +134,53 @@ namespace JunkyardDogs.Components
             }
         }
 
+        public IEnumerable<Plate> GetAllPlates()
+        {
+            Specifications.Chassis chassisSpec = GetSpec<Specifications.Chassis>();
+
+            for (int i = 0; i < Math.Min(BackPlates.Count, chassisSpec.BackPlates); i++)
+            {
+                Plate plate = BackPlates[i];
+                if (plate != null)
+                    yield return plate;
+            }
+            
+            for (int i = 0; i < Math.Min(BottomPlates.Count, chassisSpec.BottomPlates); i++)
+            {
+                Plate plate = BottomPlates[i];
+                if (plate != null)
+                    yield return plate;
+            }
+            
+            for (int i = 0; i < Math.Min(TopPlates.Count, chassisSpec.TopPlates); i++)
+            {
+                Plate plate = TopPlates[i];
+                if (plate != null)
+                    yield return plate;
+            }
+            
+            for (int i = 0; i < Math.Min(LeftPlates.Count, chassisSpec.LeftPLates); i++)
+            {
+                Plate plate = LeftPlates[i];
+                if (plate != null)
+                    yield return plate;
+            }
+            
+            for (int i = 0; i < Math.Min(RightPlates.Count, chassisSpec.RightPlates); i++)
+            {
+                Plate plate = RightPlates[i];
+                if (plate != null)
+                    yield return plate;
+            }
+            
+            for (int i = 0; i < Math.Min(FrontPlates.Count, chassisSpec.FrontPlates); i++)
+            {
+                Plate plate = FrontPlates[i];
+                if (plate != null)
+                    yield return plate;
+            }
+        }
+
         public List<Plate> GetPlateList(PlateLocation location)
         {
             switch (location)

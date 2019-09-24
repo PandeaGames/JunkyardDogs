@@ -31,7 +31,7 @@ public class WorldMapView : AbstractUnityView
 
     public override void Show()
     {
-        FindWindow().LaunchScreen("worldMap");
+        //FindWindow().LaunchScreen("worldMap");
         _worldView.SetActive(true);
         Game.Instance.GetViewModel<CameraViewModel>(0).Focus(navigation.cameraAgent);
     }
@@ -40,6 +40,7 @@ public class WorldMapView : AbstractUnityView
     {
         base.Destroy();
         _worldMapViewModel.OnTournamentTapped -= OnTournamentTapped;
+        GameObject.Destroy(navigation.gameObject);
     }
 
     private void OnTournamentTapped(TournamentStaticDataReference obj)

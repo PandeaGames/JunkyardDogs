@@ -10,6 +10,9 @@ namespace JunkyardDogs.Specifications
         [SerializeField]
         private float _maxSpeedPerSecond;
 
+        [SerializeField] 
+        private float _baseHealthMultiplier;
+        
         [SerializeField]
         private int _frontPlates;
 
@@ -41,12 +44,18 @@ namespace JunkyardDogs.Specifications
         private bool _rightArmament;
 
         public float MaxSpeedPerSecond { get { return _maxSpeedPerSecond; } }
+        
+        public float BaseHealthMultiplier { get { return _baseHealthMultiplier; } }
 
         public int FrontPlates { get { return _frontPlates; } }
         public int LeftPLates { get { return _leftPlates; } }
         public int RightPlates { get { return _rightPlates; } }
         public int BackPlates { get { return _backPlates; } }
         public int BottomPlates { get { return _bottomPlates; } }
+        public int TopPlates
+        {
+            get { return _topPlates; }
+        }
 
         public bool TopArmament { get { return _topArmament; } }
         public bool FrontArmament { get { return _frontArmament; } }

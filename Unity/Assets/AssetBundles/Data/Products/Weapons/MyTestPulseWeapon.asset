@@ -15,7 +15,7 @@ MonoBehaviour:
   _volume: 1
   _chargeTime: 1
   _cooldown: 1
-  _power: 0
+  _power: 1
   _armourPiercing: 0
   _stun: 0
   _pulse: {fileID: 114358634243994838}

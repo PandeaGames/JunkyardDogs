@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _volume: 10
   _maxSpeedPerSecond: 1
+  _baseHealthMultiplier: 2
   _frontPlates: 3
   _leftPlates: 1
   _rightPlates: 1

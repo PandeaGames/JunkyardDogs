@@ -43,6 +43,9 @@ public class MatchController : MonoBehaviour, ISimulatedEngagementListener
 
     [SerializeField]
     private SimpleSimulatedEngagement _engagementView;
+    
+    [SerializeField] 
+    private MatchUIBehaviour _matchUI;
 
     private SimulationService _simulationService;
     private CameraViewModel _cameraViewModel;
@@ -62,6 +65,7 @@ public class MatchController : MonoBehaviour, ISimulatedEngagementListener
        // _simulationService.StartSimulation();
         StartCoroutine(EndOfBattleCoroutine());
         _simulation = new SimulatedEngagement(_viewModel.Engagement, this);
+        _matchUI.Setup(_simulation);
 
         //while (!simulation.Step());
         

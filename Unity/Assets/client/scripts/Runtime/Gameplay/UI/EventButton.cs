@@ -21,6 +21,9 @@ public class EventButton : MonoBehaviour
     
     [SerializeField]
     private TournamentTimerDisplay _timerDisplay;
+
+    [SerializeField] 
+    private Transform _3DTransformLink;
     
     private Button _button;
     private WorldMapViewModel _vm;
@@ -32,6 +35,17 @@ public class EventButton : MonoBehaviour
         _button.onClick.AddListener(onClick);
         _text.text = Path.GetFileName(_tournament.Data.name);
         OnTournamentLoaded();
+    }
+
+    private void Update()
+    {
+        if (_3DTransformLink != null)
+        {
+            Vector3 position = Camera.main.WorldToScreenPoint(_3DTransformLink.position);
+            transform.position = position;
+        }
+        
+        
     }
 
     private void onClick()

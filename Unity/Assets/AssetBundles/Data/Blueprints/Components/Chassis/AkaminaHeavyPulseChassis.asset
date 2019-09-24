@@ -47,8 +47,8 @@ MonoBehaviour:
   _topArmament:
     _id: AkaminaProcessorFastPulse
   _frontArmament:
-    _id: AkaminaProcessorFastPulse
+    _id: 
   _leftArmament:
-    _id: AkaminaProcessorFastPulse
+    _id: 
   _rightArmament:
     _id: AkaminaProcessorFastPulse

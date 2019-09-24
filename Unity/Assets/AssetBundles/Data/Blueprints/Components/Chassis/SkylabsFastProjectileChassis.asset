@@ -17,7 +17,7 @@ MonoBehaviour:
   _manufacturer:
     _id: Skylabs
   Material:
-    _id: Steel
+    _id: Copper
   _engine:
     _id: SkylabsStandardFastEngine
   _frontPlates:
@@ -32,10 +32,7 @@ MonoBehaviour:
   - _id: T01SkylabsBalancedSteelPlate
   - _id: T01SkylabsBalancedSteelPlate
   - _id: T01SkylabsBalancedSteelPlate
-  _backPlates:
-  - _id: T01SkylabsBalancedSteelPlate
-  - _id: T01SkylabsBalancedSteelPlate
-  - _id: T01SkylabsBalancedSteelPlate
+  _backPlates: []
   _topPlates:
   - _id: T01SkylabsBalancedSteelPlate
   - _id: T01SkylabsBalancedSteelPlate

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RocketLauncher
   m_EditorClassIdentifier: 
   _volume: 1
-  _chargeTime: 1.5
+  _chargeTime: 2
   _cooldown: 0.5
   _power: 0
   _armourPiercing: 0
@@ -32,7 +32,7 @@ MonoBehaviour:
   m_Name: Shell
   m_EditorClassIdentifier: 
   _volume: 0
-  _damage: 40
+  _damage: 30
   _effects: []
   _speed: 1.5
   _radius: 0.4

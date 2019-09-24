@@ -35,6 +35,7 @@ namespace JunkyardDogs.Simulation
         {
             //do nothing. weapon is charging
             engagement.SendEvent(new WeaponChargeDecisionEvent(simBot, _armamentLocation));
+            simBot.body.rotation.SetFromToRotation( simBot.body.position, simBot.opponent.body.position);
         }
     }
 

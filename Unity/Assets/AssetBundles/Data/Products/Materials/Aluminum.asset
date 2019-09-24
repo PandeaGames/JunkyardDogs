@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2783ee59a0878da43a7dd161ba94d41c, type: 3}
   m_Name: Aluminum
   m_EditorClassIdentifier: 
-  _density: 1
+  _density: 4

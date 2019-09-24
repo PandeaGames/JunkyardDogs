@@ -143,6 +143,16 @@ namespace JunkyardDogs.Simulation
             _engagement.Arena = new Arena();
             _engagement.Arena.dimensions = new Vector2(38, 21);
         }
+
+        public void AddEventHandler(ISimulatedEngagementEventHandler handler)
+        {
+            AddEventHandler(_eventHandlers, handler);
+        }
+        
+        public void RemoveEventHandler(ISimulatedEngagementEventHandler handler)
+        {
+            RemoveEventHandler(_eventHandlers, handler);
+        }
         
         public void OnDrawGizmos()
         {
@@ -185,8 +195,8 @@ namespace JunkyardDogs.Simulation
                 {
                     SimArena simArena = new SimArena(this, _engagement.Arena);
                     
-                    SimBot botRed = new SimBot(this);
-                    SimBot botBlue = new SimBot(this);
+                    SimBot botRed = new SimBot(this, Initiator.RED);
+                    SimBot botBlue = new SimBot(this, Initiator.BLUE);
                 
                     botRed.bot = _engagement.RedCombatent;
                     botBlue.bot = _engagement.BlueCombatent;

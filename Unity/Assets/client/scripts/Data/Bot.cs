@@ -49,7 +49,19 @@ namespace JunkyardDogs.Components
 
         public int TotalHealth
         {
-            get { return 100; }
+            get
+            {
+                int totalHealth = (int) Mathf.Ceil(
+                    Chassis.GetSpec<Specifications.Chassis>().BaseHealthMultiplier *
+                    (float)Chassis.Material.Data.Density);
+
+                foreach (Plate plate in Chassis.GetAllPlates())
+                {
+                    totalHealth += (int) plate.Material.Data.Density;
+                }
+                
+                return totalHealth;
+            }
         }
     }
 }

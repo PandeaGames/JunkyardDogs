@@ -15,6 +15,8 @@ public class SimpleSimulatedEngagement : MonoBehaviour, ISimulatedEngagementEven
     public PrefabFactory botPrefabFactory;
     
     private Dictionary<SimObject, SimpleSimulatedObjectView> _objects;
+
+    
     
     private void Start()
     {

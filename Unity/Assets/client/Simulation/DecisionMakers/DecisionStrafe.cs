@@ -20,6 +20,7 @@ namespace JunkyardDogs.Simulation
             public int evasiveness;
             public bool arenaOverride;
             public bool oppositeSideArenaOverride;
+            public bool botInitiatorOverride;
         }
         
         private StrafeDirection _direction;
@@ -48,6 +49,7 @@ namespace JunkyardDogs.Simulation
                     simBot.ConcurrentDecisionsOfType<DecisionMoveLeft>();
                 logic.arenaOverride = simBot.IsAgainstArena(SimBot.Side.Left);
                 logic.oppositeSideArenaOverride = simBot.IsAgainstArena(SimBot.Side.Right);
+                logic.botInitiatorOverride = simBot.Initiator == Initiator.RED;
             }
             else
             {
@@ -55,13 +57,16 @@ namespace JunkyardDogs.Simulation
                     simBot.ConcurrentDecisionsOfType<DecisionMoveRight>();
                 logic.arenaOverride = simBot.IsAgainstArena(SimBot.Side.Right);
                 logic.oppositeSideArenaOverride = simBot.IsAgainstArena(SimBot.Side.Left);
+                logic.botInitiatorOverride = simBot.Initiator == Initiator.BLUE;
             }
 
             logic.shouldContinueMoving = logic.numberOfPreviousConcurrentDecisions > 0 &&
                                                   logic.numberOfPreviousConcurrentDecisions <
                                                   logic.maxNumberOfTicksForMovement;
 
-            if (logic.arenaOverride)
+            if (logic.arenaOverride 
+                || _direction == StrafeDirection.Left && simBot.StrafeDirection == StrafeDirection.Right
+                || _direction == StrafeDirection.Right && simBot.StrafeDirection == StrafeDirection.Left)
             {
                 logic.priority = (int) DecisionPriority.None;
             }

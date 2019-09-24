@@ -28,6 +28,7 @@ namespace JunkyardDogs.Simulation
 
         protected override void MakeDecision(SimBot simBot, SimulatedEngagement engagement, Weapon weapon)
         {
+            simBot.body.rotation.SetFromToRotation( simBot.body.position, simBot.opponent.body.position);
             engagement.SendEvent(new WeaponStartChargeDecisionEvent(simBot, _armamentLocation));
         }
     }

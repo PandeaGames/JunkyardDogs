@@ -22,9 +22,12 @@ namespace JunkyardDogs.Simulation
         }
 
         private Dictionary<Side, SimBotArenaTrigger> _sideTriggers;
+        public Initiator Initiator { private set; get; }
+        public StrafeDirection StrafeDirection { private set; get; }
         
-        public SimBot(SimulatedEngagement engagement) : base(engagement)
+        public SimBot(SimulatedEngagement engagement, Initiator initiator) : base(engagement)
         {
+            this.Initiator = initiator;
             SimulatedCircleCollider collider = new SimulatedCircleCollider(body);
             collider.radius = 0.5f;
             colliders.Add(collider);
@@ -166,6 +169,11 @@ namespace JunkyardDogs.Simulation
             get { return bot.TotalHealth - DamageTaken; }
         }
         
+        public double TotalHealth
+        {
+            get { return bot.TotalHealth; }
+        }
+        
         public Type[] EventsToHandle()
         {
             return new Type[] { typeof(SimLogicEvent), typeof(SimCollisionEvent) };
@@ -219,7 +227,16 @@ namespace JunkyardDogs.Simulation
             PlaceArenaTrigger(180, _sideTriggers[Side.Bottom]);
             PlaceArenaTrigger(90, _sideTriggers[Side.Left]);
             PlaceArenaTrigger(-90, _sideTriggers[Side.Right]);
-            
+
+            if (StrafeDirection == StrafeDirection.Left && _sideTriggers[Side.Left].isActive)
+            {
+                StrafeDirection = StrafeDirection.Right;
+            } 
+            else if (StrafeDirection == StrafeDirection.Right && _sideTriggers[Side.Right].isActive)
+            {
+                StrafeDirection = StrafeDirection.Left;
+            }
+
             //MAKE DECISION
             WeightedDecision[] weightedDecisions = GetWeightedDecision();
 

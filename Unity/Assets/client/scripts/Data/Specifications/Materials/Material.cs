@@ -7,8 +7,12 @@ namespace JunkyardDogs.Specifications
     [CreateAssetMenu(fileName = "Material", menuName = "Specifications/Material", order = 2)]
     public class Material : ScriptableObject, IStaticDataBalance<MaterialBalanceObject>
     {
-        [SerializeField]
-        private double _density;
+        [SerializeField] private double _density;
+
+        public double Density
+        {
+            get { return _density; }
+        }
 
         public void ApplyBalance(MaterialBalanceObject balance)
         {

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\ccove\.Rider2018.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\ccove\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_Unity.1825822070.00" t="ExcludeRecursive" />
-    <e p="C:\Users\ccove\JunkyardDogs\Unity" t="IncludeRecursive">
+    <e p="C:\Users\ccove\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\ccove\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_Unity.-80025830.00" t="ExcludeRecursive" />
+    <e p="C:\Users\ccove\Documents\JunkyardDogs\Unity" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
@@ -375,6 +375,8 @@
                   <e p="JunkController.cs" t="Include" />
                 </e>
                 <e p="Match" t="Include">
+                  <e p="BotStatusBehaviour.cs" t="Include" />
+                  <e p="MatchUIBehaviour.cs" t="Include" />
                   <e p="SimpleBotMatchRendering.cs" t="Include" />
                   <e p="SimpleProjectileObjectView.cs" t="Include" />
                   <e p="SimplePulseObjectView.cs" t="Include" />
@@ -423,6 +425,7 @@
                   <e p="HubTabGroup.cs" t="Include" />
                   <e p="PanController.cs" t="Include" />
                 </e>
+                <e p="RTProgressBarBehaviour.cs" t="Include" />
                 <e p="TournamentStateRenderer.cs" t="Include" />
                 <e p="TournamentTimerDisplay.cs" t="Include" />
               </e>
@@ -1694,12 +1697,9 @@
           <e p="UnityVCShadow.cginc" t="Include" />
         </e>
       </e>
-      <e p="Library" t="ExcludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="packages" t="ExcludeRecursive" />
-      <e p="Temp" t="ExcludeRecursive">
-        <e p="bin" t="ExcludeRecursive" />
-      </e>
+      <e p="Temp\bin" t="ExcludeRecursive" />
       <e p="Unity.sln" t="IncludeFlat" />
     </e>
   </component>
