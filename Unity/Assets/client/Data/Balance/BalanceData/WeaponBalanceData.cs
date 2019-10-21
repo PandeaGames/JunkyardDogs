@@ -2,6 +2,7 @@
 using System;
 using JunkyardDogs.Data;
 using JunkyardDogs.Data.Balance;
+using JunkyardDogs.Simulation;
 using JunkyardDogs.Specifications;
 using UnityEngine;
 
@@ -11,6 +12,8 @@ public class WeaponBalanceObject:PhysicalSpecificationBalanceObject
     public double cooldown;
     public double chargeTime;
     public float stun;
+    public DecisionPlane decisionPlane;
+    public float knockback;
 }
 
 [CreateAssetMenu(menuName = MENU_NAME)]

@@ -4,14 +4,14 @@ using JunkyardDogs.Data;
 using JunkyardDogs.Data.Balance;
 using JunkyardDogs.Specifications;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [Serializable]
-public class HitscanWeaponBalanceObject:PhysicalSpecificationBalanceObject
+public class HitscanWeaponBalanceObject:WeaponBalanceObject
 {
-    public double cooldown;
-    public double chargeTime;
     public int damage;
     public int armourPiercing;
+    public float shotLength;
 }
 
 [CreateAssetMenu(menuName = MENU_NAME)]

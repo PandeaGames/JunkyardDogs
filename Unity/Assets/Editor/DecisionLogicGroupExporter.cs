@@ -70,9 +70,9 @@ public class DecisionLogicGroupExporter : ISimulationTestGroupExporter
 
             FieldInfo[] fieldInfos = null;
 
-            foreach (List<SimBot.WeightedDecision> weightedDecisionHistory in chosenBot.WeightedDecisions)
+            foreach (List<SimBotDecisionPlane.WeightedDecision> weightedDecisionHistory in chosenBot.GetDecisionPlane(DecisionPlane.Base).WeightedDecisions)
             {
-                foreach (SimBot.WeightedDecision weightedDecision in weightedDecisionHistory)
+                foreach (SimBotDecisionPlane.WeightedDecision weightedDecision in weightedDecisionHistory)
                 {
                     if (weightedDecision.DecisionMaker.GetType().ToString().Equals(decisionMakerType.ToString()))
                     {
@@ -101,9 +101,9 @@ public class DecisionLogicGroupExporter : ISimulationTestGroupExporter
             sb.AppendLine(rowBuilder.ToString());
             rowBuilder.Clear();
 
-            foreach (List<SimBot.WeightedDecision> weightedDecisionHistory in chosenBot.WeightedDecisions)
+            foreach (List<SimBotDecisionPlane.WeightedDecision> weightedDecisionHistory in chosenBot.GetDecisionPlane(DecisionPlane.Base).WeightedDecisions)
             {
-                foreach (SimBot.WeightedDecision weightedDecision in weightedDecisionHistory)
+                foreach (SimBotDecisionPlane.WeightedDecision weightedDecision in weightedDecisionHistory)
                 {
                     if (weightedDecision.DecisionMaker.GetType().Equals(decisionMakerType))
                     {

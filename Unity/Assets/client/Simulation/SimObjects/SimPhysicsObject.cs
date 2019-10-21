@@ -20,6 +20,11 @@ namespace JunkyardDogs.Simulation
             
         }
         
+        public virtual void OnCollisionLoiter(SimPhysicsObject other)
+        {
+            
+        }
+        
         public virtual void OnCollisionExit(SimPhysicsObject other)
         {
             
@@ -44,7 +49,7 @@ namespace JunkyardDogs.Simulation
                     {
                         float adjustment = bounds.x < 0 ? bounds.x * -1 : 0;
                         float adjustedX = bounds.x + adjustment;
-                        bounds.width = adjustedX -(circleCollider.x + circleCollider.radius);
+                        bounds.width = ((circleCollider.x + adjustment) + circleCollider.radius)-adjustedX;
                     }
                     
                     if (bounds.y > circleCollider.y - circleCollider.radius)

@@ -10,10 +10,16 @@ namespace JunkyardDogs.Simulation
     {
         protected SimBot simBot;
         private Chassis.ArmamentLocation armementLocation;
+        protected bool removeOnCollision = true;
 
         public double Damage
         {
             get { return simBot.bot.GetArmament(armementLocation).GetSpec<Weapon>().Power; }
+        }
+        
+        public float Knockback
+        {
+            get { return simBot.bot.GetArmament(armementLocation).GetSpec<Weapon>().Knockback; }
         }
         
         public SimPhysicalAttackObject(SimulatedEngagement engagement, SimBot simBot, Chassis.ArmamentLocation armementLocation) : base(engagement)
@@ -64,7 +70,7 @@ namespace JunkyardDogs.Simulation
         private SimulatedCollider CreateCollider(Melee weapon)
         {
             SimulatedCircleCollider collider = new SimulatedCircleCollider(body);
-            collider.radius = 1;
+            collider.radius = weapon.Radius;
             return collider;
         }
         
@@ -75,7 +81,10 @@ namespace JunkyardDogs.Simulation
             if (simBot.opponent.body != null)
             {
                 Vector2 delta = simBot.opponent.body.position - simBot.body.position;
-                collider.angle = Mathf.Atan2(delta.y, delta.x);
+                //collider.angle = Mathf.Atan2(delta.y, delta.x) * Mathf.Rad2Deg;
+                collider.angle = body.rotation.rad;
+                //collider.angle = 45 * Mathf.Deg2Rad;
+                //collider.angle = 225f * Mathf.Deg2Rad;
             }
 
             return collider;
@@ -112,7 +121,7 @@ namespace JunkyardDogs.Simulation
         {
             base.OnCollision(other);
 
-            if (other == simBot.opponent)
+            if (other == simBot.opponent && removeOnCollision)
             {
                 simBot.opponent.Stun(simBot.bot.GetArmament(armementLocation).GetSpec<Weapon>().Stun);
                 engagement.MarkForRemoval(this);

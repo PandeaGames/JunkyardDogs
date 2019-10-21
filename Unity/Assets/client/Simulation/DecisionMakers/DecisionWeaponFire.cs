@@ -27,14 +27,15 @@ namespace JunkyardDogs.Simulation
         protected override Logic GetDecisionWeight(SimBot simBot, SimulatedEngagement engagement, Weapon weapon)
         {
             DecisionWeaponFireLogic logic = new DecisionWeaponFireLogic();
+            logic.plane = weapon.GetSpec<Specifications.Weapon>().DecisionPlane;
 
             logic.wasChargingWeapon =
-                simBot.IsLastDecisionOfType<DecisionStartWeaponCharge>(new Type[] {typeof(DecisionWeaponCharge)});
+                simBot.IsLastDecisionOfType<DecisionStartWeaponCharge>(new Type[] {typeof(DecisionWeaponCharge)}, logic.plane);
 
             if (logic.wasChargingWeapon)
             {
-                SimBot.WeightedDecision lastStartWeaponChargeDecision =
-                    simBot.GetLastWeightedDecisionOfType<DecisionStartWeaponCharge>();
+                SimBotDecisionPlane.WeightedDecision lastStartWeaponChargeDecision =
+                    simBot.GetLastWeightedDecisionOfType<DecisionStartWeaponCharge>(logic.plane);
                 DecisionStartWeaponCharge decisionStartWeaponCharge =
                     lastStartWeaponChargeDecision.DecisionMaker as DecisionStartWeaponCharge;
 
@@ -51,11 +52,11 @@ namespace JunkyardDogs.Simulation
                     logic.isWeaponChargeComplete = logic.chargeTime > logic.lastWeaponChargeTime;
                 }
 
-                logic.priority = logic.isWeaponChargeComplete ? (int)DecisionPriority.FireWeapon : (int) DecisionPriority.None;
+                logic.priority = logic.isWeaponChargeComplete ? DecisionPriority.FireWeapon : DecisionPriority.None;
             }
             else
             {
-                logic.priority = (int) DecisionPriority.None;
+                logic.priority = DecisionPriority.None;
             }
             
             return logic;

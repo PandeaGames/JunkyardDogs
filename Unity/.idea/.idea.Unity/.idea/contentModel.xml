@@ -69,6 +69,13 @@
             <e p="StateInterface.cs" t="Include" />
           </e>
         </e>
+        <e p="CameraMultiTarget" t="Include">
+          <e p="Library" t="Include">
+            <e p="CameraMultiTarget.cs" t="Include" />
+            <e p="PositionAndRotation.cs" t="Include" />
+            <e p="ProjectionHits.cs" t="Include" />
+          </e>
+        </e>
         <e p="client" t="Include">
           <e p="Build" t="Include">
             <e p="Editor" t="Include">
@@ -345,6 +352,7 @@
                 <e p="ChooseUserBotController.cs" t="Include" />
                 <e p="MatchController.cs" t="Include" />
                 <e p="MatchTest.cs" t="Include" />
+                <e p="SimulationRunnerBehaviour.cs" t="Include" />
                 <e p="TournamentController.cs" t="Include" />
                 <e p="TournamentTest.cs" t="Include" />
               </e>
@@ -375,9 +383,16 @@
                   <e p="JunkController.cs" t="Include" />
                 </e>
                 <e p="Match" t="Include">
+                  <e p="BotFollowCameraAgent.cs" t="Include" />
                   <e p="BotStatusBehaviour.cs" t="Include" />
+                  <e p="MatchTimerUI.cs" t="Include" />
                   <e p="MatchUIBehaviour.cs" t="Include" />
                   <e p="SimpleBotMatchRendering.cs" t="Include" />
+                  <e p="SimpleCameraSystem.cs" t="Include" />
+                  <e p="SimpleEffects.cs" t="Include" />
+                  <e p="SimpleLaser.cs" t="Include" />
+                  <e p="SimpleMachineGun.cs" t="Include" />
+                  <e p="SimpleMeleeAttackView.cs" t="Include" />
                   <e p="SimpleProjectileObjectView.cs" t="Include" />
                   <e p="SimplePulseObjectView.cs" t="Include" />
                   <e p="SimpleSimulatedBotView.cs" t="Include" />
@@ -385,6 +400,7 @@
                   <e p="SimpleSimulatedObjectView.cs" t="Include" />
                   <e p="SimpleSimulatedPhysicsObjectView.cs" t="Include" />
                 </e>
+                <e p="SelfDestructingParticleSystem.cs" t="Include" />
                 <e p="UI" t="Include">
                   <e p="EventButton.cs" t="Include" />
                 </e>
@@ -465,6 +481,7 @@
               <e p="DecisionWeaponCharge.cs" t="Include" />
               <e p="DecisionWeaponCoolDown.cs" t="Include" />
               <e p="DecisionWeaponFire.cs" t="Include" />
+              <e p="DecisionWeaponHold.cs" t="Include" />
               <e p="IDecisionMaker.cs" t="Include" />
               <e p="Logic.cs" t="Include" />
               <e p="WeightedDecisionEvent.cs" t="Include" />
@@ -485,6 +502,7 @@
               <e p="SimAttackObject.cs" t="Include" />
               <e p="SimBot.cs" t="Include" />
               <e p="SimBotArenaTrigger.cs" t="Include" />
+              <e p="SimBotDecisionPlane.cs" t="Include" />
               <e p="SimHitscanShot.cs" t="Include" />
               <e p="SimMeleeAttack.cs" t="Include" />
               <e p="SimMortarAttackObject.cs" t="Include" />
@@ -494,6 +512,8 @@
               <e p="SimProjectile.cs" t="Include" />
               <e p="SimProjectileAttackObject.cs" t="Include" />
               <e p="SimPulseAttack.cs" t="Include" />
+              <e p="SimTargetView.cs" t="Include" />
+              <e p="VectorExtensions.cs" t="Include" />
             </e>
             <e p="SimulatedAttacks.cs" t="Include" />
             <e p="SimulatedCollisions.cs" t="Include" />
@@ -608,6 +628,23 @@
             <e p="ExtendedFlycam.cs" t="Include" />
             <e p="Particles.cs" t="Include" />
             <e p="UserCamera.cs" t="Include" />
+          </e>
+        </e>
+        <e p="ErbGameArt" t="Include">
+          <e p="3D Lasers Pack" t="Include">
+            <e p="Demo scene lasers" t="Include">
+              <e p="EGA_DemoLasers.cs" t="Include" />
+              <e p="EGA_Laser.cs" t="Include" />
+              <e p="If you want to use lasers in 2D.txt" t="Include" />
+              <e p="README.txt" t="Include" />
+            </e>
+            <e p="Prefabs" t="Include">
+              <e p="README.txt" t="Include" />
+            </e>
+            <e p="Shaders" t="Include">
+              <e p="Add_CenterGlow.shader" t="Include" />
+              <e p="Blend_CenterGlow.shader" t="Include" />
+            </e>
           </e>
         </e>
         <e p="Google Sheets For Unity" t="Include">
@@ -731,6 +768,18 @@
                 <e p="StringObfuscator.cs" t="Include" />
               </e>
             </e>
+          </e>
+        </e>
+        <e p="LaserAnimation.cs" t="Include" />
+        <e p="ModernGunEffects" t="Include">
+          <e p="scripts" t="Include">
+            <e p="MGE_ContinuousPrefabGenerator.cs" t="Include" />
+            <e p="MGE_DestroyThisTimed.cs" t="Include" />
+            <e p="MGE_InitialForce.cs" t="Include" />
+            <e p="MGE_InitialPrefabGenerator.cs" t="Include" />
+            <e p="MGE_MaterialGradient.cs" t="Include" />
+            <e p="MGE_MoveThis.cs" t="Include" />
+            <e p="MGE_PrefabOnCollision.cs" t="Include" />
           </e>
         </e>
         <e p="PandeaGames" t="Include">

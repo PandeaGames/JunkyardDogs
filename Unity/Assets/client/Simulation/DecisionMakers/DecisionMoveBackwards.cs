@@ -21,6 +21,7 @@ namespace JunkyardDogs.Simulation
         public Logic GetDecisionWeight(SimBot simBot, SimulatedEngagement engagement)
         {
             DecisionMoveBackwardsLogic logic = new DecisionMoveBackwardsLogic();
+            logic.plane = DecisionPlane.Base;
 
             logic.cautiousness = simBot.bot.GetCPUAttribute(CPU.CPUAttribute.Cautiousness);
             logic.distance = (int) Vector2.Distance(simBot.body.position, simBot.opponent.body.position);
@@ -28,7 +29,7 @@ namespace JunkyardDogs.Simulation
             logic.maxNumberOfTicksForMovement = maxNumberOfTicksForMovement;
             
             logic.numberOfPreviousConcurrentBackwardDecisions =
-                simBot.ConcurrentDecisionsOfType<DecisionMoveBackwards>();
+                simBot.ConcurrentDecisionsOfType<DecisionMoveBackwards>(logic.plane);
 
             logic.shouldContinueMovingBackwards = logic.numberOfPreviousConcurrentBackwardDecisions > 0 &&
                                                   logic.numberOfPreviousConcurrentBackwardDecisions <
@@ -36,7 +37,7 @@ namespace JunkyardDogs.Simulation
 
             if (logic.shouldContinueMovingBackwards)
             {
-                logic.priority = (int) DecisionPriority.Movement;
+                logic.priority = DecisionPriority.Movement;
             }
             else if (logic.targetDistance < logic.distance)
             {
@@ -92,10 +93,10 @@ namespace JunkyardDogs.Simulation
 
         public void MakeDecision(SimBot simBot, SimulatedEngagement engagement)
         {
-            Vector2 vector = new Vector2(0, -simBot.bot.Chassis.Engine.Acceleration);
+            Vector2 vector = new Vector2(0, -simBot.bot.Chassis.Engine.BackwardAcceleration);
             simBot.body.accelerationPerSecond = vector;
             simBot.body.rotation.SetFromToRotation( simBot.body.position, simBot.opponent.body.position );
-            DecisionStrafe.ClampSpeed(simBot.body, simBot.bot.Chassis.Engine.MaxSpeed);  
+            DecisionStrafe.ClampSpeed(simBot.body, simBot.bot.Chassis.Engine.BackwardMaxSpeed);  
             engagement.SendEvent(new MoveDecisionEvent(simBot, vector));
         }
     }

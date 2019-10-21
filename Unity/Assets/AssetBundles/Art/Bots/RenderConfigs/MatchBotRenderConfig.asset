@@ -19,4 +19,17 @@ MonoBehaviour:
     type: 3}
   PulsePrefab: {fileID: 7876703793341509964, guid: 864a412ada7ba0c4392789f80fe9e101,
     type: 3}
+  MeleePrefab: {fileID: 8772970522633742282, guid: e0423d823cb93c043b84fbaff9e4ca55,
+    type: 3}
+  LaserPrefab: {fileID: 3743024725454791487, guid: 4b01c420464d61c44a6f8ad62ed7a04e,
+    type: 3}
+  MachineGunPrefab: {fileID: 4647221185498396593, guid: 63ba9339d74d5434eba3bc06bb60bb45,
+    type: 3}
+  ExplosionPrefab: {fileID: 1828176872806910, guid: 64891a0eb28db934898420d80ca07cb3,
+    type: 3}
+  SmallExplosionPrefab: {fileID: 1337198075554910, guid: 25c7aa9ad705fe143a4d71c1c8deb7d4,
+    type: 3}
+  SmallPlasmaExplosionPrefab: {fileID: 1000011128802252, guid: 96730f8640590934eacb6f860058e7f9,
+    type: 3}
+  CameraDronePrefab: {fileID: 171254, guid: 731e7e79a79f96b459198308e5497e04, type: 3}
   _missingComponentMaterial: {fileID: 0}

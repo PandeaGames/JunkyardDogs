@@ -7,8 +7,12 @@ using UnityEngine;
 [Serializable]
 public class EngineBalanceObject:PhysicalSpecificationBalanceObject
 {
-    public float acceleration;
-    public float maxSpeed;
+    public float strafeAcceleration;
+    public float strafeMaxSpeed;
+    public float forwardAcceleration;
+    public float forwardMaxSpeed;
+    public float backwardAcceleration;
+    public float backwardMaxSpeed;
 }
 
 [CreateAssetMenu(menuName = MENU_NAME)]

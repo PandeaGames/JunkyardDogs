@@ -2,12 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Text.RegularExpressions;
 using JunkyardDogs.Components;
 using JunkyardDogs.Simulation.Simulation;
 using UnityEngine;
 using UnityEngine.UI.Extensions;
 using Random = System.Random;
 using Weapon = JunkyardDogs.Specifications.Weapon;
+using WeightedDecision = SimBotDecisionPlane.WeightedDecision;
 
 namespace JunkyardDogs.Simulation
 {
@@ -29,7 +31,7 @@ namespace JunkyardDogs.Simulation
         {
             this.Initiator = initiator;
             SimulatedCircleCollider collider = new SimulatedCircleCollider(body);
-            collider.radius = 0.5f;
+            collider.radius = 0.8f;
             colliders.Add(collider);
             
             _sideTriggers = new Dictionary<Side, SimBotArenaTrigger>();
@@ -108,24 +110,6 @@ namespace JunkyardDogs.Simulation
                 this.Rotation = Rotation;
             }
         }
-
-        public class WeightedDecision
-        {
-            public readonly Logic logic;
-            public readonly int simulationTick;
-            public int Priority
-            {
-                get { return logic.priority; }
-            }
-            public readonly IDecisionMaker DecisionMaker;
-            
-            public WeightedDecision(Logic logic, IDecisionMaker decisionMaker, int simulationTick)
-            {
-                this.logic = logic;
-                DecisionMaker = decisionMaker;
-                this.simulationTick = simulationTick;
-            }
-        }
         
         public Bot bot;
         public SimBot opponent;
@@ -133,37 +117,23 @@ namespace JunkyardDogs.Simulation
         public double StunStartTick = -1;
         public double StunLength;
 
-        private List<WeightedDecision[]> weightedDecisionHistory = new List<WeightedDecision[]>();
+        public Dictionary<DecisionPlane, SimBotDecisionPlane> decisionPlanes =
+            new Dictionary<DecisionPlane, SimBotDecisionPlane>();
         public List<BodyState> BodyStates = new List<BodyState>();
-        
-        private List<WeightedDecision> _decisionsCache;
-        public List<WeightedDecision> Decisions
-        {
-            get
-            {
-                if (_decisionsCache == null)
-                {
-                    _decisionsCache = new List<WeightedDecision>();
-                }
 
-                return _decisionsCache;
+        public SimBotDecisionPlane GetDecisionPlane(DecisionPlane plane)
+        {
+            SimBotDecisionPlane decisionPlane = null;
+
+            if (!decisionPlanes.TryGetValue(plane, out decisionPlane))
+            {
+                decisionPlane = new SimBotDecisionPlane();
+                decisionPlanes.Add(plane, decisionPlane);
             }
+            
+            return decisionPlane;
         }
         
-        private List<List<WeightedDecision>> _weightedDecisionsCache;
-        public List<List<WeightedDecision>> WeightedDecisions
-        {
-            get
-            {
-                if (_weightedDecisionsCache == null)
-                {
-                    _weightedDecisionsCache = new List<List<WeightedDecision>>();
-                }
-
-                return _weightedDecisionsCache;
-            }
-        }
-
         public double RemainingHealth
         {
             get { return bot.TotalHealth - DamageTaken; }
@@ -187,6 +157,18 @@ namespace JunkyardDogs.Simulation
             }
         }
 
+        public override void OnCollisionLoiter(SimPhysicsObject other)
+        {
+            base.OnCollisionLoiter(other);
+            
+            SimPhysicalAttackObject simPhysicalAttackObject = other as SimPhysicalAttackObject;
+
+            if (simPhysicalAttackObject != null && simPhysicalAttackObject.SimBot == opponent)
+            {
+                HitByAttack(other as SimPhysicalAttackObject);
+            }
+        }
+
         public override void OnCollision(SimPhysicsObject other)
         {
             base.OnCollision(other);
@@ -201,8 +183,38 @@ namespace JunkyardDogs.Simulation
 
         private void HitByAttack(SimPhysicalAttackObject attack)
         {
-            DamageTaken += attack.Damage;
-            engagement.SendEvent(new SimDamageTakenEvent(this, attack.Damage));
+            double damage = 0;
+            if (attack is SimHitscanShot)
+            {
+                damage = attack.Damage * SimulatedEngagement.SimuationStep;
+            }
+            else
+            {
+                damage = attack.Damage;
+            }
+            
+            DamageTaken += damage;
+            engagement.SendEvent(new SimDamageTakenEvent(this, damage));
+
+            Vector2 delta = body.position - attack.body.position;
+            SimRotation directionalVelocityAngle = new SimRotation();
+            directionalVelocityAngle.deg360 = attack.body.rotation.deg360 - body.rotation.deg360 + 90;
+            float angle = directionalVelocityAngle.rad;
+            float knockback = attack.Knockback;
+
+            Vector2 knockbackVector = new Vector2(
+                Mathf.Cos(angle) * knockback,
+                Mathf.Sin(angle) * knockback
+            );
+
+            body.velocityPerSecond = new Vector2(knockbackVector.x + body.velocityPerSecond.x,
+                knockbackVector.y + body.velocityPerSecond.y);
+        }
+        
+        public void HitByAttack(float damage)
+        {
+            DamageTaken += damage;
+            engagement.SendEvent(new SimDamageTakenEvent(this, damage));
         }
 
         private void PlaceArenaTrigger(float angleOffset, SimBotArenaTrigger trigger)
@@ -218,11 +230,6 @@ namespace JunkyardDogs.Simulation
 
         public void OnSimEvent(SimulatedEngagement engagement, SimLogicEvent simEvent)
         {
-            /*_sideTriggers[Side.Top].body.position = new Vector2(body.position.x, body.position.y - 1);
-            _sideTriggers[Side.Bottom].body.position = new Vector2(body.position.x, body.position.y + 1);
-            _sideTriggers[Side.Left].body.position = new Vector2(body.position.x - 1, body.position.y);
-            _sideTriggers[Side.Right].body.position = new Vector2(body.position.x + 1, body.position.y);*/
-
             PlaceArenaTrigger(0, _sideTriggers[Side.Top]);
             PlaceArenaTrigger(180, _sideTriggers[Side.Bottom]);
             PlaceArenaTrigger(90, _sideTriggers[Side.Left]);
@@ -231,36 +238,67 @@ namespace JunkyardDogs.Simulation
             if (StrafeDirection == StrafeDirection.Left && _sideTriggers[Side.Left].isActive)
             {
                 StrafeDirection = StrafeDirection.Right;
-            } 
+            }
             else if (StrafeDirection == StrafeDirection.Right && _sideTriggers[Side.Right].isActive)
             {
                 StrafeDirection = StrafeDirection.Left;
             }
 
             //MAKE DECISION
-            WeightedDecision[] weightedDecisions = GetWeightedDecision();
+            SimBotDecisionPlane.WeightedDecision[] weightedDecisions = GetWeightedDecision();
+            Dictionary<DecisionPlane, List<WeightedDecision>> planesOfDecisions = GetWeightedPlanes(weightedDecisions);
 
+            foreach (KeyValuePair<DecisionPlane, List<WeightedDecision>> kvp in planesOfDecisions)
+            {
+                MakeDecision(kvp.Value.ToArray(), kvp.Key);
+            }
+        }
+
+        private void MakeDecision(WeightedDecision[] weightedDecisions, DecisionPlane plane)
+        {
             bool hasDecisions = weightedDecisions.Length > 0;
             body.accelerationPerSecond = Vector2.zero;
+
+            SimBotDecisionPlane decisionPlane = decisionPlanes[plane];
             
             if (hasDecisions)
             {
-                weightedDecisionHistory.Add(weightedDecisions);
+                decisionPlane.weightedDecisionHistory.Add(weightedDecisions);
                 WeightedDecision[] weightedDecisionsPlateau = FilterForHIghestWeightedDecisions(weightedDecisions);
 
                 WeightedDecision bestDecision = PickRandomDecision(weightedDecisionsPlateau, engagement.Engagement.Seed);
             
                 bestDecision.DecisionMaker.MakeDecision(this, engagement);
             
-                Decisions.Add(bestDecision);
-                WeightedDecisions.Add(new List<WeightedDecision>(weightedDecisions));
+                decisionPlane.Decisions.Add(bestDecision);
+                decisionPlane.WeightedDecisions.Add(new List<WeightedDecision>(weightedDecisions));
                 engagement.SendEvent(new WeightedDecisionEvent(bestDecision));
                 BodyStates.Add(new BodyState(
                     body.position,
                     body.accelerationPerSecond,
                     body.rotation.deg360
-                    ));
+                ));
             }
+        }
+
+        private Dictionary<DecisionPlane, List<WeightedDecision>> GetWeightedPlanes(WeightedDecision[] decisions)
+        {
+            Dictionary<DecisionPlane, List<WeightedDecision>> planesOfDecisions = new Dictionary<DecisionPlane, List<WeightedDecision>>();
+
+            foreach (WeightedDecision decision in decisions)
+            {
+                List<WeightedDecision> list = null;
+                
+                if (!planesOfDecisions.TryGetValue(decision.logic.plane, out list))
+                {
+                    list = new List<WeightedDecision>();
+                    planesOfDecisions.Add(decision.logic.plane, list);
+                }
+                
+                list.Add(decision);
+            }
+
+            return planesOfDecisions;
         }
 
         private WeightedDecision PickRandomDecision(WeightedDecision[] decisions, int seed)
@@ -340,170 +378,84 @@ namespace JunkyardDogs.Simulation
             return weightedDecisions.ToArray();
         }
         
-        public bool IsLastDecisionOfType<TDecision>(Type[] typeFilters) where TDecision : IDecisionMaker
+        public bool IsLastDecisionOfType<TDecision>(Type[] typeFilters, DecisionPlane plane) where TDecision : IDecisionMaker
         {
-            for (int i = Decisions.Count - 1; i >= 0; i--)
-            {
-                IDecisionMaker decision = Decisions[i].DecisionMaker;
-                Type decisionType = decision.GetType();
-
-                bool isTargetType = decision is TDecision;
-                bool isFilteredType = false;
-
-                foreach (Type filteredType in typeFilters)
-                {
-                    if (filteredType.IsAssignableFrom(decisionType))
-                    {
-                        isFilteredType = true;
-                        break;
-                    }
-                }
-
-                if (isTargetType)
-                {
-                    return true;
-                }
-                else if(!isFilteredType)
-                {
-                    break;
-                }
-            }
-
-            return false;
+            return GetDecisionPlane(plane).IsLastDecisionOfType<TDecision>(typeFilters);
         }
 
-        public bool IsLastDecisionOfType<TDecision>() where TDecision : IDecisionMaker
+        public bool IsLastDecisionOfType<TDecision>(DecisionPlane plane) where TDecision : IDecisionMaker
         {
-            int lastDecisionsOfType = CountLastDecisionsOfType<TDecision>(1);
-            return lastDecisionsOfType > 0;
+            return GetDecisionPlane(plane).IsLastDecisionOfType<TDecision>();
         }
 
-        public int ConcurrentDecisionsOfType<TDecision>() where TDecision:IDecisionMaker
+        public int ConcurrentDecisionsOfType<TDecision>(DecisionPlane plane) where TDecision:IDecisionMaker
         {
-            return ConcurrentDecisionsOfType<TDecision>(decision => { return true; });
+            return GetDecisionPlane(plane).ConcurrentDecisionsOfType<TDecision>();
         }
         
-        public int ConcurrentDecisionsOfType<TDecision>(Func<TDecision, bool> predicate) where TDecision:IDecisionMaker
+        public int ConcurrentDecisionsOfType<TDecision>(Func<TDecision, bool> predicate, DecisionPlane plane) where TDecision:IDecisionMaker
         {
-            for (int i = Decisions.Count - 1; i >=0; i--)
-            {
-                IDecisionMaker decision = Decisions[i].DecisionMaker;
-
-                bool predicateResult = true;
-
-                if ((decision is TDecision))
-                {
-                    predicateResult = predicate.Invoke((TDecision) decision);
-                }
-                
-                if (!(decision is TDecision) || !predicateResult)
-                {
-                    return (Decisions.Count - 1) - i;
-                }
-                else if (i == 0)
-                {
-                    return Decisions.Count;
-                }
-            }
-
-            return 0;
+            return GetDecisionPlane(plane).ConcurrentDecisionsOfType<TDecision>(predicate);
         }
         
-        public int CountLastDecisionsOfType<TDecision>() where TDecision:IDecisionMaker
+        public int CountLastDecisionsOfType<TDecision>(DecisionPlane plane) where TDecision:IDecisionMaker
         {
-            return CountLastDecisionsOfType<TDecision>(Decisions.Count);
+            return GetDecisionPlane(plane).CountLastDecisionsOfType<TDecision>();
         }
         
-        public int CountLastDecisionsOfType<TDecision>(int howManyDecisions) where TDecision:IDecisionMaker
+        public int CountLastDecisionsOfType<TDecision>(int howManyDecisions, DecisionPlane plane) where TDecision:IDecisionMaker
         {
-            return CountLastDecisionsOfType<TDecision>(howManyDecisions, decision => { return true; });
+            return GetDecisionPlane(plane).CountLastDecisionsOfType<TDecision>(howManyDecisions);
         }
         
-        public int CountLastDecisionsOfType<TDecision>(int howManyDecisions, Func<TDecision, bool> predicate) where TDecision:IDecisionMaker
+        public int CountLastDecisionsOfType<TDecision>(int howManyDecisions, Func<TDecision, bool> predicate, DecisionPlane plane) where TDecision:IDecisionMaker
         {
-            int count = 0;
-            for (int i = Decisions.Count - 1; i >= Math.Max(1, Decisions.Count - howManyDecisions) - 1; i--)
-            {
-                IDecisionMaker decision = Decisions[i].DecisionMaker;
-                if ((decision is TDecision) && predicate.Invoke((TDecision)decision))
-                {
-                    count++;
-                }
-            }
-
-            return count;
+            return GetDecisionPlane(plane).CountLastDecisionsOfType<TDecision>(howManyDecisions, predicate);
         }
 
-        public bool DecisionWasOfType<TDecision>(int howManyDecisions) where TDecision : IDecisionMaker
+        public bool DecisionWasOfType<TDecision>(int howManyDecisions, DecisionPlane plane) where TDecision : IDecisionMaker
         {
-            return DecisionWasOfType<TDecision>(howManyDecisions, decision => { return true; });
+            return GetDecisionPlane(plane).DecisionWasOfType<TDecision>(howManyDecisions);
         }
         
-        public bool DecisionWasOfType<TDecision>(int howManyDecisions, Func<TDecision, bool> predicate) where TDecision : IDecisionMaker
+        public bool DecisionWasOfType<TDecision>(int howManyDecisions, Func<TDecision, bool> predicate, DecisionPlane plane) where TDecision : IDecisionMaker
         {
-            for (int i = Decisions.Count - 1; i >= Math.Max(1, Decisions.Count - howManyDecisions) - 1; i--)
-            {
-                IDecisionMaker decision = Decisions[i].DecisionMaker;
-                if ((decision is TDecision) && predicate.Invoke((TDecision)decision))
-                {
-                    return true;
-                }
-            }
-
-            return false;
+            return GetDecisionPlane(plane).DecisionWasOfType<TDecision>(howManyDecisions, predicate);
         }
         
-        public WeightedDecision GetLastWeightedDecisionOfType<TDecision>() where TDecision : IDecisionMaker
+        public WeightedDecision GetLastWeightedDecisionOfType<TDecision>(DecisionPlane plane) where TDecision : IDecisionMaker
         {
-            return GetLastWeightedDecisionOfType<TDecision>(Decisions.Count);
+            return GetDecisionPlane(plane).GetLastWeightedDecisionOfType<TDecision>();
         }
         
-        public WeightedDecision GetLastWeightedDecisionOfType<TDecision>(Func<WeightedDecision, bool> predicate) where TDecision : IDecisionMaker
+        public WeightedDecision GetLastWeightedDecisionOfType<TDecision>(Func<WeightedDecision, bool> predicate, DecisionPlane plane) where TDecision : IDecisionMaker
         {
-            return GetLastWeightedDecisionOfType<TDecision>(Decisions.Count, predicate);
+            return GetDecisionPlane(plane).GetLastWeightedDecisionOfType<TDecision>(predicate);
         }
         
-        public WeightedDecision GetLastWeightedDecisionOfType<TDecision>(int howManyDecisions) where TDecision : IDecisionMaker
+        public WeightedDecision GetLastWeightedDecisionOfType<TDecision>(int howManyDecisions, DecisionPlane plane) where TDecision : IDecisionMaker
         {
-            return GetLastWeightedDecisionOfType<TDecision>(howManyDecisions, decision => { return true; });
+            return GetDecisionPlane(plane).GetLastWeightedDecisionOfType<TDecision>(howManyDecisions);
         }
         
-        public WeightedDecision GetLastWeightedDecisionOfType<TDecision>(int howManyDecisions, Func<WeightedDecision, bool> predicate) where TDecision : IDecisionMaker
+        public WeightedDecision GetLastWeightedDecisionOfType<TDecision>(int howManyDecisions, Func<WeightedDecision, bool> predicate, DecisionPlane plane) where TDecision : IDecisionMaker
         {
-            for (int i = Decisions.Count - 1; i >= Math.Max(1, Decisions.Count - howManyDecisions) - 1; i--)
-            {
-                WeightedDecision decision = Decisions[i];
-                if ((decision.DecisionMaker is TDecision) && predicate.Invoke(decision))
-                {
-                    return decision;
-                }
-            }
-
-            return null;
+            return GetDecisionPlane(plane).GetLastWeightedDecisionOfType<TDecision>(howManyDecisions, predicate);
         }
         
-        public TDecision GetLastOfType<TDecision>() where TDecision : class, IDecisionMaker
+        public TDecision GetLastOfType<TDecision>(DecisionPlane plane) where TDecision : class, IDecisionMaker
         {
-            return GetLastOfType<TDecision>(Decisions.Count);
+            return GetDecisionPlane(plane).GetLastOfType<TDecision>();
         }
         
-        public int TicksSinceLastDecisionOfType<TDecision>() where TDecision : class, IDecisionMaker
+        public int TicksSinceLastDecisionOfType<TDecision>(DecisionPlane plane) where TDecision : class, IDecisionMaker
         {
-            int count = Decisions.Count;
-            for (int i = count - 1; i >= 0; i--)
-            {
-                if (Decisions[i].DecisionMaker is TDecision)
-                {
-                    return count - i;
-                }
-            }
-            
-            return count;
+            return GetDecisionPlane(plane).TicksSinceLastDecisionOfType<TDecision>();
         }
         
-        public TDecision GetLastOfType<TDecision>(int howManyDecisions) where TDecision : class, IDecisionMaker
+        public TDecision GetLastOfType<TDecision>(int howManyDecisions, DecisionPlane plane) where TDecision : class, IDecisionMaker
         {
-            return GetLastWeightedDecisionOfType<TDecision>(howManyDecisions, decision => { return true; }).DecisionMaker as TDecision;
+            return GetDecisionPlane(plane).GetLastOfType<TDecision>(howManyDecisions);
         }
 
         public void Stun(double lengthOfStun)
@@ -530,10 +482,10 @@ namespace JunkyardDogs.Simulation
             StunLength = 0;
         }
         
-        public bool IsChargingWeapon(Chassis.ArmamentLocation position)
+        public bool IsChargingWeapon(Chassis.ArmamentLocation position, DecisionPlane plane)
         {
-            WeightedDecision decisionStartWeaponChargeWeightedDecision = GetLastWeightedDecisionOfType<DecisionStartWeaponCharge>();
-            bool isLastDecisisonToStartWeaponCharge = IsLastDecisionOfType<DecisionStartWeaponCharge>();
+            WeightedDecision decisionStartWeaponChargeWeightedDecision = GetLastWeightedDecisionOfType<DecisionStartWeaponCharge>(DecisionPlane.Base);
+            bool isLastDecisisonToStartWeaponCharge = IsLastDecisionOfType<DecisionStartWeaponCharge>(DecisionPlane.Base);
             
             if (decisionStartWeaponChargeWeightedDecision != null)
             {
@@ -544,7 +496,7 @@ namespace JunkyardDogs.Simulation
                 {
                     int simulationTicksSinceWeaponChargeStart =
                         (engagement.CurrentStep - 1) - decisionStartWeaponChargeWeightedDecision.simulationTick;
-                    int numberOfChargeDecisionsSinceStartedCharging = CountLastDecisionsOfType<DecisionWeaponCharge>(simulationTicksSinceWeaponChargeStart);
+                    int numberOfChargeDecisionsSinceStartedCharging = CountLastDecisionsOfType<DecisionWeaponCharge>(simulationTicksSinceWeaponChargeStart, plane);
                     bool hasChargingBeenInterrupted =
                         simulationTicksSinceWeaponChargeStart > numberOfChargeDecisionsSinceStartedCharging;
                 
@@ -567,9 +519,9 @@ namespace JunkyardDogs.Simulation
             return false;
         }
         
-        public bool IsInWeaponCooldown()
+        public bool IsInWeaponCooldown(DecisionPlane plane)
         {
-            WeightedDecision decisionWeaponFireWeightedDecision = GetLastWeightedDecisionOfType<DecisionWeaponFire>();
+            WeightedDecision decisionWeaponFireWeightedDecision = GetLastWeightedDecisionOfType<DecisionWeaponFire>(plane);
 
             if (decisionWeaponFireWeightedDecision != null)
             {

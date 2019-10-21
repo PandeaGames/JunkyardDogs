@@ -12,7 +12,7 @@ public class DecisionSimBotStatus : IDecisionMaker
     public Logic GetDecisionWeight(SimBot simBot, SimulatedEngagement engagement)
     {
         DecisionSimBotStatusLogic logic = new DecisionSimBotStatusLogic();
-        logic.priority = -100;
+        logic.priority = DecisionPriority.None;
         logic.remainingHealth = simBot.RemainingHealth;
         logic.remainingOponentHealth = simBot.opponent.RemainingHealth;
 

@@ -2,422 +2,79 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b6defc3-a091-4fde-bf1e-c3bdd679481d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/../Library/AssetImportState" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/AssetImportState" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/CurrentLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/CurrentLayout.dwlt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/EditorUserBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/EditorUserBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/LastSceneManagerSetup.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/LastSceneManagerSetup.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/ScriptMapper" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/ScriptMapper" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/assetDatabase3" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/assetDatabase3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/expandedItems" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/expandedItems" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/00/00000000000000002000000000000000" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/00/00000000000000002000000000000000" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/00/00000000000000003000000000000000" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/00/00000000000000003000000000000000" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/00/00000000000000004000000000000000" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/00/00000000000000004000000000000000" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/00/00000000000000004100000000000000" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/00/00000000000000004100000000000000" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/00/00000000000000005000000000000000" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/00/00000000000000005000000000000000" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/00/00000000000000005100000000000000" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/00/00000000000000005100000000000000" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/00/00000000000000006000000000000000" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/00/00000000000000006000000000000000" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/00/00000000000000006100000000000000" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/00/00000000000000006100000000000000" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/00/00000000000000007000000000000000" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/00/00000000000000007000000000000000" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/00/00000000000000007100000000000000" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/00/00000000000000007100000000000000" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/00/00000000000000008000000000000000" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/00/00000000000000008000000000000000" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/00/00000000000000009000000000000000" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/00/00000000000000009000000000000000" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/00/0000000000000000a000000000000000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/00/0000000000000000a000000000000000.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/00/0000000000000000a100000000000000" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/00/0000000000000000a100000000000000" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/00/0000000000000000b000000000000000" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/00/0000000000000000b000000000000000" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/00/0000000000000000c000000000000000" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/00/0000000000000000c000000000000000" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/00/0000000000000000e100000000000000" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/00/0000000000000000e100000000000000.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/0d/0d3bb855445e36e479c85976fc88383a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/0d/0d3bb855445e36e479c85976fc88383a.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/10/10bf81265ad87424d946598c575f45a0" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/10/10bf81265ad87424d946598c575f45a0" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/10/10bf81265ad87424d946598c575f45a0.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/10/10bf81265ad87424d946598c575f45a0.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/12/12fd8a0055b84bb59e84c9835a37e333" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/12/12fd8a0055b84bb59e84c9835a37e333.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/13/1322fd896bbb15bb6e335591b766ae62" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/13/1322fd896bbb15bb6e335591b766ae62" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/13/1322fd896bbb15bb6e335591b766ae62.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/13/1322fd896bbb15bb6e335591b766ae62.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/15/15be9c691b85a41a39c18bee2f87e21b" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/15/15be9c691b85a41a39c18bee2f87e21b.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/1b/1b32bcce201b4494ea8848326290c5d5" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/1b/1b32bcce201b4494ea8848326290c5d5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/1b/1b32bcce201b4494ea8848326290c5d5.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/1b/1b32bcce201b4494ea8848326290c5d5.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/1c/1c6d1fbb51834b64847b1b73a75bfc77" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/1c/1c6d1fbb51834b64847b1b73a75bfc77.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/1f/1f4c12b8617b9764b972267c56846a51" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/1f/1f4c12b8617b9764b972267c56846a51" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/21/21eff446d50eaf44a85985cd4c0b6fa1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/21/21eff446d50eaf44a85985cd4c0b6fa1.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/22/220224b43fc464c28bc0e8de8f54a432" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/22/220224b43fc464c28bc0e8de8f54a432" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/22/220224b43fc464c28bc0e8de8f54a432.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/22/220224b43fc464c28bc0e8de8f54a432.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/22/224ede67b4f3a4109bfec4d5cb161b05" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/22/224ede67b4f3a4109bfec4d5cb161b05" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/22/224ede67b4f3a4109bfec4d5cb161b05.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/22/224ede67b4f3a4109bfec4d5cb161b05.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/26/2682a692a2be7e14e901a738c7806da0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/26/2682a692a2be7e14e901a738c7806da0.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/2d/2d2a5cca825efa14980af406855ee851" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/2d/2d2a5cca825efa14980af406855ee851.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/2d/2d4d46c70fdd242668a56e99799e8540" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/2d/2d4d46c70fdd242668a56e99799e8540" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/2d/2d4d46c70fdd242668a56e99799e8540.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/2d/2d4d46c70fdd242668a56e99799e8540.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/2e/2eb2d0388ed974b3cba47458803bd275" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/2e/2eb2d0388ed974b3cba47458803bd275.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/2f/2fe3476eabbbb6c448e6b55a2cc471f5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/2f/2fe3476eabbbb6c448e6b55a2cc471f5.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/30/30aa2886e2b748d48fbe4b155c65025f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/30/30aa2886e2b748d48fbe4b155c65025f.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/32/32188fd89022c154c81befa2f0e00be0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/32/32188fd89022c154c81befa2f0e00be0.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/32/328cc881519068e4eb7db4bb907ad2d9" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/32/328cc881519068e4eb7db4bb907ad2d9.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/38/38c8faf1788024c02930a0c68a6e0edc" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/38/38c8faf1788024c02930a0c68a6e0edc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/3a/3a84de5cd0624681b6b6dcd8921d912a" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/3a/3a84de5cd0624681b6b6dcd8921d912a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/3a/3a84de5cd0624681b6b6dcd8921d912a.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/3a/3a84de5cd0624681b6b6dcd8921d912a.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/3c/3cebe1a96232b44388b30b2f72dde434" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/3c/3cebe1a96232b44388b30b2f72dde434" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/3c/3cebe1a96232b44388b30b2f72dde434.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/3c/3cebe1a96232b44388b30b2f72dde434.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/40/405b9b51bb344a128608d968297df79c" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/40/405b9b51bb344a128608d968297df79c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/41/4113173d5e95493ab8765d7b08371de4" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/41/4113173d5e95493ab8765d7b08371de4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/41/4113173d5e95493ab8765d7b08371de4.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/41/4113173d5e95493ab8765d7b08371de4.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/44/44f39a74ca5ee4bf5936b17e901f251c" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/44/44f39a74ca5ee4bf5936b17e901f251c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/44/44f39a74ca5ee4bf5936b17e901f251c.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/44/44f39a74ca5ee4bf5936b17e901f251c.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/45/453f100e6bdae4dfd9e655927819dc85" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/45/453f100e6bdae4dfd9e655927819dc85" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/45/453f100e6bdae4dfd9e655927819dc85.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/45/453f100e6bdae4dfd9e655927819dc85.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/48/48986928cc2a449dbaecdd1654bc9bf6" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/48/48986928cc2a449dbaecdd1654bc9bf6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/48/48986928cc2a449dbaecdd1654bc9bf6.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/48/48986928cc2a449dbaecdd1654bc9bf6.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/49/49f5766d0d4954f44b85d4bbd7131677" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/49/49f5766d0d4954f44b85d4bbd7131677.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/4a/4a3ecb1425d14502837abea459cf2b70" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/4a/4a3ecb1425d14502837abea459cf2b70" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/4b/4b3fa4bde7f1451a8218c03ee6a8ded8" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/4b/4b3fa4bde7f1451a8218c03ee6a8ded8" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/4b/4ba2329b63d54f0187bcaa12486b1b0f" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/4b/4ba2329b63d54f0187bcaa12486b1b0f" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/4c/4c6fe94acbb24417c988bab18cbd5209" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/4c/4c6fe94acbb24417c988bab18cbd5209" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/4c/4c6fe94acbb24417c988bab18cbd5209.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/4c/4c6fe94acbb24417c988bab18cbd5209.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/4f/4f234578336894dc081edf696f2ff5f2" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/4f/4f234578336894dc081edf696f2ff5f2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/4f/4f234578336894dc081edf696f2ff5f2.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/4f/4f234578336894dc081edf696f2ff5f2.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/51/510d1d319d2754ea4a47c6dd8c421ea0" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/51/510d1d319d2754ea4a47c6dd8c421ea0" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/51/510d1d319d2754ea4a47c6dd8c421ea0.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/51/510d1d319d2754ea4a47c6dd8c421ea0.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/51/517af1b5b81b93b43b9745d58f017562" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/51/517af1b5b81b93b43b9745d58f017562.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/53/53ebcfaa2e1e4e2dbc85882cd5a73fa1" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/53/53ebcfaa2e1e4e2dbc85882cd5a73fa1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/53/53ebcfaa2e1e4e2dbc85882cd5a73fa1.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/53/53ebcfaa2e1e4e2dbc85882cd5a73fa1.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/57/5782f9e9e6e0bb94bac99aeea24814fc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/57/5782f9e9e6e0bb94bac99aeea24814fc.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/5f/5f32cd94baa94578a686d4b9d6b660f7" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/5f/5f32cd94baa94578a686d4b9d6b660f7" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/62/62772aad98ed04f0d955b7d20de61f7f" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/62/62772aad98ed04f0d955b7d20de61f7f" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/62/62772aad98ed04f0d955b7d20de61f7f.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/62/62772aad98ed04f0d955b7d20de61f7f.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/62/62926247d8ab316469feba9c7e79e9cb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/62/62926247d8ab316469feba9c7e79e9cb.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/65/6597c6ea86d36477081342001145d8d9" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/65/6597c6ea86d36477081342001145d8d9" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/65/6597c6ea86d36477081342001145d8d9.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/65/6597c6ea86d36477081342001145d8d9.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/65/65d58d50c3db54f979b1ffae3777d74b" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/65/65d58d50c3db54f979b1ffae3777d74b" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/65/65d58d50c3db54f979b1ffae3777d74b.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/65/65d58d50c3db54f979b1ffae3777d74b.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/69/6981461fe431401459211818212a29cf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/69/6981461fe431401459211818212a29cf.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/6a/6a10b2909283487f913b00d94cd3faf5" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/6a/6a10b2909283487f913b00d94cd3faf5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/6e/6e7c8cfeedae74eb3a562055e069e441" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/6e/6e7c8cfeedae74eb3a562055e069e441" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/6e/6e7c8cfeedae74eb3a562055e069e441.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/6e/6e7c8cfeedae74eb3a562055e069e441.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/70/7049f1ae464e6124f82461f21dc622f6" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/70/7049f1ae464e6124f82461f21dc622f6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/70/7049f1ae464e6124f82461f21dc622f6.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/70/7049f1ae464e6124f82461f21dc622f6.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/75/75799de484ac4f4cadc268d2cbea830a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/75/75799de484ac4f4cadc268d2cbea830a.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/76/7668179ede524d6396c8b7d84461ea29" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/76/7668179ede524d6396c8b7d84461ea29" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/76/7668179ede524d6396c8b7d84461ea29.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/76/7668179ede524d6396c8b7d84461ea29.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/79/7927683d1fc5848b5abfb54ebb1028ec" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/79/7927683d1fc5848b5abfb54ebb1028ec" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/79/7927683d1fc5848b5abfb54ebb1028ec.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/79/7927683d1fc5848b5abfb54ebb1028ec.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/7c/7c3a5d6e39b874f468b2691537168513" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/7c/7c3a5d6e39b874f468b2691537168513" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/7c/7c3a5d6e39b874f468b2691537168513.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/7c/7c3a5d6e39b874f468b2691537168513.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/80/80a3616ca19596e4da0f10f14d241e9f" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/80/80a3616ca19596e4da0f10f14d241e9f" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/81/815e6a9e3f6519143ae095ed0eeda153" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/81/815e6a9e3f6519143ae095ed0eeda153" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/81/815e6a9e3f6519143ae095ed0eeda153.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/81/815e6a9e3f6519143ae095ed0eeda153.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/82/82806ad0fec153a42b7144da59d6a097" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/82/82806ad0fec153a42b7144da59d6a097.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/84/844f815391db42d49455cbf1a7bfc434" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/84/844f815391db42d49455cbf1a7bfc434" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/84/84ca94c19f25ae14d83aa41bb3654390" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/84/84ca94c19f25ae14d83aa41bb3654390.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/86/86c008322e7c647149878156c5b81940" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/86/86c008322e7c647149878156c5b81940" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/86/86c008322e7c647149878156c5b81940.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/86/86c008322e7c647149878156c5b81940.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/86/86c18994495874297b469aaa57ef9b44" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/86/86c18994495874297b469aaa57ef9b44" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/86/86c18994495874297b469aaa57ef9b44.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/86/86c18994495874297b469aaa57ef9b44.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/87/870353891bb340e2b2a9c8707e7419ba" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/87/870353891bb340e2b2a9c8707e7419ba" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/8e/8e7066e382b0fc749b25dbb1a3004dfe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/8e/8e7066e382b0fc749b25dbb1a3004dfe.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/8e/8edaaa87530df18409f50e82df61fce3" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/8e/8edaaa87530df18409f50e82df61fce3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/8e/8edaaa87530df18409f50e82df61fce3.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/8e/8edaaa87530df18409f50e82df61fce3.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/90/9078b7128e594410d9b89e5b24cffd01" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/90/9078b7128e594410d9b89e5b24cffd01.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/90/90791303b72ec4ae198f99d637dfdf6c" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/90/90791303b72ec4ae198f99d637dfdf6c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/90/90791303b72ec4ae198f99d637dfdf6c.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/90/90791303b72ec4ae198f99d637dfdf6c.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/92/928fa6ad58d843f4e98632847268963b" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/92/928fa6ad58d843f4e98632847268963b" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/92/928fa6ad58d843f4e98632847268963b.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/92/928fa6ad58d843f4e98632847268963b.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/99/99ddb49592ff84811804420a1910cb89" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/99/99ddb49592ff84811804420a1910cb89" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/99/99ddb49592ff84811804420a1910cb89.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/99/99ddb49592ff84811804420a1910cb89.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/9d/9de9e8523c82543c5b3e40a4b51aa2c9" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/9d/9de9e8523c82543c5b3e40a4b51aa2c9" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/9d/9de9e8523c82543c5b3e40a4b51aa2c9.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/9d/9de9e8523c82543c5b3e40a4b51aa2c9.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/a3/a342381d77833427fa10621e38fbae10" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/a3/a342381d77833427fa10621e38fbae10" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/a3/a342381d77833427fa10621e38fbae10.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/a3/a342381d77833427fa10621e38fbae10.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/a3/a37e18887fa954edf92bc36bc353b879" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/a3/a37e18887fa954edf92bc36bc353b879" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/a3/a37e18887fa954edf92bc36bc353b879.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/a3/a37e18887fa954edf92bc36bc353b879.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/a6/a6842a74831964edc8fefa1c0aed89dc" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/a6/a6842a74831964edc8fefa1c0aed89dc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/a6/a6842a74831964edc8fefa1c0aed89dc.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/a6/a6842a74831964edc8fefa1c0aed89dc.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/ad/adab7787bd7d44c4a9d48b3aff189c47" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/ad/adab7787bd7d44c4a9d48b3aff189c47.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/ad/adebbd281f1a4ef3a30be7f21937e02f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/ad/adebbd281f1a4ef3a30be7f21937e02f.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/b2/b2b693dffac3a4433b3114fea0b7fd4e" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/b2/b2b693dffac3a4433b3114fea0b7fd4e" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/b2/b2bead50dbf86924f8e51f03ddbebf70" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/b2/b2bead50dbf86924f8e51f03ddbebf70.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/b3/b32abd1c9d73a4cce8389f084ac12b11" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/b3/b32abd1c9d73a4cce8389f084ac12b11" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/b3/b32abd1c9d73a4cce8389f084ac12b11.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/b3/b32abd1c9d73a4cce8389f084ac12b11.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/b5/b52e557db2c2b4eebb10444f1d582029" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/b5/b52e557db2c2b4eebb10444f1d582029" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/b5/b52e557db2c2b4eebb10444f1d582029.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/b5/b52e557db2c2b4eebb10444f1d582029.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/b5/b5da970776034f77a070d99423d68791" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/b5/b5da970776034f77a070d99423d68791" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/b5/b5f4343795a0e4626ac1fe4a9e6fce59" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/b5/b5f4343795a0e4626ac1fe4a9e6fce59" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/b5/b5f4343795a0e4626ac1fe4a9e6fce59.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/b5/b5f4343795a0e4626ac1fe4a9e6fce59.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/b8/b8a0574e92bd43a59e19d6c3c6ae54c7" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/b8/b8a0574e92bd43a59e19d6c3c6ae54c7.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/c4/c452c88a87f3d48ae945e7bcf1b4a6ba" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/c4/c452c88a87f3d48ae945e7bcf1b4a6ba.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/c5/c5ba7626a737840ff88a3bd84b100482" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/c5/c5ba7626a737840ff88a3bd84b100482" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/c5/c5ba7626a737840ff88a3bd84b100482.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/c5/c5ba7626a737840ff88a3bd84b100482.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/c7/c768acbc9cf24d398488bb4c93b91288" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/c7/c768acbc9cf24d398488bb4c93b91288.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/c9/c99bfe4fc4e5c4dc3917c14075acd117" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/c9/c99bfe4fc4e5c4dc3917c14075acd117" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/c9/c99bfe4fc4e5c4dc3917c14075acd117.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/c9/c99bfe4fc4e5c4dc3917c14075acd117.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/cc/cc1b50b5501f748da8bec762294d9136" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/cc/cc1b50b5501f748da8bec762294d9136" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/cc/cc1b50b5501f748da8bec762294d9136.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/cc/cc1b50b5501f748da8bec762294d9136.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/ce/ce4395ccdb12cf62fca756358be1a892" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/ce/ce4395ccdb12cf62fca756358be1a892" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/ce/ce4395ccdb12cf62fca756358be1a892.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/ce/ce4395ccdb12cf62fca756358be1a892.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/d0/d05b96cee66e14240838de167097537a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/d0/d05b96cee66e14240838de167097537a.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/d1/d1c1a2d988f5148fd9ab17b2460d271e" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/d1/d1c1a2d988f5148fd9ab17b2460d271e" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/d1/d1c1a2d988f5148fd9ab17b2460d271e.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/d1/d1c1a2d988f5148fd9ab17b2460d271e.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/d3/d33d54853fd0f48e0ac8a63ea91e6626" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/d3/d33d54853fd0f48e0ac8a63ea91e6626.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/d6/d607a67dc772b484da060e66a3d61a4e" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/d6/d607a67dc772b484da060e66a3d61a4e" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/d6/d607a67dc772b484da060e66a3d61a4e.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/d6/d607a67dc772b484da060e66a3d61a4e.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/d9/d91035c548f23744c9bfb107348ed1c0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/d9/d91035c548f23744c9bfb107348ed1c0.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/d9/d929147d9f78c487397abb40f2c257b0" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/d9/d929147d9f78c487397abb40f2c257b0" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/d9/d929147d9f78c487397abb40f2c257b0.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/d9/d929147d9f78c487397abb40f2c257b0.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/dc/dc443db3e92b4983b9738c1131f555cb" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/dc/dc443db3e92b4983b9738c1131f555cb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/dc/dced8f6ea9f964e8e8e61574ea889d21" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/dc/dced8f6ea9f964e8e8e61574ea889d21" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/dc/dced8f6ea9f964e8e8e61574ea889d21.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/dc/dced8f6ea9f964e8e8e61574ea889d21.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/e1/e1007cd261c84053beb0c3537782908d" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/e1/e1007cd261c84053beb0c3537782908d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/e4/e4f4cf1b9b434137a499903a7a1d651a" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/e4/e4f4cf1b9b434137a499903a7a1d651a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/e4/e4f4cf1b9b434137a499903a7a1d651a.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/e4/e4f4cf1b9b434137a499903a7a1d651a.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/ea/ead147da21254ff9a0a936bdd75e1680" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/ea/ead147da21254ff9a0a936bdd75e1680" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/ea/ead147da21254ff9a0a936bdd75e1680.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/ea/ead147da21254ff9a0a936bdd75e1680.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/ed/ed7343f30e3843b3afda8f8b02669cea" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/ed/ed7343f30e3843b3afda8f8b02669cea" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/ed/ed7343f30e3843b3afda8f8b02669cea.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/ed/ed7343f30e3843b3afda8f8b02669cea.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/ee/eeed6954b3c264ca0b28a92aa6289bf0" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/ee/eeed6954b3c264ca0b28a92aa6289bf0" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/ee/eeed6954b3c264ca0b28a92aa6289bf0.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/ee/eeed6954b3c264ca0b28a92aa6289bf0.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/f0/f0f8d67297461495185169157c24c66b" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/f0/f0f8d67297461495185169157c24c66b.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/f1/f1045c695c5bf4fb7b8509687bc60fc0" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/f1/f1045c695c5bf4fb7b8509687bc60fc0" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/f1/f1045c695c5bf4fb7b8509687bc60fc0.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/f1/f1045c695c5bf4fb7b8509687bc60fc0.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/f2/f28fcced5af094cf78eb4e1109a71981" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/f2/f28fcced5af094cf78eb4e1109a71981" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/f2/f28fcced5af094cf78eb4e1109a71981.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/f2/f28fcced5af094cf78eb4e1109a71981.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/f5/f5f67c52d1564df4a8936ccd202a3bd8" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/f5/f5f67c52d1564df4a8936ccd202a3bd8" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/f7/f70555f144d8491a825f0804e09c671c" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/f7/f70555f144d8491a825f0804e09c671c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/f7/f7b54ff4a43d4fcf81b4538b678e0bcc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/f7/f7b54ff4a43d4fcf81b4538b678e0bcc.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/fe/fec197bad419341558f81f2ec8a05e18" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/fe/fec197bad419341558f81f2ec8a05e18" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/metadata/fe/fec197bad419341558f81f2ec8a05e18.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/metadata/fe/fec197bad419341558f81f2ec8a05e18.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Library/shadercompiler-UnityShaderCompiler.exe0.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Library/shadercompiler-UnityShaderCompiler.exe0.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../ProjectSettings/ProjectVersion.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Art/ColorTest.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Art/ColorTest.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Art/Components/Icons/GenericComponentIcon.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Art/Components/Icons/GenericComponentIcon.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Art/Components/Weapons/Drill.mb.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Art/Components/Weapons/Drill.mb.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Art/Components/Weapons/Launcher 72.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Art/Components/Weapons/Launcher 72.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Art/Nationality/Flags/2560_1536/ca.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Art/Nationality/Flags/2560_1536/ca.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Art/Nationality/Flags/2560_1536/de.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Art/Nationality/Flags/2560_1536/de.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Art/Nationality/Flags/2560_1536/kr.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Art/Nationality/Flags/2560_1536/kr.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Art/Screens/MapScreen/map.jpg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Art/Screens/MapScreen/map.jpg.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Art/Bots/RenderConfigs/MatchBotRenderConfig.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Art/Bots/RenderConfigs/MatchBotRenderConfig.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Art/Components/Weapons/Drill.mb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Art/Components/Weapons/Drill.mb.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Art/Factories/JunkyardDogs3DComponentFactory.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Art/Factories/JunkyardDogs3DComponentFactory.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Art/Views/EarthNavigation.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Art/Views/EarthNavigation.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Blueprints/Ben.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Blueprints/Ben.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Blueprints/Bots/BensBot01.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Blueprints/Bots/BensBot01.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Blueprints/Bots/KaydeeBot01.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Blueprints/Bots/KaydeeBot01.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Blueprints/Components/CPU/HimmelSkylabs.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Blueprints/Components/CPU/HimmelSkylabs.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Blueprints/Components/Chassis/AkaminaHeavyPulseChassis.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Blueprints/Components/Chassis/AkaminaHeavyPulseChassis.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Blueprints/Components/Chassis/Chassis_SkylabsJunkMamoth.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Blueprints/Components/Chassis/Chassis_SkylabsJunkMamoth.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Blueprints/Components/Chassis/SkylabsFastProjectileChassis.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Blueprints/Components/Chassis/SkylabsFastProjectileChassis.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Blueprints/Components/Directives/SkylabsDodgeProjectiles.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Blueprints/Components/Directives/SkylabsDodgeProjectiles.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Blueprints/Components/Engines/AkaminaStandardSlowEngine.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Blueprints/Components/Engines/AkaminaStandardSlowEngine.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Blueprints/Components/Engines/SkylabsStandardFastEngine.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Blueprints/Components/Engines/SkylabsStandardFastEngine.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Blueprints/Components/Plates/T01AkaminaBalancedSteelPlate.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Blueprints/Components/Plates/T01AkaminaBalancedSteelPlate.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Blueprints/Components/Plates/T01SkylabsBalancedSteelPlate.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Blueprints/Components/Plates/T01SkylabsBalancedSteelPlate.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Blueprints/Components/WeaponProcessors/AkaminaProcessorFastPulse.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Blueprints/Components/WeaponProcessors/AkaminaProcessorFastPulse.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Blueprints/Components/WeaponProcessors/EmptySkylabsWeaponProcessor.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Blueprints/Components/WeaponProcessors/EmptySkylabsWeaponProcessor.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Blueprints/Components/WeaponProcessors/NewTestDeagle.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Blueprints/Components/WeaponProcessors/NewTestDeagle.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Blueprints/Components/WeaponProcessors/SkylabsProcessorRocketLauncher.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Blueprints/Components/WeaponProcessors/SkylabsProcessorRocketLauncher.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Blueprints/Components/Weapons/AkaminaFastPulseWeapon.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Blueprints/Components/Weapons/AkaminaFastPulseWeapon.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Blueprints/Components/Weapons/SkylabsLaser.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Blueprints/Components/Weapons/SkylabsLaser.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Blueprints/Components/Weapons/SkylabsRocketLauncher.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Blueprints/Components/Weapons/SkylabsRocketLauncher.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Blueprints/Components/Weapons/SkylabsSpiralPower.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Blueprints/Components/Weapons/SkylabsSpiralPower.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Blueprints/Kaydee.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Blueprints/Kaydee.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Blueprints/SimpleAgent.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Blueprints/SimpleAgent.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/CPUs/CautiousCPU.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/CPUs/CautiousCPU.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/CPUs/EvassiveCPU.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/CPUs/EvassiveCPU.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/CPUs/TestCreatedCPU.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/CPUs/TestCreatedCPU.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Competitors/BenBot01Participant.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Competitors/BenBot01Participant.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Competitors/CompetitorBlueprintDataSource.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Competitors/CompetitorBlueprintDataSource.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Competitors/Germany/Florian/Florian.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Competitors/Germany/Florian/Florian.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Competitors/Germany/Florian/FlorianParticipation.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Competitors/Germany/Florian/FlorianParticipation.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Competitors/Germany/Florian/FloriansDeagles.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Competitors/Germany/Florian/FloriansDeagles.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Competitors/Germany/Florian/FloriansFavoriteProcessor.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Competitors/Germany/Florian/FloriansFavoriteProcessor.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Competitors/Germany/Florian/JagerAgent.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Competitors/Germany/Florian/JagerAgent.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Competitors/Germany/Florian/JagerBot.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Competitors/Germany/Florian/JagerBot.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Competitors/Germany/Florian/JagerChassis.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Competitors/Germany/Florian/JagerChassis.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Competitors/Germany/Florian/JagerPlate.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Competitors/Germany/Florian/JagerPlate.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Competitors/KaydeeBot01Participant.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Competitors/KaydeeBot01Participant.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Competitors/ParticipantDataSource.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Competitors/ParticipantDataSource.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Directives/DodgeProjectiles.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Directives/DodgeProjectiles.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Loot/LootCrateDataSource.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Loot/LootCrateDataSource.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Loot/LootCrates/Junkyard/JunkyardCrateData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Loot/LootCrates/Junkyard/JunkyardCrateData.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Loot/LootCrates/Junkyard/WeightedJunkyardCrate.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Loot/LootCrates/Junkyard/WeightedJunkyardCrate.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Loot/LootCrates/NewCrateData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Loot/LootCrates/NewCrateData.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Loot/LootDataSource.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Loot/LootDataSource.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Loot/LootItems/DirectiveSkylabsDodgeProjectiles.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Loot/LootItems/DirectiveSkylabsDodgeProjectiles.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Loot/LootItems/HimmelCPULoot.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Loot/LootItems/HimmelCPULoot.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Loot/LootItems/JagerChassisLoot.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Loot/LootItems/JagerChassisLoot.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Loot/LootItems/Loot_Chassis_SkylabsJunkMamoth.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Loot/LootItems/Loot_Chassis_SkylabsJunkMamoth.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Loot/LootItems/Loot_EmptySkylabsWeaponProcessor.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Loot/LootItems/Loot_EmptySkylabsWeaponProcessor.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Loot/LootItems/Loot_FloriansDeagles.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Loot/LootItems/Loot_FloriansDeagles.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Loot/LootItems/Loot_SkylabsLaser.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Loot/LootItems/Loot_SkylabsLaser.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Loot/LootItems/Loot_SkylabsSpiralPower.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Loot/LootItems/Loot_SkylabsSpiralPower.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Loot/LootItems/PlateLootItem.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Loot/LootItems/PlateLootItem.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Nations/Canada.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Nations/Canada.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Nations/Germany.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Nations/Germany.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Nations/Japan.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Nations/Japan.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Nations/NationalityDataSource.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Nations/NationalityDataSource.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/Engines/StandardFast.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/Engines/StandardFast.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/Engines/StandardSlow.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/Engines/StandardSlow.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/ManufactuererDataSource.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/ManufactuererDataSource.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/Materials/Alloy/Copper.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/Materials/Alloy/Copper.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/Materials/Alloy/Steel.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/Materials/Alloy/Steel.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/Materials/Aluminum.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/Materials/Aluminum.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/Materials/MaterialDataSource.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/Materials/MaterialDataSource.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/Plating/Plate_Thickness01.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/Plating/Plate_Thickness01.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/Plating/Plate_Thickness02.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/Plating/Plate_Thickness02.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/Plating/Plate_Thickness03.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/Plating/Plate_Thickness03.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/Plating/Plate_Thickness04.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/Plating/Plate_Thickness04.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/Plating/Plate_Thickness05.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/Plating/Plate_Thickness05.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/Skylabs/Chassis/Mamoth.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/Skylabs/Chassis/Mamoth.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/Skylabs/Plating/Plate_Thickness06.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/Skylabs/Plating/Plate_Thickness06.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/Skylabs/Processors/cpu/Himmel-i9.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/Skylabs/Processors/cpu/Himmel-i9.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/Skylabs/Skylabs.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/Skylabs/Skylabs.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/Skylabs/Weapons/Deagle.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/Skylabs/Weapons/Deagle.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/Skylabs/Weapons/FrickinLaser.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/Skylabs/Weapons/FrickinLaser.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/Skylabs/Weapons/SpiralPower.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/Skylabs/Weapons/SpiralPower.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/SpecificationDataSource.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/SpecificationDataSource.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/TestCPU.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/TestCPU.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/Weapons/FastPulseWeapon.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/Weapons/FastPulseWeapon.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/Weapons/MyTestPulseWeapon.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/Weapons/MyTestPulseWeapon.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/Weapons/RocketLauncher.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/Weapons/RocketLauncher.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Tournaments/Formats/SingleElim_1g.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Tournaments/Formats/SingleElim_1g.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Tournaments/Formats/SingleElim_6g.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Tournaments/Formats/SingleElim_6g.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Tournaments/StageFormatDataSource.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Tournaments/StageFormatDataSource.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Tournaments/TournamentDataSource.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Tournaments/TournamentDataSource.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Tournaments/TournamentFormatDataSource.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Tournaments/TournamentFormatDataSource.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Tournaments/TournamentFormats/Challenge.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Tournaments/TournamentFormats/Challenge.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Tournaments/TournamentFormats/SingleElim_8.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Tournaments/TournamentFormats/SingleElim_8.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Tournaments/Tournaments/MooseChallenge.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Tournaments/Tournaments/MooseChallenge.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Tournaments/Tournaments/MooseHerd.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Tournaments/Tournaments/MooseHerd.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Tournaments/Tournaments/TestCanada_VS_Germany.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Tournaments/Tournaments/TestCanada_VS_Germany.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Tournaments/Tournaments/TestMooseChallenge.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Tournaments/Tournaments/TestMooseChallenge.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Google Sheets For Unity/Examples/Localization Example/Instructions.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Google Sheets For Unity/Examples/Localization Example/Instructions.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Holo Shader/Textures/Scanline_Diffuse.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Holo Shader/Textures/Scanline_Diffuse.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/I2/Localization/Examples/Resources/References/Sprites/L_EN.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/I2/Localization/Examples/Resources/References/Sprites/L_EN.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/I2/Localization/Examples/Resources/References/Sprites/L_ES.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/I2/Localization/Examples/Resources/References/Sprites/L_ES.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/I2/Localization/Examples/Resources/References/Sprites/L_FR.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/I2/Localization/Examples/Resources/References/Sprites/L_FR.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Industrial_lights/Models/ceiling_light.fbm.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Industrial_lights/Models/ceiling_light.fbm.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PandeaGames/Runtime/Gameplay/Dialogs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Editor/JetBrains/JetBrains.Rider.Unity.Editor.Plugin.Repacked.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Editor/JetBrains/JetBrains.Rider.Unity.Editor.Plugin.Repacked.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Smooth! Orbit Cam/Demo_Scene_Objects/sattelite_001.fbm.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Smooth! Orbit Cam/Demo_Scene_Objects/sattelite_001.fbm.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Sprites/ButtonAcceleratorOverSprite.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Sprites/ButtonAcceleratorOverSprite.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Sprites/ButtonAcceleratorUpSprite.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Sprites/ButtonAcceleratorUpSprite.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Sprites/ButtonArrowOverSprite.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Sprites/ButtonArrowOverSprite.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Sprites/ButtonArrowUpSprite.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Sprites/ButtonArrowUpSprite.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Sprites/ButtonBrakeOverSprite.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Sprites/ButtonBrakeOverSprite.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Sprites/ButtonBrakeUpSprite.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Sprites/ButtonBrakeUpSprite.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Sprites/ButtonCameraCycleUpSprite.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Sprites/ButtonCameraCycleUpSprite.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Sprites/ButtonResetSprite.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Sprites/ButtonResetSprite.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Sprites/ButtonSpacebarSprite.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Sprites/ButtonSpacebarSprite.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Sprites/ButtonThumbstickOverSprite.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Sprites/ButtonThumbstickOverSprite.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Sprites/ButtonThumbstickUpSprite.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Sprites/ButtonThumbstickUpSprite.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Sprites/ButtonTimescaleFullUpSprite.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Sprites/ButtonTimescaleFullUpSprite.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Sprites/ButtonTimescaleSlowUpSprite.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Sprites/ButtonTimescaleSlowUpSprite.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Sprites/SliderBackgroundSprite.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Sprites/SliderBackgroundSprite.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Sprites/SliderHandleSprite.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Sprites/SliderHandleSprite.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Sprites/TouchpadSprite.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Standard Assets/CrossPlatformInput/Sprites/TouchpadSprite.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/BG/footer_lodyas.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/BG/footer_lodyas.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/Circle.psd.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/Circle.psd.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/Filter-50.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/Filter-50.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/close-50.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/close-50.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/collapse-32.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/collapse-32.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/console-64.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/console-64.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/down-50.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/down-50.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/feedback-64.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/feedback-64.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/heart_monitor-64.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/heart_monitor-64.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/info-64.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/info-64.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/menu-25.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/menu-25.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/menu-32.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/menu-32.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/menu-50.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/menu-50.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/message-64.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/message-64.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/open-dropdown-50.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/open-dropdown-50.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/outline-64.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/outline-64.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/pin-50.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/pin-50.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/pin-64.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/pin-64.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/refresh-50.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/refresh-50.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/spider-64.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/spider-64.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/stompy_white_128.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/stompy_white_128.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/trash2-32.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/trash2-32.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/trash2-50.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/trash2-50.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/Logo.psd.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/Logo.psd.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/Logo@2x.psd.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/Logo@2x.psd.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/Pin/NumberButton_Fill@2x.psd.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/Pin/NumberButton_Fill@2x.psd.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/Pin/NumberButton_Outline@2x.psd.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/Pin/NumberButton_Outline@2x.psd.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/Pin/PinDot_Fill@2x.psd.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/Pin/PinDot_Fill@2x.psd.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/Pin/PinDot_Outline@2x.psd.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/Pin/PinDot_Outline@2x.psd.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/RoundedCorner-2px.psd.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/RoundedCorner-2px.psd.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/RoundedCorner-2px@2x.psd.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/RoundedCorner-2px@2x.psd.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/RoundedCorner-5px.psd.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/RoundedCorner-5px.psd.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/RoundedCorner-5px@2x.psd.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/RoundedCorner-5px@2x.psd.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/loading@2x.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StompyRobot/SRDebugger/UI/Sprites/Default/loading@2x.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TestImage.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TestImage.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Sprites/Default Sprites.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Sprites/Default Sprites.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Sprites/DropCap Numbers.psd.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Sprites/DropCap Numbers.psd.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/Data/Bot/Parts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/DecisionAndWeightExport.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/DecisionAndWeightExport.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/DecisionLogicGroupExporter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/DecisionLogicGroupExporter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/DecisionsAndPriorityExport.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/DecisionsAndPriorityExport.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/WeightedDecisionsTestExporter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/WeightedDecisionsTestExporter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PandeaGames/Runtime/Gameplay/Camera/CameraAgent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PandeaGames/Runtime/Gameplay/Camera/CameraAgent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PandeaGames/Runtime/Gameplay/Camera/CameraMaster.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PandeaGames/Runtime/Gameplay/Camera/CameraMaster.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PandeaGames/Runtime/Gameplay/Camera/SimpleFollowAgent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PandeaGames/Runtime/Gameplay/Camera/SimpleFollowAgent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PandeaGames/ViewModels/CameraViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PandeaGames/ViewModels/CameraViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/Data/Balance/BalanceData/EngineBalanceData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Data/Balance/BalanceData/EngineBalanceData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/Data/Balance/BalanceData/HitscanWeaponBalanceData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Data/Balance/BalanceData/HitscanWeaponBalanceData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/Data/Balance/BalanceData/MeleeWeaponBalanceData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Data/Balance/BalanceData/MeleeWeaponBalanceData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/Data/Balance/BalanceData/PulseWeaponBalanceData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Data/Balance/BalanceData/PulseWeaponBalanceData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/Data/Balance/BalanceData/WeaponBalanceData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Data/Balance/BalanceData/WeaponBalanceData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionMoveBackwards.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionMoveBackwards.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionMoveForward.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionMoveForward.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionSimBotStatus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionSimBotStatus.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionStartWeaponCharge.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionStartWeaponCharge.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionStrafe.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionStrafe.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionStunned.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionStunned.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionWeapon.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionWeaponCharge.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionWeaponCharge.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionWeaponCoolDown.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionWeaponCoolDown.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionWeaponFire.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionWeaponFire.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/IDecisionMaker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/IDecisionMaker.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/Logic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/Logic.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/WeightedDecisionEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/WeightedDecisionEvent.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimBot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimBot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimHitscanShot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimHitscanShot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimMeleeAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimMeleeAttack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimPhysicalAttackObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimPhysicalAttackObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimPhysicsObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimPhysicsObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/Simulation/SimulatedAttacks.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Simulation/SimulatedAttacks.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/Simulation/SimulatedCollisions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Simulation/SimulatedCollisions.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/client/Simulation/SimulatedEngagement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Simulation/SimulatedEngagement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/Views/WorldMapView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Views/WorldMapView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/Simulation/SimulatedPhysics.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Simulation/SimulatedPhysics.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/Simulation/Simulation/Physics/SimulatedLineCollider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Simulation/Simulation/Physics/SimulatedLineCollider.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/client/scenes/gameScenes/Match.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scenes/gameScenes/Match.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/client/scenes/testing/TournamentTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scenes/testing/TournamentTest.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Data/Bot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Data/Bot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Data/Components/Chassis.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Data/Components/Chassis.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Chassis.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Chassis.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Materials/Material.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Materials/Material.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Data/Components/Engine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Data/Components/Engine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Data/Configuration/BotRenderConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Data/Configuration/BotRenderConfiguration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Locomotion/Engine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Locomotion/Engine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Weapons/Assailments/MeleeWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Weapons/Assailments/MeleeWeapon.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Weapons/Hitscan.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Weapons/Hitscan.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Weapons/Melee.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Weapons/Melee.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Weapons/PulseEmitter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Weapons/PulseEmitter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Weapons/Weapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Weapons/Weapon.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Controllers/MatchController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Controllers/MatchController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/Match/BotStatusBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/Match/BotStatusBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/Match/MatchUIBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/Match/MatchUIBehaviour.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/Match/SimpleSimulatedEngagement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/Match/SimpleSimulatedEngagement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/UI/EventButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/UI/EventButton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/TournamentTimerDisplay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/TournamentTimerDisplay.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/textures/UI/Selected.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/textures/UI/Selected.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/textures/UI/Square.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/textures/UI/Square.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/textures/UI/junk.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/textures/UI/junk.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/textures/UI/junkyard.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/textures/UI/junkyard.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/unity-ui-extensions/Examples/FancyScrollView/Document/infiniteScrollSettings.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/unity-ui-extensions/Examples/FancyScrollView/Document/infiniteScrollSettings.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/unity-ui-extensions/Examples/FancyScrollView/Document/inspector.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/unity-ui-extensions/Examples/FancyScrollView/Document/inspector.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/unity-ui-extensions/Examples/FancyScrollView/Document/screencast1.gif.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/unity-ui-extensions/Examples/FancyScrollView/Document/screencast1.gif.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/unity-ui-extensions/Examples/FancyScrollView/Document/screencast2.gif.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/unity-ui-extensions/Examples/FancyScrollView/Document/screencast2.gif.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/unity-ui-extensions/Examples/FancyScrollView/Document/screencast3.gif.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/unity-ui-extensions/Examples/FancyScrollView/Document/screencast3.gif.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/unity-ui-extensions/Examples/RadialSlider/radial_sprite.psd.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/unity-ui-extensions/Examples/RadialSlider/radial_sprite.psd.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/unity-ui-extensions/Examples/UIVerticalScrollerDemo/Sprites/MrsYakaYochaMedium.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/unity-ui-extensions/Examples/UIVerticalScrollerDemo/Sprites/MrsYakaYochaMedium.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersionPrevious.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersionPrevious.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UnityPackageManager/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/Match/SimpleSimulatedPhysicsObjectView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/Match/SimpleSimulatedPhysicsObjectView.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -452,8 +109,10 @@
     <setting file="file://$PROJECT_DIR$/Assets/client/Data/TournamentDataSource.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Data/BlueprintDataSource.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Data/StateKnowledgeStaticDataSource.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/Match/SimpleMachineGun.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Data/MatchTestData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Data/LootDataSource.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/Match/MatchTimerUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Data/GameStaticDataProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Data/ActionStaticDataProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Data/StateKnowledgeStaticDataProvider.cs" root0="FORCE_HIGHLIGHTING" />
@@ -483,6 +142,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/client/Data/TournamentDataProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Data/CurrencyDataProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Data/Loot/ILoot.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionWeaponHold.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Data/Loot/ILootCrateConsumer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Data/Loot/LootData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Data/Loot/CurrencyLootData.cs" root0="FORCE_HIGHLIGHTING" />
@@ -517,6 +177,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/client/Data/Balance/BalanceData/HitscanWeaponBalanceData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Data/Balance/BalanceData/PlateBlueprintBalanceData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Data/Balance/BalanceData/AgentBlueprintBalanceData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/Match/SimpleLaser.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Data/Balance/BalanceData/CPUBalanceData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Data/Balance/BalanceData/WeaponProcessorBlueprintBalanceData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Data/Balance/BalanceData/SpecificationBalanceData.cs" root0="FORCE_HIGHLIGHTING" />
@@ -542,6 +203,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/client/Views/JunkyardGameContainer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Views/PreloaderView.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Views/GarageView.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CameraMultiTarget/Library/CameraMultiTarget.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Views/JunkyardView.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Views/TournamentView.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Views/TakeJunkViewModel.cs" root0="SKIP_HIGHLIGHTING" />
@@ -553,6 +215,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/client/Views/MatchView.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Views/GarageLineupView.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Scripts/WaterHoseParticles.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimBotDecisionPlane.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/NewBehaviourScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/BotAvatar.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Bot.cs" root0="FORCE_HIGHLIGHTING" />
@@ -619,6 +282,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Participants/UserAutoParticipantData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Participants/UserAutoParticipant.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Participants/Participant.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/SimObjects/VectorExtensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Participants/ParticipantData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Configuration/BotRenderConfiguration.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/MeleeWeaponProcessor.cs" root0="FORCE_HIGHLIGHTING" />
@@ -661,6 +325,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Data/InputConfig.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Data/DialogConfig.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Data/ConfiguredScreen.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/SelfDestructingParticleSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Data/PandeaGameConfigurationData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/ComponentTextureProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Data/LoadableConfigurationData.cs" root0="FORCE_HIGHLIGHTING" />
@@ -670,6 +335,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/MatchStateRenderer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Data/Static/StaticDataReference.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/DirectiveView.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/Match/SimpleMeleeAttackView.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Data/Static/AbstractStaticDataProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/TournamentStateRenderer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Data/Static/IStaticDataProvider.cs" root0="FORCE_HIGHLIGHTING" />
@@ -692,12 +358,14 @@
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Dialogs/ComponentMessageDialog.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Dialogs/EventDialog.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Data/WeakReference/WeakReference.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Controllers/SimulationRunnerBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Data/WeakReference/IWeakReferenceObject.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Data/WeakReference/ILoadableObject.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/AssetBundles/Data/Editor/ViewUserDataWindow.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Data/WeakReference/Loader.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Data/WeakReference/AssetLoader.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Data/WeakReference/WeakReferenceList.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/89A51479-21E5-48D1-B8DD-CFF8078F62CD/a7/f6b1aada/Mathf.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Data/WeakReference/Editor/WeakReference.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Dialogs/ViewModels/TakeJunkDialogViewModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Dialogs/ViewModels/ComponentViewModel.cs" root0="FORCE_HIGHLIGHTING" />
@@ -745,6 +413,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/DirectiveSlotUIView.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/Match/SimpleProjectileObjectView.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Editor/CoreEditorTools.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7BA07F08-8431-485B-B722-F3B3373E87EE/b0/e3cef616/Void.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/AssetBundleInitializer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Editor/ScreenManagerWindow.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Editor/CoreEditorUtils.cs" root0="FORCE_HIGHLIGHTING" />
@@ -841,6 +510,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/ViewControllers/ContainerViewController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/ViewControllers/AbstractViewController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/ViewControllers/AbstractViewControllerFsm.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/AssetBundles/Data/Blueprints/Components/Chassis/AkaminaHeavyPulseChassis.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimPhysicalAttackObject.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimAttackObject.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimProjectile.cs" root0="FORCE_HIGHLIGHTING" />
@@ -859,6 +529,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/Simulation/Physics/SimulatedLineCollider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/Simulation/SimulatedObjects/SimulatedBot.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/Simulation/SimulatedObjects/SimulatedProjectile.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/Simulation/SimulatedObjects/SimulatedPulse.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/Simulation/SimulatedObjects/SimulatedHitscan.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/WeightedDecisionEvent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionSimBotStatus.cs" root0="FORCE_HIGHLIGHTING" />
@@ -867,15 +538,18 @@
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionStartWeaponCharge.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionWeaponCoolDown.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionEvents.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/Match/SimpleCameraSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionStunned.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/I2/Localization/Scripts/Google/SimpleJSON.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionWeaponFire.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionMoveRight.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/IDecisionMaker.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionWeaponCharge.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimTargetView.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionWeapon.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionStrafe.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionMoveBackwards.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/AssetBundles/Data/Competitors/CompetitorBlueprintDataSource.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionMoveForward.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/ViewModels/MatchViewModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/ViewModels/JunkyardUserViewModel.cs" root0="FORCE_HIGHLIGHTING" />
@@ -887,6 +561,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/AssetBundles/Data/Competitors/Germany/Florian/Florian.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/ViewModels/HubViewModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/ViewModels/GarageViewModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/Match/SimpleEffects.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/ViewModels/JunkyardViewModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/ViewModels/ChooseNationalityViewModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/PreloadViewController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -900,6 +575,8 @@
     <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/GarageTestViewController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/GarageFocusedViewController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/ChooseNationalityViewController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ErbGameArt/3D Lasers Pack/Demo scene lasers/EGA_DemoLasers.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ErbGameArt/3D Lasers Pack/Demo scene lasers/EGA_Laser.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/FullMatchViewController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/GarageLineupViewController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/GameLoadViewController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -908,6 +585,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/MatchViewController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/MatchTestViewController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/ChooseBotFromInventoryViewController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ModernGunEffects/scripts/MGE_DestroyThisTimed.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/GarageEditBehaviourViewController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/JunkyardViewController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/StatesCommon/SplashState.cs" root0="FORCE_HIGHLIGHTING" />
@@ -924,63 +602,64 @@
     <setting file="file://$PROJECT_DIR$/Assets/Editor/ISimulationTestExporter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Editor/AssemblyUtils.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Editor/PostProcessor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/Match/BotFollowCameraAgent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/GarageTest.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/GameLoader.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/ChassisBlueprintData.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Components/Engine.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Components/ComponentUtils.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Simulation/Engagement.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Simulation/Arena.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimEnvironment.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Simulation/Simulation/Physics/SimulatedEnvironment.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Simulation/Simulation/Physics/SimulatedArena.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Simulation/Simulation/Physics/SimulatedArenaCollider.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/Match/SimplePulseObjectView.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimArena.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimHitscanShot.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimMeleeAttack.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimMortarAttackObject.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Simulation/Simulation/Physics/SimulatedCollider.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Simulation/SimulatedAttacks.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Simulation/Simulation/Physics/SimulatedCircleCollider.cs" />
-        <option value="$PROJECT_DIR$/Assets/Editor/DecisionLogicGroupExporter.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Weapons/ProjectileWeapon.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Weapons/Weapon.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Data/Balance/BalanceData/ProjectileWeaponBalanceData.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Data/Balance/BalanceData/WeaponBalanceData.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimProjectileAttackObject.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Simulation/Simulation/Physics/SimulatedBody.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimPulseAttack.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimPhysicalAttackObject.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionMoveBackwards.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionMoveForward.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Simulation/SimulatedPhysics.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimPhysicsObject.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Simulation/SimulatedCollisions.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimBotTrigger.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimBotArenaTrigger.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionStrafe.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionStartWeaponCharge.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionWeaponCharge.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Simulation/SimulatedEngagement.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/Match/SimpleSimulatedEngagement.cs" />
         <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/Controllers/MatchController.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/RTProgressBarBehaviour.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/TournamentTimerDisplay.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimBot.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/Match/SimpleEffects.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/SelfDestructingParticleSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/PandeaGames/Runtime/Gameplay/Camera/CameraAgent.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimTargetView.cs" />
+        <option value="$PROJECT_DIR$/Assets/PandeaGames/Runtime/Gameplay/Camera/SimpleFollowAgent.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/Match/BotFollowCameraAgent.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/Controllers/SimulationRunnerBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Data/Balance/BalanceData/EngineBalanceData.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Locomotion/Engine.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Components/Engine.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/Match/MatchTimerUI.cs" />
         <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/Match/MatchUIBehaviour.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/Match/BotStatusBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Weapons/Assailments/MeleeWeapon.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionStunned.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionSimBotStatus.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/IDecisionMaker.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/Logic.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/WeightedDecisionEvent.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimBotDecisionPlane.cs" />
+        <option value="$PROJECT_DIR$/Assets/Editor/DecisionAndWeightExport.cs" />
+        <option value="$PROJECT_DIR$/Assets/Editor/DecisionLogicGroupExporter.cs" />
+        <option value="$PROJECT_DIR$/Assets/Editor/DecisionsAndPriorityExport.cs" />
+        <option value="$PROJECT_DIR$/Assets/Editor/WeightedDecisionsTestExporter.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Weapons/Melee.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Data/Balance/BalanceData/PulseWeaponBalanceData.cs" />
         <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Weapons/PulseEmitter.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Materials/Material.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Bot.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Chassis.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Components/Chassis.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Views/WorldMapView.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/UI/EventButton.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Data/Balance/BalanceData/HitscanWeaponBalanceData.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Weapons/Hitscan.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionWeaponCharge.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionWeaponCoolDown.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionWeaponFire.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionWeapon.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionWeaponHold.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionMoveForward.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionMoveBackwards.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/Match/SimpleCameraSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Data/Balance/BalanceData/MeleeWeaponBalanceData.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Data/Balance/BalanceData/WeaponBalanceData.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Weapons/Weapon.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimPhysicalAttackObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionStrafe.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Simulation/SimulatedPhysics.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimBot.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimMeleeAttack.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/Match/BotStatusBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionStartWeaponCharge.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Configuration/BotRenderConfiguration.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/Match/SimpleMachineGun.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/Match/SimpleSimulatedEngagement.cs" />
+        <option value="$PROJECT_DIR$/Assets/ErbGameArt/3D Lasers Pack/Demo scene lasers/EGA_Laser.cs" />
       </list>
     </option>
   </component>
@@ -1001,7 +680,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="CodeLensConfigurable" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -1146,6 +825,11 @@
       <workItem from="1568471397175" duration="15977000" />
       <workItem from="1569175822943" duration="950000" />
       <workItem from="1569177168746" duration="10220000" />
+      <workItem from="1569780770899" duration="33015000" />
+      <workItem from="1570243558791" duration="2191000" />
+      <workItem from="1570989422435" duration="22674000" />
+      <workItem from="1571087913506" duration="6632000" />
+      <workItem from="1571289048876" duration="2423000" />
     </task>
     <servers />
   </component>

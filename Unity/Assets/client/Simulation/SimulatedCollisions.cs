@@ -14,6 +14,11 @@ namespace JunkyardDogs.Simulation
             {
                 OnSimEvent(engagement, simEvent as SimCollisionExitEvent);
             }
+            
+            else if (simEvent is SimCollisionLoiterEvent)
+            {
+                OnSimEvent(engagement, simEvent as SimCollisionLoiterEvent);
+            }
         }
         
         public void OnSimEvent(SimulatedEngagement engagement, SimCollisionEvent simEvent)
@@ -27,10 +32,16 @@ namespace JunkyardDogs.Simulation
             simEvent.obj1.OnCollisionExit(simEvent.obj2);
             simEvent.obj2.OnCollisionExit(simEvent.obj1);
         }
+        
+        public void OnSimEvent(SimulatedEngagement engagement, SimCollisionLoiterEvent simEvent)
+        {
+            simEvent.obj1.OnCollisionLoiter(simEvent.obj2);
+            simEvent.obj2.OnCollisionLoiter(simEvent.obj1);
+        }
 
         public Type[] EventsToHandle()
         {
-            return new Type[] { typeof(SimCollisionEvent), typeof(SimCollisionExitEvent) };
+            return new Type[] { typeof(SimCollisionEvent), typeof(SimCollisionExitEvent), typeof(SimCollisionLoiterEvent) };
         }
     }
 }

@@ -13,14 +13,19 @@ public class SimpleSimulatedEngagement : MonoBehaviour, ISimulatedEngagementEven
     
     [SerializeField]
     public PrefabFactory botPrefabFactory;
-    
+
+    [SerializeField] private SimpleCameraSystem _cameraSystem;
+
     private Dictionary<SimObject, SimpleSimulatedObjectView> _objects;
 
-    
+    private List<ISimulatedEngagementEventHandler> _eventHandlers;
     
     private void Start()
     {
+        _eventHandlers = new List<ISimulatedEngagementEventHandler>();
         _objects = new Dictionary<SimObject, SimpleSimulatedObjectView>();
+        _eventHandlers.Add(new SimpleEffects(this));
+        _eventHandlers.Add(_cameraSystem);
     }
 
     private void Update()
@@ -29,10 +34,16 @@ public class SimpleSimulatedEngagement : MonoBehaviour, ISimulatedEngagementEven
         {
             kvp.Value.Update();
         }
+
+        
     }
     
     public void OnSimEvent(SimulatedEngagement engagement, SimEvent simEvent)
     {
+        foreach (ISimulatedEngagementEventHandler handler in _eventHandlers)
+        {
+            handler.OnSimEvent(engagement, simEvent);
+        }
         if (simEvent is SimInstantiationEvent)
         {
             OnSimEvent(engagement, simEvent as SimInstantiationEvent);
@@ -58,7 +69,6 @@ public class SimpleSimulatedEngagement : MonoBehaviour, ISimulatedEngagementEven
             _objects.Remove(simEvent.instance);
         }
     }
-
     private void OnSimEvent(SimulatedEngagement engagement, SimInstantiationEvent simEvent)
     {
         if (simEvent.instance is SimBot)
@@ -79,6 +89,20 @@ public class SimpleSimulatedEngagement : MonoBehaviour, ISimulatedEngagementEven
             SimplePulseObjectView view = new SimplePulseObjectView(this, simEvent.instance as SimPulseAttack);
             _objects.Add(simEvent.instance, view);
             view.Make();
+        }
+        else if(simEvent.instance is SimMeleeAttack)
+        {
+            SimpleMeleeAttackView view = new SimpleMeleeAttackView(this, simEvent.instance as SimMeleeAttack);
+            _objects.Add(simEvent.instance, view);
+            view.Make();
+        }
+        
+        else if(simEvent.instance is SimHitscanShot)
+        {
+            SimpleLaser view = new SimpleLaser(this, simEvent.instance as SimHitscanShot);
+            SimpleMachineGun mgView =  new SimpleMachineGun(this, simEvent.instance as SimHitscanShot);
+            _objects.Add(simEvent.instance, mgView);
+            mgView.Make();
         }
     }
 

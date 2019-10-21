@@ -47,6 +47,7 @@ public class MatchController : MonoBehaviour, ISimulatedEngagementListener
     [SerializeField] 
     private MatchUIBehaviour _matchUI;
 
+    private SimulationRunnerBehaviour _simulationRunnerBehaviour;
     private SimulationService _simulationService;
     private CameraViewModel _cameraViewModel;
     private Action<MatchOutcome> _onMatchComplete;
@@ -60,12 +61,14 @@ public class MatchController : MonoBehaviour, ISimulatedEngagementListener
         _viewModel = Game.Instance.GetViewModel<MatchViewModel>(0);
         _simulationService = _serviceManager.GetService<SimulationService>();
         _cameraViewModel = Game.Instance.GetViewModel<CameraViewModel>(0);
+        _simulationRunnerBehaviour = gameObject.AddComponent<SimulationRunnerBehaviour>();
         
         //_simulationService.SetEngagement(_viewModel.Engagement);
        // _simulationService.StartSimulation();
         StartCoroutine(EndOfBattleCoroutine());
         _simulation = new SimulatedEngagement(_viewModel.Engagement, this);
         _matchUI.Setup(_simulation);
+        _simulationRunnerBehaviour.Init(_simulation);
 
         //while (!simulation.Step());
         
@@ -79,14 +82,6 @@ public class MatchController : MonoBehaviour, ISimulatedEngagementListener
     private void OnError(LoadException error)
     {
         
-    }
-
-    private void Update()
-    {
-        if(!_simulation.Step())
-        {
-            Debug.Log("WINNER");
-        }  
     }
 
     private void OnDrawGizmos()

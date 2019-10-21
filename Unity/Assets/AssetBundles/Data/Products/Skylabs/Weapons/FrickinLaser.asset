@@ -15,7 +15,10 @@ MonoBehaviour:
   _volume: 1
   _chargeTime: 1
   _cooldown: 1
-  _power: 0
+  _power: 60
   _armourPiercing: 0
   _stun: 0
+  _knockback: 0
+  _decisionPlane: 0
   _shell: {fileID: 11400000, guid: 5328d5a427b11cf4b9e18cff3453ed74, type: 2}
+  _shotTime: 1

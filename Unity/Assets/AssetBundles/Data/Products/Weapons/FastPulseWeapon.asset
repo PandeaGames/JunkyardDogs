@@ -18,6 +18,8 @@ MonoBehaviour:
   _power: 15
   _armourPiercing: 0
   _stun: 0
+  _knockback: 0
+  _decisionPlane: 0
   _pulse: {fileID: 114049743532916778}
   _speed: 10
   _radius: 50

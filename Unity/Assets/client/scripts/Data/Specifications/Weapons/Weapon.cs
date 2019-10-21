@@ -21,11 +21,22 @@ namespace JunkyardDogs.Specifications
 
         [SerializeField] 
         protected float _stun;
+        
+        [SerializeField] 
+        protected float _knockback;
+
+        [SerializeField] 
+        protected DecisionPlane _decisionPlane;
 
         public double ChargeTime { get { return _chargeTime; } }
         public double Cooldown { get { return _cooldown; } }
+        public float Knockback { get { return _knockback; } }
         public virtual double Power { get { return _power; } }
         public virtual float Stun { get { return _stun; } }
+        public DecisionPlane DecisionPlane
+        {
+            get { return _decisionPlane; }
+        }
 
         public virtual AttackActionResult GetResult()
         {
@@ -46,6 +57,8 @@ namespace JunkyardDogs.Specifications
             _stun = balance.stun;
             _cooldown = balance.cooldown;
             _chargeTime = balance.chargeTime;
+            _decisionPlane = balance.decisionPlane;
+            _knockback = balance.knockback;
         }
 
         public WeaponBalanceObject GetBalance()

@@ -19,6 +19,10 @@ namespace JunkyardDogs.Specifications
 
         private int _range;
         public int Range { get { return _range; } }
+        
+        [SerializeField]
+        private float _radius;
+        public float Radius { get { return _radius; } }
 
         public override AttackActionResult GetResult()
         {
@@ -44,13 +48,13 @@ namespace JunkyardDogs.Specifications
         
         public void ApplyBalance(MeleeWeaponBalanceObject balance)
         {
+            base.ApplyBalance(balance);
             name = balance.name;
             _range = balance.range;
-            _cooldown = balance.cooldown;
-            _chargeTime = balance.chargeTime;
             _meleeWeapon.Damage = balance.damage;
+            _meleeWeapon.Range = _range;
             _volume = balance.volume;
-            _armourPiercing = balance.armourPiercing;
+            _radius = balance.radius;
         }
         
         public MeleeWeaponBalanceObject GetBalance()
@@ -73,6 +77,7 @@ namespace JunkyardDogs.Specifications
             balance.name = name;
             balance.range = _range;
             balance.armourPiercing = _armourPiercing;
+            balance.radius = _radius;
             
             return balance;
         }

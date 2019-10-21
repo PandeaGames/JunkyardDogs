@@ -33,9 +33,9 @@ namespace JunkyardDogs.Simulation
 
             if (weapon != null)
             {
-                if (weapon.IsSpec<MeleeWeapon>())
+                if (weapon.IsSpec<Melee>())
                 {
-                    FireWeapon(engagement, simBot, weaponProcessor, weapon.GetSpec<MeleeWeapon>(), simEvent);
+                    FireWeapon(engagement, simBot, weaponProcessor, weapon.GetSpec<Melee>(), simEvent);
                 }
                 else if (weapon.IsSpec<ProjectileWeapon>())
                 {
@@ -56,16 +56,16 @@ namespace JunkyardDogs.Simulation
             }
         }
         
-        private void FireWeapon(SimulatedEngagement engagement, SimBot simBot, WeaponProcessor weaponProcessor, MeleeWeapon meleeWeapon, WeaponDecisionEvent simEvent)
+        private void FireWeapon(SimulatedEngagement engagement, SimBot simBot, WeaponProcessor weaponProcessor, Melee meleeWeapon, WeaponDecisionEvent simEvent)
         {
             SimMeleeAttack attack = new SimMeleeAttack(engagement, simBot, simEvent.armamentLocation);
             
             SimulatedBody body = simBot.body;
             Rect bounds = simBot.GetBounds();
-            float radius = bounds.width / 2;
+            float radius = bounds.width / 2 + meleeWeapon.Radius;
             float rotation = body.rotation.deg;
             
-            Vector2 delta = new Vector2(Mathf.Cos(rotation) * radius, Mathf.Sin(rotation) * radius);
+            Vector2 delta = new Vector2(Mathf.Cos(rotation * Mathf.Deg2Rad) * radius, Mathf.Sin(rotation * Mathf.Deg2Rad) * radius);
             attack.body.position = simBot.body.position + delta;
             engagement.Add(attack);
         }

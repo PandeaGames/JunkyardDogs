@@ -53,7 +53,7 @@ namespace JunkyardDogs.Simulation
         private int instanceCount;
         public List<SimObject> Objects;
         private List<SimObject> ObjectsMarkedForInstantiation;
-        private List<SimObject> ObjectsMarkedForRemoval;
+        private HashSet<SimObject> ObjectsMarkedForRemoval;
         public List<SimObject> ObjectHistory;
 
         private EventHandlersTable _eventHandlers;
@@ -133,7 +133,7 @@ namespace JunkyardDogs.Simulation
         {
             Objects = new List<SimObject>();
             ObjectsMarkedForInstantiation = new List<SimObject>();
-            ObjectsMarkedForRemoval = new List<SimObject>();
+            ObjectsMarkedForRemoval = new HashSet<SimObject>();
             ObjectHistory = new List<SimObject>();
             
             _engagement = engagement;
@@ -258,7 +258,6 @@ namespace JunkyardDogs.Simulation
 
         private void OnEvent(SimEvent simEvent)
         {
-            Debug.Log(simEvent);
             if (simEvent is SimDamageTakenEvent)
             {
                 OnEvent(simEvent as SimDamageTakenEvent);
@@ -289,7 +288,6 @@ namespace JunkyardDogs.Simulation
             
             foreach (SimObject simObj in ObjectsMarkedForInstantiation)
             {
-                simObj.SetInstanceID(instanceCount++);
                 SendEvent(new SimInstantiationEvent(simObj));
                 if (simObj is ISimulatedEngagementEventHandler)
                 {
@@ -307,10 +305,13 @@ namespace JunkyardDogs.Simulation
         {
             ObjectsMarkedForInstantiation.Add(simObj);
         }
-        
+
         public void MarkForRemoval(SimObject simObj)
         {
-            ObjectsMarkedForRemoval.Add(simObj);
+            if (!ObjectsMarkedForRemoval.Contains(simObj))
+            {
+                ObjectsMarkedForRemoval.Add(simObj);
+            }
         }
     }
 }

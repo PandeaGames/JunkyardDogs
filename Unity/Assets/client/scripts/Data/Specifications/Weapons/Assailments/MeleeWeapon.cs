@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 using JunkyardDogs.Data.Balance;
 using JunkyardDogs.Simulation;
@@ -14,6 +15,10 @@ namespace JunkyardDogs.Specifications
     {
         [SerializeField]
         private int _range;
-        public int Range { get { return _range; } }
+        public int Range {
+            get { return _range; }
+            set {
+            _range = value;
+        } } 
     }
 }

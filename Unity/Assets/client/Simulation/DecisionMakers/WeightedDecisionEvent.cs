@@ -2,9 +2,9 @@ namespace JunkyardDogs.Simulation
 {
     public class WeightedDecisionEvent : SimLogicEvent
     {
-        public readonly SimBot.WeightedDecision decision;
+        public readonly SimBotDecisionPlane.WeightedDecision decision;
         
-        public WeightedDecisionEvent(SimBot.WeightedDecision decision)
+        public WeightedDecisionEvent(SimBotDecisionPlane.WeightedDecision decision)
         {
             this.decision = decision;
         }

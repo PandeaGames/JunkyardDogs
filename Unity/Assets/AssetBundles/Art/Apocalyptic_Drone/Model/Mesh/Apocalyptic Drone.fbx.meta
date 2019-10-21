@@ -1,0 +1,289 @@
+fileFormatVersion: 2
+guid: 9878085b70a36b8499b85bd166c2eb69
+timeCreated: 1537378501
+licenseType: Store
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Drone Armature
+    100004: drone body
+    100006: drone body 1
+    100008: gunpoint_01
+    100010: gunpoint_01 1
+    100012: gunpoint_01_end
+    100014: gunpoint_02
+    100016: gunpoint_02 1
+    100018: gunpoint_02_end
+    100020: machine_gun_01
+    100022: machine_gun_02
+    100024: propeller_01
+    100026: propeller_01 1
+    100028: propeller_01_end
+    100030: propeller_02
+    100032: propeller_02 1
+    100034: propeller_02_end
+    100036: propeller_03
+    100038: propeller_03 1
+    100040: propeller_03_end
+    100042: propeller_04
+    100044: propeller_04 1
+    100046: propeller_04_end
+    400000: //RootNode
+    400002: Drone Armature
+    400004: drone body
+    400006: drone body 1
+    400008: gunpoint_01
+    400010: gunpoint_01 1
+    400012: gunpoint_01_end
+    400014: gunpoint_02
+    400016: gunpoint_02 1
+    400018: gunpoint_02_end
+    400020: machine_gun_01
+    400022: machine_gun_02
+    400024: propeller_01
+    400026: propeller_01 1
+    400028: propeller_01_end
+    400030: propeller_02
+    400032: propeller_02 1
+    400034: propeller_02_end
+    400036: propeller_03
+    400038: propeller_03 1
+    400040: propeller_03_end
+    400042: propeller_04
+    400044: propeller_04 1
+    400046: propeller_04_end
+    4300000: drone body
+    4300002: propeller_02
+    4300004: propeller_03
+    4300006: propeller_04
+    4300008: propeller_01
+    4300010: machine_gun_01
+    4300012: gunpoint_01
+    4300014: machine_gun_02
+    4300016: gunpoint_02
+    7400000: Drone Armature|Idle
+    7400002: Idle
+    7400004: Shooting
+    7400006: drone body|Shooting
+    7400008: machine_gun_01|Idle
+    9500000: //RootNode
+    13700000: drone body
+    13700002: gunpoint_01
+    13700004: gunpoint_02
+    13700006: machine_gun_01
+    13700008: machine_gun_02
+    13700010: propeller_01
+    13700012: propeller_02
+    13700014: propeller_03
+    13700016: propeller_04
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Idle
+      takeName: Drone Armature|Idle.001
+      firstFrame: 0
+      lastFrame: 8
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Drone Armature
+        weight: 1
+      - path: Drone Armature/drone body 1
+        weight: 1
+      - path: Drone Armature/drone body 1/gunpoint_01 1
+        weight: 1
+      - path: Drone Armature/drone body 1/gunpoint_01 1/gunpoint_01_end
+        weight: 1
+      - path: Drone Armature/drone body 1/gunpoint_02 1
+        weight: 1
+      - path: Drone Armature/drone body 1/gunpoint_02 1/gunpoint_02_end
+        weight: 1
+      - path: Drone Armature/drone body 1/propeller_01 1
+        weight: 1
+      - path: Drone Armature/drone body 1/propeller_01 1/propeller_01_end
+        weight: 1
+      - path: Drone Armature/drone body 1/propeller_02 1
+        weight: 1
+      - path: Drone Armature/drone body 1/propeller_02 1/propeller_02_end
+        weight: 1
+      - path: Drone Armature/drone body 1/propeller_03 1
+        weight: 1
+      - path: Drone Armature/drone body 1/propeller_03 1/propeller_03_end
+        weight: 1
+      - path: Drone Armature/drone body 1/propeller_04 1
+        weight: 1
+      - path: Drone Armature/drone body 1/propeller_04 1/propeller_04_end
+        weight: 1
+      - path: drone body
+        weight: 1
+      - path: gunpoint_01
+        weight: 1
+      - path: gunpoint_02
+        weight: 1
+      - path: machine_gun_01
+        weight: 1
+      - path: machine_gun_02
+        weight: 1
+      - path: propeller_01
+        weight: 1
+      - path: propeller_02
+        weight: 1
+      - path: propeller_03
+        weight: 1
+      - path: propeller_04
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Shooting
+      takeName: Drone Armature|Shooting
+      firstFrame: 0
+      lastFrame: 80
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Drone Armature
+        weight: 1
+      - path: Drone Armature/drone body 1
+        weight: 1
+      - path: Drone Armature/drone body 1/gunpoint_01 1
+        weight: 1
+      - path: Drone Armature/drone body 1/gunpoint_01 1/gunpoint_01_end
+        weight: 1
+      - path: Drone Armature/drone body 1/gunpoint_02 1
+        weight: 1
+      - path: Drone Armature/drone body 1/gunpoint_02 1/gunpoint_02_end
+        weight: 1
+      - path: Drone Armature/drone body 1/propeller_01 1
+        weight: 1
+      - path: Drone Armature/drone body 1/propeller_01 1/propeller_01_end
+        weight: 1
+      - path: Drone Armature/drone body 1/propeller_02 1
+        weight: 1
+      - path: Drone Armature/drone body 1/propeller_02 1/propeller_02_end
+        weight: 1
+      - path: Drone Armature/drone body 1/propeller_03 1
+        weight: 1
+      - path: Drone Armature/drone body 1/propeller_03 1/propeller_03_end
+        weight: 1
+      - path: Drone Armature/drone body 1/propeller_04 1
+        weight: 1
+      - path: Drone Armature/drone body 1/propeller_04 1/propeller_04_end
+        weight: 1
+      - path: drone body
+        weight: 1
+      - path: gunpoint_01
+        weight: 1
+      - path: gunpoint_02
+        weight: 1
+      - path: machine_gun_01
+        weight: 1
+      - path: machine_gun_02
+        weight: 1
+      - path: propeller_01
+        weight: 1
+      - path: propeller_02
+        weight: 1
+      - path: propeller_03
+        weight: 1
+      - path: propeller_04
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

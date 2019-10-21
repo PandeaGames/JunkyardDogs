@@ -16,6 +16,8 @@ public class CameraViewModel : AbstractViewModel
     private List<CameraMaster> _masters = new List<CameraMaster>();
     private List<CameraAgent> _agents = new List<CameraAgent>();
 
+    public CameraMaster ActiveMaster => _activeMaster;
+
     public void Focus(CameraAgent agent = null)
     {
         if (_activeMaster)

@@ -52,12 +52,10 @@ namespace JunkyardDogs.Specifications
 
         public void ApplyBalance(PulseWeaponBalanceObject balance)
         {
+            base.ApplyBalance(balance);
             name = balance.name;
             _radius = balance.radius;
             _speed = balance.speed;
-            _volume = balance.volume;
-            _cooldown = balance.cooldown;
-            _chargeTime = balance.chargeTime;
 
             #if UNITY_EDITOR
             if (_pulse == null)
@@ -71,7 +69,6 @@ namespace JunkyardDogs.Specifications
 
             _pulse.Damage = balance.damage;
             _power = balance.damage;
-
         }
 
         public PulseWeaponBalanceObject GetBalance()

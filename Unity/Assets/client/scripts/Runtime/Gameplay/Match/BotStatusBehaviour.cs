@@ -1,4 +1,5 @@
 using JunkyardDogs.Simulation;
+using TMPro;
 using UnityEngine;
 
 public class BotStatusBehaviour : MonoBehaviour
@@ -7,6 +8,8 @@ public class BotStatusBehaviour : MonoBehaviour
 
     [SerializeField]
     private RTProgressBarBehaviour _healthProgressBar;
+
+    [SerializeField] private TMP_Text _healthText;
     
     public void Setup(SimBot simObject)
     {
@@ -19,6 +22,7 @@ public class BotStatusBehaviour : MonoBehaviour
         if (_simObject != null)
         {
             _healthProgressBar.SetProgress((float) _simObject.RemainingHealth / (float)_simObject.TotalHealth);
+            _healthText.text = ((int)_simObject.RemainingHealth).ToString();
         }
     }
 }

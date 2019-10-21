@@ -1,27 +1,44 @@
 using JunkyardDogs.Data.Balance;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace JunkyardDogs.Specifications
 {
     public class Engine : PhysicalSpecification, IStaticDataBalance<EngineBalanceObject>
     {
         [SerializeField]
-        public float acceleration;
+        public float strafeAcceleration;
 
         [SerializeField]
-        public float maxSpeed;
+        public float strafeMaxSpeed;
+        
+        [SerializeField]
+        public float forwardAcceleration;
 
+        [SerializeField]
+        public float forwardMaxSpeed;
+        
+        [SerializeField]
+        public float backwardAcceleration;
+
+        [SerializeField]
+        public float backwardMaxSpeed;
+        
         public void ApplyBalance(EngineBalanceObject balance)
         {
-            acceleration = balance.acceleration;
-            maxSpeed = balance.maxSpeed;
+            strafeAcceleration = balance.strafeAcceleration;
+            strafeMaxSpeed = balance.strafeMaxSpeed;
+            forwardAcceleration = balance.forwardAcceleration;
+            forwardMaxSpeed = balance.forwardMaxSpeed;
+            backwardAcceleration = balance.backwardAcceleration;
+            backwardMaxSpeed = balance.backwardMaxSpeed;
         }
 
         public EngineBalanceObject GetBalance()
         {
             EngineBalanceObject balance = default(EngineBalanceObject);
-            balance.acceleration = acceleration;
-            balance.maxSpeed = maxSpeed;
+            balance.strafeAcceleration = strafeAcceleration;
+            balance.strafeMaxSpeed = strafeMaxSpeed;
             return balance;
         }
     }

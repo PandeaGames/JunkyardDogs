@@ -1,6 +1,9 @@
 using System;
-using JunkyardDogs.Components;
+using JunkyardDogs.Specifications;
+using UnityEngine;
+using Chassis = JunkyardDogs.Components.Chassis;
 using CPU = JunkyardDogs.Specifications.CPU;
+using Weapon = JunkyardDogs.Components.Weapon;
 
 namespace JunkyardDogs.Simulation
 {
@@ -9,6 +12,10 @@ namespace JunkyardDogs.Simulation
         public class DecisionStartWeaponChargeLogic : Logic
         {
             public int aggressiveness;
+            public float distance;
+            public bool isMeleeWeapon;
+            public float meleeDistance;
+            public bool isWithinMeleeRange;
         }
 
         public DecisionStartWeaponCharge(Chassis.ArmamentLocation weaponArmamentLocation) : base(weaponArmamentLocation)
@@ -19,10 +26,25 @@ namespace JunkyardDogs.Simulation
         protected override Logic GetDecisionWeight(SimBot simBot, SimulatedEngagement engagement, Weapon weapon)
         {
             DecisionStartWeaponChargeLogic logic = new DecisionStartWeaponChargeLogic();
+            Melee meleeWeapon = weapon.GetSpec<Melee>();
+            logic.plane = weapon.GetSpec<Specifications.Weapon>().DecisionPlane;
+            logic.distance = (int) Vector2.Distance(simBot.body.position, simBot.opponent.body.position);
 
-            logic.aggressiveness = simBot.bot.GetCPUAttribute(CPU.CPUAttribute.Aggressiveness);
-            logic.weight = logic.aggressiveness;
+            logic.isMeleeWeapon = meleeWeapon != null;
+            logic.meleeDistance = simBot.GetBounds().width / 2 + 1;
+            logic.isWithinMeleeRange = logic.distance < logic.meleeDistance;
 
+            if (logic.isMeleeWeapon && !logic.isWithinMeleeRange
+                || !logic.isMeleeWeapon && logic.isWithinMeleeRange)
+            {
+                logic.priority = DecisionPriority.None;
+            }
+            else
+            {
+                logic.aggressiveness = simBot.bot.GetCPUAttribute(CPU.CPUAttribute.Aggressiveness);
+                logic.weight = logic.aggressiveness;
+            }
+            
             return logic;
         }
 

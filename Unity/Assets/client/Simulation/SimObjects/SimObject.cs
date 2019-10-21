@@ -3,6 +3,7 @@ namespace JunkyardDogs.Simulation
     public class SimObject
     {
         protected SimulatedEngagement engagement;
+        protected double instantiationTime;
 
         public void SetInstanceID(int instanceID)
         {
@@ -18,6 +19,7 @@ namespace JunkyardDogs.Simulation
         public SimObject(SimulatedEngagement engagement)
         {
             this.engagement = engagement;
+            instantiationTime = engagement.CurrentSeconds;
         }
 
         public virtual void OnDrawGizmos()

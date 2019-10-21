@@ -6,10 +6,8 @@ using JunkyardDogs.Specifications;
 using UnityEngine;
 
 [Serializable]
-public class PulseWeaponBalanceObject:PhysicalSpecificationBalanceObject
+public class PulseWeaponBalanceObject:WeaponBalanceObject
 {
-    public double cooldown;
-    public double chargeTime;
     public float speed;
     public float radius;
     public int damage;

@@ -14,6 +14,10 @@ namespace JunkyardDogs.Specifications
         [SerializeField]
         private HitscanBullet _shell;
 
+        [SerializeField]
+        private float _shotTime;
+        public float ShotTime => _shotTime;
+
         public HitscanBullet Shell { get { return _shell; } }
 
         public override Assailer GetAssailer()
@@ -40,10 +44,10 @@ namespace JunkyardDogs.Specifications
 
         public void ApplyBalance(HitscanWeaponBalanceObject balance)
         {
-            _cooldown = balance.cooldown;
-            _volume = balance.volume;
-            _chargeTime = balance.chargeTime;
+            base.ApplyBalance(balance);
             _armourPiercing = balance.armourPiercing;
+            _shotTime = balance.shotLength;
+            _power = balance.damage;
             name = balance.name;
             
 #if UNITY_EDITOR

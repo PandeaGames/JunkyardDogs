@@ -6,9 +6,6 @@ using UnityEngine;
 public abstract class CameraAgent : MonoBehaviour {
 
     [SerializeField]
-    protected ServiceManager _serviceManager;
-
-    [SerializeField]
     private float scale = 1;
 
     protected CameraViewModel CameraViewModel;

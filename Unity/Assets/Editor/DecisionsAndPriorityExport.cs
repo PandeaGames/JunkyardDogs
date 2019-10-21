@@ -20,7 +20,7 @@ public class DecisionsAndPriorityExport : ISimulationTestExporter
         return bots;
     }
 
-    private int DecisionSorter(SimBot.WeightedDecision a, SimBot.WeightedDecision b)
+    private int DecisionSorter(SimBotDecisionPlane.WeightedDecision a, SimBotDecisionPlane.WeightedDecision b)
     {
         string aName = a.DecisionMaker.GetType().Name;
         string bName = b.DecisionMaker.GetType().Name;
@@ -36,11 +36,11 @@ public class DecisionsAndPriorityExport : ISimulationTestExporter
         StringBuilder sb = new StringBuilder();
         StringBuilder rowBuilder = new StringBuilder();
 
-        List<SimBot.WeightedDecision> reorderedDecisions =
-            new List<SimBot.WeightedDecision>(chosenBot.WeightedDecisions[0].ToArray());
+        List<SimBotDecisionPlane.WeightedDecision> reorderedDecisions =
+            new List<SimBotDecisionPlane.WeightedDecision>(chosenBot.GetDecisionPlane(DecisionPlane.Base).WeightedDecisions[0].ToArray());
         reorderedDecisions.Sort(DecisionSorter);
 
-        foreach (SimBot.WeightedDecision weightedDecision in reorderedDecisions)
+        foreach (SimBotDecisionPlane.WeightedDecision weightedDecision in reorderedDecisions)
         {
             rowBuilder.Append(weightedDecision.DecisionMaker.GetType().Name);
             rowBuilder.Append(",");
@@ -49,13 +49,13 @@ public class DecisionsAndPriorityExport : ISimulationTestExporter
         sb.AppendLine(rowBuilder.ToString());
         rowBuilder.Clear();
 
-        foreach (List<SimBot.WeightedDecision> weightedDecisionStep in chosenBot.WeightedDecisions)
+        foreach (List<SimBotDecisionPlane.WeightedDecision> weightedDecisionStep in chosenBot.GetDecisionPlane(DecisionPlane.Base).WeightedDecisions)
         {
             reorderedDecisions =
-                new List<SimBot.WeightedDecision>(weightedDecisionStep.ToArray());
+                new List<SimBotDecisionPlane.WeightedDecision>(weightedDecisionStep.ToArray());
             reorderedDecisions.Sort(DecisionSorter);
             
-            foreach (SimBot.WeightedDecision weightedDecision in reorderedDecisions)
+            foreach (SimBotDecisionPlane.WeightedDecision weightedDecision in reorderedDecisions)
             {
                 rowBuilder.Append(weightedDecision.logic.priority);
                 rowBuilder.Append(",");

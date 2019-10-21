@@ -13,7 +13,7 @@ using JunkyardDogs.Simulation;
             StringBuilder sb = new StringBuilder();
             StringBuilder rowBuilder = new StringBuilder();
 
-            int numberOfDecisions = Math.Max(simBots[0].WeightedDecisions.Count, simBots[1].WeightedDecisions.Count);
+            int numberOfDecisions = Math.Max(simBots[0].GetDecisionPlane(DecisionPlane.Base).WeightedDecisions.Count, simBots[1].GetDecisionPlane(DecisionPlane.Base).WeightedDecisions.Count);
 
             for (int j = 0; j < simBots.Count; j++)
             {
@@ -38,9 +38,9 @@ using JunkyardDogs.Simulation;
                         rowBuilder.Append(",");
                     }
                     SimBot simBot = simBots[j];
-                    if (simBot.WeightedDecisions.Count > i)
+                    if (simBot.GetDecisionPlane(DecisionPlane.Base).WeightedDecisions.Count > i)
                     {
-                        SimBot.WeightedDecision weightedDecisions = simBot.WeightedDecisions[i][0];
+                        SimBotDecisionPlane.WeightedDecision weightedDecisions = simBot.GetDecisionPlane(DecisionPlane.Base).WeightedDecisions[i][0];
                         rowBuilder.Append(string.Join(",", new string[]
                         {
                             weightedDecisions.Priority.ToString(),

@@ -23,12 +23,14 @@ namespace JunkyardDogs.Simulation
             
             if (weapon != null)
             {
-                return GetDecisionWeight(simBot, engagement, weapon);
+                Logic logic = GetDecisionWeight(simBot, engagement, weapon);
+                logic.plane = weapon.GetSpec<Specifications.Weapon>().DecisionPlane;
+                return logic;
             }
             else
             {
                 Logic logic = new Logic();
-                logic.priority = -1;
+                logic.priority = DecisionPriority.None;
                 return logic;
             }
         }

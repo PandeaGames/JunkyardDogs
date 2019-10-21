@@ -13,5 +13,9 @@ MonoBehaviour:
   m_Name: StandardFast
   m_EditorClassIdentifier: 
   _volume: 0
-  acceleration: 5
-  maxSpeed: 20
+  strafeAcceleration: 2.5
+  strafeMaxSpeed: 10
+  forwardAcceleration: 2.5
+  forwardMaxSpeed: 10
+  backwardAcceleration: 1.5
+  backwardMaxSpeed: 6

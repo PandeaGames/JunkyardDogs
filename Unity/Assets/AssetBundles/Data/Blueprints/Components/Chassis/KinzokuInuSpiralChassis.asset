@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa97e88fbf7e4ba0827b64b450dc3694, type: 3}
+  m_Name: KinzokuInuSpiralChassis
+  m_EditorClassIdentifier: 
+  _specification:
+    _id: Mamoth
+  _manufacturer:
+    _id: Kinzoku Inu
+  Material:
+    _id: Aluminum
+  _engine:
+    _id: KinzokuInuStandardFastEngine
+  _frontPlates:
+  - _id: T01KinzokuInuAlumPlate
+  - _id: T01KinzokuInuAlumPlate
+  - _id: T01KinzokuInuAlumPlate
+  _leftPlates:
+  - _id: T01KinzokuInuAlumPlate
+  - _id: T01KinzokuInuAlumPlate
+  - _id: T01KinzokuInuAlumPlate
+  _rightPlates:
+  - _id: T01KinzokuInuAlumPlate
+  - _id: T01KinzokuInuAlumPlate
+  - _id: T01KinzokuInuAlumPlate
+  _backPlates:
+  - _id: T01KinzokuInuAlumPlate
+  - _id: T01KinzokuInuAlumPlate
+  - _id: T01KinzokuInuAlumPlate
+  _topPlates:
+  - _id: T01KinzokuInuSteelPlate
+  - _id: T01KinzokuInuSteelPlate
+  - _id: T01KinzokuInuSteelPlate
+  _bottomPlates:
+  - _id: T01KinzokuInuAlumPlate
+  - _id: T01KinzokuInuAlumPlate
+  - _id: T01KinzokuInuAlumPlate
+  _topArmament:
+    _id: KinzokuInuSpiralWeaponProcessor
+  _frontArmament:
+    _id: 
+  _leftArmament:
+    _id: KinzokuInuSpiralWeaponProcessor
+  _rightArmament:
+    _id: AkaminaProcessorMiniMachineGun

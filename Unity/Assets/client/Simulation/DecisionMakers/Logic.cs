@@ -2,7 +2,8 @@ namespace JunkyardDogs.Simulation
 {
     public class Logic
     {
-        public int priority = (int) DecisionPriority.Normal;
+        public DecisionPriority priority = DecisionPriority.Normal;
+        public DecisionPlane plane = DecisionPlane.Base;
         public int weight = 100;
     }
 }

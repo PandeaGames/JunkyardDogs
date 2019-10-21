@@ -39,6 +39,7 @@ namespace JunkyardDogs.Simulation
         public Logic GetDecisionWeight(SimBot simBot, SimulatedEngagement engagement)
         {
             DecisionStrafeLogic logic = new DecisionStrafeLogic();
+            logic.plane = DecisionPlane.Base;
 
             logic.evasiveness = simBot.bot.GetCPUAttribute(CPU.CPUAttribute.Evasiveness);
             logic.maxNumberOfTicksForMovement = maxNumberOfTicksForMovement;
@@ -46,7 +47,7 @@ namespace JunkyardDogs.Simulation
             if (_direction == StrafeDirection.Left)
             {
                 logic.numberOfPreviousConcurrentDecisions =
-                    simBot.ConcurrentDecisionsOfType<DecisionMoveLeft>();
+                    simBot.ConcurrentDecisionsOfType<DecisionMoveLeft>(logic.plane);
                 logic.arenaOverride = simBot.IsAgainstArena(SimBot.Side.Left);
                 logic.oppositeSideArenaOverride = simBot.IsAgainstArena(SimBot.Side.Right);
                 logic.botInitiatorOverride = simBot.Initiator == Initiator.RED;
@@ -54,7 +55,7 @@ namespace JunkyardDogs.Simulation
             else
             {
                 logic.numberOfPreviousConcurrentDecisions =
-                    simBot.ConcurrentDecisionsOfType<DecisionMoveRight>();
+                    simBot.ConcurrentDecisionsOfType<DecisionMoveRight>(logic.plane);
                 logic.arenaOverride = simBot.IsAgainstArena(SimBot.Side.Right);
                 logic.oppositeSideArenaOverride = simBot.IsAgainstArena(SimBot.Side.Left);
                 logic.botInitiatorOverride = simBot.Initiator == Initiator.BLUE;
@@ -68,11 +69,11 @@ namespace JunkyardDogs.Simulation
                 || _direction == StrafeDirection.Left && simBot.StrafeDirection == StrafeDirection.Right
                 || _direction == StrafeDirection.Right && simBot.StrafeDirection == StrafeDirection.Left)
             {
-                logic.priority = (int) DecisionPriority.None;
+                logic.priority = DecisionPriority.None;
             }
             else if (logic.shouldContinueMoving)
             {
-                logic.priority = (int) DecisionPriority.Movement;
+                logic.priority = DecisionPriority.Movement;
             }
             else if(logic.oppositeSideArenaOverride)
             {
@@ -89,18 +90,19 @@ namespace JunkyardDogs.Simulation
         public void MakeDecision(SimBot simBot, SimulatedEngagement engagement)
         {
             //apply velocity
-            Vector2 vector = new Vector2(_direction == StrafeDirection.Left ? -simBot.bot.Chassis.Engine.Acceleration:simBot.bot.Chassis.Engine.Acceleration, 0);
+            Vector2 vector = new Vector2(_direction == StrafeDirection.Left ? -simBot.bot.Chassis.Engine.StrafeAcceleration:simBot.bot.Chassis.Engine.StrafeAcceleration, 0);
             simBot.body.accelerationPerSecond = vector;
             
             simBot.body.rotation.SetFromToRotation( simBot.body.position, simBot.opponent.body.position);
-            ClampSpeed(simBot.body, simBot.bot.Chassis.Engine.MaxSpeed);  
+            ClampSpeed(simBot.body, simBot.bot.Chassis.Engine.StrafeMaxSpeed);  
             
             engagement.SendEvent(new MoveDecisionEvent(simBot, vector));
         }
 
         public static void ClampSpeed(SimulatedBody body, float maxSpeed)
         {
-            float magnitude = body.velocityPerSecond.sqrMagnitude;
+            return;
+            float magnitude = body.velocityPerSecond.magnitude;
             if (magnitude > maxSpeed)
             {
                 float modifier = magnitude / maxSpeed;

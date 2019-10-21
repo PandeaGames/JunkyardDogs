@@ -18,14 +18,15 @@ namespace JunkyardDogs.Simulation
         protected override Logic GetDecisionWeight(SimBot simBot, SimulatedEngagement engagement, Weapon weapon)
         {
             DecisionWeaponChargeLogic logic = new DecisionWeaponChargeLogic();
+            logic.plane = weapon.GetSpec<Specifications.Weapon>().DecisionPlane;
             
-            if (simBot.IsChargingWeapon(_armamentLocation))
+            if (simBot.IsChargingWeapon(_armamentLocation, logic.plane))
             {
-                logic.priority = (int) DecisionPriority.PoweringWeapon;
+                logic.priority = DecisionPriority.PoweringWeapon;
             }
             else
             {
-                logic.priority = (int) DecisionPriority.None;
+                logic.priority = DecisionPriority.None;
             }
 
             return logic;

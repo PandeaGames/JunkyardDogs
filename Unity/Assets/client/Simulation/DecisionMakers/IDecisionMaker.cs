@@ -11,6 +11,12 @@ namespace JunkyardDogs.Simulation
         FireWeapon = 6
     }
     
+    public enum DecisionPlane
+    {
+        Movement = 1,
+        Base = 0
+    }
+    
     public interface IDecisionMaker
     {
         Logic GetDecisionWeight(SimBot simBot, SimulatedEngagement engagement);

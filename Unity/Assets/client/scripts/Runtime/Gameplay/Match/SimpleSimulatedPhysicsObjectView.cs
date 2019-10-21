@@ -4,7 +4,7 @@ using UnityEngine;
 public abstract class SimpleSimulatedPhysicsObjectView : SimpleSimulatedObjectView
 {
     protected SimPhysicsObject simPhysicsObject;
-    protected GameObject view;
+    public GameObject view;
     protected Vector3 scale = Vector3.one;
     
     public SimpleSimulatedPhysicsObjectView(SimpleSimulatedEngagement viewContainer, SimObject simObject) : base(viewContainer, simObject)
@@ -22,10 +22,16 @@ public abstract class SimpleSimulatedPhysicsObjectView : SimpleSimulatedObjectVi
 
     public override void Update()
     {
-        view.transform.position = new Vector3(simPhysicsObject.body.position.x, 0, simPhysicsObject.body.position.y);
-        view.transform.rotation = Quaternion.Euler(0, -90 - (simPhysicsObject.body.rotation.deg360 +90), 0);
-        view.transform.localScale = scale;
+        SyncronizeWithBody(view.transform);
     }
+
+    protected void SyncronizeWithBody(Transform transform)
+    {
+        transform.position = new Vector3(simPhysicsObject.body.position.x, 0, simPhysicsObject.body.position.y);
+        transform.rotation = Quaternion.Euler(0, -90 - (simPhysicsObject.body.rotation.deg360 +90), 0);
+        transform.localScale = scale;
+    }
+    
     
     public override void Destroy()
     {

@@ -1,5 +1,6 @@
 using System;
 using JunkyardDogs.Simulation;
+using TMPro;
 using UnityEngine;
 
 public class MatchUIBehaviour : MonoBehaviour, ISimulatedEngagementEventHandler
@@ -10,12 +11,16 @@ public class MatchUIBehaviour : MonoBehaviour, ISimulatedEngagementEventHandler
     [SerializeField] 
     private RectTransform _botStatusContainer;
 
+    [SerializeField] 
+    private MatchTimerUI _matchTimerUI;
+
     private SimulatedEngagement _simulatedEngagement;
     
     public void Setup(SimulatedEngagement simulatedEngagement)
     {
         _simulatedEngagement = simulatedEngagement;
         simulatedEngagement.AddEventHandler(this);
+        _matchTimerUI.Setup(simulatedEngagement);
     }
 
     private void OnDestroy()

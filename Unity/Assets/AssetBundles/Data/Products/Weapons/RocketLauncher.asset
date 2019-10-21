@@ -18,6 +18,8 @@ MonoBehaviour:
   _power: 0
   _armourPiercing: 0
   _stun: 0
+  _knockback: 35
+  _decisionPlane: 0
   _shell: {fileID: 114578618517062428}
 --- !u!114 &114578618517062428
 MonoBehaviour:
@@ -34,5 +36,5 @@ MonoBehaviour:
   _volume: 0
   _damage: 30
   _effects: []
-  _speed: 1.5
+  _speed: 4
   _radius: 0.4
