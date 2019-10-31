@@ -260,6 +260,16 @@ MonoBehaviour:
     - 
     - 
     Flags: 0000
+  - Term: UI.eventdialog.title
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - Veranstaltung
+    - Event
+    Flags: 0000
   mLanguages:
   - Name: German
     Code: de
