@@ -438,6 +438,8 @@
                 <e p="LightboxCamera.cs" t="Include" />
                 <e p="MatchStateRenderer.cs" t="Include" />
                 <e p="Navigation" t="Include">
+                  <e p="ComponentListItem.cs" t="Include" />
+                  <e p="ComponentListView.cs" t="Include" />
                   <e p="HubTabGroup.cs" t="Include" />
                   <e p="PanController.cs" t="Include" />
                 </e>
@@ -850,8 +852,11 @@
             </e>
             <e p="Dialogs" t="Include">
               <e p="Dialog.cs" t="Include" />
+              <e p="DialogAnimationEvents.cs" t="Include" />
+              <e p="DialogDestructor.cs" t="Include" />
               <e p="MessageDialog.cs" t="Include" />
               <e p="OptionDisplay.cs" t="Include" />
+              <e p="TouchBlocker.cs" t="Include" />
               <e p="ViewModels" t="Include">
                 <e p="MessageDialogViewModel.cs" t="Include" />
               </e>
@@ -909,6 +914,10 @@
           </e>
           <e p="Singleton.cs" t="Include" />
           <e p="UI" t="Include">
+            <e p="AbstractListItem.cs" t="Include" />
+            <e p="AbstractListView.cs" t="Include" />
+            <e p="IListItem.cs" t="Include" />
+            <e p="IListView.cs" t="Include" />
             <e p="SImpleButtonTab.cs" t="Include" />
             <e p="Tab.cs" t="Include" />
             <e p="TabGroup.cs" t="Include" />
@@ -939,6 +948,7 @@
             <e p="AbstractUserViewModel.cs" t="Include" />
             <e p="AbstractViewModel.cs" t="Include" />
             <e p="CameraViewModel.cs" t="Include" />
+            <e p="IListViewModel.cs" t="Include" />
             <e p="IViewModel.cs" t="Include" />
           </e>
           <e p="Views" t="Include">

@@ -72,8 +72,7 @@ public class EditBehaviourScreen : ScreenView
         _directiveListContainer.DestroyChildren();
         _directiveViewInstanceToSlotIndexTable.Clear();
         _directiveViewTable.Clear();
-        
-        
+
         if (_viewModel.Bot.CPU != null)
         {
             ComponentCPU componentCpu = _viewModel.Bot.CPU;
@@ -99,7 +98,13 @@ public class EditBehaviourScreen : ScreenView
 
     private void OnDestroy()
     {
+        foreach (KeyValuePair<int, DirectiveView> kvp in _directiveViewTable)
+        {
+            kvp.Value.OnClick -= ViewOnClick;
+        }
+        
         _viewModel.OnSwapCPU -= ViewModelOnSwapCpu;
+        _viewModel.OnDirectiveChosen -= ViewModelOnDirectiveChosen;
         _viewModel = null;
         Destroy(_directiveSlotView);
     }

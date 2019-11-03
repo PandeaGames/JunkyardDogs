@@ -3,78 +3,37 @@
   <component name="ChangeListManager">
     <list default="true" id="6b6defc3-a091-4fde-bf1e-c3bdd679481d" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Art/Bots/RenderConfigs/MatchBotRenderConfig.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Art/Bots/RenderConfigs/MatchBotRenderConfig.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Art/Components/Weapons/Drill.mb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Art/Components/Weapons/Drill.mb.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Art/Factories/JunkyardDogs3DComponentFactory.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Art/Factories/JunkyardDogs3DComponentFactory.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Art/Views/EarthNavigation.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Art/Views/EarthNavigation.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Blueprints/Components/Chassis/AkaminaHeavyPulseChassis.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Blueprints/Components/Chassis/AkaminaHeavyPulseChassis.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Competitors/CompetitorBlueprintDataSource.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Competitors/CompetitorBlueprintDataSource.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Competitors/ParticipantDataSource.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Competitors/ParticipantDataSource.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/Engines/StandardFast.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/Engines/StandardFast.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/Engines/StandardSlow.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/Engines/StandardSlow.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/Skylabs/Weapons/Deagle.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/Skylabs/Weapons/Deagle.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/Skylabs/Weapons/FrickinLaser.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/Skylabs/Weapons/FrickinLaser.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/Skylabs/Weapons/SpiralPower.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/Skylabs/Weapons/SpiralPower.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/SpecificationDataSource.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/SpecificationDataSource.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/Weapons/FastPulseWeapon.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/Weapons/FastPulseWeapon.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/Weapons/MyTestPulseWeapon.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/Weapons/MyTestPulseWeapon.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/Weapons/RocketLauncher.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Products/Weapons/RocketLauncher.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Tournaments/TournamentDataSource.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Tournaments/TournamentDataSource.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/DecisionAndWeightExport.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/DecisionAndWeightExport.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/DecisionLogicGroupExporter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/DecisionLogicGroupExporter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/DecisionsAndPriorityExport.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/DecisionsAndPriorityExport.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/WeightedDecisionsTestExporter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/WeightedDecisionsTestExporter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PandeaGames/Runtime/Gameplay/Camera/CameraAgent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PandeaGames/Runtime/Gameplay/Camera/CameraAgent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PandeaGames/Runtime/Gameplay/Camera/CameraMaster.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PandeaGames/Runtime/Gameplay/Camera/CameraMaster.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PandeaGames/Runtime/Gameplay/Camera/SimpleFollowAgent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PandeaGames/Runtime/Gameplay/Camera/SimpleFollowAgent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PandeaGames/ViewModels/CameraViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PandeaGames/ViewModels/CameraViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/Data/Balance/BalanceData/EngineBalanceData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Data/Balance/BalanceData/EngineBalanceData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/Data/Balance/BalanceData/HitscanWeaponBalanceData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Data/Balance/BalanceData/HitscanWeaponBalanceData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/Data/Balance/BalanceData/MeleeWeaponBalanceData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Data/Balance/BalanceData/MeleeWeaponBalanceData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/Data/Balance/BalanceData/PulseWeaponBalanceData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Data/Balance/BalanceData/PulseWeaponBalanceData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/Data/Balance/BalanceData/WeaponBalanceData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Data/Balance/BalanceData/WeaponBalanceData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionMoveBackwards.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionMoveBackwards.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionMoveForward.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionMoveForward.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionSimBotStatus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionSimBotStatus.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionStartWeaponCharge.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionStartWeaponCharge.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionStrafe.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionStrafe.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionStunned.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionStunned.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionWeapon.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionWeaponCharge.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionWeaponCharge.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionWeaponCoolDown.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionWeaponCoolDown.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionWeaponFire.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionWeaponFire.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/IDecisionMaker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/IDecisionMaker.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/Logic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/Logic.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/WeightedDecisionEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/WeightedDecisionEvent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimBot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimBot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimHitscanShot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimHitscanShot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimMeleeAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimMeleeAttack.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimPhysicalAttackObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimPhysicalAttackObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimPhysicsObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimPhysicsObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/Simulation/SimulatedAttacks.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Simulation/SimulatedAttacks.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/Simulation/SimulatedCollisions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Simulation/SimulatedCollisions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/Simulation/SimulatedEngagement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Simulation/SimulatedEngagement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/Simulation/SimulatedPhysics.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Simulation/SimulatedPhysics.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/Simulation/Simulation/Physics/SimulatedLineCollider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Simulation/Simulation/Physics/SimulatedLineCollider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/scenes/gameScenes/Match.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scenes/gameScenes/Match.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/scenes/testing/TournamentTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scenes/testing/TournamentTest.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Data/Components/Engine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Data/Components/Engine.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Data/Configuration/BotRenderConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Data/Configuration/BotRenderConfiguration.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Locomotion/Engine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Locomotion/Engine.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Weapons/Assailments/MeleeWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Weapons/Assailments/MeleeWeapon.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Weapons/Hitscan.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Weapons/Hitscan.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Weapons/Melee.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Weapons/Melee.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Weapons/PulseEmitter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Weapons/PulseEmitter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Weapons/Weapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Weapons/Weapon.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Controllers/MatchController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Controllers/MatchController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/Match/BotStatusBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/Match/BotStatusBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/Match/MatchUIBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/Match/MatchUIBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/Match/SimpleSimulatedEngagement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/Match/SimpleSimulatedEngagement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/Match/SimpleSimulatedPhysicsObjectView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/Match/SimpleSimulatedPhysicsObjectView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Art/UI/basictexture.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Art/UI/basictexture.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Art/UI/basictexture.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Art/UI/basictexture.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Art/Views/HubView.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Art/Views/HubView.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Gameplay/DialogConfig.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Gameplay/DialogConfig.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/I2/Resources/I2Languages.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/I2/Resources/I2Languages.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PandeaGames/Runtime/Dialogs/Dialog.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PandeaGames/Runtime/Dialogs/Dialog.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PandeaGames/Views/Services/DialogService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PandeaGames/Views/Services/DialogService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/JunkyardGameView.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/JunkyardGameView.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/Views/GarageEditBehaviourView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Views/GarageEditBehaviourView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scenes/Game.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scenes/ScreenBootstrap.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scenes/ScreenBootstrap.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scenes/gameScenes/garage.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scenes/gameScenes/garage.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scenes/screens/EditBotBehaviour.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scenes/screens/EditBotBehaviour.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scenes/screens/Preloader.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scenes/screens/Preloader.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Dialogs/ChooseFromInventoryDialog.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Dialogs/ChooseFromInventoryDialog.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Dialogs/Prefabs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Dialogs/Prefabs/ChooseBehaviourAction.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Dialogs/Prefabs/ChooseBehaviourAction.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Dialogs/Prefabs/ChooseComponentFromInventoryDialog.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Dialogs/Prefabs/ChooseComponentFromInventoryDialog.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Dialogs/Prefabs/ComponentMessageDialog.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Dialogs/Prefabs/ComponentMessageDialog.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Dialogs/Prefabs/EventDialog.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Dialogs/Prefabs/EventDialog.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Dialogs/Prefabs/TakeJunkDialog.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Dialogs/Prefabs/TakeJunkDialog.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Scenes/Garage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Scenes/Garage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Screens/EditBehaviourScreen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Screens/EditBehaviourScreen.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/ComponentRendering/BotBuilderDisplay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/ComponentRendering/BotBuilderDisplay.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/unity-ui-extensions/Examples/ColorPicker/Picker 2.0.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/unity-ui-extensions/Examples/ColorPicker/Picker 2.0.prefab" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -134,6 +93,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/client/Data/NationalityDataSource.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Data/ManufactuererDataSource.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Data/MaterialDataSource.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/ViewModels/IListViewModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Data/LootCrateDataProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Data/JunkyardStaticDataLoader.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Data/StageFormatDataProvider.cs" root0="FORCE_HIGHLIGHTING" />
@@ -159,11 +119,17 @@
     <setting file="file://$PROJECT_DIR$/Assets/client/Data/Balance/BalanceData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Data/Balance/Editor/BalanceDataManagerEditor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Data/Balance/BalanceData/LootBalanceData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/UI/AbstractListItem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Data/Balance/BalanceData/TournamentBalanceData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/UI/IListItem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/UI/IListView.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/UI/AbstractListView.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Data/Balance/BalanceData/ManufacturerBalanceData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Data/Balance/BalanceData/TournamentFormatBalanceData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Data/Balance/BalanceData/EngineBalanceData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/Navigation/ComponentListView.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Data/Balance/BalanceData/MeleeWeaponBalanceData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/Navigation/ComponentListItem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Data/Balance/BalanceData/WeaponBalanceData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Data/Balance/BalanceData/CompetitorBlueprintBalanceData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Data/Balance/BalanceData/ChassisBlueprintBalanceData.cs" root0="FORCE_HIGHLIGHTING" />
@@ -214,6 +180,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/client/Views/JunkyardPreloadView.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Views/MatchView.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Views/GarageLineupView.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scenes/testing/TournamentTest.unity" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Standard Assets/ParticleSystems/Scripts/WaterHoseParticles.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimBotDecisionPlane.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/NewBehaviourScript.cs" root0="FORCE_HIGHLIGHTING" />
@@ -251,6 +218,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/WeaponProcessorBlueprintData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/Editor/BlueprintCustomDrawer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Components/Plate.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Runtime/Dialogs/TouchBlocker.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Components/Chassis.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Components/PhysicalComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Components/Component.cs" root0="FORCE_HIGHLIGHTING" />
@@ -306,6 +274,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Weapons/Assailments/Bullet.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Weapons/Assailments/Projectile.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Materials/Material.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Runtime/Dialogs/DialogDestructor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/LoadedScreenCache.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Locomotion/Engine.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/Match/BotStatusBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
@@ -440,7 +409,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/AssetBundleManager/Editor/ExecuteInternalMono.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Runtime/Dialogs/MessageDialog.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/ComponentRendering/ChassisRenderer.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Runtime/Dialogs/Dialog.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Runtime/Dialogs/Dialog.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Runtime/Dialogs/ViewModels/MessageDialogViewModel.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Shaders/TestShader.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/AssetBundleManager/Editor/BuildScript.cs" root0="FORCE_HIGHLIGHTING" />
@@ -522,6 +491,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimPulseAttack.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/I2/Localization/Scripts/Editor/Inspectors/LanguageSourceInspector.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/Simulation/Physics/SimulatedCollider.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Runtime/Dialogs/DialogAnimationEvents.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/Simulation/Physics/SimulatedArenaCollider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/Simulation/Physics/SimulatedBody.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/Simulation/Physics/SimRotation.cs" root0="FORCE_HIGHLIGHTING" />
@@ -609,23 +579,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/Controllers/MatchController.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/Match/SimpleEffects.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/SelfDestructingParticleSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/PandeaGames/Runtime/Gameplay/Camera/CameraAgent.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimTargetView.cs" />
-        <option value="$PROJECT_DIR$/Assets/PandeaGames/Runtime/Gameplay/Camera/SimpleFollowAgent.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/Match/BotFollowCameraAgent.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/Controllers/SimulationRunnerBehaviour.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Data/Balance/BalanceData/EngineBalanceData.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Locomotion/Engine.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Components/Engine.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/Match/MatchTimerUI.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/Match/MatchUIBehaviour.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Weapons/Assailments/MeleeWeapon.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionStunned.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionSimBotStatus.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/IDecisionMaker.cs" />
         <option value="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/Logic.cs" />
         <option value="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/WeightedDecisionEvent.cs" />
         <option value="$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimBotDecisionPlane.cs" />
@@ -660,6 +613,23 @@
         <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/Match/SimpleMachineGun.cs" />
         <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/Match/SimpleSimulatedEngagement.cs" />
         <option value="$PROJECT_DIR$/Assets/ErbGameArt/3D Lasers Pack/Demo scene lasers/EGA_Laser.cs" />
+        <option value="$PROJECT_DIR$/Assets/PandeaGames/Views/Services/DialogService.cs" />
+        <option value="$PROJECT_DIR$/Assets/PandeaGames/ViewModels/IListViewModel.cs" />
+        <option value="$PROJECT_DIR$/Assets/PandeaGames/UI/IListView.cs" />
+        <option value="$PROJECT_DIR$/Assets/PandeaGames/UI/IListItem.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/Navigation/ComponentListView.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/Navigation/ComponentListItem.cs" />
+        <option value="$PROJECT_DIR$/Assets/PandeaGames/UI/AbstractListView.cs" />
+        <option value="$PROJECT_DIR$/Assets/PandeaGames/UI/AbstractListItem.cs" />
+        <option value="$PROJECT_DIR$/Assets/PandeaGames/Runtime/Dialogs/TouchBlocker.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Views/GarageEditBehaviourView.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/Screens/EditBehaviourScreen.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/Scenes/Garage.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/ComponentRendering/BotBuilderDisplay.cs" />
+        <option value="$PROJECT_DIR$/Assets/PandeaGames/Runtime/Dialogs/DialogAnimationEvents.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/Dialogs/ChooseFromInventoryDialog.cs" />
+        <option value="$PROJECT_DIR$/Assets/PandeaGames/Runtime/Dialogs/DialogDestructor.cs" />
+        <option value="$PROJECT_DIR$/Assets/PandeaGames/Runtime/Dialogs/Dialog.cs" />
       </list>
     </option>
   </component>
@@ -831,6 +801,7 @@
       <workItem from="1571087913506" duration="6632000" />
       <workItem from="1571289048876" duration="2423000" />
       <workItem from="1571616092683" duration="620000" />
+      <workItem from="1572497571336" duration="14928000" />
     </task>
     <servers />
   </component>

@@ -36,6 +36,9 @@ public abstract class Dialog<TViewModel> : MonoBehaviour, IDialog where TViewMod
 
     [NonSerialized]
     protected TViewModel _viewModel;
+    
+    [SerializeField]
+    protected Animator _animator;
 
     public void Setup(IViewModel viewModel)
     {
@@ -155,6 +158,7 @@ public abstract class Dialog<TViewModel> : MonoBehaviour, IDialog where TViewMod
 
     public void Destroy()
     {
-        Destroy(gameObject);
+        _animator.SetTrigger("Close");
+        Destroy(this);
     }
 }

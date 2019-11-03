@@ -186,12 +186,14 @@ public class BotBuilderDisplay : MonoBehaviour
 
     private void OnPointerMove(Vector3 cameraPosition, RaycastHit raycast)
     {
+        _pointerPosition = cameraPosition;
+        /*
         if(raycast.collider != null && raycast.collider.transform.parent == _bot.transform)
         {
             float delta = cameraPosition.z - _pointerPosition.z;
             //_bot.transform.rotation.SetAxisAngle(Vector3.down, _bot.transform.rotation.eulerAngles.y + delta.x);
             _bot.transform.rotation = Quaternion.AngleAxis(_bot.transform.rotation.eulerAngles.y + delta * 10, Vector3.up);
             _pointerPosition = cameraPosition;
-        }
+        }*/
     }
 }

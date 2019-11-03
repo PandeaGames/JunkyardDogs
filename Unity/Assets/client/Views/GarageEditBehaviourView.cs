@@ -57,8 +57,11 @@ namespace JunkyardDogs.Views
 
         public override void Destroy()
         {
+            _viewModel.OnChooseDirective -= ViewModelOnChooseDirective;
             _viewModel.OnSelectNewDirective -= OnSelectNewDirective;
             _viewModel.OnSwapCPU -= VmOnSwapCpu;
+            
+            _viewModel = null;
         }
 
         private void OnSelectNewDirective()

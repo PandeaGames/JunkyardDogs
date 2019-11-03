@@ -270,6 +270,36 @@ MonoBehaviour:
     - Veranstaltung
     - Event
     Flags: 0000
+  - Term: UI.cancel
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - 
+    - CancelUI
+    Flags: 0000
+  - Term: UI.components.remove
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - 
+    - Remove Component
+    Flags: 0000
+  - Term: UI.store
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - 
+    - Store
+    Flags: 0000
   mLanguages:
   - Name: German
     Code: de

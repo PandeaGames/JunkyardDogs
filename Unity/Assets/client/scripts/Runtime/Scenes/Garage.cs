@@ -32,6 +32,7 @@ public class Garage : MonoBehaviour
 
     private void Start()
     {
+        _botBuilderDisplayPrefab.SetActive(false);
         _builders = new List<BotBuilderDisplay>();
         
         _viewModel = Game.Instance.GetViewModel<GarageViewModel>(0);

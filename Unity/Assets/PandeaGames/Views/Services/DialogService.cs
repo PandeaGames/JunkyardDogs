@@ -16,7 +16,8 @@ public class DialogService : Service
 
     [Header("Optional")]
     [SerializeField]
-    private Transform _touchBlocker;
+    private GameObject _touchBlockerObject;
+    private ITouchBlocker _touchBlocker;
 
     private Dictionary<Type, GameObject> _dialogLookup;
 
@@ -44,9 +45,9 @@ public class DialogService : Service
             _dialogLookup.Add(dialogComponent.GetType(), dialogPrefab);
         }
 
-        if (_touchBlocker)
+        if (_touchBlockerObject != null)
         {
-            _touchBlocker.gameObject.SetActive(false);
+            _touchBlocker = _touchBlockerObject.GetComponent<ITouchBlocker>();
         }
         
         base.StartService(serviceManager);
@@ -87,10 +88,10 @@ public class DialogService : Service
 
         dialog.Setup(viewModel);
 
-        if (_touchBlocker)
+        if (_touchBlocker != null)
         {
             InputService.Instance.Enabled = false;
-            _touchBlocker.gameObject.SetActive(true);
+            _touchBlocker.Open(true);
         }
     }
 
@@ -118,10 +119,10 @@ public class DialogService : Service
         BlurDialog(dialog);
         dialog.Destroy();
 
-        if(_touchBlocker)
+        if(_touchBlocker != null)
         {
             InputService.Instance.Enabled = true;
-            _touchBlocker.gameObject.SetActive(false);
+            _touchBlocker.Close(true);
         }
     }
 
@@ -129,10 +130,10 @@ public class DialogService : Service
     {
         dialog.Destroy();
 
-        if (_touchBlocker)
+        if (_touchBlocker != null)
         {
             InputService.Instance.Enabled = true;
-            _touchBlocker.gameObject.SetActive(false);
+            _touchBlocker.Close(true);
         }
     }
 }

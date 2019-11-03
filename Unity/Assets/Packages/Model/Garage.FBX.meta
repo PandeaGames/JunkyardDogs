@@ -1,0 +1,234 @@
+fileFormatVersion: 2
+guid: df911e3ad7bea1f4bad69a8d40f64501
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Barrel A
+    100002: Box060
+    100004: Box077
+    100006: Box106
+    100008: Car
+    100010: FireExtinguisher001
+    100012: //RootNode
+    100014: Light005
+    100016: MergeGroup_2
+    100018: Object005
+    100020: Object015
+    100022: Plane001
+    100024: Trash
+    400000: Barrel A
+    400002: Box060
+    400004: Box077
+    400006: Box106
+    400008: Car
+    400010: FireExtinguisher001
+    400012: //RootNode
+    400014: Light005
+    400016: MergeGroup_2
+    400018: Object005
+    400020: Object015
+    400022: Plane001
+    400024: Trash
+    2100000: 'Material #121'
+    2100002: 'Material #122'
+    2100004: 'Material #118'
+    2100006: 'Material #120'
+    2100008: 'Material #119'
+    2100010: 'Material #117'
+    2100012: 'Material #124'
+    2100014: 'Material #123'
+    2100016: 'Material #140'
+    2100018: 'Material #141'
+    2100020: 'Material #143'
+    2100022: 'Material #125'
+    2300000: Barrel A
+    2300002: Box060
+    2300004: Box077
+    2300006: Box106
+    2300008: Car
+    2300010: FireExtinguisher001
+    2300012: Light005
+    2300014: MergeGroup_2
+    2300016: Object005
+    2300018: Object015
+    2300020: Plane001
+    2300022: Trash
+    3300000: Barrel A
+    3300002: Box060
+    3300004: Box077
+    3300006: Box106
+    3300008: Car
+    3300010: FireExtinguisher001
+    3300012: Light005
+    3300014: MergeGroup_2
+    3300016: Object005
+    3300018: Object015
+    3300020: Plane001
+    3300022: Trash
+    4300000: Object005
+    4300002: Object015
+    4300004: Box060
+    4300006: Plane001
+    4300008: Box077
+    4300010: Box106
+    4300012: Light005
+    4300014: MergeGroup_2
+    4300016: Car
+    4300018: Trash
+    4300020: Barrel A
+    4300022: FireExtinguisher001
+    6400000: Barrel A
+    6400002: Box060
+    6400004: Box077
+    6400006: Box106
+    6400008: Car
+    6400010: FireExtinguisher001
+    6400012: Light005
+    6400014: MergeGroup_2
+    6400016: Object005
+    6400018: Object015
+    6400020: Plane001
+    6400022: Trash
+    7400000: Take 001
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #117'
+    second: {fileID: 2100000, guid: 034e28905fe4a424fa2853cdbb2729ca, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #118'
+    second: {fileID: 2100000, guid: 8623825b5807ae140b110478bc659cc8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #119'
+    second: {fileID: 2100000, guid: a20681923129de44899025c8f6fe149d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #120'
+    second: {fileID: 2100000, guid: 529e763a95e54e8489e1a02fc2c3e1c3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #121'
+    second: {fileID: 2100000, guid: 529e763a95e54e8489e1a02fc2c3e1c3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #122'
+    second: {fileID: 2100000, guid: 529e763a95e54e8489e1a02fc2c3e1c3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #123'
+    second: {fileID: 2100000, guid: 529e763a95e54e8489e1a02fc2c3e1c3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #124'
+    second: {fileID: 2100000, guid: f976a3cba4231a248a3b213b33e5414c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #125'
+    second: {fileID: 2100000, guid: 224165e349dacbf4c94ed61c25896f17, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #140'
+    second: {fileID: 2100000, guid: 224165e349dacbf4c94ed61c25896f17, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #141'
+    second: {fileID: 2100000, guid: 224165e349dacbf4c94ed61c25896f17, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #143'
+    second: {fileID: 2100000, guid: 224165e349dacbf4c94ed61c25896f17, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1.7
+    meshCompression: 0
+    addColliders: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 58
+    normalImportMode: 1
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
