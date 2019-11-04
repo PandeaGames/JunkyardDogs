@@ -300,6 +300,16 @@ MonoBehaviour:
     - 
     - Store
     Flags: 0000
+  - Term: screen.choose_nation_title
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - 
+    - Choose Nationality
+    Flags: 0000
   mLanguages:
   - Name: German
     Code: de

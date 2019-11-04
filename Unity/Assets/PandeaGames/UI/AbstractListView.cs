@@ -16,6 +16,11 @@ public abstract class AbstractListView<TItemData, TListItemView> : MonoBehaviour
     private int _selectedIndex;
     public event Action<TItemData> OnItemSelected;
 
+    private void Start()
+    {
+        _listItemViewGO.SetActive(false);
+    }
+    
     public void SetData(IEnumerable<TItemData> data)
     {
         List<TItemData> list = new List<TItemData>(data);

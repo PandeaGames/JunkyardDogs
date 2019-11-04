@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\ccove\.Rider2019.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\ccove\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_Unity.-80025830.00" t="ExcludeRecursive" />
-    <e p="C:\Users\ccove\Documents\JunkyardDogs\Unity" t="IncludeRecursive">
+    <e p="C:\Users\ccove\.Rider2018.1\system\resharper-host\local\Transient\ReSharperHost\v12\SolutionCaches\_Unity.1825822070.00" t="ExcludeRecursive" />
+    <e p="C:\Users\ccove\JunkyardDogs\Unity" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
@@ -437,6 +436,8 @@
                 <e p="DirectiveView.cs" t="Include" />
                 <e p="LightboxCamera.cs" t="Include" />
                 <e p="MatchStateRenderer.cs" t="Include" />
+                <e p="NationalityDisplay.cs" t="Include" />
+                <e p="NationalityListView.cs" t="Include" />
                 <e p="Navigation" t="Include">
                   <e p="ComponentListItem.cs" t="Include" />
                   <e p="ComponentListView.cs" t="Include" />
@@ -1746,19 +1747,13 @@
             <e p="UISoftAdditive.shader" t="Include" />
           </e>
         </e>
-        <e p="UnityVC" t="Include">
-          <e p="Editor" t="Include">
-            <e p="StandardShaderVCGUI.cs" t="Include" />
-          </e>
-          <e p="StandardSpecularVC.shader" t="Include" />
-          <e p="StandardVC.shader" t="Include" />
-          <e p="UnityVC.cginc" t="Include" />
-          <e p="UnityVCShadow.cginc" t="Include" />
-        </e>
       </e>
+      <e p="Library" t="ExcludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="packages" t="ExcludeRecursive" />
-      <e p="Temp\bin" t="ExcludeRecursive" />
+      <e p="Temp" t="ExcludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+      </e>
       <e p="Unity.sln" t="IncludeFlat" />
     </e>
   </component>
