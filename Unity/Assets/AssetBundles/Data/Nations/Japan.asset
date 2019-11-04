@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: Japan
   m_EditorClassIdentifier: 
   Distinctions: []
+  breakpoints:
+    _id: NationalityBreakpoints

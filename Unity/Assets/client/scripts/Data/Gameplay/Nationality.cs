@@ -2,6 +2,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using JunkyardDogs.Data;
 using JunkyardDogs.Simulation;
 using JunkyardDogs.Data.Balance;
 
@@ -10,11 +11,16 @@ public class Nationality : ScriptableObject, IStaticDataBalance<NationBalanceObj
 {
     [SerializeField]
     public Distinction[] Distinctions;
+
+    [SerializeField, BreakpointStaticDataReference]
+    public BreakpointStaticDataReference breakpoints;
     
     public void ApplyBalance(NationBalanceObject balance)
     {
         this.name = balance.name;
-
+        breakpoints = new BreakpointStaticDataReference();
+        breakpoints.ID = balance.breakpoints;
+        
         List<Distinction> list = new List<Distinction>();
 
         ProcessDistinction(list, balance.distinctionId_01, balance.distinctionValue_01);

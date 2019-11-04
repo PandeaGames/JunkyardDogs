@@ -9,12 +9,21 @@ using UnityEngine.Serialization;
 using UnityEditor;
 #endif
 
+public enum TournamentUnlockCriteria
+{
+    ExpBreakpoint,
+    NationalExpBreakpoint
+}
+
 [CreateAssetMenu(menuName = "Tournaments/Tournament")]
 public class Tournament : ScriptableObject, IStaticDataBalance<TournamentBalanceObject>
 {
     [Header("Format")]
     [SerializeField, TournamentFormatStaticDataReference]
     private TournamentFormatStaticDataReference _format;
+
+    [SerializeField]
+    private NationalityStaticDataReference nation;
     
     [SerializeField, ParticipantStaticDataReference]
     private List<ParticipantStaticDataReference> _participants;
@@ -24,7 +33,16 @@ public class Tournament : ScriptableObject, IStaticDataBalance<TournamentBalance
     
     [SerializeField]
     private int _seasonDelaySeconds;
-
+    
+    [SerializeField]
+    private TournamentUnlockCriteria unlockCriteria;
+    [SerializeField]
+    private NationalityStaticDataReference unlockNation;
+    [SerializeField]
+    private int nationalExpUnlockBreakpoint;
+    [SerializeField]
+    private int expUnlockBreakpoint;
+    
     [SerializeField, LootCrateStaticDataReference]
     private List<LootCrateStaticDataReference> _lootCrateRewardsPerStage;
     
@@ -81,12 +99,20 @@ public class Tournament : ScriptableObject, IStaticDataBalance<TournamentBalance
         _format = new TournamentFormatStaticDataReference();
         _participants = new List<ParticipantStaticDataReference>();
         _lootCrateRewardsPerStage = new List<LootCrateStaticDataReference>();
+        nation = new NationalityStaticDataReference();
+        unlockNation = new NationalityStaticDataReference();
 
         _roundPaceSeconds = balance.roundPaceSeconds;
         _seasonDelaySeconds = balance.seasonDelaySeconds;
 
         _format.ID = balance.format;
 
+        nation.ID = balance.nation;
+        unlockNation.ID = balance.unlockNation;
+        unlockCriteria = BalanceDataUtilites.DecodeEnumSingle<TournamentUnlockCriteria>(balance.unlockCriteria);
+        nationalExpUnlockBreakpoint = balance.expUnlockBreakpoint;
+        expUnlockBreakpoint = balance.expUnlockBreakpoint;
+         
         _lootCrateRewards = new LootCrateStaticDataReference();
         _lootCrateRewards.ID = balance.lootCrateRewards;
         

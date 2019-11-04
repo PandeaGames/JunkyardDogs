@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0894e466a7474713be1f889f4cbdc2c5, type: 3}
+  m_Name: BreakpointDataSource
+  m_EditorClassIdentifier: 
+  Data:
+  - {fileID: 11400000, guid: 62cf4eb8d0be3144db88f79fd74fdee8, type: 2}
+  - {fileID: 11400000, guid: 6479e9d4e4355a746a7efa7cd56b2711, type: 2}

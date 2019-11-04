@@ -62,7 +62,6 @@ namespace JunkyardDogs.Data.Balance
 
                 if (data == null && AllowDataCreationOnImport)
                 {
-
                     data = ScriptableObject.CreateInstance<TUnityData>();
 
                     if (!Directory.Exists(GetNewDataFolder()))

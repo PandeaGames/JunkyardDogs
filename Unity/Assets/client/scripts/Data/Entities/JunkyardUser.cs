@@ -7,14 +7,18 @@ using WeakReference = PandeaGames.Data.WeakReferences.WeakReference;
 using Component = JunkyardDogs.Components.Component;
 
 [Serializable]
-public class JunkyardUser : User, ILootCrateConsumer
+public class JunkyardUser : User, ILootCrateConsumer, IExperienceModel
 {
     [SerializeField]
     private Competitor _competitor;
+
+    [SerializeField]
+    private Experience _experience;
     
     public Wallet Wallet { get; set; }
     public Competitor Competitor { get { return _competitor; } set { _competitor = value; } }
     public Tournaments Tournaments { get; set; }
+    public Experience Experience  { get { return _experience; } set { _experience = value; } }
 
     public void AddComponent(Component component)
     {
@@ -25,6 +29,7 @@ public class JunkyardUser : User, ILootCrateConsumer
     {
         Competitor = new Competitor();
         Tournaments = new Tournaments();
+        Experience = new Experience();
     }
     
     public void Consume(AbstractLootCrateData crateData, int seed)
@@ -133,5 +138,20 @@ public class JunkyardUser : User, ILootCrateConsumer
     private void Consume(DirectiveBlueprintData blueprint, int seed)
     {
         Competitor.Inventory.AddComponent(blueprint.DoGenerate(seed));
+    }
+
+    public int GetExp(Nationality nationality)
+    {
+        return Experience.GetExp(nationality);
+    }
+
+    public void AddExp(Nationality nationality, int amount)
+    {
+        Experience.AddExp(nationality, amount);
+    }
+
+    public int GetTotalExp()
+    {
+        return Experience.GetTotalExp();
     }
 }

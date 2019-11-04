@@ -14,11 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _format:
     _id: Challenge
+  nation:
+    _id: Canada
   _participants:
   - _id: BenBot01Participant
   - _id: KaydeeBot01Participant
   _roundPaceSeconds: 10
   _seasonDelaySeconds: 30
+  unlockCriteria: 1
+  unlockNation:
+    _id: Canada
+  nationalExpUnlockBreakpoint: 1
+  expUnlockBreakpoint: 1
   _lootCrateRewardsPerStage: []
   _lootCrateRewards:
     _id: NewCrateData

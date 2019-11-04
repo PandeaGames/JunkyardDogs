@@ -9,8 +9,13 @@ public struct TournamentBalanceObject:IStaticDataBalanceObject
 {
     public string name;
     public string format;
+    public string nation;
     public int roundPaceSeconds;
     public int seasonDelaySeconds;
+    public string unlockNation;
+    public string unlockCriteria;
+    public int nationalExpUnlockBreakpoint;
+    public int expUnlockBreakpoint;
     public string lootCrateRewards;
 
     public string participant01;

@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using JunkyardDogs.Data;
 using UnityEngine.UI;
 using PandeaGames;
+using PandeaGames.Runtime.Dialogs.ViewModels;
 using PandeaGames.Views.Screens;
 using WeakReference = PandeaGames.Data.WeakReferences.WeakReference;
 
@@ -32,6 +34,6 @@ public class ChooseCountryScreen : ScreenView
 
     private void OnNationClick(NationalityStaticDataReference nationalityReference)
     {
-        _viewModel.SetChosenNationality(nationalityReference);
+        _viewModel.RequestChosenNationality(nationalityReference);
     }
 }

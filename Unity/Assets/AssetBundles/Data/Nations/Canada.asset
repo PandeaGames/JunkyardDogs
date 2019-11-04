@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: Canada
   m_EditorClassIdentifier: 
   Distinctions: []
+  breakpoints:
+    _id: NationalityBreakpoints

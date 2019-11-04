@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _format:
     _id: SingleElim_8
+  nation:
+    _id: Canada
   _participants:
   - _id: UserParticipant
   - _id: FlorianParticipation
@@ -25,6 +27,11 @@ MonoBehaviour:
   - _id: FlorianParticipation
   _roundPaceSeconds: 10
   _seasonDelaySeconds: 30
+  unlockCriteria: 1
+  unlockNation:
+    _id: Canada
+  nationalExpUnlockBreakpoint: 1
+  expUnlockBreakpoint: 1
   _lootCrateRewardsPerStage: []
   _lootCrateRewards:
     _id: WeightedJunkyardCrate

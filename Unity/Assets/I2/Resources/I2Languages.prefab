@@ -278,7 +278,7 @@ MonoBehaviour:
     - 
     Languages_Touch:
     - 
-    - CancelUI
+    - Cancel
     Flags: 0000
   - Term: UI.components.remove
     TermType: 0
@@ -309,6 +309,37 @@ MonoBehaviour:
     Languages_Touch:
     - 
     - Choose Nationality
+    Flags: 0000
+  - Term: screen.choose_nation.instruction
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - 
+    - Choose your characters nationality. This will determine where in the world your
+      training begins. Good luck!
+    Flags: 0000
+  - Term: UI.ok
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - Ok
+    - Ok
+    Flags: 0000
+  - Term: screen.choose_nation.confirm_msg
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - 
+    - Are you sure you want to choose this country?
     Flags: 0000
   mLanguages:
   - Name: German

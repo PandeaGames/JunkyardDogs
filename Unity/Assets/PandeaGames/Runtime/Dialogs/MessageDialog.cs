@@ -2,8 +2,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using System;
+using I2.Loc;
 using PandeaGames.Runtime.Dialogs.ViewModels;
 using PandeaGames.ViewModels;
+using TMPro;
 using UnityEngine.UI;
 
 public class MessageDialog<TViewModel> : Dialog<MessageDialogViewModel> where TViewModel:MessageDialogViewModel
@@ -13,25 +15,24 @@ public class MessageDialog<TViewModel> : Dialog<MessageDialogViewModel> where TV
     [SerializeField]
     private Transform _buttonContainer;
 
+    [SerializeField] private TMP_Text _messageText;
+
     protected override void Initialize()
     {
         base.Initialize();
-        _viewModel.OnOptionSelected += OnOptionSelected;
         DisplayOptions(_viewModel.options);
+        _messageText.text = LocalizationManager.GetTranslation(_viewModel.Msg);
     }
 
     protected virtual void DisplayOptions(List<MessageDialogViewModel.Option> options)
     {
         foreach(MessageDialogViewModel.Option option in options)
         {
-            GameObject button = Instantiate(_button);
+            GameObject button = Instantiate(_button, _buttonContainer.transform, false);
             button.SetActive(true);
-            button.transform.SetParent(_buttonContainer.transform, false);
             IOptionDisplay optionDisplay = button.GetComponent<IOptionDisplay>();
             optionDisplay.DisplayOption(option);
-
-            Button buttonComponent = button.GetComponent<Button>();
-            buttonComponent.onClick.AddListener(() => OnOptionSelected(option));
+            optionDisplay.OptionSelected += OnOptionSelected;
         }
     }
 
@@ -43,6 +44,7 @@ public class MessageDialog<TViewModel> : Dialog<MessageDialogViewModel> where TV
 
     public interface IOptionDisplay
     {
+        event Action<MessageDialogViewModel.Option> OptionSelected;
         void DisplayOption(MessageDialogViewModel.Option option);
     }
 }

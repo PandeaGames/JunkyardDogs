@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efd3a1f2915d450b8a6a51be8f443a50, type: 3}
+  m_Name: BreakpointBalanceData
+  m_EditorClassIdentifier: 
+  TableName: Breakpoints
+  AllowImport: 1
+  AllowDataCreationOnImport: 1
+  _dataList: {fileID: 11400000, guid: 328ef1c8c211a3c418847991ec1bf916, type: 2}

@@ -73,4 +73,9 @@ public class StaticDataReference<TDataBase, TData, TReference, TDirectory>
     {
         return other != null && other.ID == ID;
     }
+
+    public override int GetHashCode()
+    {
+        return ID.GetHashCode();
+    }
 }

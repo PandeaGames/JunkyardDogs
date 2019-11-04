@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\ccove\.Rider2018.1\system\resharper-host\local\Transient\ReSharperHost\v12\SolutionCaches\_Unity.1825822070.00" t="ExcludeRecursive" />
-    <e p="C:\Users\ccove\JunkyardDogs\Unity" t="IncludeRecursive">
+    <e p="C:\Users\ccove\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\ccove\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_Unity.-80025830.00" t="ExcludeRecursive" />
+    <e p="C:\Users\ccove\Documents\JunkyardDogs\Unity" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
@@ -92,6 +93,7 @@
                 <e p="BlueprintBalanceData.cs" t="Include" />
                 <e p="BlueprintLootBalanceData.cs" t="Include" />
                 <e p="BotBlueprintBalanceData.cs" t="Include" />
+                <e p="BreakpointBalanceData.cs" t="Include" />
                 <e p="ChassisBlueprintBalanceData.cs" t="Include" />
                 <e p="CompetitorBlueprintBalanceData.cs" t="Include" />
                 <e p="CPUBalanceData.cs" t="Include" />
@@ -134,6 +136,8 @@
             </e>
             <e p="BlueprintDataProvider.cs" t="Include" />
             <e p="BlueprintDataSource.cs" t="Include" />
+            <e p="BreakpointDataProvider.cs" t="Include" />
+            <e p="BreakpointDataSource.cs" t="Include" />
             <e p="Currency" t="Include">
               <e p="Currency.cs" t="Include" />
               <e p="CurrencyData.cs" t="Include" />
@@ -248,8 +252,10 @@
                 <e p="Competitor.cs" t="Include" />
                 <e p="CompetitorProvider.cs" t="Include" />
                 <e p="DataCompetitorProvider.cs" t="Include" />
+                <e p="Experience.cs" t="Include" />
                 <e p="Inventory.cs" t="Include" />
                 <e p="JunkyardUser.cs" t="Include" />
+                <e p="NationalExperience.cs" t="Include" />
                 <e p="Record.cs" t="Include" />
                 <e p="StageState.cs" t="Include" />
                 <e p="Tournaments.cs" t="Include" />
@@ -257,6 +263,7 @@
                 <e p="Wallet.cs" t="Include" />
               </e>
               <e p="Gameplay" t="Include">
+                <e p="BreakpointData.cs" t="Include" />
                 <e p="Nationality.cs" t="Include" />
                 <e p="SpecificationCatalogue.cs" t="Include" />
               </e>
@@ -361,6 +368,7 @@
                 <e p="ComponentMessageDialog.cs" t="Include" />
                 <e p="EventDialog.cs" t="Include" />
                 <e p="TakeJunkDialog.cs" t="Include" />
+                <e p="UserDIalog.cs" t="Include" />
                 <e p="ViewModels" t="Include">
                   <e p="ChooseActionDialogViewModel.cs" t="Include" />
                   <e p="ChooseFromInventoryViewModel.cs" t="Include" />
@@ -1748,12 +1756,9 @@
           </e>
         </e>
       </e>
-      <e p="Library" t="ExcludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="packages" t="ExcludeRecursive" />
-      <e p="Temp" t="ExcludeRecursive">
-        <e p="bin" t="ExcludeRecursive" />
-      </e>
+      <e p="Temp\bin" t="ExcludeRecursive" />
       <e p="Unity.sln" t="IncludeFlat" />
     </e>
   </component>

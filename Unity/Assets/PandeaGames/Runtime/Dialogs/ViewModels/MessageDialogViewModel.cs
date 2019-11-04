@@ -29,12 +29,23 @@ namespace PandeaGames.Runtime.Dialogs.ViewModels
         public event OptionDelegate OnOptionSelected;
 
         private List<Option> _options;
-
         public List<Option> options { get { return _options; } }
+
+        private string _msg;
+        public string Msg
+        {
+            get { return _msg; }
+        }
         
         public void SetOptions(List<Option> options)
         {
             _options = options;
+        }
+        
+        public void SetOptions(List<Option> options, string msg)
+        {
+            _options = options;
+            _msg = msg;
         }
 
         public void SelectOption(Option option)
