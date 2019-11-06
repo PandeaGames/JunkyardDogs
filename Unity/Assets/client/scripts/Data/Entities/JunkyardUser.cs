@@ -15,9 +15,15 @@ public class JunkyardUser : User, ILootCrateConsumer, IExperienceModel
     [SerializeField]
     private Experience _experience;
     
-    public Wallet Wallet { get; set; }
+    [SerializeField]
+    private Wallet _wallet;
+    
+    [SerializeField]
+    private Tournaments _tournaments;
+    
+    public Wallet Wallet { get { return _wallet; } set { _wallet = value; }}
     public Competitor Competitor { get { return _competitor; } set { _competitor = value; } }
-    public Tournaments Tournaments { get; set; }
+    public Tournaments Tournaments { get { return _tournaments; } set { _tournaments = value; } }
     public Experience Experience  { get { return _experience; } set { _experience = value; } }
 
     public void AddComponent(Component component)
@@ -154,4 +160,6 @@ public class JunkyardUser : User, ILootCrateConsumer, IExperienceModel
     {
         return Experience.GetTotalExp();
     }
+    
+    
 }

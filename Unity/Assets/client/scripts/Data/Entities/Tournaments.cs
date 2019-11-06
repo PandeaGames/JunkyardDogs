@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Data;
+using UnityEngine;
 
 public class TournamentMetaState
 {
@@ -41,13 +42,23 @@ public static class TournamentMetaStateUtils
     }
 }
 
+[Serializable]
+public class TournamentMetaStatesDictionary : Dictionary<string, TournamentMetaState>
+{
+    
+}
+
+[Serializable]
 public class Tournaments
 {
-    public Dictionary<string, TournamentMetaState> TournamentStates {get;set;}
+    [SerializeField]
+    private TournamentMetaStatesDictionary _tournamentStates;
+    
+    public TournamentMetaStatesDictionary TournamentStates {get { return _tournamentStates; } set { _tournamentStates = value; }}
 
     public Tournaments()
     {
-        TournamentStates = new Dictionary<string, TournamentMetaState>();
+        TournamentStates = new TournamentMetaStatesDictionary();
     }
     
     public void UpdateTournament(TournamentState state)

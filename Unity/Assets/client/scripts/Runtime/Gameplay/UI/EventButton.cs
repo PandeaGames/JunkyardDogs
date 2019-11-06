@@ -44,8 +44,6 @@ public class EventButton : MonoBehaviour
             Vector3 position = Camera.main.WorldToScreenPoint(_3DTransformLink.position);
             transform.position = position;
         }
-        
-        
     }
 
     private void onClick()

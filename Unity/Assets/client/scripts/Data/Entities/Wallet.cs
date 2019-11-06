@@ -1,11 +1,15 @@
 using System;
 using System.Collections.Generic;
 using JunkyardDogs.Data;
+using UnityEngine;
 
 [Serializable]
 public class Wallet
 {
-    public List<Currency> Currency { get; set; }
+    [SerializeField] 
+    private List<Currency> _currency;
+    
+    public List<Currency> Currency { get { return _currency; } set { _currency = value; } }
 
     public Wallet()
     {

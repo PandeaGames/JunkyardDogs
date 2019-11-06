@@ -52,10 +52,20 @@ public class ViewUserDataWindow : EditorWindow
         {
             OnUserGUI(_user);
         }
+        
+        var editor = Editor.CreateEditor(this);
+        if (editor != null)
+        {
+            editor.OnInspectorGUI();
+        }    
+        
+       // Debug.Log(_user.);
     }
 
     private void OnUserGUI(JunkyardUser user)
     {
+        
+        
        /* Competitor competitor = user.Competitor;
         Inventory inventory = competitor.Inventory;
         //WeakReference nationalityReference = competitor.Nationality;

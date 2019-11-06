@@ -356,5 +356,13 @@ namespace JunkyardDogs.Data
             
         }
     }
+    
+    public class NationalityStaticDataReferenceAttribute : StaticDataReferenceAttribute
+    {
+        public NationalityStaticDataReferenceAttribute() : base(NationalityDataProvider.FULL_PATH, typeof(Nationality))
+        {
+            
+        }
+    }
 }
 
