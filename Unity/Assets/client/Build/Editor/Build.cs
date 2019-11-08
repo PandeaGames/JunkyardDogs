@@ -3,10 +3,11 @@ using UnityEditor;
 using UnityEngine;
 
 public class Build
+{
+    [MenuItem("Assets/AssetBundles/Build Streaming AssetBundles")]
+    public static void BuildAssetBundles ()
     {
-        [MenuItem("Assets/AssetBundles/Build Streaming AssetBundles")]
-        static public void BuildAssetBundles ()
-        {
-            BuildScript.BuildAssetBundles(Application.streamingAssetsPath);
-        }
+        Debug.LogFormat("Build Streaming Asset Bundles at '{0}'", Application.streamingAssetsPath);
+        BuildScript.BuildAssetBundles(Application.streamingAssetsPath);
     }
+}

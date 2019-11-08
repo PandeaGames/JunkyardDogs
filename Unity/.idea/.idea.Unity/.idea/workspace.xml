@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b6defc3-a091-4fde-bf1e-c3bdd679481d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Editor/ViewUserDataWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Editor/ViewUserDataWindow.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/Data/Currency/Currency.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Data/Currency/Currency.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/Data/StaticDataReferences.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Data/StaticDataReferences.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/Competitor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/Competitor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/JunkyardUser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/JunkyardUser.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/Record.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/Record.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/Tournaments.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/Tournaments.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/Wallet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/Wallet.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/UI/EventButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/UI/EventButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/Build/Editor/Build.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Build/Editor/Build.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/Editor/MyBuildScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Editor/MyBuildScript.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -565,7 +556,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/ErbGameArt/3D Lasers Pack/Demo scene lasers/EGA_Laser.cs" />
         <option value="$PROJECT_DIR$/Assets/PandeaGames/Views/Services/DialogService.cs" />
         <option value="$PROJECT_DIR$/Assets/PandeaGames/ViewModels/IListViewModel.cs" />
         <option value="$PROJECT_DIR$/Assets/PandeaGames/UI/IListView.cs" />
@@ -616,6 +606,7 @@
         <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/Tournaments.cs" />
         <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/JunkyardUser.cs" />
         <option value="$PROJECT_DIR$/Assets/client/Editor/MyBuildScript.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Build/Editor/Build.cs" />
       </list>
     </option>
   </component>
@@ -796,6 +787,7 @@
       <workItem from="1572829996542" duration="11615000" />
       <workItem from="1573020957077" duration="2547000" />
       <workItem from="1573055255130" duration="67000" />
+      <workItem from="1573225834954" duration="239000" />
     </task>
     <servers />
   </component>

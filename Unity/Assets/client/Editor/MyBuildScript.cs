@@ -14,6 +14,7 @@ public static class MyBuildPostprocess
         if(buildTarget == BuildTarget.iOS)
         {
             string projectPath = path + "/Unity-iPhone.xcodeproj/project.pbxproj";
+            Debug.LogFormat("iOS Post Process Build at project path '{0}'", projectPath);
 
             PBXProject pbxProject = new PBXProject();
             pbxProject.ReadFromFile(projectPath);
@@ -22,6 +23,7 @@ public static class MyBuildPostprocess
             pbxProject.SetBuildProperty(target, "ENABLE_BITCODE", "NO");
 
             pbxProject.WriteToFile (projectPath);
+            Debug.Log("iOS Post Process Build Complete");
         }
     }
 }
