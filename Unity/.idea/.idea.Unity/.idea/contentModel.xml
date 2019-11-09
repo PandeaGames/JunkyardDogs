@@ -462,6 +462,7 @@
             </e>
             <e p="Utils" t="Include">
               <e p="ComponentInstantiatorService.cs" t="Include" />
+              <e p="NationDictionary.cs" t="Include" />
             </e>
           </e>
           <e p="Shaders" t="Include">
@@ -937,6 +938,7 @@
           <e p="Utils" t="Include">
             <e p="AssetDatabaseUtility.cs" t="Include" />
             <e p="CSharpUtils.cs" t="Include" />
+            <e p="DataReferenceDictionary.cs" t="Include" />
             <e p="Extensions" t="Include">
               <e p="ListExtensions.cs" t="Include" />
               <e p="TypeExtensions.cs" t="Include" />
@@ -944,6 +946,7 @@
             <e p="Game2DMathUtils.cs" t="Include" />
             <e p="GenericFactory.cs" t="Include" />
             <e p="NewBehaviourScript1.cs" t="Include" />
+            <e p="SerializableDictionary.cs" t="Include" />
             <e p="StateMachines" t="Include">
               <e p="PandeaGamesFsm.cs" t="Include" />
             </e>

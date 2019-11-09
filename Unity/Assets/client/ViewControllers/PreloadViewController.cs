@@ -33,9 +33,9 @@ namespace JunkyardDogs
         
         public override void EnterState(PreloadViewStates from)
         {
-            string _url = "";
-            #if UNITY_EDITOR
-            _url = "file:///";
+            string _url = "file:///";
+            #if UNITY_ANDROID
+            _url = string.Empty;
             #endif
             _url += Application.streamingAssetsPath + "/";
             Debug.Log("URL: "+_url);

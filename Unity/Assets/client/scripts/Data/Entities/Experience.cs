@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using JunkyardDogs.Data;
+using UnityEngine;
 
 public interface IExperienceModel
 {
@@ -8,8 +10,17 @@ public interface IExperienceModel
     int GetTotalExp();
 }
 
+[Serializable]
 public class Experience : IExperienceModel
 {
+    [SerializeField]
+    private NationDictionary _nationDictionary;
+    public NationDictionary NationDictionary
+    {
+        get { return _nationDictionary; }
+        set{_nationDictionary = value;}
+    }
+    
     public Dictionary<NationalityStaticDataReference, NationalExperience> NationalExperience { get; set; }
 
     public Experience()

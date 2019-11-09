@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b6defc3-a091-4fde-bf1e-c3bdd679481d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/client/Build/Editor/Build.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Build/Editor/Build.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/Editor/MyBuildScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Editor/MyBuildScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PandeaGames/Data/Static/StaticDataReference.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PandeaGames/Data/Static/StaticDataReference.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/Experience.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/Experience.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -320,6 +322,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Dialogs/ViewModels/ChooseFromInventoryViewModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Screens/DirectiveDisplay.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Screens/ActionDisplay.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Utils/Game2DMathUtils.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Screens/JunkyardScreen.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Utils/Extensions/TypeExtensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Utils/Extensions/ListExtensions.cs" root0="FORCE_HIGHLIGHTING" />
@@ -447,6 +450,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/ViewModels/AbstractDialogViewModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/ViewModels/AbstractViewModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimBot.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Utils/NationDictionary.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimBotArenaTrigger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimProjectileAttackObject.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/SimObjects/ISimAttack.cs" root0="FORCE_HIGHLIGHTING" />
@@ -458,6 +462,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/AssetBundles/Data/Blueprints/Components/Chassis/AkaminaHeavyPulseChassis.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimPhysicalAttackObject.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimAttackObject.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/I2/Localization/Scripts/Editor/PostProcessBuild_ANDROID.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimProjectile.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimArena.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimMeleeAttack.cs" root0="FORCE_HIGHLIGHTING" />
@@ -468,6 +473,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/I2/Localization/Scripts/Editor/Inspectors/LanguageSourceInspector.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Runtime/Dialogs/DialogAnimationEvents.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/Simulation/Physics/SimulatedCollider.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Utils/DataReferenceDictionary.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/Simulation/Physics/SimulatedArenaCollider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/Simulation/Physics/SimulatedBody.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/Simulation/Physics/SimRotation.cs" root0="FORCE_HIGHLIGHTING" />
@@ -489,6 +495,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/I2/Localization/Scripts/Google/SimpleJSON.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionWeaponFire.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionMoveRight.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Utils/SerializableDictionary.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/IDecisionMaker.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionWeaponCharge.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimTargetView.cs" root0="FORCE_HIGHLIGHTING" />
@@ -556,9 +563,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/PandeaGames/Views/Services/DialogService.cs" />
-        <option value="$PROJECT_DIR$/Assets/PandeaGames/ViewModels/IListViewModel.cs" />
-        <option value="$PROJECT_DIR$/Assets/PandeaGames/UI/IListView.cs" />
         <option value="$PROJECT_DIR$/Assets/PandeaGames/UI/IListItem.cs" />
         <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/Navigation/ComponentListView.cs" />
         <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/Navigation/ComponentListItem.cs" />
@@ -583,9 +587,7 @@
         <option value="$PROJECT_DIR$/Assets/PandeaGames/Runtime/Dialogs/ViewModels/MessageDialogViewModel.cs" />
         <option value="$PROJECT_DIR$/Assets/PandeaGames/Runtime/Dialogs/MessageDialog.cs" />
         <option value="$PROJECT_DIR$/Assets/client/Views/ChooseNationlaityView.cs" />
-        <option value="$PROJECT_DIR$/Assets/PandeaGames/Data/Static/StaticDataReference.cs" />
         <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/NationalExperience.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/Experience.cs" />
         <option value="$PROJECT_DIR$/Assets/client/Data/Balance/BalanceData/TournamentBalanceData.cs" />
         <option value="$PROJECT_DIR$/Assets/client/Data/BreakpointDataSource.cs" />
         <option value="$PROJECT_DIR$/Assets/client/Data/JunkyardStaticDataLoader.cs" />
@@ -607,6 +609,11 @@
         <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/JunkyardUser.cs" />
         <option value="$PROJECT_DIR$/Assets/client/Editor/MyBuildScript.cs" />
         <option value="$PROJECT_DIR$/Assets/client/Build/Editor/Build.cs" />
+        <option value="$PROJECT_DIR$/Assets/PandeaGames/Data/Static/StaticDataReference.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/Experience.cs" />
+        <option value="$PROJECT_DIR$/Assets/PandeaGames/Utils/DataReferenceDictionary.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/scripts/Utils/NationDictionary.cs" />
+        <option value="$PROJECT_DIR$/Assets/PandeaGames/Utils/SerializableDictionary.cs" />
       </list>
     </option>
   </component>
@@ -788,6 +795,7 @@
       <workItem from="1573020957077" duration="2547000" />
       <workItem from="1573055255130" duration="67000" />
       <workItem from="1573225834954" duration="239000" />
+      <workItem from="1573276533535" duration="4642000" />
     </task>
     <servers />
   </component>

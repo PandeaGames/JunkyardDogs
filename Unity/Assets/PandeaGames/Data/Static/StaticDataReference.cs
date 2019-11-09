@@ -63,8 +63,7 @@ public class StaticDataReference<TDataBase, TData, TReference, TDirectory>
                 Debug.LogWarningFormat("Failed to load Data of type {0} because the ID is empty.", typeof(TData));
                 return null;
             }
-                
-                
+ 
             return Game.Instance.GetStaticDataPovider<TDirectory>().FindData(ID); 
         }
     }
