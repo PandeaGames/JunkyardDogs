@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using Data;
+using JunkyardDogs.Data;
 using JunkyardDogs.Simulation.Behavior;
 using WeakReference = PandeaGames.Data.WeakReferences.WeakReference;
 
@@ -45,7 +46,12 @@ public class GameStaticData : ScriptableObject, ILoadableObject
     {
         get { return _actionList; }
     }
-    
+
+    [BreakpointStaticDataReference]
+    public BreakpointStaticDataReference NationalExpBreakpoints;
+    [BreakpointStaticDataReference]
+    public BreakpointStaticDataReference ExpBreakpoints;
+
     public bool IsLoaded { get; private set; }
 
     public void LoadAsync(LoadSuccess onLoadSuccess, LoadError onLoadError)

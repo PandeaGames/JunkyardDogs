@@ -131,7 +131,7 @@ public abstract class AbstractUserService<T> : AbstractService where T:User, new
         _user = Load();
     }
 
-    public T Load()
+    public virtual T Load()
     {
         if(_user != null)
         {
@@ -143,17 +143,17 @@ public abstract class AbstractUserService<T> : AbstractService where T:User, new
         return _user;
     }
 
-    public void Save()
+    public virtual void Save()
     {
         Save(_user);
     }
 
-    public void Save(T user)
+    public virtual void Save(T user)
     {
         UserServiceUtils.Save(user, _serializer, _userDataStorageKeyPrefix);
     }
 
-    public void ClearUserData()
+    public virtual void ClearUserData()
     {
         UserServiceUtils.ClearUserData(_userDataStorageKeyPrefix);
         Debug.Log("User Data cleared at " + string.Format("{0}{1}", _userDataStorageKeyPrefix, UserServiceUtils.USER_DATA_KEY));

@@ -34,9 +34,14 @@ public class StaticDataReferenceAttribute : PropertyAttribute
     }
 }
 
+public interface IStaticData
+{
+    string ID { get; }
+}
+
 [Serializable]
 public class StaticDataReference<TDataBase, TData, TReference, TDirectory>
-    where TDataBase:Object
+    where TDataBase:IStaticData
     where TData:TDataBase
     where TReference:StaticDataReference<TDataBase, TData, TReference, TDirectory>, new()
     where TDirectory:StaticDataReferenceDirectory<TDataBase, TData, TReference, TDirectory>, new()
@@ -61,11 +66,12 @@ public class StaticDataReference<TDataBase, TData, TReference, TDirectory>
             if (string.IsNullOrEmpty(ID))
             {
                 Debug.LogWarningFormat("Failed to load Data of type {0} because the ID is empty.", typeof(TData));
-                return null;
+                return default(TData);
             }
  
             return Game.Instance.GetStaticDataPovider<TDirectory>().FindData(ID); 
         }
+        set { _id = value.ID; }
     }
 
     public bool Equals(StaticDataReference<TDataBase, TData, TReference, TDirectory> other)

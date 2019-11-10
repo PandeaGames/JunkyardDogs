@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class AbstractLootCrateData : ScriptableObject
+public abstract class AbstractLootCrateData : AbstractStaticData
 {
     public abstract ILoot[] GetLoot();
 }

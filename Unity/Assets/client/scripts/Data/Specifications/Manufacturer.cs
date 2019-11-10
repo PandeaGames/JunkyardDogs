@@ -34,7 +34,7 @@ namespace JunkyardDogs.Specifications
     }
 
     [CreateAssetMenu(fileName = "Manufacturer", menuName = "Specifications/Manufacturer", order = 2)]
-    public class Manufacturer : ScriptableObject, IStaticDataBalance<ManufacturerBalanceObject>
+    public class Manufacturer : AbstractStaticData, IStaticDataBalance<ManufacturerBalanceObject>
     {
         [SerializeField]
         private List<Simulation.Distinction> _distinctions;

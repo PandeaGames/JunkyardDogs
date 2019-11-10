@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu]
-public class CurrencyData : ScriptableObject, ILoot
+public class CurrencyData : AbstractStaticData, ILoot
 {
     
 }

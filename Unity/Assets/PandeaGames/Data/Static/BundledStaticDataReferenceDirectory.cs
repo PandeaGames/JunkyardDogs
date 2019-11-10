@@ -7,7 +7,7 @@ using Object = UnityEngine.Object;
 namespace PandeaGames.Data.Static
 {
     public class BundledStaticDataReferenceDirectory<TDataBase, TData, TReference, TDirectory> : StaticDataReferenceDirectory<TDataBase, TData, TReference, TDirectory>
-        where TDataBase:Object
+        where TDataBase:IStaticData
         where TData:TDataBase 
         where TReference:StaticDataReference<TDataBase, TData, TReference, TDirectory>, new()
         where TDirectory:StaticDataReferenceDirectory<TDataBase, TData, TReference, TDirectory>, new()

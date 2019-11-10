@@ -23,3 +23,7 @@ MonoBehaviour:
     type: 2}
   _lightboxKeyMaterial: {fileID: 2100000, guid: 17129c3a69bd8f943a473fc582253b5c,
     type: 2}
+  NationalExpBreakpoints:
+    _id: NationalityBreakpoints
+  ExpBreakpoints:
+    _id: ExpBreakpoints

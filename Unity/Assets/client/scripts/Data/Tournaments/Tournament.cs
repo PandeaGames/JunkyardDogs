@@ -16,14 +16,14 @@ public enum TournamentUnlockCriteria
 }
 
 [CreateAssetMenu(menuName = "Tournaments/Tournament")]
-public class Tournament : ScriptableObject, IStaticDataBalance<TournamentBalanceObject>
+public class Tournament : AbstractStaticData, IStaticDataBalance<TournamentBalanceObject>
 {
     [Header("Format")]
     [SerializeField, TournamentFormatStaticDataReference]
     private TournamentFormatStaticDataReference _format;
 
     [SerializeField]
-    private NationalityStaticDataReference nation;
+    public NationalityStaticDataReference nation;
     
     [SerializeField, ParticipantStaticDataReference]
     private List<ParticipantStaticDataReference> _participants;
@@ -35,13 +35,14 @@ public class Tournament : ScriptableObject, IStaticDataBalance<TournamentBalance
     private int _seasonDelaySeconds;
     
     [SerializeField]
-    private TournamentUnlockCriteria unlockCriteria;
+    public TournamentUnlockCriteria unlockCriteria;
     [SerializeField]
-    private NationalityStaticDataReference unlockNation;
+    public NationalityStaticDataReference unlockNation;
     [SerializeField]
-    private int nationalExpUnlockBreakpoint;
+    public int nationalExpUnlockBreakpoint;
+
     [SerializeField]
-    private int expUnlockBreakpoint;
+    public int expUnlockBreakpoint;
     
     [SerializeField, LootCrateStaticDataReference]
     private List<LootCrateStaticDataReference> _lootCrateRewardsPerStage;
@@ -110,7 +111,7 @@ public class Tournament : ScriptableObject, IStaticDataBalance<TournamentBalance
         nation.ID = balance.nation;
         unlockNation.ID = balance.unlockNation;
         unlockCriteria = BalanceDataUtilites.DecodeEnumSingle<TournamentUnlockCriteria>(balance.unlockCriteria);
-        nationalExpUnlockBreakpoint = balance.expUnlockBreakpoint;
+        nationalExpUnlockBreakpoint = balance.nationalExpUnlockBreakpoint;
         expUnlockBreakpoint = balance.expUnlockBreakpoint;
          
         _lootCrateRewards = new LootCrateStaticDataReference();

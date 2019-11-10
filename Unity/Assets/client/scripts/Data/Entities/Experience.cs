@@ -1,6 +1,4 @@
 using System;
-using System.Collections.Generic;
-using JunkyardDogs.Data;
 using UnityEngine;
 
 public interface IExperienceModel
@@ -21,21 +19,16 @@ public class Experience : IExperienceModel
         set{_nationDictionary = value;}
     }
     
-    public Dictionary<NationalityStaticDataReference, NationalExperience> NationalExperience { get; set; }
-
     public Experience()
     {
-        NationalExperience = new Dictionary<NationalityStaticDataReference, NationalExperience>();
+        _nationDictionary = new NationDictionary();
     }
     
     public int GetExp(Nationality nationality)
     {
-        foreach (KeyValuePair<NationalityStaticDataReference, NationalExperience> kvp in NationalExperience)
+        if (_nationDictionary.Contains(nationality))
         {
-            if (kvp.Key.ID == nationality.name)
-            {
-                return kvp.Value.Exp;
-            }
+            return _nationDictionary[nationality].Exp;
         }
 
         return 0;
@@ -43,20 +36,19 @@ public class Experience : IExperienceModel
 
     public void AddExp(Nationality nationality, int amount)
     {
-        foreach (KeyValuePair<NationalityStaticDataReference, NationalExperience> kvp in NationalExperience)
+        if (_nationDictionary.Contains(nationality))
         {
-            if (kvp.Key.ID == nationality.name)
-            {
-                kvp.Value.Exp += amount;
-            }
+            amount += _nationDictionary[nationality].Exp;
         }
+        
+        _nationDictionary[nationality].Exp = amount;
     }
     
     public int GetTotalExp()
     {
         int total = 0;
 
-        foreach (KeyValuePair<NationalityStaticDataReference, NationalExperience> kvp in NationalExperience)
+        foreach (NationDictionaryKvP kvp in _nationDictionary.KeyValuePairs)
         {
             total += kvp.Value.Exp;
         }

@@ -5,7 +5,7 @@ using PandeaGames.Data.Static;
 using Object = UnityEngine.Object;
 
 public abstract class ChildStaticDataReferenceDirectory<TDataBase, TData, TReferenceBase, TReference, TDirectoryBase, TDirectory>:StaticDataReferenceDirectory<TDataBase, TData, TReference, TDirectory>
-    where TDataBase:Object
+    where TDataBase:Object, IStaticData
     where TData:TDataBase
     where TReference:StaticDataReference<TDataBase, TData, TReference, TDirectory>, new()
     where TReferenceBase:StaticDataReference<TDataBase, TDataBase, TReferenceBase, TDirectoryBase>, new()

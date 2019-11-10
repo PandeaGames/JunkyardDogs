@@ -37,7 +37,7 @@ public struct StagesContainer
 }
 
 [CreateAssetMenu(menuName = "Tournaments/TournamentFormat")]
-public class TournamentFormat : ScriptableObject, IStaticDataBalance<TournamentFormatBalanceObject>
+public class TournamentFormat : AbstractStaticData, IStaticDataBalance<TournamentFormatBalanceObject>
 {
 	[SerializeField] private int _participants;
 	

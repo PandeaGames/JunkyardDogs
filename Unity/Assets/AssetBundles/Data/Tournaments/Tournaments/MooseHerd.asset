@@ -30,7 +30,7 @@ MonoBehaviour:
   unlockCriteria: 1
   unlockNation:
     _id: Canada
-  nationalExpUnlockBreakpoint: 1
+  nationalExpUnlockBreakpoint: 2
   expUnlockBreakpoint: 1
   _lootCrateRewardsPerStage: []
   _lootCrateRewards:

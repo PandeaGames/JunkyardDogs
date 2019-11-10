@@ -4,7 +4,7 @@ using JunkyardDogs.Data.Balance;
 
 namespace JunkyardDogs.Specifications
 {
-    public class Specification : ScriptableObject, IStaticDataBalance<SpecificationBalanceObject>
+    public class Specification : AbstractStaticData, IStaticDataBalance<SpecificationBalanceObject>
     {
         public void ApplyBalance(SpecificationBalanceObject balance)
         {

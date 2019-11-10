@@ -1,48 +1,44 @@
 using System;
 using System.Collections.Generic;
 using JunkyardDogs.Data;
+using PandeaGames.Utils;
 using UnityEngine;
 
 [Serializable]
-public class Wallet
+public class CurrencyDictionaryKvP : PandeaGames.Utils.KeyValuePair<CurrencyStaticDataReference, int>
 {
-    [SerializeField] 
-    private List<Currency> _currency;
     
-    public List<Currency> Currency { get { return _currency; } set { _currency = value; } }
+}
 
-    public Wallet()
+[Serializable]
+public class Wallet : DataReferenceDictionary<
+    CurrencyStaticDataReference, 
+    CurrencyData, 
+    CurrencyData, 
+    CurrencyDataProvider, 
+    int, 
+    CurrencyDictionaryKvP>
+{
+    public override void Add(CurrencyStaticDataReference key, int value)
     {
-        Currency = new List<Currency>();
-    }
-
-    public void Add(Currency currencyIn)
-    {
-        Currency currency = GetCurrency(currencyIn.CurrencyType);
-        currency.Quantity += currencyIn.Quantity;
-    }
-    
-    public void Remove(Currency currencyOut)
-    {
-        Currency currency = GetCurrency(currencyOut.CurrencyType);
-        currency.Quantity -= currencyOut.Quantity;
+        Add(key, value);
     }
     
-    public Currency GetCurrency(CurrencyStaticDataReference currencyType)
+    public override void Add(CurrencyData key, int value)
     {
-        foreach (Currency currency in Currency)
+        Add(key, value);
+    }
+    
+    public void Add(Currency currency)
+    {
+        Add(currency.CurrencyType, currency.Quantity);
+    }
+    
+    private void Add(object key, int value)
+    {
+        if (Contains(key))
         {
-            if (currency.CurrencyType.Equals(currencyType))
-            {
-                return currency;
-            }
+            this[key] = this[key] + value;
         }
-
-        Currency emptyCurrency = new Currency();
-        emptyCurrency.CurrencyType = currencyType;
-        
-        Currency.Add(emptyCurrency);
-
-        return emptyCurrency;
     }
 }

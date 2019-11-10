@@ -10,8 +10,11 @@ public class StaticDataReferencePropertyDrawer : PropertyDrawer
 
     public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
     {
-        StaticDataReferenceAttribute attr = attribute as StaticDataReferenceAttribute;
+        OnGUI(position, property, label, attribute as StaticDataReferenceAttribute);
+    }
 
+    public void OnGUI(Rect position, SerializedProperty property, GUIContent label, StaticDataReferenceAttribute attr)
+    {
         Rect fieldEntryPosition = position;
         fieldEntryPosition.xMin = EditorGUIUtility.labelWidth + 15;
         
@@ -26,20 +29,18 @@ public class StaticDataReferencePropertyDrawer : PropertyDrawer
             {
                 for (int i = 0; i < property.arraySize; i++)
                 {
-                    OnDropdownGUI(position, property.GetArrayElementAtIndex(i), label);
+                    OnDropdownGUI(position, property.GetArrayElementAtIndex(i), label, attr);
                 }
             }
             else
             {
-                OnDropdownGUI(position, property, label);
+                OnDropdownGUI(position, property, label, attr);
             }
         }
     }
 
-    private void OnDropdownGUI(Rect position, SerializedProperty property, GUIContent label)
+    private void OnDropdownGUI(Rect position, SerializedProperty property, GUIContent label, StaticDataReferenceAttribute attr)
     {
-        StaticDataReferenceAttribute attr = attribute as StaticDataReferenceAttribute;
-        
         List<GUIContent> options = new List<GUIContent>();
         SerializedProperty idProp = property.FindPropertyRelative("_id");
 

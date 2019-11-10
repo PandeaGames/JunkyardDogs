@@ -1,7 +1,7 @@
 using JunkyardDogs.Data.Balance;
 using UnityEngine;
 
-public class BlueprintDataBase : ScriptableObject, IStaticDataBalance<BlueprintBalanceObject>, ILoot
+public class BlueprintDataBase : AbstractStaticData, IStaticDataBalance<BlueprintBalanceObject>, ILoot
 {
     public void ApplyBalance(BlueprintBalanceObject balance)
     {

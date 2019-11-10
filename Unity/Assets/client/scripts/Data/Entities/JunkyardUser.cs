@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using JunkyardDogs.Components;
 using System;
+using JunkyardDogs.Data;
 using WeakReference = PandeaGames.Data.WeakReferences.WeakReference;
 using Component = JunkyardDogs.Components.Component;
 
@@ -160,6 +161,4 @@ public class JunkyardUser : User, ILootCrateConsumer, IExperienceModel
     {
         return Experience.GetTotalExp();
     }
-    
-    
 }

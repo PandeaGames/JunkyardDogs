@@ -8,7 +8,7 @@ namespace PandeaGames.Data.Static
 {
     public abstract class StaticDataReferenceDirectory<TDataBase, TData, TReference, TDirectory> : AbstractStaticDataProvider, 
         IEnumerable<TReference> 
-        where TDataBase:Object
+        where TDataBase:IStaticData
         where TData:TDataBase
         where TReference:StaticDataReference<TDataBase, TData, TReference, TDirectory>, new()
         where TDirectory:StaticDataReferenceDirectory<TDataBase, TData, TReference, TDirectory>, new()

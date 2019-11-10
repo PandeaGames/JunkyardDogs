@@ -3,7 +3,7 @@ using JunkyardDogs.Data.Balance;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "BreakpointData", menuName = "GamePlay/BreakpointData", order = 3)]
-public class BreakpointData : ScriptableObject, IStaticDataBalance<BreakpointBalanceObject>
+public class BreakpointData : AbstractStaticData, IStaticDataBalance<BreakpointBalanceObject>
 {
     public List<int> breakpoints;
     
@@ -40,10 +40,8 @@ public class BreakpointData : ScriptableObject, IStaticDataBalance<BreakpointBal
     
     private void ImportBreakpoint(List<int> list, int breakpoint)
     {
-        Debug.Log("ImportBreakpoint");
         if (breakpoint > 0)
         {
-            Debug.Log("Import " +breakpoint.ToString());
             list.Add(breakpoint);
         }
     }
@@ -51,5 +49,24 @@ public class BreakpointData : ScriptableObject, IStaticDataBalance<BreakpointBal
     public BreakpointBalanceObject GetBalance()
     {
         throw new System.NotImplementedException();
+    }
+
+    public int GetCompletedBreakpointIndex(int breakpoint)
+    {
+        int i = 0;
+        for (i = 0; i < breakpoints.Count; i++)
+        {
+            if(breakpoints[i] > breakpoint)
+            {
+                return i;
+            }
+        }
+
+        return i;
+    }
+    
+    public int GetCurrentBreakpointIndex(int breakpoint)
+    {
+        return GetCompletedBreakpointIndex(breakpoint) + 1;
     }
 }

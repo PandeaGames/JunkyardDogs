@@ -4,7 +4,7 @@ using System.Collections;
 using JunkyardDogs.Simulation;
 
 
-public class BehaviorAction : ScriptableObject
+public class BehaviorAction : AbstractStaticData
 {
     public virtual ActionResult GetResult()
     {

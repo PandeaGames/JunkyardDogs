@@ -5,7 +5,7 @@ public interface ILootData<TUser>
     void GrantLoot(TUser user);
 }
 
-public abstract class AbstractLootData : ScriptableObject
+public abstract class AbstractLootData : AbstractStaticData
 {
     public abstract ILoot GetLoot();
 }

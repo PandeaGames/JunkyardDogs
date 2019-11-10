@@ -26,7 +26,7 @@ public static class ParticipantDataUtils
     }
 }
 
-public abstract class ParticipantData : ScriptableObject
+public abstract class ParticipantData : AbstractStaticData
 {
     public abstract Participant GetParticipant();
 }

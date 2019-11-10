@@ -4,8 +4,39 @@
     <list default="true" id="6b6defc3-a091-4fde-bf1e-c3bdd679481d" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Static/GameStaticData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Static/GameStaticData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Tournaments/Tournaments/MooseHerd.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Tournaments/Tournaments/MooseHerd.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PandeaGames/Data/Static/BundledStaticDataReferenceDirectory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PandeaGames/Data/Static/BundledStaticDataReferenceDirectory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PandeaGames/Data/Static/ChildStaticDataReferenceDirectory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PandeaGames/Data/Static/ChildStaticDataReferenceDirectory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PandeaGames/Data/Static/Editor/StaticDataReferencePropertyDrawer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PandeaGames/Data/Static/Editor/StaticDataReferencePropertyDrawer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/PandeaGames/Data/Static/StaticDataReference.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PandeaGames/Data/Static/StaticDataReference.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PandeaGames/Data/Static/StaticDataReferenceDirectory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PandeaGames/Data/Static/StaticDataReferenceDirectory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PandeaGames/Services/AbstractUserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PandeaGames/Services/AbstractUserService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PandeaGames/Utils/DataReferenceDictionary.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PandeaGames/Utils/DataReferenceDictionary.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PandeaGames/Utils/SerializableDictionary.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PandeaGames/Utils/SerializableDictionary.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/Data/Currency/CurrencyData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Data/Currency/CurrencyData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/Data/Loot/AbstractLootCrateData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Data/Loot/AbstractLootCrateData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/Data/Loot/AbstractLootData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Data/Loot/AbstractLootData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/Data/UnityData/GameStaticData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Data/UnityData/GameStaticData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/Simulation/Behavior/BehaviorAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Simulation/Behavior/BehaviorAction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/Simulation/Knowledge/Knowledge.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Simulation/Knowledge/Knowledge.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/BlueprintDataBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/BlueprintDataBase.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/Experience.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/Experience.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/JunkyardUser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/JunkyardUser.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/NationalExperience.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/NationalExperience.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/Wallet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/Wallet.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Data/Gameplay/BreakpointData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Data/Gameplay/BreakpointData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Data/Gameplay/Nationality.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Data/Gameplay/Nationality.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Manufacturer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Manufacturer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Materials/Material.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Materials/Material.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Specification.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Specification.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Formats/TournamentFormat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Formats/TournamentFormat.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Participants/ParticipantData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Participants/ParticipantData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Tournament.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Tournament.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/TournamentFormat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/TournamentFormat.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/UI/EventButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/UI/EventButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Services/JunkyardUserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Services/JunkyardUserService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Utils/NationDictionary.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Utils/NationDictionary.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -133,6 +164,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/client/Data/Balance/BalanceData/EngineBlueprintBalanceData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Data/Balance/BalanceData/PhysicalSpecificationBalanceData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Data/Balance/BalanceData/BalanceDataUtils.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/Data/Editor/StaticDataPropertyDrawers.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Data/Balance/BalanceData/LootCrateBalanceData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Data/Balance/BalanceData/BotBlueprintBalanceData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Data/Balance/BalanceData/PlateBalanceData.cs" root0="FORCE_HIGHLIGHTING" />
@@ -214,6 +246,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Components/Processing/Directive.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/TournamentGroup.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/TournamentFormat.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/Data/UnityData/AbstractStaticData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Tournament.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Formats/TournamentFormat.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Formats/EliminationFormat.cs" root0="FORCE_HIGHLIGHTING" />
@@ -444,7 +477,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/ViewModels/IViewModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/Knowledge/Range.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/ViewModels/CameraViewModel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/Knowledge/Knowledge.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/Knowledge/Knowledge.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/I2/Localization/Scripts/Utils/RTLFixer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/ViewModels/AbstractStatefulViewModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/ViewModels/AbstractDialogViewModel.cs" root0="FORCE_HIGHLIGHTING" />
@@ -485,6 +518,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/Simulation/SimulatedObjects/SimulatedHitscan.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/WeightedDecisionEvent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionSimBotStatus.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E1319B71-95C3-43E7-9B38-5CD3AA43F5DC/78/2cfadb38/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/Logic.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionMoveLeft.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionStartWeaponCharge.cs" root0="FORCE_HIGHLIGHTING" />
@@ -501,6 +535,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimTargetView.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionWeapon.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionStrafe.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/EB25AAB1-1C9B-4AAA-9E7D-7F6F48A4C2E4/59/c6d66fcd/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionMoveBackwards.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/AssetBundles/Data/Competitors/CompetitorBlueprintDataSource.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionMoveForward.cs" root0="FORCE_HIGHLIGHTING" />
@@ -549,6 +584,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Editor/DecisionAndWeightExport.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Editor/DecisionsAndPriorityExport.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Editor/SimulationTesterWindow.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Services/TournamentService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Editor/BodyStateExporter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Editor/SimulationTestExporterUtils.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Editor/TypeExtensionMehods.cs" root0="FORCE_HIGHLIGHTING" />
@@ -558,62 +594,63 @@
     <setting file="file://$PROJECT_DIR$/Assets/Editor/PostProcessor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/Match/BotFollowCameraAgent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/GarageTest.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Entities/TournamentStatus.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/GameLoader.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/PandeaGames/UI/IListItem.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/Navigation/ComponentListView.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/Navigation/ComponentListItem.cs" />
-        <option value="$PROJECT_DIR$/Assets/PandeaGames/UI/AbstractListItem.cs" />
-        <option value="$PROJECT_DIR$/Assets/PandeaGames/Runtime/Dialogs/TouchBlocker.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Views/GarageEditBehaviourView.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/Screens/EditBehaviourScreen.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/Scenes/Garage.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/ComponentRendering/BotBuilderDisplay.cs" />
-        <option value="$PROJECT_DIR$/Assets/PandeaGames/Runtime/Dialogs/DialogAnimationEvents.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/Dialogs/ChooseFromInventoryDialog.cs" />
-        <option value="$PROJECT_DIR$/Assets/PandeaGames/Runtime/Dialogs/DialogDestructor.cs" />
-        <option value="$PROJECT_DIR$/Assets/PandeaGames/Runtime/Dialogs/Dialog.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/NationalityListView.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/NationalityDisplay.cs" />
-        <option value="$PROJECT_DIR$/Assets/PandeaGames/UI/AbstractListView.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/Dialogs/UserDIalog.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/Dialogs/UserDialog.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/Screens/ChooseCountryScreen.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/ViewModels/ChooseNationalityViewModel.cs" />
-        <option value="$PROJECT_DIR$/Assets/PandeaGames/Runtime/Dialogs/OptionDisplay.cs" />
-        <option value="$PROJECT_DIR$/Assets/PandeaGames/Runtime/Dialogs/ViewModels/MessageDialogViewModel.cs" />
-        <option value="$PROJECT_DIR$/Assets/PandeaGames/Runtime/Dialogs/MessageDialog.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Views/ChooseNationlaityView.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/NationalExperience.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Data/Balance/BalanceData/TournamentBalanceData.cs" />
         <option value="$PROJECT_DIR$/Assets/client/Data/BreakpointDataSource.cs" />
         <option value="$PROJECT_DIR$/Assets/client/Data/JunkyardStaticDataLoader.cs" />
         <option value="$PROJECT_DIR$/Assets/client/Data/Balance/BalanceData/BreakpointBalanceData.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Gameplay/BreakpointData.cs" />
         <option value="$PROJECT_DIR$/Assets/client/Data/Balance/StaticDataReferenceBalanceData.cs" />
         <option value="$PROJECT_DIR$/Assets/client/Data/Balance/BalanceData/NationBalanceData.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Gameplay/Nationality.cs" />
         <option value="$PROJECT_DIR$/Assets/client/Data/BreakpointDataProvider.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Tournament.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/UI/EventButton.cs" />
         <option value="$PROJECT_DIR$/Assets/client/Data/StaticDataReferences.cs" />
         <option value="$PROJECT_DIR$/Assets/AssetBundles/Data/Editor/ViewUserDataWindow.cs" />
         <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/Competitor.cs" />
         <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/Record.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/Wallet.cs" />
         <option value="$PROJECT_DIR$/Assets/client/Data/Currency/Currency.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/Tournaments.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/JunkyardUser.cs" />
         <option value="$PROJECT_DIR$/Assets/client/Editor/MyBuildScript.cs" />
         <option value="$PROJECT_DIR$/Assets/client/Build/Editor/Build.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/ViewControllers/PreloadViewController.cs" />
         <option value="$PROJECT_DIR$/Assets/PandeaGames/Data/Static/StaticDataReference.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/Experience.cs" />
-        <option value="$PROJECT_DIR$/Assets/PandeaGames/Utils/DataReferenceDictionary.cs" />
+        <option value="$PROJECT_DIR$/Assets/PandeaGames/Data/Static/StaticDataReferenceDirectory.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Gameplay/Nationality.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Specification.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Manufacturer.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Materials/Material.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/BlueprintDataBase.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Participants/ParticipantData.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Simulation/Knowledge/Knowledge.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Simulation/Behavior/BehaviorAction.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/TournamentFormat.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Formats/TournamentFormat.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Data/Loot/AbstractLootData.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Data/Loot/AbstractLootCrateData.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Data/Currency/CurrencyData.cs" />
+        <option value="$PROJECT_DIR$/Assets/PandeaGames/Data/Static/BundledStaticDataReferenceDirectory.cs" />
+        <option value="$PROJECT_DIR$/Assets/PandeaGames/Data/Static/ChildStaticDataReferenceDirectory.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/NationalExperience.cs" />
         <option value="$PROJECT_DIR$/Assets/client/scripts/Utils/NationDictionary.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/Wallet.cs" />
+        <option value="$PROJECT_DIR$/Assets/PandeaGames/Utils/DataReferenceDictionary.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Data/StaticDataPropertyDrawers.cs" />
+        <option value="$PROJECT_DIR$/Assets/PandeaGames/Data/Static/Editor/StaticDataReferencePropertyDrawer.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Data/Editor/StaticDataPropertyDrawers.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/TournamentStatus.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/Tournaments.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/Experience.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/JunkyardUser.cs" />
+        <option value="$PROJECT_DIR$/Assets/PandeaGames/Services/AbstractUserService.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/Services/JunkyardUserService.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Data/UnityData/GameStaticData.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Gameplay/BreakpointData.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/Services/TournamentService.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/UI/EventButton.cs" />
         <option value="$PROJECT_DIR$/Assets/PandeaGames/Utils/SerializableDictionary.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Data/UnityData/AbstractStaticData.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Tournament.cs" />
       </list>
     </option>
   </component>
@@ -795,7 +832,7 @@
       <workItem from="1573020957077" duration="2547000" />
       <workItem from="1573055255130" duration="67000" />
       <workItem from="1573225834954" duration="239000" />
-      <workItem from="1573276533535" duration="4642000" />
+      <workItem from="1573276533535" duration="16956000" />
     </task>
     <servers />
   </component>
@@ -832,19 +869,6 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="337" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/PandeaGames/Data/Static/ChildStaticDataReferenceDirectory.cs</url>
-          <line>40</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/PandeaGames/Data/Static/ChildStaticDataReferenceDirectory.cs" initialLine="40">
-            <startOffsets>
-              <option value="1631" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1643" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="370" />
         </line-breakpoint>
         <breakpoint enabled="true" suspend="NONE" type="DotNet Exception Breakpoints">
           <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />

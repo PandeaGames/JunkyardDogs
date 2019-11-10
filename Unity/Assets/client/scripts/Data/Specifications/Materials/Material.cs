@@ -5,7 +5,7 @@ using JunkyardDogs.Data.Balance;
 namespace JunkyardDogs.Specifications
 {
     [CreateAssetMenu(fileName = "Material", menuName = "Specifications/Material", order = 2)]
-    public class Material : ScriptableObject, IStaticDataBalance<MaterialBalanceObject>
+    public class Material : AbstractStaticData, IStaticDataBalance<MaterialBalanceObject>
     {
         [SerializeField] private double _density;
 
