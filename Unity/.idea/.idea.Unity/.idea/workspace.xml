@@ -3,36 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="6b6defc3-a091-4fde-bf1e-c3bdd679481d" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Art/UI/Prefabs/EventDialog_DialogPrefabVariant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Art/UI/Prefabs/EventDialog_DialogPrefabVariant.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Art/UI/Prefabs/TabButtonVarient Variant.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Art/UI/Prefabs/TabButtonVarient Variant.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Art/Views/EarthNavigation.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Art/Views/EarthNavigation.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Currency/Cash.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Currency/Cash.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Currency/CurrencyDataSource.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Currency/CurrencyDataSource.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Loot/LootCrates/NewCrateData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Loot/LootCrates/NewCrateData.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Loot/LootDataSource.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Loot/LootDataSource.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Nations/Canada.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Nations/Canada.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Nations/Germany.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Nations/Germany.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Nations/Japan.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Nations/Japan.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/BalanceData/BalanceManagerData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/BalanceData/BalanceManagerData.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PandeaGames/Utils/DataReferenceDictionary.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PandeaGames/Utils/DataReferenceDictionary.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PandeaGames/Utils/SerializableDictionary.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PandeaGames/Utils/SerializableDictionary.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/Data/Currency/CurrencyData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Data/Currency/CurrencyData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/Data/Loot/AbstractLootCrateData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Data/Loot/AbstractLootCrateData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/Data/Loot/AbstractLootData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Data/Loot/AbstractLootData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/Data/Loot/BlueprintLootData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Data/Loot/BlueprintLootData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/Data/Loot/CurrencyLootData.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/Data/Loot/CurrencyLootData.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/Data/Loot/LootCrateData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Data/Loot/LootCrateData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/Data/Loot/WeightedLootCrateData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Data/Loot/WeightedLootCrateData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/ViewControllers/ChooseNationalityViewController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/ViewControllers/ChooseNationalityViewController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/ViewModels/JunkyardViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/ViewModels/JunkyardViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/Experience.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/Experience.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/JunkyardUser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/JunkyardUser.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/NationalExperience.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/NationalExperience.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/Wallet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/Wallet.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Data/Gameplay/ExpLevel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Data/Gameplay/ExpLevel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Dialogs/EventDialog.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Dialogs/EventDialog.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Art/Views/HubView.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Art/Views/HubView.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/prefabs/mapScreen/EventMapButton.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/prefabs/mapScreen/EventMapButton.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/RTProgressBarBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/RTProgressBarBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/TournamentTimerDisplay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/TournamentTimerDisplay.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -81,9 +59,11 @@
     <setting file="file://$PROJECT_DIR$/Assets/client/Data/ActionDataSource.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Gameplay/BreakpointData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Data/MaterialDataProvider.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/AbstractProgressDisplay.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Data/ParticipantDataProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Data/SpecificationDataProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Controllers/TournamentController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/AnimatedProgressBarBehvaiour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Data/Static/ChildStaticDataReferenceDirectory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Data/ParticipantDataSource.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Data/ManufacturerDataProvider.cs" root0="FORCE_HIGHLIGHTING" />
@@ -603,6 +583,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Editor/AssemblyUtils.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Editor/PostProcessor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Gameplay/Match/BotFollowCameraAgent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/AnimationTestScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/GarageTest.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Entities/TournamentStatus.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/GameLoader.cs" root0="FORCE_HIGHLIGHTING" />
@@ -610,12 +591,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/client/Data/Balance/BalanceData/TournamentBalanceData.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Data/Balance/BalanceData/SpecificationBalanceData.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Specification.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Manufacturer.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Components/Rarity.cs" />
-        <option value="$PROJECT_DIR$/Assets/PandeaGames/Entities/UintValueContainer.cs" />
         <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Components/ComponentGrade.cs" />
         <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Components/Component.cs" />
         <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Components/Chassis.cs" />
@@ -661,6 +636,12 @@
         <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/Wallet.cs" />
         <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/JunkyardUser.cs" />
         <option value="$PROJECT_DIR$/Assets/PandeaGames/Utils/SerializableDictionary.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/AbstractProgressDIsplay.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/RTProgressBarBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/AbstractProgressDisplay.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/TournamentTimerDisplay.cs" />
+        <option value="$PROJECT_DIR$/Assets/AnimationTestScript.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/AnimatedProgressBarBehvaiour.cs" />
       </list>
     </option>
   </component>
@@ -843,6 +824,7 @@
       <workItem from="1573055255130" duration="67000" />
       <workItem from="1573225834954" duration="239000" />
       <workItem from="1573276533535" duration="45374000" />
+      <workItem from="1573505571430" duration="3089000" />
     </task>
     <servers />
   </component>

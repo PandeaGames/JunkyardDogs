@@ -34,6 +34,7 @@
             </e>
           </e>
         </e>
+        <e p="AnimationTestScript.cs" t="Include" />
         <e p="AssetBundleInitializer.cs" t="Include" />
         <e p="AssetBundleManager" t="Include">
           <e p="AssetBundleLoadOperation.cs" t="Include" />
@@ -455,6 +456,8 @@
                 <e p="TournamentService.cs" t="Include" />
               </e>
               <e p="UI" t="Include">
+                <e p="AbstractProgressDIsplay.cs" t="Include" />
+                <e p="AnimatedProgressBarBehvaiour.cs" t="Include" />
                 <e p="ComponentLightbox.cs" t="Include" />
                 <e p="ComponentRendering" t="Include">
                   <e p="BotBuilderDisplay.cs" t="Include" />

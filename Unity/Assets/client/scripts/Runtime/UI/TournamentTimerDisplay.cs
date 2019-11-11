@@ -3,8 +3,11 @@
     using JunkyardDogs;
     using PandeaGames;
     using UnityEngine;
-public class TournamentTimerDisplay : RTProgressBarBehaviour
+public class TournamentTimerDisplay : MonoBehaviour
 {
+    [SerializeField] 
+    private AbstractProgressDisplay _progressDisplay;
+    
     private JunkyardUserViewModel _userViewModel;
 
     private TournamentMetaState _meta;
@@ -47,8 +50,7 @@ public class TournamentTimerDisplay : RTProgressBarBehaviour
             {
                 percentage = TournamentMetaStateUtils.GetPercentageUntilSeasonBegin(_tournament, _meta);
             }
-
-            SetProgress(percentage);
+            _progressDisplay.SetProgress(percentage);
         }
     }
 }
