@@ -5,16 +5,10 @@ using UnityEngine;
 namespace JunkyardDogs.Data.Balance
 {
     [Serializable]
-    public struct PlateBalanceObject:IStaticDataBalanceObject
+    public class PlateBalanceObject : PhysicalSpecificationBalanceObject
     {
-        public string name;
-        public float volume;
         public float thickness;
         public float armour;
-        public string GetDataUID()
-        {
-            return name;
-        }
     }
     
     [CreateAssetMenu(menuName = MENU_NAME)]

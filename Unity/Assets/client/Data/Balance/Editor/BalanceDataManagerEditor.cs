@@ -182,7 +182,7 @@ namespace JunkyardDogs.Data.Balance.Editor
                     }
                     catch (Exception e)
                     {
-                        Debug.LogErrorFormat("There was an error applying balance against {0}:\n", balanceData.name);
+                        Debug.LogErrorFormat(new Exception(string.Format("There was an error applying balance against {0}:\n", balanceData.name),e).ToString());
                         break;
                     }
                 }

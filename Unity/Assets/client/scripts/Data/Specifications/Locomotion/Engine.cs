@@ -26,6 +26,7 @@ namespace JunkyardDogs.Specifications
         
         public void ApplyBalance(EngineBalanceObject balance)
         {
+            base.ApplyBalance(balance);
             strafeAcceleration = balance.strafeAcceleration;
             strafeMaxSpeed = balance.strafeMaxSpeed;
             forwardAcceleration = balance.forwardAcceleration;

@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e774f14bdec23194f9db265633ad69b8, type: 3}
   m_Name: TestCreatedCPU
   m_EditorClassIdentifier: 
+  _grade:
+    _value: 0
+  _rarity:
+    _value: 0
   _distinctions:
   - _type: 0
     _value: 10

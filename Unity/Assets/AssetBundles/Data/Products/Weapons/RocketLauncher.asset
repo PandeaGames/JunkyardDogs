@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c569057ac781074b8ae652816158b37, type: 3}
   m_Name: RocketLauncher
   m_EditorClassIdentifier: 
+  _grade:
+    _value: 0
+  _rarity:
+    _value: 0
   _volume: 1
   _chargeTime: 2
   _cooldown: 0.5
@@ -33,6 +37,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d4f20500189514a9ea47afb5cfb85f, type: 3}
   m_Name: Shell
   m_EditorClassIdentifier: 
+  _grade:
+    _value: 0
+  _rarity:
+    _value: 0
   _volume: 0
   _damage: 30
   _effects: []

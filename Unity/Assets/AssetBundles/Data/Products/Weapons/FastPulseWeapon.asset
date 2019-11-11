@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4616b887cfd7d074b9479c1aa29e691a, type: 3}
   m_Name: FastPulseWeapon
   m_EditorClassIdentifier: 
+  _grade:
+    _value: 0
+  _rarity:
+    _value: 0
   _volume: 1
   _chargeTime: 1.5
   _cooldown: 0.5
@@ -35,6 +39,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ae6ae314c73cc144a7e07e999e16e28, type: 3}
   m_Name: Pulse
   m_EditorClassIdentifier: 
+  _grade:
+    _value: 0
+  _rarity:
+    _value: 0
   _volume: 0
   _damage: 15
   _effects: []

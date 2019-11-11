@@ -6,10 +6,23 @@ using System.Linq;
 using JunkyardDogs.Components;
 using Component = JunkyardDogs.Components.Component;
 
+[Serializable]
 public class Inventory : IEnumerable
 {
-    public List<Component> Components { get; set; }
-    public List<Bot> Bots { get; set; }
+    [SerializeField] private List<Component> _components;
+    [SerializeField] private List<Bot> _bots;
+    
+    public List<Component> Components
+    {
+        get => _components;
+        set => _components = value;
+    }
+    
+    public List<Bot> Bots 
+    {
+        get => _bots;
+        set => _bots = value;
+    }
 
     public Inventory()
     {

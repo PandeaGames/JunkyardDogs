@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e898c12224211543892380af52f98a0, type: 3}
   m_Name: Plate_Thickness04
   m_EditorClassIdentifier: 
+  _grade:
+    _value: 0
+  _rarity:
+    _value: 0
   _volume: 2
   _thickness: 4
   _armour: 0

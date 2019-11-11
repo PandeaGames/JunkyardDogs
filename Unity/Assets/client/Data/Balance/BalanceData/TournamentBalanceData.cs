@@ -8,6 +8,7 @@ using UnityEngine;
 public struct TournamentBalanceObject:IStaticDataBalanceObject
 {
     public string name;
+    public uint grade;
     public string format;
     public string nation;
     public int roundPaceSeconds;

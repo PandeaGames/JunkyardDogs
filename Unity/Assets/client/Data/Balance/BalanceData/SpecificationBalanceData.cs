@@ -10,6 +10,8 @@ using Material = JunkyardDogs.Specifications.Material;
 public class SpecificationBalanceObject:IStaticDataBalanceObject
 {
     public string name;
+    public uint grade;
+    public uint rarity;
     public string GetDataUID()
     {
         return name;

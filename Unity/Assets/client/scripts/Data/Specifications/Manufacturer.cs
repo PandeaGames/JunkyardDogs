@@ -87,5 +87,10 @@ namespace JunkyardDogs.Specifications
             balance.nationality = nationality.ID;
             return balance;
         }
+
+        public uint RarityBonus
+        {
+            get { return _nationality.Data.RarityBonus; }
+        }
     }
 }

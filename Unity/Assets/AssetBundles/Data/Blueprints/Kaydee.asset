@@ -16,3 +16,6 @@ MonoBehaviour:
     _id: Canada
   _bots:
   - _id: KaydeeBot01
+  _expLevel:
+    _value: 0
+    _level: 0

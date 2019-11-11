@@ -16,3 +16,6 @@ MonoBehaviour:
     _id: Japan
   _bots:
   - _id: AkariBot01
+  _expLevel:
+    _value: 0
+    _level: 0

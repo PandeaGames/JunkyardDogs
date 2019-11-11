@@ -152,6 +152,11 @@ public class JunkyardUser : User, ILootCrateConsumer, IExperienceModel
         return Experience.GetExp(nationality);
     }
 
+    public uint GetLevel(Nationality nationality)
+    {
+        return Experience.GetLevel(nationality);
+    }
+
     public void AddExp(Nationality nationality, int amount)
     {
         Experience.AddExp(nationality, amount);
@@ -160,5 +165,35 @@ public class JunkyardUser : User, ILootCrateConsumer, IExperienceModel
     public int GetTotalExp()
     {
         return Experience.GetTotalExp();
+    }
+    
+    public TournamentStatus GetTournamentStatus(Tournament tournament)
+    {
+        TournamentMetaState meta;
+        Tournaments.TryGetTournamentMeta(tournament, out meta);
+
+        if (meta == null)
+        {
+            return TournamentStatus.Locked;
+        }
+
+        uint level = GetLevel(tournament.nation); 
+        bool hasEnoughExperience = level >= tournament.nationalExpUnlockBreakpoint;
+
+        if (hasEnoughExperience)
+        {
+            if (meta.Completions > 0)
+            {
+                return TournamentStatus.Available; 
+            }
+            else
+            {
+                return TournamentStatus.New;
+            }
+        }
+        else
+        {
+            return TournamentStatus.Locked;
+        }
     }
 }

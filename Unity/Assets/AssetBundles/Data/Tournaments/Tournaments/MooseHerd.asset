@@ -27,6 +27,8 @@ MonoBehaviour:
   - _id: FlorianParticipation
   _roundPaceSeconds: 10
   _seasonDelaySeconds: 30
+  _grade:
+    _value: 0
   unlockCriteria: 1
   unlockNation:
     _id: Canada

@@ -10,11 +10,24 @@ using JunkyardDogs.Data;
 namespace JunkyardDogs.Components
 {
     [Serializable]
-    public class Component
+    public class Component : ComponentGrade.IGradedComponent
     {
-        public SpecificationStaticDataReference SpecificationReference { get; set; }
+        [SerializeField]
+        private SpecificationStaticDataReference _specificationReference;
+        [SerializeField]
+        private ManufacturerStaticDataReference _manufacturer;
+        
+        public SpecificationStaticDataReference SpecificationReference
+        {
+            get { return _specificationReference;}
+            set { _specificationReference = value; }
+        }
 
-        public ManufacturerStaticDataReference Manufacturer { get; set; }
+        public ManufacturerStaticDataReference Manufacturer
+        {
+            get { return _manufacturer;}
+            set { _manufacturer = value; }
+        }
 
         [ExcludeFromSerialization]
         public Specification Specification
@@ -46,6 +59,16 @@ namespace JunkyardDogs.Components
         public virtual void Dismantle(Inventory inventory)
         {
             inventory.AddComponent(this);
+        }
+
+        public virtual ComponentGrade Grade
+        {
+            get { return _specificationReference.Data.Grade; }
+        }
+        
+        public Rarity Rarity
+        {
+            get { return _specificationReference.Data.Rarity + _manufacturer.Data.RarityBonus; }
         }
     }
 }

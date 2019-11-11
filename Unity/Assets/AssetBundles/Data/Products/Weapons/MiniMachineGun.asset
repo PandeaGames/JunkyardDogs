@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bc383b2da7c72946a114ca2612ed7bf, type: 3}
   m_Name: MiniMachineGun
   m_EditorClassIdentifier: 
+  _grade:
+    _value: 0
+  _rarity:
+    _value: 0
   _volume: 1
   _chargeTime: 0.1
   _cooldown: 0.1
@@ -34,6 +38,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db09b6690c924ff44a0bb02e19fb16f9, type: 3}
   m_Name: Shell
   m_EditorClassIdentifier: 
+  _grade:
+    _value: 0
+  _rarity:
+    _value: 0
   _volume: 0
   _damage: 20
   _effects: []

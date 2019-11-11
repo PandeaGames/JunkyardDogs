@@ -12,14 +12,32 @@ public class Nationality : AbstractStaticData, IStaticDataBalance<NationBalanceO
     [SerializeField]
     public Distinction[] Distinctions;
 
+    [SerializeField] private uint _rarityBonus;
+
+    [SerializeField, LootCrateStaticDataReference]
+    private LootCrateStaticDataReference _gameStartInventory;
+    public LootCrateStaticDataReference gameStartInventory
+    {
+        get => _gameStartInventory;
+    }
+
     [SerializeField, BreakpointStaticDataReference]
     public BreakpointStaticDataReference breakpoints;
-    
+
+    public uint RarityBonus
+    {
+        get => _rarityBonus;
+    }
+
     public void ApplyBalance(NationBalanceObject balance)
     {
         this.name = balance.name;
+        _rarityBonus = balance.rarityBonus;
         breakpoints = new BreakpointStaticDataReference();
+        _gameStartInventory = new LootCrateStaticDataReference();
         breakpoints.ID = balance.breakpoints;
+
+        _gameStartInventory.ID = balance.gameStartInventory;
         
         List<Distinction> list = new List<Distinction>();
 

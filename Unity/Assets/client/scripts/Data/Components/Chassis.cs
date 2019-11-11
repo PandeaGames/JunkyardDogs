@@ -255,5 +255,26 @@ namespace JunkyardDogs.Components
 
             return null;
         }
+
+        public override ComponentGrade Grade
+        {
+            get
+            {
+                return ComponentGrade.HighestGrade(
+                    base.Grade,
+                    Engine,
+                    TopArmament,
+                    LeftArmament,
+                    RightArmament,
+                    TopArmament,
+                    ComponentGrade.HighestGrade(FrontPlates),
+                    ComponentGrade.HighestGrade(TopPlates),
+                    ComponentGrade.HighestGrade(LeftPlates),
+                    ComponentGrade.HighestGrade(RightPlates),
+                    ComponentGrade.HighestGrade(BackPlates),
+                    ComponentGrade.HighestGrade(BottomPlates)
+                );
+            }
+        }
     }
 }

@@ -1,6 +1,7 @@
 ﻿
 using System.Collections.Generic;
 using JunkyardDogs.Components;
+using JunkyardDogs.Components.Gameplay;
 using JunkyardDogs.Data;
 using JunkyardDogs.Data.Balance;
 using UnityEngine;
@@ -14,6 +15,13 @@ public class CompetitorBlueprintData : BlueprintData<Competitor>, IStaticDataBal
     [SerializeField, BotBlueprintStaticDataReference]
     private List<BotBlueprintStaticDataReference> _bots;
 
+    [SerializeField]
+    private ExpLevel _expLevel;
+    public ExpLevel ExpLevel
+    {
+        get => _expLevel;
+    }
+
     public override Competitor DoGenerate(int seed)
     {
         Competitor competitor = new Competitor();
@@ -21,6 +29,7 @@ public class CompetitorBlueprintData : BlueprintData<Competitor>, IStaticDataBal
         int itemsToLoad = 0;
         
         competitor.Nationality = _nationality;
+        competitor.ExpLevel = _expLevel;
         
         _bots.ForEach((botBlueprint =>
         {
@@ -39,6 +48,7 @@ public class CompetitorBlueprintData : BlueprintData<Competitor>, IStaticDataBal
             _nationality = new NationalityStaticDataReference();
         }
         
+        _expLevel = new ExpLevel(balance.level);
         _bots = new List<BotBlueprintStaticDataReference>();
 
         name = balance.name;

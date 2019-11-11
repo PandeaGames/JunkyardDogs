@@ -1,12 +1,29 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using Data;
 using JunkyardDogs.Data;
+using JunkyardDogs.Data.Balance;
 using JunkyardDogs.Simulation.Behavior;
 using WeakReference = PandeaGames.Data.WeakReferences.WeakReference;
 
-[CreateAssetMenu(menuName = "StaticData/GameStaticData")]
-public class GameStaticData : ScriptableObject, ILoadableObject
+[Serializable]
+public class GameConfigurationDataBalanceObject : IStaticDataBalanceObject
 {
+    public string name;
+    public string nationalExpBreakpoints;
+    public string expBreakpoints;
+        
+    public string GetDataUID()
+    {
+        return name;
+    }
+}
+
+[CreateAssetMenu(menuName = "StaticData/GameStaticData")]
+public class GameStaticData : ScriptableObject, ILoadableObject, IStaticDataBalance<GameConfigurationDataBalanceObject>
+{
+    
+    
     [SerializeField][WeakReference(typeof(ActionList))] 
     private WeakReference _actionList;
     public ActionList ActionList
@@ -71,5 +88,22 @@ public class GameStaticData : ScriptableObject, ILoadableObject
             }, onLoadError);
             
         }, onLoadError);
+    }
+    
+    public void ApplyBalance(GameConfigurationDataBalanceObject balance)
+    {
+        NationalExpBreakpoints = new BreakpointStaticDataReference();
+        ExpBreakpoints = new BreakpointStaticDataReference();
+
+        NationalExpBreakpoints.ID = balance.nationalExpBreakpoints;
+        ExpBreakpoints.ID = balance.expBreakpoints;
+    }
+
+    public GameConfigurationDataBalanceObject GetBalance()
+    {
+        GameConfigurationDataBalanceObject output = new GameConfigurationDataBalanceObject();
+        output.nationalExpBreakpoints = NationalExpBreakpoints.ID;
+        output.expBreakpoints = ExpBreakpoints.ID;
+        return output;
     }
 }

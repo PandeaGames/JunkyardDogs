@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using Data;
+using JunkyardDogs.Components;
 using JunkyardDogs.Data;
 using JunkyardDogs.Data.Balance;
 using PandeaGames.Data.WeakReferences;
@@ -33,6 +34,9 @@ public class Tournament : AbstractStaticData, IStaticDataBalance<TournamentBalan
     
     [SerializeField]
     private int _seasonDelaySeconds;
+
+    [SerializeField]
+    private ComponentGrade _grade;
     
     [SerializeField]
     public TournamentUnlockCriteria unlockCriteria;
@@ -97,6 +101,7 @@ public class Tournament : AbstractStaticData, IStaticDataBalance<TournamentBalan
 
     public void ApplyBalance(TournamentBalanceObject balance)
     {
+        _grade = new ComponentGrade(balance.grade);
         _format = new TournamentFormatStaticDataReference();
         _participants = new List<ParticipantStaticDataReference>();
         _lootCrateRewardsPerStage = new List<LootCrateStaticDataReference>();

@@ -13,5 +13,8 @@ MonoBehaviour:
   m_Name: Germany
   m_EditorClassIdentifier: 
   Distinctions: []
+  _rarityBonus: 0
+  _gameStartInventory:
+    _id: JunkyardCrateData
   breakpoints:
     _id: NationalityBreakpoints

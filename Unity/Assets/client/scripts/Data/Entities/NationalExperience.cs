@@ -1,20 +1,16 @@
 using System;
-using UnityEngine;
+using JunkyardDogs.Components.Gameplay;
 
 [Serializable]
-public class NationalExperience
+public class NationalExperience : ExpLevel
 {
-    [SerializeField]
-    private int _exp;
-    
-    public int Exp
+    public NationalExperience(int exp) : base(exp)
     {
-        get { return _exp;}
-        set { _exp = value; }
+        
     }
-
-    public void AddExp(int amount)
+    
+    public static implicit operator NationalExperience(int exp)
     {
-        Exp += amount;
+        return new NationalExperience(exp);
     }
 }

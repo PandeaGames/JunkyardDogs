@@ -27,5 +27,13 @@ namespace JunkyardDogs.Components
                 Weapon = null;
             }
         }
+
+        public override ComponentGrade Grade
+        {
+            get
+            {
+                return ComponentGrade.HighestGrade(base.Grade, Weapon);
+            }
+        }
     }
 }

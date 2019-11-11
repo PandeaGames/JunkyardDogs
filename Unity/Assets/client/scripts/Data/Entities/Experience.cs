@@ -1,15 +1,17 @@
 using System;
+using JunkyardDogs.Components.Gameplay;
 using UnityEngine;
 
 public interface IExperienceModel
 {
     int GetExp(Nationality nationality);
+    uint GetLevel(Nationality nationality);
     void AddExp(Nationality nationality, int amount);
     int GetTotalExp();
 }
 
 [Serializable]
-public class Experience : IExperienceModel
+public class Experience : ExpLevel, IExperienceModel
 {
     [SerializeField]
     private NationDictionary _nationDictionary;
@@ -28,7 +30,17 @@ public class Experience : IExperienceModel
     {
         if (_nationDictionary.Contains(nationality))
         {
-            return _nationDictionary[nationality].Exp;
+            return _nationDictionary[nationality];
+        }
+
+        return 0;
+    }
+
+    public uint GetLevel(Nationality nationality)
+    {
+        if (_nationDictionary.Contains(nationality))
+        {
+            return _nationDictionary[nationality].Level;
         }
 
         return 0;
@@ -38,10 +50,10 @@ public class Experience : IExperienceModel
     {
         if (_nationDictionary.Contains(nationality))
         {
-            amount += _nationDictionary[nationality].Exp;
+            amount += _nationDictionary[nationality];
         }
         
-        _nationDictionary[nationality].Exp = amount;
+        _nationDictionary[nationality] = amount;
     }
     
     public int GetTotalExp()
@@ -50,7 +62,7 @@ public class Experience : IExperienceModel
 
         foreach (NationDictionaryKvP kvp in _nationDictionary.KeyValuePairs)
         {
-            total += kvp.Value.Exp;
+            total += kvp.Value;
         }
 
         return total;

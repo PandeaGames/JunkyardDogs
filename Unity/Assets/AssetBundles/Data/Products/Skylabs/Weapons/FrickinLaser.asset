@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bc383b2da7c72946a114ca2612ed7bf, type: 3}
   m_Name: FrickinLaser
   m_EditorClassIdentifier: 
+  _grade:
+    _value: 0
+  _rarity:
+    _value: 0
   _volume: 1
   _chargeTime: 1
   _cooldown: 1

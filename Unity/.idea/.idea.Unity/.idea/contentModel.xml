@@ -104,6 +104,7 @@
                 <e p="EliminationFormatBalanceData.cs" t="Include" />
                 <e p="EngineBalanceData.cs" t="Include" />
                 <e p="EngineBlueprintBalanceData.cs" t="Include" />
+                <e p="GameConfigurationData.cs" t="Include" />
                 <e p="HitscanWeaponBalanceData.cs" t="Include" />
                 <e p="LootBalanceData.cs" t="Include" />
                 <e p="LootCrateBalanceData.cs" t="Include" />
@@ -133,6 +134,8 @@
                 <e p="BalanceDataManagerEditor.cs" t="Include" />
               </e>
               <e p="FilteredStaticDataReferenceBalanceData.cs" t="Include" />
+              <e p="GameConfigStaticDataList.cs" t="Include" />
+              <e p="SingleSourceBalanceData.cs" t="Include" />
               <e p="StaticDataReferenceBalanceData.cs" t="Include" />
             </e>
             <e p="BlueprintDataProvider.cs" t="Include" />
@@ -234,6 +237,7 @@
                 <e p="BotBuilder.cs" t="Include" />
                 <e p="Chassis.cs" t="Include" />
                 <e p="Component.cs" t="Include" />
+                <e p="ComponentGrade.cs" t="Include" />
                 <e p="ComponentUtils.cs" t="Include" />
                 <e p="Distinction.cs" t="Include" />
                 <e p="Engine.cs" t="Include" />
@@ -249,6 +253,7 @@
                   <e p="SubProcessor.cs" t="Include" />
                   <e p="WeaponProcessor.cs" t="Include" />
                 </e>
+                <e p="Rarity.cs" t="Include" />
                 <e p="Weapons" t="Include">
                   <e p="Weapon.cs" t="Include" />
                 </e>
@@ -273,6 +278,8 @@
               </e>
               <e p="Gameplay" t="Include">
                 <e p="BreakpointData.cs" t="Include" />
+                <e p="Exp.cs" t="Include" />
+                <e p="ExpLevel.cs" t="Include" />
                 <e p="Nationality.cs" t="Include" />
                 <e p="SpecificationCatalogue.cs" t="Include" />
               </e>
@@ -857,7 +864,9 @@
             <e p="TemplateImporter.cs" t="Include" />
           </e>
           <e p="Entities" t="Include">
+            <e p="UintValueContainer.cs" t="Include" />
             <e p="User.cs" t="Include" />
+            <e p="ValueContainer.cs" t="Include" />
           </e>
           <e p="Game.cs" t="Include" />
           <e p="LoadedScreenCache.cs" t="Include" />
@@ -936,6 +945,7 @@
           <e p="UI" t="Include">
             <e p="AbstractListItem.cs" t="Include" />
             <e p="AbstractListView.cs" t="Include" />
+            <e p="DeviceUIModifier.cs" t="Include" />
             <e p="IListItem.cs" t="Include" />
             <e p="IListView.cs" t="Include" />
             <e p="SImpleButtonTab.cs" t="Include" />

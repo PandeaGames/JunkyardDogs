@@ -8,7 +8,9 @@ namespace JunkyardDogs.Data.Balance
     public struct NationBalanceObject:IStaticDataBalanceObject
     {
         public string name;
+        public string gameStartInventory;
         public string breakpoints;
+        public uint rarityBonus;
         
         public string distinctionId_01;
         public int distinctionValue_01;

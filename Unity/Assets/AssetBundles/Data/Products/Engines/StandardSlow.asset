@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7dc0181f05d45918f3a2993600c57ce, type: 3}
   m_Name: StandardSlow
   m_EditorClassIdentifier: 
-  _volume: 0
+  _grade:
+    _value: 0
+  _rarity:
+    _value: 0
+  _volume: 1
   strafeAcceleration: 1
   strafeMaxSpeed: 5
   forwardAcceleration: 1

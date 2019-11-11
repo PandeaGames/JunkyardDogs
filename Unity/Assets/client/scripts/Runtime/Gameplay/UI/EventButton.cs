@@ -48,7 +48,7 @@ public class EventButton : MonoBehaviour
         }
         
         _timerDisplay.Render(_tournament.Data);
-        TournamentStatus status = _tournamentService.GetTournamentStatus(_tournament);
+        TournamentStatus status = _vm.User.GetTournamentStatus(_tournament);
         _button.interactable = status != TournamentStatus.Locked;
     }
 

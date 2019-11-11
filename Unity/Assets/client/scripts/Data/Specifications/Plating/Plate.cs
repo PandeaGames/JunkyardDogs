@@ -10,12 +10,12 @@ namespace JunkyardDogs.Specifications
         [SerializeField]
         private float _thickness;
 
-        [SerializeField] private float _armour;
+        [SerializeField] 
+        private float _armour;
         
         public void ApplyBalance(PlateBalanceObject balance)
         {
-            this.name = balance.name;
-            this._volume = balance.volume;
+            base.ApplyBalance(balance);
             _thickness = balance.thickness;
             _armour = balance.armour;
         }

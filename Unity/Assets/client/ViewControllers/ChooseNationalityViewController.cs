@@ -43,7 +43,9 @@ namespace JunkyardDogs
 
         private void OnChooseNation(NationalityStaticDataReference reference)
         {
-            Game.Instance.GetService<JunkyardUserService>().User.Competitor.Nationality = reference;
+            JunkyardUser user = Game.Instance.GetService<JunkyardUserService>().User;
+            user.Competitor.Nationality = reference;
+            user.Consume(reference.Data.gameStartInventory.Data.GetLoot(), 0);
 
             if (OnNationChosen != null)
             {

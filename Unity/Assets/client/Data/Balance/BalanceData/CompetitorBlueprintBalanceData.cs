@@ -11,6 +11,8 @@ public struct CompetitorBalanceObject:IStaticDataBalanceObject
     public string name;
     [SerializeField]
     public string nationality;
+    [SerializeField] 
+    public uint level;
     [SerializeField]
     public string bot_01;
     [SerializeField]
