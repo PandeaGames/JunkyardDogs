@@ -11,6 +11,7 @@ namespace JunkyardDogs.Components.Gameplay
         public uint Level
         {
             get => _level;
+            set => _level = value;
         }
 
         public ExpLevel() : this(0)

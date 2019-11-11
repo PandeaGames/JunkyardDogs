@@ -22,7 +22,7 @@ namespace PandeaGames.Utils
             get { return this[key as object]; }
             set
             {
-                
+                Add(key, value);
             }
         }
 

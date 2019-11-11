@@ -7,6 +7,7 @@ public interface IExperienceModel
     int GetExp(Nationality nationality);
     uint GetLevel(Nationality nationality);
     void AddExp(Nationality nationality, int amount);
+    void Ascend(Nationality nationality);
     int GetTotalExp();
 }
 
@@ -25,7 +26,17 @@ public class Experience : ExpLevel, IExperienceModel
     {
         _nationDictionary = new NationDictionary();
     }
-    
+
+    public void Ascend(Nationality nationality)
+    {
+        if (!_nationDictionary.Contains(nationality))
+        {
+            _nationDictionary[nationality] = new NationalExperience(0);
+        }
+
+        _nationDictionary[nationality].Ascend();
+    }
+
     public int GetExp(Nationality nationality)
     {
         if (_nationDictionary.Contains(nationality))

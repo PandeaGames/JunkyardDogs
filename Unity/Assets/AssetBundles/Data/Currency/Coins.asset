@@ -9,12 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79364c380c289744f8ccf9b3740a2355, type: 3}
-  m_Name: Japan
+  m_Script: {fileID: 11500000, guid: bc59a5d90e784e23a28321ac970baa53, type: 3}
+  m_Name: Coins
   m_EditorClassIdentifier: 
-  Distinctions: []
-  _rarityBonus: 1
-  _gameStartInventory:
-    _id: NewCrateData
-  breakpoints:
-    _id: NationalityBreakpoints
+  _tags:
+  - Primary

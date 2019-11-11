@@ -172,6 +172,8 @@ namespace PandeaGames.Utils
                         return;
                     }
                 }
+                
+                _keyValuePairs.Add(new TPair { Value = value, Key = (TKey)obj });
             }
         }
     }

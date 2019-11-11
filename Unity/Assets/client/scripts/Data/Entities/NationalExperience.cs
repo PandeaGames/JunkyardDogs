@@ -4,6 +4,11 @@ using JunkyardDogs.Components.Gameplay;
 [Serializable]
 public class NationalExperience : ExpLevel
 {
+    public NationalExperience()
+    {
+        
+    }
+    
     public NationalExperience(int exp) : base(exp)
     {
         

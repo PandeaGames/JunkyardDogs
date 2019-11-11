@@ -99,6 +99,8 @@
                 <e p="CompetitorBlueprintBalanceData.cs" t="Include" />
                 <e p="CPUBalanceData.cs" t="Include" />
                 <e p="CPUBlueprintData.cs" t="Include" />
+                <e p="CurrencyBalanceData.cs" t="Include" />
+                <e p="CurrencyLootBalanceData.cs" t="Include" />
                 <e p="DirectiveBalanceData.cs" t="Include" />
                 <e p="DirectiveBlueprintBalanceData.cs" t="Include" />
                 <e p="EliminationFormatBalanceData.cs" t="Include" />
@@ -157,9 +159,10 @@
               <e p="AbstractLootCrateData.cs" t="Include" />
               <e p="AbstractLootData.cs" t="Include" />
               <e p="BlueprintLootData.cs" t="Include" />
-              <e p="CurrencyLootData.cs" t="Include" />
+              <e p="CurrencyLoot.cs" t="Include" />
               <e p="ILoot.cs" t="Include" />
               <e p="ILootCrateConsumer.cs" t="Include" />
+              <e p="ILootDataModel.cs" t="Include" />
               <e p="LootCrateData.cs" t="Include" />
               <e p="LootData.cs" t="Include" />
               <e p="LootUtilities.cs" t="Include" />

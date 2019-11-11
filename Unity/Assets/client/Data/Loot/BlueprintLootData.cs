@@ -8,7 +8,7 @@ public class BlueprintLootData : LootData<BlueprintDataBase>, IStaticDataBalance
     [SerializeField, BlueprintStaticDataReference] 
     private BlueprintStaticDataReference _blueprint;
     
-    public override ILoot GetLoot()
+    public override ILoot GetLoot(ILootDataModel dataModel)
     {
         return _blueprint.Data;
     }

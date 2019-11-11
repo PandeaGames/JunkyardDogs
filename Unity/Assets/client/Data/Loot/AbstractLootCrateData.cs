@@ -2,5 +2,5 @@ using UnityEngine;
 
 public abstract class AbstractLootCrateData : AbstractStaticData
 {
-    public abstract ILoot[] GetLoot();
+    public abstract ILoot[] GetLoot(ILootDataModel dataModel);
 }

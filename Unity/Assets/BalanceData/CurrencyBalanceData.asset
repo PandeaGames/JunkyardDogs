@@ -9,6 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc59a5d90e784e23a28321ac970baa53, type: 3}
-  m_Name: Cash
+  m_Script: {fileID: 11500000, guid: c2e2225949fd4838a430a5663c9704d5, type: 3}
+  m_Name: CurrencyBalanceData
   m_EditorClassIdentifier: 
+  TableName: Currency
+  AllowImport: 1
+  AllowDataCreationOnImport: 1
+  _dataList: {fileID: 11400000, guid: 1fb710409a3f04348b423f19b2b2bdc6, type: 2}

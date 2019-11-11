@@ -15,6 +15,6 @@ MonoBehaviour:
   Distinctions: []
   _rarityBonus: 0
   _gameStartInventory:
-    _id: JunkyardCrateData
+    _id: NewCrateData
   breakpoints:
     _id: NationalityBreakpoints

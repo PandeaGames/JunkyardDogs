@@ -16,7 +16,8 @@ namespace JunkyardDogs
 
         public void TakeJunk(LootCrateStaticDataReference lootCrate)
         {
-            ILoot[]  loot = lootCrate.Data.GetLoot();
+            LootDataModel dataModel = new LootDataModel(User, 0);
+            ILoot[]  loot = lootCrate.Data.GetLoot(dataModel);
 
             if (loot.Length == 0)
             {

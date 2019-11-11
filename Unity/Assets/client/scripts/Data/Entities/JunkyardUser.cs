@@ -37,11 +37,13 @@ public class JunkyardUser : User, ILootCrateConsumer, IExperienceModel
         Competitor = new Competitor();
         Tournaments = new Tournaments();
         Experience = new Experience();
+        Wallet = new Wallet();
     }
     
     public void Consume(AbstractLootCrateData crateData, int seed)
     {
-        Consume(crateData.GetLoot(), seed);
+        LootDataModel LootDataModel = new LootDataModel(this, seed);
+        Consume(crateData.GetLoot(LootDataModel), seed);
     }
 
     public void Consume(ILoot[] crateContents, int seed)
@@ -160,6 +162,11 @@ public class JunkyardUser : User, ILootCrateConsumer, IExperienceModel
     public void AddExp(Nationality nationality, int amount)
     {
         Experience.AddExp(nationality, amount);
+    }
+
+    public void Ascend(Nationality nationality)
+    {
+        Experience.Ascend(nationality);
     }
 
     public int GetTotalExp()

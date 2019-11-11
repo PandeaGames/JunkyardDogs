@@ -40,5 +40,9 @@ public class Wallet : DataReferenceDictionary<
         {
             this[key] = this[key] + value;
         }
+        else
+        {
+            this[key] = value;
+        }
     }
 }

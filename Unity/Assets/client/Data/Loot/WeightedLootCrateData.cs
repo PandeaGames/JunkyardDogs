@@ -24,7 +24,7 @@ public class WeightedLootCrateData : AbstractLootCrateData, IStaticDataBalance<W
     [SerializeField]
     private bool _pickWithRepetition;
     
-    public override ILoot[] GetLoot()
+    public override ILoot[] GetLoot(ILootDataModel dataModel)
     {
         bool isLootCrateValid = !(_loot.Length < _lootQuantity && !_pickWithRepetition);
         
@@ -63,7 +63,7 @@ public class WeightedLootCrateData : AbstractLootCrateData, IStaticDataBalance<W
                 }
                 
                 lootChoices.RemoveAt(indexFound);
-                loot[lootChosen] = item.loot.Data.GetLoot();
+                loot[lootChosen] = item.loot.Data.GetLoot(dataModel);
 
             } while (++lootChosen < _lootQuantity);
 

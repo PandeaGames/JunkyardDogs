@@ -10,13 +10,13 @@ public class LootCrateData : AbstractLootCrateData, IStaticDataBalance<LootCrate
     [SerializeField, LootStaticDataReference]
     private LootStaticDataReference[] _lootData;
     
-    public override ILoot[] GetLoot()
+    public override ILoot[] GetLoot(ILootDataModel dataModel)
     {
         ILoot[] lootData = new ILoot[_lootData.Length];
 
         for (int i = 0; i < _lootData.Length; i++)
         {
-            lootData[i] = _lootData[i].Data.GetLoot();
+            lootData[i] = _lootData[i].Data.GetLoot(dataModel);
         }
 
         return lootData;

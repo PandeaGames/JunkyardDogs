@@ -7,5 +7,5 @@ public interface ILootData<TUser>
 
 public abstract class AbstractLootData : AbstractStaticData
 {
-    public abstract ILoot GetLoot();
+    public abstract ILoot GetLoot(ILootDataModel dataModel);
 }
