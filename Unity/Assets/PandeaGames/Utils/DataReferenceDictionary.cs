@@ -19,12 +19,17 @@ namespace PandeaGames.Utils
     {
         public virtual TValue GetValue(TData key)
         {
+            if (!Contains(key))
+            {
+                AddValue(key, default(TValue));
+            }
+            
             return GetValueByObj(key);
         }
 
         public void SetValue(TData key, TValue value)
         {
-            AddValue(key, value);
+            base.SetValueByHash(key.GetHashCode(), value);
         }
 
         public virtual TKvP GetPair(TData data)

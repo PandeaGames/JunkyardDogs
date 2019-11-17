@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using JunkyardDogs.Data;
 using JunkyardDogs.Data.Balance;
 using UnityEngine;
 
@@ -58,4 +59,12 @@ public class CurrencyData : AbstractStaticData, ILoot, IStaticDataBalance<Curren
             list.Add(tag);
         }
     }
+
+    public static implicit operator CurrencyStaticDataReference(CurrencyData operand)
+    {
+        CurrencyStaticDataReference reference = new CurrencyStaticDataReference();
+        reference.ID = operand.ID;
+        return reference;
+    }
+
 }

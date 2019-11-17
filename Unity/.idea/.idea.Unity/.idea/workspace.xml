@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b6defc3-a091-4fde-bf1e-c3bdd679481d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Art/Currency/CurrencyDataConfigTable.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Art/Currency/CurrencyDataConfigTable.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Tournaments/Tournaments/MooseChallenge.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Tournaments/Tournaments/MooseChallenge.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Tournaments/Tournaments/MooseHerd.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Tournaments/Tournaments/MooseHerd.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Tournaments/Tournaments/TestCanada_VS_Germany.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Tournaments/Tournaments/TestCanada_VS_Germany.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Tournaments/Tournaments/TestCanada_VS_Japan.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Tournaments/Tournaments/TestCanada_VS_Japan.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Tournaments/Tournaments/TestGermany_VS_Japan.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Tournaments/Tournaments/TestGermany_VS_Japan.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Tournaments/Tournaments/TestMooseChallenge.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Tournaments/Tournaments/TestMooseChallenge.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/Data/Balance/BalanceData/TournamentBalanceData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Data/Balance/BalanceData/TournamentBalanceData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Tournament.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Tournament.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/Data/Currency/CurrencyData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Data/Currency/CurrencyData.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -649,7 +640,6 @@
         <option value="$PROJECT_DIR$/Assets/client/Data/BlueprintDataProvider.cs" />
         <option value="$PROJECT_DIR$/Assets/client/Data/BreakpointDataProvider.cs" />
         <option value="$PROJECT_DIR$/Assets/client/Data/CurrencyDataProvider.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Data/Currency/CurrencyData.cs" />
         <option value="$PROJECT_DIR$/Assets/client/Data/LootCrateDataProvider.cs" />
         <option value="$PROJECT_DIR$/Assets/client/Data/LootDataProvider.cs" />
         <option value="$PROJECT_DIR$/Assets/client/Data/SpecificationDataProvider.cs" />
@@ -679,6 +669,7 @@
         <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/Wallet.cs" />
         <option value="$PROJECT_DIR$/Assets/client/Data/Balance/BalanceData/TournamentBalanceData.cs" />
         <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Tournament.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Data/Currency/CurrencyData.cs" />
       </list>
     </option>
   </component>
@@ -870,6 +861,7 @@
       <workItem from="1573978017863" duration="3290000" />
       <workItem from="1574010119310" duration="6333000" />
       <workItem from="1574021498499" duration="2388000" />
+      <workItem from="1574031406764" duration="286000" />
     </task>
     <servers />
   </component>
@@ -932,6 +924,19 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="344" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/PandeaGames/Utils/SerializableDictionary.cs</url>
+          <line>192</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/PandeaGames/Utils/SerializableDictionary.cs" initialLine="192">
+            <startOffsets>
+              <option value="5127" />
+            </startOffsets>
+            <endOffsets>
+              <option value="5192" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="345" />
         </line-breakpoint>
         <breakpoint enabled="true" suspend="NONE" type="DotNet Exception Breakpoints">
           <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />

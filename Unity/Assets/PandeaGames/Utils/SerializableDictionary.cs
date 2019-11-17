@@ -164,22 +164,28 @@ namespace PandeaGames.Utils
 
         protected virtual TValue GetValueByObj(object obj)
         {
-                int hash = obj.GetHashCode();
-                for (int i = 0; i < _keyValuePairs.Count; i++)
+            int hash = obj.GetHashCode();
+            for (int i = 0; i < _keyValuePairs.Count; i++)
+            {
+                TPair kvp = _keyValuePairs[i];
+                if (kvp.Key.GetHashCode() == hash)
                 {
-                    TPair kvp = _keyValuePairs[i];
-                    if (kvp.Key.GetHashCode() == hash)
-                    {
-                        return kvp.Value;
-                    }
+                    return kvp.Value;
                 }
-
-                return default(TValue);
             }
+
+            return default(TValue);
+        }
 
         protected virtual void SetValueByObj(object obj, TValue value)
         {
             int hash = obj.GetHashCode();
+            SetValueByHash(hash, value);
+            _keyValuePairs.Add(new TPair { Value = value, Key = (TKey)obj });
+        }
+        
+        protected virtual void SetValueByHash(int hash, TValue value)
+        {
             for (int i = 0; i < _keyValuePairs.Count; i++)
             {
                 TPair kvp = _keyValuePairs[i];
@@ -189,8 +195,6 @@ namespace PandeaGames.Utils
                     return;
                 }
             }
-                
-            _keyValuePairs.Add(new TPair { Value = value, Key = (TKey)obj });
         }
     }
 }

@@ -26,7 +26,7 @@ public class Experience : ExpLevel, IExperienceModel
     {
         if (!_nationDictionary.Contains(nationality))
         {
-            _nationDictionary.SetValue(nationality, new NationalExperience(0));
+            _nationDictionary.AddValue(nationality, new NationalExperience(0));
         }
 
         _nationDictionary.GetValue(nationality).Ascend();
