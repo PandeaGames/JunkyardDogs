@@ -28,11 +28,11 @@ namespace PandeaGames.Utils
         }
     }
 
-    public interface ISerializableDictionary<TKey, TValue>
+    public interface ISerializableDictionary<TKey, TValue, TPair> where TPair:KeyValuePair<TKey, TValue>
     {
         TValue GetValue(TKey key);
         void SetValue(TKey key, TValue value);
-        void AddValue(TKey key, TValue value);
+        TPair AddValue(TKey key, TValue value);
         void Clear();
         bool Contains(TKey key);
         void Remove(TKey key);
@@ -40,11 +40,11 @@ namespace PandeaGames.Utils
     
     [Serializable]
     public class SerializableDictionary<TKey, TValue, TPair> 
-        : ISerializableDictionary<TKey, TValue> where TPair:KeyValuePair<TKey, TValue>,
+        : ISerializableDictionary<TKey, TValue, TPair> where TPair:KeyValuePair<TKey, TValue>,
         new()
     {
         [SerializeField] 
-        private List<TPair> _keyValuePairs = new List<TPair>();
+        protected List<TPair> _keyValuePairs = new List<TPair>();
 
         public virtual int Count
         {
@@ -60,14 +60,16 @@ namespace PandeaGames.Utils
             set { _keyValuePairs = value; }
         }
 
-        public virtual void AddValue(TKey key, TValue value)
+        public virtual TPair AddValue(TKey key, TValue value)
         {
             if (Contains(key))
             {
                 throw new ArgumentException("An element with the same key already exists in the IDictionary object.");
             }
-            
-            _keyValuePairs.Add(new TPair { Value = value, Key = key });
+
+            TPair newPair = new TPair {Value = value, Key = key};
+            _keyValuePairs.Add(newPair);
+            return newPair;
         }
 
         public virtual void Clear()
@@ -125,6 +127,19 @@ namespace PandeaGames.Utils
         public virtual TPair GetPair(int index)
         {
             return _keyValuePairs[index];
+        }
+        
+        public virtual TPair GetPair(TKey key)
+        {
+            foreach (TPair pair in _keyValuePairs)
+            {
+                if (pair.Key.Equals(key))
+                {
+                    return pair;
+                }
+            }
+            
+            return default(TPair);
         }
 
         public virtual TValue GetValue(TKey key)

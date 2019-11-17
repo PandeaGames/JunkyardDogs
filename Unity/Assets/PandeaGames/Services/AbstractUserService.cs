@@ -114,7 +114,7 @@ public static class UserServiceUtils
 }
 
 [Serializable]
-public abstract class AbstractUserService<T> : AbstractService where T:User, new()
+public abstract class AbstractUserService<T, TService> : AbstractService<TService> where T:User, new() where TService:AbstractUserService<T, TService>, new()
 {   
     [SerializeField]
     protected string _userDataStorageKeyPrefix;

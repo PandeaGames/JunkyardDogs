@@ -20,9 +20,14 @@ namespace PandeaGames
         private readonly TViewModels _viewModels = new TViewModels();
         private readonly TStaticDataProviders _staticDataProviders = new TStaticDataProviders();
 
-        private T GetDependancy<T, TInterface>(uint instanceId, Dictionary<Type, Dictionary<uint, TInterface>> lookup) where T : class, TInterface, new()
+        private T GetDependancy<T, TInterface>(uint instanceId, Dictionary<Type, Dictionary<uint, TInterface>> lookup)
+            where T : class, TInterface, new()
         {
-            Type type = typeof(T);
+            return GetDependancy<TInterface>(typeof(T), instanceId, lookup) as T;
+        }
+
+        private TInterface GetDependancy<TInterface>(Type type, uint instanceId, Dictionary<Type, Dictionary<uint, TInterface>> lookup)
+        {
             Dictionary<uint, TInterface> instances = null;
             lookup.TryGetValue(type, out instances);
 
@@ -37,18 +42,18 @@ namespace PandeaGames
 
             if (service == null)
             {
-                service = new T();
+                service = (TInterface)Activator.CreateInstance(type);
                 instances.Add(instanceId, service);
             }
 
-            return service as T;
+            return service;
         }
-        
+
         public TService GetService<TService>() where TService : class, IService, new()
         {
             return GetDependancy<TService, IService>(instanceId:0, lookup:_services);
         }
-        
+
         public TViewModel GetViewModel<TViewModel>(uint instanceId) where TViewModel : class, IViewModel, new()
         {
             return GetDependancy<TViewModel, IViewModel>(instanceId:instanceId, lookup:_viewModels);

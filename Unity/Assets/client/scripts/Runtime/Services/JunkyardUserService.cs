@@ -2,7 +2,7 @@
 using JunkyardDogs.Data;
 using PandeaGames;
 
-public class JunkyardUserService : AbstractUserService<JunkyardUser>
+public class JunkyardUserService : AbstractUserService<JunkyardUser, JunkyardUserService>
 {
     private GameStaticData _gameStaticData;
 

@@ -19,14 +19,14 @@ public class Wallet : DataReferenceDictionary<
     int, 
     CurrencyDictionaryKvP>
 {
-    public override void AddValue(CurrencyStaticDataReference key, int value)
+    public override CurrencyDictionaryKvP AddValue(CurrencyStaticDataReference key, int value)
     {
-        AddObj(key, value);
+        return AddObj(key, value);
     }
     
-    public override void AddValue(CurrencyData key, int value)
+    public override CurrencyDictionaryKvP AddValue(CurrencyData key, int value)
     {
-        AddObj(key, value);
+        return AddObj(key, value);
     }
     
     public void Add(Currency currency)
@@ -34,7 +34,7 @@ public class Wallet : DataReferenceDictionary<
         AddObj(currency.CurrencyType, currency.Quantity);
     }
     
-    private void AddObj(object key, int value)
+    private CurrencyDictionaryKvP AddObj(CurrencyData key, int value)
     {
         if (ContainsObj(key))
         {
@@ -44,5 +44,7 @@ public class Wallet : DataReferenceDictionary<
         {
             SetValueByObj(key, value);
         }
+
+        return GetPair(key);
     }
 }

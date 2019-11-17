@@ -148,6 +148,8 @@
             <e p="Currency" t="Include">
               <e p="Currency.cs" t="Include" />
               <e p="CurrencyData.cs" t="Include" />
+              <e p="CurrencyStaticData.SynchronousStaticData.cs" t="Include" />
+              <e p="CurrencyStaticData.SynchronousStaticDataProvider.cs" t="Include" />
             </e>
             <e p="CurrencyDataProvider.cs" t="Include" />
             <e p="CurrencyDataSource.cs" t="Include" />
@@ -209,6 +211,8 @@
             <e p="MyBuildScript.cs" t="Include" />
           </e>
           <e p="Factories" t="Include">
+            <e p="AbstractConfigTable.cs" t="Include" />
+            <e p="CurrencyDataConfigTable.cs" t="Include" />
             <e p="JunkyardDogs3DFactory.cs" t="Include" />
           </e>
           <e p="GameLoader.cs" t="Include" />
@@ -475,6 +479,7 @@
                   <e p="ComponentDisplay.cs" t="Include" />
                 </e>
                 <e p="ComponentTextureProvider.cs" t="Include" />
+                <e p="CurrencyDisplay.cs" t="Include" />
                 <e p="DirectiveView.cs" t="Include" />
                 <e p="LightboxCamera.cs" t="Include" />
                 <e p="MatchStateRenderer.cs" t="Include" />
@@ -487,6 +492,8 @@
                   <e p="PanController.cs" t="Include" />
                 </e>
                 <e p="RTProgressBarBehaviour.cs" t="Include" />
+                <e p="StatusBar.cs" t="Include" />
+                <e p="StatusBarCurrencyRenderer.cs" t="Include" />
                 <e p="TournamentStateRenderer.cs" t="Include" />
                 <e p="TournamentTimerDisplay.cs" t="Include" />
                 <e p="UserExperienceBreakpointBehaviour.cs" t="Include" />

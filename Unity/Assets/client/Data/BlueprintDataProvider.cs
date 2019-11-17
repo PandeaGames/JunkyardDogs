@@ -21,7 +21,7 @@ namespace JunkyardDogs.Data
     {
     }
     
-    public class EngineBlueprintDataProvider : ChildStaticDataReferenceDirectory<BlueprintDataBase, EngineBlueprintData, BlueprintStaticDataReference, EngineBlueprintStaticDataReference, BlueprintDataProvider, EngineBlueprintDataProvider>
+    public class EngineBlueprintDataProvider : ChildStaticDataReferenceDirectory< BlueprintDataBase, EngineBlueprintData, BlueprintStaticDataReference, EngineBlueprintStaticDataReference, BlueprintDataProvider, EngineBlueprintDataProvider>
     {
     }
     

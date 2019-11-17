@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace PandeaGames
 {
-    public partial class SynchronousStaticDataProvider : IStaticDataProvider
+    public partial class SynchronousStaticDataProvider : AbstractStaticDataProvider<SynchronousStaticDataProvider>
     {
         protected SynchronousStaticData staticData { get; private set; }
         
@@ -19,13 +19,11 @@ namespace PandeaGames
         {
             return default(TData);
         }
-        
-        public void LoadAsync(LoadSuccess onLoadSuccess, LoadError onLoadFailed)
+
+        protected override void InternalLoadAsync(LoadSuccess onLoadSuccess, LoadError onLoadFailed)
         {
             staticData = GameResources.Instance.SynchronousStaticData;
             staticData.LoadAsync(onLoadSuccess, onLoadFailed);
         }
-
-        public bool IsLoaded { get; private set; }
     }
 }

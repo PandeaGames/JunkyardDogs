@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace PandeaGames.Data.Static
 {
-    public class PandeaGameDataProvider : AbstractStaticDataProvider
+    public class PandeaGameDataProvider : AbstractStaticDataProvider <PandeaGameDataProvider>
     {
         private static readonly string PandeaGameConfigurationDataPath = "PandeaGames/PangeaGameConfiguration";
         

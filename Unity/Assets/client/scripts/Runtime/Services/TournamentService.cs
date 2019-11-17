@@ -3,7 +3,7 @@ using JunkyardDogs.Data;
 using PandeaGames;
 using PandeaGames.Services;
 
-public class TournamentService : AbstractService
+public class TournamentService : AbstractService<TournamentService>
 {
     private JunkyardUserService _userService;
     private JunkyardUser _user;

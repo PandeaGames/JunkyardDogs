@@ -4,10 +4,31 @@
     <list default="true" id="6b6defc3-a091-4fde-bf1e-c3bdd679481d" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PandeaGames/Data/WeakReference/Loader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PandeaGames/Data/WeakReference/Loader.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/Data/JunkyardStaticDataLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Data/JunkyardStaticDataLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Art/Views/HubView.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Art/Views/HubView.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Static/GameStaticData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Static/GameStaticData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/SynchronousStaticData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/SynchronousStaticData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/TestEngagement.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/TestEngagement.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PandeaGames/Data/Static/AbstractStaticDataProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PandeaGames/Data/Static/AbstractStaticDataProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PandeaGames/Data/Static/PandeaGameDataProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PandeaGames/Data/Static/PandeaGameDataProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PandeaGames/Data/Static/StaticDataReferenceDirectory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PandeaGames/Data/Static/StaticDataReferenceDirectory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PandeaGames/Data/Static/SynchronousStaticDataProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PandeaGames/Data/Static/SynchronousStaticDataProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PandeaGames/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PandeaGames/Game.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PandeaGames/Services/AbstractService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PandeaGames/Services/AbstractService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PandeaGames/Services/AbstractUserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PandeaGames/Services/AbstractUserService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PandeaGames/Services/PauseService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PandeaGames/Services/PauseService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PandeaGames/Utils/DataReferenceDictionary.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PandeaGames/Utils/DataReferenceDictionary.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PandeaGames/Utils/SerializableDictionary.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PandeaGames/Utils/SerializableDictionary.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/Data/BlueprintDataProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Data/BlueprintDataProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/Data/Currency/CurrencyData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Data/Currency/CurrencyData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/Data/CurrencyDataProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Data/CurrencyDataProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/Data/GameStaticDataProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Data/GameStaticDataProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/Data/ParticipantDataProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Data/ParticipantDataProvider.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/client/Data/UnityData/GameStaticData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Data/UnityData/GameStaticData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/UserExperienceBreakpointBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/UserExperienceBreakpointBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/Data/ViewStaticDataProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Data/ViewStaticDataProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/Wallet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/Wallet.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Services/JunkyardUserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Services/JunkyardUserService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Services/TournamentService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Services/TournamentService.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,6 +57,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/StatusBar.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Data/BreakpointDataSource.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Data/StageFormatDataSource.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Data/BlueprintDataProvider.cs" root0="FORCE_HIGHLIGHTING" />
@@ -254,6 +276,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/MeleeWeaponProcessor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Data/ScriptableObjectSingleton.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/PhysicalSpecification.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/Data/Currency/CurrencyStaticData.SynchronousStaticData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Entities/ValueContainer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Manufacturer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Chassis.cs" root0="FORCE_HIGHLIGHTING" />
@@ -430,6 +453,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/client/Shaders/TestShader.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Runtime/Gameplay/StartGame.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Screen keying/Shader/ScreenKeying.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/Data/Currency/CurrencyStaticData.SynchronousStaticDataProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PandeaGames/Runtime/Gameplay/Pausable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Gameplay/Exp.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/Factories/JunkyardDogs3DFactory.cs" root0="FORCE_HIGHLIGHTING" />
@@ -580,6 +604,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/ErbGameArt/3D Lasers Pack/Demo scene lasers/EGA_Laser.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/FullMatchViewController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/GarageLineupViewController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/Factories/CurrencyDataConfigTable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/GameLoadViewController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/WorldMapViewController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/MatchViewController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -590,6 +615,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/ModernGunEffects/scripts/MGE_DestroyThisTimed.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/GarageEditBehaviourViewController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/JunkyardViewController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/Factories/AbstractConfigTable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/StatesCommon/SplashState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/ViewControllers/StatesCommon/AbstractLoadingState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Editor/PostProcessorConfig.cs" root0="FORCE_HIGHLIGHTING" />
@@ -611,63 +637,65 @@
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/Services/ServiceEntities.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/AnimationTestScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/GarageTest.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/StatusBarCurrencyRenderer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Data/Entities/TournamentStatus.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/CurrencyDisplay.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/client/GameLoader.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Components/Processing/SubProcessor.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Components/Processing/Directive.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/PhysicalComponentData.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/PlateBlueprintData.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/WeaponBlueprintData.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/WeaponProcessorBlueprintData.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Components/Chassis.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Components/Engine.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Bot.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/DirectiveView.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionWeapon.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionWeaponCharge.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionWeaponCoolDown.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionWeaponFire.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimBot.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimHitscanShot.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimMeleeAttack.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimMortarAttackObject.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimPhysicalAttackObject.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimProjectileAttackObject.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Simulation/SimObjects/SimPulseAttack.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Simulation/SimulatedAttacks.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Components/Component.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Blueprints/ComponentBlueprintData.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Specifications/Processing/Motherboard.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Components/ComponentUtils.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionStartWeaponCharge.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionWeaponHold.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Data/UnityData/GameStaticData.cs" />
-        <option value="$PROJECT_DIR$/Assets/PandeaGames/AsynchronousStaticDataProvider.cs" />
-        <option value="$PROJECT_DIR$/Assets/PandeaGames/Game.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Data/DataProviders.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Data/DataProviders/JunkyardStaticDataProvider.cs" />
-        <option value="$PROJECT_DIR$/Assets/PandeaGames/SynchronousStaticData.cs" />
-        <option value="$PROJECT_DIR$/Assets/PandeaGames/SynchronousStaticDataProvider.cs" />
-        <option value="$PROJECT_DIR$/Assets/PandeaGames/Data/Static/BundledStaticDataReference.cs" />
-        <option value="$PROJECT_DIR$/Assets/PandeaGames/Data/Static/Resources/SynchronousStaticData.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Data/DataProviders/NationalityStaticData.SynchronousStaticData.cs" />
-        <option value="$PROJECT_DIR$/Assets/PandeaGames/Data/Static/Resources/SynchronousStaticDataResources.GameResources.cs" />
-        <option value="$PROJECT_DIR$/Assets/PandeaGames/Data/Static/SynchronousStaticData.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Data/DataProviders/NaitonalityDataProvider.cs" />
-        <option value="$PROJECT_DIR$/Assets/PandeaGames/Data/GameResources.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/UserExperienceBreakpointBehaviour.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Data/DataProviders/NaitonalityDataProvider.SynchronousStaticDataProvider.cs" />
-        <option value="$PROJECT_DIR$/Assets/PandeaGames/Data/SynchronousLoder.cs" />
         <option value="$PROJECT_DIR$/Assets/PandeaGames/Data/SynchronousLoader.cs" />
         <option value="$PROJECT_DIR$/Assets/PandeaGames/Data/WeakReference/Loader.cs" />
         <option value="$PROJECT_DIR$/Assets/PandeaGames/Data/SynchronousLoaderGroup.cs" />
         <option value="$PROJECT_DIR$/Assets/client/Data/JunkyardStaticDataLoader.cs" />
-        <option value="$PROJECT_DIR$/Assets/PandeaGames/Data/Static/SynchronousStaticDataProvider.cs" />
         <option value="$PROJECT_DIR$/Assets/PandeaGames/Data/ScriptableObjectSingleton.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Factories/AbstractFactory.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Factories/AbstractConfig.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Factories/CurrencyDataConfig.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Factories/AbstractConfigTable.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Factories/CurrencyDataConfigTable.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Data/Currency/CurrencyStaticData.SynchronousStaticDataProvider.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Data/Currency/CurrencyStaticData.SynchronousStaticData.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Data/UnityData/GameStaticData.cs" />
+        <option value="$PROJECT_DIR$/Assets/PandeaGames/Data/Static/PandeaGameDataProvider.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Data/GameStaticDataProvider.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Data/ViewStaticDataProvider.cs" />
+        <option value="$PROJECT_DIR$/Assets/PandeaGames/Data/Static/BundledStaticDataReferenceDirectory.cs" />
+        <option value="$PROJECT_DIR$/Assets/PandeaGames/Data/Static/StaticDataReferenceDirectory.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Data/ActionStaticDataProvider.cs" />
+        <option value="$PROJECT_DIR$/Assets/PandeaGames/Data/Static/ChildStaticDataReferenceDirectory.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Data/BlueprintDataProvider.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Data/BreakpointDataProvider.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Data/CurrencyDataProvider.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Data/Currency/CurrencyData.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Data/LootCrateDataProvider.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Data/LootDataProvider.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Data/SpecificationDataProvider.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Data/StageFormatDataProvider.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Data/StateKnowledgeStaticDataProvider.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Data/StaticDataReferences.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Data/TournamentFormatDataProvider.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Data/MaterialDataProvider.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Data/NationalityDataProvider.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Data/TournamentDataProvider.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Data/ManufacturerDataProvider.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Data/ParticipantDataProvider.cs" />
+        <option value="$PROJECT_DIR$/Assets/PandeaGames/Data/Static/StaticDataReference.cs" />
+        <option value="$PROJECT_DIR$/Assets/PandeaGames/Data/Static/AbstractStaticDataProvider.cs" />
+        <option value="$PROJECT_DIR$/Assets/PandeaGames/Game.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/JunkyardUserCurrencyDisplay.cs" />
+        <option value="$PROJECT_DIR$/Assets/PandeaGames/Data/Static/SynchronousStaticDataProvider.cs" />
+        <option value="$PROJECT_DIR$/Assets/PandeaGames/Services/AbstractService.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/Services/TournamentService.cs" />
+        <option value="$PROJECT_DIR$/Assets/PandeaGames/Services/AbstractUserService.cs" />
+        <option value="$PROJECT_DIR$/Assets/PandeaGames/Services/PauseService.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/Services/JunkyardUserService.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/CurrencyDisplay.cs" />
+        <option value="$PROJECT_DIR$/Assets/PandeaGames/Utils/SerializableDictionary.cs" />
+        <option value="$PROJECT_DIR$/Assets/PandeaGames/Utils/DataReferenceDictionary.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/StatusBarCurrencyRenderer.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/Wallet.cs" />
       </list>
     </option>
   </component>
@@ -855,7 +883,9 @@
       <workItem from="1573747692375" duration="1277000" />
       <workItem from="1573883048379" duration="482000" />
       <workItem from="1573919656025" duration="3850000" />
-      <workItem from="1573926885459" duration="18761000" />
+      <workItem from="1573926885459" duration="18877000" />
+      <workItem from="1573978017863" duration="3290000" />
+      <workItem from="1574010119310" duration="6333000" />
     </task>
     <servers />
   </component>
@@ -907,17 +937,17 @@
           <option name="timeStamp" value="342" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/PandeaGames/Game.cs</url>
-          <line>59</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/PandeaGames/Game.cs" initialLine="59">
+          <url>file://$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/CurrencyDisplay.cs</url>
+          <line>21</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/CurrencyDisplay.cs" initialLine="21">
             <startOffsets>
-              <option value="2273" />
+              <option value="502" />
             </startOffsets>
             <endOffsets>
-              <option value="2274" />
+              <option value="600" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="343" />
+          <option name="timeStamp" value="344" />
         </line-breakpoint>
         <breakpoint enabled="true" suspend="NONE" type="DotNet Exception Breakpoints">
           <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />

@@ -25,7 +25,7 @@ public class CurrencyData : AbstractStaticData, ILoot, IStaticDataBalance<Curren
 {
     [SerializeField]
     private List<string> _tags;
-    private List<string> Tags
+    public List<string> Tags
     {
         get => _tags;
     }

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9e06f00715e4f98b340a52983c8e32f, type: 3}
   m_Name: GameStaticData
   m_EditorClassIdentifier: 
+  _nationFlagFactory: {fileID: 0}
   _actionList:
     _guid: 338088a5bcaa5614ea03d24595ddea10
     _path: Assets/AssetBundles/Data/Simulation/Behavior/List.asset
@@ -23,6 +24,7 @@ MonoBehaviour:
     type: 2}
   _lightboxKeyMaterial: {fileID: 2100000, guid: 17129c3a69bd8f943a473fc582253b5c,
     type: 2}
+  _statusBarCurrencyTag: Primary
   NationalExpBreakpoints:
     _id: NationalityBreakpoints
   ExpBreakpoints:

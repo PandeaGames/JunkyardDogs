@@ -4,7 +4,7 @@ using PandeaGames.Data.Static;
 using Data;
 using UnityEngine;
 
-public class ViewStaticDataProvider : AbstractStaticDataProvider
+public class ViewStaticDataProvider : AbstractStaticDataProvider<ViewStaticDataProvider>
 {
     private const string ScriptableObjectPath = "AssetBundles/Data/StaticData/ViewStaticData";
 

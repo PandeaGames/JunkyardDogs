@@ -9,7 +9,7 @@ public interface IPausable
     void Resume();
 }
 
-public class PauseService : AbstractService
+public class PauseService : AbstractService<PauseService>
 {
     private readonly List<IPausable> _pausables = new List<IPausable>();
     private bool _isPaused;

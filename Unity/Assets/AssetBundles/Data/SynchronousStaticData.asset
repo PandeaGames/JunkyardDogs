@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea8a7d870e414fb6a38d8157689136fc, type: 3}
   m_Name: SynchronousStaticData
   m_EditorClassIdentifier: 
+  _currencyDataConfigTable: {fileID: 11400000, guid: 8dc98b1dabb64484dbf7d0ff50f15e5d,
+    type: 2}
   _naitonalitySpriteFactory:
     _guid: ff93e58f01562934f9cd86557596666d
     _path: Assets/AssetBundles/Data/Nations/FlagsLarge.asset

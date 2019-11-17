@@ -10,7 +10,7 @@ namespace PandeaGames.Utils
     }
     
     [Serializable]
-    public class DataReferenceDictionary<TReference, TData, TDataBase, TDirectory, TValue, TKvP> : SerializableDictionary<TReference, TValue, TKvP>, ISerializableDictionary<TData, TValue>
+    public class DataReferenceDictionary<TReference, TData, TDataBase, TDirectory, TValue, TKvP> : SerializableDictionary<TReference, TValue, TKvP>
         where TDataBase:IStaticData
         where TData:TDataBase
         where TKvP:KeyValuePair<TReference, TValue>, new()
@@ -27,11 +27,36 @@ namespace PandeaGames.Utils
             AddValue(key, value);
         }
 
-        public virtual void AddValue(TData key, TValue value)
+        public virtual TKvP GetPair(TData data)
+        {
+            return GetPair(data.ID);
+        }
+
+        public virtual TKvP GetPair(TReference reference)
+        {
+            return GetPair(reference.ID);
+        }
+
+        public virtual TKvP GetPair(string id)
+        {
+            foreach (TKvP pair in _keyValuePairs)
+            {
+                if (pair.Key.ID.Equals(id))
+                {
+                    return pair;
+                }
+            }
+            
+            TReference reference = new TReference();
+            reference.ID = id;
+            return base.AddValue(reference, default(TValue));
+        }
+
+        public virtual TKvP AddValue(TData key, TValue value)
         {
             TReference reference = new TReference();
             reference.ID = key.ID;
-            base.AddValue(reference, value);
+            return base.AddValue(reference, value);
         }
 
         public virtual bool Contains(TData data)

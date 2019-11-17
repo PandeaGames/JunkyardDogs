@@ -6,7 +6,7 @@ using Object = UnityEngine.Object;
 
 namespace PandeaGames.Data.Static
 {
-    public abstract class StaticDataReferenceDirectory<TDataBase, TData, TReference, TDirectory> : AbstractStaticDataProvider, 
+    public abstract class StaticDataReferenceDirectory<TDataBase, TData, TReference, TDirectory> : AbstractStaticDataProvider<TDirectory>, 
         IEnumerable<TReference> 
         where TDataBase:IStaticData
         where TData:TDataBase

@@ -12,6 +12,7 @@ public class GameConfigurationDataBalanceObject : IStaticDataBalanceObject
     public string name;
     public string nationalExpBreakpoints;
     public string expBreakpoints;
+    public string statusBarCurrencyTag;
         
     public string GetDataUID()
     {
@@ -59,6 +60,14 @@ public class GameStaticData : ScriptableObject, ILoadableObject, IStaticDataBala
     {
         get { return _lightboxKeyMaterial; }
     }
+
+    [SerializeField]
+    private string _statusBarCurrencyTag;
+    public string StatusBarCurrencyTag
+    {
+        get => _statusBarCurrencyTag;
+    }
+    
     
     public WeakReference ActionListRef
     {
@@ -95,6 +104,7 @@ public class GameStaticData : ScriptableObject, ILoadableObject, IStaticDataBala
     {
         NationalExpBreakpoints = new BreakpointStaticDataReference();
         ExpBreakpoints = new BreakpointStaticDataReference();
+        _statusBarCurrencyTag = balance.statusBarCurrencyTag;
 
         NationalExpBreakpoints.ID = balance.nationalExpBreakpoints;
         ExpBreakpoints.ID = balance.expBreakpoints;

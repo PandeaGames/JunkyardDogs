@@ -3,7 +3,7 @@ using Data;
 
 namespace JunkyardDogs.Data
 {
-    public class GameStaticDataProvider : AbstractStaticDataProvider
+    public class GameStaticDataProvider : AbstractStaticDataProvider<GameStaticDataProvider>
     {
         private const string ScriptableObjectPath = "AssetBundles/Data/StaticData/GameStaticData";
 
