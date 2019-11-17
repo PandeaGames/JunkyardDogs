@@ -23,6 +23,17 @@ MonoBehaviour:
   _seasonDelaySeconds: 30
   _grade:
     _value: 0
+  _rewards:
+  - Rewards:
+    - _id: JunkyardCrateData
+    - _id: WeightedJunkyardCrate
+    - _id: NewCrateData
+  - Rewards:
+    - _id: NewCrateData
+    - _id: NewCrateData
+    - _id: NewCrateData
+  - Rewards:
+    - _id: WeightedJunkyardCrate
   unlockCriteria: 1
   unlockNation:
     _id: Canada

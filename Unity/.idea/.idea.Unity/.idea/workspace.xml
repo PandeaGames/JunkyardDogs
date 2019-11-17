@@ -2,33 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b6defc3-a091-4fde-bf1e-c3bdd679481d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Art/Views/HubView.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Art/Views/HubView.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Static/GameStaticData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Static/GameStaticData.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/SynchronousStaticData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/SynchronousStaticData.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/TestEngagement.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/TestEngagement.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PandeaGames/Data/Static/AbstractStaticDataProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PandeaGames/Data/Static/AbstractStaticDataProvider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PandeaGames/Data/Static/PandeaGameDataProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PandeaGames/Data/Static/PandeaGameDataProvider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PandeaGames/Data/Static/StaticDataReferenceDirectory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PandeaGames/Data/Static/StaticDataReferenceDirectory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PandeaGames/Data/Static/SynchronousStaticDataProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PandeaGames/Data/Static/SynchronousStaticDataProvider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PandeaGames/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PandeaGames/Game.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PandeaGames/Services/AbstractService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PandeaGames/Services/AbstractService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PandeaGames/Services/AbstractUserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PandeaGames/Services/AbstractUserService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PandeaGames/Services/PauseService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PandeaGames/Services/PauseService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PandeaGames/Utils/DataReferenceDictionary.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PandeaGames/Utils/DataReferenceDictionary.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PandeaGames/Utils/SerializableDictionary.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PandeaGames/Utils/SerializableDictionary.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/Data/BlueprintDataProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Data/BlueprintDataProvider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/Data/Currency/CurrencyData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Data/Currency/CurrencyData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/Data/CurrencyDataProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Data/CurrencyDataProvider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/Data/GameStaticDataProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Data/GameStaticDataProvider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/Data/ParticipantDataProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Data/ParticipantDataProvider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/Data/UnityData/GameStaticData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Data/UnityData/GameStaticData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/Data/ViewStaticDataProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Data/ViewStaticDataProvider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/Wallet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/Wallet.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Services/JunkyardUserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Services/JunkyardUserService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Services/TournamentService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Runtime/Services/TournamentService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Art/Currency/CurrencyDataConfigTable.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Art/Currency/CurrencyDataConfigTable.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Tournaments/Tournaments/MooseChallenge.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Tournaments/Tournaments/MooseChallenge.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Tournaments/Tournaments/MooseHerd.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Tournaments/Tournaments/MooseHerd.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Tournaments/Tournaments/TestCanada_VS_Germany.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Tournaments/Tournaments/TestCanada_VS_Germany.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Tournaments/Tournaments/TestCanada_VS_Japan.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Tournaments/Tournaments/TestCanada_VS_Japan.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Tournaments/Tournaments/TestGermany_VS_Japan.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Tournaments/Tournaments/TestGermany_VS_Japan.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AssetBundles/Data/Tournaments/Tournaments/TestMooseChallenge.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AssetBundles/Data/Tournaments/Tournaments/TestMooseChallenge.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/Data/Balance/BalanceData/TournamentBalanceData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Data/Balance/BalanceData/TournamentBalanceData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Tournament.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Tournament.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -645,8 +628,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/PandeaGames/Data/SynchronousLoader.cs" />
-        <option value="$PROJECT_DIR$/Assets/PandeaGames/Data/WeakReference/Loader.cs" />
         <option value="$PROJECT_DIR$/Assets/PandeaGames/Data/SynchronousLoaderGroup.cs" />
         <option value="$PROJECT_DIR$/Assets/client/Data/JunkyardStaticDataLoader.cs" />
         <option value="$PROJECT_DIR$/Assets/PandeaGames/Data/ScriptableObjectSingleton.cs" />
@@ -696,6 +677,8 @@
         <option value="$PROJECT_DIR$/Assets/PandeaGames/Utils/DataReferenceDictionary.cs" />
         <option value="$PROJECT_DIR$/Assets/client/scripts/Runtime/UI/StatusBarCurrencyRenderer.cs" />
         <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Entities/Wallet.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Data/Balance/BalanceData/TournamentBalanceData.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Tournament.cs" />
       </list>
     </option>
   </component>
@@ -886,6 +869,7 @@
       <workItem from="1573926885459" duration="18877000" />
       <workItem from="1573978017863" duration="3290000" />
       <workItem from="1574010119310" duration="6333000" />
+      <workItem from="1574021498499" duration="2388000" />
     </task>
     <servers />
   </component>

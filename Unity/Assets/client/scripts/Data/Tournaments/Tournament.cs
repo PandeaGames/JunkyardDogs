@@ -1,14 +1,87 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections.Generic;
 using Data;
 using JunkyardDogs.Components;
 using JunkyardDogs.Data;
 using JunkyardDogs.Data.Balance;
-using PandeaGames.Data.WeakReferences;
 using UnityEngine.Serialization;
+using WeakReference = PandeaGames.Data.WeakReferences.WeakReference;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
+
+[Serializable]
+public struct TournamentBalanceObject:IStaticDataBalanceObject
+{
+    public string name;
+    public uint grade;
+    public string format;
+    public string nation;
+    public int roundPaceSeconds;
+    public int seasonDelaySeconds;
+    public string unlockNation;
+    public string unlockCriteria;
+    public int nationalExpUnlockBreakpoint;
+    public int expUnlockBreakpoint;
+    public string lootCrateRewards;
+
+    public string stage_0_completions_0;
+    public string stage_1_completions_0;
+    public string stage_2_completions_0;
+    public string stage_0_completions_1;
+    public string stage_1_completions_1;
+    public string stage_2_completions_1;
+    public string stage_0_completions_2;
+    public string stage_1_completions_2;
+    public string stage_2_completions_2;
+    public string stage_0_completions_3;
+    public string stage_1_completions_3;
+    public string stage_2_completions_3;
+    public string stage_0_completions_4;
+    public string stage_1_completions_4;
+    public string stage_2_completions_4;
+    public string stage_0_completions_5;
+    public string stage_1_completions_5;
+    public string stage_2_completions_5;
+
+    public string participant01;
+    public string participant02;
+    public string participant03;
+    public string participant04;
+    public string participant05;
+    public string participant06;
+    public string participant07;
+    public string participant08;
+    public string participant09;
+    public string participant10;
+    public string participant11;
+    public string participant12;
+    public string participant13;
+    public string participant14;
+    public string participant15;
+    public string participant16;
+    public string participant17;
+    public string participant18;
+    public string participant19;
+    public string participant20;
+    public string participant21;
+    public string participant22;
+    public string participant23;
+    public string participant24;
+    public string participant25;
+    public string participant26;
+    public string participant27;
+    public string participant28;
+    public string participant29;
+    public string participant30;
+    public string participant31;
+    
+    public string GetDataUID()
+    {
+        return name;
+    }
+}
 
 public enum TournamentUnlockCriteria
 {
@@ -37,6 +110,10 @@ public class Tournament : AbstractStaticData, IStaticDataBalance<TournamentBalan
 
     [SerializeField]
     private ComponentGrade _grade;
+    
+    [SerializeField]
+    private List<TournamentStagesRewards> _rewards;
+    public List<TournamentStagesRewards> Rewards {get=>_rewards;}
     
     [SerializeField]
     public TournamentUnlockCriteria unlockCriteria;
@@ -99,6 +176,13 @@ public class Tournament : AbstractStaticData, IStaticDataBalance<TournamentBalan
         return state;
     }
 
+    [Serializable]
+    public struct TournamentStagesRewards
+    {
+        [LootCrateStaticDataReference]
+        public List<LootCrateStaticDataReference> Rewards;
+    }
+    
     public void ApplyBalance(TournamentBalanceObject balance)
     {
         _grade = new ComponentGrade(balance.grade);
@@ -124,6 +208,27 @@ public class Tournament : AbstractStaticData, IStaticDataBalance<TournamentBalan
         
         List<ParticipantStaticDataReference> list = new List<ParticipantStaticDataReference>();
 
+        _rewards = new List<TournamentStagesRewards>();
+        
+        ImportRewards(
+            new string[]{balance.stage_0_completions_0, balance.stage_1_completions_0, balance.stage_2_completions_0}, 
+            ref _rewards);
+        ImportRewards(
+            new string[]{balance.stage_0_completions_1, balance.stage_1_completions_1, balance.stage_2_completions_1}, 
+            ref _rewards);
+        ImportRewards(
+            new string[]{balance.stage_0_completions_2, balance.stage_1_completions_2, balance.stage_2_completions_2}, 
+            ref _rewards);
+        ImportRewards(
+            new string[]{balance.stage_0_completions_3, balance.stage_1_completions_3, balance.stage_2_completions_3}, 
+            ref _rewards);
+        ImportRewards(
+            new string[]{balance.stage_0_completions_4, balance.stage_1_completions_0, balance.stage_2_completions_4}, 
+            ref _rewards);
+        ImportRewards(
+            new string[]{balance.stage_0_completions_5, balance.stage_1_completions_5, balance.stage_2_completions_5}, 
+            ref _rewards);
+        
         ImportParticipant(list, balance.participant01);
         ImportParticipant(list, balance.participant02);
         ImportParticipant(list, balance.participant03);
@@ -167,6 +272,30 @@ public class Tournament : AbstractStaticData, IStaticDataBalance<TournamentBalan
             ParticipantStaticDataReference reference = new ParticipantStaticDataReference();
             reference.ID = participantId;
             list.Add(reference);
+        }
+    }
+
+    private void ImportRewards(string[] stagedRewards, ref List<TournamentStagesRewards> rewards)
+    {
+        List<LootCrateStaticDataReference> stagesRewardsList = null;
+        foreach (string stagedReward in stagedRewards)
+        {
+            if (!string.IsNullOrEmpty(stagedReward))
+            {
+                if (stagesRewardsList == null)
+                {
+                    stagesRewardsList = new List<LootCrateStaticDataReference>();
+                }
+
+                LootCrateStaticDataReference reference = new LootCrateStaticDataReference();
+                reference.ID = stagedReward;
+                stagesRewardsList.Add(reference);
+            }
+        }
+
+        if (stagesRewardsList != null)
+        {
+            rewards.Add(new TournamentStagesRewards(){Rewards = stagesRewardsList});
         }
     }
 
