@@ -1,9 +1,7 @@
 ﻿using UnityEngine;
 using JunkyardDogs.Components;
-using System;
 using JunkyardDogs.scripts.Runtime.Dialogs;
 using UnityEngine.UI;
-using Component = JunkyardDogs.Components.Component;
 using TMPro;
 
 public class TakeJunkDialog : Dialog<TakeJunkDialogViewModel>
@@ -23,7 +21,7 @@ public class TakeJunkDialog : Dialog<TakeJunkDialogViewModel>
     protected override void Initialize()
     {
         ILoot loot = _viewModel.ModelData.Loot[0];
-        Component component = LootUtilities.TryCreateComponentFromLoot(loot, 0);
+        IComponent component = LootUtilities.TryCreateComponentFromLoot(loot, 0);
         
         _componentIcon.sprite = _spriteFactory.GetAsset( component.SpecificationReference.Data);
         _componentText.text = component.SpecificationReference.Data.name;

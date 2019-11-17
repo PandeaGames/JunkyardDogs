@@ -503,7 +503,7 @@ namespace JunkyardDogs.Simulation
                     double timeOfStartCharge =
                         engagement.ConvertStepsToSeconds(decisionStartWeaponChargeWeightedDecision.simulationTick);
                     double timeOfChargeComplete =
-                        timeOfStartCharge + decisionStartWeaponCharge.GetWeapon(this).GetSpec<Weapon>().ChargeTime;
+                        timeOfStartCharge + decisionStartWeaponCharge.GetWeapon(this).GetSpec().ChargeTime;
 
                     bool isCharging = timeOfChargeComplete > engagement.CurrentSeconds;
                     isCharging |= isLastDecisisonToStartWeaponCharge;
@@ -531,7 +531,7 @@ namespace JunkyardDogs.Simulation
                 double timeOfLastWeaponFire =
                     engagement.ConvertStepsToSeconds(decisionWeaponFireWeightedDecision.simulationTick);
                 double timeOfCooldownComplete =
-                    timeOfLastWeaponFire + decisionWeaponFire.GetWeapon(this).GetSpec<Weapon>().Cooldown;
+                    timeOfLastWeaponFire + decisionWeaponFire.GetWeapon(this).GetSpec().Cooldown;
 
                 bool isInCooldown = timeOfCooldownComplete > engagement.CurrentSeconds;
                 return isInCooldown;

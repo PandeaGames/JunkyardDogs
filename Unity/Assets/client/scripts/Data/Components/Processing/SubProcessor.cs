@@ -6,7 +6,7 @@ using System;
 namespace JunkyardDogs.Components
 {
     [Serializable]
-    public class SubProcessor : Component
+    public abstract class SubProcessor<TSpecification> : Component <TSpecification> where TSpecification:SubProcessor
     {
         public SubProcessor()
         {

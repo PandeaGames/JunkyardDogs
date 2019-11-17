@@ -1,13 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
 using Data;
+using PandeaGames.Utils;
 using UnityEngine;
 
+[Serializable]
 public class TournamentMetaState
 {
-    public TournamentState TournamentState { get; set; }
-    public DateTime LastCompleted { get; set; }
-    public int Completions { get; set; }
+    [SerializeField] 
+    private TournamentState _tournamentState;
+
+    [SerializeField]
+    private DateTime _lastCompleted;
+
+    [SerializeField] 
+    private int _completions;
+    
+    public TournamentState TournamentState { get => _tournamentState;
+        set => _tournamentState = value;
+    }
+    public DateTime LastCompleted { get => _lastCompleted; set => _lastCompleted = value; }
+    public int Completions { get => _completions;
+        set => _completions = value;
+    }
 
     public void CompleteTournament()
     {
@@ -43,7 +58,13 @@ public static class TournamentMetaStateUtils
 }
 
 [Serializable]
-public class TournamentMetaStatesDictionary : Dictionary<string, TournamentMetaState>
+public class TournamentMetaStateKvP : PandeaGames.Utils.KeyValuePair<string, TournamentMetaState>
+{
+    
+}
+
+[Serializable]
+public class TournamentMetaStatesDictionary : SerializableDictionary<string, TournamentMetaState, TournamentMetaStateKvP>
 {
     
 }
@@ -70,8 +91,7 @@ public class Tournaments
 
     public void TryGetTournament(string guid, out TournamentState state)
     {
-        TournamentMetaState tournamentMetaState = null;
-        TournamentStates.TryGetValue(guid, out tournamentMetaState);
+        TournamentMetaState tournamentMetaState = TournamentStates.GetValue(guid);
 
         if (tournamentMetaState != null)
         {
@@ -90,12 +110,12 @@ public class Tournaments
     
     public void TryGetTournamentMeta(string guid, out TournamentMetaState state)
     {
-        TournamentStates.TryGetValue(guid, out state);
+        state = TournamentStates.GetValue(guid);
 
         if (state == null)
         {
             state = new TournamentMetaState();
-            TournamentStates.Add(guid, state);
+            TournamentStates.AddValue(guid, state);
         }
     }
     
@@ -106,8 +126,7 @@ public class Tournaments
     
     public void CompleteTournament(string guid)
     {
-        TournamentMetaState tournamentMetaState = null;
-        TournamentStates.TryGetValue(guid, out tournamentMetaState);
+        TournamentMetaState tournamentMetaState = TournamentStates.GetValue(guid);
 
         if(tournamentMetaState != null)
             tournamentMetaState.CompleteTournament();
@@ -115,7 +134,7 @@ public class Tournaments
 
     public void ClearTournamentStatus(string guid)
     {
-        if(TournamentStates.ContainsKey(guid))
+        if(TournamentStates.Contains(guid))
             TournamentStates.Remove(guid);
     }
 }

@@ -4,10 +4,6 @@ using JunkyardDogs.scripts.Runtime.Dialogs;
 using PandeaGames;
 using UnityEngine;
 using UnityEngine.UI;
-using System.Collections.Generic;
-using JunkyardDogs.Specifications;
-using Component = JunkyardDogs.Components.Component;
-using WeakReference = PandeaGames.Data.WeakReferences.WeakReference;
 
 public class EventDialog : Dialog<EventDialogViewModel>
 {

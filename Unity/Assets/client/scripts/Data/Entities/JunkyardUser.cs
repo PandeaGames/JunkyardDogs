@@ -1,11 +1,6 @@
 ﻿using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
 using JunkyardDogs.Components;
 using System;
-using JunkyardDogs.Data;
-using WeakReference = PandeaGames.Data.WeakReferences.WeakReference;
-using Component = JunkyardDogs.Components.Component;
 
 [Serializable]
 public class JunkyardUser : User, ILootCrateConsumer, IExperienceModel
@@ -27,7 +22,7 @@ public class JunkyardUser : User, ILootCrateConsumer, IExperienceModel
     public Tournaments Tournaments { get { return _tournaments; } set { _tournaments = value; } }
     public Experience Experience  { get { return _experience; } set { _experience = value; } }
 
-    public void AddComponent(Component component)
+    public void AddComponent(IComponent component)
     {
         Competitor.Inventory.AddComponent(component);
     }

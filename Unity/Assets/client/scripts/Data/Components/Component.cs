@@ -9,11 +9,18 @@ using JunkyardDogs.Data;
 
 namespace JunkyardDogs.Components
 {
+    public interface IComponent
+    {
+        SpecificationStaticDataReference SpecificationReference { set; get; }
+        ManufacturerStaticDataReference Manufacturer { set; get; }
+        Specification Specification { get; }
+    }
+    
     [Serializable]
-    public class Component : ComponentGrade.IGradedComponent
+    public class Component<TSpecification> : IComponent, ComponentGrade.IGradedComponent where TSpecification:Specification
     {
         [SerializeField]
-        private SpecificationStaticDataReference _specificationReference;
+        private SpecificationStaticDataReference _specificationReference = new SpecificationStaticDataReference();
         [SerializeField]
         private ManufacturerStaticDataReference _manufacturer;
         
@@ -38,17 +45,14 @@ namespace JunkyardDogs.Components
             }
         }
 
-        [SerializeField]
-        public Distinction[] _distinctions { get; set; }
-
-        public Component()
+        public TSpecification GetSpec()
         {
-            SpecificationReference = new SpecificationStaticDataReference();
+            return (TSpecification) Specification;
         }
-
-        public TSpec GetSpec<TSpec>() where TSpec : Specification
+        
+        public TGetSpecification GetSpec<TGetSpecification>() where TGetSpecification:TSpecification
         {
-            return Specification as TSpec;
+            return (TGetSpecification) Specification;
         }
         
         public bool IsSpec<TSpec>() where TSpec : Specification

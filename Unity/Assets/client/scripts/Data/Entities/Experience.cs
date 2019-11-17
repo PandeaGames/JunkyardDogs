@@ -15,33 +15,28 @@ public interface IExperienceModel
 public class Experience : ExpLevel, IExperienceModel
 {
     [SerializeField]
-    private NationDictionary _nationDictionary;
+    private NationDictionary _nationDictionary = new NationDictionary();
     public NationDictionary NationDictionary
     {
         get { return _nationDictionary; }
         set{_nationDictionary = value;}
-    }
-    
-    public Experience()
-    {
-        _nationDictionary = new NationDictionary();
     }
 
     public void Ascend(Nationality nationality)
     {
         if (!_nationDictionary.Contains(nationality))
         {
-            _nationDictionary[nationality] = new NationalExperience(0);
+            _nationDictionary.SetValue(nationality, new NationalExperience(0));
         }
 
-        _nationDictionary[nationality].Ascend();
+        _nationDictionary.GetValue(nationality).Ascend();
     }
 
     public int GetExp(Nationality nationality)
     {
         if (_nationDictionary.Contains(nationality))
         {
-            return _nationDictionary[nationality];
+            return _nationDictionary.GetValue(nationality);
         }
 
         return 0;
@@ -51,20 +46,26 @@ public class Experience : ExpLevel, IExperienceModel
     {
         if (_nationDictionary.Contains(nationality))
         {
-            return _nationDictionary[nationality].Level;
+            return _nationDictionary.GetValue(nationality).Level;
         }
 
         return 0;
+    }
+    
+    public void AddExp(int amount)
+    {
+        Value += amount;
     }
 
     public void AddExp(Nationality nationality, int amount)
     {
         if (_nationDictionary.Contains(nationality))
         {
-            amount += _nationDictionary[nationality];
+            amount += _nationDictionary.GetValue(nationality);
         }
         
-        _nationDictionary[nationality] = amount;
+        _nationDictionary.SetValue(nationality, amount);
+        AddExp(amount);
     }
     
     public int GetTotalExp()

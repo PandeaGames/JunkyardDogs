@@ -1,11 +1,8 @@
-﻿using UnityEngine;
-using System.Collections;
-using Component = JunkyardDogs.Components.Component;
-using JunkyardDogs.Components;
+﻿using JunkyardDogs.Components;
 
 public class PlateRenderer : ComponentRenderer
 {
-    public override void RenderComponent(Component component)
+    public override void RenderComponent(IComponent component)
     {
         Plate plate = component as Plate;
 

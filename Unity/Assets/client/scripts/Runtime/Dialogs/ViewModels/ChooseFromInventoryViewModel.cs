@@ -1,7 +1,6 @@
 ﻿using System;
-using System.ComponentModel;
+using JunkyardDogs.Components;
 using PandeaGames.ViewModels;
-using Component = JunkyardDogs.Components.Component;
 
 namespace JunkyardDogs.scripts.Runtime.Dialogs
 {
@@ -20,7 +19,7 @@ namespace JunkyardDogs.scripts.Runtime.Dialogs
         }
 
         public Data modelData;
-        public Component Selected;
+        public IComponent Selected;
 
         public void SetData(Data data)
         {

@@ -6,13 +6,14 @@ using System;
 namespace JunkyardDogs.Components
 {
     [Serializable]
-    public class CPU : Component
+    public class CPU : Component<Specifications.CPU>
     {
-        public Directive[] Directives { get; set; }
-
-        public CPU()
+        [SerializeField] private Directive[] _directives = new Directive[0];
+        
+        public Directive[] Directives
         {
-            
+            get => _directives;
+            set => _directives = value;
         }
 
         public Specifications.CPU Spec

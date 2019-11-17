@@ -1,8 +1,4 @@
-﻿using System.ComponentModel;
-using PandeaGames.Data.WeakReferences;
-using PandeaGames.ViewModels;
-using JunkyardDogs.Components;
-using Component = JunkyardDogs.Components.Component;
+﻿using PandeaGames.ViewModels;
 
 namespace JunkyardDogs.scripts.Runtime.Dialogs
 {

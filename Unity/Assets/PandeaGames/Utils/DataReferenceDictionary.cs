@@ -17,30 +17,31 @@ namespace PandeaGames.Utils
         where TReference:StaticDataReference<TDataBase, TData, TReference, TDirectory>, new()
         where TDirectory:StaticDataReferenceDirectory<TDataBase, TData, TReference, TDirectory>, new()
     {
-        public virtual TValue this[TData key]
+        public virtual TValue GetValue(TData key)
         {
-            get { return this[key as object]; }
-            set
-            {
-                Add(key, value);
-            }
+            return GetValueByObj(key);
         }
 
-        public virtual void Add(TData key, TValue value)
+        public void SetValue(TData key, TValue value)
+        {
+            AddValue(key, value);
+        }
+
+        public virtual void AddValue(TData key, TValue value)
         {
             TReference reference = new TReference();
             reference.ID = key.ID;
-            base.Add(reference, value);
+            base.AddValue(reference, value);
         }
 
         public virtual bool Contains(TData data)
         {
-            return base.Contains(data);
+            return base.ContainsObj(data);
         }
 
         public virtual void Remove(TData key)
         {
-            base.Remove(key);
+            base.RemoveObj(key);
         }
     }
 }

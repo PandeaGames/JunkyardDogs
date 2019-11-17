@@ -7,7 +7,7 @@ namespace JunkyardDogs.Simulation
     {
         public SimMeleeAttack(SimulatedEngagement engagement, SimBot simBot, Chassis.ArmamentLocation armementLocation) : base(engagement, simBot, armementLocation)
         {
-            colliders.Add(CreateCollider(simBot.bot.GetArmament(armementLocation).GetSpec<Weapon>()));
+            colliders.Add(CreateCollider(simBot.bot.GetArmament(armementLocation).GetSpec()));
             body.isTrigger = true;
             body.rotation = simBot.body.rotation;
         }

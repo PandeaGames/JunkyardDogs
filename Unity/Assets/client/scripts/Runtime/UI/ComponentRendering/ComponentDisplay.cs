@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
-using System.Collections;
+using JunkyardDogs.Components;
 using TMPro;
 using UnityEngine.UI;
-using Component = JunkyardDogs.Components.Component;
 using SRF.UI.Layout;
 
 public class ComponentDisplay : MonoBehaviour, IVirtualView
@@ -18,7 +17,7 @@ public class ComponentDisplay : MonoBehaviour, IVirtualView
 
     public void SetDataContext(object data)
     {
-        Component component = data as Component;
+        IComponent component = data as IComponent;
 
         if(component != null)
         {
@@ -27,7 +26,7 @@ public class ComponentDisplay : MonoBehaviour, IVirtualView
     }
 
     // Use this for initialization
-    public void RenderComponent(Component component)
+    public void RenderComponent(IComponent component)
     {
         _componentIcon.sprite = _spriteFactory.GetAsset(component.SpecificationReference.Data);
         _componentName.text = component.SpecificationReference.Data.name;

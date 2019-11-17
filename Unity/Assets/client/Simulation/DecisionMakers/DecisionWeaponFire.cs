@@ -27,7 +27,7 @@ namespace JunkyardDogs.Simulation
         protected override Logic GetDecisionWeight(SimBot simBot, SimulatedEngagement engagement, Weapon weapon)
         {
             DecisionWeaponFireLogic logic = new DecisionWeaponFireLogic();
-            logic.plane = weapon.GetSpec<Specifications.Weapon>().DecisionPlane;
+            logic.plane = weapon.GetSpec().DecisionPlane;
 
             logic.wasChargingWeapon =
                 simBot.IsLastDecisionOfType<DecisionStartWeaponCharge>(new Type[] {typeof(DecisionWeaponCharge)}, logic.plane);
@@ -45,7 +45,7 @@ namespace JunkyardDogs.Simulation
                 {
                     logic.lastWeaponChargeDecisionTick = lastStartWeaponChargeDecision.simulationTick;
                     logic.lastWeaponChargeTime = decisionStartWeaponCharge.GetWeapon(simBot)
-                        .GetSpec<Specifications.Weapon>().ChargeTime;
+                        .GetSpec().ChargeTime;
 
                     logic.chargeTicks = engagement.CurrentStep - logic.lastWeaponChargeDecisionTick;
                     logic.chargeTime = engagement.ConvertStepsToSeconds(logic.chargeTicks);

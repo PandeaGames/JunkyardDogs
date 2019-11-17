@@ -19,30 +19,30 @@ public class Wallet : DataReferenceDictionary<
     int, 
     CurrencyDictionaryKvP>
 {
-    public override void Add(CurrencyStaticDataReference key, int value)
+    public override void AddValue(CurrencyStaticDataReference key, int value)
     {
-        Add(key, value);
+        AddObj(key, value);
     }
     
-    public override void Add(CurrencyData key, int value)
+    public override void AddValue(CurrencyData key, int value)
     {
-        Add(key, value);
+        AddObj(key, value);
     }
     
     public void Add(Currency currency)
     {
-        Add(currency.CurrencyType, currency.Quantity);
+        AddObj(currency.CurrencyType, currency.Quantity);
     }
     
-    private void Add(object key, int value)
+    private void AddObj(object key, int value)
     {
-        if (Contains(key))
+        if (ContainsObj(key))
         {
-            this[key] = this[key] + value;
+            SetValueByObj(key, GetValueByObj(key) + value);
         }
         else
         {
-            this[key] = value;
+            SetValueByObj(key, value);
         }
     }
 }

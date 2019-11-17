@@ -1,14 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using JunkyardDogs.Components;
 using UnityEngine;
-using Component = JunkyardDogs.Components.Component;
 
-public class ComponentListItem : AbstractListItem<Component>
+public class ComponentListItem : AbstractListItem<IComponent>
 {
     [SerializeField]
     private ComponentDisplay _componentDisplay;
 
-    public override void SetData(Component data)
+    public override void SetData(IComponent data)
     {
         base.SetData(data);
         _componentDisplay.RenderComponent(data);

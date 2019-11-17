@@ -5,7 +5,7 @@ using JunkyardDogs.Data.Balance;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Blueprints/Plate")]
-public class PlateBlueprintData : PhysicalComponentBlueprintData<Plate>, IStaticDataBalance<PlateBlueprintBalanceObject>
+public class PlateBlueprintData : PhysicalComponentBlueprintData<Plate, JunkyardDogs.Specifications.Plate>, IStaticDataBalance<PlateBlueprintBalanceObject>
 {
     public void ApplyBalance(PlateBlueprintBalanceObject balance)
     {

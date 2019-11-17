@@ -1,10 +1,11 @@
-using JunkyardDogs.Components;
 using JunkyardDogs.Data;
 using JunkyardDogs.Data.Balance;
+using JunkyardDogs.Specifications;
 using UnityEngine;
+using CPU = JunkyardDogs.Components.CPU;
 
 [CreateAssetMenu(menuName = "Blueprints/Plate")]
-public class CPUBlueprintData : ComponentBlueprintData<CPU>, IStaticDataBalance<CPUBlueprintBalanceObject>
+public class CPUBlueprintData : ComponentBlueprintData<CPU, JunkyardDogs.Specifications.CPU>, IStaticDataBalance<CPUBlueprintBalanceObject>
 {
     public void ApplyBalance(CPUBlueprintBalanceObject balance)
     {

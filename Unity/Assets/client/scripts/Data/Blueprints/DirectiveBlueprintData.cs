@@ -3,7 +3,7 @@ using JunkyardDogs.Components;
 using JunkyardDogs.Data;
 using JunkyardDogs.Data.Balance;
 
-public class DirectiveBlueprintData : ComponentBlueprintData<Directive>, IStaticDataBalance<DirectiveBlueprintBalanceObject>
+public class DirectiveBlueprintData : ComponentBlueprintData<Directive, JunkyardDogs.Specifications.Directive>, IStaticDataBalance<DirectiveBlueprintBalanceObject>
 {
     public void ApplyBalance(DirectiveBlueprintBalanceObject balance)
     {

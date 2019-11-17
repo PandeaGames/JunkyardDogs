@@ -1,12 +1,14 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using JunkyardDogs.Components;
 using JunkyardDogs.Data;
 using JunkyardDogs.Data.Balance;
+using JunkyardDogs.Specifications;
 using UnityEngine;
+using Chassis = JunkyardDogs.Components.Chassis;
+using Plate = JunkyardDogs.Components.Plate;
 
 [CreateAssetMenu(menuName = "Blueprints/ChassisBlueprint")]
-public class ChassisBlueprintData : PhysicalComponentBlueprintData<Chassis>, IStaticDataBalance<ChassisBlueprintBalanceObject>
+public class ChassisBlueprintData : PhysicalComponentBlueprintData<Chassis, JunkyardDogs.Specifications.Chassis>, IStaticDataBalance<ChassisBlueprintBalanceObject>
 {
     [SerializeField, EngineBlueprintStaticDataReference]
     private EngineBlueprintStaticDataReference _engine;

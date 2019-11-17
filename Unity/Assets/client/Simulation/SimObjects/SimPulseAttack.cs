@@ -12,7 +12,7 @@ namespace JunkyardDogs.Simulation
         
         public SimPulseAttack(SimulatedEngagement engagement, SimBot simBot, Chassis.ArmamentLocation armementLocation) : base(engagement, simBot, armementLocation)
         {
-            weapon = simBot.bot.GetArmament(armementLocation).GetSpec<PulseEmitter>();
+            weapon = (PulseEmitter) simBot.bot.GetArmament(armementLocation).GetSpec();
             colliders.Add(CreateCollider(weapon));
             TimeInstantiated = engagement.CurrentSeconds;
             body.isTrigger = true;

@@ -31,9 +31,10 @@ public class WorldMapView : AbstractUnityView
 
     public override void Show()
     {
-        //FindWindow().LaunchScreen("worldMap");
+        FindWindow().LaunchScreen("WorldMapHUD");
         _worldView.SetActive(true);
         Game.Instance.GetViewModel<CameraViewModel>(0).Focus(navigation.cameraAgent);
+        
     }
 
     public override void Destroy()

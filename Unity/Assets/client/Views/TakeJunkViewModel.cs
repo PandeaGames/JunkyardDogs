@@ -5,6 +5,6 @@ namespace JunkyardDogs.Views
 {
     public class TakeJunkViewModel : AbstractViewModel
     {
-        public Component ComponentToTake;
+        public IComponent ComponentToTake;
     }
 }

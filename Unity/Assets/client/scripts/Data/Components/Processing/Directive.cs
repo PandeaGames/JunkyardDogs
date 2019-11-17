@@ -1,6 +1,6 @@
 namespace JunkyardDogs.Components
 {
-    public class Directive : SubProcessor
+    public class Directive : SubProcessor<Specifications.Directive>
     {
         
     }

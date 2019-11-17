@@ -4,7 +4,7 @@ using JunkyardDogs.Data.Balance;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Blueprints/WeaponBlueprintData")]
-public class WeaponBlueprintData : PhysicalComponentBlueprintData<Weapon>, IStaticDataBalance<WeaponBlueprintBalanceObject>
+public class WeaponBlueprintData : PhysicalComponentBlueprintData<Weapon, JunkyardDogs.Specifications.Weapon>, IStaticDataBalance<WeaponBlueprintBalanceObject>
 {
     public void ApplyBalance(WeaponBlueprintBalanceObject balance)
     {

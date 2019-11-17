@@ -11,9 +11,9 @@ namespace JunkyardDogs.Components
 {
     public static class ComponentUtils
     {
-        public static Component GenerateComponent(SpecificationStaticDataReference spec, ManufacturerStaticDataReference manufacturer = null, MaterialStaticDataReference material = null)
+        public static IComponent GenerateComponent(SpecificationStaticDataReference spec, ManufacturerStaticDataReference manufacturer = null, MaterialStaticDataReference material = null)
         {
-            JunkyardDogs.Components.Component component = null;
+            JunkyardDogs.Components.IComponent component = null;
 
             Specification specData = spec.Data;
 
@@ -47,6 +47,10 @@ namespace JunkyardDogs.Components
             {
                 component = new JunkyardDogs.Components.CircuitBoard();
             }
+            else if (specData is Specifications.Motherboard)
+            {
+                component = new Motherboard();
+            }
             else if (specData is JunkyardDogs.Specifications.Directive)
             {
                 component = new JunkyardDogs.Components.Directive();
@@ -63,12 +67,15 @@ namespace JunkyardDogs.Components
 
             component.Manufacturer = manufacturer;
             component.SpecificationReference = spec;
-            
-            PhysicalComponent physicalComponent = component as PhysicalComponent;
 
-            if (physicalComponent != null)
+            if (component is IPhysicalComponent)
             {
-                physicalComponent.Material = material;
+                IPhysicalComponent physicalComponent = (IPhysicalComponent) component;
+
+                if (physicalComponent != null)
+                {
+                    physicalComponent.Material = material;
+                }
             }
             
             return component;

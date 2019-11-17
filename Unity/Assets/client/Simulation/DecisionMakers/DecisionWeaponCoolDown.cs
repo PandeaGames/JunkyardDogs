@@ -18,7 +18,7 @@ namespace JunkyardDogs.Simulation
         protected override Logic GetDecisionWeight(SimBot simBot, SimulatedEngagement engagement, Weapon weapon)
         {
             DecisionWeaponCoolDownLogic logic = new DecisionWeaponCoolDownLogic();
-            logic.plane = weapon.GetSpec<Specifications.Weapon>().DecisionPlane;
+            logic.plane = weapon.GetSpec().DecisionPlane;
             
             if (simBot.IsInWeaponCooldown(logic.plane))
             {

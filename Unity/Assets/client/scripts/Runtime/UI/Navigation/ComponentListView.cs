@@ -1,9 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using Component = JunkyardDogs.Components.Component;
+﻿using JunkyardDogs.Components;
 
-public class ComponentListView : AbstractListView<Component, ComponentListItem>
+public class ComponentListView : AbstractListView<IComponent, ComponentListItem>
 {
     
 }

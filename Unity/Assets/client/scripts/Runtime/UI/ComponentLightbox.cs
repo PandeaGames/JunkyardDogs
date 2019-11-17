@@ -1,8 +1,8 @@
 using System;
+using JunkyardDogs.Components;
 using JunkyardDogs.Data;
 using PandeaGames;
 using UnityEngine;
-using Component = JunkyardDogs.Components.Component;
 
 public class ComponentLightbox : MonoBehaviour
 {    
@@ -40,7 +40,7 @@ public class ComponentLightbox : MonoBehaviour
     
     private GameObject _componentObject;
     
-    public void GetComponentTexture(Component component, Action<Texture2D> onComplete, Action onError)
+    public void GetComponentTexture(IComponent component, Action<Texture2D> onComplete, Action onError)
     {
         Texture2D texture = null;
 

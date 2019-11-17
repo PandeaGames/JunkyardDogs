@@ -19,7 +19,7 @@ namespace JunkyardDogs.Components
         
         public override ComponentGrade Add(ComponentGrade other)
         {
-            return new ComponentGrade(value + other.value);
+            return new ComponentGrade(Value + other.Value);
         }
 
         public static ComponentGrade HighestGrade(IGradedComponent arg1, IGradedComponent arg2)

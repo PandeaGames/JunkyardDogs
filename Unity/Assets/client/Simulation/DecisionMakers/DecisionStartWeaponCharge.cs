@@ -26,8 +26,8 @@ namespace JunkyardDogs.Simulation
         protected override Logic GetDecisionWeight(SimBot simBot, SimulatedEngagement engagement, Weapon weapon)
         {
             DecisionStartWeaponChargeLogic logic = new DecisionStartWeaponChargeLogic();
-            Melee meleeWeapon = weapon.GetSpec<Melee>();
-            logic.plane = weapon.GetSpec<Specifications.Weapon>().DecisionPlane;
+            Melee meleeWeapon = weapon is Melee ? (Melee) weapon.GetSpec():null;
+            logic.plane = weapon.GetSpec().DecisionPlane;
             logic.distance = (int) Vector2.Distance(simBot.body.position, simBot.opponent.body.position);
 
             logic.isMeleeWeapon = meleeWeapon != null;

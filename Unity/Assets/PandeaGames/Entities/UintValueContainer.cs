@@ -10,13 +10,13 @@ namespace PandeaGames.Entities
         public static bool operator >(UintValueContainer<TValueContainer> value1,
             UintValueContainer<TValueContainer> value2)
         {
-            return value1.value > value2.value;
+            return value1.Value > value2.Value;
         }
 
         public static bool operator <(UintValueContainer<TValueContainer> value1,
             UintValueContainer<TValueContainer> value2)
         {
-            return value1.value < value2.value;
+            return value1.Value < value2.Value;
         }
     }
 }

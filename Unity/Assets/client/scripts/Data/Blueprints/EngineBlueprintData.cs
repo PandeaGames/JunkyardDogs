@@ -3,7 +3,7 @@ using JunkyardDogs.Data.Balance;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Blueprints/Engine")]
-public class EngineBlueprintData : PhysicalComponentBlueprintData<JunkyardDogs.Components.Engine>, IStaticDataBalance<EngineBlueprintBalanceObject>
+public class EngineBlueprintData : PhysicalComponentBlueprintData<JunkyardDogs.Components.Engine, JunkyardDogs.Specifications.Engine>, IStaticDataBalance<EngineBlueprintBalanceObject>
 {
     public void ApplyBalance(EngineBlueprintBalanceObject balance)
     {

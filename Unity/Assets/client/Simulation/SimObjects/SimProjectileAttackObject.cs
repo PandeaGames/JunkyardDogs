@@ -10,7 +10,7 @@ namespace JunkyardDogs.Simulation
         
         public SimProjectileAttackObject(SimulatedEngagement engagement, SimBot simBot, Chassis.ArmamentLocation armementLocation) : base(engagement, simBot, armementLocation)
         {
-            projectileWeapon = simBot.bot.GetArmament(armementLocation).GetSpec<ProjectileWeapon>();
+            projectileWeapon = (ProjectileWeapon)simBot.bot.GetArmament(armementLocation).GetSpec();
             colliders.Add(CreateCollider(projectileWeapon));
             body.rotation = simBot.body.rotation;
             body.accelerationPerSecond = new Vector2(0, projectileWeapon.Speed);

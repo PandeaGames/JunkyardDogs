@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using Data;
 using JunkyardDogs.Data;
+using UnityEngine;
 using UnityEngine.UI.Extensions;
 using WeakReference = PandeaGames.Data.WeakReferences.WeakReference;
 
+[Serializable]
 public class TournamentState
 {
     public struct TournamentStatus
@@ -24,11 +26,20 @@ public class TournamentState
             return  Tournament == null ? false : Tournament.IsUserKnockedOut();
         }
     }
+
+    [SerializeField, TournamentStaticDataReference]
+    private TournamentStaticDataReference _tournamentReference;
+    [SerializeField]
+    private List<StageState> _stageStates;
+    [SerializeField]
+    private string _uid;
+    [SerializeField]
+    private DateTime _lastMatch;
     
-    public TournamentStaticDataReference TournamentReference { get; set; }
-    public List<StageState> StageStates { get; set; }
-    public string Uid  { get; set; }
-    public DateTime LastMatch { get; set; }
+    public TournamentStaticDataReference TournamentReference { get=>_tournamentReference; set=> _tournamentReference = value; }
+    public List<StageState> StageStates { get => _stageStates; set => _stageStates = value; }
+    public string Uid  { get => _uid; set => _uid = value; }
+    public DateTime LastMatch { get => _lastMatch; set => _lastMatch = value; }
 
     public TournamentState(string uid)
     {

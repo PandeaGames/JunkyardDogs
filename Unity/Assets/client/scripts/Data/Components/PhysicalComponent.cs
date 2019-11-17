@@ -7,8 +7,21 @@ using WeakReference = PandeaGames.Data.WeakReferences.WeakReference;
 
 namespace JunkyardDogs.Components
 {
-    public class PhysicalComponent : Component
+    public interface IPhysicalComponent : IComponent
     {
-        public MaterialStaticDataReference Material { get; set; }
+        MaterialStaticDataReference Material { get; set; }
+    }
+    
+    [Serializable]
+    public class PhysicalComponent<TSpecification> : Component<TSpecification>, IPhysicalComponent where TSpecification:PhysicalSpecification
+    {
+        [SerializeField, MaterialStaticDataReference]
+        private MaterialStaticDataReference _material = new MaterialStaticDataReference();
+        
+        public MaterialStaticDataReference Material
+        {
+            get => _material;
+            set => _material = value;
+        }
     }
 }

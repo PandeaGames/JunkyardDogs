@@ -449,10 +449,16 @@
                 <e p="MapScreen.cs" t="Include" />
                 <e p="ViewModels" t="Include">
                   <e p="EditBotBehaviourViewModel.cs" t="Include" />
+                  <e p="WorldMapHudViewModel.cs" t="Include" />
                 </e>
+                <e p="WorldMapHUDScreen.cs" t="Include" />
               </e>
               <e p="Services" t="Include">
                 <e p="JunkyardUserService.cs" t="Include" />
+                <e p="ServiceEntities" t="Include">
+                  <e p="UserExperienceBreakpoints.cs" t="Include" />
+                </e>
+                <e p="ServiceEntities.cs" t="Include" />
                 <e p="TournamentService.cs" t="Include" />
               </e>
               <e p="UI" t="Include">
@@ -478,6 +484,8 @@
                 <e p="RTProgressBarBehaviour.cs" t="Include" />
                 <e p="TournamentStateRenderer.cs" t="Include" />
                 <e p="TournamentTimerDisplay.cs" t="Include" />
+                <e p="UserExperienceBreakpointBehaviour.cs" t="Include" />
+                <e p="UserExperienceBreakpointsBehaviour.cs" t="Include" />
               </e>
             </e>
             <e p="Utils" t="Include">

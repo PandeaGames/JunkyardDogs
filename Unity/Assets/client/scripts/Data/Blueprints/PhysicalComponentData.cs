@@ -1,9 +1,10 @@
 ﻿using JunkyardDogs.Components;
 using JunkyardDogs.Data;
 using JunkyardDogs.Data.Balance;
+using JunkyardDogs.Specifications;
 using UnityEngine;
 
-public abstract class PhysicalComponentBlueprintData<TGeneratedData> : ComponentBlueprintData<TGeneratedData> where TGeneratedData:PhysicalComponent
+public abstract class PhysicalComponentBlueprintData<TGeneratedData, TSpecification> : ComponentBlueprintData<TGeneratedData,TSpecification> where TGeneratedData:PhysicalComponent<TSpecification> where TSpecification:PhysicalSpecification
 {
     [SerializeField, MaterialStaticDataReference]
     public MaterialStaticDataReference Material;

@@ -52,7 +52,7 @@ public class DirectiveView : MonoBehaviour
     {
         if (directive != null)
         {
-            SetupSpecification(directive.GetSpec<JunkyardDogs.Specifications.Directive>());
+            SetupSpecification(directive.GetSpec());
         }
         else
         {

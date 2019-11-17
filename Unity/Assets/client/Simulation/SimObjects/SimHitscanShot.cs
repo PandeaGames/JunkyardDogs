@@ -10,7 +10,7 @@ namespace JunkyardDogs.Simulation
         private Hitscan hitscan;
         public SimHitscanShot(SimulatedEngagement engagement, SimBot simBot, Chassis.ArmamentLocation armementLocation) : base(engagement, simBot, armementLocation)
         {
-            hitscan = simBot.bot.GetArmament(armementLocation).GetSpec<Hitscan>();
+            hitscan = (Hitscan) simBot.bot.GetArmament(armementLocation).GetSpec();
             colliders.Add(CreateCollider(hitscan));
             body.isTrigger = true;
             removeOnCollision = false;

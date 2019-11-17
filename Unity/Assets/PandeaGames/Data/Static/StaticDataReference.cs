@@ -71,7 +71,6 @@ public class StaticDataReference<TDataBase, TData, TReference, TDirectory>
  
             return Game.Instance.GetStaticDataPovider<TDirectory>().FindData(ID); 
         }
-        set { _id = value.ID; }
     }
 
     public bool Equals(StaticDataReference<TDataBase, TData, TReference, TDirectory> other)

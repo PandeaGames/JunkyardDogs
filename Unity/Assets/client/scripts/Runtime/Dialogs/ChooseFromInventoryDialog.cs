@@ -1,10 +1,6 @@
 ﻿using UnityEngine;
-using System.Collections;
-using System;
-using SRF.UI.Layout;
 using UnityEngine.UI;
-using System.Collections.Generic;
-using Component = JunkyardDogs.Components.Component;
+using JunkyardDogs.Components;
 
 namespace JunkyardDogs.scripts.Runtime.Dialogs
 {
@@ -30,7 +26,7 @@ namespace JunkyardDogs.scripts.Runtime.Dialogs
             //_virtualVerticalLayoutGroup.SelectedItemChanged.AddListener((data)=> _viewModel.Selected = data as Component);
         }
 
-        private void ListViewOnItemSelected(Component data)
+        private void ListViewOnItemSelected(IComponent data)
         {
             _viewModel.Selected = data;
             Close();

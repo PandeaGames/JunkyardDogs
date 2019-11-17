@@ -1,9 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
-using System;
-using JunkyardDogs.Components;
-using Component = JunkyardDogs.Components.Component;
-using System.Collections.Generic;
 
 namespace JunkyardDogs.scripts.Runtime.Dialogs
 {
@@ -15,7 +10,7 @@ namespace JunkyardDogs.scripts.Runtime.Dialogs
         protected override void Initialize()
         {
             base.Initialize();
-            _componentDisplay.RenderComponent((_viewModel as ComponentViewModel) .Component);
+            _componentDisplay.RenderComponent((_viewModel as ComponentViewModel).Component);
         }
     }
 }

@@ -6,7 +6,7 @@ using System;
 namespace JunkyardDogs.Components
 {
     [Serializable]
-    public class CircuitBoard : Component
+    public class CircuitBoard : Component<Specifications.CircuitBoard>
     {
         public CircuitBoard()
         {

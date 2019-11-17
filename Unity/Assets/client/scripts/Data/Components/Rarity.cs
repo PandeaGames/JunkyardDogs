@@ -13,12 +13,12 @@ namespace JunkyardDogs.Components
 
         public override Rarity Add(Rarity other)
         {
-            return new Rarity(value + other.value);
+            return new Rarity(Value + other.Value);
         }
 
         public static Rarity operator +(Rarity rarity, uint bonus)
         {
-            return new Rarity(rarity.value + bonus);
+            return new Rarity(rarity.Value + bonus);
         }
     }
 }

@@ -1,9 +1,9 @@
+using JunkyardDogs.Components;
 using UnityEngine;
-using Component = JunkyardDogs.Components.Component;
 
 public static class LootUtilities
 {
-    public static Component TryCreateComponentFromLoot(ILoot loot, int seed)
+    public static IComponent TryCreateComponentFromLoot(ILoot loot, int seed)
     {
          if(loot is WeaponBlueprintData)
         {

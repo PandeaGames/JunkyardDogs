@@ -1,4 +1,4 @@
-#region Copyright © 2010 Pawel Idzikowski [idzikowski@sharpserializer.com]
+#region Copyright Â© 2010 Pawel Idzikowski [idzikowski@sharpserializer.com]
 
 //  ***********************************************************************
 //  Project: sharpSerializer

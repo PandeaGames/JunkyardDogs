@@ -2,12 +2,12 @@
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
+using JunkyardDogs.Components;
 using PandeaGames;
 using PandeaGames.Views.Screens;
 using SRF.UI.Layout;
 using PandeaGames.Runtime.Dialogs.ViewModels;
 using JunkyardDogs.scripts.Runtime.Dialogs;
-using Component = JunkyardDogs.Components.Component;
 
 public class InventoryScreen : ScreenView
 {
@@ -35,7 +35,7 @@ public class InventoryScreen : ScreenView
 
         Inventory inventory = _junkyardUserService.User.Competitor.Inventory;
 
-        foreach (Component component in inventory)
+        foreach (IComponent component in inventory)
         {
             _virtualVerticalLayoutGroup.AddItem(component);
         }
@@ -53,11 +53,11 @@ public class InventoryScreen : ScreenView
     {
         if(data != null)
         {
-            OnInventoryButtonPressed(data as Component);
+            OnInventoryButtonPressed(data as IComponent);
         }
     }
 
-    private void OnInventoryButtonPressed(Component component)
+    private void OnInventoryButtonPressed(IComponent component)
     {
         List<MessageDialogViewModel.Option> options = new List<MessageDialogViewModel.Option>();
 

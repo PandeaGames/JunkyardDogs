@@ -4,7 +4,7 @@ using JunkyardDogs.Data.Balance;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Blueprints/WeaponProcessorBlueprintData")]
-public class WeaponProcessorBlueprintData : PhysicalComponentBlueprintData<WeaponProcessor>, IStaticDataBalance<WeaponProcessorBlueprintBalanceObject>
+public class WeaponProcessorBlueprintData : ComponentBlueprintData<WeaponProcessor, JunkyardDogs.Specifications.WeaponChip>, IStaticDataBalance<WeaponProcessorBlueprintBalanceObject>
 {
     [Header("Weapon")]
     [SerializeField, WeaponBlueprintStaticDataReference] 

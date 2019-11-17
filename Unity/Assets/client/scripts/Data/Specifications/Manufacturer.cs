@@ -1,26 +1,24 @@
 ﻿using System;
 using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 using JunkyardDogs.Components;
 using JunkyardDogs.Data;
 using JunkyardDogs.Data.Balance;
-using Component = JunkyardDogs.Components.Component;
 using JunkyardDogs.Simulation;
 
 namespace JunkyardDogs.Specifications
 {
     public class ManufacturerUtils
     {
-        public static Component BuildComponent(ManufacturerStaticDataReference manufacturer, SpecificationCatalogue.Product product)
+        public static IComponent BuildComponent(ManufacturerStaticDataReference manufacturer, SpecificationCatalogue.Product product)
         {
             return BuildComponent(manufacturer, product.Specification, product.Material);
         }
 
-        public static Component BuildComponent(ManufacturerStaticDataReference manufacturer, SpecificationStaticDataReference spec, MaterialStaticDataReference material)
+        public static IComponent BuildComponent(ManufacturerStaticDataReference manufacturer, SpecificationStaticDataReference spec, MaterialStaticDataReference material)
         {
-            Component component = ComponentUtils.GenerateComponent(spec);
-            PhysicalComponent physicalComponent = component as PhysicalComponent;
+            IComponent component = ComponentUtils.GenerateComponent(spec);
+            IPhysicalComponent physicalComponent = (IPhysicalComponent) component;
 
             component.Manufacturer = manufacturer;
 

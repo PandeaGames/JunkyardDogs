@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
-using System.Collections;
-using Component = JunkyardDogs.Components.Component;
+using JunkyardDogs.Components;
 
 public abstract class ComponentRenderer : MonoBehaviour
 {
-    public abstract void RenderComponent(Component component);
+    public abstract void RenderComponent(IComponent component);
 }

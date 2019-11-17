@@ -24,7 +24,7 @@ namespace JunkyardDogs.Simulation
             if (weapon != null)
             {
                 Logic logic = GetDecisionWeight(simBot, engagement, weapon);
-                logic.plane = weapon.GetSpec<Specifications.Weapon>().DecisionPlane;
+                logic.plane = weapon.GetSpec().DecisionPlane;
                 return logic;
             }
             else

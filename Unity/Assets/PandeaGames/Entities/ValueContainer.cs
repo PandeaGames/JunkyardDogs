@@ -8,9 +8,10 @@ namespace PandeaGames.Entities
     {
         [SerializeField]
         protected TValue _value;
-        public TValue value
+        public TValue Value
         {
             get { return _value; }
+            set { _value = value; }
         }
         
         public ValueContainer(TValue value)

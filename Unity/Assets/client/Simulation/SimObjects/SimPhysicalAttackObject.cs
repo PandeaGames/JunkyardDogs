@@ -14,12 +14,12 @@ namespace JunkyardDogs.Simulation
 
         public double Damage
         {
-            get { return simBot.bot.GetArmament(armementLocation).GetSpec<Weapon>().Power; }
+            get { return simBot.bot.GetArmament(armementLocation).GetSpec().Power; }
         }
         
         public float Knockback
         {
-            get { return simBot.bot.GetArmament(armementLocation).GetSpec<Weapon>().Knockback; }
+            get { return simBot.bot.GetArmament(armementLocation).GetSpec().Knockback; }
         }
         
         public SimPhysicalAttackObject(SimulatedEngagement engagement, SimBot simBot, Chassis.ArmamentLocation armementLocation) : base(engagement)
@@ -123,7 +123,7 @@ namespace JunkyardDogs.Simulation
 
             if (other == simBot.opponent && removeOnCollision)
             {
-                simBot.opponent.Stun(simBot.bot.GetArmament(armementLocation).GetSpec<Weapon>().Stun);
+                simBot.opponent.Stun(simBot.bot.GetArmament(armementLocation).GetSpec().Stun);
                 engagement.MarkForRemoval(this);
             }
         }

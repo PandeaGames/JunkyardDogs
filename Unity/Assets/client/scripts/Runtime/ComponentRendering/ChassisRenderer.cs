@@ -1,8 +1,6 @@
 ﻿using UnityEngine;
-using System.Collections;
 using JunkyardDogs.Components;
 using System.Collections.Generic;
-using Component = JunkyardDogs.Components.Component;
 
 public class ChassisRenderer : ComponentRenderer
 {
@@ -39,7 +37,7 @@ public class ChassisRenderer : ComponentRenderer
     [SerializeField]
     public Transform RightArmament;
 
-    public override void RenderComponent(Component component)
+    public override void RenderComponent(IComponent component)
     {
         Chassis chassis = component as Chassis;
 

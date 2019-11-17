@@ -2,17 +2,15 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using JunkyardDogs.Components;
-using Component = JunkyardDogs.Components.Component;
 
 [Serializable]
 public class Inventory : IEnumerable
 {
-    [SerializeField] private List<Component> _components;
+    [SerializeField] private List<IComponent> _components;
     [SerializeField] private List<Bot> _bots;
     
-    public List<Component> Components
+    public List<IComponent> Components
     {
         get => _components;
         set => _components = value;
@@ -27,35 +25,35 @@ public class Inventory : IEnumerable
     public Inventory()
     {
         
-        Components = new List<Component>();
+        Components = new List<IComponent>();
         Bots = new List<Bot>();
     }
 
-    public void AddComponent(Component component)
+    public void AddComponent(IComponent component)
     {
         Components.Add(component);
     }
 
-    public bool ContainsComponent(Component component)
+    public bool ContainsComponent(IComponent component)
     {
         return Components.Contains(component);
     }
 
-    public void RemoveComponent(Component component)
+    public void RemoveComponent(IComponent component)
     {
         Components.Remove(component);
     }
 
-    public IEnumerable<T> GetComponentsOfType<T>() where T : Component
+    public IEnumerable<T> GetComponentsOfType<T>() where T : IComponent
     {
         foreach (var component in Components)
         {
             if (component is T)
-                yield return component as T;
+                yield return (T) component;
         }
     }
     
-    public IEnumerable<Component> GetComponentsOfType(Type type)
+    public IEnumerable<IComponent> GetComponentsOfType(Type type)
     {
         foreach (var component in Components)
         {
@@ -91,7 +89,7 @@ public class Inventory : IEnumerable
     }
 
 #if UNITY_EDITOR
-    public List<Component> GetComponents()
+    public List<IComponent> GetComponents()
     {
         return Components;
     }

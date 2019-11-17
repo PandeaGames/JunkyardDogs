@@ -12,7 +12,7 @@ namespace JunkyardDogs.Simulation
         private Vector2 targetPosition;
         public SimMortarAttackObject(SimulatedEngagement engagement, SimBot simBot, Chassis.ArmamentLocation armementLocation) : base(engagement, simBot, armementLocation)
         {
-            mortar = simBot.bot.GetArmament(armementLocation).GetSpec<Mortar>();
+            mortar = (Mortar)simBot.bot.GetArmament(armementLocation).GetSpec();
             colliders.Add(CreateCollider(mortar));
             body.rotation = simBot.body.rotation;
             body.accelerationPerSecond = new Vector2(0, mortar.Speed);

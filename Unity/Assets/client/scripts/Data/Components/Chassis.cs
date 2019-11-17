@@ -8,7 +8,7 @@ using Data;
 namespace JunkyardDogs.Components
 {
     [Serializable]
-    public class Chassis : PhysicalComponent
+    public class Chassis : PhysicalComponent<Specifications.Chassis>
     {
         public enum PlateLocation
         {
@@ -136,7 +136,7 @@ namespace JunkyardDogs.Components
 
         public IEnumerable<Plate> GetAllPlates()
         {
-            Specifications.Chassis chassisSpec = GetSpec<Specifications.Chassis>();
+            Specifications.Chassis chassisSpec = GetSpec();
 
             for (int i = 0; i < Math.Min(BackPlates.Count, chassisSpec.BackPlates); i++)
             {

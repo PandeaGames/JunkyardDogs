@@ -1,13 +1,10 @@
-﻿using PandeaGames.Runtime.Dialogs.ViewModels;
-using UnityEngine;
-using Component = JunkyardDogs.Components.Component;
-
-
+﻿using JunkyardDogs.Components;
+using PandeaGames.Runtime.Dialogs.ViewModels;
 
 namespace JunkyardDogs.scripts.Runtime.Dialogs
 {
     public class ComponentViewModel:MessageDialogViewModel
     {
-        public Component Component;
+        public IComponent Component;
     }
 }

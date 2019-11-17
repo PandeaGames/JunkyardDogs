@@ -26,40 +26,41 @@ namespace PandeaGames.Utils
             get { return _value; }
             set { _value = value; }
         }
-
-        public KeyValuePair()
-        {
-            
-        }
     }
 
     public interface ISerializableDictionary<TKey, TValue>
     {
-        TValue this[TKey key] { get; set; }
-        void Add(TKey key, TValue value);
+        TValue GetValue(TKey key);
+        void SetValue(TKey key, TValue value);
+        void AddValue(TKey key, TValue value);
         void Clear();
         bool Contains(TKey key);
         void Remove(TKey key);
     }
     
     [Serializable]
-    public class SerializableDictionary<TKey, TValue, TPair> where TPair:KeyValuePair<TKey, TValue>, new()
+    public class SerializableDictionary<TKey, TValue, TPair> 
+        : ISerializableDictionary<TKey, TValue> where TPair:KeyValuePair<TKey, TValue>,
+        new()
     {
-        [SerializeField, ReorderableList]
-        private List<TPair> _keyValuePairs;
+        [SerializeField] 
+        private List<TPair> _keyValuePairs = new List<TPair>();
+
+        public virtual int Count
+        {
+            get
+            {
+                return _keyValuePairs.Count;
+            }
+        }
 
         public List<TPair> KeyValuePairs
         {
             get { return _keyValuePairs; }
             set { _keyValuePairs = value; }
         }
-        
-        public SerializableDictionary()
-        {
-            _keyValuePairs = new List<TPair>();
-        }
-        
-        public virtual void Add(TKey key, TValue value)
+
+        public virtual void AddValue(TKey key, TValue value)
         {
             if (Contains(key))
             {
@@ -76,10 +77,10 @@ namespace PandeaGames.Utils
 
         public virtual bool Contains(TKey key)
         {
-            return Contains(key as object);
+            return ContainsObj(key);
         }
 
-        protected bool Contains(object obj)
+        protected bool ContainsObj(object obj)
         {
             int hashCode = obj.GetHashCode();
             foreach (KeyValuePair<TKey, TValue> kvp in _keyValuePairs)
@@ -96,10 +97,10 @@ namespace PandeaGames.Utils
 
         public virtual void Remove(TKey key)
         {
-            Remove(key as object);
+            RemoveObj(key as object);
         }
         
-        protected virtual void Remove(object key)
+        protected virtual void RemoveObj(object key)
         {
             int hash = key.GetHashCode();
             
@@ -120,34 +121,34 @@ namespace PandeaGames.Utils
                 _keyValuePairs.RemoveAt(foundIndex);
             }
         }
-        
-        public virtual TValue this[TKey key]
+
+        public virtual TPair GetPair(int index)
         {
-            get
-            {
-                return this[key as object];
-            }
-            set
-            {
-                int hash = key.GetHashCode();
-                for (int i = 0; i < _keyValuePairs.Count; i++)
-                {
-                    TPair kvp = _keyValuePairs[i];
-                    if (kvp.Key.GetHashCode() == hash)
-                    {
-                        kvp.Value = value;
-                        return;
-                    }
-                }
-                
-                Add(key, value);
-            }
+            return _keyValuePairs[index];
         }
 
-        protected virtual TValue this[object obj]
+        public virtual TValue GetValue(TKey key)
         {
-            get
+            return GetValueByObj(key as object);
+        }
+        public virtual void SetValue(TKey key, TValue value)
+        {
+            int hash = key.GetHashCode();
+            for (int i = 0; i < _keyValuePairs.Count; i++)
             {
+                TPair kvp = _keyValuePairs[i];
+                if (kvp.Key.GetHashCode() == hash)
+                {
+                    kvp.Value = value;
+                    return;
+                }
+            }
+            
+            AddValue(key, value);
+        }
+
+        protected virtual TValue GetValueByObj(object obj)
+        {
                 int hash = obj.GetHashCode();
                 for (int i = 0; i < _keyValuePairs.Count; i++)
                 {
@@ -160,21 +161,21 @@ namespace PandeaGames.Utils
 
                 return default(TValue);
             }
-            set
+
+        protected virtual void SetValueByObj(object obj, TValue value)
+        {
+            int hash = obj.GetHashCode();
+            for (int i = 0; i < _keyValuePairs.Count; i++)
             {
-                int hash = obj.GetHashCode();
-                for (int i = 0; i < _keyValuePairs.Count; i++)
+                TPair kvp = _keyValuePairs[i];
+                if (kvp.Key.GetHashCode() == hash)
                 {
-                    TPair kvp = _keyValuePairs[i];
-                    if (kvp.Key.GetHashCode() == hash)
-                    {
-                        kvp.Value = value;
-                        return;
-                    }
+                    kvp.Value = value;
+                    return;
                 }
-                
-                _keyValuePairs.Add(new TPair { Value = value, Key = (TKey)obj });
             }
+                
+            _keyValuePairs.Add(new TPair { Value = value, Key = (TKey)obj });
         }
     }
 }

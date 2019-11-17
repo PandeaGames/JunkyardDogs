@@ -25,7 +25,9 @@ namespace JunkyardDogs.Simulation
             {
                 logic.plane = lastWeaponFire.logic.plane;
                 DecisionWeaponFire decisionWeaponFire = lastWeaponFire.DecisionMaker as DecisionWeaponFire;
-                Hitscan hitscan = simBot.bot.GetArmament(decisionWeaponFire.armamentLocation).GetSpec<Hitscan>();
+                Specifications.Specification spec = simBot.bot.GetArmament(decisionWeaponFire.armamentLocation)
+                    .GetSpec();
+                Hitscan hitscan = spec is Hitscan ? (Hitscan) spec:null;
                 logic.wasLastWeaponHitscan = hitscan != null;
                 if (logic.wasLastWeaponHitscan)
                 {

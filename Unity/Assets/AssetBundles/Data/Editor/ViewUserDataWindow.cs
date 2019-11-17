@@ -7,7 +7,6 @@ using JunkyardDogs.Components;
 using JunkyardDogs.Specifications;
 
 using WeakReference = PandeaGames.Data.WeakReferences.WeakReference;
-using Component = JunkyardDogs.Components.Component;
 
 [Serializable]
 public class ViewUserDataWindow : EditorWindow
@@ -47,6 +46,8 @@ public class ViewUserDataWindow : EditorWindow
             OnClearData();
         if (GUILayout.Button("Save User Data"))
             OnSaveData();
+        if (GUILayout.Button("Reveal In Finder"))
+            RevealInFinder();
 
         if (_user != null)
         {
@@ -60,6 +61,11 @@ public class ViewUserDataWindow : EditorWindow
         }    
         
        // Debug.Log(_user.);
+    }
+
+    private void RevealInFinder()
+    {
+        EditorUtility.RevealInFinder(UserServiceUtils.SAVE_FILE_PATH);
     }
 
     private void OnUserGUI(JunkyardUser user)

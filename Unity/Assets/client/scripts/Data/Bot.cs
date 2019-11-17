@@ -92,7 +92,7 @@ namespace JunkyardDogs.Components
             get
             {
                 int totalHealth = (int) Mathf.Ceil(
-                    Chassis.GetSpec<Specifications.Chassis>().BaseHealthMultiplier *
+                    Chassis.GetSpec().BaseHealthMultiplier *
                     (float)Chassis.Material.Data.Density);
 
                 foreach (Plate plate in Chassis.GetAllPlates())

@@ -1,4 +1,4 @@
-#region Copyright © 2010 Pawel Idzikowski [idzikowski@sharpserializer.com]
+#region Copyright Â© 2010 Pawel Idzikowski [idzikowski@sharpserializer.com]
 
 //  ***********************************************************************
 //  Project: sharpSerializer
@@ -29,6 +29,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using UnityEngine;
 
 namespace Polenter.Serialization.Core
 {
