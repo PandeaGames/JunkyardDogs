@@ -1,6 +1,7 @@
 using Data;
 using JunkyardDogs.Data;
 using PandeaGames;
+using PandeaGames.Data;
 using PandeaGames.Data.Static;
 
 public class JunkyardStaticDataLoader : ILoadableObject
@@ -12,6 +13,12 @@ public class JunkyardStaticDataLoader : ILoadableObject
     public JunkyardStaticDataLoader()
     {
         _loader = new Loader();
+        
+        SynchronousLoaderGroup synchronousLoaderGroup = new SynchronousLoaderGroup();
+        synchronousLoaderGroup.AppendProvider(GameResources.Instance);
+        synchronousLoaderGroup.AppendProvider(Game.Instance.GetStaticDataPovider<SynchronousStaticDataProvider>());
+        _loader.AppendProvider(synchronousLoaderGroup);
+        
         _loader.AppendProvider(Game.Instance.GetStaticDataPovider<PandeaGameDataProvider>());
         _loader.AppendProvider(Game.Instance.GetStaticDataPovider<ViewStaticDataProvider>());
         _loader.AppendProvider(Game.Instance.GetStaticDataPovider<GameStaticDataProvider>());

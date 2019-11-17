@@ -22,7 +22,8 @@ public class GameConfigurationDataBalanceObject : IStaticDataBalanceObject
 [CreateAssetMenu(menuName = "StaticData/GameStaticData")]
 public class GameStaticData : ScriptableObject, ILoadableObject, IStaticDataBalance<GameConfigurationDataBalanceObject>
 {
-    
+    [SerializeField]
+    private SpriteFactory _nationFlagFactory;
     
     [SerializeField][WeakReference(typeof(ActionList))] 
     private WeakReference _actionList;

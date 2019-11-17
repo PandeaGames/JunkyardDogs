@@ -13,10 +13,7 @@ public class UserExperienceBreakpointBehaviour : MonoBehaviour
 
     [SerializeField, NaughtyAttributes.InfoBox("Optional")] 
     private Image _nationalityFlagImage;
-    
-    [SerializeField]
-    private SpriteFactory _nationFlagFactory;
-    
+
     public void Render(UserExperienceBreakpoint breakpoints)
     {
         _progressDisplay.SetProgress(breakpoints.BreakpointProgress / 100);
@@ -29,7 +26,7 @@ public class UserExperienceBreakpointBehaviour : MonoBehaviour
 
         if (_nationalityFlagImage != null)
         {
-            _nationalityFlagImage.sprite = _nationFlagFactory.GetAsset(breakpoints.Nationality);
+            _nationalityFlagImage.sprite = Game.Instance.GetStaticDataPovider<SynchronousStaticDataProvider>().GetData(SynchronousStaticDataProvider.NationalityImageTypes.Flag, breakpoints.Nationality);
         }
     }
 }

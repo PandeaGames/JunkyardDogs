@@ -30,7 +30,7 @@ namespace Data
     {
         public bool IsLoaded { get; private set; }
         
-        private List<ILoadableObject> _loadables;
+        protected List<ILoadableObject> _loadables;
 
         public LoaderGroup()
         {
@@ -54,7 +54,7 @@ namespace Data
             }
         }
 
-        public void LoadAsync(LoadSuccess onLoadSuccess, LoadError onLoadError)
+        public virtual void LoadAsync(LoadSuccess onLoadSuccess, LoadError onLoadError)
         {
             int objectsToLoad = _loadables.Count;
             int objectsLoaded = 0;

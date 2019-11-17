@@ -151,6 +151,11 @@
             </e>
             <e p="CurrencyDataProvider.cs" t="Include" />
             <e p="CurrencyDataSource.cs" t="Include" />
+            <e p="DataProviders" t="Include">
+              <e p="NaitonalityDataProvider.SynchronousStaticDataProvider.cs" t="Include" />
+              <e p="NationalityStaticData.SynchronousStaticData.cs" t="Include" />
+            </e>
+            <e p="DataProviders.cs" t="Include" />
             <e p="Editor" t="Include">
               <e p="StaticDataPropertyDrawers.cs" t="Include" />
             </e>
@@ -840,13 +845,17 @@
               <e p="SpriteFactory.cs" t="Include" />
               <e p="StringFactory.cs" t="Include" />
             </e>
+            <e p="GameResources.cs" t="Include" />
             <e p="InputConfig.cs" t="Include" />
             <e p="LoadableConfigurationData.cs" t="Include" />
             <e p="PandeaGameConfigurationData.cs" t="Include" />
             <e p="ScreenTransition.cs" t="Include" />
+            <e p="ScriptableObjectSingleton.cs" t="Include" />
             <e p="Static" t="Include">
               <e p="AbstractScriptableObjectStaticData.cs" t="Include" />
               <e p="AbstractStaticDataProvider.cs" t="Include" />
+              <e p="AsynchronousStaticDataProvider.cs" t="Include" />
+              <e p="BundledStaticDataReference.cs" t="Include" />
               <e p="BundledStaticDataReferenceDirectory.cs" t="Include" />
               <e p="ChildStaticDataReferenceDirectory.cs" t="Include" />
               <e p="Editor" t="Include">
@@ -856,9 +865,15 @@
               <e p="IStaticDataDirectorySource.cs" t="Include" />
               <e p="IStaticDataProvider.cs" t="Include" />
               <e p="PandeaGameDataProvider.cs" t="Include" />
+              <e p="Resources" t="Include">
+                <e p="SynchronousStaticDataResources.GameResources.cs" t="Include" />
+              </e>
               <e p="StaticDataReference.cs" t="Include" />
               <e p="StaticDataReferenceDirectory.cs" t="Include" />
+              <e p="SynchronousStaticData.cs" t="Include" />
+              <e p="SynchronousStaticDataProvider.cs" t="Include" />
             </e>
+            <e p="SynchronousLoaderGroup.cs" t="Include" />
             <e p="WeakReference" t="Include">
               <e p="AssetLoader.cs" t="Include" />
               <e p="Editor" t="Include">
