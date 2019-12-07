@@ -1,12 +1,14 @@
 using System;
 using JunkyardDogs.Specifications;
 using UnityEngine;
+using UnityEngine.Scripting;
 using Chassis = JunkyardDogs.Components.Chassis;
 using CPU = JunkyardDogs.Specifications.CPU;
 using Weapon = JunkyardDogs.Components.Weapon;
 
 namespace JunkyardDogs.Simulation
 {
+    [Preserve]
     public abstract class DecisionStartWeaponCharge : DecisionWeapon
     {
         public class DecisionStartWeaponChargeLogic : Logic
@@ -55,6 +57,7 @@ namespace JunkyardDogs.Simulation
         }
     }
 
+    [Preserve]
     public class DecisionStartWeaponLeftCharge : DecisionStartWeaponCharge
     {
         public DecisionStartWeaponLeftCharge() : base(Chassis.ArmamentLocation.Left)
@@ -63,6 +66,7 @@ namespace JunkyardDogs.Simulation
         }
     }
     
+    [Preserve]
     public class DecisionStartWeaponRightCharge : DecisionStartWeaponCharge
     {
         public DecisionStartWeaponRightCharge() : base(Chassis.ArmamentLocation.Right)
@@ -71,6 +75,7 @@ namespace JunkyardDogs.Simulation
         }
     }
     
+    [Preserve]
     public class DecisionStartWeaponTopCharge : DecisionStartWeaponCharge
     {
         public DecisionStartWeaponTopCharge() : base(Chassis.ArmamentLocation.Top)
@@ -79,6 +84,7 @@ namespace JunkyardDogs.Simulation
         }
     }
     
+    [Preserve]
     public class DecisionStartWeaponFrontCharge : DecisionStartWeaponCharge
     {
         public DecisionStartWeaponFrontCharge() : base(Chassis.ArmamentLocation.Front)

@@ -1,5 +1,8 @@
+using UnityEngine.Scripting;
+
 namespace JunkyardDogs.Simulation
 {
+    [Preserve]
     public class DecisionStunned : IDecisionMaker
     {
         public class DecisionStunnedLogic : Logic

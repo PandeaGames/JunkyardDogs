@@ -1,5 +1,6 @@
 using JunkyardDogs.Specifications;
 using UnityEngine;
+using UnityEngine.Scripting;
 
 namespace JunkyardDogs.Simulation
 {
@@ -13,6 +14,7 @@ namespace JunkyardDogs.Simulation
         public bool shouldContinueMoving;
     }
     
+    [Preserve]
     public class DecisionMoveForward : IDecisionMaker
     {
         private const int maxNumberOfTicksForMovement = 20;

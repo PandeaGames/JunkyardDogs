@@ -1,7 +1,9 @@
 using JunkyardDogs.Components;
+using UnityEngine.Scripting;
 
 namespace JunkyardDogs.Simulation
 {
+    [Preserve]
     public abstract class DecisionWeaponCoolDown : DecisionWeapon 
     {
         public class DecisionWeaponCoolDownLogic : Logic
@@ -39,8 +41,8 @@ namespace JunkyardDogs.Simulation
         }
     }
 
-    public class DecisionWeaponCoolDownLeft : DecisionWeaponCoolDown { public DecisionWeaponCoolDownLeft() : base(Chassis.ArmamentLocation.Left) { } }
-    public class DecisionWeaponCoolDownRight : DecisionWeaponCoolDown { public DecisionWeaponCoolDownRight() : base(Chassis.ArmamentLocation.Right) { } }
-    public class DecisionWeaponCoolDownTop : DecisionWeaponCoolDown { public DecisionWeaponCoolDownTop() : base(Chassis.ArmamentLocation.Top) { } }
-    public class DecisionWeaponCoolDownFront : DecisionWeaponCoolDown { public DecisionWeaponCoolDownFront() : base(Chassis.ArmamentLocation.Front) { } }
+    [Preserve] public class DecisionWeaponCoolDownLeft : DecisionWeaponCoolDown { public DecisionWeaponCoolDownLeft() : base(Chassis.ArmamentLocation.Left) { } }
+    [Preserve] public class DecisionWeaponCoolDownRight : DecisionWeaponCoolDown { public DecisionWeaponCoolDownRight() : base(Chassis.ArmamentLocation.Right) { } }
+    [Preserve] public class DecisionWeaponCoolDownTop : DecisionWeaponCoolDown { public DecisionWeaponCoolDownTop() : base(Chassis.ArmamentLocation.Top) { } }
+    [Preserve] public class DecisionWeaponCoolDownFront : DecisionWeaponCoolDown { public DecisionWeaponCoolDownFront() : base(Chassis.ArmamentLocation.Front) { } }
 }

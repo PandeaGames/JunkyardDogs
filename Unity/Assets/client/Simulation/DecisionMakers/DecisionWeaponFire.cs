@@ -1,9 +1,11 @@
 using System;
 using JunkyardDogs.Components;
+using UnityEngine.Scripting;
 using UnityEngine.UI.Extensions;
 
 namespace JunkyardDogs.Simulation
 {
+    [Preserve]
     public abstract class DecisionWeaponFire : DecisionWeapon
     {
         public class DecisionWeaponFireLogic : Logic
@@ -69,8 +71,8 @@ namespace JunkyardDogs.Simulation
         }
     }
 
-    public class DecisionWeaponLeft : DecisionWeaponFire { public DecisionWeaponLeft() : base(Chassis.ArmamentLocation.Left) { } }
-    public class DecisionWeaponRight : DecisionWeaponFire { public DecisionWeaponRight() : base(Chassis.ArmamentLocation.Right) { } }
-    public class DecisionWeaponTop : DecisionWeaponFire { public DecisionWeaponTop() : base(Chassis.ArmamentLocation.Top) { } }
-    public class DecisionWeaponFront : DecisionWeaponFire { public DecisionWeaponFront() : base(Chassis.ArmamentLocation.Front) { } }
+    [Preserve] public class DecisionWeaponLeft : DecisionWeaponFire { public DecisionWeaponLeft() : base(Chassis.ArmamentLocation.Left) { } }
+    [Preserve] public class DecisionWeaponRight : DecisionWeaponFire { public DecisionWeaponRight() : base(Chassis.ArmamentLocation.Right) { } }
+    [Preserve] public class DecisionWeaponTop : DecisionWeaponFire { public DecisionWeaponTop() : base(Chassis.ArmamentLocation.Top) { } }
+    [Preserve] public class DecisionWeaponFront : DecisionWeaponFire { public DecisionWeaponFront() : base(Chassis.ArmamentLocation.Front) { } }
 }

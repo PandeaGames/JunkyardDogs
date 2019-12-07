@@ -1,8 +1,10 @@
 using JunkyardDogs.Components;
 using Substance.Game;
+using UnityEngine.Scripting;
 
 namespace JunkyardDogs.Simulation
 {
+    [Preserve]
     public abstract class DecisionWeapon : IDecisionMaker
     {
         protected Chassis.ArmamentLocation _armamentLocation;

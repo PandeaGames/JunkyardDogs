@@ -1,6 +1,7 @@
 using System;
 using JunkyardDogs.Specifications;
 using UnityEngine;
+using UnityEngine.Scripting;
 
 namespace JunkyardDogs.Simulation
 {
@@ -14,6 +15,7 @@ namespace JunkyardDogs.Simulation
         public bool shouldContinueMovingBackwards;
     }
     
+    [Preserve]
     public class DecisionMoveBackwards : IDecisionMaker
     {
         private const int maxNumberOfTicksForMovement = 20;

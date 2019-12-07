@@ -1,6 +1,7 @@
 using JunkyardDogs.Simulation.Simulation;
 using JunkyardDogs.Specifications;
 using UnityEngine;
+using UnityEngine.Scripting;
 
 namespace JunkyardDogs.Simulation
 {
@@ -10,6 +11,7 @@ namespace JunkyardDogs.Simulation
         Right
     }
     
+    [Preserve]
     public abstract class DecisionStrafe : IDecisionMaker
     {
         public class DecisionStrafeLogic : Logic

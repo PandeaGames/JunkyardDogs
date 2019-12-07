@@ -2,7 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b6defc3-a091-4fde-bf1e-c3bdd679481d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/client/Data/Currency/CurrencyData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Data/Currency/CurrencyData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionMoveBackwards.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionMoveBackwards.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionMoveForward.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionMoveForward.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionMoveLeft.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionMoveLeft.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionMoveRight.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionMoveRight.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionSimBotStatus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionSimBotStatus.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionStartWeaponCharge.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionStartWeaponCharge.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionStrafe.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionStrafe.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionStunned.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionStunned.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionWeapon.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionWeaponCharge.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionWeaponCharge.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionWeaponCoolDown.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionWeaponCoolDown.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionWeaponFire.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionWeaponFire.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionWeaponHold.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionWeaponHold.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -619,19 +631,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/PandeaGames/Data/SynchronousLoaderGroup.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Data/JunkyardStaticDataLoader.cs" />
-        <option value="$PROJECT_DIR$/Assets/PandeaGames/Data/ScriptableObjectSingleton.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Factories/AbstractFactory.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Factories/AbstractConfig.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Factories/CurrencyDataConfig.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Factories/AbstractConfigTable.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Factories/CurrencyDataConfigTable.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Data/Currency/CurrencyStaticData.SynchronousStaticDataProvider.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Data/Currency/CurrencyStaticData.SynchronousStaticData.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Data/UnityData/GameStaticData.cs" />
-        <option value="$PROJECT_DIR$/Assets/PandeaGames/Data/Static/PandeaGameDataProvider.cs" />
-        <option value="$PROJECT_DIR$/Assets/client/Data/GameStaticDataProvider.cs" />
         <option value="$PROJECT_DIR$/Assets/client/Data/ViewStaticDataProvider.cs" />
         <option value="$PROJECT_DIR$/Assets/PandeaGames/Data/Static/BundledStaticDataReferenceDirectory.cs" />
         <option value="$PROJECT_DIR$/Assets/PandeaGames/Data/Static/StaticDataReferenceDirectory.cs" />
@@ -670,6 +669,19 @@
         <option value="$PROJECT_DIR$/Assets/client/Data/Balance/BalanceData/TournamentBalanceData.cs" />
         <option value="$PROJECT_DIR$/Assets/client/scripts/Data/Tournaments/Tournament.cs" />
         <option value="$PROJECT_DIR$/Assets/client/Data/Currency/CurrencyData.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionMoveBackwards.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionMoveForward.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionMoveLeft.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionMoveRight.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionSimBotStatus.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionStrafe.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionStunned.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionWeapon.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionWeaponCoolDown.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionWeaponCharge.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionStartWeaponCharge.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionWeaponFire.cs" />
+        <option value="$PROJECT_DIR$/Assets/client/Simulation/DecisionMakers/DecisionWeaponHold.cs" />
       </list>
     </option>
   </component>
@@ -862,6 +874,7 @@
       <workItem from="1574010119310" duration="6333000" />
       <workItem from="1574021498499" duration="2388000" />
       <workItem from="1574031406764" duration="286000" />
+      <workItem from="1575736942221" duration="325000" />
     </task>
     <servers />
   </component>
@@ -924,19 +937,6 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="344" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/PandeaGames/Utils/SerializableDictionary.cs</url>
-          <line>192</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/PandeaGames/Utils/SerializableDictionary.cs" initialLine="192">
-            <startOffsets>
-              <option value="5127" />
-            </startOffsets>
-            <endOffsets>
-              <option value="5192" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="345" />
         </line-breakpoint>
         <breakpoint enabled="true" suspend="NONE" type="DotNet Exception Breakpoints">
           <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />

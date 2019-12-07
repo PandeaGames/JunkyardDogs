@@ -1,8 +1,10 @@
 using JunkyardDogs.Specifications;
+using UnityEngine.Scripting;
 using Weapon = JunkyardDogs.Components.Weapon;
 
 namespace JunkyardDogs.Simulation
 {
+    [Preserve]
     public class DecisionWeaponHold : IDecisionMaker
     {
         public class DecisionWeaponHoldLogic : Logic
