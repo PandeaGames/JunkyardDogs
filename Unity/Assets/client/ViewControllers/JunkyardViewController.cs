@@ -8,7 +8,7 @@ namespace JunkyardDogs
     {
         protected override IView CreateView()
         {
-            return new JunkyardView();
+            return new Views.JunkyardView();
         }
     }
 }

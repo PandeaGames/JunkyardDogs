@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\ccove\.Rider2019.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\ccove\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_Unity.-80025830.00" t="ExcludeRecursive" />
-    <e p="C:\Users\ccove\Documents\JunkyardDogs\Unity" t="IncludeRecursive">
+    <e p="C:\Users\ccove\.Rider2018.1\system\resharper-host\local\Transient\ReSharperHost\v12\SolutionCaches\_Unity.1825822070.00" t="ExcludeRecursive" />
+    <e p="C:\Users\ccove\JunkyardDogs\Unity" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
@@ -159,9 +158,28 @@
             </e>
             <e p="DataProviders.cs" t="Include" />
             <e p="Editor" t="Include">
+              <e p="JunkyardEditor.cs" t="Include" />
               <e p="StaticDataPropertyDrawers.cs" t="Include" />
             </e>
             <e p="GameStaticDataProvider.cs" t="Include" />
+            <e p="Junkyard" t="Include">
+              <e p="IJunkyardGenerator.cs" t="Include" />
+              <e p="IJunkyardGeneratorLayer.cs" t="Include" />
+              <e p="JunkyardConfig.cs" t="Include" />
+              <e p="JunkyardData.cs" t="Include" />
+              <e p="JunkyardGeneratorUtilities.cs" t="Include" />
+              <e p="JunkyardLayers" t="Include">
+                <e p="AbstractAdditiveJunkyardLayerData.cs" t="Include" />
+                <e p="AbstractJunkyardLayerData.cs" t="Include" />
+                <e p="AdditiveJunkyardLayerGroupData.cs" t="Include" />
+                <e p="JunkyardBlurLayerData.cs" t="Include" />
+                <e p="JunkyardDevideLayerData.cs" t="Include" />
+                <e p="JunkyardEchoLayerData.cs" t="Include" />
+                <e p="JunkyardMultipleLayerData.cs" t="Include" />
+                <e p="NoiseJunkyardLayerData.cs" t="Include" />
+              </e>
+              <e p="JunkyardRenderConfig.cs" t="Include" />
+            </e>
             <e p="JunkyardStaticDataLoader.cs" t="Include" />
             <e p="Loot" t="Include">
               <e p="AbstractLootCrateData.cs" t="Include" />
@@ -208,6 +226,7 @@
             <e p="ViewStaticDataProvider.cs" t="Include" />
           </e>
           <e p="Editor" t="Include">
+            <e p="JunkyardTestingEditor.cs" t="Include" />
             <e p="MyBuildScript.cs" t="Include" />
           </e>
           <e p="Factories" t="Include">
@@ -377,6 +396,7 @@
               </e>
               <e p="WeakReferencesJunkyardDogs.cs" t="Include" />
             </e>
+            <e p="JunkyardTesting.cs" t="Include" />
             <e p="Runtime" t="Include">
               <e p="ComponentRendering" t="Include">
                 <e p="ChassisRenderer.cs" t="Include" />
@@ -417,6 +437,7 @@
                 <e p="Junkyard" t="Include">
                   <e p="Junk.cs" t="Include" />
                   <e p="JunkController.cs" t="Include" />
+                  <e p="Junkyard.cs" t="Include" />
                 </e>
                 <e p="Match" t="Include">
                   <e p="BotFollowCameraAgent.cs" t="Include" />
@@ -463,8 +484,10 @@
                 <e p="WorldMapHUDScreen.cs" t="Include" />
               </e>
               <e p="Services" t="Include">
+                <e p="JunkyardService.cs" t="Include" />
                 <e p="JunkyardUserService.cs" t="Include" />
                 <e p="ServiceEntities" t="Include">
+                  <e p="SerializedJunkyard.cs" t="Include" />
                   <e p="UserExperienceBreakpoints.cs" t="Include" />
                 </e>
                 <e p="ServiceEntities.cs" t="Include" />
@@ -702,6 +725,14 @@
             </e>
           </e>
         </e>
+        <e p="Garbage pack" t="Include">
+          <e p="__CubemapsShaders" t="Include">
+            <e p="ASE_Standart.shader" t="Include" />
+            <e p="ASE_Standart2Sided.shader" t="Include" />
+            <e p="ASE_StandartTransparent.shader" t="Include" />
+            <e p="ASE_StandartTransparentAdditive.shader" t="Include" />
+          </e>
+        </e>
         <e p="Google Sheets For Unity" t="Include">
           <e p="Examples" t="Include">
             <e p="Console Example" t="Include">
@@ -825,6 +856,8 @@
             </e>
           </e>
         </e>
+        <e p="JunkyardJunk.cs" t="Include" />
+        <e p="JunkyardView.cs" t="Include" />
         <e p="LaserAnimation.cs" t="Include" />
         <e p="ModernGunEffects" t="Include">
           <e p="scripts" t="Include">
@@ -1956,9 +1989,12 @@
           </e>
         </e>
       </e>
+      <e p="Library" t="ExcludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="packages" t="ExcludeRecursive" />
-      <e p="Temp\bin" t="ExcludeRecursive" />
+      <e p="Temp" t="ExcludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+      </e>
       <e p="Unity.sln" t="IncludeFlat" />
     </e>
   </component>

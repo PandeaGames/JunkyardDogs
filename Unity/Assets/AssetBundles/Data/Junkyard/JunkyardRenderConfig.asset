@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0377ec0407f4e72ac9d030417a477dc, type: 3}
+  m_Name: JunkyardRenderConfig
+  m_EditorClassIdentifier: 
+  configs:
+  - prefab: {fileID: 7505469555323974914, guid: 6d800ef96e2897244a21970f70d2565f,
+      type: 3}
+    clearedPrefab: {fileID: 0}
+  - prefab: {fileID: 7505469555323974914, guid: 6d800ef96e2897244a21970f70d2565f,
+      type: 3}
+    clearedPrefab: {fileID: 0}
+  - prefab: {fileID: 7253230901725075596, guid: e1090500edd04494694662f2c8daf427,
+      type: 3}
+    clearedPrefab: {fileID: 0}
+  - prefab: {fileID: 1802210379311678452, guid: 9ddf6f95699dcec4991eb4c1cd8f4385,
+      type: 3}
+    clearedPrefab: {fileID: 0}
+  - prefab: {fileID: 1802210379311678452, guid: 9ddf6f95699dcec4991eb4c1cd8f4385,
+      type: 3}
+    clearedPrefab: {fileID: 0}
+  - prefab: {fileID: 0}
+    clearedPrefab: {fileID: 0}
+  _groundMaterial: {fileID: 2100000, guid: 1a8721d0c55c47f42a0229911d39b5ad, type: 2}
