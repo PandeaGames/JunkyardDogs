@@ -1,6 +1,8 @@
 
 using JunkyardDogs.Simulation;
+using UnityEngine.Scripting;
 
+[Preserve]
 public class DecisionSimBotStatus : IDecisionMaker
 {
     public class DecisionSimBotStatusLogic : Logic
