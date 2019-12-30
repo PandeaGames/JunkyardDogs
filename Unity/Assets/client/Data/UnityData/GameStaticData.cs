@@ -100,6 +100,8 @@ public class GameStaticData : ScriptableObject, ILoadableObject, IStaticDataBala
         Loader loader = new Loader();
         loader.AppendProvider(_actionList);
         loader.AppendProvider(_worldView);
+        loader.AppendProvider(_junkyardView);
+        loader.AppendProvider(_junkyardTestData);
         loader.LoadAsync(() =>
         {
             Loader secondaryLoader = new Loader();
