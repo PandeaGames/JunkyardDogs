@@ -26,7 +26,7 @@ public class Junkyard
         _junkyardData = junkyardData;
         _serializedJunkyard = serializedJunkyard;
     }
-
+    
     public int Width
     {
         get { return _serializedJunkyard.Data.GetLength(0); }
@@ -35,6 +35,18 @@ public class Junkyard
     public int Height
     {
         get { return _serializedJunkyard.Data.GetLength(1); }
+    }
+
+    public int X
+    {
+        get { return _serializedJunkyard.X; }
+        set { _serializedJunkyard.X = value; }
+    }
+    
+    public int Y
+    {
+        get { return _serializedJunkyard.Y; }
+        set { _serializedJunkyard.Y = value; }
     }
 
     public void SetCleared(int x, int y, bool value)

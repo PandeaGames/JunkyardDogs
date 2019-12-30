@@ -117,7 +117,6 @@ public class InputService : MonoBehaviourSingleton<InputService>
             float clickDistance = Vector3.Distance(_clickDownPosition, Input.mousePosition);
             bool validClickTime = timeFromDown.Milliseconds < _clickTimeSpan;
             bool validClickDistance = clickDistance < _clickDistance;
-            Debug.LogFormat("InputService.HandlePointers [validClickTime:{0}, validClickDistance:{1}]", validClickTime, validClickDistance);
             if (validClickTime && validClickDistance)
             {
                 HandlePointerAction(Input.mousePosition, OnPointerClick);

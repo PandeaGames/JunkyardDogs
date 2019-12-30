@@ -1,8 +1,18 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 [CreateAssetMenu(menuName = "Junkyard/JunkyardData")]
 public class JunkyardData : ScriptableObject, IJunkyardGenerator
 {
+    [Serializable]
+    public struct Cropping
+    {
+        public int Left;
+        public int Top;
+        public int Right;
+        public int Bottom;
+    }
+    
     [SerializeField] 
     private AbstractJunkyardLayerData[] _layers;
     
@@ -14,7 +24,13 @@ public class JunkyardData : ScriptableObject, IJunkyardGenerator
     [SerializeField]
     private int _height;
     [SerializeField]
+    private int _entranceX;
+    [SerializeField]
+    private int _entranceY;
+    [SerializeField]
     private int _seed;
+    [SerializeField]
+    public Cropping _cropping;
     
     public SerializedJunkyard Generate()
     {
@@ -45,6 +61,10 @@ public class JunkyardData : ScriptableObject, IJunkyardGenerator
         serializedData.Data = input;
         serializedData.HeightMap = heightData;
         serializedData.Cleared = new bool[input.GetLength(0),input.GetLength(1)];
+        serializedData.X = _entranceX;
+        serializedData.Y = _entranceY;
+
+        ApplyClearCropping(serializedData.Cleared, _cropping);
         
         return serializedData;
     }
@@ -52,5 +72,43 @@ public class JunkyardData : ScriptableObject, IJunkyardGenerator
     public SerializedJunkyard Generate(int seed, int width, int height)
     {
         return Generate(new byte[width, height], seed);
+    }
+
+    private void ApplyClearCropping(bool[,] data, Cropping cropping)
+    {
+        int width = data.GetLength(0);
+        int height = data.GetLength(1);
+        
+        for (int x = 0; x < cropping.Left; x++)
+        {
+            for (int y = 0; y < height; y++)
+            {
+                data[x, y] = true;
+            }
+        }
+        
+        for (int x = width - cropping.Right; x < width; x++)
+        {
+            for (int y = 0; y < height; y++)
+            {
+                data[x, y] = true;
+            }
+        }
+        
+        for (int x = 0; x < width; x++)
+        {
+            for (int y = 0; y < cropping.Top; y++)
+            {
+                data[x, y] = true;
+            }
+        }
+        
+        for (int x = 0; x < width; x++)
+        {
+            for (int y = height - cropping.Bottom; y < height; y++)
+            {
+                data[x, y] = true;
+            }
+        }
     }
 }

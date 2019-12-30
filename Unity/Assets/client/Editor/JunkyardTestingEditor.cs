@@ -15,13 +15,13 @@ public class JunkyardTestingEditor : Editor
 
     private void OnEnable()
     {
-        _junkyardViewSerializedProperty = serializedObject.FindProperty("_junkyardView");
+        _junkyardViewSerializedProperty = serializedObject.FindProperty("_junkyardMonoView");
     }
     
     public override void OnInspectorGUI()
     {
         base.OnInspectorGUI();
-        _junkyardViewSerializedProperty = serializedObject.FindProperty("_junkyardView");
+        _junkyardViewSerializedProperty = serializedObject.FindProperty("_junkyardMonoView");
         _junkyardData = (JunkyardData) EditorGUILayout.ObjectField(_junkyardData, typeof(JunkyardData), false);
         EditorGUI.BeginDisabledGroup(_junkyardData == null);
         if (GUILayout.Button("Generate Preview"))
@@ -38,7 +38,7 @@ public class JunkyardTestingEditor : Editor
     
     private void GeneratePreview(JunkyardData junkyardData)
     {
-        Game.Instance.GetService<JunkyardUserService>().Load();
+        Game.Instance.GetService<JunkyardUserService>().Load();//
         Bot bot = Game.Instance.GetService<JunkyardUserService>().User.Competitor.Inventory.Bots[0];
         
         _junkyard = JunkyardService.Instance.GetJunkyard(junkyardData);

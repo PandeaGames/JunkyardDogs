@@ -44,6 +44,7 @@ public class JunkyardMonoView : MonoBehaviour
         _camera.ZMax = junkyard.Height;
         _camera.XMin = 0;
         _camera.ZMin = 0;
+        _camAgent.transform.position = new Vector3(junkyard.X, _camAgent.transform.position.y, junkyard.Y);
         Game.Instance.GetViewModel<CameraViewModel>(0).Focus(_camAgent);
         _border.Render(renderConfig, junkyard);
         _botAnimation.Setup(renderConfig, junkyard, bot, this);
@@ -200,6 +201,8 @@ public class JunkyardMonoView : MonoBehaviour
         if (_junkyard.isAdjacentToCleared(x, y))
         {
             _junkyard.SetCleared(x, y, true);
+            _junkyard.X = x;
+            _junkyard.Y = y;
             JunkyardService.Instance.SaveJunkyard(_junkyard);
             Destroy(junkyardJunk.gameObject);
 

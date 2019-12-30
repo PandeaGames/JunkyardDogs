@@ -20,4 +20,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9bda384c4b47e9148a8b9082ffc3f459, type: 2}
   _width: 50
   _height: 50
+  _entranceX: 25
+  _entranceY: 49
   _seed: 32
+  _cropping:
+    Left: 0
+    Top: 0
+    Right: 0
+    Bottom: 3

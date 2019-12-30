@@ -17,16 +17,12 @@ public class JunkyardJunk : MonoBehaviour
         
         InputService.Instance.OnPointerClick += InstanceOnOnPointerClick;
         InputService.Instance.OnPointerDown += InstanceOnOnPointerDown;
-
-        Debug.LogFormat("JunkyardJunk.Setup [x:{0}, y:{1}]", x, y);
     }
 
     private void InstanceOnOnPointerClick(Vector3 cameraposition, RaycastHit raycast)
     {
-        Debug.LogFormat("JunkyardJunk.InstanceOnOnPointerClick [raycast.collider:{0}, raycast.collider.gameObject == gameObject:{1}]", raycast.collider == null ? "NULL":raycast.collider.gameObject.name, raycast.collider == null ? "NULL":(raycast.collider.gameObject == gameObject).ToString());
         if (raycast.collider != null && raycast.collider.gameObject == gameObject && OnClicked != null)
         {
-            Debug.LogFormat("JunkyardJunk.OnClicked [gameObject:{0}]", gameObject.name);
             OnClicked(x, y, this);
         }
     }
