@@ -33,3 +33,4 @@ MonoBehaviour:
     type: 3}
   CameraDronePrefab: {fileID: 171254, guid: 731e7e79a79f96b459198308e5497e04, type: 3}
   _missingComponentMaterial: {fileID: 0}
+  _botPrefabFactory: {fileID: 11400000, guid: e976fde8db251f444b07b560f439adf2, type: 2}

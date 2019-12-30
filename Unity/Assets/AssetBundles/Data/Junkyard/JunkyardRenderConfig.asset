@@ -15,19 +15,32 @@ MonoBehaviour:
   configs:
   - prefab: {fileID: 7505469555323974914, guid: 6d800ef96e2897244a21970f70d2565f,
       type: 3}
-    clearedPrefab: {fileID: 0}
+    clearedPrefab: {fileID: 791193917910039191, guid: 9947097a369cf35478522f3308e93fea,
+      type: 3}
   - prefab: {fileID: 7505469555323974914, guid: 6d800ef96e2897244a21970f70d2565f,
       type: 3}
-    clearedPrefab: {fileID: 0}
+    clearedPrefab: {fileID: 791193917910039191, guid: 9947097a369cf35478522f3308e93fea,
+      type: 3}
   - prefab: {fileID: 7253230901725075596, guid: e1090500edd04494694662f2c8daf427,
       type: 3}
-    clearedPrefab: {fileID: 0}
+    clearedPrefab: {fileID: 791193917910039191, guid: 9947097a369cf35478522f3308e93fea,
+      type: 3}
   - prefab: {fileID: 1802210379311678452, guid: 9ddf6f95699dcec4991eb4c1cd8f4385,
       type: 3}
-    clearedPrefab: {fileID: 0}
+    clearedPrefab: {fileID: 791193917910039191, guid: 9947097a369cf35478522f3308e93fea,
+      type: 3}
   - prefab: {fileID: 1802210379311678452, guid: 9ddf6f95699dcec4991eb4c1cd8f4385,
       type: 3}
-    clearedPrefab: {fileID: 0}
-  - prefab: {fileID: 0}
-    clearedPrefab: {fileID: 0}
+    clearedPrefab: {fileID: 791193917910039191, guid: 9947097a369cf35478522f3308e93fea,
+      type: 3}
+  - prefab: {fileID: 791193917910039191, guid: 9947097a369cf35478522f3308e93fea, type: 3}
+    clearedPrefab: {fileID: 791193917910039191, guid: 9947097a369cf35478522f3308e93fea,
+      type: 3}
   _groundMaterial: {fileID: 2100000, guid: 1a8721d0c55c47f42a0229911d39b5ad, type: 2}
+  _fogOfWar: {fileID: 2100000, guid: 9cc1c8a7447273742a2a6971c781b1f1, type: 2}
+  _wall: {fileID: 1221639338255661643, guid: 22544bdb18dfa1c4cb3a1f29b4c545ee, type: 3}
+  _botRenderConfiguration: {fileID: 11400000, guid: d7af20238d3030046879cf84252424b7,
+    type: 2}
+  _wallWidth: 6
+  _junkClearedAnimation: {fileID: 8791433448495973175, guid: 14690ecdeab9b9a42a0a09f418a6a757,
+    type: 3}

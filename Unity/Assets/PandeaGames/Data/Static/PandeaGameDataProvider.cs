@@ -1,4 +1,7 @@
 ﻿using System;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 using UnityEngine;
 
 namespace PandeaGames.Data.Static
@@ -11,7 +14,18 @@ namespace PandeaGames.Data.Static
 
         public PandeaGameConfigurationData PandeaGameConfigurationData
         {
-            get { return _pandeaGameConfigurationData; }
+
+            get
+            {
+#if UNITY_EDITOR
+                if (_pandeaGameConfigurationData == null)
+                {
+                    _pandeaGameConfigurationData = Resources.Load<PandeaGameConfigurationData>(PandeaGameConfigurationDataPath);
+                }
+#endif
+                
+                return _pandeaGameConfigurationData;
+            }
         }
         
         protected override void InternalLoadAsync(LoadSuccess onLoadSuccess, LoadError onLoadFailed)

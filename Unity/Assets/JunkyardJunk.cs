@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class JunkyardJunk : MonoBehaviour
 {
-    public event Action<int, int> OnClicked;
+    public event Action<int, int, JunkyardJunk> OnClicked;
+    public event Action<int, int, JunkyardJunk> OnPointerDown;
     private int x;
     private int y;
     
@@ -13,16 +14,40 @@ public class JunkyardJunk : MonoBehaviour
     {
         this.x = x;
         this.y = y;
+        
+        InputService.Instance.OnPointerClick += InstanceOnOnPointerClick;
+        InputService.Instance.OnPointerDown += InstanceOnOnPointerDown;
+    }
 
+    private void InstanceOnOnPointerClick(Vector3 cameraposition, RaycastHit raycast)
+    {
+        if (raycast.collider != null && raycast.collider.gameObject == gameObject && OnClicked != null)
+        {
+            OnClicked(x, y, this);
+        }
+    }
+    
+    private void InstanceOnOnPointerDown(Vector3 cameraposition, RaycastHit raycast)
+    {
+        if (raycast.collider != null && raycast.collider.gameObject == gameObject && OnPointerDown != null)
+        {
+            OnPointerDown(x, y, this);
+        }
+    }
+
+    private void OnDestroy()
+    {
+        InputService.Instance.OnPointerClick -= InstanceOnOnPointerClick;
+        InputService.Instance.OnPointerDown -= InstanceOnOnPointerDown;
     }
 
     private void OnMouseUp()
     {
-        if (OnClicked != null)
+        /*if (OnClicked != null)
         {
             OnClicked(x, y);
             Destroy(this.gameObject);
-        }
+        }*/
     }
 
     // Start is called before the first frame update

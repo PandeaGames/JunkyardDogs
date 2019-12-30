@@ -42,6 +42,9 @@ public class BotRenderConfiguration : ScriptableObject
     [SerializeField] 
     private Material _missingComponentMaterial;
     
+    [SerializeField] 
+    private PrefabFactory _botPrefabFactory;
+    
     public PrefabFactory ComponentFactory
     {
         get { return _componentFactory; }
@@ -60,5 +63,10 @@ public class BotRenderConfiguration : ScriptableObject
     public Material MissingComponentMaterial
     {
         get { return _missingComponentMaterial; }
+    }
+    
+    public PrefabFactory BotPrefabFactory
+    {
+        get { return _botPrefabFactory; }
     }
 }

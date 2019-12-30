@@ -4,11 +4,9 @@
 public class JunkyardTesting : MonoBehaviour
 {
     [SerializeField]
-    private JunkyardView _junkyardView;
-    public JunkyardView JunkyardView
+    private JunkyardMonoView _junkyardMonoView;
+    public JunkyardMonoView JunkyardMonoView
     {
-        get { return _junkyardView; }
+        get { return _junkyardMonoView; }
     }
-    
-    
 }

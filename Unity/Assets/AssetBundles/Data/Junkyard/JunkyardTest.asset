@@ -15,6 +15,9 @@ MonoBehaviour:
   _layers:
   - {fileID: 11400000, guid: 7c2017f45c10e7545a7e767e328cb82c, type: 2}
   - {fileID: 11400000, guid: 24577f593a94ac74d8f6f2fdf890bb8f, type: 2}
-  _width: 100
-  _height: 100
+  _heightMap:
+  - {fileID: 11400000, guid: 7c2017f45c10e7545a7e767e328cb82c, type: 2}
+  - {fileID: 11400000, guid: 9bda384c4b47e9148a8b9082ffc3f459, type: 2}
+  _width: 50
+  _height: 50
   _seed: 32

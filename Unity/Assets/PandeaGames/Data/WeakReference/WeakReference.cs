@@ -82,6 +82,12 @@ namespace PandeaGames.Data.WeakReferences
         public UnityEngine.Object Asset {
             get
             {
+#if UNITY_EDITOR
+                if (_cache == null)
+                {
+                    _cache = AssetDatabase.LoadAssetAtPath<UnityEngine.Object>(Path);
+                }
+#endif       
                 return _cache;
             }
 #if UNITY_EDITOR

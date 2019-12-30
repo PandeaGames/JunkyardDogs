@@ -40,6 +40,20 @@ public class GameStaticData : ScriptableObject, ILoadableObject, IStaticDataBala
         get { return _worldView.Asset as GameObject; }
     }
     
+    [SerializeField][WeakReference(typeof(GameObject))] 
+    private WeakReference _junkyardView;
+    public GameObject JunkyardView
+    {
+        get { return _junkyardView.Asset as GameObject; }
+    }
+    
+    [SerializeField][WeakReference(typeof(JunkyardData))] 
+    private WeakReference _junkyardTestData;
+    public JunkyardData JunkyardTestData
+    {
+        get { return _junkyardTestData.Asset as JunkyardData; }
+    }
+    
     [SerializeField]
     private PrefabFactory _botPrefabFactory;
     public PrefabFactory BotPrefabFactory

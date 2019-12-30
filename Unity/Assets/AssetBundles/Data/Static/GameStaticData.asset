@@ -19,6 +19,12 @@ MonoBehaviour:
   _worldView:
     _guid: b8fa1b41afc93ab4ea06fe1d6120bb3e
     _path: Assets/AssetBundles/Art/Views/EarthNavigation.prefab
+  _junkyardView:
+    _guid: 31470c28ee3d00d4bb18ff4ed30caf55
+    _path: Assets/AssetBundles/Data/Junkyard/Junkyard.prefab
+  _junkyardTestData:
+    _guid: 1f90584494290704a81043354cf48272
+    _path: Assets/AssetBundles/Data/Junkyard/JunkyardTest.asset
   _botPrefabFactory: {fileID: 11400000, guid: e976fde8db251f444b07b560f439adf2, type: 2}
   _componentPrefabFactory: {fileID: 11400000, guid: c1cb9df1efef84146801652c461013a4,
     type: 2}

@@ -2,12 +2,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class JunkyardView : MonoBehaviour
+
+public class JunkyardFogOfWar : MonoBehaviour
 {
+    
     public JunkyardConfig config;
     public JunkyardRenderConfig renderConfig;
     private GameObject _renderingPlane;
+
+    [SerializeField] private int _farSightDistance = 1;
+    [SerializeField] private int _fullSightDistance = 1;
+    [SerializeField] private Vector3 _planeOffset;
+    [SerializeField] private Color _fogColor;
+    [SerializeField] private Color _clearedColor;
+    [SerializeField] private Color _farSightColor;
+    [SerializeField] private Color _fullSightColor;
     
     [SerializeField]
     private float _scale = 1;
@@ -22,22 +33,32 @@ public class JunkyardView : MonoBehaviour
     {
         _junkyard = junkyard;
         RenderGround(junkyard);
-        RenderJunk(junkyard);
+        junkyard.Update += JunkyardOnUpdate;
     }
-    
+
+    private void JunkyardOnUpdate(int x, int y, Junkyard junkyard)
+    {
+        RenderGround(junkyard);
+    }
+
     private void RenderGround(Junkyard junkyard)
     {
+        MeshFilter meshFilter;
         if(_renderingPlane == null)
         {
-            GameObject planePrimitive = GameObject.CreatePrimitive(PrimitiveType.Plane);
-            _renderingPlane = Instantiate(planePrimitive, transform);
-            DestroyImmediate(planePrimitive);
+            _renderingPlane = Instantiate(new GameObject(), transform);
+            _renderingPlane.transform.position = _planeOffset;
+            _renderingPlane.AddComponent<MeshRenderer>();
+            _renderingPlane.AddComponent<MeshFilter>();
+            meshFilter = _renderingPlane.GetComponent<MeshFilter>();
+            meshFilter.mesh = new Mesh();
+            //DestroyImmediate(planePrimitive);
         }
 
         GameObject plane = _renderingPlane;
-        plane.GetComponent<Renderer>().material = renderConfig.GroundMaterial;
+        plane.GetComponent<Renderer>().material = renderConfig.FogOfWar;
 
-        MeshFilter meshFilter = plane.GetComponent<MeshFilter>();
+        meshFilter = plane.GetComponent<MeshFilter>();
         Mesh mesh = meshFilter.sharedMesh;
 
         int verticiesLength = (junkyard.Width + 1) * (junkyard.Height + 1);
@@ -60,11 +81,13 @@ public class JunkyardView : MonoBehaviour
         {
             for (int y = 0; y < junkyard.Height + 1; y++)
             {
+                Color color = GetColor(x, y, junkyard);
+                
                 int position = (x * (junkyard.Width + 1)) + y;
                 
-                vertices[position] = new Vector3(x * _scale,0, y * _scale);
+                vertices[position] = new Vector3(x * _scale,junkyard.GetNormalizedHeight(x, y), y * _scale);
                 
-                colors[position] = new Color(0.5f, 0.5f, 0.5f);
+                colors[position] = color;
                 //uvs[position] = new Vector2((float)x / (float)junkyard.Width, (float)y / (float)junkyard.Height);
                 uvs[position] = new Vector2((float)x, (float)y);
                 normals[position] = Vector3.up;
@@ -96,6 +119,57 @@ public class JunkyardView : MonoBehaviour
         mesh.RecalculateTangents();
     }
     
+    
+    private Color GetColor(int x, int y, Junkyard junkyard)
+    {
+        bool hasCleared = false;
+        if (x < junkyard.Width && y < junkyard.Height)
+        {
+            hasCleared = junkyard.serializedJunkyard.Cleared[x, y];
+        }
+
+        Color color = !hasCleared ? _fogColor : _clearedColor;
+
+        if (!hasCleared)
+        {
+            int totalSightDistance = _farSightDistance + _fullSightDistance;
+            bool hasClearedAdjacent = false;
+            bool hasClearedCloseAdjacent = false;
+            for (int dx = x - totalSightDistance; dx <= x + totalSightDistance; dx++)
+            {
+                for (int dy = y - totalSightDistance; dy <= y + totalSightDistance; dy++)
+                {
+                    if (dx > 0 && dx < junkyard.Width && dy > 0 && dy < junkyard.Height)
+                    {
+                        bool isAdjacentCleared = junkyard.serializedJunkyard.Cleared[dx, dy];
+                        
+                        hasClearedAdjacent |= isAdjacentCleared;
+    
+                        if (hasClearedAdjacent && isAdjacentCleared)
+                        {
+                            hasClearedCloseAdjacent |= Math.Abs(dx - x) <= _fullSightDistance &&
+                                                       Math.Abs(dy - y) <= _fullSightDistance;
+                        }
+                    }
+                }
+            }
+
+            if (hasClearedAdjacent)
+            {
+                if (hasClearedCloseAdjacent)
+                {
+                    return _fullSightColor;
+                }
+                else
+                {
+                    return _farSightColor;
+                }
+            }
+        }
+        
+        return color;
+    }
+    
     private void SetTriangles(Junkyard junkyard, int x, int y, int[] triangles, List<Vector3> vectorTriangles)
     {
         //we are making 2 triangles per loop. so offset goes up by 6 each time
@@ -116,58 +190,5 @@ public class JunkyardView : MonoBehaviour
         triangles[5 + triangleOffset] = x * verticeY + y + verticeY + 1;
 
         vectorTriangles.Add(new Vector3(triangles[3 + triangleOffset], triangles[4 + triangleOffset], triangles[5 + triangleOffset]));
-    }
-
-    private void RenderJunk(Junkyard junkyard)
-    {
-        GameObject junk = new GameObject("Junk");
-        junk.transform.parent = transform;
-        
-        for (int x = 0; x < junkyard.Width; x++)
-        {
-            for (int y = 0; y < junkyard.Height; y++)
-            {
-                bool hasCleared = junkyard.serializedJunkyard.Cleared[x, y];
-                Debug.LogFormat("Rendering [hasCleared:{0]}])");
-                for (int i = 0; i < config.Layers.Length; i++)
-                {
-                    JunkyardConfig.JunkyardLayerConfig layerConfig = config.Layers[i];
-                    JunkyardRenderConfig.JunkyardLayerRenderConfig renderLayerConfig =
-                        renderConfig.Configs[Math.Min(i, renderConfig.Configs.Length - 1)];
-
-                    if (layerConfig.threshold > junkyard.serializedJunkyard.Data[x, y])
-                    {
-
-                        GameObject prefab = renderLayerConfig.prefab;
-
-                        if (!hasCleared)
-                        {
-                            prefab = renderLayerConfig.prefab;
-                        }else if(renderLayerConfig.clearedPrefab != null)
-                        {
-                            Debug.Log("True at " + x+":" +y);
-                            prefab = renderLayerConfig.clearedPrefab;
-                        }
-
-                        if (prefab != null)
-                        {
-                            GameObject instance = Instantiate(prefab, new Vector3(x * _scale, 0, y * _scale), prefab.transform.rotation, junk.transform);
-                            JunkyardJunk junkyardJunk = instance.GetComponent<JunkyardJunk>();
-                            junkyardJunk.Setup(x, y);
-                            junkyardJunk.OnClicked += JunkyardJunkOnOnClicked;
-                        }
-                        
-                        break;
-                    }
-                }
-            }
-        }
-    }
-
-    private void JunkyardJunkOnOnClicked(int x, int y)
-    {
-        Debug.Log("Clicked at " + x+":" +y);
-        _junkyard.serializedJunkyard.Cleared[x, y] = true;
-        JunkyardService.Instance.SaveJunkyard(_junkyard);
     }
 }

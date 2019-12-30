@@ -1,6 +1,13 @@
 ﻿
+using System;
+using UnityEngine;
+
 public class Junkyard
 {
+    public delegate void DataPointUpdated(int x, int y, Junkyard junkyard);
+    
+    public event DataPointUpdated Update; 
+    
     private JunkyardData _junkyardData;
     private SerializedJunkyard _serializedJunkyard;
 
@@ -28,5 +35,88 @@ public class Junkyard
     public int Height
     {
         get { return _serializedJunkyard.Data.GetLength(1); }
+    }
+
+    public void SetCleared(int x, int y, bool value)
+    {
+        _serializedJunkyard.Cleared[x, y] = value;
+        if (Update != null)
+        {
+            Update(x, y, this);
+        }
+    }
+
+    public float GetHeight(int x, int y)
+    {
+        if (x >= 0 && x < Width && y >= 0 && y < Height)
+        {
+            return _serializedJunkyard.Data[x, y] / (float) 100;
+        }
+        else
+        {
+            return 0;
+        }
+    }
+    
+    public float GetNormalizedHeight(int x, int y)
+    {
+        return
+            (GetHeight(x, y) +
+             GetHeight(x - 1, y - 1) +
+             GetHeight(x, y - 1) +
+             GetHeight(x + 1, y - 1) +
+             GetHeight(x + 1, y) +
+             GetHeight(x + 1, y + 1) +
+             GetHeight(x, y + 1) +
+             GetHeight(x - 1, y + 1) +
+             GetHeight(x - 1, y)) / 9f;
+    }
+
+    public bool isAdjacentToCleared(int x, int y)
+    {
+        int totalSightDistance = 1;
+        bool hasClearedAdjacent = false;
+        bool hasClearedCloseAdjacent = false;
+        for (int dx = x - totalSightDistance; dx <= x + totalSightDistance; dx++)
+        {
+            for (int dy = y - totalSightDistance; dy <= y + totalSightDistance; dy++)
+            {
+                if (dx > 0 && dx < Width && dy > 0 && dy < Height)
+                {
+                    bool isAdjacentCleared = serializedJunkyard.Cleared[dx, dy];
+
+                    if (isAdjacentCleared)
+                    {
+                        return true;
+                    }
+                }
+            }
+        }
+
+        return false;
+    }
+    
+    public Vector2 GetAdjacentToCleared(int x, int y)
+    {
+        int totalSightDistance = 1;
+        bool hasClearedAdjacent = false;
+        bool hasClearedCloseAdjacent = false;
+        for (int dx = x - totalSightDistance; dx <= x + totalSightDistance; dx++)
+        {
+            for (int dy = y - totalSightDistance; dy <= y + totalSightDistance; dy++)
+            {
+                if (dx > 0 && dx < Width && dy > 0 && dy < Height)
+                {
+                    bool isAdjacentCleared = serializedJunkyard.Cleared[dx, dy];
+
+                    if (isAdjacentCleared)
+                    {
+                        return new Vector2(dx, dy);
+                    }
+                }
+            }
+        }
+
+        return new Vector2(x, y);
     }
 }

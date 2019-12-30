@@ -1,5 +1,5 @@
 ﻿public interface IJunkyardGenerator
 {
-    byte[,] Generate(byte[,] input, int seed);
-    byte[,] Generate(int seed, int width, int height);
+    SerializedJunkyard Generate(byte[,] input, int seed);
+    SerializedJunkyard Generate(int seed, int width, int height);
 }

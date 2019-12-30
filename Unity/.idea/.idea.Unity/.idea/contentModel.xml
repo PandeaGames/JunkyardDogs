@@ -58,6 +58,9 @@
             <e p="Editor" t="Include">
               <e p="ViewUserDataWindow.cs" t="Include" />
             </e>
+            <e p="Junkyard" t="Include">
+              <e p="VertexColor.shader" t="Include" />
+            </e>
           </e>
         </e>
         <e p="ByTheTale" t="Include">
@@ -435,9 +438,13 @@
                   <e p="LineupCameraAgent.cs" t="Include" />
                 </e>
                 <e p="Junkyard" t="Include">
+                  <e p="BotAnimation.cs" t="Include" />
                   <e p="Junk.cs" t="Include" />
                   <e p="JunkController.cs" t="Include" />
                   <e p="Junkyard.cs" t="Include" />
+                  <e p="JunkyardBorder.cs" t="Include" />
+                  <e p="JunkyardFogOfWar.cs" t="Include" />
+                  <e p="JunkyardMiniMap.cs" t="Include" />
                 </e>
                 <e p="Match" t="Include">
                   <e p="BotFollowCameraAgent.cs" t="Include" />
@@ -857,8 +864,17 @@
           </e>
         </e>
         <e p="JunkyardJunk.cs" t="Include" />
-        <e p="JunkyardView.cs" t="Include" />
+        <e p="JunkyardMonoView.cs" t="Include" />
         <e p="LaserAnimation.cs" t="Include" />
+        <e p="MobileRTSCam" t="Include">
+          <e p="scripts" t="Include">
+            <e p="Editor" t="Include">
+              <e p="MobileRTSCamEditor.cs" t="Include" />
+            </e>
+            <e p="MobileRTSCam.cs" t="Include" />
+            <e p="SceneTest.cs" t="Include" />
+          </e>
+        </e>
         <e p="ModernGunEffects" t="Include">
           <e p="scripts" t="Include">
             <e p="MGE_ContinuousPrefabGenerator.cs" t="Include" />
@@ -1213,6 +1229,26 @@
                 </e>
               </e>
             </e>
+          </e>
+        </e>
+        <e p="RTS_Camera" t="Include">
+          <e p="Demo" t="Include">
+            <e p="DemoScene.cs" t="Include" />
+            <e p="Projectors" t="Include">
+              <e p="Guidelines.txt" t="Include" />
+              <e p="Shaders" t="Include">
+                <e p="ProjectorLight.shader" t="Include" />
+                <e p="ProjectorMultiply.shader" t="Include" />
+              </e>
+            </e>
+            <e p="TargetSelector.cs" t="Include" />
+          </e>
+          <e p="scripts" t="Include">
+            <e p="Editor" t="Include">
+              <e p="LayoutHelpers.cs" t="Include" />
+              <e p="RTS_CameraEditor.cs" t="Include" />
+            </e>
+            <e p="RTS_Camera.cs" t="Include" />
           </e>
         </e>
         <e p="SampleScenes" t="Include">
@@ -1711,6 +1747,17 @@
             <e p="SharpSerializer.cs" t="Include" />
             <e p="SharpSerializerBinarySettings.cs" t="Include" />
             <e p="SharpSerializerXmlSettings.cs" t="Include" />
+          </e>
+          <e p="UnityVC" t="Include">
+            <e p="Editor" t="Include">
+              <e p="Standard_VCShaderGUI.cs" t="Include" />
+            </e>
+            <e p="StandardVC.shader" t="Include" />
+            <e p="UnityStandardCore_VC.cginc" t="Include" />
+            <e p="UnityStandardCoreForward_VC.cginc" t="Include" />
+            <e p="UnityStandardCoreForwardSimple_VC.cginc" t="Include" />
+            <e p="UnityStandardInput_VC.cginc" t="Include" />
+            <e p="UnityStandardMeta_VC.cginc" t="Include" />
           </e>
         </e>
         <e p="unity-ui-extensions" t="Include">

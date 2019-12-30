@@ -56,8 +56,8 @@ public class InputService : MonoBehaviourSingleton<InputService>
     private void Start()
     {
         _touchDown = new Dictionary<int, Vector3>();
-        InputConfig config = Game.Instance.GetStaticDataPovider<PandeaGameDataProvider>().PandeaGameConfigurationData
-            .InputConfig;
+
+        InputConfig config = Game.Instance.GetStaticDataPovider<PandeaGameDataProvider>().PandeaGameConfigurationData.InputConfig;
 
         _touchEnabled = config.TouchEnabled;
         _providePonterRaycast = config.ProvidePonterRaycast;

@@ -65,7 +65,7 @@ namespace PandeaGames.Data.Static
         protected abstract IStaticDataDirectorySource<TData> LoadSimulatedSource();
         public virtual TData FindData(string ID)
         {
-            if (!Application.isPlaying && _dataLookup == null) 
+            if (_dataLookup == null) 
             {
                 PopulateData(LoadSimulatedSource(), ref _dataLookup);
             }

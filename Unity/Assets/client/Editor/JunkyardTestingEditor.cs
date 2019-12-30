@@ -1,4 +1,6 @@
 ﻿
+    using JunkyardDogs.Components;
+    using PandeaGames;
     using UnityEditor;
     using UnityEngine;
 
@@ -36,11 +38,14 @@ public class JunkyardTestingEditor : Editor
     
     private void GeneratePreview(JunkyardData junkyardData)
     {
+        Game.Instance.GetService<JunkyardUserService>().Load();
+        Bot bot = Game.Instance.GetService<JunkyardUserService>().User.Competitor.Inventory.Bots[0];
+        
         _junkyard = JunkyardService.Instance.GetJunkyard(junkyardData);
 
-        JunkyardView junkyardTesting = _junkyardViewSerializedProperty.objectReferenceValue as JunkyardView;
+        JunkyardMonoView junkyardMonoTesting = _junkyardViewSerializedProperty.objectReferenceValue as JunkyardMonoView;
         
-        junkyardTesting.Render(_junkyard);
+        junkyardMonoTesting.Render(_junkyard, bot);
     }
     
     private void Save(Junkyard junkyard)

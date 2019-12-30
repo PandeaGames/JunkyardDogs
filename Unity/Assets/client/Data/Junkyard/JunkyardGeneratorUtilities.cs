@@ -2,13 +2,13 @@
 
 public class JunkyardGeneratorUtilities : Singleton<JunkyardGeneratorUtilities>, IJunkyardGenerator
 {
-    public byte[,] Generate(byte[,] input, int seed)
+    public SerializedJunkyard Generate(byte[,] input, int seed)
     {
         //todo: Generate data
-        return input;
+        return null;
     }
 
-    public byte[,] Generate(int seed, int width, int height)
+    public SerializedJunkyard Generate(int seed, int width, int height)
     {
         return Generate(new byte[width, height], seed);
     }

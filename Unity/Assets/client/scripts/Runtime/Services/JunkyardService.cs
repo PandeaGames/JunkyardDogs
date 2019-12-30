@@ -22,7 +22,7 @@ public class JunkyardService : AbstractService<JunkyardService>
     {
         return string.Format("{0}/{1}.data", SAVE_FOLDER_PATH, dataName);
     }
-    
+
     public Junkyard GetJunkyard(JunkyardData junkyardData)
     {
         SerializedJunkyard serializedJunkyard = null;
@@ -47,10 +47,7 @@ public class JunkyardService : AbstractService<JunkyardService>
         catch (Exception e)
         {
             Debug.LogError(e);
-            byte[,] data = junkyardData.Generate();
-            serializedJunkyard = new SerializedJunkyard();
-            serializedJunkyard.Data = data;
-            serializedJunkyard.Cleared = new bool[data.GetLength(0),data.GetLength(1)];
+            serializedJunkyard = junkyardData.Generate();
         }
 
         return new Junkyard(junkyardData, serializedJunkyard);

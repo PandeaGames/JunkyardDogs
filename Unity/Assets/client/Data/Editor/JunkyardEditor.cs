@@ -2,7 +2,7 @@
 using UnityEditor;
 using UnityEngine;
 
-[CustomEditor(typeof(JunkyardView))]
+[CustomEditor(typeof(JunkyardMonoView))]
 public class JunkyardEditor : Editor
 {
     private Texture2D _testTexture;
@@ -16,9 +16,13 @@ public class JunkyardEditor : Editor
 
         _junkyardData = (JunkyardData) EditorGUILayout.ObjectField(_junkyardData, typeof(JunkyardData), false);
         EditorGUI.BeginDisabledGroup(_junkyardData == null);
-        if (GUILayout.Button("Generate Preview"))
+        if (GUILayout.Button("Generate Data Preview"))
         {
-            _testTexture = GeneratePreview(_junkyardData);
+            _testTexture = GenerateDataPreview(_junkyardData);
+        }
+        if (GUILayout.Button("Generate Height Preview"))
+        {
+            _testTexture = GenerateHeightDataPreview(_junkyardData);
         }
         EditorGUI.EndDisabledGroup();
 
@@ -28,10 +32,20 @@ public class JunkyardEditor : Editor
         }
     }
 
-    private Texture2D GeneratePreview(JunkyardData junkyardData)
+    private Texture2D GenerateDataPreview(JunkyardData junkyardData)
     {
-        byte[,] data = junkyardData.Generate();
-        
+        byte[,] data = junkyardData.Generate().Data;
+        return GeneratePreview(data);
+    }
+    
+    private Texture2D GenerateHeightDataPreview(JunkyardData junkyardData)
+    {
+        byte[,] data = junkyardData.Generate().HeightMap;
+        return GeneratePreview(data);
+    }
+    
+    private Texture2D GeneratePreview(byte[,] data)
+    { 
         Texture2D tex = new Texture2D(data.GetLength(0), data.GetLength(1));
 
         for (int x = 0; x < data.GetLength(0); x++)
