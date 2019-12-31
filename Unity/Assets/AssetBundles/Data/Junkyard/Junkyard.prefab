@@ -265,12 +265,13 @@ MonoBehaviour:
   config: {fileID: 11400000, guid: 0fd7280a91459bd48a35f17b1e381a07, type: 2}
   renderConfig: {fileID: 11400000, guid: dec3f2ee87449934fbe6aa0c62360659, type: 2}
   _fogOfWarView: {fileID: 4985724524740436067}
-  _miniMap: {fileID: 0}
   _camera: {fileID: 4798547488263182777}
   _camAgent: {fileID: 4442199526968812384}
   _border: {fileID: 6331055325292387230}
   _botAnimation: {fileID: 8706452099827810994}
-  _randomJunkScale: 0.2
+  _randomJunkScale: 0.4
+  _distanceToActivateSnapping: 2
+  _camOffsetWhenSnapping: {x: 0, y: 0, z: -2}
   _scale: 1
 --- !u!114 &4985724524740436067
 MonoBehaviour:

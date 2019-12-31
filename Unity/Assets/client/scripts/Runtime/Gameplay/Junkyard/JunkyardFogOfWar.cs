@@ -28,9 +28,11 @@ public class JunkyardFogOfWar : MonoBehaviour
     }
 
     private Junkyard _junkyard;
+    private JunkyardJunk[,] _junk;
     
-    public void Render(Junkyard junkyard)
+    public void Render(Junkyard junkyard, JunkyardJunk[,] junk)
     {
+        _junk = junk;
         _junkyard = junkyard;
         RenderGround(junkyard);
         junkyard.Update += JunkyardOnUpdate;
@@ -81,12 +83,15 @@ public class JunkyardFogOfWar : MonoBehaviour
         {
             for (int y = 0; y < junkyard.Height + 1; y++)
             {
-                Color color = GetColor(x, y, junkyard);
+                JunkAreaState state = GetState(x, y, junkyard);
+                
+                Color color = GetColor(state);
                 
                 int position = (x * (junkyard.Width + 1)) + y;
                 
                 vertices[position] = new Vector3(x * _scale,junkyard.GetNormalizedHeight(x, y), y * _scale);
-                
+                if(x < junkyard.Width && y < junkyard.Height && _junk[x, y] != null)
+                    _junk[x, y].SetAvailableForCollection(state == JunkAreaState.AvailableToCollect);
                 colors[position] = color;
                 //uvs[position] = new Vector2((float)x / (float)junkyard.Width, (float)y / (float)junkyard.Height);
                 uvs[position] = new Vector2((float)x, (float)y);
@@ -119,16 +124,25 @@ public class JunkyardFogOfWar : MonoBehaviour
         mesh.RecalculateTangents();
     }
     
-    
-    private Color GetColor(int x, int y, Junkyard junkyard)
+    private enum JunkAreaState
     {
+        Cleared,
+        AvailableToCollect,
+        Visible,
+        Hidden
+    }
+    
+    private JunkAreaState GetState(int x, int y, Junkyard junkyard)
+    {
+        JunkAreaState state = default(JunkAreaState);
+        
         bool hasCleared = false;
         if (x < junkyard.Width && y < junkyard.Height)
         {
             hasCleared = junkyard.serializedJunkyard.Cleared[x, y];
         }
 
-        Color color = !hasCleared ? _fogColor : _clearedColor;
+        state = !hasCleared ? JunkAreaState.Hidden : JunkAreaState.Cleared;
 
         if (!hasCleared)
         {
@@ -158,16 +172,43 @@ public class JunkyardFogOfWar : MonoBehaviour
             {
                 if (hasClearedCloseAdjacent)
                 {
-                    return _fullSightColor;
+                    state = JunkAreaState.AvailableToCollect;
                 }
                 else
                 {
-                    return _farSightColor;
+                    state = JunkAreaState.Visible;
                 }
             }
         }
         
-        return color;
+        return state;
+    }
+    
+    private Color GetColor(JunkAreaState state)
+    {
+        switch (state)
+        {
+            case JunkAreaState.AvailableToCollect:
+            {
+                return _fullSightColor;
+            }
+            case JunkAreaState.Cleared:
+            {
+                return _clearedColor;
+            }
+            case JunkAreaState.Hidden:
+            {
+                return _fogColor;
+            }
+            case JunkAreaState.Visible:
+            {
+                return _farSightColor;
+            }
+            default:
+            {
+                return default(Color);
+            }
+        }
     }
     
     private void SetTriangles(Junkyard junkyard, int x, int y, int[] triangles, List<Vector3> vectorTriangles)

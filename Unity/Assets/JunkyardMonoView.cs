@@ -25,6 +25,7 @@ public class JunkyardMonoView : MonoBehaviour
     [SerializeField] private float _distanceToActivateSnapping = 2;
     [SerializeField] private Vector3 _camOffsetWhenSnapping = new Vector3(0, 0, -2);
 
+    private JunkyardJunk[,] _junk;
     private Vector3 _cameraSnapPosition;
     private bool _isSnapping;
     private float _distanceWhileSnapping;
@@ -71,7 +72,7 @@ public class JunkyardMonoView : MonoBehaviour
         _junkyard = junkyard;
         RenderGround(junkyard);
         RenderJunk(junkyard);
-        _fogOfWarView.Render(junkyard);
+        _fogOfWarView.Render(junkyard, _junk);
         _camera.XMax = junkyard.Width;
         _camera.ZMax = junkyard.Height;
         _camera.XMin = 0;
@@ -184,6 +185,7 @@ public class JunkyardMonoView : MonoBehaviour
     {
         GameObject junk = new GameObject("Junk");
         junk.transform.parent = transform;
+        _junk = new JunkyardJunk[junkyard.Width,junkyard.Height];
         
         for (int x = 0; x < junkyard.Width; x++)
         {
@@ -219,6 +221,7 @@ public class JunkyardMonoView : MonoBehaviour
                             junkyardJunk.OnPointerDown += JunkyardJunkOnOnPointerDown;
                             float randomScaleFactor = UnityEngine.Random.Range(1, 1 + _randomJunkScale);
                             junkyardJunk.transform.localScale = new Vector3(randomScaleFactor, randomScaleFactor ,randomScaleFactor);
+                            _junk[x, y] = junkyardJunk;
                         }
                         
                         break;
@@ -237,6 +240,10 @@ public class JunkyardMonoView : MonoBehaviour
             _junkyard.Y = y;
             JunkyardService.Instance.SaveJunkyard(_junkyard);
             Destroy(junkyardJunk.gameObject);
+            _junk[x, y] = null;
+            
+            
+            
             ActivateSnappingConditional(x, y);
             
             Instantiate(renderConfig.JunkClearedAnimation, junkyardJunk.transform.position,

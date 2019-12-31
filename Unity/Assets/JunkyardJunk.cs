@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class JunkyardJunk : MonoBehaviour
 {
+    [SerializeField] 
+    private Collider _collider;
+    
     public event Action<int, int, JunkyardJunk> OnClicked;
     public event Action<int, int, JunkyardJunk> OnPointerDown;
     private int x;
@@ -17,6 +20,11 @@ public class JunkyardJunk : MonoBehaviour
         
         InputService.Instance.OnPointerClick += InstanceOnOnPointerClick;
         InputService.Instance.OnPointerDown += InstanceOnOnPointerDown;
+    }
+
+    public void SetAvailableForCollection(bool enabled)
+    {
+        _collider.enabled = enabled;
     }
 
     private void InstanceOnOnPointerClick(Vector3 cameraposition, RaycastHit raycast)
