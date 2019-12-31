@@ -22,6 +22,7 @@ namespace JunkyardDogs.Views
 
             _userModel = Game.Instance.GetViewModel<JunkyardUserViewModel>(0);
             _junkyardViewModel = Game.Instance.GetViewModel<JunkyardViewModel>(0);
+            _junkyardViewModel.junkyard = JunkyardService.Instance.GetJunkyard(Game.Instance.GetStaticDataPovider<GameStaticDataProvider>().GameDataStaticData.JunkyardTestData);
             
             _junkyardViewGO = GameObject.Instantiate(Game.Instance.GetStaticDataPovider<GameStaticDataProvider>().GameDataStaticData.JunkyardView);
             _junkyardViewGO.SetActive(false);
@@ -30,15 +31,14 @@ namespace JunkyardDogs.Views
 
         public override void Show()
         {
-            //FindWindow().LaunchScreen("junkyard");
+            FindWindow().LaunchScreen("junkyard");
             _junkyardViewModel.OnTakeJunk += OnTakeJunk;
             _junkyardViewGO.SetActive(true);
             
             Game.Instance.GetService<JunkyardUserService>().Load();
             Bot bot = Game.Instance.GetService<JunkyardUserService>().User.Competitor.Inventory.Bots[0];
         
-            _junkyard = JunkyardService.Instance.GetJunkyard(Game.Instance.GetStaticDataPovider<GameStaticDataProvider>().GameDataStaticData.JunkyardTestData);
-            _junkyardView.Render(_junkyard, bot);
+            _junkyardView.Render(_junkyardViewModel.junkyard, bot);
         }
 
         public override void Destroy()

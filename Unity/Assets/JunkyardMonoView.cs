@@ -17,15 +17,17 @@ public class JunkyardMonoView : MonoBehaviour
     private GameObject _renderingPlane;
 
     [SerializeField] private JunkyardFogOfWar _fogOfWarView;
-    [SerializeField] private JunkyardMiniMap _miniMap;
     [SerializeField] private MobileRTSCam _camera;
     [SerializeField] private CameraAgent _camAgent;
     [SerializeField] private JunkyardBorder _border;
     [SerializeField] private BotAnimation _botAnimation;
     [SerializeField] private float _randomJunkScale;
+    [SerializeField] private float _distanceToActivateSnapping = 2;
+    [SerializeField] private Vector3 _camOffsetWhenSnapping = new Vector3(0, 0, -2);
 
     private Vector3 _cameraSnapPosition;
     private bool _isSnapping;
+    private float _distanceWhileSnapping;
     
     [SerializeField]
     private float _scale = 1;
@@ -43,13 +45,21 @@ public class JunkyardMonoView : MonoBehaviour
             if (_isSnapping)
             {
                 float d = Vector3.Distance(_cameraSnapPosition, _camAgent.transform.position);
-                if (d < 0.1)
+
+                bool shouldStopSnapping = d > _distanceWhileSnapping;
+                shouldStopSnapping |= d < 0.1;
+
+                _distanceWhileSnapping = d;
+                
+                if (shouldStopSnapping)
                 {
                     _isSnapping = false;
                 }
-
-                _camAgent.transform.position =
-                    _camAgent.transform.position + (_cameraSnapPosition - _camAgent.transform.position) / 10;
+                else
+                {
+                    _camAgent.transform.position =
+                        _camAgent.transform.position + (_cameraSnapPosition - _camAgent.transform.position) / 10;
+                }
             }
         }
     }
@@ -62,7 +72,6 @@ public class JunkyardMonoView : MonoBehaviour
         RenderGround(junkyard);
         RenderJunk(junkyard);
         _fogOfWarView.Render(junkyard);
-        _miniMap.Setup(junkyard);
         _camera.XMax = junkyard.Width;
         _camera.ZMax = junkyard.Height;
         _camera.XMin = 0;
@@ -228,9 +237,8 @@ public class JunkyardMonoView : MonoBehaviour
             _junkyard.Y = y;
             JunkyardService.Instance.SaveJunkyard(_junkyard);
             Destroy(junkyardJunk.gameObject);
+            ActivateSnappingConditional(x, y);
             
-            _cameraSnapPosition = new Vector3(x, _camAgent.transform.position.y, y);
-            _isSnapping = true;
             Instantiate(renderConfig.JunkClearedAnimation, junkyardJunk.transform.position,
                 junkyardJunk.transform.rotation, transform);
             
@@ -238,6 +246,19 @@ public class JunkyardMonoView : MonoBehaviour
             {
                 OnJunkCleared(x, y, junkyardJunk);
             }
+        }
+    }
+    
+    private void ActivateSnappingConditional(int x, int y)
+    {
+        Vector3 newPosition = new Vector3(x, _camAgent.transform.position.y, y) + _camOffsetWhenSnapping;
+        float d = Vector2.Distance(_cameraSnapPosition, newPosition);
+        _cameraSnapPosition = newPosition;
+
+        if (d < _distanceToActivateSnapping)
+        {
+            _isSnapping = true;
+            _distanceWhileSnapping = float.MaxValue;
         }
     }
     

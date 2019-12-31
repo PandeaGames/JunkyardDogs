@@ -13,6 +13,9 @@ public class BotAnimation : MonoBehaviour
     private JunkyardMonoView _junkyardMonoView;
     private Junkyard _junkyard;
 
+    private int _lastXPosition;
+    private int _lastYPosition;
+
     private Vector3 _targetPosition;
     
     public void Setup(JunkyardRenderConfig config, Junkyard junkyard, Bot bot, JunkyardMonoView junkyardMonoView)
@@ -35,17 +38,22 @@ public class BotAnimation : MonoBehaviour
 
     private void JunkyardMonoViewOnOnJunkPointerDown(int x, int y, JunkyardJunk junk)
     {
-        Vector2 adj = _junkyard.GetAdjacentToCleared(x, y);
+        bool isLastPositionAdjacent = Math.Abs(x - _lastXPosition) <= 1 && Math.Abs(y - _lastYPosition) <= 1;
+        
+        Vector2 adj = isLastPositionAdjacent ? new Vector2(_lastXPosition, _lastYPosition):_junkyard.GetAdjacentToCleared(x, y);
 
         float dx = x - adj.x;
         float dy = y - adj.y;
         float a = Mathf.Rad2Deg * Mathf.Atan2(dy, dx);
         
-        _botRenderer.transform.rotation = Quaternion.Euler(0, a, 0);
+        _botRenderer.transform.rotation = Quaternion.Euler(0, -90 - (a +90), 0);
         Debug.LogFormat("[a:{0}] [dx:{1}] [dy:{2}]", a, dx, dy);
         
         _botRenderer.transform.position = new Vector3(adj.x, junk.gameObject.transform.position.y, adj.y);
         _targetPosition = _botRenderer.transform.position;
+
+        _lastXPosition = x;
+        _lastYPosition = y;
     }
 
     private IEnumerator Start()

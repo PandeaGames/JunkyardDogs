@@ -12,6 +12,7 @@ namespace JunkyardDogs
         public event Action<ILoot[]> OnTakeJunk;
         
         public JunkyardUser User;
+        public Junkyard junkyard;
         
 
         public void TakeJunk(LootCrateStaticDataReference lootCrate)
