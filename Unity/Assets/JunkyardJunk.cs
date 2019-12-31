@@ -1,12 +1,16 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using UnityEngine;
 
 public class JunkyardJunk : MonoBehaviour
 {
     [SerializeField] 
     private Collider _collider;
+
+    [SerializeField, OptionalField]
+    private Renderer _renderer;
     
     public event Action<int, int, JunkyardJunk> OnClicked;
     public event Action<int, int, JunkyardJunk> OnPointerDown;
@@ -20,6 +24,8 @@ public class JunkyardJunk : MonoBehaviour
         
         InputService.Instance.OnPointerClick += InstanceOnOnPointerClick;
         InputService.Instance.OnPointerDown += InstanceOnOnPointerDown;
+
+        if(_renderer != null) _renderer.enabled = !JunkyardUtils.HideJunkyardMeshs;
     }
 
     public void SetAvailableForCollection(bool enabled)

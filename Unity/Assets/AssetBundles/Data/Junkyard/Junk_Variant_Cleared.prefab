@@ -12,11 +12,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Junk_Variant_Cleared
       objectReference: {fileID: 0}
-    - target: {fileID: 3025384253723024713, guid: 379077f354cbb21489608f8faebcc58a,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7288877855436485917, guid: 379077f354cbb21489608f8faebcc58a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -70,6 +65,16 @@ PrefabInstance:
     - target: {fileID: 7288877855436485917, guid: 379077f354cbb21489608f8faebcc58a,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8086690906653574594, guid: 379077f354cbb21489608f8faebcc58a,
+        type: 3}
+      propertyPath: _renderer
+      value: 
+      objectReference: {fileID: 8145068745799717879}
+    - target: {fileID: 3025384253723024713, guid: 379077f354cbb21489608f8faebcc58a,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5043212841369503723, guid: 379077f354cbb21489608f8faebcc58a,
@@ -147,3 +152,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43672e308877f6849bbf82bafb9e73f3, type: 3}
+--- !u!23 &8145068745799717879 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 23935814274297072, guid: 43672e308877f6849bbf82bafb9e73f3,
+    type: 3}
+  m_PrefabInstance: {fileID: 8168423210480434951}
+  m_PrefabAsset: {fileID: 0}
