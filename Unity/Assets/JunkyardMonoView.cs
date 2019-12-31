@@ -23,12 +23,35 @@ public class JunkyardMonoView : MonoBehaviour
     [SerializeField] private JunkyardBorder _border;
     [SerializeField] private BotAnimation _botAnimation;
     [SerializeField] private float _randomJunkScale;
+
+    private Vector3 _cameraSnapPosition;
+    private bool _isSnapping;
     
     [SerializeField]
     private float _scale = 1;
     public float Scale
     {
         get { return _scale; }
+    }
+
+    private IEnumerator Start()
+    {
+        while (true)
+        {
+            yield return null;
+            
+            if (_isSnapping)
+            {
+                float d = Vector3.Distance(_cameraSnapPosition, _camAgent.transform.position);
+                if (d < 0.1)
+                {
+                    _isSnapping = false;
+                }
+
+                _camAgent.transform.position =
+                    _camAgent.transform.position + (_cameraSnapPosition - _camAgent.transform.position) / 10;
+            }
+        }
     }
 
     private Junkyard _junkyard;
@@ -205,7 +228,9 @@ public class JunkyardMonoView : MonoBehaviour
             _junkyard.Y = y;
             JunkyardService.Instance.SaveJunkyard(_junkyard);
             Destroy(junkyardJunk.gameObject);
-
+            
+            _cameraSnapPosition = new Vector3(x, _camAgent.transform.position.y, y);
+            _isSnapping = true;
             Instantiate(renderConfig.JunkClearedAnimation, junkyardJunk.transform.position,
                 junkyardJunk.transform.rotation, transform);
             

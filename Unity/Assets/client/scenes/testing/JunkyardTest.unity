@@ -415,6 +415,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Junkyard
       objectReference: {fileID: 0}
+    - target: {fileID: 756411443245535325, guid: 31470c28ee3d00d4bb18ff4ed30caf55,
+        type: 3}
+      propertyPath: _groundMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: c5aecfa854cb2dc4cac82cecca290a1d, type: 2}
     - target: {fileID: 1765092268589413704, guid: 31470c28ee3d00d4bb18ff4ed30caf55,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -470,11 +475,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 756411443245535325, guid: 31470c28ee3d00d4bb18ff4ed30caf55,
-        type: 3}
-      propertyPath: _groundMaterial
-      value: 
-      objectReference: {fileID: 2100000, guid: c5aecfa854cb2dc4cac82cecca290a1d, type: 2}
     - target: {fileID: 4985724524740436067, guid: 31470c28ee3d00d4bb18ff4ed30caf55,
         type: 3}
       propertyPath: _sightDistance
@@ -589,6 +589,11 @@ PrefabInstance:
         type: 3}
       propertyPath: orthographic size
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461976075406127921, guid: 31470c28ee3d00d4bb18ff4ed30caf55,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31470c28ee3d00d4bb18ff4ed30caf55, type: 3}
