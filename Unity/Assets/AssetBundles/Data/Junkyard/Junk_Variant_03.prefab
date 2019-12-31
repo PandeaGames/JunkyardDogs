@@ -67,7 +67,33 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 0.25
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 23470596199454582, guid: 959d13eedf6a2a2438afdcb66ff47bc5,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23470596199454582, guid: 959d13eedf6a2a2438afdcb66ff47bc5,
+        type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23470596199454582, guid: 959d13eedf6a2a2438afdcb66ff47bc5,
+        type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23470596199454582, guid: 959d13eedf6a2a2438afdcb66ff47bc5,
+        type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23470596199454582, guid: 959d13eedf6a2a2438afdcb66ff47bc5,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 95655563488330630, guid: 959d13eedf6a2a2438afdcb66ff47bc5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 959d13eedf6a2a2438afdcb66ff47bc5, type: 3}
 --- !u!23 &2752912259938262102 stripped
 MeshRenderer:

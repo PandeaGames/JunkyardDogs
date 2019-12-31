@@ -70,7 +70,12 @@ public class JunkyardMonoView : MonoBehaviour
     public void Render(Junkyard junkyard, Bot bot)
     {
         _junkyard = junkyard;
-        RenderGround(junkyard);
+        
+        if (!JunkyardUtils.HideGround)
+        {
+            RenderGround(junkyard);
+        }
+       
         RenderJunk(junkyard);
         _fogOfWarView.Render(junkyard, _junk);
         _camera.XMax = junkyard.Width;

@@ -20,4 +20,32 @@ public partial class SROptions
         get { return JunkyardUtils.HideJunkyardMeshs; }
         set { JunkyardUtils.HideJunkyardMeshs = value; }
     }
+    
+    // Options will be grouped by category
+    [Category(JUNKYARD_CATEGORY)] 
+    public bool HideJunkyardWalls {
+        get { return JunkyardUtils.HideWalls; }
+        set { JunkyardUtils.HideWalls = value; }
+    }
+    
+    // Options will be grouped by category
+    [Category(JUNKYARD_CATEGORY)] 
+    public bool HideJunkyardFog {
+        get { return JunkyardUtils.HideFog; }
+        set { JunkyardUtils.HideFog = value; }
+    }
+    
+    // Options will be grouped by category
+    [Category(JUNKYARD_CATEGORY)] 
+    public bool HideJunkyardGround {
+        get { return JunkyardUtils.HideGround; }
+        set { JunkyardUtils.HideGround = value; }
+    }
+    
+    // Options will be grouped by category
+    [Category(JUNKYARD_CATEGORY)] 
+    public bool HideJunkyardMiniMap {
+        get { return JunkyardUtils.HideMiniMap; }
+        set { JunkyardUtils.HideMiniMap = value; }
+    }
 }

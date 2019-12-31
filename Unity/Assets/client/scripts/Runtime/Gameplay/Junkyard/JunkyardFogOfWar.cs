@@ -34,8 +34,12 @@ public class JunkyardFogOfWar : MonoBehaviour
     {
         _junk = junk;
         _junkyard = junkyard;
-        RenderGround(junkyard);
-        junkyard.Update += JunkyardOnUpdate;
+        
+        if (!JunkyardUtils.HideFog)
+        {
+            junkyard.Update += JunkyardOnUpdate;
+            RenderGround(junkyard); 
+        }
     }
 
     private void JunkyardOnUpdate(int x, int y, Junkyard junkyard)
