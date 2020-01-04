@@ -438,7 +438,10 @@
                   <e p="LineupCameraAgent.cs" t="Include" />
                 </e>
                 <e p="Junkyard" t="Include">
+                  <e p="AbstractGridDataModel.cs" t="Include" />
                   <e p="BotAnimation.cs" t="Include" />
+                  <e p="FogDataModel.cs" t="Include" />
+                  <e p="IntVector.cs" t="Include" />
                   <e p="Junk.cs" t="Include" />
                   <e p="JunkController.cs" t="Include" />
                   <e p="Junkyard.cs" t="Include" />
@@ -555,6 +558,7 @@
               <e p="Movement.cs" t="Include" />
             </e>
             <e p="DecisionMakers" t="Include">
+              <e p="AbstractDecisionMove.cs" t="Include" />
               <e p="DecisionEvents.cs" t="Include" />
               <e p="DecisionMoveBackwards.cs" t="Include" />
               <e p="DecisionMoveForward.cs" t="Include" />

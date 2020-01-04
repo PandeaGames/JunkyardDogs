@@ -12,9 +12,9 @@ namespace JunkyardDogs.Simulation
     }
     
     [Preserve]
-    public abstract class DecisionStrafe : IDecisionMaker
+    public abstract class DecisionStrafe : AbstractDecisionMove
     {
-        public class DecisionStrafeLogic : Logic
+        public class DecisionStrafeLogic : DecisionMoveLogic
         {
             public int numberOfPreviousConcurrentDecisions;
             public int maxNumberOfTicksForMovement;
@@ -38,7 +38,7 @@ namespace JunkyardDogs.Simulation
             _direction = direction;
         }
 
-        public Logic GetDecisionWeight(SimBot simBot, SimulatedEngagement engagement)
+        public override Logic GetDecisionWeight(SimBot simBot, SimulatedEngagement engagement)
         {
             DecisionStrafeLogic logic = new DecisionStrafeLogic();
             logic.plane = DecisionPlane.Base;
@@ -89,7 +89,7 @@ namespace JunkyardDogs.Simulation
             return logic;
         }
 
-        public void MakeDecision(SimBot simBot, SimulatedEngagement engagement)
+        public override void MakeDecision(SimBot simBot, SimulatedEngagement engagement)
         {
             //apply velocity
             Vector2 vector = new Vector2(_direction == StrafeDirection.Left ? -simBot.bot.Chassis.Engine.StrafeAcceleration:simBot.bot.Chassis.Engine.StrafeAcceleration, 0);

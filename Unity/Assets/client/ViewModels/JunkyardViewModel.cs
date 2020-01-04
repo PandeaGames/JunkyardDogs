@@ -1,19 +1,31 @@
 ﻿using System;
-using JunkyardDogs.Components;
 using JunkyardDogs.Data;
-using JunkyardDogs.Specifications;
 using PandeaGames.ViewModels;
-using WeakReference = PandeaGames.Data.WeakReferences.WeakReference;
 
 namespace JunkyardDogs
 {
     public class JunkyardViewModel : AbstractViewModel
     {
+        private enum JunkAreaState
+        {
+            Cleared,
+            AvailableToCollect,
+            Visible,
+            Hidden
+        }
+        
         public event Action<ILoot[]> OnTakeJunk;
         
         public JunkyardUser User;
-        public Junkyard junkyard;
+        private Junkyard _junkyard;
+
+        public Junkyard junkyard
+        {
+            get { return _junkyard; }
+        }
         
+
+        public FogDataModel Fog;
 
         public void TakeJunk(LootCrateStaticDataReference lootCrate)
         {
@@ -26,6 +38,12 @@ namespace JunkyardDogs
             }
 
             OnTakeJunk(loot);
+        }
+
+        public void SetJunkyard(Junkyard junkyard, JunkyardConfig config)
+        {
+            _junkyard = junkyard;
+            Fog = new FogDataModel(junkyard, config);
         }
     }
 }

@@ -7,7 +7,7 @@ namespace JunkyardDogs.Simulation
     {
         public DecisionMoveRight() : base(StrafeDirection.Right)
         {
-
+            
         }
     }
 }

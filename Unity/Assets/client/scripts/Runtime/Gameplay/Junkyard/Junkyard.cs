@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Junkyard
@@ -56,6 +57,11 @@ public class Junkyard
         {
             Update(x, y, this);
         }
+    }
+
+    public bool GetCleared(int x, int y)
+    {
+        return _serializedJunkyard.Cleared[x, y];
     }
 
     public float GetHeight(int x, int y)
@@ -130,5 +136,16 @@ public class Junkyard
         }
 
         return new Vector2(x, y);
+    }
+
+    public IEnumerable<INTVector> GetGridSpaces()
+    {
+        for (int x = 0; x < Width; x++)
+        {
+            for (int y = 0; y < Height; y++)
+            {
+                yield return new INTVector(x, y);
+            }  
+        }
     }
 }

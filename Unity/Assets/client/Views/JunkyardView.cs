@@ -22,7 +22,7 @@ namespace JunkyardDogs.Views
 
             _userModel = Game.Instance.GetViewModel<JunkyardUserViewModel>(0);
             _junkyardViewModel = Game.Instance.GetViewModel<JunkyardViewModel>(0);
-            _junkyardViewModel.junkyard = JunkyardService.Instance.GetJunkyard(Game.Instance.GetStaticDataPovider<GameStaticDataProvider>().GameDataStaticData.JunkyardTestData);
+            
             
             _junkyardViewGO = GameObject.Instantiate(Game.Instance.GetStaticDataPovider<GameStaticDataProvider>().GameDataStaticData.JunkyardView);
             _junkyardViewGO.SetActive(false);

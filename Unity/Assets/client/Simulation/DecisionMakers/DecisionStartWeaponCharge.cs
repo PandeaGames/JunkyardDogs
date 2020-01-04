@@ -18,6 +18,7 @@ namespace JunkyardDogs.Simulation
             public bool isMeleeWeapon;
             public float meleeDistance;
             public bool isWithinMeleeRange;
+            public bool wasLastDecisionAWeapon;
         }
 
         public DecisionStartWeaponCharge(Chassis.ArmamentLocation weaponArmamentLocation) : base(weaponArmamentLocation)
@@ -31,13 +32,15 @@ namespace JunkyardDogs.Simulation
             Melee meleeWeapon = weapon is Melee ? (Melee) weapon.GetSpec():null;
             logic.plane = weapon.GetSpec().DecisionPlane;
             logic.distance = (int) Vector2.Distance(simBot.body.position, simBot.opponent.body.position);
-
+            logic.wasLastDecisionAWeapon = simBot.IsLastDecisionOfType<DecisionWeapon>(DecisionPlane.Base);
+            
             logic.isMeleeWeapon = meleeWeapon != null;
             logic.meleeDistance = simBot.GetBounds().width / 2 + 1;
             logic.isWithinMeleeRange = logic.distance < logic.meleeDistance;
 
             if (logic.isMeleeWeapon && !logic.isWithinMeleeRange
-                || !logic.isMeleeWeapon && logic.isWithinMeleeRange)
+                || !logic.isMeleeWeapon && logic.isWithinMeleeRange
+                || logic.wasLastDecisionAWeapon)
             {
                 logic.priority = DecisionPriority.None;
             }

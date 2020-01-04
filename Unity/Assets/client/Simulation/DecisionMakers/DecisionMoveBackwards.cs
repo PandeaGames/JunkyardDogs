@@ -16,11 +16,11 @@ namespace JunkyardDogs.Simulation
     }
     
     [Preserve]
-    public class DecisionMoveBackwards : IDecisionMaker
+    public class DecisionMoveBackwards : AbstractDecisionMove
     {
         private const int maxNumberOfTicksForMovement = 20;
         
-        public Logic GetDecisionWeight(SimBot simBot, SimulatedEngagement engagement)
+        public override Logic GetDecisionWeight(SimBot simBot, SimulatedEngagement engagement)
         {
             DecisionMoveBackwardsLogic logic = new DecisionMoveBackwardsLogic();
             logic.plane = DecisionPlane.Base;
@@ -93,7 +93,7 @@ namespace JunkyardDogs.Simulation
             return logic;
         }
 
-        public void MakeDecision(SimBot simBot, SimulatedEngagement engagement)
+        public override void MakeDecision(SimBot simBot, SimulatedEngagement engagement)
         {
             Vector2 vector = new Vector2(0, -simBot.bot.Chassis.Engine.BackwardAcceleration);
             simBot.body.accelerationPerSecond = vector;

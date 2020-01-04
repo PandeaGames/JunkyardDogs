@@ -12,7 +12,6 @@ public class JunkyardRenderConfig : ScriptableObject
     }
 
     public JunkyardLayerRenderConfig[] configs;
-
     public JunkyardLayerRenderConfig[] Configs
     {
         get { return configs; }
@@ -25,6 +24,8 @@ public class JunkyardRenderConfig : ScriptableObject
     [SerializeField] private float _wallWidth;
     [SerializeField] private GameObject _junkClearedAnimation;
 
+    
+    
     public BotRenderConfiguration BotRenderConfiguration
     {
         get { return _botRenderConfiguration; }

@@ -54,6 +54,15 @@ public class GameStaticData : ScriptableObject, ILoadableObject, IStaticDataBala
         get { return _junkyardTestData.Asset as JunkyardData; }
     }
     
+    [SerializeField][WeakReference(typeof(JunkyardConfig))] 
+    private WeakReference _junkyardTestConfigData;
+    public JunkyardConfig JunkyardTestConfigData
+    {
+        get { return _junkyardTestConfigData.Asset as JunkyardConfig; }
+    }
+    
+    
+    
     [SerializeField]
     private PrefabFactory _botPrefabFactory;
     public PrefabFactory BotPrefabFactory
@@ -102,6 +111,7 @@ public class GameStaticData : ScriptableObject, ILoadableObject, IStaticDataBala
         loader.AppendProvider(_worldView);
         loader.AppendProvider(_junkyardView);
         loader.AppendProvider(_junkyardTestData);
+        loader.AppendProvider(_junkyardTestConfigData);
         loader.LoadAsync(() =>
         {
             Loader secondaryLoader = new Loader();

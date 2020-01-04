@@ -4,22 +4,22 @@ using UnityEngine.Scripting;
 
 namespace JunkyardDogs.Simulation
 {
-    public class DecisionMoveForwardLogic : Logic
-    {
-        public int aggressiveness;
-        public int targetDistance;
-        public int distance;
-        public int numberOfPreviousConcurrentBackwardDecisions;
-        public int maxNumberOfTicksForMovement;
-        public bool shouldContinueMoving;
-    }
-    
     [Preserve]
-    public class DecisionMoveForward : IDecisionMaker
+    public class DecisionMoveForward : AbstractDecisionMove
     {
+        public class DecisionMoveForwardLogic : DecisionMoveLogic
+        {
+            public int aggressiveness;
+            public int targetDistance;
+            public int distance;
+            public int numberOfPreviousConcurrentBackwardDecisions;
+            public int maxNumberOfTicksForMovement;
+            public bool shouldContinueMoving;
+        }
+        
         private const int maxNumberOfTicksForMovement = 20;
         
-        public Logic GetDecisionWeight(SimBot simBot, SimulatedEngagement engagement)
+        public override Logic GetDecisionWeight(SimBot simBot, SimulatedEngagement engagement)
         {
             DecisionMoveForwardLogic logic = new DecisionMoveForwardLogic();
             logic.plane = DecisionPlane.Base;
@@ -105,7 +105,7 @@ namespace JunkyardDogs.Simulation
             return logic;
         }
 
-        public void MakeDecision(SimBot simBot, SimulatedEngagement engagement)
+        public override void MakeDecision(SimBot simBot, SimulatedEngagement engagement)
         {
             Vector2 vector = new Vector2(0, simBot.bot.Chassis.Engine.ForwardAcceleration);
             simBot.body.accelerationPerSecond = vector;
