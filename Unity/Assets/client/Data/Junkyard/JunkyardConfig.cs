@@ -45,6 +45,11 @@ public class JunkyardConfig : ScriptableObject
             return fogDepth;
         }
     }
+    
+    public JunkyardFogLayerConfig GetLayerDataAtIndex(int index)
+    {
+        return _fogLayers[index];
+    }
 
     public int GetIndexAtFogDepth(int fogDepth)
     {
@@ -59,6 +64,6 @@ public class JunkyardConfig : ScriptableObject
             }
         }
 
-        return 0;
+        return _fogLayers.Length - 1;
     }
 }

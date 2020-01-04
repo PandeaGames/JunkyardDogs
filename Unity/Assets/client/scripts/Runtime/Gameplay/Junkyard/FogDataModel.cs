@@ -1,6 +1,11 @@
 ﻿using System;
+using UnityEngine;
 
-public class FogDataModel : AbstractGridDataModel<int>
+public class FogDataPoint : GridDataPoint<int>
+{
+}
+
+public class FogDataModel : AbstractGridDataModel<int, FogDataPoint>
 {
     public FogDataModel(Junkyard junkyard, JunkyardConfig config) : base(InitializeData(junkyard, config))
     {
@@ -36,11 +41,11 @@ public class FogDataModel : AbstractGridDataModel<int>
             {
                 if (junkyard.GetCleared(x, y))
                 {
-                    closestClearedData = Math.Min(closestClearedData, Math.Min(x, y));
+                    closestClearedData = Math.Min(closestClearedData, Math.Max(Math.Abs(x - xIN), Math.Abs(y - yIN)));
                 }
             }
         }
-        
+
         return config.GetIndexAtFogDepth(closestClearedData);
     }
     

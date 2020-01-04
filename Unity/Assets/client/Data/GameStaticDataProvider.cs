@@ -15,6 +15,7 @@ namespace JunkyardDogs.Data
             {
                 if (_gameDataLoaderCache == null)
                 {
+                    
                     _gameDataLoaderCache = _gameDataLoader.Asset as GameStaticData;
                 }
 

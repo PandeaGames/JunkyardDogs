@@ -26,6 +26,7 @@ namespace JunkyardDogs
         
 
         public FogDataModel Fog;
+        public InteractibleDataModel Interactible;
 
         public void TakeJunk(LootCrateStaticDataReference lootCrate)
         {
@@ -44,6 +45,7 @@ namespace JunkyardDogs
         {
             _junkyard = junkyard;
             Fog = new FogDataModel(junkyard, config);
+            Interactible = new InteractibleDataModel(Fog, config);
         }
     }
 }

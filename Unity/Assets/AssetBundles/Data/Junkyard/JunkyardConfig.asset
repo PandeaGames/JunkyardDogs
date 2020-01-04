@@ -23,3 +23,12 @@ MonoBehaviour:
     threshold: 200
   - cost: 5
     threshold: 255
+  _fogLayers:
+  - depth: 0
+    interactible: 0
+  - depth: 1
+    interactible: 1
+  - depth: 2
+    interactible: 0
+  - depth: 1
+    interactible: 0

@@ -441,6 +441,7 @@
                   <e p="AbstractGridDataModel.cs" t="Include" />
                   <e p="BotAnimation.cs" t="Include" />
                   <e p="FogDataModel.cs" t="Include" />
+                  <e p="InteractibleDataModel.cs" t="Include" />
                   <e p="IntVector.cs" t="Include" />
                   <e p="Junk.cs" t="Include" />
                   <e p="JunkController.cs" t="Include" />

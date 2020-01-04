@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using BE;
+using JunkyardDogs;
 using JunkyardDogs.Components;
 using PandeaGames;
 using UnityEngine;
@@ -65,27 +66,29 @@ public class JunkyardMonoView : MonoBehaviour
         }
     }
 
+    private JunkyardViewModel _viewModel;
     private Junkyard _junkyard;
     
-    public void Render(Junkyard junkyard, Bot bot)
+    public void Render(JunkyardViewModel viewModel, Bot bot)
     {
-        _junkyard = junkyard;
+        _viewModel = viewModel;
+        _junkyard = viewModel.junkyard;
         
         if (!JunkyardUtils.HideGround)
         {
-            RenderGround(junkyard);
+            RenderGround(_junkyard);
         }
        
-        RenderJunk(junkyard);
-        _fogOfWarView.Render(junkyard, _junk);
-        _camera.XMax = junkyard.Width;
-        _camera.ZMax = junkyard.Height;
+        RenderJunk(viewModel);
+        _fogOfWarView.Render(viewModel);
+        _camera.XMax = _junkyard.Width;
+        _camera.ZMax = _junkyard.Height;
         _camera.XMin = 0;
         _camera.ZMin = 0;
-        _camAgent.transform.position = new Vector3(junkyard.X, _camAgent.transform.position.y, junkyard.Y);
+        _camAgent.transform.position = new Vector3(_junkyard.X, _camAgent.transform.position.y, _junkyard.Y);
         Game.Instance.GetViewModel<CameraViewModel>(0).Focus(_camAgent);
-        _border.Render(renderConfig, junkyard);
-        _botAnimation.Setup(renderConfig, junkyard, bot, this);
+        _border.Render(renderConfig, _junkyard);
+        _botAnimation.Setup(renderConfig, _junkyard, bot, this);
     }
     
     private void RenderGround(Junkyard junkyard)
@@ -186,8 +189,9 @@ public class JunkyardMonoView : MonoBehaviour
         vectorTriangles.Add(new Vector3(triangles[3 + triangleOffset], triangles[4 + triangleOffset], triangles[5 + triangleOffset]));
     }
 
-    private void RenderJunk(Junkyard junkyard)
+    private void RenderJunk(JunkyardViewModel viewModel)
     {
+        Junkyard junkyard = viewModel.junkyard;
         GameObject junk = new GameObject("Junk");
         junk.transform.parent = transform;
         _junk = new JunkyardJunk[junkyard.Width,junkyard.Height];
@@ -222,6 +226,7 @@ public class JunkyardMonoView : MonoBehaviour
                                 , junk.transform);
                             JunkyardJunk junkyardJunk = instance.GetComponent<JunkyardJunk>();
                             junkyardJunk.Setup(x, y);
+                            junkyardJunk.SetAvailableForCollection(viewModel.Interactible[x, y]);
                             junkyardJunk.OnClicked += JunkyardJunkOnOnClicked;
                             junkyardJunk.OnPointerDown += JunkyardJunkOnOnPointerDown;
                             float randomScaleFactor = UnityEngine.Random.Range(1, 1 + _randomJunkScale);
@@ -238,7 +243,7 @@ public class JunkyardMonoView : MonoBehaviour
 
     private void JunkyardJunkOnOnClicked(int x, int y, JunkyardJunk junkyardJunk)
     {
-        if (_junkyard.isAdjacentToCleared(x, y))
+        if (_viewModel.Interactible[x, y])
         {
             _junkyard.SetCleared(x, y, true);
             _junkyard.X = x;
@@ -246,8 +251,6 @@ public class JunkyardMonoView : MonoBehaviour
             JunkyardService.Instance.SaveJunkyard(_junkyard);
             Destroy(junkyardJunk.gameObject);
             _junk[x, y] = null;
-            
-            
             
             ActivateSnappingConditional(x, y);
             

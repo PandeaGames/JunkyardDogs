@@ -225,6 +225,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _junkyardMonoView: {fileID: 1683967732}
+  _junkyardConfig: {fileID: 11400000, guid: 0fd7280a91459bd48a35f17b1e381a07, type: 2}
+  _junkyardData: {fileID: 11400000, guid: 1f90584494290704a81043354cf48272, type: 2}
 --- !u!1 &1359753145
 GameObject:
   m_ObjectHideFlags: 0

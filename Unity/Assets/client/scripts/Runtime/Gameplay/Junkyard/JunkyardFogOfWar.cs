@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using JunkyardDogs;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,6 +21,26 @@ public class JunkyardFogOfWar : MonoBehaviour
     [SerializeField] private Color _clearedColor;
     [SerializeField] private Color _farSightColor;
     [SerializeField] private Color _fullSightColor;
+    [SerializeField] private bool _displayDebug;
+
+    [Serializable]
+    private struct FogLayerConfig
+    {
+        public Color color;
+    }
+
+    private void OnDrawGizmos()
+    {
+        if (_displayDebug && _viewModel != null)
+        {
+            foreach (FogDataPoint dataPoint in _viewModel.Fog.AllData())
+            {
+                Handles.Label(new Vector3(dataPoint.Vector.X, 0, dataPoint.Vector.Y), dataPoint.Data.ToString());
+            }
+        }
+    }
+
+    [SerializeField] private FogLayerConfig[] _fogConfig;
     
     [SerializeField]
     private float _scale = 1;
@@ -29,16 +51,17 @@ public class JunkyardFogOfWar : MonoBehaviour
 
     private Junkyard _junkyard;
     private JunkyardJunk[,] _junk;
+    private JunkyardViewModel _viewModel;
     
-    public void Render(Junkyard junkyard, JunkyardJunk[,] junk)
+    public void Render(JunkyardViewModel viewModel)
     {
-        _junk = junk;
-        _junkyard = junkyard;
+        _viewModel = viewModel;
+        _junkyard = viewModel.junkyard;
         
         if (!JunkyardUtils.HideFog)
         {
-            junkyard.Update += JunkyardOnUpdate;
-            RenderGround(junkyard); 
+            _junkyard.Update += JunkyardOnUpdate;
+            RenderGround(_junkyard); 
         }
     }
 
@@ -79,25 +102,19 @@ public class JunkyardFogOfWar : MonoBehaviour
         //for every point, there is 2 triangles, equaling 6 total vertices
         int[] triangles = new int[(int)((junkyard.Width * junkyard.Height) * 6)];
 
-        float totalWidth = junkyard.Width * _scale;
-        float totalHeight = junkyard.Height * _scale;
-
         //Create Vertices
         for (int x = 0; x < junkyard.Width + 1; x++)
         {
             for (int y = 0; y < junkyard.Height + 1; y++)
             {
-                JunkAreaState state = GetState(x, y, junkyard);
-                
-                Color color = GetColor(state);
+                Color color = _fogConfig[Math.Min(
+                    _fogConfig.Length - 1, 
+                    _viewModel.Fog[Math.Min(x, junkyard.Width - 1), Math.Min(y, junkyard.Height - 1)])].color;
                 
                 int position = (x * (junkyard.Width + 1)) + y;
                 
                 vertices[position] = new Vector3(x * _scale,junkyard.GetNormalizedHeight(x, y), y * _scale);
-                if(x < junkyard.Width && y < junkyard.Height && _junk[x, y] != null)
-                    _junk[x, y].SetAvailableForCollection(state == JunkAreaState.AvailableToCollect);
                 colors[position] = color;
-                //uvs[position] = new Vector2((float)x / (float)junkyard.Width, (float)y / (float)junkyard.Height);
                 uvs[position] = new Vector2((float)x, (float)y);
                 normals[position] = Vector3.up;
                 grass[position] = 0.5f;
@@ -127,94 +144,7 @@ public class JunkyardFogOfWar : MonoBehaviour
         mesh.RecalculateBounds();
         mesh.RecalculateTangents();
     }
-    
-    private enum JunkAreaState
-    {
-        Cleared,
-        AvailableToCollect,
-        Visible,
-        Hidden
-    }
-    
-    private JunkAreaState GetState(int x, int y, Junkyard junkyard)
-    {
-        JunkAreaState state = default(JunkAreaState);
-        
-        bool hasCleared = false;
-        if (x < junkyard.Width && y < junkyard.Height)
-        {
-            hasCleared = junkyard.serializedJunkyard.Cleared[x, y];
-        }
 
-        state = !hasCleared ? JunkAreaState.Hidden : JunkAreaState.Cleared;
-
-        if (!hasCleared)
-        {
-            int totalSightDistance = _farSightDistance + _fullSightDistance;
-            bool hasClearedAdjacent = false;
-            bool hasClearedCloseAdjacent = false;
-            for (int dx = x - totalSightDistance; dx <= x + totalSightDistance; dx++)
-            {
-                for (int dy = y - totalSightDistance; dy <= y + totalSightDistance; dy++)
-                {
-                    if (dx > 0 && dx < junkyard.Width && dy > 0 && dy < junkyard.Height)
-                    {
-                        bool isAdjacentCleared = junkyard.serializedJunkyard.Cleared[dx, dy];
-                        
-                        hasClearedAdjacent |= isAdjacentCleared;
-    
-                        if (hasClearedAdjacent && isAdjacentCleared)
-                        {
-                            hasClearedCloseAdjacent |= Math.Abs(dx - x) <= _fullSightDistance &&
-                                                       Math.Abs(dy - y) <= _fullSightDistance;
-                        }
-                    }
-                }
-            }
-
-            if (hasClearedAdjacent)
-            {
-                if (hasClearedCloseAdjacent)
-                {
-                    state = JunkAreaState.AvailableToCollect;
-                }
-                else
-                {
-                    state = JunkAreaState.Visible;
-                }
-            }
-        }
-        
-        return state;
-    }
-    
-    private Color GetColor(JunkAreaState state)
-    {
-        switch (state)
-        {
-            case JunkAreaState.AvailableToCollect:
-            {
-                return _fullSightColor;
-            }
-            case JunkAreaState.Cleared:
-            {
-                return _clearedColor;
-            }
-            case JunkAreaState.Hidden:
-            {
-                return _fogColor;
-            }
-            case JunkAreaState.Visible:
-            {
-                return _farSightColor;
-            }
-            default:
-            {
-                return default(Color);
-            }
-        }
-    }
-    
     private void SetTriangles(Junkyard junkyard, int x, int y, int[] triangles, List<Vector3> vectorTriangles)
     {
         //we are making 2 triangles per loop. so offset goes up by 6 each time

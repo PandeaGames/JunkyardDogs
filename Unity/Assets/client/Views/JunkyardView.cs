@@ -38,7 +38,7 @@ namespace JunkyardDogs.Views
             Game.Instance.GetService<JunkyardUserService>().Load();
             Bot bot = Game.Instance.GetService<JunkyardUserService>().User.Competitor.Inventory.Bots[0];
         
-            _junkyardView.Render(_junkyardViewModel.junkyard, bot);
+            _junkyardView.Render(_junkyardViewModel, bot);
         }
 
         public override void Destroy()
