@@ -482,6 +482,11 @@ PrefabInstance:
       propertyPath: _sightDistance
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4985724524740436067, guid: 31470c28ee3d00d4bb18ff4ed30caf55,
+        type: 3}
+      propertyPath: _displayDebug
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5837072454873504043, guid: 31470c28ee3d00d4bb18ff4ed30caf55,
         type: 3}
       propertyPath: m_LocalRotation.x

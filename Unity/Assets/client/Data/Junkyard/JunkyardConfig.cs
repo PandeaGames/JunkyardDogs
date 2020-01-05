@@ -9,6 +9,7 @@ public class JunkyardConfig : ScriptableObject
     {
         public int depth;
         public bool interactible;
+        public bool visible;
     }
 
     [Serializable]

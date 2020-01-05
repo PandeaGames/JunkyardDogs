@@ -23,11 +23,30 @@ namespace JunkyardDogs
         {
             get { return _junkyard; }
         }
-        
+
+        private JunkyardConfig _config;
+
+        public JunkyardConfig Config
+        {
+            get => _config;
+        }
 
         public FogDataModel Fog;
+        public VisibleDataModel VisibleDataModel;
         public InteractibleDataModel Interactible;
+        private int _width;
+        private int _height;
 
+        public int Width
+        {
+            get { return _width; }
+        }
+    
+        public int Height
+        {
+            get { return _height; }
+        }
+        
         public void TakeJunk(LootCrateStaticDataReference lootCrate)
         {
             LootDataModel dataModel = new LootDataModel(User, 0);
@@ -43,9 +62,24 @@ namespace JunkyardDogs
 
         public void SetJunkyard(Junkyard junkyard, JunkyardConfig config)
         {
+            _config = config;
             _junkyard = junkyard;
             Fog = new FogDataModel(junkyard, config);
             Interactible = new InteractibleDataModel(Fog, config);
+            VisibleDataModel = new VisibleDataModel(Fog, config);
+            _width = junkyard.Width;
+            _height = junkyard.Height;
+        }
+
+        public void ClearSpace(int x, int y)
+        {
+            ClearSpace(new INTVector(x, y));            
+        }
+
+        public void ClearSpace(INTVector vector)
+        {
+            _junkyard.SetCleared(vector.X, vector.Y, true);
+            Fog.UpdateData(vector);
         }
     }
 }

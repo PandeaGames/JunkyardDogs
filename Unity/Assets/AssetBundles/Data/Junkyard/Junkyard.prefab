@@ -225,6 +225,7 @@ GameObject:
   - component: {fileID: 1765092268589413704}
   - component: {fileID: 756411443245535325}
   - component: {fileID: 4985724524740436067}
+  - component: {fileID: 7248516793174685690}
   m_Layer: 0
   m_Name: Junkyard
   m_TagString: Untagged
@@ -269,7 +270,7 @@ MonoBehaviour:
   _camAgent: {fileID: 4442199526968812384}
   _border: {fileID: 6331055325292387230}
   _botAnimation: {fileID: 8706452099827810994}
-  _randomJunkScale: 0.4
+  _junkyardJunkMonoView: {fileID: 7248516793174685690}
   _distanceToActivateSnapping: 2
   _camOffsetWhenSnapping: {x: 0, y: 0, z: -2}
   _scale: 1
@@ -301,6 +302,19 @@ MonoBehaviour:
   - color: {r: 0, g: 0, b: 0, a: 0.627451}
   - color: {r: 0, g: 0, b: 0, a: 1}
   _scale: 1
+--- !u!114 &7248516793174685690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5803871100819852887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7f8a38a21c44ae0a7b283d9c59f92ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _randomJunkScale: 0.5
 --- !u!1 &8074114108582746562
 GameObject:
   m_ObjectHideFlags: 0

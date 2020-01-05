@@ -18,11 +18,11 @@ MonoBehaviour:
   _heightMap:
   - {fileID: 11400000, guid: 7c2017f45c10e7545a7e767e328cb82c, type: 2}
   - {fileID: 11400000, guid: 9bda384c4b47e9148a8b9082ffc3f459, type: 2}
-  _width: 35
-  _height: 35
+  _width: 25
+  _height: 25
   _entranceX: 13
-  _entranceY: 34
-  _seed: 5463432
+  _entranceY: 24
+  _seed: 56363
   _cropping:
     Left: 0
     Top: 0

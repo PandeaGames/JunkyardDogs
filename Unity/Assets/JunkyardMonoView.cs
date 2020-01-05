@@ -9,9 +9,8 @@ using UnityEngine;
 
 public class JunkyardMonoView : MonoBehaviour
 {
-    public delegate void JunkInteractionDelegate(int x, int y, JunkyardJunk junkyardJunk);
-    public event JunkInteractionDelegate OnJunkCleared;
-    public event JunkInteractionDelegate OnJunkPointerDown;
+    public event JunkyardJunkMonoView.JunkInteractionDelegate OnJunkCleared;
+    public event JunkyardJunkMonoView.JunkInteractionDelegate OnJunkPointerDown;
     
     public JunkyardConfig config;
     public JunkyardRenderConfig renderConfig;
@@ -22,7 +21,7 @@ public class JunkyardMonoView : MonoBehaviour
     [SerializeField] private CameraAgent _camAgent;
     [SerializeField] private JunkyardBorder _border;
     [SerializeField] private BotAnimation _botAnimation;
-    [SerializeField] private float _randomJunkScale;
+    [SerializeField] private JunkyardJunkMonoView _junkyardJunkMonoView;
     [SerializeField] private float _distanceToActivateSnapping = 2;
     [SerializeField] private Vector3 _camOffsetWhenSnapping = new Vector3(0, 0, -2);
 
@@ -79,8 +78,8 @@ public class JunkyardMonoView : MonoBehaviour
             RenderGround(_junkyard);
         }
        
-        RenderJunk(viewModel);
         _fogOfWarView.Render(viewModel);
+        _junkyardJunkMonoView.Render(viewModel, renderConfig);
         _camera.XMax = _junkyard.Width;
         _camera.ZMax = _junkyard.Height;
         _camera.XMin = 0;
@@ -89,8 +88,22 @@ public class JunkyardMonoView : MonoBehaviour
         Game.Instance.GetViewModel<CameraViewModel>(0).Focus(_camAgent);
         _border.Render(renderConfig, _junkyard);
         _botAnimation.Setup(renderConfig, _junkyard, bot, this);
+        
+        _junkyardJunkMonoView.OnJunkCleared += HandleJunkCleared;
+        _junkyardJunkMonoView.OnJunkPointerDown += HandleJunkPointerDown;
     }
-    
+
+    private void HandleJunkPointerDown(int x, int y, JunkyardJunk junkyardjunk)
+    {
+        OnJunkPointerDown?.Invoke(x, y, junkyardjunk);
+    }
+
+    private void HandleJunkCleared(int x, int y, JunkyardJunk junkyardjunk)
+    {
+        ActivateSnappingConditional(x, y);
+        OnJunkCleared?.Invoke(x, y, junkyardjunk);
+    }
+
     private void RenderGround(Junkyard junkyard)
     {
         MeshFilter meshFilter;
@@ -188,81 +201,6 @@ public class JunkyardMonoView : MonoBehaviour
 
         vectorTriangles.Add(new Vector3(triangles[3 + triangleOffset], triangles[4 + triangleOffset], triangles[5 + triangleOffset]));
     }
-
-    private void RenderJunk(JunkyardViewModel viewModel)
-    {
-        Junkyard junkyard = viewModel.junkyard;
-        GameObject junk = new GameObject("Junk");
-        junk.transform.parent = transform;
-        _junk = new JunkyardJunk[junkyard.Width,junkyard.Height];
-        
-        for (int x = 0; x < junkyard.Width; x++)
-        {
-            for (int y = 0; y < junkyard.Height; y++)
-            {
-                bool hasCleared = junkyard.serializedJunkyard.Cleared[x, y];
-                for (int i = 0; i < config.Layers.Length; i++)
-                {
-                    JunkyardConfig.JunkyardLayerConfig layerConfig = config.Layers[i];
-                    JunkyardRenderConfig.JunkyardLayerRenderConfig renderLayerConfig =
-                        renderConfig.Configs[Math.Min(i, renderConfig.Configs.Length - 1)];
-
-                    if (layerConfig.threshold > junkyard.serializedJunkyard.Data[x, y])
-                    {
-                        GameObject prefab = renderLayerConfig.prefab;
-
-                        if (!hasCleared)
-                        {
-                            prefab = renderLayerConfig.prefab;
-                        }else if(renderLayerConfig.clearedPrefab != null)
-                        {
-                            prefab = renderLayerConfig.clearedPrefab;
-                        }
-
-                        if (prefab != null)
-                        {
-                            GameObject instance = Instantiate(prefab, new Vector3(x * _scale, junkyard.GetNormalizedHeight(x, y), y * _scale), 
-                                Quaternion.Euler(0, UnityEngine.Random.Range(0, 360), 0)
-                                , junk.transform);
-                            JunkyardJunk junkyardJunk = instance.GetComponent<JunkyardJunk>();
-                            junkyardJunk.Setup(x, y);
-                            junkyardJunk.SetAvailableForCollection(viewModel.Interactible[x, y]);
-                            junkyardJunk.OnClicked += JunkyardJunkOnOnClicked;
-                            junkyardJunk.OnPointerDown += JunkyardJunkOnOnPointerDown;
-                            float randomScaleFactor = UnityEngine.Random.Range(1, 1 + _randomJunkScale);
-                            junkyardJunk.transform.localScale = new Vector3(randomScaleFactor, randomScaleFactor ,randomScaleFactor);
-                            _junk[x, y] = junkyardJunk;
-                        }
-                        
-                        break;
-                    }
-                }
-            }
-        }
-    }
-
-    private void JunkyardJunkOnOnClicked(int x, int y, JunkyardJunk junkyardJunk)
-    {
-        if (_viewModel.Interactible[x, y])
-        {
-            _junkyard.SetCleared(x, y, true);
-            _junkyard.X = x;
-            _junkyard.Y = y;
-            JunkyardService.Instance.SaveJunkyard(_junkyard);
-            Destroy(junkyardJunk.gameObject);
-            _junk[x, y] = null;
-            
-            ActivateSnappingConditional(x, y);
-            
-            Instantiate(renderConfig.JunkClearedAnimation, junkyardJunk.transform.position,
-                junkyardJunk.transform.rotation, transform);
-            
-            if (OnJunkCleared != null)
-            {
-                OnJunkCleared(x, y, junkyardJunk);
-            }
-        }
-    }
     
     private void ActivateSnappingConditional(int x, int y)
     {
@@ -274,14 +212,6 @@ public class JunkyardMonoView : MonoBehaviour
         {
             _isSnapping = true;
             _distanceWhileSnapping = float.MaxValue;
-        }
-    }
-    
-    private void JunkyardJunkOnOnPointerDown(int x, int y, JunkyardJunk JunkyardJunk)
-    {
-        if (_junkyard.isAdjacentToCleared(x, y) && OnJunkPointerDown != null)
-        {
-            OnJunkPointerDown(x, y, JunkyardJunk);
         }
     }
 }

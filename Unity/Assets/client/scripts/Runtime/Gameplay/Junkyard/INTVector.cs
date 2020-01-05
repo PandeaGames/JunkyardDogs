@@ -9,4 +9,9 @@ public struct INTVector
         X = x;
         Y = y;
     }
+
+    public static implicit operator INTVector(int radius)
+    {
+        return new INTVector(radius, radius);
+    }
 }

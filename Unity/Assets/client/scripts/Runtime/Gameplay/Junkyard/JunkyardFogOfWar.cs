@@ -1,11 +1,11 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using JunkyardDogs;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.UI;
 
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 public class JunkyardFogOfWar : MonoBehaviour
 {
@@ -57,12 +57,34 @@ public class JunkyardFogOfWar : MonoBehaviour
     {
         _viewModel = viewModel;
         _junkyard = viewModel.junkyard;
+        viewModel.Fog.OnDataHasChanged += OnDataHasChanged;
         
         if (!JunkyardUtils.HideFog)
         {
             _junkyard.Update += JunkyardOnUpdate;
             RenderGround(_junkyard); 
         }
+    }
+
+    private void OnDataHasChanged(IEnumerable<FogDataPoint> data)
+    {
+        foreach (FogDataPoint dataPoint in data)
+        {
+            UpdateData(dataPoint.Vector);
+        }
+        
+        mesh.colors = mesh.colors;
+        mesh.RecalculateNormals();
+        mesh.RecalculateBounds();
+        mesh.RecalculateTangents();
+    }
+
+    private Mesh mesh;
+    
+    private void UpdateData(INTVector vector)
+    {
+        int vertPosition = (vector.X * (_viewModel.Width + 1)) + vector.Y;
+        mesh.colors[vertPosition] = GetColor(vector.X, vector.Y);
     }
 
     private void JunkyardOnUpdate(int x, int y, Junkyard junkyard)
@@ -88,7 +110,7 @@ public class JunkyardFogOfWar : MonoBehaviour
         plane.GetComponent<Renderer>().material = renderConfig.FogOfWar;
 
         meshFilter = plane.GetComponent<MeshFilter>();
-        Mesh mesh = meshFilter.sharedMesh;
+        mesh = meshFilter.sharedMesh;
 
         int verticiesLength = (junkyard.Width + 1) * (junkyard.Height + 1);
 
@@ -107,9 +129,7 @@ public class JunkyardFogOfWar : MonoBehaviour
         {
             for (int y = 0; y < junkyard.Height + 1; y++)
             {
-                Color color = _fogConfig[Math.Min(
-                    _fogConfig.Length - 1, 
-                    _viewModel.Fog[Math.Min(x, junkyard.Width - 1), Math.Min(y, junkyard.Height - 1)])].color;
+                Color color = GetColor(x, y);
                 
                 int position = (x * (junkyard.Width + 1)) + y;
                 
@@ -143,6 +163,13 @@ public class JunkyardFogOfWar : MonoBehaviour
         mesh.RecalculateNormals();
         mesh.RecalculateBounds();
         mesh.RecalculateTangents();
+    }
+
+    private Color GetColor(int x, int y)
+    {
+        return _fogConfig[Math.Min(
+            _fogConfig.Length - 1,
+            _viewModel.Fog[Math.Min(x, _junkyard.Width - 1), Math.Min(y, _junkyard.Height - 1)])].color;
     }
 
     private void SetTriangles(Junkyard junkyard, int x, int y, int[] triangles, List<Vector3> vectorTriangles)

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class FogDataPoint : GridDataPoint<int>
@@ -7,9 +8,13 @@ public class FogDataPoint : GridDataPoint<int>
 
 public class FogDataModel : AbstractGridDataModel<int, FogDataPoint>
 {
+    private JunkyardConfig _config;
+    private Junkyard _junkyard;
+    
     public FogDataModel(Junkyard junkyard, JunkyardConfig config) : base(InitializeData(junkyard, config))
     {
-
+        _config = config;
+        _junkyard = junkyard;
     }
 
     private static int[,] InitializeData(Junkyard junkyard, JunkyardConfig config)
@@ -58,5 +63,19 @@ public class FogDataModel : AbstractGridDataModel<int, FogDataPoint>
     {
         return 0;
     }
-    
+
+    public override void UpdateData(INTVector vector)
+    {
+        base.UpdateData(vector);
+
+        IEnumerable<FogDataPoint> changedData = GenerateVectorGrid(vector, _config.FogDepth);
+
+        foreach (FogDataPoint changedDataPoint in changedData)
+        {
+            int value = GetValue(_junkyard, _config, changedDataPoint.Vector);
+            this[changedDataPoint.Vector] = value;
+        }
+        
+        DataHasChanged(GenerateVectorGrid(vector, _config.FogDepth));
+    }
 }

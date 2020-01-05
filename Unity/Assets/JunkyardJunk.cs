@@ -32,6 +32,11 @@ public class JunkyardJunk : MonoBehaviour
     {
         _collider.enabled = enabled;
     }
+    
+    public void SetIsVisible(bool visible)
+    {
+        gameObject.active = visible;
+    }
 
     private void InstanceOnOnPointerClick(Vector3 cameraposition, RaycastHit raycast)
     {

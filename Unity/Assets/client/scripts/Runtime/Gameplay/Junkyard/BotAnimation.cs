@@ -34,6 +34,7 @@ public class BotAnimation : MonoBehaviour
     {
         //_botRenderer.transform.position = new Vector3(x, 0, y);
         _targetPosition = new Vector3(x, junk.gameObject.transform.position.y, y);
+        Debug.LogFormat("JunkyardMonoViewOnOnJunkCleared [x:{0}] [y:{1}]",x, y);
     }
 
     private void JunkyardMonoViewOnOnJunkPointerDown(int x, int y, JunkyardJunk junk)
@@ -47,7 +48,7 @@ public class BotAnimation : MonoBehaviour
         float a = Mathf.Rad2Deg * Mathf.Atan2(dy, dx);
         
         _botRenderer.transform.rotation = Quaternion.Euler(0, -90 - (a +90), 0);
-        Debug.LogFormat("[a:{0}] [dx:{1}] [dy:{2}]", a, dx, dy);
+        Debug.LogFormat("JunkyardMonoViewOnOnJunkPointerDown [x:{0}] [y:{1}]",x, y);
         
         _botRenderer.transform.position = new Vector3(adj.x, junk.gameObject.transform.position.y, adj.y);
         _targetPosition = _botRenderer.transform.position;
