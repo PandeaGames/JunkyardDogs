@@ -16,6 +16,7 @@ public class JunkyardMonoView : MonoBehaviour
     private GameObject _renderingPlane;
 
     [SerializeField] private JunkyardFogOfWar _fogOfWarView;
+    [SerializeField] private JunkyardFogOfWar _fogOfWarViewBottom;
     [SerializeField] private MobileRTSCam _camera;
     [SerializeField] private CameraAgent _camAgent;
     [SerializeField] private JunkyardBorder _border;
@@ -72,6 +73,7 @@ public class JunkyardMonoView : MonoBehaviour
         _viewModel = viewModel;
         _junkyard = viewModel.junkyard;
         
+        
         if (!JunkyardUtils.HideGround)
         {
             RenderGround(_junkyard);
@@ -79,6 +81,7 @@ public class JunkyardMonoView : MonoBehaviour
        
         _fogOfWarView.Render(viewModel);
         _junkyardJunkMonoView.Render(viewModel, renderConfig);
+        _fogOfWarViewBottom.Render(viewModel);
         _camera.XMax = _junkyard.Width;
         _camera.ZMax = _junkyard.Height;
         _camera.XMin = 0;
