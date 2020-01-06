@@ -33,10 +33,12 @@ public class JunkyardFogOfWar : MonoBehaviour
     {
         if (_displayDebug && _viewModel != null)
         {
+#if UNITY_EDITOR
             foreach (FogDataPoint dataPoint in _viewModel.Fog.AllData())
             {
                 Handles.Label(new Vector3(dataPoint.Vector.X, 0, dataPoint.Vector.Y), dataPoint.Data.ToString());
             }
+#endif
         }
     }
 

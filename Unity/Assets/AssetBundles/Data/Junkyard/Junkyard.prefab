@@ -295,7 +295,7 @@ MonoBehaviour:
   _clearedColor: {r: 0, g: 0, b: 0, a: 0}
   _farSightColor: {r: 0, g: 0, b: 0, a: 0.627451}
   _fullSightColor: {r: 0, g: 0, b: 0, a: 0}
-  _displayDebug: 1
+  _displayDebug: 0
   _fogConfig:
   - color: {r: 0, g: 0, b: 0, a: 0}
   - color: {r: 0, g: 0, b: 0, a: 0}
