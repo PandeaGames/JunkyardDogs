@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6828208390086509898}
   - component: {fileID: 951786342484832976}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -288,16 +288,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcb69450480b474d956d010c42cf4693, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  config: {fileID: 11400000, guid: 0fd7280a91459bd48a35f17b1e381a07, type: 2}
   renderConfig: {fileID: 11400000, guid: dec3f2ee87449934fbe6aa0c62360659, type: 2}
-  _farSightDistance: 2
-  _fullSightDistance: 1
   _planeOffset: {x: 0, y: 1.25, z: 0}
-  _fogColor: {r: 0, g: 0, b: 0, a: 1}
-  _clearedColor: {r: 0, g: 0, b: 0, a: 0}
-  _farSightColor: {r: 0, g: 0, b: 0, a: 0.627451}
-  _fullSightColor: {r: 0, g: 0, b: 0, a: 0}
   _displayDebug: 0
+  _generatedGameObjectName: FogOfWar
   _fogConfig:
   - color: {r: 0, g: 0, b: 0, a: 0}
   - color: {r: 0, g: 0, b: 0, a: 0}
@@ -330,16 +324,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcb69450480b474d956d010c42cf4693, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  config: {fileID: 11400000, guid: 0fd7280a91459bd48a35f17b1e381a07, type: 2}
   renderConfig: {fileID: 11400000, guid: dec3f2ee87449934fbe6aa0c62360659, type: 2}
-  _farSightDistance: 2
-  _fullSightDistance: 1
   _planeOffset: {x: 0, y: 0.1, z: 0}
-  _fogColor: {r: 0, g: 0, b: 0, a: 1}
-  _clearedColor: {r: 0, g: 0, b: 0, a: 0}
-  _farSightColor: {r: 0, g: 0, b: 0, a: 0.627451}
-  _fullSightColor: {r: 0, g: 0, b: 0, a: 0}
   _displayDebug: 0
+  _generatedGameObjectName: JunkShadows
   _fogConfig:
   - color: {r: 0, g: 0, b: 0, a: 0}
   - color: {r: 0, g: 0, b: 0, a: 0.7882353}

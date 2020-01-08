@@ -111,7 +111,7 @@ public class JunkyardMonoView : MonoBehaviour
         MeshFilter meshFilter;
         if(_renderingPlane == null)
         {
-            _renderingPlane = Instantiate(new GameObject(), transform);
+            _renderingPlane = Instantiate(new GameObject("Ground"), transform);
             _renderingPlane.transform.position = Vector3.zero;
             _renderingPlane.AddComponent<MeshRenderer>();
             _renderingPlane.AddComponent<MeshFilter>();

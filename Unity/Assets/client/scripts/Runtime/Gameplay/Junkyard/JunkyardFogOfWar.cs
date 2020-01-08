@@ -9,19 +9,12 @@ using UnityEditor;
 
 public class JunkyardFogOfWar : MonoBehaviour
 {
-    
-    public JunkyardConfig config;
     public JunkyardRenderConfig renderConfig;
     private GameObject _renderingPlane;
 
-    [SerializeField] private int _farSightDistance = 1;
-    [SerializeField] private int _fullSightDistance = 1;
     [SerializeField] private Vector3 _planeOffset;
-    [SerializeField] private Color _fogColor;
-    [SerializeField] private Color _clearedColor;
-    [SerializeField] private Color _farSightColor;
-    [SerializeField] private Color _fullSightColor;
     [SerializeField] private bool _displayDebug;
+    [SerializeField] private string _generatedGameObjectName;
 
     [Serializable]
     private struct FogLayerConfig
@@ -60,52 +53,45 @@ public class JunkyardFogOfWar : MonoBehaviour
         _viewModel = viewModel;
         _junkyard = viewModel.junkyard;
         viewModel.Fog.OnDataHasChanged += OnDataHasChanged;
-        
-        if (!JunkyardUtils.HideFog)
-        {
-            _junkyard.Update += JunkyardOnUpdate;
-            RenderGround(_junkyard); 
-        }
+        RenderGround(_junkyard);
     }
+    
+    
+    private Mesh mesh;
+    private MeshFilter meshFilter = null;
 
     private void OnDataHasChanged(IEnumerable<FogDataPoint> data)
     {
+        Color[] colors = meshFilter.sharedMesh.colors;
+        
         foreach (FogDataPoint dataPoint in data)
         {
-            UpdateData(dataPoint.Vector);
+            UpdateData(dataPoint.Vector, colors);
         }
-        
-        mesh.colors = mesh.colors;
-        mesh.RecalculateNormals();
-        mesh.RecalculateBounds();
-        mesh.RecalculateTangents();
+
+        meshFilter.sharedMesh.colors = colors;
+        meshFilter.sharedMesh.RecalculateNormals();
+        meshFilter.sharedMesh.RecalculateBounds();
+        meshFilter.sharedMesh.RecalculateTangents();
     }
 
-    private Mesh mesh;
     
-    private void UpdateData(INTVector vector)
+    private void UpdateData(INTVector vector, Color[] colors)
     {
         int vertPosition = (vector.X * (_viewModel.Width + 1)) + vector.Y;
-        mesh.colors[vertPosition] = GetColor(vector.X, vector.Y);
-    }
-
-    private void JunkyardOnUpdate(int x, int y, Junkyard junkyard)
-    {
-        RenderGround(junkyard);
+        colors[vertPosition] = GetColor(vector.X, vector.Y);
     }
 
     private void RenderGround(Junkyard junkyard)
     {
-        MeshFilter meshFilter;
         if(_renderingPlane == null)
         {
-            _renderingPlane = Instantiate(new GameObject(), transform);
+            _renderingPlane = Instantiate(new GameObject(string.IsNullOrEmpty(_generatedGameObjectName) ? "FogOfWar":_generatedGameObjectName), transform);
             _renderingPlane.transform.position = _planeOffset;
             _renderingPlane.AddComponent<MeshRenderer>();
             _renderingPlane.AddComponent<MeshFilter>();
             meshFilter = _renderingPlane.GetComponent<MeshFilter>();
             meshFilter.mesh = new Mesh();
-            //DestroyImmediate(planePrimitive);
         }
 
         GameObject plane = _renderingPlane;

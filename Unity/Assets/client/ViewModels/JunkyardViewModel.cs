@@ -57,7 +57,7 @@ namespace JunkyardDogs
                 throw new IndexOutOfRangeException("Crate did not have any contents");
             }
 
-            OnTakeJunk(loot);
+            OnTakeJunk?.Invoke(loot);
         }
 
         public void SetJunkyard(Junkyard junkyard, JunkyardConfig config)

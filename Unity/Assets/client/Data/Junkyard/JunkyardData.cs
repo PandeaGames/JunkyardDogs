@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using JunkyardDogs.Data;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Junkyard/JunkyardData")]
@@ -12,12 +14,22 @@ public class JunkyardData : ScriptableObject, IJunkyardGenerator
         public int Right;
         public int Bottom;
     }
+
+    [Serializable]
+    public struct Reward
+    {
+        [WeightedLootCrateStaticDataReferenceAttribute]
+        public LootCrateStaticDataReference _crate;
+    }
     
     [SerializeField] 
     private AbstractJunkyardLayerData[] _layers;
     
     [SerializeField]
     private AbstractJunkyardLayerData[] _heightMap;
+
+    [SerializeField] 
+    private Reward[] _rewards;
 
     [SerializeField]
     private int _width;
@@ -109,6 +121,14 @@ public class JunkyardData : ScriptableObject, IJunkyardGenerator
             {
                 data[x, y] = true;
             }
+        }
+    }
+
+    public IEnumerable<Reward> GetRewards()
+    {
+        foreach (Reward reward in _rewards)
+        {
+            yield return reward;
         }
     }
 }

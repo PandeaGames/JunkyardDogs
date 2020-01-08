@@ -11,6 +11,8 @@ public class Junkyard
     
     private JunkyardData _junkyardData;
     private SerializedJunkyard _serializedJunkyard;
+    
+    public JunkyardData.Reward[] Rewards { private set; get; }
 
     public SerializedJunkyard serializedJunkyard
     {
@@ -26,6 +28,7 @@ public class Junkyard
     {
         _junkyardData = junkyardData;
         _serializedJunkyard = serializedJunkyard;
+        Rewards = new List<JunkyardData.Reward>(junkyardData.GetRewards()).ToArray();
     }
     
     public int Width
@@ -53,10 +56,8 @@ public class Junkyard
     public void SetCleared(int x, int y, bool value)
     {
         _serializedJunkyard.Cleared[x, y] = value;
-        if (Update != null)
-        {
-            Update(x, y, this);
-        }
+        Update?.Invoke(x, y, this);
+        
     }
 
     public bool GetCleared(int x, int y)

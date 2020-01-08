@@ -341,6 +341,14 @@ namespace JunkyardDogs.Data
         }
     }
     
+    public class WeightedLootCrateStaticDataReferenceAttribute : StaticDataReferenceAttribute
+    {
+        public WeightedLootCrateStaticDataReferenceAttribute() : base(LootCrateDataProvider.FULL_PATH, typeof(WeightedLootCrateData))
+        {
+            
+        }
+    }
+    
     public class CurrencyStaticDataReferenceAttribute : StaticDataReferenceAttribute
     {
         public CurrencyStaticDataReferenceAttribute() : base(CurrencyDataProvider.FULL_PATH, typeof(CurrencyData))
