@@ -18,6 +18,17 @@ MonoBehaviour:
   _heightMap:
   - {fileID: 11400000, guid: 7c2017f45c10e7545a7e767e328cb82c, type: 2}
   - {fileID: 11400000, guid: 9bda384c4b47e9148a8b9082ffc3f459, type: 2}
+  _rewards:
+  - crate:
+      _id: WeightedJunkyardCrate
+  - crate:
+      _id: WeightedJunkyardCrate
+  - crate:
+      _id: WeightedJunkyardCrate
+  - crate:
+      _id: WeightedJunkyardCrate
+  - crate:
+      _id: WeightedJunkyardCrate
   _width: 25
   _height: 25
   _entranceX: 13

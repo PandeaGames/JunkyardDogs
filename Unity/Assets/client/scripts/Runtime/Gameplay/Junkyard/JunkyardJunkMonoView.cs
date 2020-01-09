@@ -43,7 +43,6 @@ public class JunkyardJunkMonoView : MonoBehaviour
     private void RenderJunk(JunkyardViewModel viewModel, JunkyardRenderConfig renderConfig)
     {
         Junkyard junkyard = viewModel.junkyard;
-        JunkyardConfig config = viewModel.Config;
         GameObject junk = new GameObject("Junk");
         junk.transform.parent = transform;
         _junk = new JunkyardJunk[junkyard.Width,junkyard.Height];
@@ -53,42 +52,34 @@ public class JunkyardJunkMonoView : MonoBehaviour
             for (int y = 0; y < junkyard.Height; y++)
             {
                 bool hasCleared = junkyard.serializedJunkyard.Cleared[x, y];
-                for (int i = 0; i < config.Layers.Length; i++)
+               
+                JunkyardRenderConfig.JunkyardLayerRenderConfig renderLayerConfig =
+                    renderConfig.Configs[Math.Min(viewModel.Thresholds[x, y], renderConfig.Configs.Length - 1)];
+
+                GameObject prefab = renderLayerConfig.prefab;
+
+                if (!hasCleared)
                 {
-                    JunkyardConfig.JunkyardLayerConfig layerConfig = config.Layers[i];
-                    JunkyardRenderConfig.JunkyardLayerRenderConfig renderLayerConfig =
-                        renderConfig.Configs[Math.Min(i, renderConfig.Configs.Length - 1)];
+                    prefab = renderLayerConfig.prefab;
+                }else if(renderLayerConfig.clearedPrefab != null)
+                {
+                    prefab = renderLayerConfig.clearedPrefab;
+                }
 
-                    if (layerConfig.threshold > junkyard.serializedJunkyard.Data[x, y])
-                    {
-                        GameObject prefab = renderLayerConfig.prefab;
-
-                        if (!hasCleared)
-                        {
-                            prefab = renderLayerConfig.prefab;
-                        }else if(renderLayerConfig.clearedPrefab != null)
-                        {
-                            prefab = renderLayerConfig.clearedPrefab;
-                        }
-
-                        if (prefab != null)
-                        {
-                            GameObject instance = Instantiate(prefab, new Vector3(x, junkyard.GetNormalizedHeight(x, y), y), 
-                                Quaternion.Euler(0, UnityEngine.Random.Range(0, 360), 0)
-                                , junk.transform);
-                            JunkyardJunk junkyardJunk = instance.GetComponent<JunkyardJunk>();
-                            junkyardJunk.Setup(x, y);
-                            junkyardJunk.SetAvailableForCollection(viewModel.Interactible[x, y]);
-                            junkyardJunk.SetIsVisible(viewModel.VisibleDataModel[x, y]);
-                            junkyardJunk.OnClicked += JunkyardJunkOnOnClicked;
-                            junkyardJunk.OnPointerDown += JunkyardJunkOnOnPointerDown;
-                            float randomScaleFactor = UnityEngine.Random.Range(1, 1 + _randomJunkScale);
-                            junkyardJunk.transform.localScale = new Vector3(randomScaleFactor, randomScaleFactor ,randomScaleFactor);
-                            _junk[x, y] = junkyardJunk;
-                        }
-                        
-                        break;
-                    }
+                if (prefab != null)
+                {
+                    GameObject instance = Instantiate(prefab, new Vector3(x, junkyard.GetNormalizedHeight(x, y), y), 
+                        Quaternion.Euler(0, UnityEngine.Random.Range(0, 360), 0)
+                        , junk.transform);
+                    JunkyardJunk junkyardJunk = instance.GetComponent<JunkyardJunk>();
+                    junkyardJunk.Setup(x, y);
+                    junkyardJunk.SetAvailableForCollection(viewModel.Interactible[x, y]);
+                    junkyardJunk.SetIsVisible(viewModel.VisibleDataModel[x, y]);
+                    junkyardJunk.OnClicked += JunkyardJunkOnOnClicked;
+                    junkyardJunk.OnPointerDown += JunkyardJunkOnOnPointerDown;
+                    float randomScaleFactor = UnityEngine.Random.Range(1, 1 + _randomJunkScale);
+                    junkyardJunk.transform.localScale = new Vector3(randomScaleFactor, randomScaleFactor ,randomScaleFactor);
+                    _junk[x, y] = junkyardJunk;
                 }
             }
         }

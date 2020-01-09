@@ -49,7 +49,7 @@ public class JunkyardTestingEditor : Editor
         JunkyardViewModel junkyardViewModel = Game.Instance.GetViewModel<JunkyardViewModel>(0);
         _junkyard = JunkyardService.Instance.GetJunkyard(junkyardData);
         
-        junkyardViewModel.SetJunkyard(_junkyard, _junkyardConfigProperty.objectReferenceValue as JunkyardConfig);
+        junkyardViewModel.SetJunkyard(_junkyard, _junkyardConfigProperty.objectReferenceValue as JunkyardConfig, Game.Instance.GetService<JunkyardUserService>().User);
         
         JunkyardMonoView junkyardMonoTesting = _junkyardViewSerializedProperty.objectReferenceValue as JunkyardMonoView;
         

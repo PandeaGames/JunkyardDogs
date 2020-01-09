@@ -2,37 +2,18 @@
 using System.Collections.Generic;
 using JunkyardDogs;
 using UnityEngine;
-
-#if UNITY_EDITOR
-using UnityEditor;
-#endif
-
 public class JunkyardFogOfWar : MonoBehaviour
 {
     public JunkyardRenderConfig renderConfig;
     private GameObject _renderingPlane;
 
     [SerializeField] private Vector3 _planeOffset;
-    [SerializeField] private bool _displayDebug;
     [SerializeField] private string _generatedGameObjectName;
 
     [Serializable]
     private struct FogLayerConfig
     {
         public Color color;
-    }
-
-    private void OnDrawGizmos()
-    {
-        if (_displayDebug && _viewModel != null)
-        {
-#if UNITY_EDITOR
-            foreach (FogDataPoint dataPoint in _viewModel.Fog.AllData())
-            {
-                Handles.Label(new Vector3(dataPoint.Vector.X, 0, dataPoint.Vector.Y), dataPoint.Data.ToString());
-            }
-#endif
-        }
     }
 
     [SerializeField] private FogLayerConfig[] _fogConfig;

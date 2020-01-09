@@ -5,9 +5,18 @@ using JunkyardDogs;
 using JunkyardDogs.Components;
 using PandeaGames;
 using UnityEngine;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 public class JunkyardMonoView : MonoBehaviour
 {
+    private enum DataDebugType
+    {
+        Fog,
+        Threshold
+    }
+    
     public event JunkyardJunkMonoView.JunkInteractionDelegate OnJunkCleared;
     public event JunkyardJunkMonoView.JunkInteractionDelegate OnJunkPointerDown;
     
@@ -24,7 +33,9 @@ public class JunkyardMonoView : MonoBehaviour
     [SerializeField] private JunkyardJunkMonoView _junkyardJunkMonoView;
     [SerializeField] private float _distanceToActivateSnapping = 2;
     [SerializeField] private Vector3 _camOffsetWhenSnapping = new Vector3(0, 0, -2);
-
+    [SerializeField] private bool _displayDebug;
+    [SerializeField] private DataDebugType _displayDebugType;
+    
     private JunkyardJunk[,] _junk;
     private Vector3 _cameraSnapPosition;
     private bool _isSnapping;
@@ -35,6 +46,37 @@ public class JunkyardMonoView : MonoBehaviour
     public float Scale
     {
         get { return _scale; }
+    }
+    
+    
+    private void OnDrawGizmos()
+    {
+        if (_displayDebug && _viewModel != null)
+        {
+#if UNITY_EDITOR
+            switch (_displayDebugType)
+            {
+                case DataDebugType.Fog:
+                {
+                    foreach (FogDataPoint dataPoint in _viewModel.Fog.AllData())
+                    {
+                        Handles.Label(new Vector3(dataPoint.Vector.X, 0, dataPoint.Vector.Y), dataPoint.Data.ToString());
+                    }
+
+                    break;
+                }
+                case DataDebugType.Threshold:
+                {
+                    foreach (JunkyardThresholdDataPoint dataPoint in _viewModel.Thresholds.AllData())
+                    {
+                        Handles.Label(new Vector3(dataPoint.Vector.X, 0, dataPoint.Vector.Y), dataPoint.Data.ToString());
+                    }
+
+                    break;
+                }
+            }
+#endif
+        }
     }
 
     private IEnumerator Start()

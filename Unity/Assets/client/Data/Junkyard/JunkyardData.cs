@@ -19,7 +19,7 @@ public class JunkyardData : ScriptableObject, IJunkyardGenerator
     public struct Reward
     {
         [WeightedLootCrateStaticDataReferenceAttribute]
-        public LootCrateStaticDataReference _crate;
+        public LootCrateStaticDataReference crate;
     }
     
     [SerializeField] 
@@ -30,6 +30,7 @@ public class JunkyardData : ScriptableObject, IJunkyardGenerator
 
     [SerializeField] 
     private Reward[] _rewards;
+    public Reward[] Rewards { get => _rewards; }
 
     [SerializeField]
     private int _width;

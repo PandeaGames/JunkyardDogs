@@ -23,7 +23,6 @@ namespace JunkyardDogs.Views
             _userModel = Game.Instance.GetViewModel<JunkyardUserViewModel>(0);
             _junkyardViewModel = Game.Instance.GetViewModel<JunkyardViewModel>(0);
             
-            
             _junkyardViewGO = GameObject.Instantiate(Game.Instance.GetStaticDataPovider<GameStaticDataProvider>().GameDataStaticData.JunkyardView);
             _junkyardViewGO.SetActive(false);
             _junkyardView = _junkyardViewGO.GetComponent<JunkyardMonoView>();
@@ -39,6 +38,7 @@ namespace JunkyardDogs.Views
             Bot bot = Game.Instance.GetService<JunkyardUserService>().User.Competitor.Inventory.Bots[0];
         
             _junkyardView.Render(_junkyardViewModel, bot);
+            
         }
 
         public override void Destroy()
@@ -50,18 +50,7 @@ namespace JunkyardDogs.Views
 
         private void OnTakeJunk(ILoot[] loot)
         {
-            TakeJunkDialogViewModel vm = Game.Instance.GetViewModel<TakeJunkDialogViewModel>();
-            vm.SetData(new TakeJunkDialogViewModel.Data(loot));
-            vm.OnClose += OnTakeJunkClose; 
-            FindServiceManager().GetService<DialogService>().DisplayDialog<TakeJunkDialog>(vm);
-        }
-
-        private void OnTakeJunkClose(TakeJunkDialogViewModel dialog)
-        {
-            if (dialog.ShouldTakeLoot)
-            {
-                _userModel.UserData.Consume(dialog.ModelData.Loot, 0);
-            }
+            _userModel.UserData.Consume(loot, UnityEngine.Time.frameCount);
         }
     }
 }

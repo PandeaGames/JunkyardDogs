@@ -34,6 +34,7 @@ namespace JunkyardDogs
         public FogDataModel Fog;
         public VisibleDataModel VisibleDataModel;
         public InteractibleDataModel Interactible;
+        public JunkyardThresholdDataModel Thresholds;
         private int _width;
         private int _height;
 
@@ -60,13 +61,15 @@ namespace JunkyardDogs
             OnTakeJunk?.Invoke(loot);
         }
 
-        public void SetJunkyard(Junkyard junkyard, JunkyardConfig config)
+        public void SetJunkyard(Junkyard junkyard, JunkyardConfig config, JunkyardUser User)
         {
+            this.User = User;
             _config = config;
             _junkyard = junkyard;
             Fog = new FogDataModel(junkyard, config);
             Interactible = new InteractibleDataModel(Fog, config);
             VisibleDataModel = new VisibleDataModel(Fog, config);
+            Thresholds = new JunkyardThresholdDataModel(junkyard, config);
             _width = junkyard.Width;
             _height = junkyard.Height;
         }
@@ -78,6 +81,9 @@ namespace JunkyardDogs
 
         public void ClearSpace(INTVector vector)
         {
+            LootDataModel lootDataModel = new LootDataModel(User, UnityEngine.Time.frameCount);
+            ILoot[] loot = _junkyard.Rewards[Math.Min(_junkyard.Rewards.Length - 1, Thresholds[vector])].crate.Data.GetLoot(lootDataModel);
+            OnTakeJunk?.Invoke(loot);
             _junkyard.SetCleared(vector.X, vector.Y, true);
             Fog.UpdateData(vector);
         }

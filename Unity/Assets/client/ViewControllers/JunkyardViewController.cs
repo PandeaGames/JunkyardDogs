@@ -18,7 +18,8 @@ namespace JunkyardDogs
             
             _junkyardViewModel.SetJunkyard(JunkyardService.Instance.GetJunkyard(
                 Game.Instance.GetStaticDataPovider<GameStaticDataProvider>().GameDataStaticData.JunkyardTestData),
-                Game.Instance.GetStaticDataPovider<GameStaticDataProvider>().GameDataStaticData.JunkyardTestConfigData);
+                Game.Instance.GetStaticDataPovider<GameStaticDataProvider>().GameDataStaticData.JunkyardTestConfigData,
+                Game.Instance.GetService<JunkyardUserService>().User);
         }
 
         protected override IView CreateView()
