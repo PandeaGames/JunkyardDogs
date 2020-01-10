@@ -51,6 +51,7 @@ public class JunkyardJunkMonoView : MonoBehaviour
         {
             for (int y = 0; y < junkyard.Height; y++)
             {
+                if (viewModel.ClearedDataModel[x, y]) continue;
                 bool hasCleared = junkyard.serializedJunkyard.Cleared[x, y];
                
                 JunkyardRenderConfig.JunkyardLayerRenderConfig renderLayerConfig =
@@ -75,6 +76,7 @@ public class JunkyardJunkMonoView : MonoBehaviour
                     junkyardJunk.Setup(x, y);
                     junkyardJunk.SetAvailableForCollection(viewModel.Interactible[x, y]);
                     junkyardJunk.SetIsVisible(viewModel.VisibleDataModel[x, y]);
+                    junkyardJunk.SetSparkle(viewModel.SpecialChanceDataModel[x, y]);
                     junkyardJunk.OnClicked += JunkyardJunkOnOnClicked;
                     junkyardJunk.OnPointerDown += JunkyardJunkOnOnPointerDown;
                     float randomScaleFactor = UnityEngine.Random.Range(1, 1 + _randomJunkScale);
@@ -96,8 +98,18 @@ public class JunkyardJunkMonoView : MonoBehaviour
             Destroy(junkyardJunk.gameObject);
             _junk[x, y] = null;
             
-            Instantiate(_renderConfig.JunkClearedAnimation, junkyardJunk.transform.position,
-                junkyardJunk.transform.rotation, transform);
+            Instantiate(_renderConfig.JunkClearedAnimation, 
+                junkyardJunk.transform.position,
+                junkyardJunk.transform.rotation, 
+                transform);
+
+            if (_viewModel.SpecialChanceDataModel[x, y])
+            {
+                Instantiate(_renderConfig.SpecialJunkClearedAnimation, 
+                    junkyardJunk.transform.position + _renderConfig.SpecialJunkClearedAnimationOffset,
+                    junkyardJunk.transform.rotation, 
+                    transform).transform.localScale = _renderConfig.SpecialJunkClearedAnimationScaleOffset;
+            }
             
             OnJunkCleared?.Invoke(x, y, junkyardJunk);
         }

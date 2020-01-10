@@ -35,6 +35,8 @@ namespace JunkyardDogs
         public VisibleDataModel VisibleDataModel;
         public InteractibleDataModel Interactible;
         public JunkyardThresholdDataModel Thresholds;
+        public SpecialChanceDataModel SpecialChanceDataModel;
+        public ClearedDataModel ClearedDataModel;
         private int _width;
         private int _height;
 
@@ -70,6 +72,8 @@ namespace JunkyardDogs
             Interactible = new InteractibleDataModel(Fog, config);
             VisibleDataModel = new VisibleDataModel(Fog, config);
             Thresholds = new JunkyardThresholdDataModel(junkyard, config);
+            SpecialChanceDataModel = new SpecialChanceDataModel(junkyard);
+            ClearedDataModel = new ClearedDataModel(junkyard);
             _width = junkyard.Width;
             _height = junkyard.Height;
         }

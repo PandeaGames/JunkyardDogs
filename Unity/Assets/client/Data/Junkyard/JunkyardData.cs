@@ -22,6 +22,10 @@ public class JunkyardData : ScriptableObject, IJunkyardGenerator
         public LootCrateStaticDataReference crate;
     }
     
+    [Range(0, 100), SerializeField] 
+    private float _chanceForSpecial;
+    public float ChanceForSpecial => _chanceForSpecial;
+
     [SerializeField] 
     private AbstractJunkyardLayerData[] _layers;
     
@@ -76,6 +80,7 @@ public class JunkyardData : ScriptableObject, IJunkyardGenerator
         serializedData.Cleared = new bool[input.GetLength(0),input.GetLength(1)];
         serializedData.X = _entranceX;
         serializedData.Y = _entranceY;
+        serializedData.Seed = seed;
 
         ApplyClearCropping(serializedData.Cleared, _cropping);
         

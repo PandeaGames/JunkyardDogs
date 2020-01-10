@@ -8,6 +8,9 @@ public class JunkyardJunk : MonoBehaviour
 {
     [SerializeField] 
     private Collider _collider;
+    
+    [SerializeField] 
+    private GameObject _generalSparkle;
 
     [SerializeField, OptionalField]
     private Renderer _renderer;
@@ -26,6 +29,11 @@ public class JunkyardJunk : MonoBehaviour
         InputService.Instance.OnPointerDown += InstanceOnOnPointerDown;
 
         if(_renderer != null) _renderer.enabled = !JunkyardUtils.HideJunkyardMeshs;
+    }
+    
+    public void SetSparkle(bool enabled)
+    {
+        _generalSparkle.SetActive(enabled);
     }
 
     public void SetAvailableForCollection(bool enabled)

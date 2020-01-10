@@ -31,6 +31,11 @@ public class Junkyard
         Rewards = new List<JunkyardData.Reward>(junkyardData.GetRewards()).ToArray();
     }
     
+    public float ChanceForSpecial
+    {
+        get { return _junkyardData.ChanceForSpecial; }
+    }
+    
     public int Width
     {
         get { return _serializedJunkyard.Data.GetLength(0); }

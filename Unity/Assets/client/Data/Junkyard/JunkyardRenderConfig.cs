@@ -23,6 +23,9 @@ public class JunkyardRenderConfig : ScriptableObject
     [SerializeField] private BotRenderConfiguration _botRenderConfiguration;
     [SerializeField] private float _wallWidth;
     [SerializeField] private GameObject _junkClearedAnimation;
+    [SerializeField] private GameObject _specialJunkClearedAnimation;
+    [SerializeField] private Vector3 _specialJunkClearedAnimationOffset;
+    [SerializeField] private Vector3 _specialJunkClearedAnimationScaleOffset;
 
     
     
@@ -54,5 +57,20 @@ public class JunkyardRenderConfig : ScriptableObject
     public GameObject JunkClearedAnimation
     {
         get { return _junkClearedAnimation; }
+    }
+    
+    public GameObject SpecialJunkClearedAnimation
+    {
+        get => _specialJunkClearedAnimation;
+    }
+    
+    public Vector3 SpecialJunkClearedAnimationOffset
+    {
+        get => _specialJunkClearedAnimationOffset;
+    }
+    
+    public Vector3 SpecialJunkClearedAnimationScaleOffset
+    {
+        get => _specialJunkClearedAnimationScaleOffset;
     }
 }

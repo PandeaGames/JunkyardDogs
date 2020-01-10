@@ -14,7 +14,8 @@ public class JunkyardMonoView : MonoBehaviour
     private enum DataDebugType
     {
         Fog,
-        Threshold
+        Threshold,
+        SpecialChance
     }
     
     public event JunkyardJunkMonoView.JunkInteractionDelegate OnJunkCleared;
@@ -68,6 +69,16 @@ public class JunkyardMonoView : MonoBehaviour
                 case DataDebugType.Threshold:
                 {
                     foreach (JunkyardThresholdDataPoint dataPoint in _viewModel.Thresholds.AllData())
+                    {
+                        Handles.Label(new Vector3(dataPoint.Vector.X, 0, dataPoint.Vector.Y), dataPoint.Data.ToString());
+                    }
+
+                    break;
+                }
+                
+                case DataDebugType.SpecialChance:
+                {
+                    foreach (SpecialChanceDataPoint dataPoint in _viewModel.SpecialChanceDataModel.AllData())
                     {
                         Handles.Label(new Vector3(dataPoint.Vector.X, 0, dataPoint.Vector.Y), dataPoint.Data.ToString());
                     }

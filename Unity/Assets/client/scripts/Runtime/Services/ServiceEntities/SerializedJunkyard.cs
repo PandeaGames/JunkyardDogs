@@ -8,5 +8,6 @@ public class SerializedJunkyard
     public bool[,] Cleared { get; set; }
     public int X { get; set; }
     public int Y { get; set; }
+    public int Seed { get; set; }
 }
 

@@ -440,6 +440,7 @@
                 <e p="Junkyard" t="Include">
                   <e p="AbstractGridDataModel.cs" t="Include" />
                   <e p="BotAnimation.cs" t="Include" />
+                  <e p="ClearedDataModel.cs" t="Include" />
                   <e p="FogDataModel.cs" t="Include" />
                   <e p="InteractibleDataModel.cs" t="Include" />
                   <e p="IntVector.cs" t="Include" />
@@ -453,6 +454,7 @@
                   <e p="JunkyardSROptions.SROptions.cs" t="Include" />
                   <e p="JunkyardThresholdDataModel.cs" t="Include" />
                   <e p="JunkyardUtils.cs" t="Include" />
+                  <e p="SpecialChanceDataModel.cs" t="Include" />
                   <e p="VisibleDataModel.cs" t="Include" />
                 </e>
                 <e p="Match" t="Include">
@@ -1308,6 +1310,19 @@
             <e p="SmoothOrbitViewchanger.cs" t="Include" />
           </e>
         </e>
+        <e p="Sparkles" t="Include">
+          <e p="Demo" t="Include">
+            <e p="Scene Setup" t="Include">
+              <e p="scripts" t="Include">
+                <e p="DragMouseOrbit.cs" t="Include" />
+                <e p="GemSimpleRotate.cs" t="Include" />
+                <e p="LoadSceneOnClick.cs" t="Include" />
+                <e p="SparkleLoopEffect.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="README.txt" t="Include" />
+        </e>
         <e p="Standard Assets" t="Include">
           <e p="Characters" t="Include">
             <e p="FirstPersonCharacter" t="Include">
@@ -2049,7 +2064,9 @@
       <e p="Library" t="ExcludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="packages" t="ExcludeRecursive" />
-      <e p="Temp\bin" t="ExcludeRecursive" />
+      <e p="Temp" t="ExcludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+      </e>
       <e p="Unity.sln" t="IncludeFlat" />
     </e>
   </component>

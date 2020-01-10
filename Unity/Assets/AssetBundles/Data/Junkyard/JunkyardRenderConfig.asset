@@ -44,3 +44,7 @@ MonoBehaviour:
   _wallWidth: 6
   _junkClearedAnimation: {fileID: 8791433448495973175, guid: 14690ecdeab9b9a42a0a09f418a6a757,
     type: 3}
+  _specialJunkClearedAnimation: {fileID: 3677858805323395150, guid: 939597b152de166409a3a3d158957c6f,
+    type: 3}
+  _specialJunkClearedAnimationOffset: {x: 0, y: -0.15, z: 0}
+  _specialJunkClearedAnimationScaleOffset: {x: 3, y: 3, z: 3}
