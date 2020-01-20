@@ -5,7 +5,7 @@ using UnityEditor;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-public class PostProcessor : AssetPostprocessor
+public class PostProcessor : JunkyardAssetPostprocessor
 {
     [Serializable]
     public struct PathBundleSetters

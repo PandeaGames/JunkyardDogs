@@ -233,6 +233,8 @@
             <e p="ViewStaticDataProvider.cs" t="Include" />
           </e>
           <e p="Editor" t="Include">
+            <e p="JunkyardAssetPostprocessor.cs" t="Include" />
+            <e p="JunkyardAssetPostProcessorConfig.cs" t="Include" />
             <e p="JunkyardTestingEditor.cs" t="Include" />
             <e p="MyBuildScript.cs" t="Include" />
           </e>
@@ -1069,6 +1071,7 @@
             <e p="Game2DMathUtils.cs" t="Include" />
             <e p="GenericFactory.cs" t="Include" />
             <e p="NewBehaviourScript1.cs" t="Include" />
+            <e p="ResourceSingleton.cs" t="Include" />
             <e p="SerializableDictionary.cs" t="Include" />
             <e p="StateMachines" t="Include">
               <e p="PandeaGamesFsm.cs" t="Include" />
