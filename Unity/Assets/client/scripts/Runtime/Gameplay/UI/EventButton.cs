@@ -22,8 +22,6 @@ public class EventButton : MonoBehaviour
     [SerializeField]
     private TournamentTimerDisplay _timerDisplay;
 
-    [SerializeField] 
-    private Transform _3DTransformLink;
 
     private TournamentService _tournamentService;
     
@@ -41,12 +39,6 @@ public class EventButton : MonoBehaviour
 
     private void Update()
     {
-        if (_3DTransformLink != null)
-        {
-            Vector3 position = Camera.main.WorldToScreenPoint(_3DTransformLink.position);
-            transform.position = position;
-        }
-        
         _timerDisplay.Render(_tournament.Data);
         TournamentStatus status = _vm.User.GetTournamentStatus(_tournament);
         _button.interactable = status != TournamentStatus.Locked;

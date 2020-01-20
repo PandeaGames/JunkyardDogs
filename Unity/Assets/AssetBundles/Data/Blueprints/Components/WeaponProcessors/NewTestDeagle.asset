@@ -16,7 +16,5 @@ MonoBehaviour:
     _id: WeaponChip
   _manufacturer:
     _id: Skylabs
-  Material:
-    _id: Copper
   _weapon:
     _id: FloriansDeagles

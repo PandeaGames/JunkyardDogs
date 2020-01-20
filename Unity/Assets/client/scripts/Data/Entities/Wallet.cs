@@ -33,7 +33,7 @@ public class Wallet : DataReferenceDictionary<
         return GetPair(key);
     }
 
-    public void Add(Currency currency)
+    public Currency Add(Currency currency)
     {
         CurrencyStaticDataReference key = currency.CurrencyType;
         int value = currency.Quantity;
@@ -45,6 +45,8 @@ public class Wallet : DataReferenceDictionary<
         {
             AddValue(key, value);
         }
+
+        return currency;
     }
     
     private CurrencyDictionaryKvP AddObj(CurrencyData key, int value)

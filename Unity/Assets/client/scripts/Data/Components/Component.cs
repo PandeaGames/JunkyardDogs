@@ -9,7 +9,7 @@ using JunkyardDogs.Data;
 
 namespace JunkyardDogs.Components
 {
-    public interface IComponent
+    public interface IComponent : IConsumable
     {
         SpecificationStaticDataReference SpecificationReference { set; get; }
         ManufacturerStaticDataReference Manufacturer { set; get; }

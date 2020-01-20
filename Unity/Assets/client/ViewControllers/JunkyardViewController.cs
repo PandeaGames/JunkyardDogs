@@ -17,7 +17,7 @@ namespace JunkyardDogs
             _junkyardViewModel = Game.Instance.GetViewModel<JunkyardViewModel>(0);
             
             _junkyardViewModel.SetJunkyard(JunkyardService.Instance.GetJunkyard(
-                Game.Instance.GetStaticDataPovider<GameStaticDataProvider>().GameDataStaticData.JunkyardTestData),
+                Game.Instance.GetViewModel<JunkyardUserViewModel>(0).UserData.Junkard),
                 Game.Instance.GetStaticDataPovider<GameStaticDataProvider>().GameDataStaticData.JunkyardTestConfigData,
                 Game.Instance.GetService<JunkyardUserService>().User);
         }

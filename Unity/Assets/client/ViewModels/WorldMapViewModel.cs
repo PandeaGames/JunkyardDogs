@@ -18,7 +18,7 @@ public class WorldMapViewModel : AbstractViewModel
 
     public event Action<TournamentStaticDataReference> OnTournamentTapped;
     public event Action<TournamentState.TournamentStatus> OnPlayTournament;
-    public event Action OnJunkyardTapped;
+    public event Action<JunkyardData> OnJunkyardTapped;
 
     private Data _data;
 
@@ -40,11 +40,11 @@ public class WorldMapViewModel : AbstractViewModel
         }
     }
     
-    public void TapJunkyard()
+    public void TapJunkyard(JunkyardData junkyard)
     {
         if (OnJunkyardTapped != null)
         {
-            OnJunkyardTapped();
+            OnJunkyardTapped(junkyard);
         }
     }
     public void PlayTournament(TournamentState.TournamentStatus status)

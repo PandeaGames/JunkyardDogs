@@ -10,7 +10,7 @@ using JunkyardDogs.Components.Gameplay;
 namespace JunkyardDogs.Components
 {
     [Serializable]
-    public class Bot : ComponentGrade.IGradedComponent
+    public class Bot : ComponentGrade.IGradedComponent, IConsumable
     {
         [SerializeField] private Motherboard _motherboard;
         [SerializeField] private CPU _CPU;

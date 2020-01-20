@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using JunkyardDogs.Components;
 using System;
+using JunkyardDogs.Data;
 
 [Serializable]
 public class JunkyardUser : User, ILootCrateConsumer, IExperienceModel
@@ -16,11 +17,15 @@ public class JunkyardUser : User, ILootCrateConsumer, IExperienceModel
     
     [SerializeField]
     private Tournaments _tournaments;
+
+    [SerializeField, JunkyardStaticDataReference]
+    private JunkyardStaticDataReference _junkard;
     
     public Wallet Wallet { get { return _wallet; } set { _wallet = value; }}
     public Competitor Competitor { get { return _competitor; } set { _competitor = value; } }
     public Tournaments Tournaments { get { return _tournaments; } set { _tournaments = value; } }
     public Experience Experience  { get { return _experience; } set { _experience = value; } }
+    public JunkyardStaticDataReference Junkard  { get { return _junkard; } set { _junkard = value; } }
 
     public void AddComponent(IComponent component)
     {
@@ -35,113 +40,137 @@ public class JunkyardUser : User, ILootCrateConsumer, IExperienceModel
         Wallet = new Wallet();
     }
     
-    public void Consume(AbstractLootCrateData crateData, int seed)
+    public IConsumable[] Consume(AbstractLootCrateData crateData, int seed)
     {
         LootDataModel LootDataModel = new LootDataModel(this, seed);
-        Consume(crateData.GetLoot(LootDataModel), seed);
+        ILoot[] loot = crateData.GetLoot(LootDataModel);
+        IConsumable[] consumables = Consume(loot, seed);
+        return consumables;
     }
 
-    public void Consume(ILoot[] crateContents, int seed)
+    public void Consume(IConsumable[] consumables)
     {
+        for (int i = 0; i < consumables.Length; i++)
+        {
+            IConsumable consumable = consumables[i];
+            if (consumable is IComponent)
+            {
+                Competitor.Inventory.AddComponent(consumable as IComponent);
+            }
+            else if (consumable is Currency)
+            {
+                Wallet.Add(consumable as Currency);
+            }
+            else
+            {
+                throw new NotSupportedException(string.Format("This type of consumable [{0}] is not supported by this consumer. ", consumable));
+            }
+        }
+    }
+
+    public IConsumable[] Consume(ILoot[] crateContents, int seed)
+    {
+        IConsumable[] consumables = new IConsumable[crateContents.Length];
         for (int i = 0; i < crateContents.Length; i++)
         {
             ILoot loot = crateContents[i];
+            IConsumable consumable = null;
 
-            if (loot is Currency)
+            if (loot is Currency || loot is IComponent)
             {
-                Consume(loot as Currency);
+                consumable = loot as IConsumable;
             }
             else if (loot is EngineBlueprintData)
             {
-                Consume(loot as EngineBlueprintData, seed);
+                consumable = GetConsumable(loot as EngineBlueprintData, seed);
             }
             else if(loot is WeaponBlueprintData)
             {
-                Consume(loot as WeaponBlueprintData, seed);
+                consumable = GetConsumable(loot as WeaponBlueprintData, seed);
             }
             else if(loot is WeaponProcessorBlueprintData)
             {
-                Consume(loot as WeaponProcessorBlueprintData, seed);
+                consumable = GetConsumable(loot as WeaponProcessorBlueprintData, seed);
             }
             else if(loot is ChassisBlueprintData)
             {
-                Consume(loot as ChassisBlueprintData, seed);
+                consumable = GetConsumable(loot as ChassisBlueprintData, seed);
             }
             else if(loot is PlateBlueprintData)
             {
-                Consume(loot as PlateBlueprintData, seed);
+                consumable = GetConsumable(loot as PlateBlueprintData, seed);
             }
             else if(loot is MotherboardBlueprintData)
             {
-                Consume(loot as MotherboardBlueprintData, seed);
+                consumable = GetConsumable(loot as MotherboardBlueprintData, seed);
             }
             else if(loot is BotBlueprintData)
             {
-                Consume(loot as BotBlueprintData, seed);
+                consumable = GetConsumable(loot as BotBlueprintData, seed);
             }
             else if(loot is CPUBlueprintData)
             {
-                Consume(loot as CPUBlueprintData, seed);
+                consumable = GetConsumable(loot as CPUBlueprintData, seed);
             }
             else if(loot is DirectiveBlueprintData)
             {
-                Consume(loot as DirectiveBlueprintData, seed);
+                consumable = GetConsumable(loot as DirectiveBlueprintData, seed);
             }
             else
             {
                 throw new NotSupportedException(string.Format("This type of loot [{0}] is not supported by this consumer. ", loot));
             }
+
+            consumables[i] = consumable;
         }
+
+        Consume(consumables);
+        return consumables;
     }
 
-    private void Consume(Currency currency)
+    private IConsumable GetConsumable(EngineBlueprintData blueprint, int seed)
     {
-        Wallet.Add(currency);
-    }
-
-    private void Consume(EngineBlueprintData blueprint, int seed)
-    {
-        Competitor.Inventory.AddComponent(blueprint.DoGenerate(seed));
+        return blueprint.DoGenerate(seed);
     }
     
-    private void Consume(WeaponBlueprintData blueprint, int seed)
+    private IConsumable GetConsumable(WeaponBlueprintData blueprint, int seed)
     {
-        Competitor.Inventory.AddComponent(blueprint.DoGenerate(seed));
+        return blueprint.DoGenerate(seed);
     }
     
-    private void Consume(WeaponProcessorBlueprintData blueprint, int seed)
+    private IConsumable GetConsumable(WeaponProcessorBlueprintData blueprint, int seed)
     {
-        Competitor.Inventory.AddComponent(blueprint.DoGenerate(seed));
+        return blueprint.DoGenerate(seed);
     }
     
-    private void Consume(ChassisBlueprintData blueprint, int seed)
+    private IConsumable GetConsumable(ChassisBlueprintData blueprint, int seed)
     {
-        Competitor.Inventory.AddComponent(blueprint.DoGenerate(seed));
+        return blueprint.DoGenerate(seed);
     }
     
-    private void Consume(PlateBlueprintData blueprint, int seed)
+    private IConsumable GetConsumable(PlateBlueprintData blueprint, int seed)
     {
-        Competitor.Inventory.AddComponent(blueprint.DoGenerate(seed));
+        return blueprint.DoGenerate(seed);
     }
     
-    private void Consume(MotherboardBlueprintData blueprint, int seed)
+    private IConsumable GetConsumable(MotherboardBlueprintData blueprint, int seed)
     {
-        Competitor.Inventory.AddComponent(blueprint.DoGenerate(seed));
+        return blueprint.DoGenerate(seed);
     }
     
-    private void Consume(BotBlueprintData blueprint, int seed)
+    private IConsumable GetConsumable(BotBlueprintData blueprint, int seed)
     {
-        Competitor.Inventory.AddBot(blueprint.DoGenerate(seed));
+        return blueprint.DoGenerate(seed);
     }
     
-    private void Consume(CPUBlueprintData blueprint, int seed)
+    private IConsumable GetConsumable(CPUBlueprintData blueprint, int seed)
     {
-        Competitor.Inventory.AddComponent(blueprint.DoGenerate(seed));
+        return blueprint.DoGenerate(seed);
     }
     
-    private void Consume(DirectiveBlueprintData blueprint, int seed)
+    private IConsumable GetConsumable(DirectiveBlueprintData blueprint, int seed)
     {
-        Competitor.Inventory.AddComponent(blueprint.DoGenerate(seed));
+        return blueprint.DoGenerate(seed);
     }
 
     public int GetExp(Nationality nationality)

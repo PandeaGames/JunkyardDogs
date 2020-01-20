@@ -16,7 +16,5 @@ MonoBehaviour:
     _id: WeaponChip
   _manufacturer:
     _id: Kinzoku Inu
-  Material:
-    _id: 
   _weapon:
     _id: KinzokuInuSpiralWeapon

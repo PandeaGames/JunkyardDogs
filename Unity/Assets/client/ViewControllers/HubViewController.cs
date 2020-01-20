@@ -1,4 +1,5 @@
 ﻿using JunkyardDogs;
+using JunkyardDogs.Data;
 using PandeaGames;
 using PandeaGames.Views;
 using PandeaGames.Views.ViewControllers;
@@ -42,9 +43,14 @@ public class HubViewController : AbstractViewControllerFsm<HubStates>
         SetViewStateController<GarageState>(HubStates.Garage);
         SetViewStateController<JunkyardState>(HubStates.Junkyard);
         SetInitialState(HubStates.MainMap);
-        
-        Game.Instance.GetViewModel<HubViewModel>(0).OnEnterState += OnEnterHubState;
-        
+    }
+
+    private void OnJunkyardTapped(JunkyardData junkyardData)
+    {
+        JunkyardStaticDataReference reference = new JunkyardStaticDataReference();
+        reference.ID = junkyardData.ID;
+        Game.Instance.GetViewModel<JunkyardUserViewModel>(0).UserData.Junkard = reference;
+        SetState(HubStates.Junkyard);
     }
 
     private void OnEnterHubState(HubStates state)
@@ -56,13 +62,15 @@ public class HubViewController : AbstractViewControllerFsm<HubStates>
     protected override void OnAfterShow()
     {
         base.OnAfterShow();
+        Game.Instance.GetViewModel<WorldMapViewModel>(0).OnJunkyardTapped += OnJunkyardTapped;
+        Game.Instance.GetViewModel<HubViewModel>(0).OnEnterState += OnEnterHubState;
     }
 
     public override void RemoveView()
     {
         base.RemoveView();
-        
         Game.Instance.GetViewModel<HubViewModel>(0).OnEnterState -= OnEnterHubState;
+        Game.Instance.GetViewModel<WorldMapViewModel>(0).OnJunkyardTapped -= OnJunkyardTapped;
     }
 
     protected override IView CreateView()

@@ -22,4 +22,4 @@ MonoBehaviour:
   - _id: JagerBot
   _expLevel:
     _value: 0
-    _level: 0
+    _level: 1

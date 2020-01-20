@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 618f4047fb694953ab58517c512655b1, type: 3}
+  m_Name: WeightedJunkyardCrateCurrency
+  m_EditorClassIdentifier: 
+  _loot:
+  - loot:
+      _id: Search_50
+    weight: 100
+  - loot:
+      _id: JagerChassisLoot
+    weight: 50
+  - loot:
+      _id: Coins_100
+    weight: 100
+  - loot:
+      _id: Coins_50
+    weight: 100
+  _lootQuantity: 1
+  _pickWithRepetition: 0

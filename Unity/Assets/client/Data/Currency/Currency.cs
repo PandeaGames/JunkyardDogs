@@ -3,7 +3,7 @@ using JunkyardDogs.Data;
 using UnityEngine;
 
 [Serializable]
-public class Currency:ILoot
+public class Currency:ILoot, IConsumable
 {
     [SerializeField, CurrencyStaticDataReference]
     private CurrencyStaticDataReference _currencyType;

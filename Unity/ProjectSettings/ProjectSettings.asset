@@ -3,7 +3,7 @@
 --- !u!129 &1
 PlayerSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 15
+  serializedVersion: 18
   productGUID: e9508bbd75c61ae4a9b79e7e8596d519
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
@@ -52,8 +52,8 @@ PlayerSettings:
   m_StackTraceTypes: 010000000100000001000000010000000100000001000000
   iosShowActivityIndicatorOnLoading: -1
   androidShowActivityIndicatorOnLoading: -1
-  iosAppInBackgroundBehavior: 0
   displayResolutionDialog: 1
+  iosUseCustomAppBackgroundBehavior: 0
   iosAllowHTTPDownload: 1
   allowedAutorotateToPortrait: 1
   allowedAutorotateToPortraitUpsideDown: 1
@@ -143,6 +143,9 @@ PlayerSettings:
     oculus:
       sharedDepthBuffer: 1
       dashSupport: 1
+      lowOverheadMode: 0
+      protectedContext: 0
+      v2Signing: 0
     enable360StereoCapture: 0
   protectGraphicsMemory: 0
   enableFrameTimingStats: 0
@@ -236,6 +239,7 @@ PlayerSettings:
   tvOSManualSigningProvisioningProfileType: 0
   appleEnableAutomaticSigning: 0
   iOSRequireARKit: 0
+  iOSAutomaticallyDetectAndAddCapabilities: 1
   appleEnableProMotion: 0
   clonedFromGUID: 00000000000000000000000000000000
   templatePackageId: 
@@ -595,7 +599,7 @@ PlayerSettings:
   webGLThreadsSupport: 0
   scriptingDefineSymbols:
     1: TextMeshPro;SUBSTANCE_PLUGIN_ENABLED
-    4: TextMeshPro
+    4: TextMeshPro;SUBSTANCE_PLUGIN_ENABLED
     7: TextMeshPro;SUBSTANCE_PLUGIN_ENABLED
     13: TextMeshPro
     14: TextMeshPro

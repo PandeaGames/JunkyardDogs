@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0bbd6eca4cc4e3280b006616e3f077e, type: 3}
+  m_Name: JunkyardTestVerySpecial
+  m_EditorClassIdentifier: 
+  _chanceForSpecial: 20.9
+  _layers:
+  - {fileID: 11400000, guid: 7c2017f45c10e7545a7e767e328cb82c, type: 2}
+  - {fileID: 11400000, guid: 24577f593a94ac74d8f6f2fdf890bb8f, type: 2}
+  _heightMap:
+  - {fileID: 11400000, guid: 7c2017f45c10e7545a7e767e328cb82c, type: 2}
+  - {fileID: 11400000, guid: 9bda384c4b47e9148a8b9082ffc3f459, type: 2}
+  _rewards:
+  - crate:
+      _id: WeightedJunkyardCrateCurrency
+  - crate:
+      _id: WeightedJunkyardCrateCurrency
+  - crate:
+      _id: WeightedJunkyardCrateCurrency
+  - crate:
+      _id: WeightedJunkyardCrateCurrency
+  - crate:
+      _id: WeightedJunkyardCrateCurrency
+  _width: 40
+  _height: 40
+  _entranceX: 13
+  _entranceY: 24
+  _seed: 6445
+  _cropping:
+    Left: 0
+    Top: 0
+    Right: 0
+    Bottom: 2

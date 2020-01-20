@@ -36,6 +36,9 @@ MonoBehaviour:
     weight: 100
   - loot:
       _id: DirectiveSkylabsDodgeProjectiles
-    weight: 1000
+    weight: 500
+  - loot:
+      _id: Search_50
+    weight: 500
   _lootQuantity: 1
   _pickWithRepetition: 0

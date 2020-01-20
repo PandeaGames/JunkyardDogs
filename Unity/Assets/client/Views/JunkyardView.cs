@@ -15,6 +15,8 @@ namespace JunkyardDogs.Views
         private JunkyardMonoView _junkyardView;
         private JunkyardUserViewModel _userModel;
         private Junkyard _junkyard;
+        private CameraViewModel _cameraViewModel;
+        private JunkyardUserViewModel _junkyardUserViewModel;
         
         public override void InitializeView(IViewController controller)
         {
@@ -22,6 +24,7 @@ namespace JunkyardDogs.Views
 
             _userModel = Game.Instance.GetViewModel<JunkyardUserViewModel>(0);
             _junkyardViewModel = Game.Instance.GetViewModel<JunkyardViewModel>(0);
+            _cameraViewModel = Game.Instance.GetViewModel<CameraViewModel>(0);
             
             _junkyardViewGO = GameObject.Instantiate(Game.Instance.GetStaticDataPovider<GameStaticDataProvider>().GameDataStaticData.JunkyardView);
             _junkyardViewGO.SetActive(false);
@@ -48,9 +51,9 @@ namespace JunkyardDogs.Views
             _junkyardViewModel.OnTakeJunk -= OnTakeJunk;
         }
 
-        private void OnTakeJunk(ILoot[] loot)
+        private void OnTakeJunk(ILoot[] loot, Vector3 vector)
         {
-            _userModel.UserData.Consume(loot, UnityEngine.Time.frameCount);
+            _userModel.Consume(loot, UnityEngine.Time.frameCount, _cameraViewModel.ActiveMaster.Camera.WorldToScreenPoint(vector));
         }
     }
 }
