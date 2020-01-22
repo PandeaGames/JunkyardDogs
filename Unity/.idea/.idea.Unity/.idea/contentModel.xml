@@ -321,6 +321,7 @@
                 <e p="BreakpointData.cs" t="Include" />
                 <e p="Exp.cs" t="Include" />
                 <e p="ExpLevel.cs" t="Include" />
+                <e p="NationalExp.cs" t="Include" />
                 <e p="Nationality.cs" t="Include" />
                 <e p="SpecificationCatalogue.cs" t="Include" />
               </e>

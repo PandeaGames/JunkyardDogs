@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using JunkyardDogs.Data.Balance;
 using UnityEngine;
@@ -5,11 +6,11 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "BreakpointData", menuName = "GamePlay/BreakpointData", order = 3)]
 public class BreakpointData : AbstractStaticData, IStaticDataBalance<BreakpointBalanceObject>
 {
-    public List<int> breakpoints;
+    public List<double> breakpoints;
     
     public void ApplyBalance(BreakpointBalanceObject balance)
     {
-        breakpoints = new List<int>();
+        breakpoints = new List<double>();
 
         ImportBreakpoint(breakpoints, balance.break_01);
         ImportBreakpoint(breakpoints, balance.break_02);
@@ -38,7 +39,7 @@ public class BreakpointData : AbstractStaticData, IStaticDataBalance<BreakpointB
         ImportBreakpoint(breakpoints, balance.break_25);
     }
     
-    private void ImportBreakpoint(List<int> list, int breakpoint)
+    private void ImportBreakpoint(List<double> list, double breakpoint)
     {
         if (breakpoint > 0)
         {
@@ -51,7 +52,7 @@ public class BreakpointData : AbstractStaticData, IStaticDataBalance<BreakpointB
         throw new System.NotImplementedException();
     }
 
-    public int GetCompletedBreakpointIndex(int breakpoint)
+    public int GetCompletedBreakpointIndex(double breakpoint)
     {
         int i = 0;
         for (i = 0; i < breakpoints.Count; i++)
@@ -65,8 +66,13 @@ public class BreakpointData : AbstractStaticData, IStaticDataBalance<BreakpointB
         return i;
     }
     
-    public int GetCurrentBreakpointIndex(int breakpoint)
+    public int GetCurrentBreakpointIndex(double breakpoint)
     {
         return GetCompletedBreakpointIndex(breakpoint) + 1;
+    }
+    
+    public double GetBreakpointByIndex(int index)
+    {
+        return breakpoints.Count > 0 ? breakpoints[Math.Min(breakpoints.Count - 1, index)] : 0;
     }
 }

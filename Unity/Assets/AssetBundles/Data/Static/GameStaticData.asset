@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: GameStaticData
   m_EditorClassIdentifier: 
   _nationFlagFactory: {fileID: 0}
+  _tournamentExpMultiplierBreakpoints:
+    _id: TouenamentExpMultipliers
   _actionList:
     _guid: 338088a5bcaa5614ea03d24595ddea10
     _path: Assets/AssetBundles/Data/Simulation/Behavior/List.asset

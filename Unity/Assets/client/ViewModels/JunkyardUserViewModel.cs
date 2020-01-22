@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace JunkyardDogs
 {
-    public class JunkyardUserViewModel : AbstractUserViewModel<JunkyardUser>, ILootCrateConsumer
+    public class JunkyardUserViewModel : AbstractUserViewModel<JunkyardUser>, ILootCrateConsumer, IExperienceModel
     {
         public delegate void LootDelegate(IConsumable[] crateContents);
         public delegate void ScreenSpaceLootDelegate(IConsumable[] crateContents, Vector3 screenSpaceCollectioPoint);
@@ -41,6 +41,31 @@ namespace JunkyardDogs
         {
             IConsumable[] consumables = Consume(crateContents, seed);
             OnScreenSpaceLootConsumed?.Invoke(consumables, screenSpaceCollectionPoint);
+        }
+
+        public int GetExp(Nationality nationality)
+        {
+            return UserData.GetExp(nationality);
+        }
+
+        public uint GetLevel(Nationality nationality)
+        {
+            return UserData.GetLevel(nationality);
+        }
+
+        public void AddExp(Nationality nationality, int amount)
+        {
+            UserData.AddExp(nationality, amount);
+        }
+
+        public void Ascend(Nationality nationality)
+        {
+            UserData.Ascend(nationality);
+        }
+
+        public int GetTotalExp()
+        {
+            return UserData.GetTotalExp();
         }
     }
 }

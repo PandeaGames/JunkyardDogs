@@ -289,6 +289,7 @@ GameObject:
   - component: {fileID: 7833105732039087499}
   - component: {fileID: 2031381362490917720}
   - component: {fileID: 2715629738418626756}
+  - component: {fileID: 5952687050133615427}
   m_Layer: 0
   m_Name: LootUIPrefab
   m_TagString: Untagged
@@ -332,6 +333,7 @@ MonoBehaviour:
   _componentDisplay: {fileID: 6724758756541797627}
   _currencyDisplay: {fileID: 3573950926634096367}
   _directiveView: {fileID: 2715629738418626756}
+  _nationalityDisplay: {fileID: 5952687050133615427}
   _lifetimeSeconds: 3
 --- !u!114 &2805896670175833471
 MonoBehaviour:
@@ -510,6 +512,22 @@ MonoBehaviour:
   _directiveName: {fileID: 469051695722159525}
   _image: {fileID: 6438411030961845835}
   displaySettings: []
+--- !u!114 &5952687050133615427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2885295806069067492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04640703e29c469ab464756f3dd719dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _button: {fileID: 0}
+  _title: {fileID: 469051695722159525}
+  _image: {fileID: 6438411030961845835}
+  _imageType: 0
 --- !u!1 &5254165129488379434
 GameObject:
   m_ObjectHideFlags: 0

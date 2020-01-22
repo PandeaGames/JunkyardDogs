@@ -57,6 +57,11 @@ public class JunkyardUser : User, ILootCrateConsumer, IExperienceModel
             {
                 Competitor.Inventory.AddComponent(consumable as IComponent);
             }
+            else if (consumable is NationalExp)
+            {
+                NationalExp exp = consumable as NationalExp;
+                Experience.AddExp(exp.Nationality, exp.Exp);
+            }
             else if (consumable is Currency)
             {
                 Wallet.Add(consumable as Currency);
@@ -76,7 +81,7 @@ public class JunkyardUser : User, ILootCrateConsumer, IExperienceModel
             ILoot loot = crateContents[i];
             IConsumable consumable = null;
 
-            if (loot is Currency || loot is IComponent)
+            if (loot is Currency || loot is IComponent || loot is NationalExp)
             {
                 consumable = loot as IConsumable;
             }

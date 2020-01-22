@@ -23,6 +23,7 @@ MonoBehaviour:
   _seasonDelaySeconds: 30
   _grade:
     _value: 0
+  _exp: 100
   _rewards:
   - Rewards:
     - _id: JunkyardCrateData

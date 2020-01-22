@@ -10,16 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 825de70cff1c444c81def968b7bd8dd0, type: 3}
-  m_Name: NationalityBreakpoints
+  m_Name: TouenamentExpMultipliers
   m_EditorClassIdentifier: 
   breakpoints:
-  - 30
-  - 100
-  - 500
-  - 1000
-  - 1800
-  - 2000
-  - 3000
-  - 4000
-  - 5000
-  - 6000
+  - 1
+  - 0.9
+  - 0.75
+  - 0.4
+  - 0.1

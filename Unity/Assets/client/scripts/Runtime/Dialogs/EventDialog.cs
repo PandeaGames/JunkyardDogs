@@ -1,5 +1,7 @@
 ﻿using System;
 using JunkyardDogs;
+using JunkyardDogs.Data;
+using JunkyardDogs.Data.Balance;
 using JunkyardDogs.scripts.Runtime.Dialogs;
 using PandeaGames;
 using UnityEngine;
@@ -82,6 +84,19 @@ public class EventDialog : Dialog<EventDialogViewModel>
     private void OnCollectRewards()
     {
         Tournament tournament = _viewModel.TournamentReference.Data;
+        TournamentMetaState meta = null;
+        
+        _user.Tournaments.TryGetTournamentMeta(tournament, out meta);
+
+        if (meta != null)
+        {
+            BreakpointData expMultipliers = Game.Instance.GetStaticDataPovider<GameStaticDataProvider>()
+                .GameDataStaticData.TournamentExpMultiplierBreakpoints;
+            double multiplier = expMultipliers.GetBreakpointByIndex(meta.Completions);
+            NationalExp exp = new NationalExp(tournament.nation, (int) (tournament.Exp * multiplier));
+            _userViewModel.Consume(new IConsumable[]{exp});
+        }
+           
         LootDataModel LootDataModel = new LootDataModel(_user, 0);
         _userViewModel.Consume(tournament.LootCrateRewards.Data.GetLoot(LootDataModel), 0);
         _user.Tournaments.CompleteTournament(tournament.Guid);
