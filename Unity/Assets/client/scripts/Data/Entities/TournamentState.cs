@@ -51,6 +51,11 @@ public class TournamentState
     {
     }
 
+    public override int GetHashCode()
+    {
+        return _lastMatch.GetHashCode() + _uid.GetHashCode();
+    }
+
     public bool FillWithParticipants(List<Participant> participants)
     {
         RoundState firstRound = GetFirstRound();

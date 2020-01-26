@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: AkaminaMiniMachineGun
   m_EditorClassIdentifier: 
   _specification:
-    _id: MiniMachineGun
+    _id: FrickinLaser
   _manufacturer:
-    _id: Akamina
+    _id: 
   Material:
     _id: Steel

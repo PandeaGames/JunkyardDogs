@@ -23,7 +23,7 @@ MonoBehaviour:
     type: 3}
   LaserPrefab: {fileID: 3743024725454791487, guid: 4b01c420464d61c44a6f8ad62ed7a04e,
     type: 3}
-  MachineGunPrefab: {fileID: 3928297885742547524, guid: 122e1917a97611049bbfc730d248aaa5,
+  MachineGunPrefab: {fileID: 1094425446584478808, guid: 696bbbd0891aa3d47b164833fbc9d627,
     type: 3}
   ExplosionPrefab: {fileID: 1828176872806910, guid: 64891a0eb28db934898420d80ca07cb3,
     type: 3}

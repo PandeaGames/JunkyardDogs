@@ -24,6 +24,13 @@ public class TournamentMetaState
         set => _completions = value;
     }
 
+    public override int GetHashCode()
+    {
+        int hashCode = _lastCompleted.GetHashCode();
+        hashCode += _tournamentState == null ? 0:_tournamentState.GetHashCode();
+        return hashCode;
+    }
+
     public void CompleteTournament()
     {
         TournamentState = null;

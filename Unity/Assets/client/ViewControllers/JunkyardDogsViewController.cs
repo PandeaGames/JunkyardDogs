@@ -138,9 +138,12 @@ namespace JunkyardDogs
         {
             var vm = Game.Instance.GetViewModel<WorldMapViewModel>(0);
 
+            Game.Instance.GetViewModel<JunkyardUserViewModel>(0).UserData.Tournaments
+                .TryGetTournamentMeta(status.Tournament.Uid, out TournamentMetaState metaState);
             TournamentViewModel tournamentViewModel = Game.Instance.GetViewModel<TournamentViewModel>(0);
             tournamentViewModel.User = Game.Instance.GetViewModel<JunkyardUserViewModel>(0).UserData;
-        
+
+            tournamentViewModel.Seed = metaState.GetHashCode();
             tournamentViewModel.Tournament = status.Tournament.TournamentReference;
             _fsm.SetState(JunkyardDogsStates.Tournament);
         }
