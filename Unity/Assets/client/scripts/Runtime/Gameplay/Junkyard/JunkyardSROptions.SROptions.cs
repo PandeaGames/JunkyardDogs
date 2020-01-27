@@ -3,9 +3,8 @@ using PandeaGames;
 
 public partial class SROptions
 {
-    
-    public const string JUNKYARD_RENDER_CATEGORY = "JUNKYARD RENDERING";
-    public const string JUNKYARD_DATA_CATEGORY = "JUNKYARD DATA";
+    private const string JUNKYARD_RENDER_CATEGORY = "JUNKYARD RENDERING";
+    private const string JUNKYARD_DATA_CATEGORY = "JUNKYARD DATA";
     
     // Default Value for property
     private float _hideJunkyardMeshs = 0.5f;
@@ -46,7 +45,7 @@ public partial class SROptions
     }
     
     // Options will be grouped by category
-    [Category(JUNKYARD_RENDER_CATEGORY)] 
+    [Category(JUNKYARD_DATA_CATEGORY)] 
     public void DeleteCurrentJunkyardData()
     {
         Game.Instance.GetService<JunkyardService>().DeleteJunkyardData(

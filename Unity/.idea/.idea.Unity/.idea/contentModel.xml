@@ -56,9 +56,6 @@
             </e>
           </e>
           <e p="Data" t="Include">
-            <e p="Editor" t="Include">
-              <e p="ViewUserDataWindow.cs" t="Include" />
-            </e>
             <e p="Junkyard" t="Include">
               <e p="VertexColor.shader" t="Include" />
             </e>
@@ -237,6 +234,7 @@
             <e p="JunkyardAssetPostProcessorConfig.cs" t="Include" />
             <e p="JunkyardTestingEditor.cs" t="Include" />
             <e p="MyBuildScript.cs" t="Include" />
+            <e p="ViewUserDataWindow.cs" t="Include" />
           </e>
           <e p="Factories" t="Include">
             <e p="AbstractConfigTable.cs" t="Include" />
@@ -575,6 +573,19 @@
               <e p="BehaviorAction.cs" t="Include" />
               <e p="Movement.cs" t="Include" />
             </e>
+            <e p="Debug" t="Include">
+              <e p="AssemblyUtils.cs" t="Include" />
+              <e p="BodyStateExporter.cs" t="Include" />
+              <e p="DecisionAndWeightExport.cs" t="Include" />
+              <e p="DecisionLogicGroupExporter.cs" t="Include" />
+              <e p="DecisionsAndPriorityExport.cs" t="Include" />
+              <e p="ISimulationTestExporter.cs" t="Include" />
+              <e p="SimulationDebug.SROptions.cs" t="Include" />
+              <e p="SImulationDebugUtils.cs" t="Include" />
+              <e p="SimulationTestExporterUtils.cs" t="Include" />
+              <e p="TypeExtensionMehods.cs" t="Include" />
+              <e p="WeightedDecisionsTestExporter.cs" t="Include" />
+            </e>
             <e p="DecisionMakers" t="Include">
               <e p="AbstractDecisionMove.cs" t="Include" />
               <e p="DecisionEvents.cs" t="Include" />
@@ -718,18 +729,9 @@
         <e p="DirectiveSlotUIView.cs" t="Include" />
         <e p="EarthNavigation.cs" t="Include" />
         <e p="Editor" t="Include">
-          <e p="AssemblyUtils.cs" t="Include" />
-          <e p="BodyStateExporter.cs" t="Include" />
-          <e p="DecisionAndWeightExport.cs" t="Include" />
-          <e p="DecisionLogicGroupExporter.cs" t="Include" />
-          <e p="DecisionsAndPriorityExport.cs" t="Include" />
-          <e p="ISimulationTestExporter.cs" t="Include" />
           <e p="PostProcessor.cs" t="Include" />
           <e p="PostProcessorConfig.cs" t="Include" />
           <e p="SimulationTesterWindow.cs" t="Include" />
-          <e p="SimulationTestExporterUtils.cs" t="Include" />
-          <e p="TypeExtensionMehods.cs" t="Include" />
-          <e p="WeightedDecisionsTestExporter.cs" t="Include" />
         </e>
         <e p="Engine Particle" t="Include">
           <e p="Script" t="Include">
