@@ -322,5 +322,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _testData:
-    _id: TestGermany_VS_Japan
-  Seed: 3223
+    _id: TestCanada_VS_Japan
+  Seed: 900

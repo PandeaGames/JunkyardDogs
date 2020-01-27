@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: AkariBot01
   m_EditorClassIdentifier: 
   _manufacturer:
-    _id: 
+    _id: Kinzoku Inu
   _chassis:
     _id: KinzokuInuSpiralChassis
   _motherboard:

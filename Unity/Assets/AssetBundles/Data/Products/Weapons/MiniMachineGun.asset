@@ -17,9 +17,9 @@ MonoBehaviour:
   _rarity:
     _value: 0
   _volume: 1
-  _chargeTime: 0.1
+  _chargeTime: 0.01
   _cooldown: 0.1
-  _power: 20
+  _power: 10
   _armourPiercing: 0
   _stun: 0
   _knockback: 0
@@ -43,5 +43,5 @@ MonoBehaviour:
   _rarity:
     _value: 0
   _volume: 0
-  _damage: 20
+  _damage: 10
   _effects: []

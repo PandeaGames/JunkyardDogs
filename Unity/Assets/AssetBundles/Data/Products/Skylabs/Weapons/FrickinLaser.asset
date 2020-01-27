@@ -19,7 +19,7 @@ MonoBehaviour:
   _volume: 1
   _chargeTime: 1
   _cooldown: 1
-  _power: 60
+  _power: 30
   _armourPiercing: 0
   _stun: 0
   _knockback: 0

@@ -17,7 +17,7 @@ MonoBehaviour:
   _rarity:
     _value: 0
   _volume: 1
-  _chargeTime: 1
+  _chargeTime: 0.5
   _cooldown: 1
   _power: 1
   _armourPiercing: 0

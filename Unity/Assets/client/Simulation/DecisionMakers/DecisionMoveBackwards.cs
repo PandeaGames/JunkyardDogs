@@ -5,20 +5,20 @@ using UnityEngine.Scripting;
 
 namespace JunkyardDogs.Simulation
 {
-    public class DecisionMoveBackwardsLogic : Logic
+    public class DecisionMoveBackwardsLogic : AbstractDecisionMove.DecisionMoveLogic
     {
         public int cautiousness;
         public int targetDistance;
         public int distance;
         public int numberOfPreviousConcurrentBackwardDecisions;
-        public int maxNumberOfTicksForMovement;
+        public int maxNumberOfTicksForBackwardsMovement;
         public bool shouldContinueMovingBackwards;
     }
     
     [Preserve]
     public class DecisionMoveBackwards : AbstractDecisionMove
     {
-        private const int maxNumberOfTicksForMovement = 20;
+        private const int maxNumberOfTicksForBackwardsMovement = 10;
         
         public override Logic GetDecisionWeight(SimBot simBot, SimulatedEngagement engagement)
         {
@@ -28,16 +28,24 @@ namespace JunkyardDogs.Simulation
             logic.cautiousness = simBot.bot.GetCPUAttribute(CPU.CPUAttribute.Cautiousness);
             logic.distance = (int) Vector2.Distance(simBot.body.position, simBot.opponent.body.position);
             logic.targetDistance = logic.cautiousness;
-            logic.maxNumberOfTicksForMovement = maxNumberOfTicksForMovement;
+            logic.maxNumberOfTicksForBackwardsMovement = maxNumberOfTicksForBackwardsMovement;
+            logic.maxNumberOfTicksForMovement = MAX_NUMBER_OF_MOVEMENT_TICKS;
+            logic.numberOfPreviousConcurrentMovementDecisions = simBot.ConcurrentDecisionsOfType<AbstractDecisionMove>(logic.plane);
+            logic.shouldStopMoving =
+                logic.numberOfPreviousConcurrentMovementDecisions > logic.maxNumberOfTicksForMovement;
             
             logic.numberOfPreviousConcurrentBackwardDecisions =
                 simBot.ConcurrentDecisionsOfType<DecisionMoveBackwards>(logic.plane);
 
             logic.shouldContinueMovingBackwards = logic.numberOfPreviousConcurrentBackwardDecisions > 0 &&
                                                   logic.numberOfPreviousConcurrentBackwardDecisions <
-                                                  logic.maxNumberOfTicksForMovement;
-
-            if (logic.shouldContinueMovingBackwards)
+                                                  logic.maxNumberOfTicksForBackwardsMovement 
+                                                  && !logic.shouldStopMoving;
+            if (logic.shouldStopMoving)
+            {
+                logic.priority = DecisionPriority.None;
+            }
+           else  if (logic.shouldContinueMovingBackwards)
             {
                 logic.priority = DecisionPriority.Movement;
             }

@@ -4,6 +4,6 @@ namespace JunkyardDogs.Simulation
     {
         public DecisionPriority priority = DecisionPriority.Normal;
         public DecisionPlane plane = DecisionPlane.Base;
-        public int weight = 100;
+        public int weight = 1;
     }
 }
