@@ -168,15 +168,24 @@ namespace PandeaGames.Data.WeakReferences
 
                 TaskProvider.Instance.RunTask(request, () =>
                 {
-                
                     _cache = request.GetAsset<UnityEngine.Object>();
-                    IsLoaded = true;
-                
+
+                    if (_cache is ILoadableObject)
+                    {
+                        (_cache as ILoadableObject).LoadAsync(() =>
+                        {
+                            IsLoaded = true;
+                            onComplete?.Invoke(this);
+                        },  e => onFail(new WeakReferenceException(this, e)));
+                    }
+                    else
+                    {
+                        IsLoaded = true;
+                        onComplete?.Invoke(this);
+                    }
+                    
                     if(_cache is IWeakReferenceObject)
                         (_cache as IWeakReferenceObject).SetReferences(Path, GUID);
-
-                    if (onComplete != null)
-                        onComplete(this);
                 });
             }
             catch (Exception e)

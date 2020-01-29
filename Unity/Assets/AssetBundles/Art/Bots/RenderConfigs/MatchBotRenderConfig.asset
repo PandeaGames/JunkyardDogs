@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: MatchBotRenderConfig
   m_EditorClassIdentifier: 
   _componentFactory: {fileID: 11400000, guid: c1cb9df1efef84146801652c461013a4, type: 2}
+  _componentArtConfig: {fileID: 11400000, guid: 11e27a22b4d692e4a84da65d392b8b7e,
+    type: 2}
   _avatarFactory: {fileID: 11400000, guid: 7a900f74dba817a44b276e8d80e9b054, type: 2}
   _materials: {fileID: 11400000, guid: 41d67f47d3fe5d0459c380d587c8f6d4, type: 2}
   ProjectilePrefab: {fileID: 3614337228875290215, guid: b76ad3e4a9e6fc64e9fb4b149e050897,

@@ -90,7 +90,9 @@
             <e p="AssetBundleEnum.cs" t="Include" />
             <e p="Balance" t="Include">
               <e p="BalanceData" t="Include">
+                <e p="AbstractConfigListBalanceData.cs" t="Include" />
                 <e p="AgentBlueprintBalanceData.cs" t="Include" />
+                <e p="BalanceDataBase.cs" t="Include" />
                 <e p="BalanceDataUtils.cs" t="Include" />
                 <e p="BlueprintBalanceData.cs" t="Include" />
                 <e p="BlueprintLootBalanceData.cs" t="Include" />
@@ -98,6 +100,7 @@
                 <e p="BreakpointBalanceData.cs" t="Include" />
                 <e p="ChassisBlueprintBalanceData.cs" t="Include" />
                 <e p="CompetitorBlueprintBalanceData.cs" t="Include" />
+                <e p="ComponentArtConfig.cs" t="Include" />
                 <e p="CPUBalanceData.cs" t="Include" />
                 <e p="CPUBlueprintData.cs" t="Include" />
                 <e p="CurrencyBalanceData.cs" t="Include" />
@@ -154,6 +157,8 @@
             <e p="CurrencyDataProvider.cs" t="Include" />
             <e p="CurrencyDataSource.cs" t="Include" />
             <e p="DataProviders" t="Include">
+              <e p="ComponentStaticData.cs" t="Include" />
+              <e p="ComponentStaticDataProvider.cs" t="Include" />
               <e p="NaitonalityDataProvider.SynchronousStaticDataProvider.cs" t="Include" />
               <e p="NationalityStaticData.SynchronousStaticData.cs" t="Include" />
             </e>

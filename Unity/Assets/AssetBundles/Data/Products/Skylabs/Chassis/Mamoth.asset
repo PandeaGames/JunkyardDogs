@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0166818c59ad1eb458b5a3d9663b5ea6, type: 3}
   m_Name: Mamoth
   m_EditorClassIdentifier: 
+  _grade:
+    _value: 0
+  _rarity:
+    _value: 0
   _volume: 10
   _maxSpeedPerSecond: 1
   _baseHealthMultiplier: 2

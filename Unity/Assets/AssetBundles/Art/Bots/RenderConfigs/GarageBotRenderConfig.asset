@@ -13,7 +13,19 @@ MonoBehaviour:
   m_Name: GarageBotRenderConfig
   m_EditorClassIdentifier: 
   _componentFactory: {fileID: 11400000, guid: c1cb9df1efef84146801652c461013a4, type: 2}
+  _componentArtConfig: {fileID: 11400000, guid: 11e27a22b4d692e4a84da65d392b8b7e,
+    type: 2}
   _avatarFactory: {fileID: 11400000, guid: 7a900f74dba817a44b276e8d80e9b054, type: 2}
   _materials: {fileID: 11400000, guid: 41d67f47d3fe5d0459c380d587c8f6d4, type: 2}
+  ProjectilePrefab: {fileID: 0}
+  PulsePrefab: {fileID: 0}
+  MeleePrefab: {fileID: 0}
+  LaserPrefab: {fileID: 0}
+  MachineGunPrefab: {fileID: 0}
+  ExplosionPrefab: {fileID: 0}
+  SmallExplosionPrefab: {fileID: 0}
+  SmallPlasmaExplosionPrefab: {fileID: 0}
+  CameraDronePrefab: {fileID: 0}
   _missingComponentMaterial: {fileID: 2100000, guid: febec1fad643ab74ebb3384483a8540d,
     type: 2}
+  _botPrefabFactory: {fileID: 0}

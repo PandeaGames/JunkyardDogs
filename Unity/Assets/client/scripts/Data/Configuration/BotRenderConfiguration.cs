@@ -7,6 +7,9 @@ public class BotRenderConfiguration : ScriptableObject
     private PrefabFactory _componentFactory;
     
     [SerializeField] 
+    private ComponentArtConfig _componentArtConfig;
+    
+    [SerializeField] 
     private ScriptableObjectFactory _avatarFactory;
     
     [SerializeField] 
@@ -48,6 +51,11 @@ public class BotRenderConfiguration : ScriptableObject
     public PrefabFactory ComponentFactory
     {
         get { return _componentFactory; }
+    }
+    
+    public ComponentArtConfig ComponentArtConfigData
+    {
+        get { return _componentArtConfig; }
     }
     
     public ScriptableObjectFactory AvatarFactory

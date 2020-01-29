@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52734e31485c4325a124ac902931087f, type: 3}
+  m_Name: ComponentArtConfig
+  m_EditorClassIdentifier: 
+  TableName: Specifications
+  AllowImport: 1
+  AllowDataCreationOnImport: 1
+  _defaultConfig:
+    name: 
+    _prefab:
+      _guid: cd1aa582cb5323e49b4aaad7a97b861a
+      _path: Assets/AssetBundles/Art/Components/Default3DComponent.prefab
+  _configs:
+  - name: Plate_Thickness04
+    _prefab:
+      _guid: cd1aa582cb5323e49b4aaad7a97b861a
+      _path: Assets/AssetBundles/Art/Components/Default3DComponent.prefab
+  - name: Plate_Thickness03
+    _prefab:
+      _guid: cd1aa582cb5323e49b4aaad7a97b861a
+      _path: Assets/AssetBundles/Art/Components/Default3DComponent.prefab
+  - name: Plate_Thickness02
+    _prefab:
+      _guid: cd1aa582cb5323e49b4aaad7a97b861a
+      _path: Assets/AssetBundles/Art/Components/Default3DComponent.prefab
+  - name: Plate_Thickness05
+    _prefab:
+      _guid: cd1aa582cb5323e49b4aaad7a97b861a
+      _path: Assets/AssetBundles/Art/Components/Default3DComponent.prefab
+  - name: Plate_Thickness01
+    _prefab:
+      _guid: cd1aa582cb5323e49b4aaad7a97b861a
+      _path: Assets/AssetBundles/Art/Components/Default3DComponent.prefab
+  - name: Plate_Thickness06
+    _prefab:
+      _guid: cd1aa582cb5323e49b4aaad7a97b861a
+      _path: Assets/AssetBundles/Art/Components/Default3DComponent.prefab
+  - name: SpiralPower
+    _prefab:
+      _guid: 7a6270134533fcf4f8915f98756f220f
+      _path: Assets/AssetBundles/Art/Components/Weapons/Drill.prefab
+  - name: FrickinLaser
+    _prefab:
+      _guid: b5742c35cad19b945bc129c719875b2d
+      _path: Assets/AssetBundles/Art/Components/Weapons/Sci-Fi Rifle_fbx.fbx
+  - name: Deagle
+    _prefab:
+      _guid: b5742c35cad19b945bc129c719875b2d
+      _path: Assets/AssetBundles/Art/Components/Weapons/Sci-Fi Rifle_fbx.fbx
+  - name: Mamoth
+    _prefab:
+      _guid: 75f1b1461b5f407489ab7f31f62f8631
+      _path: Assets/AssetBundles/Art/Bots/Models/Mammoth.fbx
+  - name: Himmel-i9
+    _prefab:
+      _guid: cd1aa582cb5323e49b4aaad7a97b861a
+      _path: Assets/AssetBundles/Art/Components/Default3DComponent.prefab
+  - name: TestCPU
+    _prefab:
+      _guid: cd1aa582cb5323e49b4aaad7a97b861a
+      _path: Assets/AssetBundles/Art/Components/Default3DComponent.prefab
+  - name: TestCreatedCPU
+    _prefab:
+      _guid: cd1aa582cb5323e49b4aaad7a97b861a
+      _path: Assets/AssetBundles/Art/Components/Default3DComponent.prefab
+  - name: CautiousCPU
+    _prefab:
+      _guid: cd1aa582cb5323e49b4aaad7a97b861a
+      _path: Assets/AssetBundles/Art/Components/Default3DComponent.prefab
+  - name: EvassiveCPU
+    _prefab:
+      _guid: cd1aa582cb5323e49b4aaad7a97b861a
+      _path: Assets/AssetBundles/Art/Components/Default3DComponent.prefab
+  - name: AggressiveCPU
+    _prefab:
+      _guid: cd1aa582cb5323e49b4aaad7a97b861a
+      _path: Assets/AssetBundles/Art/Components/Default3DComponent.prefab
+  - name: DodgeProjectiles
+    _prefab:
+      _guid: cd1aa582cb5323e49b4aaad7a97b861a
+      _path: Assets/AssetBundles/Art/Components/Default3DComponent.prefab
+  - name: MyTestPulseWeapon
+    _prefab:
+      _guid: 4d4ceac7b8f3f3e47b7ba4d654832f40
+      _path: Assets/AssetBundles/Art/Components/Weapons/Volta_gun_prefab.prefab
+  - name: FastPulseWeapon
+    _prefab:
+      _guid: 4d4ceac7b8f3f3e47b7ba4d654832f40
+      _path: Assets/AssetBundles/Art/Components/Weapons/Volta_gun_prefab.prefab

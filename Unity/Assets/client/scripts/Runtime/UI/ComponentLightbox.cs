@@ -44,7 +44,8 @@ public class ComponentLightbox : MonoBehaviour
     {
         Texture2D texture = null;
 
-        _componentObject = _prefabFactory.InstantiateAsset(component.Specification, transform, false);
+        GameObject prefab = SynchronousStaticDataProvider.Instance.GetData(component).Prefab;
+        _componentObject = Instantiate(prefab, transform, false);
         _lightboxCamera.GetTexture(tex =>
         {
             Destroy(_componentObject);
