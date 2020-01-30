@@ -10,7 +10,7 @@ namespace JunkyardDogs.Specifications
         
         public void ApplyBalance(DirectiveBalanceObject balance)
         {
-            name = balance.name;
+            base.ApplyBalance(balance);
             SimulatedDirective = BalanceDataUtilites.DecodeEnumSingle<Simulation.Directive>(balance.directive);
         }
 

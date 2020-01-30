@@ -57,16 +57,25 @@ public class BotRenderer : MonoBehaviour
                 GameObject obj = null;
 
                 Transform parent = transform.GetChild(armamentContainer.transform.GetSiblingIndex()).transform;
-                
+                GameObject prefab;
                 if(weapon == null)
                 {
                     renderer.enabled = renderConfiguration.MissingComponentMaterial != null;
-                    Instantiate(renderConfiguration.ComponentArtConfigData.GetConfig(processor.Specification.ID).Prefab, parent, worldPositionStays:false);
+                    prefab = renderConfiguration.ComponentArtConfigData.GetConfig(processor.Specification.ID).Prefab;
                 }
                 else
                 {
                     renderer.enabled = false;
-                    Instantiate(renderConfiguration.ComponentArtConfigData.GetConfig(weapon.Specification.ID).Prefab, parent, worldPositionStays:false);
+                    prefab = renderConfiguration.ComponentArtConfigData.GetConfig(weapon.Specification.ID).Prefab;
+                }
+
+                if (prefab != null)
+                {
+                    Instantiate(prefab, parent, worldPositionStays:false);
+                }
+                else
+                {
+                    Debug.LogWarning($"Unable to render armament {location}");
                 }
             }
             else
