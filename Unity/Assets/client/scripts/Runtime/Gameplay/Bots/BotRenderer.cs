@@ -20,16 +20,16 @@ public class BotRenderer : MonoBehaviour
         RenderPlates(Chassis.PlateLocation.Right, chassis, botAvatar, renderConfiguration);
         RenderPlates(Chassis.PlateLocation.Top, chassis, botAvatar, renderConfiguration);
 
-        RenderArmament(bot, Chassis.ArmamentLocation.Front, renderConfiguration.ComponentFactory, chassis, botAvatar, renderConfiguration);
-        RenderArmament(bot, Chassis.ArmamentLocation.Left, renderConfiguration.ComponentFactory, chassis, botAvatar, renderConfiguration);
-        RenderArmament(bot, Chassis.ArmamentLocation.Right, renderConfiguration.ComponentFactory, chassis, botAvatar, renderConfiguration);
-        RenderArmament(bot, Chassis.ArmamentLocation.Top, renderConfiguration.ComponentFactory, chassis, botAvatar, renderConfiguration);
+        RenderArmament(bot, Chassis.ArmamentLocation.Front, chassis, botAvatar, renderConfiguration);
+        RenderArmament(bot, Chassis.ArmamentLocation.Left, chassis, botAvatar, renderConfiguration);
+        RenderArmament(bot, Chassis.ArmamentLocation.Right, chassis, botAvatar, renderConfiguration);
+        RenderArmament(bot, Chassis.ArmamentLocation.Top, chassis, botAvatar, renderConfiguration);
 
         Renderer renderer = transform.GetChild(botAvatar.Frame.transform.GetSiblingIndex()).GetComponent<Renderer>();
         renderer.material = renderConfiguration.Materials.GetAsset(bot.Chassis.Material.Data);
     }
 
-    private void RenderArmament(Bot bot, Chassis.ArmamentLocation location, PrefabFactory componentFactory, Chassis chasiss, BotAvatar botAvatar, BotRenderConfiguration renderConfiguration)
+    private void RenderArmament(Bot bot, Chassis.ArmamentLocation location, Chassis chasiss, BotAvatar botAvatar, BotRenderConfiguration renderConfiguration)
     {
         GameObject avatarArmamentContainer = botAvatar.GetArmamentContainer(location);
         GameObject armamentContainer = null;
@@ -56,18 +56,27 @@ public class BotRenderer : MonoBehaviour
                 var weapon = processor.Weapon;
                 GameObject obj = null;
 
+                Transform parent = transform.GetChild(armamentContainer.transform.GetSiblingIndex()).transform;
+                GameObject prefab;
                 if(weapon == null)
                 {
                     renderer.enabled = renderConfiguration.MissingComponentMaterial != null;
-                    obj = componentFactory.InstantiateAsset(processor.Specification);
+                    prefab = renderConfiguration.ComponentArtConfigData.GetConfig(processor.Specification.ID).Prefab;
                 }
                 else
                 {
                     renderer.enabled = false;
-                    obj = componentFactory.InstantiateAsset(weapon.Specification);
+                    prefab = renderConfiguration.ComponentArtConfigData.GetConfig(weapon.Specification.ID).Prefab;
                 }
 
-                obj.transform.SetParent(transform.GetChild(armamentContainer.transform.GetSiblingIndex()), false);
+                if (prefab != null)
+                {
+                    Instantiate(prefab, parent, worldPositionStays:false);
+                }
+                else
+                {
+                    Debug.LogWarning($"Unable to render armament {location}");
+                }
             }
             else
             {

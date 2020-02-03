@@ -9,8 +9,6 @@ using UnityEngine;
 public class MeleeWeaponBalanceObject:WeaponBalanceObject
 {
     public int range;
-    public int damage;
-    public int armourPiercing;
     public float radius;    
 }
 

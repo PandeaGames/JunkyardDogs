@@ -23,6 +23,23 @@ public class JunkyardService : AbstractService<JunkyardService>
         return string.Format("{0}/{1}.data", SAVE_FOLDER_PATH, dataName);
     }
 
+    public bool DeleteJunkyardData(JunkyardData junkyardData)
+    {
+        string filepath = GetFilePath(junkyardData.name);
+        if (File.Exists(filepath))
+        {
+            File.Delete(filepath);
+            Debug.Log("[JunkyardService.DeleteJunkyardData] Deleted JunkyardData at path "+ filepath);
+        }
+        else
+        {
+            Debug.Log("[JunkyardService.DeleteJunkyardData] Attempted to delete JunkyardData at path "+ filepath);
+            return false;
+        }
+
+        return true;
+    }
+
     public Junkyard GetJunkyard(JunkyardData junkyardData)
     {
         SerializedJunkyard serializedJunkyard = null;

@@ -1,6 +1,7 @@
 ﻿using System;
 using JunkyardDogs.Data;
 using PandeaGames.ViewModels;
+using UnityEngine;
 
 namespace JunkyardDogs
 {
@@ -14,7 +15,7 @@ namespace JunkyardDogs
             Hidden
         }
         
-        public event Action<ILoot[]> OnTakeJunk;
+        public event Action<ILoot[], Vector3> OnTakeJunk;
         
         public JunkyardUser User;
         private Junkyard _junkyard;
@@ -60,7 +61,7 @@ namespace JunkyardDogs
                 throw new IndexOutOfRangeException("Crate did not have any contents");
             }
 
-            OnTakeJunk?.Invoke(loot);
+            OnTakeJunk?.Invoke(loot, Vector3.zero);
         }
 
         public void SetJunkyard(Junkyard junkyard, JunkyardConfig config, JunkyardUser User)
@@ -78,16 +79,21 @@ namespace JunkyardDogs
             _height = junkyard.Height;
         }
 
-        public void ClearSpace(int x, int y)
+        public void ClearSpace(int x, int y, Vector3 worldSpace)
         {
-            ClearSpace(new INTVector(x, y));            
+            ClearSpace(new INTVector(x, y), worldSpace);            
         }
 
-        public void ClearSpace(INTVector vector)
+        public void ClearSpace(INTVector vector, Vector3 worldSpace)
         {
-            LootDataModel lootDataModel = new LootDataModel(User, UnityEngine.Time.frameCount);
+            LootDataModel lootDataModel = new LootDataModel(User, Time.frameCount);
             ILoot[] loot = _junkyard.Rewards[Math.Min(_junkyard.Rewards.Length - 1, Thresholds[vector])].crate.Data.GetLoot(lootDataModel);
-            OnTakeJunk?.Invoke(loot);
+
+            if (SpecialChanceDataModel[vector])
+            {
+                OnTakeJunk?.Invoke(loot, worldSpace);
+            }
+            
             _junkyard.SetCleared(vector.X, vector.Y, true);
             Fog.UpdateData(vector);
         }

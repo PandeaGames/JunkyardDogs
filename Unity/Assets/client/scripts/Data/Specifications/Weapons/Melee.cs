@@ -49,7 +49,6 @@ namespace JunkyardDogs.Specifications
         public void ApplyBalance(MeleeWeaponBalanceObject balance)
         {
             base.ApplyBalance(balance);
-            name = balance.name;
             _range = balance.range;
             _meleeWeapon.Damage = balance.damage;
             _meleeWeapon.Range = _range;

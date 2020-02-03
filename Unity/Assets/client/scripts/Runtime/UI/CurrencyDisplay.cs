@@ -21,6 +21,12 @@ public class CurrencyDisplay : MonoBehaviour
         _currency = currency;
         _currencyImage.sprite = SynchronousStaticDataProvider.Instance.GetData(_imageType, _currency.Key);
     }
+    
+    public void DisplayCurrency(Currency currency)
+    {
+        _quantityText.text = currency.Quantity.ToString();
+        _currencyImage.sprite = SynchronousStaticDataProvider.Instance.GetData(_imageType, currency.CurrencyType);
+    }
 
     private void Update()
     {

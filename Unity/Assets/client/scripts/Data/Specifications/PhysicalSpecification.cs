@@ -12,6 +12,7 @@ namespace JunkyardDogs.Specifications
 
         public void ApplyBalance(PhysicalSpecificationBalanceObject balance)
         {
+            base.ApplyBalance(balance);
             this.name = balance.name;
             this._volume = balance.volume;
         }

@@ -117,6 +117,7 @@ namespace PandeaGames.Views.ViewControllers
         protected virtual void OnViewLoaded()
         {
             _view.Show();
+            OnAfterShow();
         }
         
         protected virtual void  OnViewLoadError(LoadException error)

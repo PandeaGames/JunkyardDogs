@@ -12,4 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 825de70cff1c444c81def968b7bd8dd0, type: 3}
   m_Name: NationalityBreakpoints
   m_EditorClassIdentifier: 
-  breakpoints: 1e00000064000000f4010000e803000008070000d0070000b80b0000a00f00008813000070170000
+  breakpoints:
+  - 30
+  - 100
+  - 500
+  - 1000
+  - 1800
+  - 2000
+  - 3000
+  - 4000
+  - 5000
+  - 6000

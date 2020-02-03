@@ -14,6 +14,5 @@ public class MapScreen : ScreenView
     void Start()
     {
         _worldMapViewModel = Game.Instance.GetViewModel<WorldMapViewModel>(0);
-        _junkyardButton.onClick.AddListener(_worldMapViewModel.TapJunkyard);
     }
 }

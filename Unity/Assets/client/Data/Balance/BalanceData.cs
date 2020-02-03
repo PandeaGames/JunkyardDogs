@@ -5,7 +5,7 @@ using UnityEngine;
 namespace JunkyardDogs.Data.Balance
 {
     [CreateAssetMenu(menuName = MENU_NAME)]
-    public abstract class BalanceData: ScriptableObject
+    public abstract class BalanceData: BalanceDataBase
     {
         private const string MENU_NAME =  BalanceDataUtilites.BALANCE_MENU_FOLDER + "Balance Data";
         
@@ -13,6 +13,15 @@ namespace JunkyardDogs.Data.Balance
         public const char ListDelimiterChar = ',';
         public const char DataDelimiterChar = ':';
         public const string DataDelimiter = ":";
+        
+        protected TBalanceObject[] Parse<TBalanceObject>(string json)
+     {
+         TBalanceObject[] data = JsonHelper.ArrayFromJson<TBalanceObject>(json);
+         return data;
+     }
+
+        public abstract void ImportData(string json);
+
         public struct RowData
         {
             public string UID;
@@ -24,7 +33,7 @@ namespace JunkyardDogs.Data.Balance
                 this.Json = Json;
             }
         }
-        
+    
         [SerializeField]
         public string TableName;
 
@@ -33,17 +42,9 @@ namespace JunkyardDogs.Data.Balance
         
         [SerializeField]
         public bool AllowDataCreationOnImport;
-
-        protected TBalanceObject[] Parse<TBalanceObject>(string json)
-     {
-         TBalanceObject[] data = JsonHelper.ArrayFromJson<TBalanceObject>(json);
-         return data;
-     }
-
-     public abstract void ImportData(string json);
-     public abstract RowData[] GetData();
-     public abstract string[] GetFieldNames();
-     public abstract string GetUIDFieldName();
-
+    
+        public abstract RowData[] GetData();
+        public abstract string[] GetFieldNames();
+        public abstract string GetUIDFieldName();
     }
 }

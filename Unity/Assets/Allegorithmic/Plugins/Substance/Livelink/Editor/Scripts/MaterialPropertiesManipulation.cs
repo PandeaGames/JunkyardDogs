@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Alg
 {
-	public class TexturePostProcessor : AssetPostprocessor
+	public class TexturePostProcessor : JunkyardAssetPostprocessor
 	{
 		void OnPreprocessTexture()
 		{

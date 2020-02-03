@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: DodgeProjectiles
   m_EditorClassIdentifier: 
   _grade:
-    _value: 0
+    _value: 2
   _rarity:
-    _value: 0
+    _value: 1
+  _rarityAndGradeIntrinsicValue: 275
+  _InstrinsicValue: 17
+  _rawSellValue: 8.5
+  _sellValue: 10
   SimulatedDirective: 1

@@ -5,15 +5,9 @@ using UnityEngine;
 namespace JunkyardDogs.Data.Balance
 {
     [Serializable]
-    public struct DirectiveBalanceObject:IStaticDataBalanceObject
+    public class DirectiveBalanceObject:SpecificationBalanceObject
     {
-        public string name;
         public string directive;
-        
-        public string GetDataUID()
-        {
-            return name;
-        }
     }
     
     [CreateAssetMenu(menuName = MENU_NAME)]

@@ -91,7 +91,7 @@ public class JunkyardJunkMonoView : MonoBehaviour
     {
         if (_viewModel.Interactible[x, y])
         {
-            _viewModel.ClearSpace(x, y);
+            _viewModel.ClearSpace(x, y, junkyardJunk.gameObject.transform.position);
             _viewModel.junkyard.X = x;
             _viewModel.junkyard.Y = y;
             JunkyardService.Instance.SaveJunkyard(_viewModel.junkyard);

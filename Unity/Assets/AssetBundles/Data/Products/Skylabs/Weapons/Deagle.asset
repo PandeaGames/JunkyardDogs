@@ -16,12 +16,15 @@ MonoBehaviour:
     _value: 0
   _rarity:
     _value: 0
-  _volume: 1
+  _rarityAndGradeIntrinsicValue: 10
+  _InstrinsicValue: 258
+  _rawSellValue: 129
+  _sellValue: 130
+  _volume: 0
   _chargeTime: 1
   _cooldown: 1
-  _power: 0
+  _power: 30
   _armourPiercing: 5
   _stun: 0
-  _knockback: 0
-  _decisionPlane: 0
+  _knockback: 2
   _shell: {fileID: 11400000, guid: 726b7d5ee05f38046b89bf45d8830794, type: 2}

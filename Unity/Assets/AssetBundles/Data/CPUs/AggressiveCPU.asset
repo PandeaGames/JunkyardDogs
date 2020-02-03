@@ -15,7 +15,11 @@ MonoBehaviour:
   _grade:
     _value: 0
   _rarity:
-    _value: 0
+    _value: 4
+  _rarityAndGradeIntrinsicValue: 130
+  _InstrinsicValue: 130
+  _rawSellValue: 65
+  _sellValue: 70
   _distinctions: []
   Aggressiveness: 8
   Evasiveness: 5

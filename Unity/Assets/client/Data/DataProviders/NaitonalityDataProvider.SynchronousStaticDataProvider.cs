@@ -18,10 +18,7 @@ namespace PandeaGames
 
         public Sprite GetData(NationalityImageTypes type, Nationality nationality)
         {
-            SynchronousStaticDataProvider synchronousStaticDataProvider =
-                Game.Instance.GetStaticDataPovider<SynchronousStaticDataProvider>();
-            SynchronousStaticData data = synchronousStaticDataProvider.staticData;
-            SpriteFactory spriteFactory = data.NaitonalitySpriteFactory;
+            SpriteFactory spriteFactory = staticData.NaitonalitySpriteFactory;
             return spriteFactory.GetAsset(nationality);
         }
     }

@@ -25,6 +25,9 @@ public class DirectiveView : MonoBehaviour
 
     [SerializeField]
     private TMP_Text _directiveName;
+    
+    [SerializeField]
+    private Image _image;
 
     private Button _button;
 

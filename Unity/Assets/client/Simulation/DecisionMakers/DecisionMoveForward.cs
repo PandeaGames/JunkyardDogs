@@ -13,11 +13,11 @@ namespace JunkyardDogs.Simulation
             public int targetDistance;
             public int distance;
             public int numberOfPreviousConcurrentBackwardDecisions;
-            public int maxNumberOfTicksForMovement;
+            public int maxNumberOfTicksForForwardsMovement;
             public bool shouldContinueMoving;
         }
         
-        private const int maxNumberOfTicksForMovement = 20;
+        private const int maxNumberOfTicksForForwardsMovement = 10;
         
         public override Logic GetDecisionWeight(SimBot simBot, SimulatedEngagement engagement)
         {
@@ -27,7 +27,11 @@ namespace JunkyardDogs.Simulation
             logic.aggressiveness = simBot.bot.GetCPUAttribute(CPU.CPUAttribute.Aggressiveness);
             logic.distance = (int) Vector2.Distance(simBot.body.position, simBot.opponent.body.position);
             logic.targetDistance = (10 - logic.aggressiveness) + 1;
-            logic.maxNumberOfTicksForMovement = maxNumberOfTicksForMovement;
+            logic.maxNumberOfTicksForForwardsMovement = maxNumberOfTicksForForwardsMovement;
+            logic.maxNumberOfTicksForMovement = MAX_NUMBER_OF_MOVEMENT_TICKS;
+            logic.numberOfPreviousConcurrentMovementDecisions = simBot.ConcurrentDecisionsOfType<AbstractDecisionMove>(logic.plane);
+            logic.shouldStopMoving =
+                logic.numberOfPreviousConcurrentMovementDecisions > logic.maxNumberOfTicksForMovement;
             
             logic.numberOfPreviousConcurrentBackwardDecisions =
                 simBot.ConcurrentDecisionsOfType<DecisionMoveForward>(logic.plane);
@@ -35,9 +39,13 @@ namespace JunkyardDogs.Simulation
             logic.shouldContinueMoving = logic.numberOfPreviousConcurrentBackwardDecisions > 0 &&
                                                   logic.distance > logic.targetDistance &&
                                                   logic.numberOfPreviousConcurrentBackwardDecisions <
-                                                  logic.maxNumberOfTicksForMovement;
-
-            if (logic.shouldContinueMoving)
+                                                  logic.maxNumberOfTicksForForwardsMovement && 
+                                                  !logic.shouldStopMoving;
+            if (logic.shouldStopMoving)
+            {
+                logic.priority = DecisionPriority.None;
+            }
+            else if (logic.shouldContinueMoving)
             {
                 logic.priority = DecisionPriority.Movement;
             }

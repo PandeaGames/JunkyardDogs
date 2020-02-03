@@ -38,8 +38,8 @@ public class UserExperienceBreakpoints
         Experience exp)
     {
         int currentBreakpointIndex = (int) exp.Level - 1;
-        int currentBreakpoint = totalExpBreakpointData.breakpoints[currentBreakpointIndex];
-        float progress = (float) exp.Value / currentBreakpoint;
+        double currentBreakpoint = totalExpBreakpointData.breakpoints[currentBreakpointIndex];
+        float progress = (float) exp.Value / (float)currentBreakpoint;
         
         TotalExpBreakpoint = new UserExperienceBreakpoint(exp, progress);
         NationalExpBreakpoint = new UserNationalExperienceBreakpoint[exp.NationDictionary.Count];
@@ -49,7 +49,7 @@ public class UserExperienceBreakpoints
             NationDictionaryKvP nationalExp = exp.NationDictionary.GetPair(i);
             currentBreakpointIndex = (int) nationalExp.Value.Level - 1;
             currentBreakpoint = nationalExpBreakpointData.breakpoints[currentBreakpointIndex];
-            progress = ((float) nationalExp.Value.Value / currentBreakpoint) * 100;
+            progress = ((float) nationalExp.Value.Value / (float)currentBreakpoint) * 100;
 
             NationalExpBreakpoint[i] = new UserNationalExperienceBreakpoint(nationalExp.Key, nationalExp.Value, progress);
         }
@@ -62,5 +62,4 @@ public class UserExperienceBreakpoints
         this.TotalExpBreakpoint = TotalExpBreakpoint;
         this.NationalExpBreakpoint = NationalExpBreakpoint;
     }
-    
 }

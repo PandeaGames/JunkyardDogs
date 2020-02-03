@@ -4,10 +4,14 @@ using UnityEngine;
 using TMPro;
 using JunkyardDogs.Simulation.Agent;
 using JunkyardDogs.Simulation.Behavior;
+using UnityEngine.UI;
 
 public class DirectiveDisplay : MonoBehaviour {
     [SerializeField]
     private TMP_Text _text;
+    
+    [SerializeField]
+    private Image _image;
 
     private ActionDirective _actionDirective;
     public ActionDirective ActionDirective

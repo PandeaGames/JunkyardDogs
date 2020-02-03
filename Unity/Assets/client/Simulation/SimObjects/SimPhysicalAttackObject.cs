@@ -14,7 +14,14 @@ namespace JunkyardDogs.Simulation
 
         public double Damage
         {
-            get { return simBot.bot.GetArmament(armementLocation).GetSpec().Power; }
+            get
+            {
+                if (simBot.bot.GetArmament(armementLocation).GetSpec() is Hitscan)
+                {
+                    return simBot.bot.GetArmament(armementLocation).GetSpec().Power * SimulationService.SimuationStep;
+                }
+                return simBot.bot.GetArmament(armementLocation).GetSpec().Power;
+            }
         }
         
         public float Knockback

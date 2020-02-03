@@ -80,14 +80,7 @@ public class SimulationTesterWindow : EditorWindow, ISimulatedEngagementListener
     {
         participantRed01 = new ParticipantStaticDataReference();
         participantBlue02 = new ParticipantStaticDataReference();
-        dataExporters = AssemblyUtils.GetInstances<ISimulationTestExporter>();
-        
-        List<ISimulationTestGroupExporter> groupExporters = AssemblyUtils.GetInstances<ISimulationTestGroupExporter>();
-
-        foreach (ISimulationTestGroupExporter simulationTestGroupExporter in groupExporters)
-        {
-            dataExporters.AddRange(simulationTestGroupExporter.GetDataExporters());
-        }
+        dataExporters = SimulationDebugUtils.GetAllDataExporters();
     }
 
     private void OnGUI()

@@ -12,9 +12,8 @@ namespace JunkyardDogs.Data.Balance
         public override void ImportData(string json)
         {
             #if UNITY_EDITOR
-            // Parse from json to the desired object type.            
             TBalanceObject[] balanceObjects = JsonHelper.ArrayFromJson<TBalanceObject>(json);
-
+            Debug.LogFormat("{0} Data found. Parsing.", balanceObjects.Length);
             for (int i = 0; i < balanceObjects.Length; i++)
             {
                 if (_data.Length > i)

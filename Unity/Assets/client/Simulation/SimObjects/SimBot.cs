@@ -486,6 +486,8 @@ namespace JunkyardDogs.Simulation
         {
             WeightedDecision decisionStartWeaponChargeWeightedDecision = GetLastWeightedDecisionOfType<DecisionStartWeaponCharge>(DecisionPlane.Base);
             bool isLastDecisisonToStartWeaponCharge = IsLastDecisionOfType<DecisionStartWeaponCharge>(DecisionPlane.Base);
+            bool isLastDecisisonToWeaponCharge = IsLastDecisionOfType<DecisionWeaponCharge>(DecisionPlane.Base);
+
             
             if (decisionStartWeaponChargeWeightedDecision != null)
             {
@@ -505,7 +507,7 @@ namespace JunkyardDogs.Simulation
                     double timeOfChargeComplete =
                         timeOfStartCharge + decisionStartWeaponCharge.GetWeapon(this).GetSpec().ChargeTime;
 
-                    bool isCharging = timeOfChargeComplete > engagement.CurrentSeconds;
+                    bool isCharging = isLastDecisisonToWeaponCharge;
                     isCharging |= isLastDecisisonToStartWeaponCharge;
                     isCharging &= !hasChargingBeenInterrupted;
                     return isCharging;

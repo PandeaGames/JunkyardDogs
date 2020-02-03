@@ -25,6 +25,7 @@ public struct TournamentBalanceObject:IStaticDataBalanceObject
     public int nationalExpUnlockBreakpoint;
     public int expUnlockBreakpoint;
     public string lootCrateRewards;
+    public int exp;
 
     public string stage_0_completions_0;
     public string stage_1_completions_0;
@@ -112,6 +113,9 @@ public class Tournament : AbstractStaticData, IStaticDataBalance<TournamentBalan
     private ComponentGrade _grade;
     
     [SerializeField]
+    private int _exp;
+    
+    [SerializeField]
     private List<TournamentStagesRewards> _rewards;
     public List<TournamentStagesRewards> Rewards {get=>_rewards;}
     
@@ -163,7 +167,12 @@ public class Tournament : AbstractStaticData, IStaticDataBalance<TournamentBalan
     {
         get { return _lootCrateRewardsPerStage; }
     }
-    
+
+    public int Exp
+    {
+        get { return _exp; }
+    }
+
     public TournamentState GenerateState()
     {
         #if UNITY_EDITOR
@@ -191,6 +200,7 @@ public class Tournament : AbstractStaticData, IStaticDataBalance<TournamentBalan
         _lootCrateRewardsPerStage = new List<LootCrateStaticDataReference>();
         nation = new NationalityStaticDataReference();
         unlockNation = new NationalityStaticDataReference();
+        _exp = balance.exp;
 
         _roundPaceSeconds = balance.roundPaceSeconds;
         _seasonDelaySeconds = balance.seasonDelaySeconds;

@@ -17,7 +17,7 @@ namespace JunkyardDogs.Simulation
         public class DecisionStrafeLogic : DecisionMoveLogic
         {
             public int numberOfPreviousConcurrentDecisions;
-            public int maxNumberOfTicksForMovement;
+            public int maxNumberOfTicksForStrafeMovement;
             public bool shouldContinueMoving;
             public int evasiveness;
             public bool arenaOverride;
@@ -31,7 +31,7 @@ namespace JunkyardDogs.Simulation
             get { return _direction; }
         }
         
-        private const int maxNumberOfTicksForMovement = 30;
+        private const int maxNumberOfTicksForMovement = 15;
             
         public DecisionStrafe(StrafeDirection direction)
         {
@@ -44,7 +44,11 @@ namespace JunkyardDogs.Simulation
             logic.plane = DecisionPlane.Base;
 
             logic.evasiveness = simBot.bot.GetCPUAttribute(CPU.CPUAttribute.Evasiveness);
-            logic.maxNumberOfTicksForMovement = maxNumberOfTicksForMovement;
+            logic.maxNumberOfTicksForStrafeMovement = maxNumberOfTicksForMovement;
+            logic.maxNumberOfTicksForMovement = MAX_NUMBER_OF_MOVEMENT_TICKS;
+            logic.numberOfPreviousConcurrentMovementDecisions = simBot.ConcurrentDecisionsOfType<AbstractDecisionMove>(logic.plane);
+            logic.shouldStopMoving =
+                logic.numberOfPreviousConcurrentMovementDecisions > logic.maxNumberOfTicksForMovement;
 
             if (_direction == StrafeDirection.Left)
             {
@@ -65,11 +69,12 @@ namespace JunkyardDogs.Simulation
 
             logic.shouldContinueMoving = logic.numberOfPreviousConcurrentDecisions > 0 &&
                                                   logic.numberOfPreviousConcurrentDecisions <
-                                                  logic.maxNumberOfTicksForMovement;
+                                                  logic.maxNumberOfTicksForStrafeMovement;
 
             if (logic.arenaOverride 
                 || _direction == StrafeDirection.Left && simBot.StrafeDirection == StrafeDirection.Right
-                || _direction == StrafeDirection.Right && simBot.StrafeDirection == StrafeDirection.Left)
+                || _direction == StrafeDirection.Right && simBot.StrafeDirection == StrafeDirection.Left
+                || logic.shouldStopMoving)
             {
                 logic.priority = DecisionPriority.None;
             }

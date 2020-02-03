@@ -4,7 +4,7 @@ using JunkyardDogs.Data;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Junkyard/JunkyardData")]
-public class JunkyardData : ScriptableObject, IJunkyardGenerator
+public class JunkyardData : ScriptableObject, IJunkyardGenerator, IStaticData
 {
     [Serializable]
     public struct Cropping
@@ -136,5 +136,10 @@ public class JunkyardData : ScriptableObject, IJunkyardGenerator
         {
             yield return reward;
         }
+    }
+
+    public string ID
+    {
+        get { return name; }
     }
 }

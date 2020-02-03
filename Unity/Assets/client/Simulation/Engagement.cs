@@ -66,8 +66,8 @@ namespace JunkyardDogs.Simulation
 
     public enum Initiator
     {
-        BLUE, 
-        RED
+        BLUE = 0, 
+        RED = 1
     };
 
     [System.Serializable]

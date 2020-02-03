@@ -169,6 +169,12 @@ namespace JunkyardDogs.Data
         public static implicit operator BreakpointData(BreakpointStaticDataReference reference) { return reference.Data; }
     }
     
+    [Serializable]
+    public class JunkyardStaticDataReference : StaticDataReference<JunkyardData, JunkyardData, JunkyardStaticDataReference, JunkyardDataProvider>
+    {
+        public static implicit operator JunkyardData(JunkyardStaticDataReference reference) { return reference.Data; }
+    }
+    
     /*------------------------------------------------------------------*/
     /*----------------------------- Attributes -------------------------*/
     /*------------------------------------------------------------------*/
@@ -368,6 +374,14 @@ namespace JunkyardDogs.Data
     public class NationalityStaticDataReferenceAttribute : StaticDataReferenceAttribute
     {
         public NationalityStaticDataReferenceAttribute() : base(NationalityDataProvider.FULL_PATH, typeof(Nationality))
+        {
+            
+        }
+    }
+    
+    public class JunkyardStaticDataReferenceAttribute : StaticDataReferenceAttribute
+    {
+        public JunkyardStaticDataReferenceAttribute() : base(JunkyardDataProvider.FULL_PATH, typeof(JunkyardData))
         {
             
         }

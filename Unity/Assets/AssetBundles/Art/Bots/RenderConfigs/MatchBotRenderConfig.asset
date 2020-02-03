@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: MatchBotRenderConfig
   m_EditorClassIdentifier: 
   _componentFactory: {fileID: 11400000, guid: c1cb9df1efef84146801652c461013a4, type: 2}
+  _componentArtConfig: {fileID: 11400000, guid: 11e27a22b4d692e4a84da65d392b8b7e,
+    type: 2}
   _avatarFactory: {fileID: 11400000, guid: 7a900f74dba817a44b276e8d80e9b054, type: 2}
   _materials: {fileID: 11400000, guid: 41d67f47d3fe5d0459c380d587c8f6d4, type: 2}
   ProjectilePrefab: {fileID: 3614337228875290215, guid: b76ad3e4a9e6fc64e9fb4b149e050897,
@@ -23,7 +25,7 @@ MonoBehaviour:
     type: 3}
   LaserPrefab: {fileID: 3743024725454791487, guid: 4b01c420464d61c44a6f8ad62ed7a04e,
     type: 3}
-  MachineGunPrefab: {fileID: 3928297885742547524, guid: 122e1917a97611049bbfc730d248aaa5,
+  MachineGunPrefab: {fileID: 1094425446584478808, guid: 696bbbd0891aa3d47b164833fbc9d627,
     type: 3}
   ExplosionPrefab: {fileID: 1828176872806910, guid: 64891a0eb28db934898420d80ca07cb3,
     type: 3}

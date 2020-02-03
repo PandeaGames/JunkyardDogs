@@ -48,14 +48,13 @@ namespace JunkyardDogs.Data.Balance
             return fieldNames;
         }
 
+        
         public override void ImportData(string json)
         {
 #if UNITY_EDITOR
             // Parse from json to the desired object type.            
             TBalanceObject[] balanceObjects = JsonHelper.ArrayFromJson<TBalanceObject>(json);
-
             Debug.LogFormat("{0} Data found. Parsing.", balanceObjects.Length);
-            
             foreach (TBalanceObject balanceObj in balanceObjects)
             {   
                 TUnityData data = FindData(balanceObj, _dataList.Data);

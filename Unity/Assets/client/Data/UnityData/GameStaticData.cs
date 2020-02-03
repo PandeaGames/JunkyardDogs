@@ -13,6 +13,7 @@ public class GameConfigurationDataBalanceObject : IStaticDataBalanceObject
     public string nationalExpBreakpoints;
     public string expBreakpoints;
     public string statusBarCurrencyTag;
+    public string tournamentExpMultiplierBreakpoints;
         
     public string GetDataUID()
     {
@@ -25,6 +26,13 @@ public class GameStaticData : ScriptableObject, ILoadableObject, IStaticDataBala
 {
     [SerializeField]
     private SpriteFactory _nationFlagFactory;
+    
+    [SerializeField][WeakReference(typeof(ActionList))] 
+    private BreakpointStaticDataReference _tournamentExpMultiplierBreakpoints;
+    public BreakpointData TournamentExpMultiplierBreakpoints
+    {
+        get { return _tournamentExpMultiplierBreakpoints; }
+    }
     
     [SerializeField][WeakReference(typeof(ActionList))] 
     private WeakReference _actionList;
@@ -131,9 +139,11 @@ public class GameStaticData : ScriptableObject, ILoadableObject, IStaticDataBala
         NationalExpBreakpoints = new BreakpointStaticDataReference();
         ExpBreakpoints = new BreakpointStaticDataReference();
         _statusBarCurrencyTag = balance.statusBarCurrencyTag;
+        _tournamentExpMultiplierBreakpoints = new BreakpointStaticDataReference();
 
         NationalExpBreakpoints.ID = balance.nationalExpBreakpoints;
         ExpBreakpoints.ID = balance.expBreakpoints;
+        _tournamentExpMultiplierBreakpoints.ID = balance.tournamentExpMultiplierBreakpoints;
     }
 
     public GameConfigurationDataBalanceObject GetBalance()

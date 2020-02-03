@@ -12,6 +12,11 @@ public class SpecificationBalanceObject:IStaticDataBalanceObject
     public string name;
     public uint grade;
     public uint rarity;
+    public float rarityAndGradeIntrinsicValue;
+    public float InstrinsicValue;
+    public float rawSellValue;
+    public float sellValue;
+    
     public string GetDataUID()
     {
         return name;

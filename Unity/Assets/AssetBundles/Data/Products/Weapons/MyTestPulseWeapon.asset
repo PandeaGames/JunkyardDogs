@@ -16,14 +16,17 @@ MonoBehaviour:
     _value: 0
   _rarity:
     _value: 0
+  _rarityAndGradeIntrinsicValue: 10
+  _InstrinsicValue: 17.333334
+  _rawSellValue: 8.666667
+  _sellValue: 10
   _volume: 1
-  _chargeTime: 1
+  _chargeTime: 0.5
   _cooldown: 1
   _power: 1
   _armourPiercing: 0
   _stun: 0
   _knockback: 0
-  _decisionPlane: 0
   _pulse: {fileID: 114358634243994838}
   _speed: 1
   _radius: 1
@@ -43,6 +46,10 @@ MonoBehaviour:
     _value: 0
   _rarity:
     _value: 0
+  _rarityAndGradeIntrinsicValue: 0
+  _InstrinsicValue: 0
+  _rawSellValue: 0
+  _sellValue: 0
   _volume: 0
   _damage: 1
   _effects: []

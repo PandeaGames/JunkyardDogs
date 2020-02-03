@@ -19,3 +19,6 @@ MonoBehaviour:
   - _currencyDataReference:
       _id: PremiumCoins
     _icon: {fileID: 21300000, guid: 103c2bc24d48c3247a444edca74fe849, type: 3}
+  - _currencyDataReference:
+      _id: SearchEnergy
+    _icon: {fileID: 21300000, guid: 9b171217ec9c9aa45bb212aa582accab, type: 3}

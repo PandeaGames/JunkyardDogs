@@ -16,7 +16,5 @@ MonoBehaviour:
     _id: WeaponChip
   _manufacturer:
     _id: Akamina
-  Material:
-    _id: 
   _weapon:
     _id: AkaminaFastPulseWeapon

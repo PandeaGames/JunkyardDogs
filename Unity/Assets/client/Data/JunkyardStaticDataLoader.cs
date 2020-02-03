@@ -35,6 +35,7 @@ public class JunkyardStaticDataLoader : ILoadableObject
         _loader.AppendProvider(Game.Instance.GetStaticDataPovider<StageFormatDataProvider>());
         _loader.AppendProvider(Game.Instance.GetStaticDataPovider<LootCrateDataProvider>());
         _loader.AppendProvider(Game.Instance.GetStaticDataPovider<CurrencyDataProvider>());
+        _loader.AppendProvider(Game.Instance.GetStaticDataPovider<JunkyardDataProvider>());
         _loader.AppendProvider(Game.Instance.GetStaticDataPovider<LootDataProvider>());
         _loader.AppendProvider(Game.Instance.GetStaticDataPovider<BreakpointDataProvider>());
     }

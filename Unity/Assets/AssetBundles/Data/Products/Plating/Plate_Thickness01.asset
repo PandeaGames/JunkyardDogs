@@ -16,6 +16,10 @@ MonoBehaviour:
     _value: 0
   _rarity:
     _value: 0
-  _volume: 2
+  _rarityAndGradeIntrinsicValue: 10
+  _InstrinsicValue: 10
+  _rawSellValue: 5
+  _sellValue: 10
+  _volume: 1
   _thickness: 1
   _armour: 0

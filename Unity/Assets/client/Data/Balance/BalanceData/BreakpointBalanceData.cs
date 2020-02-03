@@ -8,31 +8,31 @@ public struct BreakpointBalanceObject:IStaticDataBalanceObject
 {
     public string name;
     
-    public int break_01;
-    public int break_02;
-    public int break_03;
-    public int break_04;
-    public int break_05;
-    public int break_06;
-    public int break_07;
-    public int break_08;
-    public int break_09;
-    public int break_10;
-    public int break_11;
-    public int break_12;
-    public int break_13;
-    public int break_14;
-    public int break_15;
-    public int break_16;
-    public int break_17;
-    public int break_18;
-    public int break_19;
-    public int break_20;
-    public int break_21;
-    public int break_22;
-    public int break_23;
-    public int break_24;
-    public int break_25;
+    public double break_01;
+    public double break_02;
+    public double break_03;
+    public double break_04;
+    public double break_05;
+    public double break_06;
+    public double break_07;
+    public double break_08;
+    public double break_09;
+    public double break_10;
+    public double break_11;
+    public double break_12;
+    public double break_13;
+    public double break_14;
+    public double break_15;
+    public double break_16;
+    public double break_17;
+    public double break_18;
+    public double break_19;
+    public double break_20;
+    public double break_21;
+    public double break_22;
+    public double break_23;
+    public double break_24;
+    public double break_25;
     
     public string GetDataUID()
     {

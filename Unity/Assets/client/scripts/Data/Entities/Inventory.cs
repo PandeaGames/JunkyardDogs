@@ -24,14 +24,14 @@ public class Inventory : IEnumerable
 
     public Inventory()
     {
-        
         Components = new List<IComponent>();
         Bots = new List<Bot>();
     }
 
-    public void AddComponent(IComponent component)
+    public IComponent AddComponent(IComponent component)
     {
         Components.Add(component);
+        return component;
     }
 
     public bool ContainsComponent(IComponent component)
@@ -67,7 +67,7 @@ public class Inventory : IEnumerable
         return Components.GetEnumerator();
     }
 
-    public void AddBot(Bot bot)
+    public IConsumable AddBot(Bot bot)
     {
         if(Bots == null)
         {
@@ -75,6 +75,7 @@ public class Inventory : IEnumerable
         }
 
         Bots.Add(bot);
+        return bot;
     }
 
     public void DismantleBot(Bot bot)

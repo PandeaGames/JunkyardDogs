@@ -362,6 +362,7 @@ GameObject:
   - component: {fileID: 114012079628393564}
   - component: {fileID: 222387567456571156}
   - component: {fileID: 114972504665206394}
+  - component: {fileID: 7349340947783814495}
   m_Layer: 0
   m_Name: EventMapButton
   m_TagString: Untagged
@@ -457,6 +458,18 @@ MonoBehaviour:
     _id: MooseChallenge
   _viewModelInstanceId: 0
   _timerDisplay: {fileID: 114818037779844986}
+--- !u!114 &7349340947783814495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1911803904175828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 927e9bf3d53584645afe0f42893bf3c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _3DTransformLink: {fileID: 0}
 --- !u!1 &5219612539968899866
 GameObject:

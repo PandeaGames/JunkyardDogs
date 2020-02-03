@@ -47,7 +47,6 @@ namespace JunkyardDogs.Specifications
             base.ApplyBalance(balance);
             _armourPiercing = balance.armourPiercing;
             _shotTime = balance.shotLength;
-            _power = balance.damage;
             name = balance.name;
             
 #if UNITY_EDITOR
@@ -71,11 +70,6 @@ namespace JunkyardDogs.Specifications
             balance.chargeTime = _chargeTime;
             balance.armourPiercing = _armourPiercing;
 
-            if (_shell != null)
-            {
-                balance.damage = _shell.Damage;
-            }
-            
             return balance;
         }
     }

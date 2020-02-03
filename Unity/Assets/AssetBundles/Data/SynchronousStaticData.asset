@@ -14,6 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _currencyDataConfigTable: {fileID: 11400000, guid: 8dc98b1dabb64484dbf7d0ff50f15e5d,
     type: 2}
+  _componentArtConfig:
+    _guid: 11e27a22b4d692e4a84da65d392b8b7e
+    _path: Assets/AssetBundles/Art/Components/ComponentArtConfig.asset
   _naitonalitySpriteFactory:
     _guid: ff93e58f01562934f9cd86557596666d
     _path: Assets/AssetBundles/Data/Nations/FlagsLarge.asset
