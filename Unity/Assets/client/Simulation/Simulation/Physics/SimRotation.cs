@@ -108,5 +108,10 @@ namespace JunkyardDogs.Simulation.Simulation
 
             return adjustment;
         }
+
+        public static implicit operator Quaternion(SimRotation r)
+        {
+            return Quaternion.Euler(new Vector3(0, r.deg, 0));
+        }
     }
 }

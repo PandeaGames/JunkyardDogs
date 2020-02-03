@@ -13,9 +13,10 @@ public abstract class SimpleSimulatedPhysicsObjectView : SimpleSimulatedObjectVi
         
     }
 
-    public void Make()
+    public GameObject Make()
     {
-        this.view = GenerateView();
+        view = GenerateView();
+        return view;
     }
 
     protected abstract GameObject GenerateView();
