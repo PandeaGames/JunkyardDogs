@@ -245,7 +245,7 @@ RectTransform:
   m_Children:
   - {fileID: 2618441577558451423}
   m_Father: {fileID: 466247184324672450}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -375,11 +375,11 @@ RectTransform:
   - {fileID: 1895010405304846100}
   - {fileID: 7909283962407246747}
   m_Father: {fileID: 466247184324672450}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 1.7600098, y: 20.72998}
+  m_AnchoredPosition: {x: 1.7600098, y: 38}
   m_SizeDelta: {x: -28.78, y: 31.56}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1020744599731118552
@@ -522,6 +522,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5104508734401040597, guid: fa572ff13ed19534384b6eed2fa0162a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa572ff13ed19534384b6eed2fa0162a, type: 3}
 --- !u!95 &1506778614010485692 stripped
@@ -659,11 +664,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 6302553566417376775, guid: 3aa0ddeffdcb2ef4a86cc477501b8c60,
-        type: 3}
-      propertyPath: mTerm
-      value: UI.components.remove
-      objectReference: {fileID: 0}
     - target: {fileID: 3405267872484820220, guid: 3aa0ddeffdcb2ef4a86cc477501b8c60,
         type: 3}
       propertyPath: m_firstOverflowCharacterIndex
@@ -682,7 +682,12 @@ PrefabInstance:
     - target: {fileID: 3405267872484820220, guid: 3aa0ddeffdcb2ef4a86cc477501b8c60,
         type: 3}
       propertyPath: m_fontSize
-      value: 24
+      value: 17.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 6302553566417376775, guid: 3aa0ddeffdcb2ef4a86cc477501b8c60,
+        type: 3}
+      propertyPath: mTerm
+      value: UI.components.remove
       objectReference: {fileID: 0}
     - target: {fileID: 3410228579576388751, guid: 3aa0ddeffdcb2ef4a86cc477501b8c60,
         type: 3}
@@ -826,11 +831,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 6302553566417376775, guid: 3aa0ddeffdcb2ef4a86cc477501b8c60,
-        type: 3}
-      propertyPath: mTerm
-      value: UI.cancel
-      objectReference: {fileID: 0}
     - target: {fileID: 3405267872484820220, guid: 3aa0ddeffdcb2ef4a86cc477501b8c60,
         type: 3}
       propertyPath: m_firstOverflowCharacterIndex
@@ -849,7 +849,12 @@ PrefabInstance:
     - target: {fileID: 3405267872484820220, guid: 3aa0ddeffdcb2ef4a86cc477501b8c60,
         type: 3}
       propertyPath: m_fontSize
-      value: 24
+      value: 17.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 6302553566417376775, guid: 3aa0ddeffdcb2ef4a86cc477501b8c60,
+        type: 3}
+      propertyPath: mTerm
+      value: UI.cancel
       objectReference: {fileID: 0}
     - target: {fileID: 3410228579576388751, guid: 3aa0ddeffdcb2ef4a86cc477501b8c60,
         type: 3}
@@ -998,6 +1003,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3405267872484820220, guid: 3aa0ddeffdcb2ef4a86cc477501b8c60,
+        type: 3}
+      propertyPath: m_textAlignment
+      value: 513
+      objectReference: {fileID: 0}
     - target: {fileID: 1243138597623381646, guid: 3aa0ddeffdcb2ef4a86cc477501b8c60,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -1027,11 +1037,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 3405267872484820220, guid: 3aa0ddeffdcb2ef4a86cc477501b8c60,
-        type: 3}
-      propertyPath: m_textAlignment
-      value: 513
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3aa0ddeffdcb2ef4a86cc477501b8c60, type: 3}

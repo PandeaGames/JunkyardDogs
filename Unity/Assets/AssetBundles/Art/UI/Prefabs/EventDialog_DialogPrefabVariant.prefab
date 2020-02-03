@@ -64,7 +64,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 17.3}
+  m_AnchoredPosition: {x: 0, y: 31}
   m_SizeDelta: {x: -40, y: 34.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8653697583493368012
@@ -299,7 +299,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -24.200073}
+  m_AnchoredPosition: {x: 0, y: -39}
   m_SizeDelta: {x: -40, y: 48.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4244156538688801017
@@ -330,8 +330,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Event
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 715b80e429c437e40867928a4e1fc975, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 715b80e429c437e40867928a4e1fc975, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 53d7c266552d63a4fa69628259b25fa4, type: 2}
+  m_sharedMaterial: {fileID: 21023206004756404, guid: 53d7c266552d63a4fa69628259b25fa4,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -355,13 +356,13 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 16
   m_textAlignment: 514
   m_isAlignmentEnumConverted: 1
   m_characterSpacing: 0
@@ -539,12 +540,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: EventDialog_DialogPrefabVariant
       objectReference: {fileID: 0}
-    - target: {fileID: 937705716041274488, guid: 69d05b0599c302e42b2a83d39f5a0bc8,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: cde8f280a75986c43b5f629ec453c2f6,
-        type: 3}
     - target: {fileID: 5588301813663167240, guid: 69d05b0599c302e42b2a83d39f5a0bc8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -791,6 +786,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontSize
       value: 17.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 3405267872484820220, guid: 3aa0ddeffdcb2ef4a86cc477501b8c60,
+        type: 3}
+      propertyPath: m_text
+      value: Exit
       objectReference: {fileID: 0}
     - target: {fileID: 6302553566417376775, guid: 3aa0ddeffdcb2ef4a86cc477501b8c60,
         type: 3}
@@ -1085,6 +1085,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontSize
       value: 17.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 3405267872484820220, guid: 3aa0ddeffdcb2ef4a86cc477501b8c60,
+        type: 3}
+      propertyPath: m_text
+      value: Collect Rewards
+      objectReference: {fileID: 0}
+    - target: {fileID: 3405267872484820220, guid: 3aa0ddeffdcb2ef4a86cc477501b8c60,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3405267872484820220, guid: 3aa0ddeffdcb2ef4a86cc477501b8c60,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3405267872484820220, guid: 3aa0ddeffdcb2ef4a86cc477501b8c60,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6302553566417376775, guid: 3aa0ddeffdcb2ef4a86cc477501b8c60,
         type: 3}

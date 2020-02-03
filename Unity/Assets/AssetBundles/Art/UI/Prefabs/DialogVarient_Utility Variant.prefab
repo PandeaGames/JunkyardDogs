@@ -47,12 +47,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DialogVarient_Utility Variant
       objectReference: {fileID: 0}
-    - target: {fileID: 937705716041274488, guid: 69d05b0599c302e42b2a83d39f5a0bc8,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 4c4b3b0b464a35247acaa328133849a7,
-        type: 3}
     - target: {fileID: 5588301813663167240, guid: 69d05b0599c302e42b2a83d39f5a0bc8,
         type: 3}
       propertyPath: m_LocalPosition.x
