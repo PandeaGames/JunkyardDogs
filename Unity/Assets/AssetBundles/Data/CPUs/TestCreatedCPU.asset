@@ -15,7 +15,11 @@ MonoBehaviour:
   _grade:
     _value: 0
   _rarity:
-    _value: 0
+    _value: 2
+  _rarityAndGradeIntrinsicValue: 70
+  _InstrinsicValue: 670
+  _rawSellValue: 335
+  _sellValue: 350
   _distinctions:
   - _type: 0
     _value: 10

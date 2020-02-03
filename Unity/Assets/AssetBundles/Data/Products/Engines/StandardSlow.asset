@@ -13,9 +13,13 @@ MonoBehaviour:
   m_Name: StandardSlow
   m_EditorClassIdentifier: 
   _grade:
-    _value: 0
+    _value: 1
   _rarity:
-    _value: 0
+    _value: 1
+  _rarityAndGradeIntrinsicValue: 150
+  _InstrinsicValue: 0
+  _rawSellValue: 19.25
+  _sellValue: 20
   _volume: 1
   strafeAcceleration: 1
   strafeMaxSpeed: 5

@@ -13,16 +13,19 @@ MonoBehaviour:
   m_Name: FrickinLaser
   m_EditorClassIdentifier: 
   _grade:
-    _value: 0
+    _value: 1
   _rarity:
     _value: 0
+  _rarityAndGradeIntrinsicValue: 100
+  _InstrinsicValue: 160
+  _rawSellValue: 80
+  _sellValue: 85
   _volume: 1
-  _chargeTime: 1
+  _chargeTime: 0.5
   _cooldown: 1
   _power: 30
   _armourPiercing: 0
   _stun: 0
   _knockback: 0
-  _decisionPlane: 0
   _shell: {fileID: 11400000, guid: 5328d5a427b11cf4b9e18cff3453ed74, type: 2}
   _shotTime: 1

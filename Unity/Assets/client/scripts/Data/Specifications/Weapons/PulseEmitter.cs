@@ -68,7 +68,6 @@ namespace JunkyardDogs.Specifications
             #endif
 
             _pulse.Damage = balance.damage;
-            _power = balance.damage;
         }
 
         public PulseWeaponBalanceObject GetBalance()

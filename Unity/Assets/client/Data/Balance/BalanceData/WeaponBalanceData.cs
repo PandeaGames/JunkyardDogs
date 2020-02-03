@@ -12,8 +12,9 @@ public class WeaponBalanceObject:PhysicalSpecificationBalanceObject
     public double cooldown;
     public double chargeTime;
     public float stun;
-    public DecisionPlane decisionPlane;
     public float knockback;
+    public int armourPiercing;
+    public float damage;
 }
 
 [CreateAssetMenu(menuName = MENU_NAME)]

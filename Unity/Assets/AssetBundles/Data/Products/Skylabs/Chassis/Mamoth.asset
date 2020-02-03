@@ -16,6 +16,10 @@ MonoBehaviour:
     _value: 0
   _rarity:
     _value: 0
+  _rarityAndGradeIntrinsicValue: 10
+  _InstrinsicValue: 38
+  _rawSellValue: 19
+  _sellValue: 20
   _volume: 10
   _maxSpeedPerSecond: 1
   _baseHealthMultiplier: 2

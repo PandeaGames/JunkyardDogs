@@ -8,6 +8,7 @@ using UnityEngine;
 public class PhysicalSpecificationBalanceObject:SpecificationBalanceObject
 {
     public float volume;
+    
 }
 
 public class PhysicalSpecificationBalanceData : StaticDataReferenceBalanceData<

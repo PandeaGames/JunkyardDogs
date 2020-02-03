@@ -10,7 +10,6 @@ public class PulseWeaponBalanceObject:WeaponBalanceObject
 {
     public float speed;
     public float radius;
-    public int damage;
 }
 
 [CreateAssetMenu(menuName = MENU_NAME)]

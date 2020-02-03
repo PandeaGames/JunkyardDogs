@@ -16,13 +16,16 @@ MonoBehaviour:
     _value: 0
   _rarity:
     _value: 0
+  _rarityAndGradeIntrinsicValue: 10
+  _InstrinsicValue: 85
+  _rawSellValue: 42.5
+  _sellValue: 45
   _volume: 1
-  _chargeTime: 1
-  _cooldown: 1
-  _power: 20
+  _chargeTime: 0.3
+  _cooldown: 0.3
+  _power: 30
   _armourPiercing: 0
   _stun: 0
-  _knockback: 0
-  _decisionPlane: 0
+  _knockback: 20
   _meleeWeapon: {fileID: 11400000, guid: 930490cd87e7b3844bcc749c95fb5ef6, type: 2}
   _radius: 2

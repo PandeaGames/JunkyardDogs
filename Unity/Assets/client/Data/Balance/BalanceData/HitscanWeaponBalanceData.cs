@@ -10,7 +10,6 @@ using UnityEngine.Serialization;
 public class HitscanWeaponBalanceObject:WeaponBalanceObject
 {
     public int damage;
-    public int armourPiercing;
     public float shotLength;
 }
 
