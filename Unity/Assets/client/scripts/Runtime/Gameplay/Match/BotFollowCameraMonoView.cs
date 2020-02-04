@@ -25,7 +25,7 @@ public class BotFollowCameraMonoView : CameraAgent
         Vector3 botPosition = _target.body.PositionToWorld();
         Vector3 otherBotPosition = _other.body.PositionToWorld();
         Vector3 diff = otherBotPosition - botPosition;
-        Vector3 normalizedDiff = diff / 3 * -1;
+        Vector3 normalizedDiff = (diff / 10f + diff / 1.5f) * -1;
         Vector3 position = botPosition + normalizedDiff;
         position = new Vector3(position.x, normalizedDiff.magnitude + 3, position.z);
 

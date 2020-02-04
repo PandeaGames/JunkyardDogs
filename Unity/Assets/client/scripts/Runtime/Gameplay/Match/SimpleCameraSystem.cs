@@ -77,7 +77,7 @@ public class SimpleCameraSystem : MonoBehaviour, ISimulatedEngagementEventHandle
             SimTargetView targetView = followTargetGO.AddComponent<SimTargetView>();
             targetView.Follow(simBot);
 
-            GameObject followCameraObject = Instantiate(followCameraAgentPrefab);
+            GameObject followCameraObject = Instantiate(followCameraAgentPrefab, transform, worldPositionStays:false);
             followCameraObject.SetActive(true);
             SimpleFollowAgent followAgent = followCameraObject.GetComponent<SimpleFollowAgent>();
             followAgent.SetTarget(targetView.transform);

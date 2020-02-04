@@ -22,6 +22,7 @@ public class ComponentArtConfigData : ConfigListBalanceDataObj, ILoadableObject
         
         loaderGroup.LoadAsync(() =>
         {
+            Debug.Log("ComponentArtConfigData loaded "+_prefab.Path);
             IsLoaded = true;
             onLoadSuccess?.Invoke();
         }, onLoadFailed);

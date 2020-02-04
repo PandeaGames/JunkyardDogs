@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using JunkyardDogs.Components;
 using JunkyardDogs.Specifications;
+using PandeaGames;
 using Chassis = JunkyardDogs.Components.Chassis;
 using Material = UnityEngine.Material;
 
@@ -61,12 +62,12 @@ public class BotRenderer : MonoBehaviour
                 if(weapon == null)
                 {
                     renderer.enabled = renderConfiguration.MissingComponentMaterial != null;
-                    prefab = renderConfiguration.ComponentArtConfigData.GetConfig(processor.Specification.ID).Prefab;
+                    prefab = SynchronousStaticDataProvider.Instance.GetData(processor).Prefab;
                 }
                 else
                 {
                     renderer.enabled = false;
-                    prefab = renderConfiguration.ComponentArtConfigData.GetConfig(weapon.Specification.ID).Prefab;
+                    prefab = SynchronousStaticDataProvider.Instance.GetData(weapon).Prefab;
                 }
 
                 if (prefab != null)
