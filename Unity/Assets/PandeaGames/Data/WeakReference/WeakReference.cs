@@ -138,10 +138,15 @@ namespace PandeaGames.Data.WeakReferences
 
         public void LoadAsync(LoadSuccess onLoadSuccess, LoadError onLoadError)
         {
-            LoadAssetAsync(WeakReference => onLoadSuccess(), (e) => onLoadError(new LoadException("Problem loading asset", e)));
+            LoadAsync(onLoadSuccess, onLoadError, preloadReferencedAsset:true);
         }
         
-        public void LoadAssetAsync( Action<WeakReference> onComplete, Action<WeakReferenceException> onFail )
+        public void LoadAsync(LoadSuccess onLoadSuccess, LoadError onLoadError, bool preloadReferencedAsset = true)
+        {
+            LoadAssetAsync(WeakReference => onLoadSuccess(), (e) => onLoadError(new LoadException("Problem loading asset", e)), preloadReferencedAsset);
+        }
+        
+        public void LoadAssetAsync( Action<WeakReference> onComplete, Action<WeakReferenceException> onFail, bool preloadReferencedAsset = true )
         {
             if (string.IsNullOrEmpty(Path))
             {
@@ -169,10 +174,10 @@ namespace PandeaGames.Data.WeakReferences
                 TaskProvider.Instance.RunTask(request, () =>
                 {
                     _cache = request.GetAsset<UnityEngine.Object>();
-
-                    if (_cache is ILoadableObject)
+                    ILoadableObject loadable = _cache as ILoadableObject;
+                    if (loadable != null && !loadable.IsLoaded && preloadReferencedAsset) 
                     {
-                        (_cache as ILoadableObject).LoadAsync(() =>
+                        loadable.LoadAsync(() =>
                         {
                             IsLoaded = true;
                             onComplete?.Invoke(this);

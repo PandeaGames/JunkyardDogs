@@ -15,6 +15,11 @@ namespace PandeaGames
             LoaderGroup loaderGroup = new LoaderGroup();
             loaderGroup.AppendProvider(_loaderGroup);
             loaderGroup.AppendProvider(_componentArtConfig);
+            loaderGroup.AppendProvider(_projectileArtConfig);
+            loaderGroup.AppendProvider(_projectileImpactConfig);
+            loaderGroup.AppendProvider(_hitscanStreamArtConfig);
+            loaderGroup.AppendProvider(_pulseArtConfig);
+            loaderGroup.AppendProvider(_pulseImpactConfg);
             PopulatedLoadGroup(loaderGroup);
             loaderGroup.LoadAsync(() =>
             {

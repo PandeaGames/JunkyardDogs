@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TableName: Specifications
   AllowImport: 1
-  AllowDataCreationOnImport: 1
+  AllowDataCreationOnImport: 0
   _defaultConfig:
     name: 
     _prefab:
