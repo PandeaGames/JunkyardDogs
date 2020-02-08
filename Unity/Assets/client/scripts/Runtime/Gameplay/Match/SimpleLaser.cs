@@ -1,9 +1,9 @@
 using JunkyardDogs.Simulation;
+using PandeaGames;
 using UnityEngine;
 
 namespace JunkyardDogs.scripts.Runtime.Gameplay.Match
 {
-
     public class SimpleLaser : SimpleSimulatedPhysicsObjectView
     {
         private SimHitscanShot _simObject;
@@ -15,7 +15,7 @@ namespace JunkyardDogs.scripts.Runtime.Gameplay.Match
         protected override GameObject GenerateView()
         {
             GameObject botObject =
-                GameObject.Instantiate(viewContainer.botRenderConfiguration.LaserPrefab);
+                GameObject.Instantiate(SynchronousStaticDataProvider.Instance.GetHitscanStreamConfigData(_simObject.hitscan).Prefab);
             
             return botObject;
         }

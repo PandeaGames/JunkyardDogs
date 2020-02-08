@@ -7,7 +7,8 @@ namespace JunkyardDogs.Simulation
 {
     public class SimPulseAttack : SimPhysicalAttackObject
     {
-        private PulseEmitter weapon;
+        public PulseEmitter weapon;
+        public Pulse PulseWeapon;
         private double TimeInstantiated;
         
         public SimPulseAttack(SimulatedEngagement engagement, SimBot simBot, Chassis.ArmamentLocation armementLocation) : base(engagement, simBot, armementLocation)

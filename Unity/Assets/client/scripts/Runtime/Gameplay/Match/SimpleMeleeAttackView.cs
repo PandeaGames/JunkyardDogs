@@ -1,5 +1,6 @@
 using JunkyardDogs.Simulation;
 using JunkyardDogs.Simulation.Simulation;
+using PandeaGames;
 using UnityEngine;
 
 namespace JunkyardDogs.scripts.Runtime.Gameplay.Match
@@ -15,7 +16,7 @@ namespace JunkyardDogs.scripts.Runtime.Gameplay.Match
         protected override GameObject GenerateView()
         {
             GameObject botObject =
-                GameObject.Instantiate(viewContainer.botRenderConfiguration.MeleePrefab);
+                GameObject.Instantiate(SynchronousStaticDataProvider.Instance.GetMeleeImpactArtConfigData(_simObject.Melee).Prefab);
             SyncronizeWithBody(botObject.transform);
             GameObject mainView = new GameObject();
             return mainView;

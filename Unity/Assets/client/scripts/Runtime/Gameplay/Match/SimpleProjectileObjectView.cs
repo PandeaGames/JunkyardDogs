@@ -1,5 +1,6 @@
 using JunkyardDogs.Simulation;
 using JunkyardDogs.Simulation.Simulation;
+using PandeaGames;
 using UnityEngine;
 
 namespace JunkyardDogs.scripts.Runtime.Gameplay.Match
@@ -15,7 +16,8 @@ namespace JunkyardDogs.scripts.Runtime.Gameplay.Match
         protected override GameObject GenerateView()
         {
             GameObject botObject =
-                GameObject.Instantiate(viewContainer.botRenderConfiguration.ProjectilePrefab);
+                GameObject.Instantiate(
+                    SynchronousStaticDataProvider.Instance.GetProjectileArtConfigData(_simObject.projectileWeapon).Prefab);
             return botObject;
         }
     }

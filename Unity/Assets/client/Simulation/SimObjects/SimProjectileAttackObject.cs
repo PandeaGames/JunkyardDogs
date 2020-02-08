@@ -1,16 +1,20 @@
+using JunkyardDogs.Components;
 using JunkyardDogs.Specifications;
 using UnityEngine;
 using Chassis = JunkyardDogs.Components.Chassis;
+using Weapon = JunkyardDogs.Components.Weapon;
 
 namespace JunkyardDogs.Simulation
 {
     public class SimProjectileAttackObject : SimPhysicalAttackObject
     {
-        private ProjectileWeapon projectileWeapon;
+        public ProjectileWeapon projectileWeapon;
+        public Weapon Weapon;
         
         public SimProjectileAttackObject(SimulatedEngagement engagement, SimBot simBot, Chassis.ArmamentLocation armementLocation) : base(engagement, simBot, armementLocation)
         {
-            projectileWeapon = (ProjectileWeapon)simBot.bot.GetArmament(armementLocation).GetSpec();
+            Weapon = simBot.bot.GetArmament(armementLocation);
+            projectileWeapon = (ProjectileWeapon)Weapon.GetSpec();
             colliders.Add(CreateCollider(projectileWeapon));
             body.rotation = simBot.body.rotation;
             body.accelerationPerSecond = new Vector2(0, projectileWeapon.Speed);

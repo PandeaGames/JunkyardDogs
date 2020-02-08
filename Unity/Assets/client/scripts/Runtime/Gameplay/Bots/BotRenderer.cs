@@ -62,12 +62,12 @@ public class BotRenderer : MonoBehaviour
                 if(weapon == null)
                 {
                     renderer.enabled = renderConfiguration.MissingComponentMaterial != null;
-                    prefab = SynchronousStaticDataProvider.Instance.GetData(processor).Prefab;
+                    prefab = SynchronousStaticDataProvider.Instance.GetComponentArtConfigData(processor).Prefab;
                 }
                 else
                 {
                     renderer.enabled = false;
-                    prefab = SynchronousStaticDataProvider.Instance.GetData(weapon).Prefab;
+                    prefab = SynchronousStaticDataProvider.Instance.GetComponentArtConfigData(weapon).Prefab;
                 }
 
                 if (prefab != null)

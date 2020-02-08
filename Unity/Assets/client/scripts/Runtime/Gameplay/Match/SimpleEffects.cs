@@ -45,36 +45,38 @@ public class SimpleEffects : ISimulatedEngagementEventHandler
     {
         if (obj is SimProjectileAttackObject && otherObj is SimArena)
         {
-            SmallExplosionEffect(obj);
+            SmallExplosionEffect(obj as SimProjectileAttackObject);
         }
         else if (obj is SimProjectileAttackObject  && obj.SimBot.opponent == otherObj)
         {
-            ExplosionEffect(obj);
+            ExplosionEffect(obj as SimProjectileAttackObject);
         }
         else if (obj is SimPulseAttack  && obj.SimBot.opponent == otherObj)
         {
-            PulseExplosionEffect(otherObj);
+            PulseExplosionEffect(otherObj as SimPulseAttack);
         }
     }
 
-    private void ExplosionEffect(SimPhysicsObject simObject)
+    private void ExplosionEffect(SimProjectileAttackObject simObject)
     {
         GameObject.Instantiate(
-            _viewContainer.botRenderConfiguration.ExplosionPrefab,
+            SynchronousStaticDataProvider.Instance.GetProjectileImpactArtConfigData(simObject.projectileWeapon).Prefab,
             new Vector3(simObject.body.position.x, 0, simObject.body.position.y), 
             Quaternion.identity, null);
     }
     
-    private void SmallExplosionEffect(SimPhysicsObject simObject)
+    private void SmallExplosionEffect(SimProjectileAttackObject simObject)
     {
-        GameObject.Instantiate(_viewContainer.botRenderConfiguration.SmallExplosionPrefab,
+        GameObject.Instantiate(
+            SynchronousStaticDataProvider.Instance.GetProjectileImpactArtConfigData(simObject.projectileWeapon).Prefab,
             new Vector3(simObject.body.position.x, 0, simObject.body.position.y),
             Quaternion.identity, null);
     }
     
-    private void PulseExplosionEffect(SimPhysicsObject simObject)
+    private void PulseExplosionEffect(SimPulseAttack simObject)
     {
-        GameObject.Instantiate(_viewContainer.botRenderConfiguration.SmallPlasmaExplosionPrefab,
+        GameObject.Instantiate(
+            SynchronousStaticDataProvider.Instance.GetProjectileImpactArtConfigData(simObject.PulseWeapon).Prefab,
             new Vector3(simObject.body.position.x, 0, simObject.body.position.y),
             Quaternion.identity, null);
     }

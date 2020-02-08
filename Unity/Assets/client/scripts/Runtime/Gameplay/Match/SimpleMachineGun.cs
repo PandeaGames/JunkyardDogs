@@ -1,4 +1,5 @@
 ﻿using JunkyardDogs.Simulation;
+using PandeaGames;
 using UnityEngine;
 
 namespace JunkyardDogs.scripts.Runtime.Gameplay.Match
@@ -15,7 +16,7 @@ namespace JunkyardDogs.scripts.Runtime.Gameplay.Match
         protected override GameObject GenerateView()
         {
             GameObject botObject =
-                GameObject.Instantiate(viewContainer.botRenderConfiguration.MachineGunPrefab);
+                GameObject.Instantiate(SynchronousStaticDataProvider.Instance.GetHitscanStreamConfigData(_simObject.hitscan).Prefab);
             
             return botObject;
         }

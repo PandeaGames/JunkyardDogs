@@ -14,50 +14,13 @@ public class BotRenderConfiguration : ScriptableObject
     
     [SerializeField] 
     private MaterialFactory _materials;
-
-    [SerializeField] 
-    public GameObject ProjectilePrefab;
-    
-    [SerializeField] 
-    public GameObject PulsePrefab;
-    
-    [SerializeField] 
-    public GameObject MeleePrefab;
-    
-    [SerializeField] 
-    public GameObject LaserPrefab;
-    
-    [SerializeField] 
-    public GameObject MachineGunPrefab;
-    
-    [SerializeField] 
-    public GameObject ExplosionPrefab;
-    
-    [SerializeField] 
-    public GameObject SmallExplosionPrefab;
-    
-    [SerializeField] 
-    public GameObject SmallPlasmaExplosionPrefab;
-    
-    [SerializeField]
-    public GameObject CameraDronePrefab;
     
     [SerializeField] 
     private Material _missingComponentMaterial;
     
     [SerializeField] 
     private PrefabFactory _botPrefabFactory;
-    
-    public PrefabFactory ComponentFactory
-    {
-        get { return _componentFactory; }
-    }
-    
-    public ComponentArtConfig ComponentArtConfigData
-    {
-        get { return _componentArtConfig; }
-    }
-    
+
     public ScriptableObjectFactory AvatarFactory
     {
         get { return _avatarFactory; }

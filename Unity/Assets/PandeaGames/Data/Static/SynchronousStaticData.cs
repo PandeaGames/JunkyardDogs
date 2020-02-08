@@ -20,6 +20,7 @@ namespace PandeaGames
             loaderGroup.AppendProvider(_hitscanStreamArtConfig);
             loaderGroup.AppendProvider(_pulseArtConfig);
             loaderGroup.AppendProvider(_pulseImpactConfg);
+            loaderGroup.AppendProvider(_meleeImpactConfg);
             PopulatedLoadGroup(loaderGroup);
             loaderGroup.LoadAsync(() =>
             {

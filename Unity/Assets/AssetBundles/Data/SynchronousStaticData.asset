@@ -17,6 +17,24 @@ MonoBehaviour:
   _componentArtConfig:
     _guid: 11e27a22b4d692e4a84da65d392b8b7e
     _path: Assets/AssetBundles/Art/Components/ComponentArtConfig.asset
+  _hitscanStreamArtConfig:
+    _guid: 77ffad7a980f73a42bf4aebfbd624367
+    _path: Assets/AssetBundles/Art/Components/HitscanStreamConfig.asset
+  _projectileArtConfig:
+    _guid: f0590ebd5c37c02489da0cd4401dacac
+    _path: Assets/AssetBundles/Art/Components/ProjectileArtConfig.asset
+  _projectileImpactConfig:
+    _guid: 5c3e0886d7202484ba0d8cc9100ebe63
+    _path: Assets/AssetBundles/Art/Components/ProjectileImpactConfig.asset
+  _pulseArtConfig:
+    _guid: 477a598cfcc83414b9f4f117be6d435a
+    _path: Assets/AssetBundles/Art/Components/PulseArtConfig.asset
+  _pulseImpactConfg:
+    _guid: 10d15730ca60e054e986f60cf4da6725
+    _path: Assets/AssetBundles/Art/Components/PulseImpactConfig.asset
+  _meleeImpactConfg:
+    _guid: 9fba99bd0ff73ec4aaa70605163a9d6c
+    _path: Assets/AssetBundles/Art/Components/meleeImpactConfig.asset
   _naitonalitySpriteFactory:
     _guid: ff93e58f01562934f9cd86557596666d
     _path: Assets/AssetBundles/Data/Nations/FlagsLarge.asset

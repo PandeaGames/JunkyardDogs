@@ -7,7 +7,7 @@ namespace JunkyardDogs.Simulation
 {
     public class SimHitscanShot : SimPhysicalAttackObject
     {
-        private Hitscan hitscan;
+        public Hitscan hitscan;
         public SimHitscanShot(SimulatedEngagement engagement, SimBot simBot, Chassis.ArmamentLocation armementLocation) : base(engagement, simBot, armementLocation)
         {
             hitscan = (Hitscan) simBot.bot.GetArmament(armementLocation).GetSpec();
