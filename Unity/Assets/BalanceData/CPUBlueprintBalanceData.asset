@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: d7cb945d97b24ee408998d78844351e1, type: 3}
   m_Name: CPUBlueprintBalanceData
-  m_EditorClassIdentifier: Assembly-CSharp::CPUBlueprintBalanceData
+  m_EditorClassIdentifier: 
   TableName: CPU Blueprint
   AllowImport: 1
   AllowDataCreationOnImport: 1

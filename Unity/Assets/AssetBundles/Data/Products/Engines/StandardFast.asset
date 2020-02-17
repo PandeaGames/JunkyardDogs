@@ -16,10 +16,10 @@ MonoBehaviour:
     _value: 0
   _rarity:
     _value: 0
-  _rarityAndGradeIntrinsicValue: 10
+  _rarityAndGradeIntrinsicValue: 0
   _InstrinsicValue: 0
-  _rawSellValue: 35.75
-  _sellValue: 40
+  _rawSellValue: 33.5
+  _sellValue: 35
   _volume: 1
   strafeAcceleration: 2.5
   strafeMaxSpeed: 10

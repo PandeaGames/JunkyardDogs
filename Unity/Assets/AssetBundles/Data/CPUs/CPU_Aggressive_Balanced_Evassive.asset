@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e774f14bdec23194f9db265633ad69b8, type: 3}
+  m_Name: CPU_Aggressive_Balanced_Evassive
+  m_EditorClassIdentifier: 
+  _grade:
+    _value: 5
+  _rarity:
+    _value: 5
+  _rarityAndGradeIntrinsicValue: 2450
+  _InstrinsicValue: 2451
+  _rawSellValue: 2451
+  _sellValue: 2475
+  _distinctions: []
+  Aggressiveness: 8
+  Evasiveness: 4
+  Cautiousness: 1
+  DirectiveSlotCount: 1

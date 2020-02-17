@@ -55,5 +55,10 @@ namespace JunkyardDogs.Components
         {
             get { return this; }
         }
+
+        public override string ToString()
+        {
+            return _value.ToString();
+        }
     }
 }

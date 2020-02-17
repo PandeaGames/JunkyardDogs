@@ -56,7 +56,12 @@ namespace JunkyardDogs.Data.Balance
             TBalanceObject[] balanceObjects = JsonHelper.ArrayFromJson<TBalanceObject>(json);
             Debug.LogFormat("{0} Data found. Parsing.", balanceObjects.Length);
             foreach (TBalanceObject balanceObj in balanceObjects)
-            {   
+            {
+                if (string.IsNullOrEmpty(balanceObj.GetDataUID()))
+                {
+                    continue;
+                }
+                
                 TUnityData data = FindData(balanceObj, _dataList.Data);
 
                 if (data == null && AllowDataCreationOnImport)

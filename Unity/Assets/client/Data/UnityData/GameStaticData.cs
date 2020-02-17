@@ -21,6 +21,14 @@ public class GameConfigurationDataBalanceObject : IStaticDataBalanceObject
     }
 }
 
+[Serializable]
+public class RarityArtConfig
+{
+    public Color Color;
+    public Color ShadowColor;
+    public Color HighlightColor;
+}
+
 [CreateAssetMenu(menuName = "StaticData/GameStaticData")]
 public class GameStaticData : ScriptableObject, ILoadableObject, IStaticDataBalance<GameConfigurationDataBalanceObject>
 {
@@ -103,6 +111,13 @@ public class GameStaticData : ScriptableObject, ILoadableObject, IStaticDataBala
     public WeakReference ActionListRef
     {
         get { return _actionList; }
+    }
+
+    [SerializeField]
+    private RarityArtConfig[] _rarityArtConfig;
+    public RarityArtConfig[] RarityArtConfig
+    {
+        get => _rarityArtConfig;
     }
 
     [BreakpointStaticDataReference]

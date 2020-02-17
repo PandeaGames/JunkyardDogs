@@ -64,6 +64,11 @@ public class WeightedLootCrateData : AbstractLootCrateData, IStaticDataBalance<W
                 
                 lootChoices.RemoveAt(indexFound);
                 loot[lootChosen] = item.loot.Data.GetLoot(dataModel);
+                
+                if (loot[lootChosen] == null)
+                {
+                    Debug.LogError($"{nameof(WeightedLootCrateData)} produced a NULL loot item from {item.loot.Data.name} at index {lootChosen}");
+                }
 
             } while (++lootChosen < _lootQuantity);
 

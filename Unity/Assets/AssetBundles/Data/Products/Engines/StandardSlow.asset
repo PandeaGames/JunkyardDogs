@@ -16,9 +16,9 @@ MonoBehaviour:
     _value: 1
   _rarity:
     _value: 1
-  _rarityAndGradeIntrinsicValue: 150
+  _rarityAndGradeIntrinsicValue: 1
   _InstrinsicValue: 0
-  _rawSellValue: 19.25
+  _rawSellValue: 19.75
   _sellValue: 20
   _volume: 1
   strafeAcceleration: 1

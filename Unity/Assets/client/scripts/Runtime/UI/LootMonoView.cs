@@ -6,6 +6,8 @@ public class LootMonoView : MonoBehaviour
 {
     [SerializeField]
     private ComponentDisplay _componentDisplay;
+    [SerializeField]
+    private Transform[] _componentDisplayTransformsToActivate;
     
     [SerializeField]
     private CurrencyDisplay _currencyDisplay;
@@ -33,6 +35,11 @@ public class LootMonoView : MonoBehaviour
     protected virtual void RenderLoot(IComponent loot)
     {
         _componentDisplay.RenderComponent(loot);
+        
+        foreach (Transform t in _componentDisplayTransformsToActivate)
+        {
+            t.gameObject.SetActive(true);
+        }
     }
     
     protected virtual void RenderLoot(Directive loot)

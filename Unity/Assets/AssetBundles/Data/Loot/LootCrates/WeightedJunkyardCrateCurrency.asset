@@ -17,7 +17,7 @@ MonoBehaviour:
       _id: Search_50
     weight: 100
   - loot:
-      _id: JagerChassisLoot
+      _id: Loot_Blueprint_JagerChassis
     weight: 50
   - loot:
       _id: Coins_100

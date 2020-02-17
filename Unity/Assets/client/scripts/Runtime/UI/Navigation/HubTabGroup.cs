@@ -28,6 +28,6 @@ public class HubTabGroup : TabGroup
 
     private void OnEnterHubState(HubStates state)
     {
-        
+        SetSelectedIndex((int) state);
     }
 }

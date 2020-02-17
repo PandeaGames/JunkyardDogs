@@ -18,8 +18,8 @@ MonoBehaviour:
     _value: 0
   _rarityAndGradeIntrinsicValue: 10
   _InstrinsicValue: 130
-  _rawSellValue: 65
-  _sellValue: 70
+  _rawSellValue: 130
+  _sellValue: 135
   _volume: 1
   _chargeTime: 0.5
   _cooldown: 0.5

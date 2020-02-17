@@ -14,28 +14,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _loot:
   - loot:
-      _id: PlateLootItem
+      _id: Loot_Blueprint_T01KinzokuInuAlumPlate
     weight: 100
   - loot:
-      _id: Loot_Chassis_SkylabsJunkMamoth
+      _id: Loot_Blueprint_Chassis_SkylabsJunkMamoth
     weight: 50
   - loot:
-      _id: Loot_EmptySkylabsWeaponProcessor
+      _id: Loot_Blueprint_Skylabs_Himmel-i9
     weight: 75
   - loot:
-      _id: Loot_FloriansDeagles
+      _id: Loot_Blueprint_FloriansDeagles
     weight: 100
   - loot:
-      _id: Loot_SkylabsSpiralPower
+      _id: Loot_Blueprint_SkylabsSpiralPower
     weight: 100
   - loot:
-      _id: Loot_SkylabsLaser
+      _id: Loot_Blueprint_SkylabsLaser
     weight: 100
   - loot:
-      _id: HimmelCPULoot
+      _id: Loot_Blueprint_Akamina_CPU_Cautious_Max
     weight: 100
   - loot:
-      _id: DirectiveSkylabsDodgeProjectiles
+      _id: Loot_Blueprint_SkylabsDodgeProjectiles
     weight: 500
   - loot:
       _id: Search_50

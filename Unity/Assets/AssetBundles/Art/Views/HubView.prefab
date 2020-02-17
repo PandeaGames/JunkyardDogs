@@ -1311,6 +1311,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LootCollectionUI
       objectReference: {fileID: 0}
+    - target: {fileID: 5254165129488379434, guid: f097cd4e52666ee4a914edf59ae35959,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 309004394438153502, guid: f097cd4e52666ee4a914edf59ae35959,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1416,11 +1421,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2885295806069067492, guid: f097cd4e52666ee4a914edf59ae35959,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3521644037880035255, guid: f097cd4e52666ee4a914edf59ae35959,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -1470,6 +1470,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2885295806069067492, guid: f097cd4e52666ee4a914edf59ae35959,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3958037753670184299, guid: f097cd4e52666ee4a914edf59ae35959,
         type: 3}

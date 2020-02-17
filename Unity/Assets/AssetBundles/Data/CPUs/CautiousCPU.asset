@@ -15,13 +15,13 @@ MonoBehaviour:
   _grade:
     _value: 0
   _rarity:
-    _value: 1
-  _rarityAndGradeIntrinsicValue: 40
-  _InstrinsicValue: 40
-  _rawSellValue: 20
-  _sellValue: 25
+    _value: 0
+  _rarityAndGradeIntrinsicValue: 10
+  _InstrinsicValue: 11
+  _rawSellValue: 11
+  _sellValue: 15
   _distinctions: []
   Aggressiveness: 2
   Evasiveness: 1
   Cautiousness: 8
-  DirectiveSlotCount: 2
+  DirectiveSlotCount: 1

@@ -50,7 +50,7 @@ public class HubViewController : AbstractViewControllerFsm<HubStates>
         JunkyardStaticDataReference reference = new JunkyardStaticDataReference();
         reference.ID = junkyardData.ID;
         Game.Instance.GetViewModel<JunkyardUserViewModel>(0).UserData.Junkard = reference;
-        SetState(HubStates.Junkyard);
+        Game.Instance.GetViewModel<HubViewModel>(0).SetState(HubStates.Junkyard);
     }
 
     private void OnEnterHubState(HubStates state)

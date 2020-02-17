@@ -102,7 +102,7 @@
                 <e p="CompetitorBlueprintBalanceData.cs" t="Include" />
                 <e p="ComponentArtConfig.cs" t="Include" />
                 <e p="CPUBalanceData.cs" t="Include" />
-                <e p="CPUBlueprintData.cs" t="Include" />
+                <e p="CPUBlueprintBalanceData.cs" t="Include" />
                 <e p="CurrencyBalanceData.cs" t="Include" />
                 <e p="CurrencyLootBalanceData.cs" t="Include" />
                 <e p="DirectiveBalanceData.cs" t="Include" />

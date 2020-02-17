@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: JunkyardCrateData
   m_EditorClassIdentifier: 
   _lootData:
-  - _id: JagerChassisLoot
-  - _id: PlateLootItem
-  - _id: JagerChassisLoot
+  - _id: Loot_Blueprint_JagerChassis
+  - _id: Loot_Blueprint_JagerPlate
+  - _id: Loot_Blueprint_JagerChassis

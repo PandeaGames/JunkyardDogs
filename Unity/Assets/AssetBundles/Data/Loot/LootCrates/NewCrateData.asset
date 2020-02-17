@@ -13,22 +13,22 @@ MonoBehaviour:
   m_Name: NewCrateData
   m_EditorClassIdentifier: 
   _lootData:
-  - _id: PlateLootItem
-  - _id: PlateLootItem
-  - _id: JagerChassisLoot
-  - _id: Loot_SkylabsSpiralPower
-  - _id: HimmelCPULoot
-  - _id: DirectiveSkylabsDodgeProjectiles
-  - _id: JagerChassisLoot
-  - _id: PlateLootItem
-  - _id: PlateLootItem
-  - _id: PlateLootItem
-  - _id: PlateLootItem
-  - _id: PlateLootItem
-  - _id: PlateLootItem
-  - _id: PlateLootItem
-  - _id: PlateLootItem
-  - _id: PlateLootItem
-  - _id: HimmelCPULoot
+  - _id: Loot_Blueprint_JagerPlate
+  - _id: Loot_Blueprint_JagerPlate
+  - _id: Loot_Blueprint_JagerChassis
+  - _id: Loot_Blueprint_SkylabsSpiralPower
+  - _id: Loot_Blueprint_Akamina_CPU_Evassive_Max
+  - _id: Loot_Blueprint_SkylabsDodgeProjectiles
+  - _id: Loot_Blueprint_JagerChassis
+  - _id: Loot_Blueprint_JagerPlate
+  - _id: Loot_Blueprint_JagerPlate
+  - _id: Loot_Blueprint_JagerPlate
+  - _id: Loot_Blueprint_JagerPlate
+  - _id: Loot_Blueprint_JagerPlate
+  - _id: Loot_Blueprint_JagerPlate
+  - _id: Loot_Blueprint_JagerPlate
+  - _id: Loot_Blueprint_JagerPlate
+  - _id: Loot_Blueprint_JagerPlate
+  - _id: Loot_Blueprint_JagerPlate
   - _id: Coins_50
-  - _id: Coins_50
+  - _id: PremiumCoins_300

@@ -15,9 +15,9 @@ MonoBehaviour:
   _grade:
     _value: 2
   _rarity:
-    _value: 1
-  _rarityAndGradeIntrinsicValue: 275
-  _InstrinsicValue: 17
-  _rawSellValue: 8.5
+    _value: 3
+  _rarityAndGradeIntrinsicValue: 425
+  _InstrinsicValue: 13
+  _rawSellValue: 6.5
   _sellValue: 10
   SimulatedDirective: 1

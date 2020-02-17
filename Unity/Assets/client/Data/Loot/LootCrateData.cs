@@ -17,6 +17,10 @@ public class LootCrateData : AbstractLootCrateData, IStaticDataBalance<LootCrate
         for (int i = 0; i < _lootData.Length; i++)
         {
             lootData[i] = _lootData[i].Data.GetLoot(dataModel);
+            if (lootData[i] == null)
+            {
+                Debug.LogError($"{nameof(LootCrateData)} produced a NULL loot item from {_lootData[i].Data.name} at index {i}");
+            }
         }
 
         return lootData;

@@ -9,6 +9,7 @@ using UnityEngine;
 public struct BlueprintBalanceObject:IStaticDataBalanceObject
 {
     public string name;
+    public string blueprintId;
     public string GetDataUID()
     {
         return name;

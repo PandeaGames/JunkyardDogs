@@ -37,7 +37,8 @@ namespace JunkyardDogs.Simulation
             logic.isMeleeWeapon = meleeWeapon != null;
             logic.meleeDistance = simBot.GetBounds().width / 2 + 1;
             logic.isWithinMeleeRange = logic.distance < logic.meleeDistance;
-
+            logic.aggressiveness = simBot.bot.GetCPUAttribute(CPU.CPUAttribute.Aggressiveness);
+            
             if (logic.isMeleeWeapon && !logic.isWithinMeleeRange
                 || !logic.isMeleeWeapon && logic.isWithinMeleeRange
                 || logic.wasLastDecisionAWeapon)
@@ -46,7 +47,6 @@ namespace JunkyardDogs.Simulation
             }
             else
             {
-                logic.aggressiveness = simBot.bot.GetCPUAttribute(CPU.CPUAttribute.Aggressiveness);
                 logic.weight = logic.aggressiveness;
             }
             

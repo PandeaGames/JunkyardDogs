@@ -17,8 +17,8 @@ MonoBehaviour:
   _rarity:
     _value: 0
   _rarityAndGradeIntrinsicValue: 10
-  _InstrinsicValue: 22.903225
-  _rawSellValue: 11.451612
+  _InstrinsicValue: 10
+  _rawSellValue: 10
   _sellValue: 15
   _volume: 1
   _chargeTime: 0.01
