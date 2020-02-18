@@ -37,7 +37,7 @@ namespace JunkyardDogs.Views
         {
             _obj = obj;
             MessageDialogViewModel model = Game.Instance.GetViewModel<MessageDialogViewModel>();
-            model.SetOptions(_chooseOptions, "screen.choose_nation.confirm_msg");
+            model.SetOptions(_chooseOptions, LocalizationManager.GetTranslation("screen.choose_nation.confirm_msg"));
             
             model.OnOptionSelected += ModelOnOptionSelected;
             

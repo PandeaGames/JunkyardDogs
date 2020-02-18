@@ -1,3 +1,4 @@
+using System;
 using JunkyardDogs.Components.Gameplay;
 using PandeaGames.Utils;
 
@@ -5,6 +6,8 @@ public class UserExperienceBreakpoint
 {
     public readonly ExpLevel ExpLevel;
     public readonly float BreakpointProgress;
+
+    public bool ReadyToUpgrade => BreakpointProgress >= 100;
 
     public UserExperienceBreakpoint(ExpLevel ExpLevel, float BreakpointProgress)
     {
@@ -39,7 +42,7 @@ public class UserExperienceBreakpoints
     {
         int currentBreakpointIndex = (int) exp.Level - 1;
         double currentBreakpoint = totalExpBreakpointData.breakpoints[currentBreakpointIndex];
-        float progress = (float) exp.Value / (float)currentBreakpoint;
+        float progress = ((float) exp.Value / (float)currentBreakpoint) * 100;
         
         TotalExpBreakpoint = new UserExperienceBreakpoint(exp, progress);
         NationalExpBreakpoint = new UserNationalExperienceBreakpoint[exp.NationDictionary.Count];
@@ -47,7 +50,7 @@ public class UserExperienceBreakpoints
         for (int i = 0; i < NationalExpBreakpoint.Length; i++)
         {
             NationDictionaryKvP nationalExp = exp.NationDictionary.GetPair(i);
-            currentBreakpointIndex = (int) nationalExp.Value.Level - 1;
+            currentBreakpointIndex = (int) Math.Min(nationalExp.Value.Level - 1, nationalExpBreakpointData.breakpoints.Count);
             currentBreakpoint = nationalExpBreakpointData.breakpoints[currentBreakpointIndex];
             progress = ((float) nationalExp.Value.Value / (float)currentBreakpoint) * 100;
 

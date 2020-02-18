@@ -25,6 +25,10 @@ public class WorldMapHUDScreen : ScreenView
 
     private void Update()
     {
+        if (_userService == null)
+        {
+            return;
+        }
         UserExperienceBreakpoints breakpointProgress = _userService.GetExperienceBreakpoints();
         _userExperienceBreakpoints.Render(breakpointProgress);
     }

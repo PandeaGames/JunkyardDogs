@@ -19,6 +19,7 @@ public class WorldMapViewModel : AbstractViewModel
     public event Action<TournamentStaticDataReference> OnTournamentTapped;
     public event Action<TournamentState.TournamentStatus> OnPlayTournament;
     public event Action<JunkyardData> OnJunkyardTapped;
+    public event Action<Nationality> OnTryAscend;
 
     private Data _data;
 
@@ -53,5 +54,10 @@ public class WorldMapViewModel : AbstractViewModel
         {
             OnPlayTournament(status);
         }
+    }
+
+    public void TryAscend(Nationality nationality)
+    {
+        OnTryAscend?.Invoke(nationality);
     }
 }

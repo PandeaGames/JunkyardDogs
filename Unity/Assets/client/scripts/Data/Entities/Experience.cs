@@ -8,6 +8,7 @@ public interface IExperienceModel
     uint GetLevel(Nationality nationality);
     void AddExp(Nationality nationality, int amount);
     void Ascend(Nationality nationality);
+    uint Ascend();
     int GetTotalExp();
 }
 

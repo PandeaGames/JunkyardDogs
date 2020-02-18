@@ -341,6 +341,28 @@ MonoBehaviour:
     - 
     - Are you sure you want to choose this country?
     Flags: 0000
+  - Term: UI.hud.level_up
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - 
+    - Level Up
+    Flags: 0000
+  - Term: UI.dialog.level_up_msg
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - 
+    - 'Level Up!
+
+      {0}'
+    Flags: 0000
   mLanguages:
   - Name: German
     Code: de

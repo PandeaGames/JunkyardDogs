@@ -38,9 +38,9 @@ public class DialogService : Service
                 continue;
             }
 
-            //if we find a dialog of type MessageDialog, insert it into the dictionary as our generic MessageDialog.
+            /*//if we find a dialog of type MessageDialog, insert it into the dictionary as our generic MessageDialog.
             if(messageDialogComponent)
-                _dialogLookup.Add(typeof(MessageDialog), dialogPrefab);
+                _dialogLookup.Add(typeof(MessageDialog), dialogPrefab);*/
 
             _dialogLookup.Add(dialogComponent.GetType(), dialogPrefab);
         }

@@ -197,6 +197,11 @@ public class JunkyardUser : User, ILootCrateConsumer, IExperienceModel
     {
         Experience.Ascend(nationality);
     }
+    
+    public uint Ascend()
+    {
+        return Experience.Ascend();
+    }
 
     public int GetTotalExp()
     {

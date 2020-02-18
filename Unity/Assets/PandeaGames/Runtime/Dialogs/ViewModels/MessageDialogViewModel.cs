@@ -37,9 +37,19 @@ namespace PandeaGames.Runtime.Dialogs.ViewModels
             get { return _msg; }
         }
         
+        public void SetOptions(Option options)
+        {
+            SetOptions(new List<Option>(new []{options}));
+        }
+        
         public void SetOptions(List<Option> options)
         {
             _options = options;
+        }
+        
+        public void SetOptions(Option options, string msg)
+        {
+            SetOptions(new List<Option>(new []{options}), msg);
         }
         
         public void SetOptions(List<Option> options, string msg)

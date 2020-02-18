@@ -6,9 +6,11 @@ namespace JunkyardDogs
     public class JunkyardUserViewModel : AbstractUserViewModel<JunkyardUser>, ILootCrateConsumer, IExperienceModel
     {
         public delegate void LootDelegate(IConsumable[] crateContents);
+        public delegate void AscendDelegate(Nationality nationality);
         public delegate void ScreenSpaceLootDelegate(IConsumable[] crateContents, Vector3 screenSpaceCollectioPoint);
         public LootDelegate OnLootConsumed;
         public ScreenSpaceLootDelegate OnScreenSpaceLootConsumed;
+        public AscendDelegate OnAscend;
         
         public IConsumable[] Consume(AbstractLootCrateData crateData, int seed)
         {
@@ -61,6 +63,15 @@ namespace JunkyardDogs
         public void Ascend(Nationality nationality)
         {
             UserData.Ascend(nationality);
+            OnAscend?.Invoke(nationality);
+        }
+        
+        public uint Ascend()
+        {
+            uint value = UserData.Ascend();
+            OnAscend?.Invoke(null);
+            return value;
+
         }
 
         public int GetTotalExp()

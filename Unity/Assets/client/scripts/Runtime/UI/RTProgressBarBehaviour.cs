@@ -10,6 +10,7 @@ public class RTProgressBarBehaviour : AbstractProgressDisplay
 
     public override void SetProgress(float percentage)
     {
+        percentage = Mathf.Min(percentage, 1);
         _fill.anchorMax = new Vector2(0, 1);
         _fill.anchorMin = new Vector2(0, 0);
             

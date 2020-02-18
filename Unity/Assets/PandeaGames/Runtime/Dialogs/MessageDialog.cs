@@ -21,7 +21,7 @@ public class MessageDialog<TViewModel> : Dialog<MessageDialogViewModel> where TV
     {
         base.Initialize();
         DisplayOptions(_viewModel.options);
-        _messageText.text = LocalizationManager.GetTranslation(_viewModel.Msg);
+        _messageText.text = _viewModel.Msg;
     }
 
     protected virtual void DisplayOptions(List<MessageDialogViewModel.Option> options)
