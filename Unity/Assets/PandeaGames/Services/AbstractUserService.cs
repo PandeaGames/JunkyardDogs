@@ -65,7 +65,7 @@ public static class UserServiceUtils
         }
         catch (Exception e)
         {
-            Debug.LogError("There was an error loading user data at "+ string.Format("{0}{1}", prefix, UserServiceUtils.USER_DATA_KEY) + ": \n" + e);
+            Debug.LogWarning("There was an error loading user data at "+ string.Format("{0}{1}", prefix, UserServiceUtils.USER_DATA_KEY) + ": \n" + e);
             user = new T();
             user.UID = SystemInfo.deviceUniqueIdentifier;
         }

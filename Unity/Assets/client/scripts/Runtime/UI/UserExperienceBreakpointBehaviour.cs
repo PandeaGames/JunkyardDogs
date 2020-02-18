@@ -1,3 +1,4 @@
+using System;
 using JunkyardDogs;
 using JunkyardDogs.Data;
 using PandeaGames;
@@ -38,6 +39,15 @@ public class UserExperienceBreakpointBehaviour : MonoBehaviour
 
         _userViewModel = Game.Instance.GetViewModel<JunkyardUserViewModel>(0);
 ;        _userViewModel.OnAscend += Ascend;
+    }
+
+    private void OnDestroy()
+    {
+        if (_userViewModel != null)
+        {
+            _userViewModel.OnAscend -= Ascend;
+            _userViewModel = null;
+        }
     }
 
     private void Ascend(Nationality nationality)

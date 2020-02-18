@@ -63,7 +63,7 @@ public class JunkyardService : AbstractService<JunkyardService>
         }
         catch (Exception e)
         {
-            Debug.LogError(e);
+            Debug.LogWarning(e);
             serializedJunkyard = junkyardData.Generate();
         }
 

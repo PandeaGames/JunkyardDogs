@@ -87,6 +87,11 @@ public abstract class AbstractConfigListBalanceData<TConfig>
     public void LoadAsync(LoadSuccess onLoadSuccess, LoadError onLoadFailed)
     {
         LoaderGroup loaderGroup = new LoaderGroup();
+        
+        if (_defaultConfig is ILoadableObject)
+        {
+            loaderGroup.AppendProvider(_defaultConfig as ILoadableObject);
+        }
 
         foreach (TConfig config in _configs)
         {

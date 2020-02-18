@@ -67,8 +67,10 @@ public class SimpleEffects : ISimulatedEngagementEventHandler
     
     private void SmallExplosionEffect(SimProjectileAttackObject simObject)
     {
+        var config =
+            SynchronousStaticDataProvider.Instance.GetProjectileImpactArtConfigData(simObject.projectileWeapon);
         GameObject.Instantiate(
-            SynchronousStaticDataProvider.Instance.GetProjectileImpactArtConfigData(simObject.projectileWeapon).Prefab,
+            config.Prefab,
             new Vector3(simObject.body.position.x, 0, simObject.body.position.y),
             Quaternion.identity, null);
     }
