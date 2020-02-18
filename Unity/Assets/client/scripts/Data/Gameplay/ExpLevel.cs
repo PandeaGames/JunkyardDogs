@@ -43,7 +43,8 @@ namespace JunkyardDogs.Components.Gameplay
         public uint Ascend()
         {
             _value = 0;
-            return ++_level;
+            _level += 1;
+            return _level;
         }
     }
 }

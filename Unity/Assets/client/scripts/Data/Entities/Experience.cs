@@ -60,13 +60,15 @@ public class Experience : ExpLevel, IExperienceModel
 
     public void AddExp(Nationality nationality, int amount)
     {
+        int addedAmount = amount;
         if (_nationDictionary.Contains(nationality))
         {
             amount += _nationDictionary.GetValue(nationality);
         }
-        
-        _nationDictionary.SetValue(nationality, amount);
-        AddExp(amount);
+
+        uint level = _nationDictionary.GetValue(nationality).Level;
+        _nationDictionary.SetValue(nationality, new NationalExperience(level, amount));
+        AddExp(addedAmount);
     }
     
     public int GetTotalExp()

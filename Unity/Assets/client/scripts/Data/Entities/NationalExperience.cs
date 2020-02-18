@@ -14,6 +14,11 @@ public class NationalExperience : ExpLevel
         
     }
     
+    public NationalExperience(uint level, int exp) : base(level, exp)
+    {
+        
+    }
+    
     public static implicit operator NationalExperience(int exp)
     {
         return new NationalExperience(exp);

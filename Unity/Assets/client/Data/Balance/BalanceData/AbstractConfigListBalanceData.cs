@@ -25,7 +25,7 @@ public abstract class AbstractConfigListBalanceData<TConfig>
     public override void ImportData(string json)
     {
         ConfigListBalanceDataObj[] dataList = JsonHelper.ArrayFromJson<ConfigListBalanceDataObj>(json);
-        Debug.LogFormat("{0} Data found. Parsing.", dataList.Length);
+
         if (_configs == null) _configs = new TConfig[0];
         List<TConfig> newConfigList = new List<TConfig>(_configs);
         foreach (ConfigListBalanceDataObj data in dataList)
