@@ -363,6 +363,16 @@ MonoBehaviour:
 
       {0}'
     Flags: 0000
+  - Term: UI.dialog.bot_required
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 'Bot Required. Please go to the Garage and build one to use. '
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
   mLanguages:
   - Name: German
     Code: de

@@ -57,6 +57,10 @@ public class JunkyardUser : User, ILootCrateConsumer, IExperienceModel
             {
                 Competitor.Inventory.AddComponent(consumable as IComponent);
             }
+            else if(consumable is Bot)
+            {
+                Competitor.Inventory.AddBot(consumable as Bot);
+            }
             else if (consumable is NationalExp)
             {
                 NationalExp exp = consumable as NationalExp;

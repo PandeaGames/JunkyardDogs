@@ -1,7 +1,9 @@
-﻿using JunkyardDogs.Components;
+﻿using I2.Loc;
+using JunkyardDogs.Components;
 using JunkyardDogs.Data;
 using JunkyardDogs.scripts.Runtime.Dialogs;
 using PandeaGames;
+using PandeaGames.Runtime.Dialogs.ViewModels;
 using PandeaGames.Views;
 using PandeaGames.Views.ViewControllers;
 using UnityEngine;
@@ -29,6 +31,7 @@ namespace JunkyardDogs.Views
             _junkyardViewGO = GameObject.Instantiate(Game.Instance.GetStaticDataPovider<GameStaticDataProvider>().GameDataStaticData.JunkyardView);
             _junkyardViewGO.SetActive(false);
             _junkyardView = _junkyardViewGO.GetComponent<JunkyardMonoView>();
+            _junkyardUserViewModel = Game.Instance.GetViewModel<JunkyardUserViewModel>(0);
         }
 
         public override void Show()
@@ -38,10 +41,22 @@ namespace JunkyardDogs.Views
             _junkyardViewGO.SetActive(true);
             
             Game.Instance.GetService<JunkyardUserService>().Load();
-            Bot bot = Game.Instance.GetService<JunkyardUserService>().User.Competitor.Inventory.Bots[0];
-        
-            _junkyardView.Render(_junkyardViewModel, bot);
             
+            if (_junkyardUserViewModel.UserData.Competitor.Inventory.Bots.Count <= 0)
+            {
+                MessageDialogViewModel vm = new MessageDialogViewModel();
+                vm.SetOptions(
+                    new MessageDialogViewModel.Option("UI.ok"),
+                    LocalizationManager.GetTranslation("UI.dialog.bot_required"));
+        
+                FindServiceManager().GetService<DialogService>().DisplayDialog<MessageDialog>(vm);
+            }
+            else
+            {
+                Bot bot = _junkyardUserViewModel.UserData.Competitor.Inventory.Bots[0];
+        
+                _junkyardView.Render(_junkyardViewModel, bot);
+            }
         }
 
         public override void Destroy()

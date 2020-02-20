@@ -36,9 +36,13 @@ public class HubViewController : AbstractViewControllerFsm<HubStates>
             return new JunkyardViewController();
         }
     }
+
+    private JunkyardUserViewModel _userViewModel;
     
     public HubViewController()
     {
+        _userViewModel = Game.Instance.GetViewModel<JunkyardUserViewModel>(0);
+            
         SetViewStateController<MainMapState>(HubStates.MainMap);
         SetViewStateController<GarageState>(HubStates.Garage);
         SetViewStateController<JunkyardState>(HubStates.Junkyard);
@@ -47,10 +51,13 @@ public class HubViewController : AbstractViewControllerFsm<HubStates>
 
     private void OnJunkyardTapped(JunkyardData junkyardData)
     {
-        JunkyardStaticDataReference reference = new JunkyardStaticDataReference();
-        reference.ID = junkyardData.ID;
-        Game.Instance.GetViewModel<JunkyardUserViewModel>(0).UserData.Junkard = reference;
-        Game.Instance.GetViewModel<HubViewModel>(0).SetState(HubStates.Junkyard);
+        if (_userViewModel.UserData.Competitor.Inventory.Bots.Count > 0)
+        {
+            JunkyardStaticDataReference reference = new JunkyardStaticDataReference();
+            reference.ID = junkyardData.ID;
+            Game.Instance.GetViewModel<JunkyardUserViewModel>(0).UserData.Junkard = reference;
+            Game.Instance.GetViewModel<HubViewModel>(0).SetState(HubStates.Junkyard);
+        }
     }
 
     private void OnEnterHubState(HubStates state)

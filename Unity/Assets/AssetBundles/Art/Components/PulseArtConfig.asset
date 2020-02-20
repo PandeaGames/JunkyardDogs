@@ -19,5 +19,5 @@ MonoBehaviour:
     name: 
     _prefab:
       _guid: 864a412ada7ba0c4392789f80fe9e101
-      _path: Assets/AssetBundles/Art/Bots/Prefabs/Pulse.prefab
+      _path: Assets/AssetBundles/Art/Bots/Prefabs/PulseSphereAttackArt.prefab
   _configs: []

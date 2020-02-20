@@ -46,7 +46,7 @@ namespace JunkyardDogs
             JunkyardUser user = Game.Instance.GetService<JunkyardUserService>().User;
             LootDataModel LootDataModel = new LootDataModel(user, 0);
             user.Competitor.Nationality = reference;
-            user.Consume(reference.Data.gameStartInventory.Data.GetLoot(LootDataModel), 0);
+            Game.Instance.GetViewModel<JunkyardUserViewModel>(0).Consume(reference.Data.gameStartInventory.Data.GetLoot(LootDataModel), 0);
             user.Ascend(reference);
 
             if (OnNationChosen != null)
