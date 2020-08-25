@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace I2.Loc
 {
@@ -49,7 +50,7 @@ namespace I2.Loc
             }
         }
 
-        /// <summary>
+         /// <summary>
         /// Fix the specified string with customization options.
         /// </summary>
         /// <param name='str'>
@@ -63,6 +64,9 @@ namespace I2.Loc
         /// </param>
         public static string Fix(string str, bool showTashkeel, bool useHinduNumbers)
         {
+            var newStr = HindiFixer.Fix(str);
+            if (newStr != str)
+                return newStr;
             RTLFixerTool.showTashkeel = showTashkeel;
             RTLFixerTool.useHinduNumbers = useHinduNumbers;
 

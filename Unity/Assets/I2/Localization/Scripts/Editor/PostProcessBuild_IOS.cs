@@ -12,7 +12,7 @@ namespace I2.Loc
 {
     public class PostProcessBuild_IOS
     {
-        [PostProcessBuild]
+        [PostProcessBuild(10000)]
         public static void ChangeXcodePlist(BuildTarget buildTarget, string pathToBuiltProject)
         {
             if (buildTarget != BuildTarget.iOS)
@@ -65,6 +65,7 @@ namespace I2.Loc
 				//var targetName = PBXProject.GetUnityTargetName();
 				//string projBuild = project.TargetGuidByName( targetName );
 
+				project.RemoveLocalizationVariantGroup("I2 Localization");
 				// Set the Language Overrides
 				foreach (var code in langCodes)
 				{

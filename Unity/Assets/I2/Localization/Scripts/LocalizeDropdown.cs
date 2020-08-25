@@ -42,7 +42,7 @@ namespace I2.Loc
         void FillValues()
         {
             var _Dropdown = GetComponent<Dropdown>();
-            if (_Dropdown == null && LocalizationManager.IsPlaying())
+            if (_Dropdown == null && I2Utils.IsPlaying())
             {
                 #if TextMeshPro
                     FillValuesTMPro();

@@ -1,0 +1,368 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f0b0c553be8edd4682e9180fdd13e37, type: 3}
+  m_Name: I2Languages
+  m_EditorClassIdentifier: 
+  mSource:
+    UserAgreesToHaveItOnTheScene: 0
+    UserAgreesToHaveItInsideThePluginsFolder: 0
+    GoogleLiveSyncIsUptoDate: 1
+    mTerms:
+    - Term: nationality.canada.title
+      TermType: 0
+      Description: 
+      Languages:
+      - 
+      - 
+      Flags: 0000
+      Languages_Touch:
+      - Kanada
+      - Canada
+    - Term: nationality.germany.title
+      TermType: 0
+      Description: 
+      Languages:
+      - 
+      - 
+      Flags: 0000
+      Languages_Touch:
+      - Deutschland
+      - Germany
+    - Term: nationality.undefined
+      TermType: 0
+      Description: 
+      Languages:
+      - undefined
+      - undefined
+      Flags: 0000
+      Languages_Touch:
+      - 
+      - 
+    - Term: UI.screens.return_to
+      TermType: 0
+      Description: 
+      Languages:
+      - Zuruck zu {0}
+      - Return to {0}
+      Flags: 0000
+      Languages_Touch:
+      - 
+      - 
+    - Term: UI.screens.worldMap.junkyard
+      TermType: 0
+      Description: 
+      Languages:
+      - Junkyard
+      - Junkyard
+      Flags: 0000
+      Languages_Touch:
+      - 
+      - 
+    - Term: Button
+      TermType: 0
+      Description: 
+      Languages:
+      - 
+      - 
+      Flags: 0000
+      Languages_Touch:
+      - 
+      - 
+    - Term: UI.build_new_bot
+      TermType: 0
+      Description: 
+      Languages:
+      - 
+      - Build New Bot
+      Flags: 0000
+      Languages_Touch:
+      - 
+      - 
+    - Term: UI.dialogs.select_component
+      TermType: 0
+      Description: 
+      Languages:
+      - 
+      - Select Component
+      Flags: 0000
+      Languages_Touch:
+      - 
+      - 
+    - Term: UI.exit
+      TermType: 0
+      Description: 
+      Languages:
+      - Exit
+      - Exit
+      Flags: 0000
+      Languages_Touch:
+      - 
+      - 
+    - Term: Build New Bot
+      TermType: 0
+      Description: 
+      Languages:
+      - 
+      - Edit Behaviour
+      Flags: 0000
+      Languages_Touch:
+      - 
+      - 
+    - Term: UI.edit_behaviour
+      TermType: 0
+      Description: 
+      Languages:
+      - 
+      - Edit Behaviour
+      Flags: 0000
+      Languages_Touch:
+      - 
+      - 
+    - Term: UI.done
+      TermType: 0
+      Description: 
+      Languages:
+      - Fertig
+      - Done
+      Flags: 0000
+      Languages_Touch:
+      - 
+      - 
+    - Term: UI.new_bahviour
+      TermType: 0
+      Description: 
+      Languages:
+      - 
+      - New Directive
+      Flags: 0000
+      Languages_Touch:
+      - 
+      - 
+    - Term: UI.dismantle
+      TermType: 0
+      Description: 
+      Languages:
+      - 
+      - Dismantle
+      Flags: 0000
+      Languages_Touch:
+      - 
+      - 
+    - Term: challlenge
+      TermType: 0
+      Description: 
+      Languages:
+      - 
+      - Challenge
+      Flags: 0000
+      Languages_Touch:
+      - 
+      - 
+    - Term: UI.choose
+      TermType: 0
+      Description: 
+      Languages:
+      - 
+      - Choose
+      Flags: 0000
+      Languages_Touch:
+      - 
+      - 
+    - Term: UI.play
+      TermType: 0
+      Description: 
+      Languages:
+      - Spiel
+      - Play
+      Flags: 0000
+      Languages_Touch:
+      - 
+      - 
+    - Term: UI.collect_rewards
+      TermType: 0
+      Description: 
+      Languages:
+      - 
+      - Collect Rewards
+      Flags: 0000
+      Languages_Touch:
+      - 
+      - 
+    - Term: UI.WorldMap
+      TermType: 0
+      Description: 
+      Languages:
+      - Weltkarte
+      - Wold Map
+      Flags: 0000
+      Languages_Touch:
+      - 
+      - 
+    - Term: UI.garage
+      TermType: 0
+      Description: 
+      Languages:
+      - 
+      - Garage
+      Flags: 0000
+      Languages_Touch:
+      - 
+      - 
+    - Term: UI.change_cpu
+      TermType: 0
+      Description: 
+      Languages:
+      - Change CPU
+      - 
+      Flags: 0000
+      Languages_Touch:
+      - 
+      - 
+    - Term: UI.eventdialog.title
+      TermType: 0
+      Description: 
+      Languages:
+      - 
+      - 
+      Flags: 0000
+      Languages_Touch:
+      - Veranstaltung
+      - Event
+    - Term: UI.cancel
+      TermType: 0
+      Description: 
+      Languages:
+      - 
+      - 
+      Flags: 0000
+      Languages_Touch:
+      - 
+      - Cancel
+    - Term: UI.components.remove
+      TermType: 0
+      Description: 
+      Languages:
+      - 
+      - 
+      Flags: 0000
+      Languages_Touch:
+      - 
+      - Remove Component
+    - Term: UI.store
+      TermType: 0
+      Description: 
+      Languages:
+      - 
+      - 
+      Flags: 0000
+      Languages_Touch:
+      - 
+      - Store
+    - Term: screen.choose_nation_title
+      TermType: 0
+      Description: 
+      Languages:
+      - 
+      - 
+      Flags: 0000
+      Languages_Touch:
+      - 
+      - Choose Nationality
+    - Term: screen.choose_nation.instruction
+      TermType: 0
+      Description: 
+      Languages:
+      - 
+      - 
+      Flags: 0000
+      Languages_Touch:
+      - 
+      - Choose your characters nationality. This will determine where in the world
+        your training begins. Good luck!
+    - Term: UI.ok
+      TermType: 0
+      Description: 
+      Languages:
+      - 
+      - 
+      Flags: 0000
+      Languages_Touch:
+      - Ok
+      - Ok
+    - Term: screen.choose_nation.confirm_msg
+      TermType: 0
+      Description: 
+      Languages:
+      - 
+      - 
+      Flags: 0000
+      Languages_Touch:
+      - 
+      - Are you sure you want to choose this country?
+    - Term: UI.hud.level_up
+      TermType: 0
+      Description: 
+      Languages:
+      - 
+      - 
+      Flags: 0000
+      Languages_Touch:
+      - 
+      - Level Up
+    - Term: UI.dialog.level_up_msg
+      TermType: 0
+      Description: 
+      Languages:
+      - 
+      - 
+      Flags: 0000
+      Languages_Touch:
+      - 
+      - 'Level Up!
+
+        {0}'
+    - Term: UI.dialog.bot_required
+      TermType: 0
+      Description: 
+      Languages:
+      - 
+      - 'Bot Required. Please go to the Garage and build one to use. '
+      Flags: 0000
+      Languages_Touch:
+      - 
+      - 
+    CaseInsensitiveTerms: 0
+    OnMissingTranslation: 1
+    mTerm_AppName: 
+    mLanguages:
+    - Name: German
+      Code: de
+      Flags: 0
+    - Name: English
+      Code: en
+      Flags: 0
+    IgnoreDeviceLanguage: 0
+    _AllowUnloadingLanguages: 0
+    Google_WebServiceURL: 
+    Google_SpreadsheetKey: 
+    Google_SpreadsheetName: 
+    Google_LastUpdatedVersion: 
+    Google_Password: change_this
+    GoogleUpdateFrequency: 3
+    GoogleInEditorCheckFrequency: 2
+    GoogleUpdateSynchronization: 1
+    GoogleUpdateDelay: 5
+    Assets: []
+    Spreadsheet_LocalFileName: 
+    Spreadsheet_LocalCSVSeparator: ','
+    Spreadsheet_LocalCSVEncoding: utf-8
+    Spreadsheet_SpecializationAsRows: 1

@@ -48,9 +48,11 @@ namespace I2.Loc
 			}
 			OnGUI_ScenesList_TitleBar();
 
-			mScrollPos_BuildScenes = GUILayout.BeginScrollView( mScrollPos_BuildScenes, EditorStyles.textArea, GUILayout.Height ( SmallSize ? 100 : 200));
-			
-			for (int i=0, imax=sceneList.Count; i<imax; ++i)
+            GUI.backgroundColor = Color.Lerp(GUITools.LightGray, Color.white, 0.5f);
+            mScrollPos_BuildScenes = GUILayout.BeginScrollView( mScrollPos_BuildScenes, LocalizeInspector.GUIStyle_OldTextArea, GUILayout.Height ( SmallSize ? 100 : 200));
+            GUI.backgroundColor = Color.white;
+
+            for (int i=0, imax=sceneList.Count; i<imax; ++i)
 			{
 				GUILayout.BeginHorizontal();
 				
@@ -89,15 +91,14 @@ namespace I2.Loc
 				if (GUILayout.Button("Scenes to Parse:", "toolbarbutton"))
 					Tools_ShowScenesList = false;
 
-				if (GUILayout.Button("All", "toolbarbutton", GUILayout.ExpandWidth(false)))  
-				{ 
-					mSelectedScenes.Clear(); 
-					for (int i=0, imax=mScenesInBuildSettings.Length; i<imax; ++i)
-						mSelectedScenes.Add (mScenesInBuildSettings[i].path);
-					if (!mSelectedScenes.Contains(Editor_GetCurrentScene()))
-						mSelectedScenes.Add (Editor_GetCurrentScene());
-				}
-				if (GUILayout.Button("None", "toolbarbutton", GUILayout.ExpandWidth(false))) { mSelectedScenes.Clear(); }
+				if (GUILayout.Button("All", "toolbarbutton", GUILayout.ExpandWidth(false)))
+                {
+                    OnGUI_ScenesList_SelectAllScenes(false);
+                }
+                if (GUILayout.Button("None", "toolbarbutton", GUILayout.ExpandWidth(false)))
+                {
+                    mSelectedScenes.Clear();
+                }
 				if (GUILayout.Button("Used", "toolbarbutton", GUILayout.ExpandWidth(false)))  
 				{ 
 					mSelectedScenes.Clear(); 
@@ -112,8 +113,23 @@ namespace I2.Loc
 				}
 			GUILayout.EndHorizontal();
 		}
-		
-		void SelectUsedScenes()
+
+ 
+        private void OnGUI_ScenesList_SelectAllScenes(bool reset)
+        {
+            if (reset || mScenesInBuildSettings == null)
+            {
+                mScenesInBuildSettings = EditorBuildSettings.scenes;
+            }
+
+            mSelectedScenes.Clear();
+            for (int i = 0, imax = mScenesInBuildSettings.Length; i < imax; ++i)
+                mSelectedScenes.Add(mScenesInBuildSettings[i].path);
+            if (!mSelectedScenes.Contains(Editor_GetCurrentScene()))
+                mSelectedScenes.Add(Editor_GetCurrentScene());
+        }
+
+        void SelectUsedScenes()
 		{
 			mSelectedScenes.Clear();
 			for (int i=0, imax=mScenesInBuildSettings.Length; i<imax; ++i)
@@ -154,8 +170,8 @@ namespace I2.Loc
 			if (InitialScene != Editor_GetCurrentScene())
 				Editor_OpenScene( InitialScene );
 			
-			if (mLanguageSource)
-				Selection.activeObject = mLanguageSource.gameObject;
+			if (mLanguageSource!=null)
+				Selection.activeObject = mLanguageSource.ownerObject;
 		}
 		#endregion
 	}

@@ -35,7 +35,7 @@ namespace I2.Loc
 			OnGUI_ScenesList();
 
 			GUI.backgroundColor = Color.Lerp (Color.gray, Color.white, 0.2f);
-			GUILayout.BeginVertical(EditorStyles.textArea, GUILayout.Height(1));
+			GUILayout.BeginVertical(LocalizeInspector.GUIStyle_OldTextArea, GUILayout.Height(1));
 			GUI.backgroundColor = Color.white;
 
 			GUILayout.Space (5);
@@ -83,7 +83,7 @@ namespace I2.Loc
         static ParsedTerm AddParsedTerm( string FullTerm, string TermKey, string Category, int Usage )
         {
             if (TermKey==null)
-                LanguageSource.DeserializeFullTerm(FullTerm, out TermKey, out Category);
+                LanguageSourceData.DeserializeFullTerm(FullTerm, out TermKey, out Category);
 
             var data = new ParsedTerm();
             data.Usage    = Usage;
@@ -122,48 +122,59 @@ namespace I2.Loc
 		public static void ParseTermsInSelectedScenes()
 		{
 			EditorApplication.update -= ParseTermsInSelectedScenes;
-			ParseTerms(false);
+			ParseTerms(false, false, true);
 		}
 
         public static void DoParseTermsInCurrentScene()
         {
             EditorApplication.update -= DoParseTermsInCurrentScene;
-			ParseTerms(true);
+			ParseTerms(true, false, true);
         }
-		
-		static void ParseTerms( bool OnlyCurrentScene, bool OpenTermsTab = true)
-		{ 
-			mIsParsing = true;
 
-			mParsedTerms.Clear();
-			mSelectedKeys.Clear ();
+        public static void DoParseTermsInCurrentSceneAndScripts()
+        {
+            EditorApplication.update -= DoParseTermsInCurrentSceneAndScripts;
+            ParseTerms(true, true, true);
+        }
+
+        static void ParseTerms(bool OnlyCurrentScene, bool ParseScripts, bool OpenTermsTab)
+        {
+            mIsParsing = true;
+
+            mParsedTerms.Clear();
+            mSelectedKeys.Clear();
             mParsedCategories.Clear();
 
-			//if (mParseTermsIn_Scripts)
-			//	ParseTermsInScripts();
+            if (ParseScripts)
+            {
+                ParseTermsInScripts();
+                FindTermsInLocalizedStrings();
+            }
 
-			if (mParseTermsIn_Scenes)
-			{
-				if (!OnlyCurrentScene)
-					ExecuteActionOnSelectedScenes( FindTermsInCurrentScene );
-				else 
-					FindTermsInCurrentScene();
-			}
-			
-			FindTermsNotUsed();
+            if (mParseTermsIn_Scenes)
+            {
+                if (!OnlyCurrentScene)
+                    ExecuteActionOnSelectedScenes(FindTermsInCurrentScene);
+                else
+                    FindTermsInCurrentScene();
+            }
+
+            FindTermsNotUsed();
             ScheduleUpdateTermsToShowInList();
 
-		
-			if (mParsedTerms.Count<=0)
-			{
-				ShowInfo ("No terms where found during parsing");
-				return;
-			}
+
+            if (mParsedTerms.Count <= 0)
+            {
+                ShowInfo("No terms where found during parsing");
+                return;
+            }
 
             UpdateParsedCategories();
+            {
+                mSelectedCategories.Clear();
+                mSelectedCategories.AddRange(mParsedCategories);
+            }
 
-            mSelectedCategories.Clear();
-            mSelectedCategories.AddRange(mParsedCategories);
 
             if (mLanguageSource!=null)
             {
@@ -173,8 +184,15 @@ namespace I2.Loc
 
 			if (OpenTermsTab) 
 			{
-				mFlagsViewKeys = ((int)eFlagsViewKeys.Used | (int)eFlagsViewKeys.NotUsed | (int)eFlagsViewKeys.Missing);
-				mCurrentViewMode = eViewMode.Keys;
+                if ((mFlagsViewKeys & (int)eFlagsViewKeys.Missing) > 0)
+                {
+                    mFlagsViewKeys = ((int)eFlagsViewKeys.Used | (int)eFlagsViewKeys.NotUsed | (int)eFlagsViewKeys.Missing);
+                }
+                else
+                {
+                    mFlagsViewKeys = ((int)eFlagsViewKeys.Used | (int)eFlagsViewKeys.NotUsed);
+                }
+                mCurrentViewMode = eViewMode.Keys;
 			}
 			mIsParsing = false;
 		}
@@ -189,7 +207,7 @@ namespace I2.Loc
 			for (int i=0, imax=Locals.Length; i<imax; ++i)
 			{
 				Localize localize = Locals[i];
-                if (localize==null || (localize.Source!=null && localize.Source!=mLanguageSource) || localize.gameObject==null || !GUITools.ObjectExistInScene(localize.gameObject))
+                if (localize==null || (localize.Source!=null && localize.Source.SourceData!=mLanguageSource) || localize.gameObject==null || !GUITools.ObjectExistInScene(localize.gameObject))
 					continue;
 				 
 				string Term, SecondaryTerm;
@@ -205,7 +223,68 @@ namespace I2.Loc
 			}
 		}
 
-		static void FindTermsNotUsed()
+        static void FindTermsInLocalizedStrings()
+        {
+            MonoBehaviour[] behaviors = (MonoBehaviour[])Resources.FindObjectsOfTypeAll(typeof(MonoBehaviour));
+            System.Type Type_localizedString = typeof(LocalizedString);
+            foreach (var cmp in behaviors)
+            {
+                if (cmp.GetType().Name.Contains("Example_LocalizedString"))
+                    continue;
+
+                var props = cmp.GetType()
+                               .GetProperties()
+                               .Where(x=> Type_localizedString.IsAssignableFrom(x.PropertyType) ||
+                                          Attribute.IsDefined(x, typeof(TermsPopup)));
+                foreach (var p in props)
+                {
+                    string value = null;
+                    if (Type_localizedString.IsAssignableFrom(p.PropertyType))
+                    {
+                        var varObj = p.GetValue(cmp,null);
+                        value = System.Convert.ToString(varObj.GetType().GetField("mTerm").GetValue(varObj));
+                    }
+                    else
+                    {
+                        value = System.Convert.ToString(p.GetValue(cmp,null));
+                    }
+                    if (!string.IsNullOrEmpty(value))
+                    {
+                        GetParsedTerm(value).Usage++;
+                    }
+
+                    //Debug.LogFormat("{0} ({1})", p.Name, p.PropertyType);
+                    //Debug.Log(value);
+                }
+
+
+                var variables = cmp.GetType()
+                                   .GetFields()
+                                   .Where(x => Type_localizedString.IsAssignableFrom(x.FieldType) ||
+                                               Attribute.IsDefined(x, typeof(TermsPopup)));
+                foreach (var v in variables)
+                {
+                    string value = null;
+                    if (Type_localizedString.IsAssignableFrom(v.FieldType))
+                    {
+                        var varObj = v.GetValue(cmp);
+                        value = System.Convert.ToString(varObj.GetType().GetField("mTerm").GetValue(varObj));
+                    }
+                    else
+                    {
+                        value = System.Convert.ToString(v.GetValue(cmp));
+                    }
+                    if (!string.IsNullOrEmpty(value))
+                    {
+                        GetParsedTerm(value).Usage++;
+                    }
+                    //Debug.LogFormat("{0} ({1})", v.Name, v.FieldType);
+                    //Debug.Log(value);
+                }
+            }
+        }
+
+        static void FindTermsNotUsed()
 		{
             // every Term that is in the DB but not in mParsedTerms
             if (mLanguageSource == null)
@@ -222,11 +301,12 @@ namespace I2.Loc
 
             string[] scriptFiles = AssetDatabase.GetAllAssetPaths().Where(path => path.ToLower().EndsWith(".cs")).ToArray();
 
-            string mScriptLocalization = @"ScriptLocalization\.Get\s?\(\s?\""(.*?)\""";
-            string mLocalizationManager = @"LocalizationManager\.GetTranslation\s?\(\s?\""(.*?)\""";
-            string mLocalizationManagerTry = @"LocalizationManager\.TryGetTranslation\s?\(\s?\""(.*?)\""";
+            string mLocalizationManager = @"GetTranslation\s?\(\s?\""(.*?)\""";
+            string mLocalizationManagerOld = @"GetTermTranslation\s?\(\s?\""(.*?)\""";
+            string mLocalizationManagerTry = @"TryGetTranslation\s?\(\s?\""(.*?)\""";
+            string mSetTerm = @"SetTerm\s?\(\s?\""(.*?)\""";
 
-            Regex regex = new Regex(mScriptLocalization + "|" + mLocalizationManager + "|" + mLocalizationManagerTry, RegexOptions.Multiline);
+            Regex regex = new Regex(mLocalizationManager + "|" + mLocalizationManagerTry + "|" + mLocalizationManagerOld + "|" + mSetTerm, RegexOptions.Multiline);
 
             foreach (string scriptFile in scriptFiles) 
 			{
@@ -235,9 +315,7 @@ namespace I2.Loc
                 for (int matchNum = 0; matchNum < matches.Count; matchNum++) 
 				{
                     Match match = matches[matchNum];
-					string term = match.Groups[1].Value;
-					if (string.IsNullOrEmpty(term))
-						term = match.Groups[2].Value;
+					string term = I2Utils.GetCaptureMatch(match);
                     GetParsedTerm(term).Usage++;
                 }
             }
@@ -256,7 +334,7 @@ namespace I2.Loc
 
 			foreach (var localize in Locals) 
 			{
-				if (localize == null || (localize.Source != null && localize.Source != mLanguageSource) || localize.gameObject == null || !GUITools.ObjectExistInScene (localize.gameObject))
+				if (localize == null || (localize.Source != null && localize.Source.SourceData != mLanguageSource) || localize.gameObject == null || !GUITools.ObjectExistInScene (localize.gameObject))
 					continue;
 
 				if (!string.IsNullOrEmpty (localize.mTerm) && !string.IsNullOrEmpty (localize.SecondaryTerm))
@@ -265,7 +343,7 @@ namespace I2.Loc
 				ApplyInferredTerm( localize );
 			}
 
-			ParseTerms (true);
+			ParseTerms (true, false, true);
 		}
 
 		public static void ApplyInferredTerm( Localize localize)

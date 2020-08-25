@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEditor;
 using System.Collections.Generic;
 using System.Reflection;
+using System.Linq;
 
 namespace I2.Loc
 {
@@ -17,8 +18,9 @@ namespace I2.Loc
 
 		Localize mLocalize;
 		SerializedProperty 	mProp_mTerm, mProp_mTermSecondary,
-							mProp_TranslatedObjects, mProp_LocalizeOnAwake, mProp_AlwaysForceLocalize,
-							mProp_IgnoreRTL, mProp_MaxCharactersInRTL, mProp_CorrectAlignmentForRTL, mProp_IgnoreNumbersInRTL, mProp_TermSuffix, mProp_TermPrefix, mProp_SeparateWords;
+							mProp_TranslatedObjects, mProp_LocalizeOnAwake, mProp_AlwaysForceLocalize, mProp_AllowLocalizedParameters,
+                            mProp_IgnoreRTL, mProp_MaxCharactersInRTL, mProp_CorrectAlignmentForRTL, mProp_IgnoreNumbersInRTL, mProp_TermSuffix, mProp_TermPrefix, mProp_SeparateWords,
+                            mProp_CallbackEvent;
 
 
 		bool mAllowEditKeyName = false;
@@ -33,6 +35,7 @@ namespace I2.Loc
 		public static string HelpURL_ReleaseNotes	= "http://inter-illusion.com/forum/i2-localization/26-release-notes";
 		public static string HelpURL_AssetStore		= "https://www.assetstore.unity3d.com/#!/content/14884";
 
+        public static LocalizeInspector mLocalizeInspector;
 		#endregion
 		
 		#region Inspector
@@ -40,7 +43,9 @@ namespace I2.Loc
 		void OnEnable()
 		{
 			mLocalize = (Localize)target;
-			mProp_mTerm 			 		= serializedObject.FindProperty("mTerm");
+            mLocalizeInspector = this;
+            LocalizationEditor.mCurrentInspector = this;
+            mProp_mTerm 			 		= serializedObject.FindProperty("mTerm");
 			mProp_mTermSecondary	 		= serializedObject.FindProperty("mTermSecondary");
 			mProp_TranslatedObjects  		= serializedObject.FindProperty("TranslatedObjects");
 			mProp_IgnoreRTL			 		= serializedObject.FindProperty("IgnoreRTL");
@@ -52,20 +57,11 @@ namespace I2.Loc
 			mProp_AlwaysForceLocalize		= serializedObject.FindProperty("AlwaysForceLocalize");
 			mProp_TermSuffix                = serializedObject.FindProperty("TermSuffix");
 			mProp_TermPrefix                = serializedObject.FindProperty("TermPrefix");
+            mProp_CallbackEvent             = serializedObject.FindProperty("LocalizeEvent");
+            mProp_AllowLocalizedParameters  = serializedObject.FindProperty("AllowLocalizedParameters");
 
-			// Check Copy/Paste Localize component into another gameObject
-			if (mLocalize.mTarget != null)
-			{
-				var cmp = mLocalize.mTarget as Component;
-				if (cmp != null && cmp.gameObject != mLocalize.gameObject)
-				{
-					serializedObject.ApplyModifiedProperties();
-					mLocalize.ReleaseTarget();
-					serializedObject.Update();
-				}
-			}
 
-			if (LocalizationManager.Sources.Count==0)
+            if (LocalizationManager.Sources.Count==0)
 				LocalizationManager.UpdateSources();
 			//LocalizationEditor.ParseTerms (true);
 
@@ -76,10 +72,10 @@ namespace I2.Loc
 			GUI_SelectedTerm = 0;
 			mNewKeyName = mLocalize.Term;
 
-			if (mLocalize.Source!=null)
-				LocalizationEditor.mLanguageSource = mLocalize.Source;
-			else
-			{
+			if (mLocalize.Source != null)
+				LocalizationEditor.mLanguageSource = mLocalize.Source.SourceData;
+            else
+            {
 				if (LocalizationManager.Sources.Count==0)
 					LocalizationManager.UpdateSources();
 				LocalizationEditor.mLanguageSource = LocalizationManager.GetSourceContaining( mLocalize.Term );
@@ -87,40 +83,53 @@ namespace I2.Loc
 
 			//UpgradeManager.EnablePlugins();
 			LocalizationEditor.ApplyInferredTerm (mLocalize);
+            RemoveUnusedReferences(mLocalize);
 		}
 
 		void OnDisable()
 		{
-			if (mLocalize == null)
+            mLocalizeInspector = null;
+            if (LocalizationEditor.mCurrentInspector == this) LocalizationEditor.mCurrentInspector = null;
+
+
+            if (mLocalize == null)
 				return;
 
-			//#if TextMeshPro
-			//string previous = null;
+            //#if TextMeshPro
+            //string previous = null;
 
-			//if (!Application.isPlaying && !string.IsNullOrEmpty(mLocalize.TMP_previewLanguage))
-			//{
-			//	previous = LocalizationManager.CurrentLanguage;
-			//	LocalizationManager.PreviewLanguage( mLocalize.TMP_previewLanguage );
-			//}
-			//#endif
+            //if (!Application.isPlaying && !string.IsNullOrEmpty(mLocalize.TMP_previewLanguage))
+            //{
+            //	previous = LocalizationManager.CurrentLanguage;
+            //	LocalizationManager.PreviewLanguage( mLocalize.TMP_previewLanguage );
+            //}
+            //#endif
 
-			//mLocalize.OnLocalize();
-			LocalizationManager.LocalizeAll();
+            //mLocalize.OnLocalize();
 
-			//#if TextMeshPro
-			//if (!string.IsNullOrEmpty(previous))
-			//{
-			//	LocalizationManager.PreviewLanguage(previous);
-			//	mLocalize.TMP_previewLanguage = null;
-			//}
-			//#endif
-		}
+            // Revert the preview language
+            // except when in TMPro and not changing to another GameObject (TMPro has a bug where any change causes the inspector to Disable and Enable)
+            if (!mLocalize.mLocalizeTargetName.Contains("LocalizeTarget_TextMeshPro") || Selection.activeGameObject==null || !Selection.gameObjects.Contains(mLocalize.gameObject))
+            {
+                LocalizationManager.LocalizeAll();
+            }
 
-		#endregion
+            //#if TextMeshPro
+            //if (!string.IsNullOrEmpty(previous))
+            //{
+            //	LocalizationManager.PreviewLanguage(previous);
+            //	mLocalize.TMP_previewLanguage = null;
+            //}
+            //#endif
 
-		#region GUI
-		
-		public override void OnInspectorGUI()
+            RemoveUnusedReferences(mLocalize);
+        }
+
+        #endregion
+
+        #region GUI
+
+        public override void OnInspectorGUI()
 		{
 			Undo.RecordObject(target, "Localize");
 
@@ -153,19 +162,21 @@ namespace I2.Loc
 
 				if (mLocalize.mGUI_ShowReferences || mLocalize.mGUI_ShowCallback) GUILayout.Space(10);
 
-					Localize loc = target as Localize;
+					//Localize loc = target as Localize;
 
 				//--[ Localize Callback ]----------------------
-					string HeaderTitle = "On Localize Call:";
-					if (!mLocalize.mGUI_ShowCallback && loc.LocalizeCallBack.Target!=null && !string.IsNullOrEmpty(loc.LocalizeCallBack.MethodName))
-						HeaderTitle = string.Concat(HeaderTitle, " <b>",loc.LocalizeCallBack.Target.name, ".</b><i>", loc.LocalizeCallBack.MethodName, "</i>");
-					mLocalize.mGUI_ShowCallback = GUITools.DrawHeader(HeaderTitle, mLocalize.mGUI_ShowCallback);
-					if (mLocalize.mGUI_ShowCallback)
-					{
-						GUITools.BeginContents();
-							DrawEventCallBack( loc.LocalizeCallBack, loc );
-						GUITools.EndContents();
-					}
+                    EditorGUILayout.PropertyField(mProp_CallbackEvent, new GUIContent("On Localize Callback"));
+
+					//string HeaderTitle = "On Localize Call:";
+					//if (!mLocalize.mGUI_ShowCallback && loc.LocalizeCallBack.Target!=null && !string.IsNullOrEmpty(loc.LocalizeCallBack.MethodName))
+					//	HeaderTitle = string.Concat(HeaderTitle, " <b>",loc.LocalizeCallBack.Target.name, ".</b><i>", loc.LocalizeCallBack.MethodName, "</i>");
+					//mLocalize.mGUI_ShowCallback = GUITools.DrawHeader(HeaderTitle, mLocalize.mGUI_ShowCallback);
+					//if (mLocalize.mGUI_ShowCallback)
+					//{
+					//	GUITools.BeginContents();
+					//		DrawEventCallBack( loc.LocalizeCallBack, loc );
+					//	GUITools.EndContents();
+					//}
 			}
 			OnGUI_Source ();
 
@@ -176,7 +187,13 @@ namespace I2.Loc
 			GUILayout.EndVertical();
 
 			serializedObject.ApplyModifiedProperties();
-		}
+            if (Event.current.type == EventType.Repaint)
+            {
+                LocalizationEditor.mTestAction = LocalizationEditor.eTest_ActionType.None;
+                LocalizationEditor.mTestActionArg = null;
+                LocalizationEditor.mTestActionArg2 = null;
+            }
+        }
 
 		#endregion
 
@@ -187,17 +204,53 @@ namespace I2.Loc
 			if (mLocalize.mGUI_ShowReferences = GUITools.DrawHeader ("References", mLocalize.mGUI_ShowReferences))
 			{
 				GUITools.BeginContents();
-				GUITools.DrawObjectsArray( mProp_TranslatedObjects );
-				GUITools.EndContents();
+
+                bool canTest = Event.current.type == EventType.Repaint;
+
+                var testAddObj = (canTest && LocalizationEditor.mTestAction == LocalizationEditor.eTest_ActionType.Button_Assets_Add) ? (Object)LocalizationEditor.mTestActionArg : null;
+                var testReplaceIndx = (canTest && LocalizationEditor.mTestAction == LocalizationEditor.eTest_ActionType.Button_Assets_Replace) ? (int)LocalizationEditor.mTestActionArg : -1;
+                var testReplaceObj = (canTest && LocalizationEditor.mTestAction == LocalizationEditor.eTest_ActionType.Button_Assets_Replace) ? (Object)LocalizationEditor.mTestActionArg2 : null;
+                var testDeleteIndx = (canTest && LocalizationEditor.mTestAction == LocalizationEditor.eTest_ActionType.Button_Assets_Delete) ? (int)LocalizationEditor.mTestActionArg : -1;
+
+                bool changed = GUITools.DrawObjectsArray( mProp_TranslatedObjects, false, false, true, testAddObj, testReplaceObj, testReplaceIndx, testDeleteIndx);
+                if (changed)
+                {
+                    serializedObject.ApplyModifiedProperties();
+                    foreach (var obj in serializedObject.targetObjects)
+                        (obj as Localize).UpdateAssetDictionary();
+                }
+
+                GUITools.EndContents();
 			}
 		}
 
-		#endregion
+        void RemoveUnusedReferences(Localize cmp)
+        {
+            cmp.TranslatedObjects.RemoveAll(x => !IsUsingReference(LocalizationManager.GetTermData(cmp.Term), x) && !IsUsingReference(LocalizationManager.GetTermData(cmp.SecondaryTerm), x));
+            if (cmp.TranslatedObjects.Count != cmp.mAssetDictionary.Count)
+                cmp.UpdateAssetDictionary();
+        }
+
+        bool IsUsingReference(TermData termData, Object obj )
+        {
+            if (obj == null || termData==null) return false;
+
+            string objName = obj.name;
+            foreach (string translation in termData.Languages)
+            {
+                if (translation != null && translation.Contains(objName))
+                    return true;
+            }
+            return false;
+        }
 
 
-		#region Terms
+        #endregion
 
-		int GUI_SelectedTerm = 0;
+
+        #region Terms
+
+        int GUI_SelectedTerm = 0;
 		void OnGUI_Terms()
 		{
 			if (mLocalize.mGUI_ShowTems=GUITools.DrawHeader ("Terms", mLocalize.mGUI_ShowTems))
@@ -227,14 +280,6 @@ namespace I2.Loc
 				if (mLocalize.Term != "-" && termData!=null && termData.TermType==eTermType.Text)
 				{
 					EditorGUI.BeginChangeCheck();
-					int val = EditorGUILayout.Popup("Modifier", GUI_SelectedTerm == 0 ? (int)mLocalize.PrimaryTermModifier : (int)mLocalize.SecondaryTermModifier, System.Enum.GetNames(typeof(Localize.TermModification)));
-					if (EditorGUI.EndChangeCheck())
-					{
-						serializedObject.FindProperty(GUI_SelectedTerm == 0 ? "PrimaryTermModifier" : "SecondaryTermModifier").enumValueIndex = val;
-						GUI.changed = false;
-					}
-
-					EditorGUI.BeginChangeCheck();
 					GUILayout.BeginHorizontal();
 						GUILayout.Label("Prefix:");
 						EditorGUILayout.PropertyField(mProp_TermPrefix, GUITools.EmptyContent);
@@ -253,51 +298,84 @@ namespace I2.Loc
 							}
 						};
 					}
-				}
+                    EditorGUI.BeginChangeCheck();
+                    int val = EditorGUILayout.Popup("Modifier", GUI_SelectedTerm == 0 ? (int)mLocalize.PrimaryTermModifier : (int)mLocalize.SecondaryTermModifier, System.Enum.GetNames(typeof(Localize.TermModification)));
+                    if (EditorGUI.EndChangeCheck())
+                    {
+                        serializedObject.FindProperty(GUI_SelectedTerm == 0 ? "PrimaryTermModifier" : "SecondaryTermModifier").enumValueIndex = val;
+                        GUI.changed = false;
+                    }
+                }
 
+                OnGUI_Options();
+                //--[ OnAwake vs OnEnable ]-------------
+                //GUILayout.BeginHorizontal();
+                //mProp_LocalizeOnAwake.boolValue = GUILayout.Toggle(mProp_LocalizeOnAwake.boolValue, new GUIContent(" Pre-Localize on Awake", "Localizing on Awake could result in a lag when the level is loaded but faster later when objects are enabled. If false, it will Localize OnEnable, so will yield faster level load but could have a lag when screens are enabled"));
+                //GUILayout.FlexibleSpace();
+                //if (mLocalize.HasCallback())
+                //{
+                //    GUI.enabled = false;
+                //    GUILayout.Toggle(true, new GUIContent(" Force Localize", "Enable this when the translations have parameters (e.g. Thew winner is {[WINNER}]) to prevent any optimization that could prevent updating the translation when the object is enabled"));
+                //    GUI.enabled = true;
+                //}
+                //else
+                //{
+                //    mProp_AlwaysForceLocalize.boolValue = GUILayout.Toggle(mProp_AlwaysForceLocalize.boolValue, new GUIContent(" Force Localize", "Enable this when the translations have parameters (e.g. Thew winner is {[WINNER}]) to prevent any optimization that could prevent updating the translation when the object is enabled"));
+                //}
+                //GUILayout.EndHorizontal();
 
-				//--[ OnAwake vs OnEnable ]-------------
-				GUILayout.BeginHorizontal();
-					mProp_LocalizeOnAwake.boolValue = GUILayout.Toggle(mProp_LocalizeOnAwake.boolValue, new GUIContent(" Pre-Localize on Awake", "Localizing on Awake could result in a lag when the level is loaded but faster later when objects are enabled. If false, it will Localize OnEnable, so will yield faster level load but could have a lag when screens are enabled") );
-					GUILayout.FlexibleSpace ();
-					if (mLocalize.LocalizeCallBack.HasCallback())
-					{
-						GUI.enabled = false;
-						GUILayout.Toggle(true, new GUIContent(" Force Localize", "Enable this when the translations have parameters (e.g. Thew winner is {[WINNER}]) to prevent any optimization that could prevent updating the translation when the object is enabled") );
-						GUI.enabled = true;
-					}
-					else
-					{
-						mProp_AlwaysForceLocalize.boolValue = GUILayout.Toggle(mProp_AlwaysForceLocalize.boolValue, new GUIContent(" Force Localize", "Enable this when the translations have parameters (e.g. Thew winner is {[WINNER}]) to prevent any optimization that could prevent updating the translation when the object is enabled") );
-					}
-				GUILayout.EndHorizontal ();
-	
-				//--[ Right To Left ]-------------
-				if (mLocalize.Term!="-" &&  termData != null && termData.TermType == eTermType.Text)
+                //--[ Right To Left ]-------------
+                if (!mLocalize.IgnoreRTL && mLocalize.Term!="-" &&  termData != null && termData.TermType == eTermType.Text)
 				{ 
 					GUILayout.BeginVertical("Box");
-                        GUILayout.BeginHorizontal();
-                            mProp_IgnoreRTL.boolValue = GUILayout.Toggle(mProp_IgnoreRTL.boolValue, new GUIContent(" Ignore Right To Left", "Arabic and other RTL languages require processing them so they render correctly, this toogle allows ignoring that processing (in case you are doing it manually during a callback)"));
-                            GUILayout.FlexibleSpace();
-                            mProp_SeparateWords.boolValue = GUILayout.Toggle(mProp_SeparateWords.boolValue, new GUIContent(" Separate Words", " Some languages (e.g. Chinese, Japanese and Thai) don't add spaces to their words (all characters are placed toguether), enabling this checkbox, will add spaces to all characters to allow wrapping long texts into multiple lines."));
-                        GUILayout.EndHorizontal();
-						if (!mLocalize.IgnoreRTL)
+                        //GUILayout.BeginHorizontal();
+                        //    mProp_IgnoreRTL.boolValue = GUILayout.Toggle(mProp_IgnoreRTL.boolValue, new GUIContent(" Ignore Right To Left", "Arabic and other RTL languages require processing them so they render correctly, this toogle allows ignoring that processing (in case you are doing it manually during a callback)"));
+                        //    GUILayout.FlexibleSpace();
+                        //    mProp_SeparateWords.boolValue = GUILayout.Toggle(mProp_SeparateWords.boolValue, new GUIContent(" Separate Words", " Some languages (e.g. Chinese, Japanese and Thai) don't add spaces to their words (all characters are placed toguether), enabling this checkbox, will add spaces to all characters to allow wrapping long texts into multiple lines."));
+                        //GUILayout.EndHorizontal();
 						{
 							mProp_MaxCharactersInRTL.intValue = EditorGUILayout.IntField( new GUIContent("Max line length", "If the language is Right To Left, long lines will be split at this length and the RTL fix will be applied to each line, this should be set to the maximum number of characters that fit in this text width. 0 disables the per line fix"), mProp_MaxCharactersInRTL.intValue );
 							GUILayout.BeginHorizontal();
 							mProp_CorrectAlignmentForRTL.boolValue = GUILayout.Toggle(mProp_CorrectAlignmentForRTL.boolValue, new GUIContent(" Adjust Alignment", "Right-align when Right-To-Left Language, and Left-Align otherwise") );
 							GUILayout.FlexibleSpace();
 							mProp_IgnoreNumbersInRTL.boolValue = GUILayout.Toggle(mProp_IgnoreNumbersInRTL.boolValue, new GUIContent(" Ignore Numbers", "Preserve numbers as latin characters instead of converting them"));
-						GUILayout.EndHorizontal();
+						    GUILayout.EndHorizontal();
 						}
 
-					GUILayout.EndHorizontal();
+					GUILayout.EndVertical();
 					}
 				
 
-				//GUILayout.EndHorizontal();
+				////GUILayout.EndHorizontal();
 			}
 		}
+
+        void OnGUI_Options()
+        {
+            int mask = 0;
+            if (mProp_LocalizeOnAwake.boolValue)          mask |= 1 << 0;
+            if (mProp_AlwaysForceLocalize.boolValue)      mask |= 1 << 1;
+            if (mProp_AllowLocalizedParameters.boolValue) mask |= 1 << 2;
+            if (mProp_SeparateWords.boolValue)            mask |= 1 << 3;
+            if (mProp_IgnoreRTL.boolValue)                mask |= 1 << 4;
+
+            EditorGUI.BeginChangeCheck();
+            mask = EditorGUILayout.MaskField(new GUIContent("Options"), mask, new []{
+                "Localize On Awake",
+                "Force Localize",
+                "Allow Localized Parameters",
+                "Separate Words",
+                "Ignore RTL"
+            });
+            if (EditorGUI.EndChangeCheck())
+            {
+                mProp_LocalizeOnAwake.boolValue          = (mask & (1 << 0))> 0;
+                mProp_AlwaysForceLocalize.boolValue      = (mask & (1 << 1))> 0;
+                mProp_AllowLocalizedParameters.boolValue = (mask & (1 << 2))> 0;
+                mProp_SeparateWords.boolValue            = (mask & (1 << 3))> 0;
+                mProp_IgnoreRTL.boolValue                = (mask & (1 << 4))> 0;
+            }
+        }
 
 		TermData OnGUI_PrimaryTerm( bool OnOpen )
 		{
@@ -383,7 +461,7 @@ namespace I2.Loc
 				bChanged = true;
 			}
 
-			LanguageSource source =  LocalizationManager.GetSourceContaining(Term);
+			LanguageSourceData source =  LocalizationManager.GetSourceContaining(Term);
 			TermData termData = source.GetTermData(Term);
 			if (termData!=null)
 			{
@@ -419,7 +497,7 @@ namespace I2.Loc
 				GUILayout.EndHorizontal();
 
 				string ValidatedName = mNewKeyName;
-				LanguageSource.ValidateFullTerm( ref ValidatedName );
+				LanguageSourceData.ValidateFullTerm( ref ValidatedName );
 
 				bool CanUseNewName = (source.GetTermData(ValidatedName)==null);
 				GUI.enabled = (!string.IsNullOrEmpty(mNewKeyName) && CanUseNewName);
@@ -428,10 +506,10 @@ namespace I2.Loc
 					mNewKeyName = ValidatedName;
 					mTermsArray=null;	// this recreates that terms array
 
-					LanguageSource Source = null;
+					LanguageSourceData Source = null;
 					#if UNITY_EDITOR
 					if (mLocalize.Source!=null)
-						Source = mLocalize.Source;
+						Source = mLocalize.Source.SourceData;
 					#endif
 
 					if (Source==null)
@@ -440,7 +518,7 @@ namespace I2.Loc
                     var data = Source.AddTerm( mNewKeyName, eTermType.Text, false );
 					if (data.Languages.Length > 0)
 						data.Languages[0] = mLocalize.GetMainTargetsText();
-					EditorUtility.SetDirty(Source);
+					Source.Editor_SetDirty();
 					AssetDatabase.SaveAssets();
 					mAllowEditKeyName = false;
 					bChanged = true;
@@ -474,7 +552,7 @@ namespace I2.Loc
 
 		void UpdateTermsList( string currentTerm )
 		{
-			List<string> Terms = mLocalize.Source==null ? LocalizationManager.GetTermsList() : mLocalize.Source.GetTermsList();
+			List<string> Terms = mLocalize.Source==null ? LocalizationManager.GetTermsList() : mLocalize.Source.SourceData.GetTermsList();
 			
 			// If there is a filter, remove all terms not matching that filter
 			if (mAllowEditKeyName && !string.IsNullOrEmpty(mNewKeyName)) 
@@ -516,7 +594,7 @@ namespace I2.Loc
 
 			bool bChanged = false;
 			GUI.backgroundColor = Color.gray;
-			GUILayout.BeginVertical (EditorStyles.textArea);
+			GUILayout.BeginVertical (LocalizeInspector.GUIStyle_OldTextArea);
 			for (int i = 0, imax = Mathf.Min (nTerms, 3); i < imax; ++i) 
 			{
 				ParsedTerm parsedTerm;
@@ -528,7 +606,7 @@ namespace I2.Loc
 				if (nUses > 0)
 					FoundText = string.Concat ("(", nUses, ") ", FoundText);
 
-				if (GUILayout.Button (FoundText, EditorStyles.miniLabel, GUILayout.MaxWidth(Screen.width - 70))) 
+				if (GUILayout.Button (FoundText, EditorStyles.miniLabel, GUILayout.MaxWidth(EditorGUIUtility.currentViewWidth - 70))) 
 				{
 					if (mTermsArray[i] == "<inferred from text>")
 						mNewKeyName = Term = string.Empty;
@@ -563,13 +641,14 @@ namespace I2.Loc
 			int CurrentTarget = -1;
 
 			mLocalize.FindTarget();
-            foreach (var locTarget in LocalizationManager.mLocalizeTargets)
-            {
-                if (locTarget.CanLocalize(mLocalize))
-                {
-                    TargetTypes.Add( locTarget.GetName() );
 
-                    if (locTarget.HasTarget(mLocalize))
+            foreach (var desc in LocalizationManager.mLocalizeTargets)
+            {
+                if (desc.CanLocalize(mLocalize))
+                {
+                    TargetTypes.Add(desc.Name);
+
+                    if (mLocalize.mLocalizeTarget!=null && desc.GetTargetType() == mLocalize.mLocalizeTarget.GetType())
                         CurrentTarget = TargetTypes.Count - 1;
                 }
             }
@@ -582,35 +661,35 @@ namespace I2.Loc
 
 			GUILayout.BeginHorizontal();
 			GUILayout.Label ("Target:", GUILayout.Width (60));
-			GUI.changed = false;
-			int index = EditorGUILayout.Popup(CurrentTarget, TargetTypes.ToArray());
-			if (GUI.changed)
-			{
-				serializedObject.ApplyModifiedProperties();
-                mLocalize.ReleaseTarget();
-
-                foreach (var locTarget in LocalizationManager.mLocalizeTargets)
+            EditorGUI.BeginChangeCheck();
+			    int index = EditorGUILayout.Popup(CurrentTarget, TargetTypes.ToArray());
+            if (EditorGUI.EndChangeCheck())
+            {
+                serializedObject.ApplyModifiedProperties();
+                foreach (var obj in serializedObject.targetObjects)
                 {
-                    if (locTarget.GetName()== TargetTypes[index])
+                    var cmp = obj as Localize;
+                    if (cmp == null)
+                        continue;
+
+                    if (cmp.mLocalizeTarget != null)
+                        DestroyImmediate(cmp.mLocalizeTarget);
+                    cmp.mLocalizeTarget = null;
+
+                    foreach (var desc in LocalizationManager.mLocalizeTargets)
                     {
-                        locTarget.FindTarget(mLocalize);
-                        break;
+                        if (desc.Name == TargetTypes[index])
+                        {
+                            cmp.mLocalizeTarget = desc.CreateTarget(cmp);
+                            cmp.mLocalizeTargetName = desc.GetTargetType().ToString();
+                            break;
+                        }
                     }
                 }
 				serializedObject.Update();
 			}
 			GUILayout.EndHorizontal();
 		}
-
-        void TestTargetType<T>(ref List<string> TargetTypes, string TypeName, ref int CurrentTarget) where T : Component
-        {
-            if (mLocalize.GetComponent<T>() == null)
-                return;
-            TargetTypes.Add(TypeName);
-
-            if ((mLocalize.mTarget as T) != null)
-                CurrentTarget = TargetTypes.Count - 1;
-        }
 
 		#endregion
 
@@ -620,15 +699,16 @@ namespace I2.Loc
 		{
 			GUILayout.BeginHorizontal();
 
-				LanguageSource currentSource  = mLocalize.Source;
-				if (currentSource==null)
+				ILanguageSource currentSource  = mLocalize.Source;
+                if (currentSource==null)
 				{
-					currentSource = LocalizationManager.GetSourceContaining(mLocalize.Term);
+                    LanguageSourceData source = LocalizationManager.GetSourceContaining(mLocalize.Term);
+                    currentSource = source==null ? null : source.owner;
 				}
 
 				if (GUILayout.Button("Open Source", EditorStyles.toolbarButton, GUILayout.Width (100)))
 				{
-					Selection.activeObject = currentSource;
+					Selection.activeObject = currentSource as UnityEngine.Object;
 
 					string sTerm, sSecondary;
 					mLocalize.GetFinalTerms( out sTerm, out sSecondary );
@@ -640,15 +720,21 @@ namespace I2.Loc
 
 				GUILayout.BeginHorizontal(EditorStyles.toolbar);
 					EditorGUI.BeginChangeCheck ();
-					if (!mLocalize.Source)
+					if (mLocalize.Source == null)
 					{
 						GUI.contentColor = Color.Lerp (Color.gray, Color.yellow, 0.1f);
 					}
-					LanguageSource NewSource = EditorGUILayout.ObjectField( currentSource, typeof(LanguageSource), true) as LanguageSource;
+                    Object obj = EditorGUILayout.ObjectField(currentSource as Object, typeof(Object), true);
 					GUI.contentColor = Color.white;
 					if (EditorGUI.EndChangeCheck())
 					{
-						mLocalize.Source = NewSource;
+                        ILanguageSource NewSource = obj as ILanguageSource;
+                        if (NewSource == null && (obj as GameObject != null))
+                        {
+                            NewSource = (obj as GameObject).GetComponent<LanguageSource>();
+                        }
+
+                        mLocalize.Source = NewSource;
                         string sTerm, sSecondary;
                         mLocalize.GetFinalTerms(out sTerm, out sSecondary);
                         if (GUI_SelectedTerm == 1) sTerm = sSecondary;
@@ -661,7 +747,8 @@ namespace I2.Loc
                         mLocalize.GetFinalTerms(out sTerm, out sSecondary);
                         if (GUI_SelectedTerm == 1) sTerm = sSecondary;
 
-                        mLocalize.Source = LocalizationManager.GetSourceContaining(sTerm, false);
+                        var data = LocalizationManager.GetSourceContaining(sTerm, false);
+                        mLocalize.Source = data==null ? null : data.owner;
                         mTermsArray = null;
                     }
             GUILayout.EndHorizontal();
@@ -674,50 +761,50 @@ namespace I2.Loc
 		
 		#region Event CallBack
 		
-		public static void DrawEventCallBack( EventCallback CallBack, Localize loc )
-		{
-			if (CallBack==null)
-				return;
+		//public void DrawEventCallBack( EventCallback CallBack, Localize loc )
+		//{
+			//if (CallBack==null)
+			//	return;
 
-			GUI.changed = false;
+			//GUI.changed = false;
 
-			GUILayout.BeginHorizontal();
-			GUILayout.Label("Target:", GUILayout.ExpandWidth(false));
-			CallBack.Target = EditorGUILayout.ObjectField( CallBack.Target, typeof(MonoBehaviour), true) as MonoBehaviour;
-			GUILayout.EndHorizontal();
+			//GUILayout.BeginHorizontal();
+			//GUILayout.Label("Target:", GUILayout.ExpandWidth(false));
+			//CallBack.Target = EditorGUILayout.ObjectField( CallBack.Target, typeof(MonoBehaviour), true) as MonoBehaviour;
+			//GUILayout.EndHorizontal();
 			
-			if (CallBack.Target!=null)
-			{
-				GameObject GO = CallBack.Target.gameObject;
-				List<MethodInfo> Infos = new List<MethodInfo>();
+			//if (CallBack.Target!=null)
+			//{
+			//	GameObject GO = CallBack.Target.gameObject;
+			//	List<MethodInfo> Infos = new List<MethodInfo>();
 
-				var targets = GO.GetComponents(typeof(MonoBehaviour));
-				foreach (var behavior in targets)
-					Infos.AddRange( behavior.GetType().GetMethods() );
+			//	var targets = GO.GetComponents(typeof(MonoBehaviour));
+			//	foreach (var behavior in targets)
+			//		Infos.AddRange( behavior.GetType().GetMethods() );
 
-				List<string> Methods = new List<string>();
+			//	List<string> Methods = new List<string>();
 				
-				for (int i = 0, imax=Infos.Count; i<imax; ++i)
-				{
-					MethodInfo mi = Infos[i];
+			//	for (int i = 0, imax=Infos.Count; i<imax; ++i)
+			//	{
+			//		MethodInfo mi = Infos[i];
 					
-					if (IsValidMethod(mi))
-						Methods.Add (mi.Name);
-				}
+			//		if (IsValidMethod(mi))
+			//			Methods.Add (mi.Name);
+			//	}
 				
-				int Index = Methods.IndexOf(CallBack.MethodName);
+			//	int Index = Methods.IndexOf(CallBack.MethodName);
 				
-				int NewIndex = EditorGUILayout.Popup(Index, Methods.ToArray(), GUILayout.ExpandWidth(true));
-				if (NewIndex!=Index)
-					CallBack.MethodName = Methods[ NewIndex ];
-			}
-			if (GUI.changed)
-			{
-				GUI.changed = false;
-				EditorUtility.SetDirty(loc);
-				//UnityEditor.SceneManagement.EditorSceneManager.MarkSceneDirty() EditorApplication.MakeSceneDirty();
-			}
-		}
+			//	int NewIndex = EditorGUILayout.Popup(Index, Methods.ToArray(), GUILayout.ExpandWidth(true));
+			//	if (NewIndex!=Index)
+			//		CallBack.MethodName = Methods[ NewIndex ];
+			//}
+			//if (GUI.changed)
+			//{
+			//	GUI.changed = false;
+			//	EditorUtility.SetDirty(loc);
+			//	//UnityEditor.SceneManagement.EditorSceneManager.MarkSceneDirty() EditorApplication.MakeSceneDirty();
+			//}
+		//}
 		
 		static bool IsValidMethod( MethodInfo mi )
 		{
@@ -772,8 +859,9 @@ namespace I2.Loc
 			get{
 				if (mGUIStyle_Background==null)
 				{
-					mGUIStyle_Background = new GUIStyle(EditorStyles.textArea);
-					mGUIStyle_Background.overflow.left = 50;
+                    mGUIStyle_Background = new GUIStyle(EditorStyles.textArea);
+                    mGUIStyle_Background.fixedHeight = 0;
+                    mGUIStyle_Background.overflow.left = 50;
 					mGUIStyle_Background.overflow.right = 50;
 					mGUIStyle_Background.overflow.top = -5;
 					mGUIStyle_Background.overflow.bottom = 0;
@@ -782,7 +870,21 @@ namespace I2.Loc
 			}
 		}
 		static GUIStyle mGUIStyle_Background;
-		
-		#endregion
-	}
+
+        public static GUIStyle GUIStyle_OldTextArea
+        {
+            get
+            {
+                if (mGUIStyle_OldTextArea == null)
+                {
+                    mGUIStyle_OldTextArea = new GUIStyle(EditorStyles.textArea);
+                    mGUIStyle_OldTextArea.fixedHeight = 0;
+                }
+                return mGUIStyle_OldTextArea;
+            }
+        }
+        static GUIStyle mGUIStyle_OldTextArea;
+
+        #endregion
+    }
 }

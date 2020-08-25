@@ -4,7 +4,7 @@ using UnityEngine;
 namespace GoogleSheetsForUnity
 {
     /* 
-        This example wDrive.ill create a number of buttons on the scene, with self describing actions.
+        This example will create a number of buttons on the scene, with self describing actions.
         It introduces to basic operations to handle spreadsheets with the API to make CRUD operations on:
         tables (worksheets) with fields (column headers), as well as objects (rows) on those tables.
     */

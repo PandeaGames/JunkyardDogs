@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEditor;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace I2.Loc
 {
@@ -20,13 +21,13 @@ namespace I2.Loc
 		public static List<string> mSelectedCategories = new List<string>();
 
 
-		enum eFlagsViewKeys
+		public enum eFlagsViewKeys
 		{
 			Used = 1<<1,
 			Missing = 1<<2, 
 			NotUsed = 1<<3
 		};
-		static int mFlagsViewKeys = ((int)eFlagsViewKeys.Used | (int)eFlagsViewKeys.NotUsed | (int)eFlagsViewKeys.Missing);
+		public static int mFlagsViewKeys = ((int)eFlagsViewKeys.Used | (int)eFlagsViewKeys.NotUsed);
 
 		public static string mTermsList_NewTerm = null;
 		Rect mKeyListFilterRect;
@@ -40,7 +41,7 @@ namespace I2.Loc
 
 		void OnGUI_KeysList(bool AllowExpandKey = true, float Height = 300.0f, bool ShowTools=true)
 		{
-			if (mTermList_MaxWidth<=0)
+			///if (mTermList_MaxWidth<=0)
 				CalculateTermsListMaxWidth();
 
 			//--[ List Filters ]--------------------------------------
@@ -55,7 +56,7 @@ namespace I2.Loc
 				GUIStyle bstyle = new GUIStyle ("toolbarbutton");
 				bstyle.fontSize = 15;
 				if (GUILayout.Button (new GUIContent("\u21bb", "Parse Scene and update terms list with missing and unused terms"), bstyle, GUILayout.Width(25)))
-                    EditorApplication.update += DoParseTermsInCurrentScene;
+                    EditorApplication.update += DoParseTermsInCurrentSceneAndScripts;
                 if (GUILayout.Button(new GUIContent("\u21ea", "Refresh the translation of all Localize objects"), bstyle, GUILayout.Width(25)))
                     CallLocalizeAll();
 
@@ -72,10 +73,25 @@ namespace I2.Loc
 
 			GUILayout.EndHorizontal();
 
-			//--[ Keys List ]-----------------------------------------
-			mScrollPos_Keys = GUILayout.BeginScrollView( mScrollPos_Keys, false, false, "horizontalScrollbar", "verticalScrollbar", EditorStyles.textArea, GUILayout.MinHeight(Height), GUILayout.MaxHeight(Screen.height), GUILayout.ExpandHeight(false));
+            /*//if (Event.current.type == EventType.Repaint)
+                TermsListHeight = Screen.height - 400;
+            Debug.Log(Event.current.type + " " + TermsListHeight + " " + Screen.height + " " + GUILayoutUtility.GetLastRect().yMax);
+                
+            //TermsListHeight = Mathf.Min(Screen.height*0.5f, TermsListHeight);
+            mScrollPos_Keys = GUILayout.BeginScrollView(mScrollPos_Keys, false, false, "horizontalScrollbar", "verticalScrollbar", LocalizeInspector.GUIStyle_OldTextArea, GUILayout.Height(TermsListHeight));
+            for (int i = 0; i < 1000; ++i)
+                GUILayout.Label("ahhh" + i);
+            GUILayout.EndScrollView();
 
-			bool bAnyValidUsage = false;
+            return;*/
+            TermsListHeight = Mathf.Min(Screen.height*0.5f, TermsListHeight);
+
+            //--[ Keys List ]-----------------------------------------
+            GUI.backgroundColor = Color.Lerp(GUITools.LightGray, Color.white, 0.5f);
+            mScrollPos_Keys = GUILayout.BeginScrollView( mScrollPos_Keys, false, false, "horizontalScrollbar", "verticalScrollbar", LocalizeInspector.GUIStyle_OldTextArea ,GUILayout.Height(TermsListHeight)/*GUILayout.MinHeight(Height), GUILayout.MaxHeight(Screen.height), GUILayout.ExpandHeight(true)*/);
+            GUI.backgroundColor = Color.white;
+
+            bool bAnyValidUsage = false;
 
 			mRowSize = EditorStyles.toolbar.fixedHeight;
 			if (Event.current!=null && Event.current.type == EventType.Layout)
@@ -84,8 +100,6 @@ namespace I2.Loc
 			float YPosMin = -ScrollHeight;
 			int nSkip = 0;
 			int nDraw = 0;
-			if (TermsListHeight<=0)
-				TermsListHeight = Screen.height;
 
 			if (mShowableTerms.Count == 0 && Event.current.type == EventType.Layout)
 				UpdateTermsToShownInList ();
@@ -136,13 +150,14 @@ namespace I2.Loc
 			}
 			SkipSize += (mShowableTerms.Count - nDraw-nSkip) * mRowSize;
 			GUILayout.Space(SkipSize+2);
-			if (mSelectedCategories.Count != mParsedCategories.Count) 
+			if (mSelectedCategories.Count < mParsedCategories.Count) 
 			{
-				if (GUILayout.Button ("...", EditorStyles.label)) 
+                SkipSize += 25;
+                if (GUILayout.Button ("...", EditorStyles.label)) 
 				{
 					mSelectedCategories.Clear ();
 					mSelectedCategories.AddRange (mParsedCategories);
-				}
+                }
 			}
 			OnGUI_KeysList_AddKey();
 
@@ -150,12 +165,14 @@ namespace I2.Loc
 
 			GUILayout.EndScrollView();
 
-			Rect ListRect = GUILayoutUtility.GetLastRect();
-			if (ListRect.height>5)
-				TermsListHeight = ListRect.height;
+            TermsListHeight = YPosMin + mRowSize + 25;//SkipSize+25;
+
+            //Rect ListRect = GUILayoutUtility.GetLastRect();
+            //if (ListRect.height>5)
+            //	TermsListHeight = ListRect.height;
             //Debug.Log(nDraw + " " + nSkip + " " + Screen.height + " " + TermsListHeight);
 
-			OnGUI_Keys_ListSelection( KeyListFilterID );    // Selection Buttons
+            OnGUI_Keys_ListSelection( KeyListFilterID );    // Selection Buttons
 			
 //			if (!bAnyValidUsage)
 //				EditorGUILayout.HelpBox("Use (Tools\\Parse Terms) to find how many times each of the Terms are used", UnityEditor.MessageType.Info);
@@ -164,8 +181,8 @@ namespace I2.Loc
 			{
 				GUILayout.BeginHorizontal();
 				GUI.enabled = (mSelectedKeys.Count>0 || !string.IsNullOrEmpty(mKeyToExplore));
-					if (GUILayout.Button (new GUIContent("Add Terms", "Add terms to Source"))) 		 AddTermsToSource();
-					if (GUILayout.Button (new GUIContent("Remove Terms", "Remove Terms from Source"))) 	 RemoveTermsFromSource();
+					if (TestButton (eTest_ActionType.Button_AddSelectedTerms, new GUIContent("Add Terms", "Add terms to Source"), "Button", GUITools.DontExpandWidth)) 		 AddTermsToSource();
+					if (TestButton (eTest_ActionType.Button_RemoveSelectedTerms, new GUIContent("Remove Terms", "Remove Terms from Source"), "Button", GUITools.DontExpandWidth)) 	 RemoveTermsFromSource();
 
 					GUILayout.FlexibleSpace ();
 
@@ -201,13 +218,15 @@ namespace I2.Loc
             mUpdateShowTermIsScheduled = false;
 
             mShowableTerms.Clear ();
+            mSelectedCategories.Sort();
 			foreach (KeyValuePair<string, ParsedTerm> kvp in mParsedTerms)
 			{
 				ParsedTerm parsedTerm = kvp.Value;
 				if (ShouldShowTerm (parsedTerm.Term, parsedTerm.Category, parsedTerm.Usage, parsedTerm))
 					mShowableTerms.Add(parsedTerm);
 			}
-            EditorApplication.RepaintHierarchyWindow();
+            GUITools.RepaintInspectors();
+            GUITools.ScheduleRepaintInspectors();
         }
 
         void OnGUI_KeyHeader (string sKey, string sCategory, string FullKey, int nUses, float YPosMin)
@@ -262,21 +281,24 @@ namespace I2.Loc
 			if (bKeyIsMissing) 
 			{
 				Rect rect = new Rect(50, YPosMin+2, mRowSize, mRowSize+2);
-				GUI.DrawTexture (rect, GUI.skin.GetStyle ("CN EntryWarn").normal.background);
+                GUITools.DrawSkinIcon(rect, "CN EntryWarnIcon", "CN EntryWarn");
 				GUI.Label (rect, new GUIContent ("", "This term is used in the scene, but its not localized in the Language Source"));
 				MinX += rect.width;
 			}
 			else MinX += 3;
 
-			float listWidth = Mathf.Max (Screen.width, mTermList_MaxWidth);
-			Rect rectKey = new Rect(MinX, YPosMin+2, listWidth-MinX, mRowSize);
-			if (mKeyToExplore == FullKey) 
+            float listWidth = Mathf.Max(EditorGUIUtility.currentViewWidth / EditorGUIUtility.pixelsPerPoint, mTermList_MaxWidth);
+            Rect rectKey = new Rect(MinX, YPosMin+2, listWidth-MinX, mRowSize);
+            if (sCategory != LanguageSourceData.EmptyCategory)
+                rectKey.width -= 130;
+            if (mKeyToExplore == FullKey) 
 			{
 				GUI.backgroundColor = Color.Lerp (Color.blue, Color.white, 0.8f);
-				if (GUI.Button (rectKey, new GUIContent (sKey, EditorStyles.foldout.onNormal.background), EditorStyles.textArea)) 
+				if (GUI.Button (rectKey, new GUIContent (sKey, EditorStyles.foldout.onNormal.background), LocalizeInspector.GUIStyle_OldTextArea)) 
 				{
 					mKeyToExplore = string.Empty;
-					ClearErrors ();
+                    ScheduleUpdateTermsToShowInList();
+                    ClearErrors ();
 				}
 				GUI.backgroundColor = Color.white;
 			}
@@ -301,12 +323,12 @@ namespace I2.Loc
 				GUI.color = Color.white;
 			}
 			//--[ Category ]--------------------------
-			if (sCategory != LanguageSource.EmptyCategory) 
+			if (sCategory != LanguageSourceData.EmptyCategory) 
 			{
 				if (mKeyToExplore == FullKey) 
 				{
-                    rectKey.x = listWidth - 100-38;
-					rectKey.width = 100;
+                    rectKey.x = listWidth - 100-38-20;
+					rectKey.width = 130;
 					if (GUI.Button (rectKey, sCategory, EditorStyles.toolbarButton))
 						OpenTool_ChangeCategoryOfSelectedTerms ();
 				}
@@ -314,8 +336,8 @@ namespace I2.Loc
 				{
 					GUIStyle stl = new GUIStyle(EditorStyles.miniLabel);
 					stl.alignment = TextAnchor.MiddleRight;
-					rectKey.width = 100;//EditorStyles.miniLabel.CalcSize(new GUIContent(sCategory)).x;
-					rectKey.x = listWidth - rectKey.width - 38-13;
+                    rectKey.width = 130;//EditorStyles.miniLabel.CalcSize(new GUIContent(sCategory)).x;
+					rectKey.x = listWidth - rectKey.width - 38-20;
 
 					if (GUI.Button (rectKey, sCategory, stl)) 
 					{
@@ -324,26 +346,30 @@ namespace I2.Loc
 					}
 				}
 			}
-		}
+        }
 
 
-		void CalculateTermsListMaxWidth()
+        void CalculateTermsListMaxWidth()
 		{
-			mTermList_MaxWidth = 0;
+            mTermList_MaxWidth = (EditorGUIUtility.currentViewWidth / EditorGUIUtility.pixelsPerPoint) - 120;
+            /*float maxWidth = Screen.width / 18;
 			foreach (KeyValuePair<string, ParsedTerm> kvp in mParsedTerms)
 			{
-				var size = EditorStyles.label.CalcSize(new GUIContent(kvp.Key));
+                var txt = kvp.Key;
+                if (txt.Length > 100)
+                    txt = txt.Substring(0, 100);
+                var size = EditorStyles.label.CalcSize(new GUIContent(txt));
 				mTermList_MaxWidth  = Mathf.Max (mTermList_MaxWidth, size.x);
-			}
-		}
+			}*/
+        }
 
-		bool TermHasAllTranslations( LanguageSource source, TermData data )
+		bool TermHasAllTranslations( LanguageSourceData source, TermData data )
 		{
             if (source==null) source = LocalizationManager.Sources[0];
 			for (int i=0, imax=data.Languages.Length; i<imax; ++i)
 			{
 				bool isLangEnabled = (source.mLanguages.Count>i) ? source.mLanguages[i].IsEnabled() : true;
-				if (string.IsNullOrEmpty( data.Languages[i] ) && string.IsNullOrEmpty( data.Languages_Touch[i] ) && isLangEnabled)
+				if (string.IsNullOrEmpty(data.Languages[i]) && isLangEnabled)
 					return false;
 			}
 			return true;
@@ -366,11 +392,11 @@ namespace I2.Loc
 					mTermsList_NewTerm = EditorGUILayout.TextField(mTermsList_NewTerm, EditorStyles.toolbarTextField, GUILayout.ExpandWidth(true));
 					GUILayout.EndHorizontal();
 
-					LanguageSource.ValidateFullTerm( ref mTermsList_NewTerm );
+					LanguageSourceData.ValidateFullTerm( ref mTermsList_NewTerm );
 					if (string.IsNullOrEmpty(mTermsList_NewTerm) || mLanguageSource.ContainsTerm(mTermsList_NewTerm) || mTermsList_NewTerm=="-")
 						GUI.enabled = false;
 	
-					if (GUILayout.Button ("Create Key", "toolbarbutton", GUILayout.ExpandWidth(false)))
+					if (TestButton (eTest_ActionType.Button_AddTerm_InTermsList, "Create Key", "toolbarbutton", GUILayout.ExpandWidth(false)))
 					{
 						AddLocalTerm(mTermsList_NewTerm);
 						SelectTerm( mTermsList_NewTerm );
@@ -392,43 +418,87 @@ namespace I2.Loc
 			mSelectedKeys.Sort();
 		}
 
-		void OnGUI_SelectedCategories()
-		{
-			List<string> mCategories = new List<string>();
-			mCategories.AddRange( mParsedCategories );
+        void OnGUI_SelectedCategories()
+        {
+            if (mParsedCategories.Count == 0)
+                return;
 
-			if (mCategories.Count==0)
-				return;
+            string text = "Categories";
+            if (mSelectedCategories.Count() == 0)
+                text = "Nothing";
+            else
+            if (mSelectedCategories.Count() == mParsedCategories.Count)
+                text = "Everything";
+            else
+                text = mSelectedCategories.Count + " categories";
 
-			//--[ Compress Mask ]-------------------
-			int Mask = 0;
-			if (mSelectedCategories.Count == mCategories.Count) 
-			{
-				Mask = -1;
-			}
-			else
-			{
-				for (int i = 0, imax = mCategories.Count; i < imax; ++i)
-					if (mSelectedCategories.Contains (mCategories [i]))
-						Mask |= (1 << i);
-			}
-			
-			//--[ GUI ]-----------------------------
-			EditorGUI.BeginChangeCheck();
-			Mask = EditorGUILayout.MaskField(Mask, mCategories.ToArray(), EditorStyles.toolbarDropDown, GUILayout.Width(100));
+            if (GUILayout.Button(new GUIContent(text), "toolbarbutton", GUILayout.Width(100)))
+            {
+                var menu = new GenericMenu();
 
-			//--[ Decompress Mask ]-------------------
-			if (EditorGUI.EndChangeCheck())
-			{
-				mSelectedCategories.Clear();
-				mShowableTerms.Clear ();
-				for (int i=0, imax=mCategories.Count; i<imax; ++i)
-					if ( (Mask & (1<<i)) > 0 )
-						mSelectedCategories.Add (mCategories[i]);
-			}
-		}
+                menu.AddItem(new GUIContent("Everything"), false, () =>
+                {
+                    mSelectedCategories.Clear();
+                    mSelectedCategories.AddRange(mParsedCategories);
+                    ScheduleUpdateTermsToShowInList();
+                });
+                menu.AddItem(new GUIContent("Nothing"), false, () =>
+                {
+                    mSelectedCategories.Clear();
+                    ScheduleUpdateTermsToShowInList();
+                });
+                menu.AddSeparator("");
 
-		void SaveSelectedCategories()
+                var parsedList = mParsedCategories.OrderBy(x=>x).ToList();
+                for (int i=0, imax=parsedList.Count; i<imax ; ++i)
+                {
+                    var category = parsedList[i];
+                    var nextCategory = i + 1 < imax ? parsedList[i + 1] : null;
+
+                    bool isHeader = (nextCategory != null && nextCategory.StartsWith(category + "/"));
+
+                    var displayName = category;
+                    var categoryRoot = category;
+                    if (isHeader)
+                    {
+                        categoryRoot += "/";
+                        var newCateg = (!category.Contains('/')) ? category : category.Substring(category.LastIndexOf('/') + 1);
+                        displayName = categoryRoot + newCateg;
+                    }
+
+                    menu.AddItem(new GUIContent(displayName), !string.IsNullOrEmpty(mSelectedCategories.FirstOrDefault(x=>x.StartsWith(categoryRoot))), () =>
+                    {
+                        var CatHeader = category + "/";
+                        if (mSelectedCategories.Contains(category))
+                        {
+                            mSelectedCategories.Remove(category);
+
+                            if (isHeader)
+                            {
+                                mSelectedCategories.RemoveAll((x) => x.StartsWith(CatHeader));
+                            }
+                        }
+                        else
+                        {
+                            mSelectedCategories.Add(category);
+                            if (isHeader)
+                            {
+                                mSelectedCategories.AddRange( parsedList.Where(x=>x.StartsWith(CatHeader)));
+                            }
+                        }
+                        ScheduleUpdateTermsToShowInList();
+                    });
+                    if (isHeader)
+                    {
+                        menu.AddSeparator(category+"/");
+                    }
+                }
+
+                menu.ShowAsContext();
+            }
+        }
+
+        void SaveSelectedCategories()
 		{
 			if (mSelectedCategories.Count == 0) {
 				EditorPrefs.DeleteKey ("I2 CategoryFilter");
@@ -454,7 +524,7 @@ namespace I2.Loc
 		{
 			GUILayout.BeginHorizontal( "toolbarbutton" );
 
-			if (GUILayout.Button( new GUIContent( "All", "Selects All Terms in the list" ), "toolbarbutton", GUILayout.ExpandWidth( false ) ))
+			if (TestButton( eTest_ActionType.Button_SelectTerms_All, new GUIContent( "All", "Selects All Terms in the list" ), "toolbarbutton", GUILayout.ExpandWidth( false ) ))
 			{
 				mSelectedKeys.Clear();
 				foreach (var kvp in mParsedTerms)
@@ -465,7 +535,7 @@ namespace I2.Loc
 			GUILayout.Space( 5 );
 
 			GUI.enabled = ((mFlagsViewKeys & (int)eFlagsViewKeys.Used)>1);
-			if (GUILayout.Button( new GUIContent( "Used", "Selects All Terms referenced in the parsed scenes" ), "toolbarbutton", GUILayout.ExpandWidth( false ) ))
+			if (TestButton(eTest_ActionType.Button_SelectTerms_Used, new GUIContent( "Used", "Selects All Terms referenced in the parsed scenes" ), "toolbarbutton", GUILayout.ExpandWidth( false ) ))
 			{
 				mSelectedKeys.Clear();
 				foreach (var kvp in mParsedTerms)
@@ -482,7 +552,7 @@ namespace I2.Loc
 			}
 
 			GUI.enabled = ((mFlagsViewKeys & (int)eFlagsViewKeys.Missing)>1);
-			if (GUILayout.Button( new GUIContent( "Missing", "Selects all Terms Used but not defined in the Source" ), "toolbarbutton", GUILayout.ExpandWidth( false ) ))
+			if (TestButton(eTest_ActionType.Button_SelectTerms_Missing, new GUIContent( "Missing", "Selects all Terms Used but not defined in the Source" ), "toolbarbutton", GUILayout.ExpandWidth( false ) ))
 			{
 				mSelectedKeys.Clear();
 				foreach (var kvp in mParsedTerms)
@@ -511,9 +581,17 @@ namespace I2.Loc
 				GUI.FocusControl( "" );
 			}
 
+            string filterHelp = "Fiter Options:\ntext - shows all key/categories matching text\nc text - shows all terms of the text category\nf text - show terms having 'text' in their translations";
+            GUILayout.Space(-5);
+            GUI.contentColor = new Color(1, 1, 1, 0.5f);
+            GUILayout.Label(new GUIContent(GUITools.Icon_Help.image, filterHelp), GUITools.DontExpandWidth);
+            GUI.contentColor = GUITools.White;
+            GUILayout.Space(-5);
 
 
-			if (EditorGUI.EndChangeCheck())
+
+
+            if (EditorGUI.EndChangeCheck())
 			{
 				mShowableTerms.Clear();
 				GUI.changed = false;
@@ -539,25 +617,67 @@ namespace I2.Loc
 		private static TermData ShowTerm_termData;
 		public static bool ShouldShowTerm (string Term, string Category, int nUses, ParsedTerm parsedTerm=null )
 		{
-			if (!string.IsNullOrEmpty(Category) && !mSelectedCategories.Contains(Category)) 
-				return false;
-			
-			if (Term == "-" || !StringContainsFilter(Term, KeyList_Filter)) 
-				return false;
+            if (!string.IsNullOrEmpty(Category) && !mSelectedCategories.Contains(Category))
+                return false;
+            if (Term == "-")
+                return false;
 
-			if (!string.IsNullOrEmpty(Category) && Category!=LanguageSource.EmptyCategory)
-				Term = Category + "/" + Term;
+
+            var fullTerm = Term;
+            if (!string.IsNullOrEmpty(Category) && Category != LanguageSourceData.EmptyCategory)
+                fullTerm = Category + "/" + Term;
 
 			if (parsedTerm != null && parsedTerm.termData != null)
 				ShowTerm_termData = parsedTerm.termData;
 			else
 			{
-				ShowTerm_termData = mLanguageSource.GetTermData (Term);
+				ShowTerm_termData = mLanguageSource.GetTermData (fullTerm);
 				if (parsedTerm!=null)
 					parsedTerm.termData = ShowTerm_termData;
 			}
-			bool bIsMissing = ShowTerm_termData == null;
 
+
+            var filter = KeyList_Filter.Trim();
+            bool useTranslation = filter.StartsWith("f ", System.StringComparison.OrdinalIgnoreCase);
+            if (useTranslation)
+            {
+                if (ShowTerm_termData == null)
+                    return false;
+
+                filter = filter.Substring(2).Trim();
+                if (!string.IsNullOrEmpty(filter))
+                {
+                    bool hasFilter = false;
+                    for (int i = 0; i < ShowTerm_termData.Languages.Length; ++i)
+                    {
+                        if (!string.IsNullOrEmpty(ShowTerm_termData.Languages[i]) && StringContainsFilter(ShowTerm_termData.Languages[i], filter))
+                        {
+                            hasFilter = true;
+                            break;
+                        }
+                    }
+                    if (!hasFilter)
+                        return false;
+                }
+            }
+            else
+            {
+                bool onlyCategory = filter.StartsWith("c ", System.StringComparison.OrdinalIgnoreCase);
+                if (onlyCategory)
+                    filter = filter.Substring(2).Trim();
+
+                if (!string.IsNullOrEmpty(filter))
+                {
+                    bool matchesCategory = StringContainsFilter(Category, filter);
+                    bool matchesName = !onlyCategory && StringContainsFilter(Term, filter);
+
+                    if (!matchesCategory && !matchesName)
+                        return false;
+                }
+            }
+
+
+            bool bIsMissing = ShowTerm_termData == null;
 			if (nUses<0) return true;
 
 			if ((mFlagsViewKeys & (int)eFlagsViewKeys.Missing)>0 && bIsMissing) return true;
@@ -571,15 +691,17 @@ namespace I2.Loc
 
 		static bool StringContainsFilter( string Term, string Filter )
 		{
-			if (string.IsNullOrEmpty(Filter))
-				return true;
-			Term = Term.ToLower();
-			string[] Filters = Filter.ToLower().Split(";,".ToCharArray());
-			for (int i=0, imax=Filters.Length; i<imax; ++i)
-				if (Term.Contains(Filters[i]))
-					return true;
-			
-			return false;
+            if (string.IsNullOrEmpty(Filter) || string.IsNullOrEmpty(Term))
+                return true;
+            if (Term == "-")
+                return false;
+            Term = Term.ToLower();
+            string[] Filters = Filter.ToLower().Split(";, ".ToCharArray(), System.StringSplitOptions.RemoveEmptyEntries);
+            for (int i = 0, imax = Filters.Length; i < imax; ++i)
+                if (Term.Contains(Filters[i]))
+                    return true;
+
+            return false;
 		}
 
 		#endregion
@@ -606,7 +728,7 @@ namespace I2.Loc
 		
 		void RemoveTermsFromSource()
 		{
-            if (!EditorUtility.DisplayDialog("Confirm delete", "Are you sure you want to delete the selected terms", "Yes", "Cancel"))
+            if (mTestAction==eTest_ActionType.None && !EditorUtility.DisplayDialog("Confirm delete", "Are you sure you want to delete the selected terms", "Yes", "Cancel"))
                 return;
 
             if (!string.IsNullOrEmpty (mKeyToExplore) && !mSelectedKeys.Contains(mKeyToExplore))
@@ -627,7 +749,7 @@ namespace I2.Loc
             mKeyToExplore = string.Empty;
             mTermList_MaxWidth = -1;
             serializedObject.ApplyModifiedProperties();
-            EditorUtility.SetDirty(mLanguageSource);
+            mLanguageSource.Editor_SetDirty();
 
             EditorApplication.update += DoParseTermsInCurrentScene;
 			EditorApplication.update += RepaintScene;

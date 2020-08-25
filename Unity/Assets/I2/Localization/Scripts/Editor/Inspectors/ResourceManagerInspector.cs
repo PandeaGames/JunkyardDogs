@@ -20,7 +20,7 @@ namespace I2.Loc
 			GUITools.DrawHeader("Assets:", true);
 			GUITools.BeginContents();
 				///GUILayout.Label ("Assets:");
-				GUITools.DrawObjectsArray( mAssets );
+				GUITools.DrawObjectsArray( mAssets, false, false, false );
 			GUITools.EndContents();
 
 			serializedObject.ApplyModifiedProperties();

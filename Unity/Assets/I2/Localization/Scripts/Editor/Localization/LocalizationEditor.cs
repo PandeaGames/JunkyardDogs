@@ -12,28 +12,40 @@ namespace I2.Loc
 		public enum eViewMode { ImportExport, Keys, Languages, Tools, References };
 		public static eViewMode mCurrentViewMode = eViewMode.Keys;
 		
-		enum eSpreadsheetMode { Local, Google };
-		eSpreadsheetMode mSpreadsheetMode = eSpreadsheetMode.Google;
+		public enum eSpreadsheetMode { Local, Google };
+		public eSpreadsheetMode mSpreadsheetMode = eSpreadsheetMode.Google;
 
 
 		public static string mLocalizationMsg = "";
 		public static MessageType mLocalizationMessageType = MessageType.None;
 
-		#endregion
+        // These variables are for executing action from Unity Tests
+        public enum eTest_ActionType { None, Button_AddLanguageFromPopup, Button_AddLanguageManual,
+                                        Button_AddTerm_InTermsList, Button_AddSelectedTerms,
+                                        Button_RemoveSelectedTerms, Button_DeleteTerm,
+                                        Button_SelectTerms_All, Button_SelectTerms_None, Button_SelectTerms_Used, Button_SelectTerms_Missing,
+                                        Button_Term_Translate, Button_Term_TranslateAll, Button_Languages_TranslateAll,
+                                        Button_Assets_Add, Button_Assets_Replace, Button_Assets_Delete,
+                                        Button_GoogleSpreadsheet_RefreshList, Button_GoogleSpreadsheet_Export, Button_GoogleSpreadsheet_Import
+        };
+        public static eTest_ActionType mTestAction = eTest_ActionType.None;
+        public static object mTestActionArg, mTestActionArg2;
 
-		#region Editor
+        #endregion
 
-		/*[MenuItem("Window/Localization", false)]
+        #region Editor
+
+        /*[MenuItem("Window/Localization", false)]
 		public static void OpenLocalizationEditor()
 		{
 			EditorWindow.GetWindow<LocalizationEditor>(false, "Localization", true);
 		}*/
 
-		#endregion
+        #endregion
 
-		#region GUI
+        #region GUI
 
-		void InitializeStyles()
+        void InitializeStyles()
 		{
 			Style_ToolBar_Big = new GUIStyle(EditorStyles.toolbar);
 			Style_ToolBar_Big.fixedHeight = Style_ToolBar_Big.fixedHeight*1.5f;
@@ -47,6 +59,9 @@ namespace I2.Loc
 		{
 			OnGUI_Warning_SourceInScene();
 			OnGUI_Warning_SourceInsidePluginsFolder();
+            OnGUI_Warning_SourceNotUpToDate();
+
+            var prevViewMode = mCurrentViewMode;
 
 			GUILayout.BeginHorizontal();
 				//OnGUI_ToggleEnumBig( "Spreadsheets", ref mCurrentViewMode, eViewMode.ImportExport, GUI.skin.GetStyle("CN EntryWarn").normal.background, "External Spreadsheet File or Service" );
@@ -63,7 +78,7 @@ namespace I2.Loc
 				case eViewMode.ImportExport 			: OnGUI_ImportExport(); break;
 				case eViewMode.Keys 					: OnGUI_KeysList(); break;
 				case eViewMode.Languages 				: OnGUI_Languages(); break;
-				case eViewMode.Tools 					: OnGUI_Tools(); break;
+				case eViewMode.Tools 					: OnGUI_Tools(prevViewMode != mCurrentViewMode); break;
 				case eViewMode.References 				: OnGUI_References(); break;
 			}
 		}
@@ -87,8 +102,22 @@ namespace I2.Loc
 		void OnGUI_References()
 		{
 			EditorGUILayout.HelpBox("These are the assets that are referenced by the Terms and not in the Resources folder", MessageType.Info);
-			GUITools.DrawObjectsArray( mProp_Assets );
-		}	
+
+            bool canTest = Event.current.type == EventType.Repaint;
+
+            var testAddObj = (canTest && LocalizationEditor.mTestAction == LocalizationEditor.eTest_ActionType.Button_Assets_Add) ? (Object)LocalizationEditor.mTestActionArg : null;
+            var testReplaceIndx = (canTest && LocalizationEditor.mTestAction == LocalizationEditor.eTest_ActionType.Button_Assets_Replace) ? (int)LocalizationEditor.mTestActionArg : -1;
+            var testReplaceObj = (canTest && LocalizationEditor.mTestAction == LocalizationEditor.eTest_ActionType.Button_Assets_Replace) ? (Object)LocalizationEditor.mTestActionArg2 : null;
+            var testDeleteIndx = (canTest && LocalizationEditor.mTestAction == LocalizationEditor.eTest_ActionType.Button_Assets_Delete) ? (int)LocalizationEditor.mTestActionArg : -1;
+
+            bool changed = GUITools.DrawObjectsArray( mProp_Assets, false, false, false, testAddObj, testReplaceObj, testReplaceIndx, testDeleteIndx);
+            if (changed)
+            {
+			    serializedObject.ApplyModifiedProperties();
+                foreach (var obj in serializedObject.targetObjects)
+                    (obj as LanguageSource).mSource.UpdateAssetDictionary();
+            }
+        }	
 
 		#endregion
 
@@ -146,40 +175,36 @@ namespace I2.Loc
 					Selections.Remove(Element);
 		}
 
-		static bool RemoveResourcesPath( ref string sPath )
-		{
-			int Ind1 = sPath.IndexOf("\\Resources\\");
-			int Ind2 = sPath.IndexOf("\\Resources/");
-			int Ind3 = sPath.IndexOf("/Resources\\");
-			int Ind4 = sPath.IndexOf("/Resources/");
-			int Index = Mathf.Max (Ind1, Ind2, Ind3, Ind4);
-			bool IsResource = false;
-			if (Index>=0)
-			{
-				sPath = sPath.Substring(Index+11);
-				IsResource = true;
-			}
-			else
-			{
-				// If its not in the Resources, then it has to be in the References
-				// Therefore, the path has to be stripped and let only the name
-				Index = sPath.LastIndexOfAny(LanguageSource.CategorySeparators);
-				if (Index>0)
-					sPath = sPath.Substring(Index+1);
-			}
+        static bool InTestAction( eTest_ActionType testType )
+        {
+            return mTestAction == testType && Event.current.type == EventType.Repaint;
+        }
+        static bool TestButton(eTest_ActionType action, string text, GUIStyle style, params GUILayoutOption[] options)
+        {
+            return GUILayout.Button(text, style, options) || (mTestAction == action && Event.current.type == EventType.Repaint);
+        }
 
-			string Extension = System.IO.Path.GetExtension(sPath);
-			if (!string.IsNullOrEmpty(Extension))
-				sPath = sPath.Substring(0, sPath.Length-Extension.Length);
+        static bool TestButtonArg(eTest_ActionType action, object arg, string text, GUIStyle style, params GUILayoutOption[] options)
+        {
+            return GUILayout.Button(text, style, options) || (mTestAction == action && (mTestActionArg==null || mTestActionArg.Equals(arg)) && Event.current.type == EventType.Repaint);
+        }
 
-			return IsResource;
-		}
 
-		#endregion
+        static bool TestButton(eTest_ActionType action, GUIContent text, GUIStyle style, params GUILayoutOption[] options)
+        {
+            return GUILayout.Button(text, style, options) || (mTestAction == action && Event.current.type == EventType.Repaint);
+        }
 
-		#region Error Management
-		
-		static void OnGUI_ShowMsg()
+        static bool TestButtonArg(eTest_ActionType action, object arg, GUIContent text, GUIStyle style, params GUILayoutOption[] options)
+        {
+            return GUILayout.Button(text, style, options) || (mTestAction == action && (mTestActionArg == null || mTestActionArg.Equals(arg)) && Event.current.type == EventType.Repaint);
+        }
+
+        #endregion
+
+        #region Error Management
+
+        static void OnGUI_ShowMsg()
 		{
 			if (!string.IsNullOrEmpty(mLocalizationMsg))
 			{
@@ -220,7 +245,7 @@ namespace I2.Loc
 		}
 		
 		
-		static void ClearErrors()
+		public static void ClearErrors()
 		{
 			GUI.FocusControl(null);
 

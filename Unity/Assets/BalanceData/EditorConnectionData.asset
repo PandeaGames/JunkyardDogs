@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f04c21fb45517a4491e832aacc90e6e, type: 3}
   m_Name: EditorConnectionData
   m_EditorClassIdentifier: 
-  webServiceUrl: https://script.google.com/macros/s/AKfycbwwepFzM5eHdOQmvgvhhMqbw55qRPpJ9J7FagepLDrhKLag0fFJ/exec
+  webServiceUrl: https://script.google.com/a/pandeagames.com/macros/s/AKfycbwgr-CQvgdeGLkRUb03Z6y22WetN1v-pE9RfSg8/exec
   spreadsheetId: 1mJ8jayKT1Efx_9-RPh697xGHineI_bfgATrryZP8PB8
-  servicePassword: v:a:@h2Z5}xNy&UT
+  servicePassword: VpxO3uDj0t4t
   timeOutLimit: 100
   usePOST: 1

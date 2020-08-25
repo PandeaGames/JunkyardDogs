@@ -52,20 +52,6 @@ namespace I2.Loc
             return Languages;
         }
 
-        public static string GetClosestLanguage(string Filter)
-        {
-            if (string.IsNullOrEmpty(Filter))
-                return string.Empty;
-
-            string[] Filters = Filter.ToLowerInvariant().Split(" /(),".ToCharArray());
-
-            foreach (var kvp in mLanguageDef)
-                if (LanguageMatchesFilter(kvp.Key, Filters))
-                    return kvp.Key;//GetFormatedLanguageName( kvp.Key );
-
-            return string.Empty;
-        }
-
         // "Engl Unit" matches "English/United States"
         static bool LanguageMatchesFilter(string Language, string[] Filters)
         {
@@ -152,6 +138,30 @@ namespace I2.Loc
             return InternationalCode;
         }
 
+        public static string GetLanguageName(string code, bool useParenthesesForRegion=false, bool allowDiscardRegion=true)
+        {
+            foreach (var kvp in mLanguageDef)
+                if (code == kvp.Value.Code)
+                {
+                    var langName = kvp.Key;
+                    if (useParenthesesForRegion)
+                    {
+                        int idx = langName.IndexOf('/');
+                        if (idx > 0)
+                            langName = langName.Substring(0, idx) + " (" + langName.Substring(idx + 1) + ")";
+                    }
+                    return langName;
+                }
+
+            if (allowDiscardRegion)
+            {
+                int iCode = code.IndexOf("-");
+                if (iCode > 0)
+                    return GetLanguageName(code.Substring(0,iCode), useParenthesesForRegion, false);
+            }
+            return null;
+        }
+
         public static List<string> GetAllInternationalCodes()
         {
             var set = new HashSet<string>();
@@ -181,33 +191,52 @@ namespace I2.Loc
 
         public static Dictionary<string, LanguageCodeDef> mLanguageDef = new Dictionary<string, LanguageCodeDef>(StringComparer.Ordinal)  
 		{
-			{"Afrikaans", 			new LanguageCodeDef(){PluralRule=1, Code="af"}},
-			{"Albanian", 			new LanguageCodeDef(){PluralRule=1, Code="sq"}},
-			{"Arabic", 				new LanguageCodeDef(){PluralRule=11, Code="ar"}},
-			{"Arabic/Algeria", 		new LanguageCodeDef(){PluralRule=11, Code="ar-DZ", GoogleCode="ar"}},
-			{"Arabic/Bahrain", 		new LanguageCodeDef(){PluralRule=11, Code="ar-BH", GoogleCode="ar"}},
-			{"Arabic/Egypt", 		new LanguageCodeDef(){PluralRule=11, Code="ar-EG", GoogleCode="ar"}},
-			{"Arabic/Iraq", 		new LanguageCodeDef(){PluralRule=11, Code="ar-IQ", GoogleCode="ar"}},
-			{"Arabic/Jordan", 		new LanguageCodeDef(){PluralRule=11, Code="ar-JO", GoogleCode="ar"}},
-			{"Arabic/Kuwait", 		new LanguageCodeDef(){PluralRule=11, Code="ar-KW", GoogleCode="ar"}},
-			{"Arabic/Lebanon", 		new LanguageCodeDef(){PluralRule=11, Code="ar-LB", GoogleCode="ar"}},
-			{"Arabic/Libya", 		new LanguageCodeDef(){PluralRule=11, Code="ar-LY", GoogleCode="ar"}},
-			{"Arabic/Morocco", 		new LanguageCodeDef(){PluralRule=11, Code="ar-MA", GoogleCode="ar"}},
-			{"Arabic/Oman", 		new LanguageCodeDef(){PluralRule=11, Code="ar-OM", GoogleCode="ar"}},
-			{"Arabic/Qatar", 		new LanguageCodeDef(){PluralRule=11, Code="ar-QA", GoogleCode="ar"}},
-			{"Arabic/Saudi Arabia", new LanguageCodeDef(){PluralRule=11, Code="ar-SA", GoogleCode="ar"}},
-			{"Arabic/Syria", 		new LanguageCodeDef(){PluralRule=11, Code="ar-SY", GoogleCode="ar"}},
-			{"Arabic/Tunisia", 		new LanguageCodeDef(){PluralRule=11, Code="ar-TN", GoogleCode="ar"}},
-			{"Arabic/U.A.E.", 		new LanguageCodeDef(){PluralRule=11, Code="ar-AE", GoogleCode="ar"}},
-			{"Arabic/Yemen", 		new LanguageCodeDef(){PluralRule=11, Code="ar-YE", GoogleCode="ar"}},
-			{"Armenian", 			new LanguageCodeDef(){PluralRule=1, Code="hy"}},
-			{"Azerbaijani", 		new LanguageCodeDef(){PluralRule=1, Code="az"}},
-			{"Basque",				new LanguageCodeDef(){PluralRule=1, Code="eu"}},
+            /**/{"Abkhazian",                           new LanguageCodeDef(){PluralRule=1, Code="ab", GoogleCode="-"}},
+            /**/{"Afar",                                new LanguageCodeDef(){PluralRule=1, Code="aa", GoogleCode="-"}},
+            {"Afrikaans", 			                    new LanguageCodeDef(){PluralRule=1, Code="af"}},
+            /**/{"Akan",                                new LanguageCodeDef(){PluralRule=1, Code="ak", GoogleCode="-"}},
+			{"Albanian", 			                    new LanguageCodeDef(){PluralRule=1, Code="sq"}},
+            /**/{"Amharic",                             new LanguageCodeDef(){PluralRule=1, Code="am"}},
+            {"Arabic", 				                    new LanguageCodeDef(){PluralRule=11, Code="ar"}},
+			{"Arabic/Algeria", 		                    new LanguageCodeDef(){PluralRule=11, Code="ar-DZ", GoogleCode="ar"}},
+			{"Arabic/Bahrain", 		                    new LanguageCodeDef(){PluralRule=11, Code="ar-BH", GoogleCode="ar"}},
+			{"Arabic/Egypt", 		                    new LanguageCodeDef(){PluralRule=11, Code="ar-EG", GoogleCode="ar"}},
+			{"Arabic/Iraq", 		                    new LanguageCodeDef(){PluralRule=11, Code="ar-IQ", GoogleCode="ar"}},
+			{"Arabic/Jordan", 		                    new LanguageCodeDef(){PluralRule=11, Code="ar-JO", GoogleCode="ar"}},
+			{"Arabic/Kuwait", 		                    new LanguageCodeDef(){PluralRule=11, Code="ar-KW", GoogleCode="ar"}},
+			{"Arabic/Lebanon",                          new LanguageCodeDef(){PluralRule=11, Code="ar-LB", GoogleCode="ar"}},
+			{"Arabic/Libya",                            new LanguageCodeDef(){PluralRule=11, Code="ar-LY", GoogleCode="ar"}},
+			{"Arabic/Morocco",                          new LanguageCodeDef(){PluralRule=11, Code="ar-MA", GoogleCode="ar"}},
+			{"Arabic/Oman",                             new LanguageCodeDef(){PluralRule=11, Code="ar-OM", GoogleCode="ar"}},
+			{"Arabic/Qatar",                            new LanguageCodeDef(){PluralRule=11, Code="ar-QA", GoogleCode="ar"}},
+			{"Arabic/Saudi Arabia",                     new LanguageCodeDef(){PluralRule=11, Code="ar-SA", GoogleCode="ar"}},
+			{"Arabic/Syria",                            new LanguageCodeDef(){PluralRule=11, Code="ar-SY", GoogleCode="ar"}},
+			{"Arabic/Tunisia",                          new LanguageCodeDef(){PluralRule=11, Code="ar-TN", GoogleCode="ar"}},
+			{"Arabic/U.A.E.",                           new LanguageCodeDef(){PluralRule=11, Code="ar-AE", GoogleCode="ar"}},
+			{"Arabic/Yemen",                            new LanguageCodeDef(){PluralRule=11, Code="ar-YE", GoogleCode="ar"}},
+            /**/{"Aragonese",                new LanguageCodeDef(){PluralRule=1, Code="an", GoogleCode="-"}},
+            {"Armenian", 			new LanguageCodeDef(){PluralRule=1, Code="hy"}},
+            /**/{"Assamese",                new LanguageCodeDef(){PluralRule=1, Code="as", GoogleCode="-"}},
+            /**/{"Avaric",                new LanguageCodeDef(){PluralRule=1, Code="av", GoogleCode="-"}},
+            /**/{"Avestan",                new LanguageCodeDef(){PluralRule=1, Code="ae", GoogleCode="-"}},
+            /**/{"Aymara",                new LanguageCodeDef(){PluralRule=1, Code="ay", GoogleCode="-"}},
+            {"Azerbaijani", 		new LanguageCodeDef(){PluralRule=1, Code="az"}},
+            /**/{"Bambara",                new LanguageCodeDef(){PluralRule=1, Code="bm", GoogleCode="-"}},
+            /**/{"Bashkir",                new LanguageCodeDef(){PluralRule=1, Code="ba", GoogleCode="-"}},
+            {"Basque",				new LanguageCodeDef(){PluralRule=1, Code="eu"}},
 			{"Basque/Spain", 		new LanguageCodeDef(){PluralRule=1, Code="eu-ES", GoogleCode="eu"}},
-			{"Belarusian", 			new LanguageCodeDef(){PluralRule=5, Code="be"}},
-			{"Bosnian", 			new LanguageCodeDef(){PluralRule=5, Code="bs"}},
+			{"Belarusian", 			new LanguageCodeDef(){PluralRule=6, Code="be"}},
+            /**/{"Bengali",                new LanguageCodeDef(){PluralRule=1, Code="bn"}},
+            /**/{"Bihari",                new LanguageCodeDef(){PluralRule=1, Code="bh", GoogleCode="-"}},
+            /**/{"Bislama",                new LanguageCodeDef(){PluralRule=1, Code="bi", GoogleCode="-"}},
+			{"Bosnian", 			new LanguageCodeDef(){PluralRule=6, Code="bs"}},
+            /**/{"Breton",                new LanguageCodeDef(){PluralRule=1, Code="br", GoogleCode="-"}},
 			{"Bulgariaa", 			new LanguageCodeDef(){PluralRule=1, Code="bg"}},
-			{"Catalan", 			new LanguageCodeDef(){PluralRule=1, Code="ca"}},
+            /**/{"Burmese",                new LanguageCodeDef(){PluralRule=1, Code="my"}},
+			{"Catalan",             new LanguageCodeDef(){PluralRule=1, Code="ca"}},
+            /**/{"Chamorro",                new LanguageCodeDef(){PluralRule=1, Code="ch", GoogleCode="-"}},
+            /**/{"Chechen",                new LanguageCodeDef(){PluralRule=1, Code="ce", GoogleCode="-"}},
+            /**/{"Chichewa",                new LanguageCodeDef(){PluralRule=1, Code="ny"}},
 			{"Chinese",				new LanguageCodeDef(){PluralRule=0, Code="zh", 	GoogleCode="zh-CN", HasJoinedWords=true}},
 			{"Chinese/Hong Kong",	new LanguageCodeDef(){PluralRule=0, Code="zh-HK", GoogleCode="zh-TW", HasJoinedWords=true}},
 			{"Chinese/Macau", 		new LanguageCodeDef(){PluralRule=0, Code="zh-MO", GoogleCode="zh-CN", HasJoinedWords=true}},
@@ -216,16 +245,20 @@ namespace I2.Loc
 			{"Chinese/Singapore", 	new LanguageCodeDef(){PluralRule=0, Code="zh-SG", GoogleCode="zh-CN", HasJoinedWords=true}},
 			{"Chinese/Taiwan", 		new LanguageCodeDef(){PluralRule=0, Code="zh-TW", GoogleCode="zh-TW", HasJoinedWords=true}},
 			{"Chinese/Traditional", new LanguageCodeDef(){PluralRule=0, Code="zh-TW", GoogleCode="zh-TW", HasJoinedWords=true}},
-			{"Croatian", 			new LanguageCodeDef(){PluralRule=5, Code="hr"}},
+            /**/{"Chuvash",                new LanguageCodeDef(){PluralRule=1, Code="cv", GoogleCode="-"}},
+            /**/{"Cornish",             new LanguageCodeDef(){PluralRule=1, Code="kw", GoogleCode="-"}},                                                // Check plural
+            /**/{"Corsican",                new LanguageCodeDef(){PluralRule=1, Code="co"}},
+            /**/{"Cree",                new LanguageCodeDef(){PluralRule=1, Code="cr", GoogleCode="-"}},
+            {"Croatian", 			new LanguageCodeDef(){PluralRule=6, Code="hr"}},
 			{"Croatian/Bosnia and Herzegovina", new LanguageCodeDef(){PluralRule=5, Code="hr-BA", GoogleCode="hr"}},
 			{"Czech", 				new LanguageCodeDef(){PluralRule=7, Code="cs"}},
 			{"Danish", 				new LanguageCodeDef(){PluralRule=1, Code="da"}},
-			//{"Dhivehi", new LanguageCodeDef(){Code="diV"}},		//---------------
-			//{"Divehi", new LanguageCodeDef(){Code="dv"}},		//---------------
+            /**/{"Divehi",                new LanguageCodeDef(){PluralRule=1, Code="dv", GoogleCode="-"}},
 			{"Dutch", 				new LanguageCodeDef(){PluralRule=1, Code="nl"}},
 			{"Dutch/Belgium", 		new LanguageCodeDef(){PluralRule=1, Code="nl-BE", GoogleCode="nl"}},
 			{"Dutch/Netherlands", 	new LanguageCodeDef(){PluralRule=1, Code="nl-NL", GoogleCode="nl"}},
-			{"English", 			new LanguageCodeDef(){PluralRule=1, Code="en"}},
+            /**/{"Dzongkha",                new LanguageCodeDef(){PluralRule=1, Code="dz", GoogleCode="-"}},
+            {"English", 			new LanguageCodeDef(){PluralRule=1, Code="en"}},
 			{"English/Australia", 	new LanguageCodeDef(){PluralRule=1, Code="en-AU", GoogleCode="en"}},
 			{"English/Belize", 		new LanguageCodeDef(){PluralRule=1, Code="en-BZ", GoogleCode="en"}},
 			{"English/Canada", 		new LanguageCodeDef(){PluralRule=1, Code="en-CA", GoogleCode="en"}},
@@ -241,9 +274,10 @@ namespace I2.Loc
 			{"English/Zimbabwe", 	new LanguageCodeDef(){PluralRule=1, Code="en-ZW", GoogleCode="en"}},
 			{"Esperanto", 			new LanguageCodeDef(){PluralRule=1, Code="eo"}},
 			{"Estonian", 			new LanguageCodeDef(){PluralRule=1, Code="et"}},
+            /**/{"Ewe",                new LanguageCodeDef(){PluralRule=1, Code="ee", GoogleCode="-"}},
 			{"Faeroese", 			new LanguageCodeDef(){PluralRule=1, Code="fo", GoogleCode="-"}},
-			//{"Farsi", new LanguageCodeDef(){Code="fa"}},		//--------------------
-			{"Filipino", 			new LanguageCodeDef(){PluralRule=2, Code="tl"}},
+            /**/{"Fijian",                new LanguageCodeDef(){PluralRule=1, Code="fj", GoogleCode="-"}},
+            //{"Filipino", 			new LanguageCodeDef(){PluralRule=2, Code="tl"}},
 			{"Finnish", 			new LanguageCodeDef(){PluralRule=1, Code="fi"}},
 			{"French", 				new LanguageCodeDef(){PluralRule=2, Code="fr"}},
 			{"French/Belgium", 		new LanguageCodeDef(){PluralRule=2, Code="fr-BE", GoogleCode="fr"}},
@@ -252,8 +286,8 @@ namespace I2.Loc
 			{"French/Luxembourg", 	new LanguageCodeDef(){PluralRule=2, Code="fr-LU", GoogleCode="fr"}},
 			{"French/Principality of Monaco", new LanguageCodeDef(){PluralRule=2, Code="fr-MC", GoogleCode="fr"}},
 			{"French/Switzerland", 	new LanguageCodeDef(){PluralRule=2, Code="fr-CH", GoogleCode="fr"}},
-			//{"Gaelic", 	new LanguageCodeDef(){Code="gd"}}, //------------------
-			{"Galician", 			new LanguageCodeDef(){PluralRule=1, Code="gl"}},
+            /**/{"Fulah",                new LanguageCodeDef(){PluralRule=1, Code="ff", GoogleCode="-"}},
+            {"Galician", 			new LanguageCodeDef(){PluralRule=1, Code="gl"}},
 			{"Galician/Spain", 		new LanguageCodeDef(){PluralRule=1, Code="gl-ES", GoogleCode="gl"}},
 			{"Georgian", 			new LanguageCodeDef(){PluralRule=0, Code="ka"}},
 			{"German", 				new LanguageCodeDef(){PluralRule=1, Code="de"}},
@@ -263,27 +297,55 @@ namespace I2.Loc
 			{"German/Luxembourg", 	new LanguageCodeDef(){PluralRule=1, Code="de-LU", GoogleCode="de"}},
 			{"German/Switzerland", 	new LanguageCodeDef(){PluralRule=1, Code="de-CH", GoogleCode="de"}},
 			{"Greek", 				new LanguageCodeDef(){PluralRule=1, Code="el"}},
-			{"Gujarati", 			new LanguageCodeDef(){PluralRule=1, Code="gu"}},
-			{"Hebrew", 				new LanguageCodeDef(){PluralRule=1, Code="he", GoogleCode="iw"}},
+            /**/{"Guaraní",                new LanguageCodeDef(){PluralRule=1, Code="gn", GoogleCode="-"}},
+            {"Gujarati", 			new LanguageCodeDef(){PluralRule=1, Code="gu"}},
+            /**/{"Haitian",                new LanguageCodeDef(){PluralRule=1, Code="ht"}},
+            /**/{"Hausa",                new LanguageCodeDef(){PluralRule=1, Code="ha"}},
+            {"Hebrew", 				new LanguageCodeDef(){PluralRule=1, Code="he", GoogleCode="iw"}},
+            /**/{"Herero",                new LanguageCodeDef(){PluralRule=1, Code="hz", GoogleCode="-"}},
 			{"Hindi", 				new LanguageCodeDef(){PluralRule=1, Code="hi"}},
+            /**/{"Hiri Motu",                new LanguageCodeDef(){PluralRule=1, Code="ho", GoogleCode="-"}},
 			{"Hungarian", 			new LanguageCodeDef(){PluralRule=1, Code="hu"}},
-			{"Icelandic", 			new LanguageCodeDef(){PluralRule=14, Code="is"}},
+            /**/{"Interlingua",                new LanguageCodeDef(){PluralRule=1, Code="ia", GoogleCode="-"}},
 			{"Indonesian", 			new LanguageCodeDef(){PluralRule=0, Code="id"}},
-			{"Irish", 				new LanguageCodeDef(){PluralRule=10, Code="ga"}},
-			{"Italian", 			new LanguageCodeDef(){PluralRule=1, Code="it"}},
+            /**/{"Interlingue",                new LanguageCodeDef(){PluralRule=1, Code="ie", GoogleCode="-"}},
+            {"Irish", 				new LanguageCodeDef(){PluralRule=10, Code="ga"}},
+            /**/{"Igbo",                new LanguageCodeDef(){PluralRule=1, Code="ig"}},
+            /**/{"Inupiaq",                new LanguageCodeDef(){PluralRule=1, Code="ik", GoogleCode="-"}},
+            /**/{"Ido",                new LanguageCodeDef(){PluralRule=1, Code="io", GoogleCode="-"}},
+            {"Icelandic",           new LanguageCodeDef(){PluralRule=14, Code="is"}},
+            {"Italian", 			new LanguageCodeDef(){PluralRule=1, Code="it"}},
 			{"Italian/Italy", 		new LanguageCodeDef(){PluralRule=1, Code="it-IT", GoogleCode="it"}},
 			{"Italian/Switzerland", new LanguageCodeDef(){PluralRule=1, Code="it-CH", GoogleCode="it"}},
+            /**/{"Inuktitut",                new LanguageCodeDef(){PluralRule=1, Code="iu", GoogleCode="-"}},
 			{"Japanese", 			new LanguageCodeDef(){PluralRule=0, Code="ja", HasJoinedWords=true}},
-			{"Kannada", 			new LanguageCodeDef(){PluralRule=1, Code="kn"}},
+            /**/{"Javanese",                new LanguageCodeDef(){PluralRule=1, Code="jv"}},
+            /**/{"Kalaallisut",                new LanguageCodeDef(){PluralRule=1, Code="kl", GoogleCode="-"}},
+			{"Kannada",             new LanguageCodeDef(){PluralRule=1, Code="kn"}},
+            /**/{"Kanuri",                new LanguageCodeDef(){PluralRule=1, Code="kr", GoogleCode="-"}},
+            /**/{"Kashmiri",                new LanguageCodeDef(){PluralRule=1, Code="ks", GoogleCode="-"}},
 			{"Kazakh", 				new LanguageCodeDef(){PluralRule=1, Code="kk"}},
-			//{"Konkani", new LanguageCodeDef(){Code="koK"}},//----------------
-			{"Korean", 				new LanguageCodeDef(){PluralRule=0, Code="ko"}},
+            /**/{"Central Khmer",                new LanguageCodeDef(){PluralRule=1, Code="km"}},
+            /**/{"Kikuyu",                new LanguageCodeDef(){PluralRule=1, Code="ki", GoogleCode="-"}},
+            /**/{"Kinyarwanda",                new LanguageCodeDef(){PluralRule=1, Code="rw", GoogleCode="-"}},
+            /**/{"Kirghiz",                new LanguageCodeDef(){PluralRule=1, Code="ky"}},
+            /**/{"Komi",                new LanguageCodeDef(){PluralRule=1, Code="kv", GoogleCode="-"}},
+            /**/{"Kongo",                new LanguageCodeDef(){PluralRule=1, Code="kg", GoogleCode="-"}},
+			{"Korean",              new LanguageCodeDef(){PluralRule=0, Code="ko"}},
 			{"Kurdish", 			new LanguageCodeDef(){PluralRule=1, Code="ku"}},
-			{"Kyrgyz", 				new LanguageCodeDef(){PluralRule=1, Code="ky"}},
+			/**/{"Kuanyama", 				new LanguageCodeDef(){PluralRule=1, Code="kj", GoogleCode="-"}},
 			{"Latin", 				new LanguageCodeDef(){PluralRule=1, Code="la"}},
-			{"Latvian", 			new LanguageCodeDef(){PluralRule=5, Code="lv"}},
-			{"Lithuanian", 			new LanguageCodeDef(){PluralRule=5, Code="lt"}},
-			{"Macedonian", 			new LanguageCodeDef(){PluralRule=13, Code="mk"}},
+            /**/{"Luxembourgish",                new LanguageCodeDef(){PluralRule=1, Code="lb"}},
+            /**/{"Ganda",                new LanguageCodeDef(){PluralRule=1, Code="lg", GoogleCode="-"}},
+            /**/{"Limburgan",                new LanguageCodeDef(){PluralRule=1, Code="li", GoogleCode="-"}},
+            /**/{"Lingala",                new LanguageCodeDef(){PluralRule=1, Code="ln", GoogleCode="-"}},
+            /**/{"Lao",                new LanguageCodeDef(){PluralRule=1, Code="lo"}},
+            {"Latvian", 			new LanguageCodeDef(){PluralRule=5, Code="lv"}},
+            /**/{"Luba-Katanga",                new LanguageCodeDef(){PluralRule=1, Code="lu", GoogleCode="-"}},
+            {"Lithuanian", 			new LanguageCodeDef(){PluralRule=5, Code="lt"}},
+            /**/{"Manx",                new LanguageCodeDef(){PluralRule=1, Code="gv", GoogleCode="-"}},
+			{"Macedonian",          new LanguageCodeDef(){PluralRule=13, Code="mk"}},
+            /**/{"Malagasy",                new LanguageCodeDef(){PluralRule=1, Code="mg"}},
 			{"Malay", 				new LanguageCodeDef(){PluralRule=0, Code="ms"}},
 			{"Malay/Brunei Darussalam", new LanguageCodeDef(){PluralRule=0, Code="ms-BN", GoogleCode="ms"}},
 			{"Malay/Malaysia", 		new LanguageCodeDef(){PluralRule=0, Code="ms-MY", GoogleCode="ms"}},
@@ -291,11 +353,26 @@ namespace I2.Loc
 			{"Maltese", 			new LanguageCodeDef(){PluralRule=12, Code="mt"}},
 			{"Maori", 				new LanguageCodeDef(){PluralRule=2, Code="mi"}},
 			{"Marathi", 			new LanguageCodeDef(){PluralRule=1, Code="mr"}},
+            /**/{"Marshallese",                new LanguageCodeDef(){PluralRule=1, Code="mh", GoogleCode="-"}},
 			{"Mongolian", 			new LanguageCodeDef(){PluralRule=1, Code="mn"}},
-			{"Northern Sotho", 		new LanguageCodeDef(){PluralRule=1, Code="ns", GoogleCode="st"}},
+            /**/{"Nauru",                new LanguageCodeDef(){PluralRule=1, Code="na", GoogleCode="-"}},
+            /**/{"Navajo",                new LanguageCodeDef(){PluralRule=1, Code="nv", GoogleCode="-"}},
+            /**/{"North Ndebele",                new LanguageCodeDef(){PluralRule=1, Code="nd", GoogleCode="-"}},
+            /**/{"Nepali",                new LanguageCodeDef(){PluralRule=1, Code="ne"}},
+            /**/{"Ndonga",                new LanguageCodeDef(){PluralRule=1, Code="ng", GoogleCode="-"}},
+            {"Northern Sotho", 		new LanguageCodeDef(){PluralRule=1, Code="ns", GoogleCode="st"}},
 			{"Norwegian", 			new LanguageCodeDef(){PluralRule=1, Code="nb", GoogleCode="no"}},
 			{"Norwegian/Nynorsk", 	new LanguageCodeDef(){PluralRule=1, Code="nn", GoogleCode="no"}},
-			{"Pashto", 				new LanguageCodeDef(){PluralRule=1, Code="ps"}},
+            /**/{"Sichuan Yi",                new LanguageCodeDef(){PluralRule=1, Code="ii", GoogleCode="-"}},
+            /**/{"South Ndebele",                new LanguageCodeDef(){PluralRule=1, Code="nr", GoogleCode="-"}},
+            /**/{"Occitan",                new LanguageCodeDef(){PluralRule=1, Code="oc", GoogleCode="-"}},
+            /**/{"Ojibwa",                new LanguageCodeDef(){PluralRule=1, Code="oj", GoogleCode="-"}},
+            /**/{"Church Slavic",                new LanguageCodeDef(){PluralRule=1, Code="cu", GoogleCode="-"}},
+            /**/{"Oromo",                new LanguageCodeDef(){PluralRule=1, Code="om", GoogleCode="-"}},
+            /**/{"Oriya",                new LanguageCodeDef(){PluralRule=1, Code="or", GoogleCode="-"}},
+            /**/{"Ossetian",                new LanguageCodeDef(){PluralRule=1, Code="os", GoogleCode="-"}},
+            /**/{"Pali",                new LanguageCodeDef(){PluralRule=1, Code="pi", GoogleCode="-"}},
+            {"Pashto", 				new LanguageCodeDef(){PluralRule=1, Code="ps"}},
 			{"Persian", 			new LanguageCodeDef(){PluralRule=0, Code="fa"}},
 			{"Polish", 				new LanguageCodeDef(){PluralRule=8, Code="pl"}},
 			{"Portuguese", 			new LanguageCodeDef(){PluralRule=1, Code="pt"}},
@@ -307,21 +384,27 @@ namespace I2.Loc
 			{"Quechua/Ecuador", 	new LanguageCodeDef(){PluralRule=1, Code="qu-EC", GoogleCode="-"}},
 			{"Quechua/Peru", 		new LanguageCodeDef(){PluralRule=1, Code="qu-PE", GoogleCode="-"}},
 			{"Rhaeto-Romanic", 		new LanguageCodeDef(){PluralRule=1, Code="rm", GoogleCode="ro"}},
-			{"Romanian", 			new LanguageCodeDef(){PluralRule=4, Code="ro"}},
-			{"Russian", 			new LanguageCodeDef(){PluralRule=5, Code="ru"}},
-			{"Russian/Republic of Moldova", new LanguageCodeDef(){PluralRule=5, Code="ru-MO", GoogleCode="ru"}},
-			//{"Sami/Finland", new LanguageCodeDef(){Code="se-FI"}}, //--------------
-			//{"Sami/Lappish", new LanguageCodeDef(){Code="sz"}}, //--------------
-			//{"Sami/Northern", new LanguageCodeDef(){Code="se-NO"}}, //--------------
-			//{"Sami/Sweden", new LanguageCodeDef(){Code="se-SE"}}, //--------------
-			//{"Sanskrit", new LanguageCodeDef(){Code="sa"}}, //--------------
-			{"Serbian", 			new LanguageCodeDef(){PluralRule=5, Code="sr"}},
+            {"Romanian", 			new LanguageCodeDef(){PluralRule=4, Code="ro"}},
+            /**/{"Rundi",                new LanguageCodeDef(){PluralRule=1, Code="rn", GoogleCode="-"}},
+            {"Russian", 			new LanguageCodeDef(){PluralRule=6, Code="ru"}},
+			{"Russian/Republic of Moldova", new LanguageCodeDef(){PluralRule=6, Code="ru-MO", GoogleCode="ru"}},
+            /**/{"Sanskrit",                new LanguageCodeDef(){PluralRule=1, Code="sa", GoogleCode="-"}},
+            /**/{"Sardinian",                new LanguageCodeDef(){PluralRule=1, Code="sc", GoogleCode="-"}},
+            /**/{"Sindhi",                new LanguageCodeDef(){PluralRule=1, Code="sd"}},
+            /**/{"Northern Sami",                new LanguageCodeDef(){PluralRule=1, Code="se", GoogleCode="-"}},
+            /**/{"Samoan",                new LanguageCodeDef(){PluralRule=1, Code="sm"}},
+            /**/{"Sango",                new LanguageCodeDef(){PluralRule=1, Code="sg", GoogleCode="-"}},
+            {"Serbian", 			new LanguageCodeDef(){PluralRule=6, Code="sr"}},
 			{"Serbian/Bosnia and Herzegovina", 	new LanguageCodeDef(){PluralRule=5, Code="sr-BA", GoogleCode="sr"}},
 			{"Serbian/Serbia and Montenegro", 	new LanguageCodeDef(){PluralRule=5, Code="sr-SP", GoogleCode="sr"}},
-			{"Slovak", 				new LanguageCodeDef(){PluralRule=7, Code="sk"}},
+            /**/{"Scottish Gaelic",                new LanguageCodeDef(){PluralRule=1, Code="gd"}},
+            /**/{"Shona",                new LanguageCodeDef(){PluralRule=1, Code="sn"}},
+            /**/{"Sinhala",                new LanguageCodeDef(){PluralRule=1, Code="si"}},
+			{"Slovak",              new LanguageCodeDef(){PluralRule=7, Code="sk"}},
 			{"Slovenian", 			new LanguageCodeDef(){PluralRule=9, Code="sl"}},
-			//{"Sorbian", new LanguageCodeDef(){Code="sb"}}, //------------------------
-			{"Spanish", 			new LanguageCodeDef(){PluralRule=1, Code="es"}},
+            /**/{"Somali",                new LanguageCodeDef(){PluralRule=1, Code="so"}},
+            /**/{"Southern Sotho",                new LanguageCodeDef(){PluralRule=1, Code="st"}},
+            {"Spanish", 			new LanguageCodeDef(){PluralRule=1, Code="es"}},
 			{"Spanish/Argentina", 	new LanguageCodeDef(){PluralRule=1, Code="es-AR", GoogleCode="es"}},
 			{"Spanish/Bolivia", 	new LanguageCodeDef(){PluralRule=1, Code="es-BO", GoogleCode="es"}},
 			{"Spanish/Castilian", 	new LanguageCodeDef(){PluralRule=1, Code="es-ES", GoogleCode="es"}},
@@ -339,32 +422,48 @@ namespace I2.Loc
 			{"Spanish/Paraguay", 	new LanguageCodeDef(){PluralRule=1, Code="es-PY", GoogleCode="es"}},
 			{"Spanish/Peru", 		new LanguageCodeDef(){PluralRule=1, Code="es-PE", GoogleCode="es"}},
 			{"Spanish/Puerto Rico", new LanguageCodeDef(){PluralRule=1, Code="es-PR", GoogleCode="es"}},
-			{"Spanish/Spain", 		new LanguageCodeDef(){PluralRule=1, Code="es"}},
+			{"Spanish/Spain", 		new LanguageCodeDef(){PluralRule=1, Code="es-ES", GoogleCode="es"}},
 			{"Spanish/Uruguay", 	new LanguageCodeDef(){PluralRule=1, Code="es-UY", GoogleCode="es"}},
-			{"Spanish/Venezuela", 	new LanguageCodeDef(){PluralRule=1, Code="es-VE", GoogleCode="es"}},
-			//{"Sutu", new LanguageCodeDef(){Code="sx"}},//---------------
-			{"Swahili", 			new LanguageCodeDef(){Code="sw"}},
-			{"Swedish",				new LanguageCodeDef(){PluralRule=1, Code="sv"}},
+            {"Spanish/Venezuela",   new LanguageCodeDef(){PluralRule=1, Code="es-VE", GoogleCode="es"}},
+            {"Spanish/Latin Americas",   new LanguageCodeDef(){PluralRule=1, Code="es-US", GoogleCode="es"}},
+            /**/{"Sundanese",                new LanguageCodeDef(){PluralRule=1, Code="su"}},
+            {"Swahili", 			new LanguageCodeDef(){Code="sw"}},
+            /**/{"Swati",                new LanguageCodeDef(){PluralRule=1, Code="ss", GoogleCode="-"}},
+			{"Swedish",             new LanguageCodeDef(){PluralRule=1, Code="sv"}},
 			{"Swedish/Finland", 	new LanguageCodeDef(){PluralRule=1, Code="sv-FI", GoogleCode="sv"}},
 			{"Swedish/Sweden", 		new LanguageCodeDef(){PluralRule=1, Code="sv-SE", GoogleCode="sv"}},
-			//{"Syriac", new LanguageCodeDef(){Code="syR"}},//-----------
 			{"Tamil", 				new LanguageCodeDef(){PluralRule=1, Code="ta"}},
-			{"Tatar", 				new LanguageCodeDef(){PluralRule=0, Code="tt", GoogleCode="-"}},
+			{"Tatar",               new LanguageCodeDef(){PluralRule=0, Code="tt", GoogleCode="-"}},
 			{"Telugu", 				new LanguageCodeDef(){PluralRule=1, Code="te"}},
-			{"Thai", 				new LanguageCodeDef(){PluralRule=0, Code="th", HasJoinedWords=true}},
-			//{"Tsonga", new LanguageCodeDef(){Code="ts"}},//-----------
-			//{"Tswana", new LanguageCodeDef(){Code="tn"}},//-----------
-			{"Turkish", 			new LanguageCodeDef(){PluralRule=0, Code="tr"}},
-			{"Ukrainian", 			new LanguageCodeDef(){PluralRule=5, Code="uk"}},
-			{"Urdu", 				new LanguageCodeDef(){PluralRule=1, Code="ur"}},
+            /**/{"Tajik",                new LanguageCodeDef(){PluralRule=1, Code="tg"}},
+            {"Thai", 				new LanguageCodeDef(){PluralRule=0, Code="th", HasJoinedWords=true}},
+            /**/{"Tigrinya",                new LanguageCodeDef(){PluralRule=1, Code="ti", GoogleCode="-"}},
+            /**/{"Tibetan",                new LanguageCodeDef(){PluralRule=1, Code="bo", GoogleCode="-"}},
+            /**/{"Turkmen",                new LanguageCodeDef(){PluralRule=1, Code="tk", GoogleCode="-"}},
+            /**/{"Tagalog",                new LanguageCodeDef(){PluralRule=1, Code="tl"}},
+            /**/{"Tswana",                new LanguageCodeDef(){PluralRule=1, Code="tn", GoogleCode="-"}},
+            /**/{"Tonga",                new LanguageCodeDef(){PluralRule=1, Code="to", GoogleCode="-"}},
+            {"Turkish", 			new LanguageCodeDef(){PluralRule=0, Code="tr"}},
+            /**/{"Tsonga",                new LanguageCodeDef(){PluralRule=1, Code="ts", GoogleCode="-"}},
+            /**/{"Twi",                new LanguageCodeDef(){PluralRule=1, Code="tw", GoogleCode="-"}},
+            /**/{"Tahitian",                new LanguageCodeDef(){PluralRule=1, Code="ty", GoogleCode="-"}},
+            /**/{"Uighur",                new LanguageCodeDef(){PluralRule=1, Code="ug", GoogleCode="-"}},
+			{"Ukrainian", 			new LanguageCodeDef(){PluralRule=6, Code="uk"}},
+            {"Urdu", 				new LanguageCodeDef(){PluralRule=1, Code="ur"}},
 			{"Uzbek", 				new LanguageCodeDef(){PluralRule=2, Code="uz"}},
-			//{"Venda", new LanguageCodeDef(){Code="ve"}},//------------
-			{"Vietnamese", 			new LanguageCodeDef(){PluralRule=1, Code="vi"}},
-			{"Welsh", 				new LanguageCodeDef(){PluralRule=16, Code="cy"}},
+            /**/{"Venda",                new LanguageCodeDef(){PluralRule=1, Code="ve", GoogleCode="-"}},
+            {"Vietnamese", 			new LanguageCodeDef(){PluralRule=1, Code="vi"}},
+            /**/{"Volapük",                new LanguageCodeDef(){PluralRule=1, Code="vo", GoogleCode="-"}},
+            /**/{"Walloon",                new LanguageCodeDef(){PluralRule=1, Code="wa", GoogleCode="-"}},
+            {"Welsh", 				new LanguageCodeDef(){PluralRule=16, Code="cy"}},
+            /**/{"Wolof",                new LanguageCodeDef(){PluralRule=1, Code="wo", GoogleCode="-"}},
+            /**/{"Frisian",                new LanguageCodeDef(){PluralRule=1, Code="fy"}},
 			{"Xhosa", 				new LanguageCodeDef(){PluralRule=1, Code="xh"}},
-			{"Yiddish", 			new LanguageCodeDef(){PluralRule=1, Code="yi"}},
+            {"Yiddish", 			new LanguageCodeDef(){PluralRule=1, Code="yi"}},
+            /**/{"Yoruba",                new LanguageCodeDef(){PluralRule=1, Code="yo"}},
+            /**/{"Zhuang",                new LanguageCodeDef(){PluralRule=1, Code="za", GoogleCode="-"}},
 			{"Zulu", 				new LanguageCodeDef(){PluralRule=1, Code="zu"}}
-		};
+        };
 
 		static int GetPluralRule( string langCode )
 		{

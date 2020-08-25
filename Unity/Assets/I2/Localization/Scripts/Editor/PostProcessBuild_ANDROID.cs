@@ -23,15 +23,16 @@ namespace I2.Loc
                 (EditorUserBuildSettings.activeBuildTarget == BuildTarget.Android) &&
                 isFirstScene)
             {
-                string projPath = System.IO.Path.GetFullPath( Application.streamingAssetsPath + "/../../Temp/StagingArea");
+                string projPath = System.IO.Path.GetFullPath(Application.streamingAssetsPath + "/../../Temp/StagingArea");
+                //string projPath = System.IO.Path.GetFullPath(Application.dataPath+ "/Plugins/Android");
                 PostProcessAndroid(BuildTarget.Android, projPath);
             }
         }
 
-        //[PostProcessBuild]
+        //[PostProcessBuild(10000)]
         public static void PostProcessAndroid(BuildTarget buildTarget, string pathToBuiltProject)
 		{
-			if (buildTarget!=BuildTarget.Android && buildTarget!=BuildTarget.Tizen)
+			if (buildTarget!=BuildTarget.Android)
 				return;
 
             if (LocalizationManager.Sources.Count <= 0)
@@ -60,7 +61,7 @@ namespace I2.Loc
                 {
                     string googleCode = GoogleLanguages.GetGoogleLanguageCode(fixedCode);
                     if (googleCode==null) googleCode = fixedCode;
-                    fixedCode = (googleCode == "zh-CN") ? "zh-CN" : "zh";
+                    fixedCode = (googleCode == "zh-CN") ? "zh-CN" : googleCode;
                 }
 				fixedCode = fixedCode.Replace("-", "-r");
 
@@ -91,7 +92,7 @@ namespace I2.Loc
             try
             {
                 appName = appName.Replace("&", "&amp;").Replace("<", "&lt;").Replace(">", "&gt;").Replace("\"", "\\\"").Replace("'", "\\'");
-                //appName = appName.Replace("&", "&amp;").Replace("<", "&lt;").Replace(">", "&gt;").Replace("\"", "&quot;").Replace("'", "\\'");
+                appName = appName.Replace("\r\n", string.Empty).Replace("\n", string.Empty).Replace("\r", string.Empty);
 
                 if (!System.IO.Directory.Exists(folder))
                     System.IO.Directory.CreateDirectory(folder);

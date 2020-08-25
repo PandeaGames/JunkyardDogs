@@ -27,15 +27,25 @@ namespace I2.Loc
             OnGUI_StoreIntegration();
 
             GUILayout.BeginHorizontal();
-                GUILayout.Label(new GUIContent("On Missing Translation:", "What should happen IN-GAME when a term is not yet translated to the current language?"), EditorStyles.boldLabel, GUILayout.Width(160));
+                GUILayout.Label(new GUIContent("On Missing Translation:", "What should happen IN-GAME when a term is not yet translated to the current language?"), EditorStyles.boldLabel, GUILayout.Width(200));
                 GUILayout.BeginVertical();
                     GUILayout.Space(7);
                     EditorGUILayout.PropertyField(mProp_OnMissingTranslation, GUITools.EmptyContent, GUILayout.Width(165));
                 GUILayout.EndVertical();
             GUILayout.EndHorizontal();
 
+            GUILayout.BeginHorizontal();
+                GUILayout.Label(new GUIContent("Unload Languages At Runtime:", "When playing the game, the plugin will unload all unused languages and only load them when needed"), EditorStyles.boldLabel, GUILayout.Width(200));
+                GUILayout.BeginVertical();
+                    GUILayout.Space(7);
+                    EditorGUILayout.PropertyField(mProp_AllowUnloadingLanguages, GUITools.EmptyContent, GUILayout.Width(165));
+                GUILayout.EndVertical();
+            GUILayout.EndHorizontal();
 
-			string firstLanguage = "";
+
+            
+
+            string firstLanguage = "";
 			if (mLanguageSource.mLanguages.Count > 0)
 				firstLanguage = " (" + mLanguageSource.mLanguages [0].Name + ")";
 			
@@ -44,7 +54,7 @@ namespace I2.Loc
 				GUILayout.BeginVertical();
 					GUILayout.Space(7);
 
-					EditorGUILayout.Popup(mProp_IgnoreDeviceLanguage.boolValue?1:0, new string[]{"Device Language", "First in List"+firstLanguage}, GUILayout.ExpandWidth(true));
+            mProp_IgnoreDeviceLanguage.boolValue = EditorGUILayout.Popup(mProp_IgnoreDeviceLanguage.boolValue?1:0, new string[]{"Device Language", "First in List"+firstLanguage}, GUILayout.ExpandWidth(true))==1;
 				GUILayout.EndVertical();
 			GUILayout.EndHorizontal();
         }
@@ -66,7 +76,9 @@ namespace I2.Loc
 			int IndexLanguageToDelete = -1;
 			int LanguageToMoveUp = -1;
 			int LanguageToMoveDown = -1;
-			mScrollPos_Languages = GUILayout.BeginScrollView( mScrollPos_Languages, EditorStyles.textArea, GUILayout.MinHeight (100), GUILayout.MaxHeight(Screen.height), GUILayout.ExpandHeight(false));
+            GUI.backgroundColor = Color.Lerp(GUITools.LightGray, Color.white, 0.5f);
+            mScrollPos_Languages = GUILayout.BeginScrollView( mScrollPos_Languages, LocalizeInspector.GUIStyle_OldTextArea, GUILayout.MinHeight (200), /*GUILayout.MaxHeight(Screen.height),*/ GUILayout.ExpandHeight(false));
+            GUI.backgroundColor = Color.white;
 
             if (mLanguageCodePopupList == null || mLanguageCodePopupList.Count==0)
             {
@@ -138,9 +150,9 @@ namespace I2.Loc
 					LocalizationManager.SetLanguageAndCode( LanName, Prop_LangCode.stringValue, false, true);
 				}
 
-				if (GUILayout.Button( new GUIContent("Translate", "Translate all empty terms"), EditorStyles.toolbarButton, GUILayout.ExpandWidth(false))) 
+				if (TestButtonArg( eTest_ActionType.Button_Languages_TranslateAll, i, new GUIContent("Translate", "Translate all empty terms"), EditorStyles.toolbarButton, GUILayout.ExpandWidth(false))) 
 				{
-					TranslateAllToLanguage( LanName );
+                    GUITools.DelayedCall(() => TranslateAllToLanguage(LanName));
 				}
 				GUI.enabled = true;
                 GUI.color = Color.white;
@@ -169,7 +181,7 @@ namespace I2.Loc
 				int time = (int)((Time.realtimeSinceStartup % 2) * 2.5);
 				string Loading = mConnection_Text + ".....".Substring(0, time);
 				GUI.color = Color.gray;
-				GUILayout.BeginHorizontal(EditorStyles.textArea);
+				GUILayout.BeginHorizontal(LocalizeInspector.GUIStyle_OldTextArea);
 				GUILayout.Label (Loading, EditorStyles.miniLabel);
 				GUI.color = Color.white;
                 if (GUILayout.Button("Cancel", EditorStyles.toolbarButton, GUILayout.ExpandWidth(false)))
@@ -187,7 +199,7 @@ namespace I2.Loc
 				{
 					mLanguageSource.RemoveLanguage (mLanguageSource.mLanguages [IndexLanguageToDelete].Name);
 					serializedObject.Update ();
-					ParseTerms (true, false);
+					ParseTerms (true, false, false);
 				}
 			}
 
@@ -198,13 +210,12 @@ namespace I2.Loc
 		void SwapLanguages( int iFirst, int iSecond )
 		{
 			serializedObject.ApplyModifiedProperties();
-			LanguageSource Source = mLanguageSource;
+			LanguageSourceData Source = mLanguageSource;
 
 			SwapValues( Source.mLanguages, iFirst, iSecond );
 			foreach (TermData termData in Source.mTerms)
 			{
 				SwapValues ( termData.Languages, iFirst, iSecond );
-				SwapValues ( termData.Languages_Touch, iFirst, iSecond );
 				SwapValues ( termData.Flags, iFirst, iSecond );
 			}
 			serializedObject.Update();
@@ -232,9 +243,9 @@ namespace I2.Loc
 		
 		void OnGUI_AddLanguage( SerializedProperty Prop_Languages)
 		{
-			//--[ Add Language Upper Toolbar ]-----------------
-			
-			GUILayout.BeginVertical();
+            //--[ Add Language Upper Toolbar ]-----------------
+
+            GUILayout.BeginVertical();
 			GUILayout.BeginHorizontal();
 			
 			GUILayout.BeginHorizontal(EditorStyles.toolbar);
@@ -242,7 +253,7 @@ namespace I2.Loc
 			GUILayout.EndHorizontal();
 
 			GUI.enabled = !string.IsNullOrEmpty (mLanguages_NewLanguage);
-			if (GUILayout.Button("Add", EditorStyles.toolbarButton, GUILayout.Width(50)))
+			if (TestButton(eTest_ActionType.Button_AddLanguageManual,"Add", EditorStyles.toolbarButton, GUILayout.Width(50)))
 			{
 				Prop_Languages.serializedObject.ApplyModifiedProperties();
 				mLanguageSource.AddLanguage( mLanguages_NewLanguage, GoogleLanguages.GetLanguageCode(mLanguages_NewLanguage) );
@@ -253,10 +264,10 @@ namespace I2.Loc
             GUI.enabled = true;
 			
 			GUILayout.EndHorizontal();
-			
-			
-			//--[ Add Language Bottom Toolbar ]-----------------
-			
+
+
+            //--[ Add Language Bottom Toolbar ]-----------------
+
 			GUILayout.BeginHorizontal();
 			
 			//-- Language Dropdown -----------------
@@ -275,14 +286,16 @@ namespace I2.Loc
 			}
 			
 			
-			if (GUILayout.Button("Add", EditorStyles.toolbarButton, GUILayout.Width(50)) && index>=0)
+			if (TestButton(eTest_ActionType.Button_AddLanguageFromPopup, "Add", EditorStyles.toolbarButton, GUILayout.Width(50)) && index>=0)
 			{
-				Prop_Languages.serializedObject.ApplyModifiedProperties();
-				mLanguages_NewLanguage = GoogleLanguages.GetFormatedLanguageName( Languages[index] );
-				if (!string.IsNullOrEmpty(mLanguages_NewLanguage)) 
-					mLanguageSource.AddLanguage( mLanguages_NewLanguage, GoogleLanguages.GetLanguageCode(mLanguages_NewLanguage) );
-				Prop_Languages.serializedObject.Update();
-				mLanguages_NewLanguage = "";
+                Prop_Languages.serializedObject.ApplyModifiedProperties();
+                mLanguages_NewLanguage = GoogleLanguages.GetFormatedLanguageName(Languages[index]);
+
+                if (!string.IsNullOrEmpty(mLanguages_NewLanguage))
+                    mLanguageSource.AddLanguage(mLanguages_NewLanguage, GoogleLanguages.GetLanguageCode(mLanguages_NewLanguage));
+                Prop_Languages.serializedObject.Update();
+                
+                mLanguages_NewLanguage = "";
                 GUI.FocusControl(string.Empty);
             }
 
@@ -292,7 +305,7 @@ namespace I2.Loc
 		}
 
 
-		void TranslateAllToLanguage (string lanName)
+        void TranslateAllToLanguage (string lanName)
 		{
 			if (!GoogleTranslation.CanTranslate ()) 
 			{
@@ -308,16 +321,20 @@ namespace I2.Loc
                 ShowError("Language '" + code + "' is not supported by google translate");
                 return;
             }
+            googleCode = code;
 
             mTranslationTerms.Clear ();
 			mTranslationRequests.Clear ();
 			foreach (var termData in mLanguageSource.mTerms) 
 			{
-				if (!string.IsNullOrEmpty((GUI_SelectedInputType==0 ? termData.Languages : termData.Languages_Touch)[LanIndex]))
+                if (termData.TermType != eTermType.Text)
+                    continue;
+
+				if (!string.IsNullOrEmpty(termData.Languages[LanIndex]))
 					continue;
 				
 				string sourceCode, sourceText;
-				FindTranslationSource( LanguageSource.GetKeyFromFullTerm(termData.Term), termData, code, out sourceText, out sourceCode );
+				FindTranslationSource( LanguageSourceData.GetKeyFromFullTerm(termData.Term), termData, code, null, out sourceText, out sourceCode );
 
 				mTranslationTerms.Add (termData.Term);
 
@@ -370,24 +387,28 @@ namespace I2.Loc
 				return;
 			
 			var langCode = requests.Values.First().TargetLanguagesCode [0];
-			int langIndex = mLanguageSource.GetLanguageIndexFromCode (langCode);
+            //langCode = GoogleLanguages.GetGoogleLanguageCode(langCode);
+			int langIndex = mLanguageSource.GetLanguageIndexFromCode (langCode, false);
+            //if (langIndex >= 0)
+            {
+                foreach (var term in mTranslationTerms)
+                {
+                    var termData = mLanguageSource.GetTermData(term, false);
+                    if (termData == null)
+                        continue;
+                    if (termData.TermType != eTermType.Text)
+                        continue;
+                    //if (termData.Languages.Length <= langIndex)
+                      //  continue;
 
-			foreach (var term in mTranslationTerms)
-			{
-				var termData = mLanguageSource.GetTermData(term);
-				if (termData==null)
-					continue;
+                    string sourceCode, sourceText;
+                    FindTranslationSource(LanguageSourceData.GetKeyFromFullTerm(termData.Term), termData, langCode, null, out sourceText, out sourceCode);
 
-				string sourceCode, sourceText;
-				FindTranslationSource( LanguageSource.GetKeyFromFullTerm(termData.Term), termData, langCode, out sourceText, out sourceCode );
+                    string result = GoogleTranslation.RebuildTranslation(sourceText, mTranslationRequests, langCode);               // gets the result from google and rebuilds the text from multiple queries if its is plurals
 
-				string result = GoogleTranslation.RebuildTranslation( sourceText, mTranslationRequests, langCode);				// gets the result from google and rebuilds the text from multiple queries if its is plurals
-
-				if (GUI_SelectedInputType==0)
-					termData.Languages[langIndex] = result;
-				else
-					termData.Languages_Touch[langIndex] = result;
-			}
+                    termData.Languages[langIndex] = result;
+                }
+            }
 
 			mTranslationTerms.Clear ();
 			mTranslationRequests.Clear ();

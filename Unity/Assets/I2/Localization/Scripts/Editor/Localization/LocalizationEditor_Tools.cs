@@ -19,17 +19,18 @@ namespace I2.Loc
 
 		#region GUI
 
-		void OnGUI_Tools()
+		void OnGUI_Tools( bool reset )
 		{
 			GUILayout.Space(10);
 			eToolsMode OldMode = mCurrentToolsMode;
 			mCurrentToolsMode = (eToolsMode)GUITools.DrawShadowedTabs ((int)mCurrentToolsMode, new string[]{"Parse", "Categorize", "Merge", "No Localized", "Script", "CharSet"}, 30);
-			if (mCurrentToolsMode != OldMode)
+			if (mCurrentToolsMode != OldMode || reset)
 			{
 				ClearErrors();
 				if (mCurrentToolsMode == eToolsMode.Script)
 					SelectTermsFromScriptLocalization();
-			}
+                OnGUI_ScenesList_SelectAllScenes(true);
+            }
 
 			switch (mCurrentToolsMode)
 			{

@@ -16,9 +16,34 @@ namespace I2.Loc
         static public GUILayoutOption DontExpandWidth = GUILayout.ExpandWidth(false);
         static public GUIContent EmptyContent = new GUIContent ();
 
-         #region Header
+        static List<System.Action> mDelayedEditorCallbacks = new List<System.Action>();
 
-        static public bool DrawHeader (string text, string key, bool ShowToggle=false, bool ToggleState=false, System.Action<bool> OnToggle= null, string HelpURL=default(string), Color disabledColor = default(Color))
+        #region Delayed Editor Callback
+
+        public static void DelayedCall( System.Action action )
+        {
+            if (mDelayedEditorCallbacks.Count == 0)
+                EditorApplication.update += OnDelayedCall;
+
+            mDelayedEditorCallbacks.Add(action);
+        }
+
+        static void OnDelayedCall()
+        {
+            EditorApplication.update -= OnDelayedCall;
+            var calls = mDelayedEditorCallbacks.ToArray();
+            mDelayedEditorCallbacks.Clear();
+
+            foreach (var call in calls)
+                call();
+        }
+
+
+        #endregion
+
+        #region Header
+        public delegate void fnOnToggled(bool enabled);
+        static public bool DrawHeader (string text, string key, bool ShowToggle=false, bool ToggleState=false, fnOnToggled OnToggle = null, string HelpURL=default(string), Color disabledColor = default(Color))
 		{
 			bool state = EditorPrefs.GetBool(key, false);
 
@@ -28,7 +53,7 @@ namespace I2.Loc
 			return newState;
 		}
 
-		static public bool DrawHeader (string text, bool state, bool ShowToggle=false, bool ToggleState=false, System.Action<bool> OnToggle= null, string HelpURL=default(string), Color disabledColor = default(Color), bool allowCollapsing = true)
+		static public bool DrawHeader (string text, bool state, bool ShowToggle=false, bool ToggleState=false, fnOnToggled OnToggle = null, string HelpURL=default(string), Color disabledColor = default(Color), bool allowCollapsing = true)
 		{
 			GUIStyle Style = new GUIStyle(EditorStyles.foldout);
 			Style.richText = true;
@@ -36,7 +61,7 @@ namespace I2.Loc
 			if (state)
 			{
 				GUI.backgroundColor=DarkGray;
-				GUILayout.BeginVertical(EditorStyles.textArea, GUILayout.Height(1));
+				GUILayout.BeginVertical(LocalizeInspector.GUIStyle_OldTextArea, GUILayout.Height(1));
 				GUILayout.BeginHorizontal();
                 if (!string.IsNullOrEmpty(text))
                 {
@@ -93,7 +118,7 @@ namespace I2.Loc
 		{
 			GUILayout.BeginHorizontal();
 			string versionTip = "";
-			/*if (I2Analytics.HasNewVersion(pluginName))
+            /*if (I2Analytics.HasNewVersion(pluginName))
 			{
 				versionTip = "There is a new version of " + pluginName + ".\nClick here for more details";
 				if (GUILayout.Button(new GUIContent("", versionTip), EditorStyles.label, GUILayout.Width(25)))
@@ -103,10 +128,10 @@ namespace I2.Loc
 				rect.yMin = rect.yMax - 25;
 				rect.xMax = rect.xMin + 25;
 				rect.y += 3;
-				GUI.DrawTexture(rect, GUI.skin.GetStyle("CN EntryWarn").normal.background);
+				GUITools.DrawSkinIcon(rect, "CN EntryWarnIcon", "CN EntryWarn");
 			}*/
 
-			if (GUILayout.Button(new GUIContent("v" + pluginVersion, versionTip), EditorStyles.miniLabel))
+            if (GUILayout.Button(new GUIContent("v" + pluginVersion, versionTip), EditorStyles.miniLabel))
 			{
 				Application.OpenURL(assetStoreURL);
 				//I2AboutWindow.DoShowScreen();
@@ -131,7 +156,7 @@ namespace I2.Loc
 	
 		static public void BeginContents ()
 		{
-			EditorGUILayout.BeginHorizontal(EditorStyles.textArea, GUILayout.MinHeight(10f));
+			EditorGUILayout.BeginHorizontal(LocalizeInspector.GUIStyle_OldTextArea, GUILayout.MinHeight(10f));
 			GUILayout.Space(2f);
 			EditorGUILayout.BeginVertical();
 			GUILayout.Space(2f);
@@ -205,7 +230,7 @@ namespace I2.Loc
 		static public int DrawShadowedTabs( int Index, string[] Tabs, int height = 25, bool expand=true )
 		{
 			GUI.backgroundColor=Color.Lerp (Color.gray, Color.white, 0.2f);
-			GUILayout.BeginVertical(EditorStyles.textArea, GUILayout.Height(1));
+			GUILayout.BeginVertical(LocalizeInspector.GUIStyle_OldTextArea, GUILayout.Height(1));
 				GUI.backgroundColor=Color.white;
 				GUILayout.Space(2);
 				Index = DrawTabs( Index, Tabs, height: height, expand:expand );
@@ -213,7 +238,7 @@ namespace I2.Loc
 			return Index;
 		}
 
-		static public int DrawTabs( int Index, Texture2D[] Tabs, GUIStyle Style, int height )
+        static public int DrawTabs( int Index, Texture2D[] Tabs, GUIStyle Style, int height )
 		{
 			GUIStyle MyStyle = new GUIStyle(Style!=null?Style:GUI.skin.FindStyle("dragtab"));
 			MyStyle.fixedHeight=0;
@@ -221,7 +246,7 @@ namespace I2.Loc
 			//width = Mathf.Max (width, height * Tabs[0].width/(float)Tabs[0].height);
 
 			GUILayout.BeginHorizontal();
-			float width = (Screen.width-(MyStyle.border.left+MyStyle.border.right)*(Tabs.Length-1)) / (float)Tabs.Length;
+			float width = (EditorGUIUtility.currentViewWidth-(MyStyle.border.left+MyStyle.border.right)*(Tabs.Length-1)) / (float)Tabs.Length;
 			for (int i=0; i<Tabs.Length; ++i)
 			{
 				if ( GUILayout.Toggle(Index==i, Tabs[i], MyStyle, GUILayout.Height(height), GUILayout.Width(width)) && Index!=i) 
@@ -238,8 +263,9 @@ namespace I2.Loc
 
 		#region Object Array
 
-		static public void DrawObjectsArray( SerializedProperty PropArray )
+		static public bool DrawObjectsArray( SerializedProperty PropArray, bool allowDuplicates=false, bool allowResources=false, bool allowSceneObj=false, Object testAdd=null, Object testReplace=null, int testReplaceIndex=-1, int testDeleteIndex=-1 )
 		{
+            bool hasChanged = false;
 			GUILayout.BeginVertical();
 
 				int DeleteElement = -1, MoveUpElement = -1;
@@ -250,19 +276,35 @@ namespace I2.Loc
 					GUILayout.BeginHorizontal();
 
 						//--[ Delete Button ]-------------------
-						if (GUILayout.Button("X", EditorStyles.toolbarButton, GUILayout.ExpandWidth(false)))
+						if (GUILayout.Button("X", EditorStyles.toolbarButton, GUILayout.ExpandWidth(false)) || i == testDeleteIndex)
 				    		DeleteElement = i;
 
 						GUILayout.Space(2);
 				    	//--[ Object ]--------------------------
 						GUILayout.BeginHorizontal(EditorStyles.toolbar);
 							GUI.changed = false;
-							Object Obj = EditorGUILayout.ObjectField( Prop.objectReferenceValue, typeof(Object), true, GUILayout.ExpandWidth(true));
+							Object Obj = EditorGUILayout.ObjectField( Prop.objectReferenceValue, typeof(Object), allowSceneObj, GUILayout.ExpandWidth(true));
+                            if (testReplaceIndex == i)
+                            {
+                                Obj = testReplace;
+                                GUI.changed = true;
+                            }
+
+                            if (!allowResources && Obj != null)
+                            {
+                                var path = AssetDatabase.GetAssetPath(Obj);
+                                if (path != null && path.Contains("/Resources/"))
+                                    Obj = null;
+                            }
+
 							if (Obj==null)
 								DeleteElement = i;
 							else
-							if (GUI.changed)
-								Prop.objectReferenceValue = Obj;
+							if (GUI.changed && (allowDuplicates || !ObjectsArrayHasReference(PropArray, Obj)))
+                            {
+                                Prop.objectReferenceValue = Obj;
+                                hasChanged = true;
+                            }
 						GUILayout.EndHorizontal();
 
 						//--[ MoveUp Button ]-------------------
@@ -281,32 +323,61 @@ namespace I2.Loc
 				}
 
 				GUILayout.BeginHorizontal(EditorStyles.toolbar);
-					Object NewObj = EditorGUILayout.ObjectField( null, typeof(Object), true, GUILayout.ExpandWidth(true));
-					if (NewObj) 
+					Object NewObj = EditorGUILayout.ObjectField( null, typeof(Object), allowSceneObj, GUILayout.ExpandWidth(true));
+                    if (testAdd != null)
+                    {
+                        NewObj = testAdd;
+                    }
+
+                    if (!allowResources && NewObj != null)
+                    {
+                        var path = AssetDatabase.GetAssetPath(NewObj);
+                        if (path != null && path.Contains("/Resources/"))
+                    NewObj = null;
+                    }
+                    if (NewObj && (allowDuplicates || !ObjectsArrayHasReference(PropArray, NewObj)))
 					{
 						int Index = PropArray.arraySize;
 						PropArray.InsertArrayElementAtIndex( Index );
 						PropArray.GetArrayElementAtIndex(Index).objectReferenceValue = NewObj;
-					}
+                        hasChanged = true;
+                    }
 				GUILayout.EndHorizontal();
 
 				if (DeleteElement>=0)
 				{
 					PropArray.DeleteArrayElementAtIndex( DeleteElement );
 					//PropArray.DeleteArrayElementAtIndex( DeleteElement );
+                    hasChanged = true;
 				}
 
 				if (MoveUpElement>=0)
+                {
 					PropArray.MoveArrayElement(MoveUpElement, MoveUpElement-1);
+                    hasChanged = true;
+                }
 
-			GUILayout.EndVertical();
+            GUILayout.EndVertical();
+            return hasChanged;
 		}
 
-		#endregion
+        static public bool ObjectsArrayHasReference(SerializedProperty PropArray, Object obj)
+        {
+            for (int i = 0, imax = PropArray.arraySize; i < imax; ++i)
+            {
+                SerializedProperty Prop = PropArray.GetArrayElementAtIndex(i);
+                if (Prop.objectReferenceValue == obj)
+                    return true;
+            }
+            return false;
+        }
 
-		#region Toggle
 
-		static public int ToggleToolbar( int Index, string[] Options )
+        #endregion
+
+        #region Toggle
+
+        static public int ToggleToolbar( int Index, string[] Options )
 		{
 			GUILayout.BeginHorizontal();
 			for (int i=0; i<Options.Length; ++i)
@@ -331,7 +402,8 @@ namespace I2.Loc
 		
 		public static bool ObjectExistInScene( GameObject Obj )
 		{
-			//if (Obj.transform.root != Obj.transform)
+            return Obj.scene.IsValid() && Obj.scene.isLoaded;
+			/* //if (Obj.transform.root != Obj.transform)
 			//	continue;
 			
 			// We are only interested in GameObjects that are visible in the Hierachy panel and are persitent 
@@ -346,10 +418,10 @@ namespace I2.Loc
 			// If the database contains the object then its not an scene object, 
 			// but the previous test should get rid of them, so I will just comment this 
 			// unless an false positive object is found in the future
-			/*if (AssetDatabase.Contains(Obj))
-					return false;*/
+			//if (AssetDatabase.Contains(Obj))
+			//		return false;
 			
-			return true;
+			return true;*/
 		}
 
 		public static IEnumerable<GameObject> SceneRoots()
@@ -427,10 +499,34 @@ namespace I2.Loc
 		}
 		static GUIContent mIconHelp;
 
-		#endregion
+        public static GUIStyle FindSkinStyle(string name)
+        {
+            var allStyles = GUI.skin.customStyles;
+            for (int i = 0, imax = allStyles.Length; i < imax; ++i)
+            {
+                if (allStyles[i].name == name)
+                    return allStyles[i];
+            }
+            return null;
+        }
+        public static void DrawSkinIcon(Rect rect, params string[] iconNames)
+        {
+            foreach (var icon in iconNames)
+            {
+                var style = FindSkinStyle(icon);
+                if (style == null || style.normal == null || style.normal.background == null)
+                    continue;
 
-		#region Angle Drawer
-		private static Vector2 mAngle_lastMousePosition;
+                GUI.DrawTexture(rect, style.normal.background);
+                return;
+            }
+            //Debug.Log("unable to find icon");
+        }
+
+        #endregion
+
+        #region Angle Drawer
+        private static Vector2 mAngle_lastMousePosition;
 		static Texture mAngle_TextureCircle;
 		static Texture pAngle_TextureCircle { 
 			get{ 
@@ -489,7 +585,7 @@ namespace I2.Loc
 				}
 			}
 
-			GUI.DrawTexture(knobRect, pAngle_TextureCircle);
+			if (pAngle_TextureCircle) GUI.DrawTexture(knobRect, pAngle_TextureCircle);
 			Matrix4x4 matrix = GUI.matrix;
 			
 			if (min != max)
@@ -499,7 +595,7 @@ namespace I2.Loc
 
 			knobRect.height = 5;
 			knobRect.width = 5;
-			GUI.DrawTexture(knobRect, pAngle_TextureCircle);
+			if (pAngle_TextureCircle) GUI.DrawTexture(knobRect, pAngle_TextureCircle);
 			GUI.matrix = matrix;
 			
 			Rect label = new Rect(rect.x + rect.height, rect.y + (rect.height / 2) - 9, rect.height, 18);
@@ -539,7 +635,7 @@ namespace I2.Loc
 			}
 
 			if (background==null) background = pAngle_TextureCircle;
-			GUI.DrawTexture (knobRect, background);
+			if (background) GUI.DrawTexture (knobRect, background);
 
 			Matrix4x4 matrix = GUI.matrix;
 			
@@ -555,7 +651,7 @@ namespace I2.Loc
 			knobRect.height = Radius+2;
 			if (knobLine == null)
 				knobLine = GUI.skin.FindStyle ("MeBlendPosition").normal.background;
-			GUI.DrawTexture(knobRect, knobLine);
+			if (knobLine) GUI.DrawTexture(knobRect, knobLine);
 			GUI.matrix = matrix;
 			
 			return Mathf.Repeat(angle, 360);
@@ -633,6 +729,21 @@ namespace I2.Loc
 
             return Reflection_InvokeMethod( typeof( EditorGUI ), "DoTextField", s_RecycledEditor, controlID, position, text, style, null, false, false, false, false ) as string;
 		}
-		#endregion
-	}
+
+        static public void RepaintInspectors()
+        {
+            EditorApplication.update -= RepaintInspectors;
+            var assemblyEditor = Assembly.GetAssembly(typeof(Editor));
+            var typeInspectorWindow = assemblyEditor.GetType("UnityEditor.InspectorWindow");
+            typeInspectorWindow.GetMethod("RepaintAllInspectors", BindingFlags.NonPublic | BindingFlags.Static).Invoke(null, null);
+        }
+
+        public static void ScheduleRepaintInspectors()
+        {
+            EditorApplication.update += RepaintInspectors;
+        }
+
+
+        #endregion
+    }
 }

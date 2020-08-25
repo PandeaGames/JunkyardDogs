@@ -14,7 +14,8 @@ namespace I2.Loc
 					GameObject GO = new GameObject( "_Coroutiner" );
                     GO.hideFlags = HideFlags.HideAndDontSave;
                     mInstance = GO.AddComponent<CoroutineManager>();
-                    DontDestroyOnLoad(GO);
+                    if (Application.isPlaying)
+                        DontDestroyOnLoad(GO);
                 }
                 return mInstance;
 			}
@@ -24,14 +25,15 @@ namespace I2.Loc
 
         private void Awake()
         {
-            DontDestroyOnLoad(gameObject);
+            if (Application.isPlaying)
+                DontDestroyOnLoad(gameObject);
         }
 
         public static Coroutine Start(IEnumerator coroutine)
 		{
 			#if UNITY_EDITOR
 				// Special case to allow coroutines to run in the Editor
-				if (!UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode)
+				if (!Application.isPlaying)
 				{
 					UnityEditor.EditorApplication.CallbackFunction delg=null;
 					delg = delegate () 

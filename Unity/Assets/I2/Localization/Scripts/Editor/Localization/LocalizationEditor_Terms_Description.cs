@@ -2,6 +2,7 @@
 //#define NGUI
 
 using System;
+using System.Linq;
 using UnityEngine;
 using UnityEditor;
 using Object = UnityEngine.Object;
@@ -13,18 +14,20 @@ namespace I2.Loc
 	{
 		#region Variables	
 		internal static bool mKeysDesc_AllowEdit = false;
-		internal static int GUI_SelectedInputType
+		internal static string GUI_SelectedSpecialization
 		{
-			get{ if (mGUI_SelectedInputType<0) 
-					mGUI_SelectedInputType = EditorPrefs.GetInt ("I2 InputType", TermData.IsTouchType()?1:0);
-				return mGUI_SelectedInputType; 
+			get{
+                if (string.IsNullOrEmpty(mGUI_SelectedSpecialization)) 
+					mGUI_SelectedSpecialization = EditorPrefs.GetString ("I2Loc Specialization", "Any");
+				return mGUI_SelectedSpecialization;
 			}
-			set{ if (value!=mGUI_SelectedInputType) 
-					EditorPrefs.SetInt ("I2 InputType", value);
-				 mGUI_SelectedInputType = value;
+			set{
+                if (value!=mGUI_SelectedSpecialization) 
+					EditorPrefs.SetString ("I2Loc Specialization", value);
+				 mGUI_SelectedSpecialization = value;
 			}
 		}
-		internal static int mGUI_SelectedInputType = -1;
+		internal static string mGUI_SelectedSpecialization = null;
 
 		internal static bool GUI_ShowDisabledLanguagesTranslation = true;
 
@@ -36,26 +39,26 @@ namespace I2.Loc
 		void OnGUI_KeyList_ShowKeyDetails()
 		{
 			GUI.backgroundColor = Color.Lerp(Color.blue, Color.white, 0.9f);
-			GUILayout.BeginVertical(EditorStyles.textArea, GUILayout.Height(1));
+            GUILayout.BeginVertical(LocalizeInspector.GUIStyle_OldTextArea, GUILayout.Height(1));
 			OnGUI_Keys_Languages(mKeyToExplore, null);
-			
-			GUILayout.BeginHorizontal();
-            if (GUILayout.Button("Delete"))
+
+            GUILayout.BeginHorizontal();
+            if (TestButton(eTest_ActionType.Button_DeleteTerm, "Delete", "Button", GUILayout.ExpandWidth(true)))
             {
-                if (EditorUtility.DisplayDialog("Confirm delete", "Are you sure you want to delete term '"+mKeyToExplore+"'", "Yes", "Cancel"))
+                if (mTestAction != eTest_ActionType.None || EditorUtility.DisplayDialog("Confirm delete", "Are you sure you want to delete term '" + mKeyToExplore + "'", "Yes", "Cancel"))
                     EditorApplication.update += DeleteCurrentKey;
             }
-			
-			if (GUILayout.Button("Rename"))
-			{
-				mCurrentViewMode = eViewMode.Tools;
-				mCurrentToolsMode = eToolsMode.Merge;
-				if (!mSelectedKeys.Contains (mKeyToExplore))
-					mSelectedKeys.Add (mKeyToExplore);
-			}
-			GUILayout.EndHorizontal();
-			GUILayout.EndVertical();
-			GUI.backgroundColor = Color.white;
+
+            if (GUILayout.Button("Rename"))
+            {
+                mCurrentViewMode = eViewMode.Tools;
+                mCurrentToolsMode = eToolsMode.Merge;
+                if (!mSelectedKeys.Contains(mKeyToExplore))
+                    mSelectedKeys.Add(mKeyToExplore);
+            }
+            GUILayout.EndHorizontal();
+            GUILayout.EndVertical();
+            GUI.backgroundColor = Color.white;
 		}
 
 		void DeleteTerm( string Term, bool updateStructures = true )
@@ -72,7 +75,7 @@ namespace I2.Loc
 				UpdateParsedCategories();
 				mTermList_MaxWidth = -1;
 				serializedObject.ApplyModifiedProperties();
-				EditorUtility.SetDirty(mLanguageSource);
+				mLanguageSource.Editor_SetDirty();
 				ScheduleUpdateTermsToShowInList();
 			}
 			EditorApplication.update += RepaintScene;
@@ -101,7 +104,7 @@ namespace I2.Loc
 
 			mTermList_MaxWidth = -1;			
 			serializedObject.ApplyModifiedProperties();
-			EditorUtility.SetDirty(mLanguageSource);
+			mLanguageSource.Editor_SetDirty();
 			return data;
 		}
 
@@ -110,11 +113,11 @@ namespace I2.Loc
 			if (Term == "-" || string.IsNullOrEmpty(Term))
 				return null;
 
-			Term = LocalizationManager.RemoveNonASCII(Term, true);
+			Term = I2Utils.GetValidTermName(Term, true);
 
 			TermData data = mLanguageSource.AddTerm(Term, termType);
 			GetParsedTerm(Term);
-			string sCategory = LanguageSource.GetCategoryFromFullTerm(Term);
+			string sCategory = LanguageSourceData.GetCategoryFromFullTerm(Term);
 			mParsedCategories.Add(sCategory);
 
 			if (AutoSelect)
@@ -126,8 +129,8 @@ namespace I2.Loc
 					mSelectedCategories.Add(sCategory);
 			}
 			ScheduleUpdateTermsToShowInList();
-			EditorUtility.SetDirty(mLanguageSource);
-			return data;
+            mLanguageSource.Editor_SetDirty();
+            return data;
 		}
 
 		// this method shows the key description and the localization to each language
@@ -138,7 +141,10 @@ namespace I2.Loc
 
 			TermData termdata = null;
 
-			LanguageSource source = (localizeCmp == null ? mLanguageSource : localizeCmp.Source);
+            LanguageSourceData source = mLanguageSource;
+            if (localizeCmp != null && localizeCmp.Source != null)
+                source = localizeCmp.Source.SourceData;
+
 			if (source==null)
 				source = LocalizationManager.GetSourceContaining(Key, false);
 
@@ -178,7 +184,7 @@ namespace I2.Loc
 					if (GUILayout.Button("Add Term to Source"))
 					{
                         var termType = eTermType.Text;
-                        if (localizeCmp.mLocalizeTarget != null)
+                        if (localizeCmp!=null && localizeCmp.mLocalizeTarget != null)
                         {
                             termType = IsPrimaryKey ? localizeCmp.mLocalizeTarget.GetPrimaryTermType(localizeCmp)
                                                     : localizeCmp.mLocalizeTarget.GetSecondaryTermType(localizeCmp);
@@ -215,22 +221,22 @@ namespace I2.Loc
 				if (NewDesc != termdata.Description)
 				{
 					termdata.Description = NewDesc;
-					EditorUtility.SetDirty(source);
+					source.Editor_SetDirty();
 				}
 			}
 			else
 				EditorGUILayout.HelpBox( string.IsNullOrEmpty(termdata.Description) ? "No description" : termdata.Description, MessageType.Info );
 
-			OnGUI_Keys_Language_SpecializationsBar ();
+			OnGUI_Keys_Language_SpecializationsBar (termdata, source);
 
 			OnGUI_Keys_Languages(Key, ref termdata, localizeCmp, IsPrimaryKey, source);
             return termdata;
 		}
 
-		static void OnGUI_Keys_Languages( string Key, ref TermData termdata, Localize localizeCmp, bool IsPrimaryKey, LanguageSource source )
+		static void OnGUI_Keys_Languages( string Key, ref TermData termdata, Localize localizeCmp, bool IsPrimaryKey, LanguageSourceData source )
 		{
 			//--[ Languages ]---------------------------
-			GUILayout.BeginVertical(EditorStyles.textArea, GUILayout.Height(1));
+			GUILayout.BeginVertical(LocalizeInspector.GUIStyle_OldTextArea, GUILayout.Height(1));
 
 			OnGUI_Keys_LanguageTranslations(Key, localizeCmp, IsPrimaryKey, ref termdata, source);
 
@@ -238,33 +244,43 @@ namespace I2.Loc
 			{
 				GUILayout.BeginHorizontal();
 				GUILayout.FlexibleSpace();
-				if (GUILayout.Button("Translate All", GUILayout.Width(85)))
-				{
-                    ClearErrors();
-					string mainText = localizeCmp == null ? LanguageSource.GetKeyFromFullTerm(Key) : localizeCmp.GetMainTargetsText();
-
-					for (int i = 0; i < source.mLanguages.Count; ++i)
-						if (string.IsNullOrEmpty(termdata.Languages[i]) && source.mLanguages[i].IsEnabled())
-						{
-							var languages = (GUI_SelectedInputType == 0 ? termdata.Languages : termdata.Languages_Touch);
-							var langIdx = i;
-							Translate(mainText, ref termdata, source.mLanguages[i].Code, 
-                                        (translation, error) => 
-                                        {
-                                            if (error != null)
-                                                ShowError(error);
-                                            else
-                                            if (translation!=null)
-                                                languages[langIdx] = translation;
-                                        } );
-						}
-					GUI.FocusControl(string.Empty);
-				}
+                if (TestButton(eTest_ActionType.Button_Term_TranslateAll, "Translate All", "Button", GUILayout.Width(85)))
+                {
+                    var termData = termdata;
+                    GUITools.DelayedCall(() => TranslateLanguage( Key, termData, localizeCmp, source));
+                    GUI.FocusControl(string.Empty);
+                }
 				GUILayout.EndHorizontal();
                 OnGUI_TranslatingMessage();
             }
 			GUILayout.EndVertical();
 		}
+
+        static void TranslateLanguage( string Key, TermData termdata, Localize localizeCmp, LanguageSourceData source)
+        {
+            ClearErrors();
+            string mainText = localizeCmp == null ? LanguageSourceData.GetKeyFromFullTerm(Key) : localizeCmp.GetMainTargetsText();
+
+            for (int i = 0; i < source.mLanguages.Count; ++i)
+                if (source.mLanguages[i].IsEnabled() && string.IsNullOrEmpty(termdata.Languages[i]))
+                {
+                    var langIdx = i;
+                    var term = termdata;
+                    var i2source = source;
+                    Translate(mainText, ref termdata, source.mLanguages[i].Code,
+                                (translation, error) =>
+                                {
+                                    if (error != null)
+                                        ShowError(error);
+                                    else
+                                    if (translation != null)
+                                    {
+                                        term.Languages[langIdx] = translation; //SetTranslation(langIdx, translation);
+                                        i2source.Editor_SetDirty();
+                                    }
+                                }, null);
+                }
+        }
 
         static void OnGUI_TranslatingMessage()
         {
@@ -274,7 +290,7 @@ namespace I2.Loc
                 int time = (int)((Time.realtimeSinceStartup % 2) * 2.5);
                 string Loading = "Translating" + ".....".Substring(0, time);
                 GUI.color = Color.gray;
-                GUILayout.BeginHorizontal(EditorStyles.textArea);
+                GUILayout.BeginHorizontal(LocalizeInspector.GUIStyle_OldTextArea);
                 GUILayout.Label(Loading, EditorStyles.miniLabel);
                 GUI.color = Color.white;
                 if (GUILayout.Button("Cancel", EditorStyles.toolbarButton, GUILayout.ExpandWidth(false)))
@@ -286,55 +302,81 @@ namespace I2.Loc
             }
         }
 
-		static void OnGUI_Keys_Language_SpecializationsBar()
+		static void OnGUI_Keys_Language_SpecializationsBar(TermData termData, LanguageSourceData source)
 		{
-			GUILayout.BeginHorizontal();
-				GUI_SelectedInputType = GUITools.DrawTabs(GUI_SelectedInputType, new string[]{"Normal|Transation for Non Touch devices.\nThis allows using 'click' instead of 'tap', etc", 
-																							  "Touch|Transation for Touch devices.\nThis allows using 'tap' instead of 'click', etc",
-																							  "VR|Transation for VR devices.\nThis allows using 'look at' instead of 'click', etc",
-																							  "XBox|Transation for XBox Controller.\nThis allows using 'press' instead of 'click', etc",
-																							  "PS4|Transation for PS4 Controller.\nThis allows using 'press' instead of 'click', etc",
-																							  "Controller|Transation for general Controllers.\nThis allows using 'press' instead of 'click', etc"}, null);
-				if (GUI_SelectedInputType > 1)  // TEMPORAL
-					GUI_SelectedInputType = 0;
-			
-				GUI_ShowDisabledLanguagesTranslation = GUILayout.Toggle(GUI_ShowDisabledLanguagesTranslation, new GUIContent("L", "Show Disabled Languages"), "Button", GUILayout.ExpandWidth(false));
-			GUILayout.EndHorizontal();
-			GUILayout.Space(-1);
-						
-
-			//static public int DrawTabs( int Index, string[] Tabs, GUIStyle Style=null, int height=25, bool expand = true)
-			/*GUIStyle MyStyle = new GUIStyle(Style!=null?Style:GUI.skin.FindStyle("dragtab"));
-			MyStyle.fixedHeight=0;
+            var activeSpecializations = termData.GetAllSpecializations();
 
 			GUILayout.BeginHorizontal();
-			for (int i=0; i<Tabs.Length; ++i)
-			{
-					int idx = Tabs[i].IndexOf('|');
-					if (idx>0)
-					{
-							string text = Tabs[i].Substring(0, idx);
-							string tooltip = Tabs[i].Substring(idx+1);
-							if ( GUILayout.Toggle(Index==i, new GUIContent(text, tooltip), MyStyle, GUILayout.Height(height), GUILayout.ExpandWidth(expand)) && Index!=i) 
-							{
-									Index=i;
-									GUI.FocusControl(string.Empty);
-							}
-					}
-					else
-					{
-							if ( GUILayout.Toggle(Index==i, Tabs[i], MyStyle, GUILayout.Height(height), GUILayout.ExpandWidth(expand)) && Index!=i) 
-							{
-									Index=i;
-									GUI.FocusControl(string.Empty);
-							}
-					}
-			}
+
+                var TabStyle = new GUIStyle(GUI.skin.FindStyle("dragtab"));
+                TabStyle.fixedHeight = 0;
+
+            //var ss = GUI.skin.FindStyle("TL tab left");
+                var TabOpenStyle = new GUIStyle(GUI.skin.FindStyle("minibuttonmid"));
+                TabOpenStyle.margin.right = -1;
+                var TabCloseStyle = new GUIStyle(EditorStyles.label);
+                //var TabCloseStyle = new GUIStyle(GUI.skin.FindStyle("TL tab right"));
+                TabCloseStyle.margin.left = -1;
+                TabCloseStyle.padding.left=4;
+
+                //-- Specialization Tabs -----
+
+                var prevSpecialization = "Any";
+                foreach (var specialization in SpecializationManager.Singleton.mSpecializations)
+                {
+                    if (!activeSpecializations.Contains(specialization) && specialization != GUI_SelectedSpecialization)
+                        continue;
+
+                    bool isActive = (specialization == GUI_SelectedSpecialization);
+                    var labelContent = new GUIContent(specialization, "Specialization of the main translation (i.e. variants that show only on specific platforms or devices)\nThis allows using 'tap' instead of 'click' for touch devices.");
+
+                    if (isActive && activeSpecializations.Count>1)
+                    {
+                        GUILayout.BeginHorizontal(TabOpenStyle);
+                            GUILayout.Toggle(isActive, labelContent, TabStyle, GUILayout.Height(20), GUILayout.ExpandWidth(false));
+                            //GUILayout.Label(labelContent, TabOpenStyle);
+                            if (specialization != "Any" && GUILayout.Button("x", TabCloseStyle, GUILayout.Width(15)))
+                            {
+                                termData.RemoveSpecialization(specialization);
+                                GUI_SelectedSpecialization = prevSpecialization;
+                                GUI.FocusControl(null);
+                            }
+                        GUILayout.EndHorizontal();
+                    }
+                    else
+                    if (GUILayout.Toggle(isActive, labelContent, TabStyle, GUILayout.Height(25), GUILayout.ExpandWidth(false)) && !isActive)
+                    {
+                        GUI_SelectedSpecialization = specialization;
+                        GUI.FocusControl(null);
+                    }
+                }
+
+
+                //-- Add new Specialization -----
+                int newIndex = EditorGUILayout.Popup(-1, SpecializationManager.Singleton.mSpecializations, "DropDown", GUILayout.Width(20));
+                if (newIndex>=0)
+                {
+                    string newSpecialization = SpecializationManager.Singleton.mSpecializations[newIndex];
+                    if (!activeSpecializations.Contains(newSpecialization))
+                    {
+                        for (int iLang = 0; iLang < source.mLanguages.Count; ++iLang)
+                        {
+                            string Translation = termData.GetTranslation(iLang, GUI_SelectedSpecialization, editMode: true);
+                            termData.SetTranslation(iLang, Translation, GUI_SelectedSpecialization);
+                        }
+                        GUI_SelectedSpecialization = newSpecialization;
+                    }
+                }
+
+                GUILayout.FlexibleSpace();
+
+
+                GUI_ShowDisabledLanguagesTranslation = GUILayout.Toggle(GUI_ShowDisabledLanguagesTranslation, new GUIContent("L", "Show Disabled Languages"), "Button", GUILayout.ExpandWidth(false));
 			GUILayout.EndHorizontal();
-			return Index;*/
+			GUILayout.Space(-3);
 		}
 
-		static void OnGUI_Keys_LanguageTranslations (string Key, Localize localizeCmp, bool IsPrimaryKey, ref TermData termdata, LanguageSource source)
+		static void OnGUI_Keys_LanguageTranslations (string Key, Localize localizeCmp, bool IsPrimaryKey, ref TermData termdata, LanguageSourceData source)
 		{
 			bool IsSelect = Event.current.type==EventType.MouseUp;
 			for (int i=0; i< source.mLanguages.Count; ++ i)
@@ -350,18 +392,15 @@ namespace I2.Loc
 				}
 				GUILayout.BeginHorizontal();
 
-				if (GUILayout.Button(source.mLanguages[i].Name, EditorStyles.label, GUILayout.Width(100)))
+                if (GUILayout.Button(source.mLanguages[i].Name, EditorStyles.label, GUILayout.Width(100)))
 					forcePreview = true;
 
 
-				string Translation = (GUI_SelectedInputType==0 ? termdata.Languages[i] : termdata.Languages_Touch[i]) ?? string.Empty;
-				if (string.IsNullOrEmpty(Translation))
-				{
-					Translation = (GUI_SelectedInputType==1 ? termdata.Languages[i] : termdata.Languages_Touch[i]) ?? string.Empty;
-				}
+				string Translation = termdata.GetTranslation(i, GUI_SelectedSpecialization, editMode:true);
+                if (Translation == null) Translation = string.Empty;
 
-				if (termdata.Languages[i] != termdata.Languages_Touch[i] && !string.IsNullOrEmpty(termdata.Languages[i]) && !string.IsNullOrEmpty(termdata.Languages_Touch[i]))
-					GUI.contentColor = GUITools.LightYellow;
+//				if (termdata.Languages[i] != termdata.Languages_Touch[i] && !string.IsNullOrEmpty(termdata.Languages[i]) && !string.IsNullOrEmpty(termdata.Languages_Touch[i]))
+//					GUI.contentColor = GUITools.LightYellow;
 
 				if (termdata.TermType == eTermType.Text || termdata.TermType==eTermType.Child)
 				{
@@ -373,15 +412,13 @@ namespace I2.Loc
                     //Translation = EditorGUILayout.TextArea(Translation, Style_WrapTextField, GUILayout.Width(Screen.width - 260 - (autoTranslated ? 20 : 0)));
 					if (EditorGUI.EndChangeCheck ())
 					{
-						if (GUI_SelectedInputType==0)
-							termdata.Languages[i] = Translation;
-						else
-							termdata.Languages_Touch[i] = Translation;
-						EditorUtility.SetDirty(source);
-					}
+                        termdata.SetTranslation(i, Translation, GUI_SelectedSpecialization);
+						source.Editor_SetDirty();
+                        forcePreview = true;
+                    }
 
 					if (localizeCmp!=null &&
-						(forcePreview || GUI.changed || (GUI.GetNameOfFocusedControl()==CtrName && IsSelect)))
+						(forcePreview || /*GUI.changed || */(GUI.GetNameOfFocusedControl()==CtrName && IsSelect)))
 					{
 						if (IsPrimaryKey && string.IsNullOrEmpty(localizeCmp.Term))
 						{
@@ -408,21 +445,21 @@ namespace I2.Loc
                     //{
                     //    if (GUILayout.Button(new GUIContent("\u2713"/*"A"*/,"Translated by Google Translator\nClick the button to approve the translation"), EditorStyles.toolbarButton, GUILayout.Width(autoTranslated ? 20 : 0)))
                     //    {
-                    //        termdata.Flags[i] &= (byte)(byte.MaxValue ^ (byte)(GUI_SelectedInputType==0 ? TranslationFlag.AutoTranslated_Normal : TranslationFlag.AutoTranslated_Touch));
+                    //        termdata.Flags[i] &= (byte)(byte.MaxValue ^ (byte)(GUI_SelectedSpecialization==0 ? TranslationFlag.AutoTranslated_Normal : TranslationFlag.AutoTranslated_Touch));
                     //    }
                     //}
 
-                    /*if (termdata.TermType == eTermType.Text)
+                    if (termdata.TermType == eTermType.Text)
                     {
-                        if (GUILayout.Button("Translate", EditorStyles.toolbarButton, GUILayout.Width(80)))
+                        if (TestButtonArg(eTest_ActionType.Button_Term_Translate, i, new GUIContent("T", "Translate"), EditorStyles.toolbarButton, GUILayout.Width(20)))
                         {
-                            string mainText = localizeCmp == null ? LanguageSource.GetKeyFromFullTerm(Key) : localizeCmp.GetMainTargetsText();
-                            var languages = (GUI_SelectedInputType == 0 ? termdata.Languages : termdata.Languages_Touch);
-                            var langIdx = i;
-                            Translate(mainText, ref termdata, source.mLanguages[i].Code, (translation) => { languages[langIdx] = translation; });
+                            var termData = termdata;
+                            var indx = i;
+                            var key = Key;
+                            GUITools.DelayedCall(()=>TranslateTerm(key, termData, source, indx));
                             GUI.FocusControl(string.Empty);
                         }
-                    }*/
+                    }
 				}
 				else
 				{
@@ -448,15 +485,16 @@ namespace I2.Loc
 					if (Obj==null && localizeCmp==null)
 						Obj = ResourceManager.pInstance.LoadFromResources<Object>(Translation);
 
-					Type ObjType = typeof(Object);
-					switch (termdata.TermType)
+                    Type ObjType = typeof(Object);
+ 					switch (termdata.TermType)
 					{
 						case eTermType.Font			: ObjType = typeof(Font); break;
 						case eTermType.Texture		: ObjType = typeof(Texture); break;
 						case eTermType.AudioClip	: ObjType = typeof(AudioClip); break;
 						case eTermType.GameObject	: ObjType = typeof(GameObject); break;
 						case eTermType.Sprite		: ObjType = typeof(Sprite); break;
-						case eTermType.Material		: ObjType = typeof(Material); break;
+                        case eTermType.Material     : ObjType = typeof(Material); break;
+                        case eTermType.Mesh         : ObjType = typeof(Mesh); break;
 #if NGUI
 						case eTermType.UIAtlas		: ObjType = typeof(UIAtlas); break;
 						case eTermType.UIFont		: ObjType = typeof(UIFont); break;
@@ -467,7 +505,7 @@ namespace I2.Loc
 #endif
 
 #if TextMeshPro
-						case eTermType.TextMeshPFont	: ObjType = typeof(TMPro.TMP_FontAsset); break;
+                        case eTermType.TextMeshPFont	: ObjType = typeof(TMPro.TMP_FontAsset); break;
 #endif
 
 #if SVG
@@ -494,28 +532,36 @@ namespace I2.Loc
 					if (bShowTranslationLabel)
 					{
 						GUI.backgroundColor=GUITools.DarkGray;
-						GUILayout.BeginVertical(EditorStyles.textArea, GUILayout.Height(1));
+						GUILayout.BeginVertical(LocalizeInspector.GUIStyle_OldTextArea, GUILayout.Height(1));
 						GUILayout.Space(2);
 						
 						GUI.backgroundColor = Color.white;
 					}
 
 					Object NewObj = EditorGUILayout.ObjectField(Obj, ObjType, true, GUILayout.ExpandWidth(true));
-					if (Obj!=NewObj && NewObj!=null)
+					if (Obj!=NewObj)
 					{
-						string sPath = AssetDatabase.GetAssetPath(NewObj);
-						AddObjectPath( ref sPath, localizeCmp, NewObj );
-						if (HasObjectInReferences(NewObj, localizeCmp))
-							sPath = NewObj.name;
-						else
-						if (termdata.TermType==eTermType.Sprite)
-							sPath+="["+NewObj.name+"]";
+                        string sPath = null;
+                        if (NewObj != null)
+                        {
+                            sPath = AssetDatabase.GetAssetPath(NewObj);
 
-						if (GUI_SelectedInputType==0)
-							termdata.Languages[i] = sPath;
-						else
-							termdata.Languages_Touch[i] = sPath;
-						EditorUtility.SetDirty(source);
+                            mCurrentInspector.serializedObject.ApplyModifiedProperties();
+                            foreach (var cmp in mCurrentInspector.serializedObject.targetObjects)
+                            {
+                                AddObjectPath(ref sPath, cmp as Localize, NewObj);
+                            }
+                            mCurrentInspector.serializedObject.ApplyModifiedProperties();
+
+                            if (HasObjectInReferences(NewObj, localizeCmp))
+                                sPath = NewObj.name;
+                            else
+                            if (termdata.TermType == eTermType.Sprite)
+                                sPath += "[" + NewObj.name + "]";
+                        }
+
+                        termdata.SetTranslation(i, sPath, GUI_SelectedSpecialization);
+						source.Editor_SetDirty();
 					}
 
 					if (bShowTranslationLabel)
@@ -536,7 +582,24 @@ namespace I2.Loc
 			}
 		}
 
-		static void EditPluralTranslations( ref string translation, int langIdx, string langCode )
+        private static void TranslateTerm(string Key, TermData termdata, LanguageSourceData source, int i)
+        {
+            string sourceText = null;
+            string sourceLangCode = null;
+            FindTranslationSource(Key, termdata, source.mLanguages[i].Code, null, out sourceText, out sourceLangCode);
+
+            var term = termdata;
+            var specialization = GUI_SelectedSpecialization;
+            var langIdx = i;
+            var i2source = source;
+            Translate(sourceText, ref termdata, source.mLanguages[i].Code, (translation, error) => 
+            {
+                term.SetTranslation(langIdx, translation, specialization);
+                i2source.Editor_SetDirty();
+            }, specialization);
+        }
+
+        static void EditPluralTranslations( ref string translation, int langIdx, string langCode )
 		{
 			bool hasParameters = false;
 			int paramStart = translation.IndexOf("{[");
@@ -647,10 +710,10 @@ namespace I2.Loc
 
 		static bool HasObjectInReferences( Object obj, Localize localizeCmp )
 		{
-			if (localizeCmp!=null && Array.IndexOf(localizeCmp.TranslatedObjects, obj)>=0)
+			if (localizeCmp!=null && localizeCmp.TranslatedObjects.Contains(obj))
 				return true;
 
-			if (mLanguageSource!=null && Array.IndexOf(mLanguageSource.Assets, obj)>=0)
+			if (mLanguageSource!=null && mLanguageSource.Assets.Contains(obj))
 				return true;
 
 			return false;
@@ -658,7 +721,7 @@ namespace I2.Loc
 
 		static void AddObjectPath( ref string sPath, Localize localizeCmp, Object NewObj )
 		{
-			if (RemoveResourcesPath (ref sPath))
+			if (I2Utils.RemoveResourcesPath (ref sPath))
 				return;
 
 			// If its not in the Resources folder and there is no object reference already in the
@@ -668,22 +731,18 @@ namespace I2.Loc
 
 			if (localizeCmp!=null)
 			{
-				int Length = localizeCmp.TranslatedObjects.Length;
-				Array.Resize( ref localizeCmp.TranslatedObjects, Length+1);
-				localizeCmp.TranslatedObjects[Length] = NewObj;
+				localizeCmp.AddTranslatedObject(NewObj);
 				EditorUtility.SetDirty(localizeCmp);
 			}
 			else
 			if (mLanguageSource!=null)
 			{
-				int Length = mLanguageSource.Assets.Length;
-				Array.Resize( ref mLanguageSource.Assets, Length+1);
-				mLanguageSource.Assets[Length] = NewObj;
-				EditorUtility.SetDirty(mLanguageSource);
+				mLanguageSource.AddAsset(NewObj);
+                mLanguageSource.Editor_SetDirty();
 			}
 		}
-		
-		static void Translate ( string Key, ref TermData termdata, string TargetLanguageCode, Action<string, string> onTranslated )
+
+		static void Translate ( string Key, ref TermData termdata, string TargetLanguageCode, GoogleTranslation.fnOnTranslated onTranslated, string overrideSpecialization )
 		{
 			#if UNITY_WEBPLAYER
 			ShowError ("Contacting google translation is not yet supported on WebPlayer" );
@@ -699,40 +758,29 @@ namespace I2.Loc
 			// If no language found, translation will fallback to autodetect language from key
 
 			string sourceCode, sourceText;
-			FindTranslationSource( Key, termdata, TargetLanguageCode, out sourceText, out sourceCode );
+			FindTranslationSource( Key, termdata, TargetLanguageCode, overrideSpecialization, out sourceText, out sourceCode );
 			GoogleTranslation.Translate( sourceText, sourceCode, TargetLanguageCode, onTranslated );
 			
 			#endif
 		}
 
-		static void FindTranslationSource( string Key, TermData termdata, string TargetLanguageCode, out string sourceText, out string sourceLanguageCode )
+		static void FindTranslationSource( string Key, TermData termdata, string TargetLanguageCode, string forceSpecialization, out string sourceText, out string sourceLanguageCode )
 		{
 			sourceLanguageCode = "auto";
 			sourceText = Key;
 			
-			string[] lans1 = (GUI_SelectedInputType==0 ? termdata.Languages : termdata.Languages_Touch);
-			string[] lans2 = (GUI_SelectedInputType==0 ? termdata.Languages_Touch : termdata.Languages);
-
-			for (int i=0, imax=lans1.Length; i<imax; ++i)
-				if (mLanguageSource.mLanguages[i].IsEnabled() && !string.IsNullOrEmpty(lans1[i]))
-				{
-					sourceText = lans1[i];
-					if (mLanguageSource.mLanguages[i].Code != TargetLanguageCode)
-					{
-						sourceLanguageCode = mLanguageSource.mLanguages[i].Code;
-						return;
-					}
-				}
-			for (int i=0, imax=lans2.Length; i<imax; ++i)
-				if (mLanguageSource.mLanguages[i].IsEnabled() && !string.IsNullOrEmpty(lans2[i]))
-				{
-					sourceText = lans2[i];
-					if (mLanguageSource.mLanguages[i].Code != TargetLanguageCode)
-					{
-						sourceLanguageCode = mLanguageSource.mLanguages[i].Code;
-						return;
-					}
-				}			
+            for (int i = 0, imax = termdata.Languages.Length; i < imax; ++i)
+            {
+                if (mLanguageSource.mLanguages[i].IsEnabled() && !string.IsNullOrEmpty(termdata.Languages[i]))
+                {
+                    sourceText = forceSpecialization==null ? termdata.Languages[i] : termdata.GetTranslation(i, forceSpecialization, editMode:true);
+                    if (mLanguageSource.mLanguages[i].Code != TargetLanguageCode)
+                    {
+                        sourceLanguageCode = mLanguageSource.mLanguages[i].Code;
+                        return;
+                    }
+                }
+            }
 		}
 		
 		#endregion

@@ -205,6 +205,14 @@ namespace I2.Loc
 
 			GUILayout.Space(10);
 			GUILayout.EndHorizontal();
+
+            GUILayout.BeginHorizontal();
+                GUILayout.FlexibleSpace();
+                EditorGUIUtility.labelWidth += 10;
+                EditorGUILayout.PropertyField(mProp_Spreadsheet_SpecializationAsRows, new GUIContent("Show Specializations as Rows", "true: Make each specialization a separate row (e.g. Term[VR]..., Term[Touch]....\nfalse: Merge specializations into same cell separated by [i2s_XXX]"));
+                EditorGUIUtility.labelWidth -= 10;
+            GUILayout.EndHorizontal();
+
 			
 			GUI.enabled = true;
 		}
@@ -236,7 +244,7 @@ namespace I2.Loc
 					{
 						case eLocalSpreadsheeet.CSV		: Import_CSV(File, UpdateMode); break;
 					}
-					ParseTerms(true);
+					ParseTerms(true, false, true);
 					EditorUtility.SetDirty (target);
 					AssetDatabase.SaveAssets();
 				}
@@ -250,8 +258,8 @@ namespace I2.Loc
 
 		void Import_CSV( string FileName, eSpreadsheetUpdateMode UpdateMode )
 		{
-			LanguageSource source = (LanguageSource)target;
-			var encoding = System.Text.Encoding.GetEncoding (mProp_Spreadsheet_LocalCSVEncoding.stringValue);
+            LanguageSourceData source = GetSourceData();
+            var encoding = System.Text.Encoding.GetEncoding (mProp_Spreadsheet_LocalCSVEncoding.stringValue);
 			if (encoding == null)
 				encoding = System.Text.Encoding.UTF8;
 			string CSVstring = LocalizationReader.ReadCSVfile (FileName, encoding);
@@ -315,9 +323,9 @@ namespace I2.Loc
 
 		public void Export_CSV( string FileName, eSpreadsheetUpdateMode UpdateMode, char Separator, System.Text.Encoding encoding )
 		{
-			LanguageSource source = (LanguageSource)target;
-			
-			string CSVstring = source.Export_CSV(null, Separator);
+            LanguageSourceData source = GetSourceData();
+
+            string CSVstring = source.Export_CSV(null, Separator, mProp_Spreadsheet_SpecializationAsRows.boolValue);
 			System.IO.File.WriteAllText (FileName, CSVstring, encoding);
 		}
 	}

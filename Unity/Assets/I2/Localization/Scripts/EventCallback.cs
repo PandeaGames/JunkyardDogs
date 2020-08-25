@@ -11,7 +11,7 @@ namespace I2.Loc
 
 		public void Execute( UnityEngine.Object Sender = null )
 		{
-			if (HasCallback() && LocalizationManager.IsPlaying())
+			if (HasCallback() && Application.isPlaying)
 				Target.gameObject.SendMessage(MethodName, Sender, SendMessageOptions.DontRequireReceiver);
 		}
 

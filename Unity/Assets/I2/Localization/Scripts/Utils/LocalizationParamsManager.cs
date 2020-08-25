@@ -21,7 +21,7 @@ namespace I2.Loc
         [SerializeField]
         public List<ParamValue> _Params = new List<ParamValue>();
 
-        public bool _AutoRegister = false;
+        public bool _IsGlobalManager;
         
         public string GetParameterValue( string ParamName )
         {
@@ -62,16 +62,16 @@ namespace I2.Loc
 
         public virtual void OnEnable()
         {
-            if (_AutoRegister)
+            if (_IsGlobalManager)
                 DoAutoRegister();
         }
 
-        [I2RuntimeInitialize]
-        public void AutoStart()
-        {
-            if (_AutoRegister)
-                DoAutoRegister();
-        }
+        //[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+        //public void AutoStart()
+        //{
+        //    if (_AutoRegister)
+        //        DoAutoRegister();
+        //}
 
         public void DoAutoRegister()
         {

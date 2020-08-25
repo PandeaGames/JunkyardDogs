@@ -10,9 +10,6 @@ namespace I2.Loc
 	{
 		#region Variables
 
-		const string ValidChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_";
-		const string NumberChars = "0123456789";
-
 		int Script_Tool_MaxVariableLength = 50;
 
 		#endregion
@@ -26,7 +23,7 @@ namespace I2.Loc
 			//GUILayout.Space (5);
 			
 			GUI.backgroundColor = Color.Lerp (Color.gray, Color.white, 0.2f);
-			GUILayout.BeginVertical(EditorStyles.textArea, GUILayout.Height(1));
+			GUILayout.BeginVertical(LocalizeInspector.GUIStyle_OldTextArea, GUILayout.Height(1));
 			GUI.backgroundColor = Color.white;
 			
 			EditorGUILayout.HelpBox("This tool creates the ScriptLocalization.cs with the selected terms.\nThis allows for Compile Time Checking on the used Terms referenced in scripts", MessageType.Info);
@@ -69,7 +66,10 @@ namespace I2.Loc
                 {
                     var term = match.Value.Substring(1, match.Value.Length - 2);
 
-                    mSelectedKeys.Add(term);
+                    if (!mSelectedKeys.Contains(term))
+                    {
+                        mSelectedKeys.Add(term);
+                    }
                 }
             }
             catch(System.Exception)
@@ -83,29 +83,34 @@ namespace I2.Loc
 		void BuildScriptWithSelectedTerms()
 		{
 			EditorApplication.update -= BuildScriptWithSelectedTerms;
-			var sb = new StringBuilder();
-			sb.AppendLine( "using UnityEngine;" );
-			sb.AppendLine();
-			sb.AppendLine( "namespace I2.Loc" );
-			sb.AppendLine( "{" );
-			sb.AppendLine( "	public static class ScriptLocalization" );
-			sb.AppendLine( "	{" );
-			sb.AppendLine( "		public static string Get(string Term, bool FixForRTL=true, int maxLineLengthForRTL=0, bool ignoreRTLnumbers=true, bool applyParameters=false, GameObject localParametersRoot=null, string overrideLanguage=null) { return LocalizationManager.GetTranslation(Term, FixForRTL, maxLineLengthForRTL, ignoreRTLnumbers, applyParameters, localParametersRoot, overrideLanguage); }" );
-			sb.AppendLine();
-
-			BuildScriptWithSelectedTerms( sb );
-
-			sb.AppendLine();
-			sb.AppendLine( "	}" );
-			sb.AppendLine( "}" );
+            var sbTrans = new StringBuilder();
+            var sbTerms = new StringBuilder();
+            sbTrans.AppendLine( "using UnityEngine;" );
+            sbTrans.AppendLine();
+            sbTrans.AppendLine( "namespace I2.Loc" );
+            sbTrans.AppendLine( "{" );
+            sbTrans.AppendLine( "	public static class ScriptLocalization" );
+            sbTrans.AppendLine( "	{" );
 
 
-			string ScriptFile = GetPathToGeneratedScriptLocalization ();
+            sbTerms.AppendLine();
+            sbTerms.AppendLine("    public static class ScriptTerms");
+            sbTerms.AppendLine("	{");
+
+
+
+            BuildScriptWithSelectedTerms( sbTrans, sbTerms );
+            sbTrans.AppendLine("	}");    // Closing both classes
+            sbTerms.AppendLine("	}");
+
+
+            string ScriptFile = GetPathToGeneratedScriptLocalization ();
 			Debug.Log ("Generating: " + ScriptFile);
 
             var filePath = Application.dataPath + ScriptFile.Substring("Assets".Length);
+            string fileText = sbTrans.ToString() + sbTerms.ToString() + "}";
 
-            System.IO.File.WriteAllText(filePath, sb.ToString(), Encoding.UTF8);
+            System.IO.File.WriteAllText(filePath, fileText, Encoding.UTF8);
 
 			AssetDatabase.ImportAsset(ScriptFile);
 		}
@@ -127,7 +132,7 @@ namespace I2.Loc
 			return "Assets/ScriptLocalization.cs";
         }
 
-		void BuildScriptWithSelectedTerms( StringBuilder sb )
+		void BuildScriptWithSelectedTerms( StringBuilder sbTrans, StringBuilder sbTerms )
 		{
 			List<string> Categories = LocalizationManager.GetCategories();
 			foreach (string Category in Categories)
@@ -140,21 +145,26 @@ namespace I2.Loc
 				for (int i=0, imax=AdjustedCategoryTerms.Count; i<imax; ++i)
 					AdjustedCategoryTerms[i] = ScriptTool_AdjustTerm( AdjustedCategoryTerms[i] );
 				ScriptTool_EnumerateDuplicatedTerms(AdjustedCategoryTerms);
-				
-				sb.AppendLine();
-				if (Category != LanguageSource.EmptyCategory)
-				{
-					sb.AppendLine("		public static class " + ScriptTool_AdjustTerm(Category,true));
-					sb.AppendLine("		{");
-				}
 
-				BuildScriptCategory( sb, Category, AdjustedCategoryTerms, CategoryTerms );
-
-				if (Category != LanguageSource.EmptyCategory)
+                sbTrans.AppendLine();
+                sbTerms.AppendLine();
+                if (Category != LanguageSourceData.EmptyCategory)
 				{
-					sb.AppendLine("		}");
-				}
-			}
+                    sbTrans.AppendLine("		public static class " + ScriptTool_AdjustTerm(Category,true));
+                    sbTrans.AppendLine("		{");
+
+                    sbTerms.AppendLine("		public static class " + ScriptTool_AdjustTerm(Category, true));
+                    sbTerms.AppendLine("		{");
+                }
+
+                BuildScriptCategory( sbTrans, sbTerms, Category, AdjustedCategoryTerms, CategoryTerms );
+
+				if (Category != LanguageSourceData.EmptyCategory)
+				{
+                    sbTrans.AppendLine("		}");
+                    sbTerms.AppendLine("		}");
+                }
+            }
 		}
 
 		List<string> ScriptTool_GetSelectedTermsInCategory( string Category )
@@ -162,34 +172,40 @@ namespace I2.Loc
 			List<string> list = new List<string>();
 			foreach (string FullKey in mSelectedKeys)
 			{
-				string categ =  LanguageSource.GetCategoryFromFullTerm(FullKey);
+				string categ =  LanguageSourceData.GetCategoryFromFullTerm(FullKey);
 				if (categ == Category && ShouldShowTerm(FullKey))
 				{
-					list.Add(  LanguageSource.GetKeyFromFullTerm(FullKey) );
+					list.Add(  LanguageSourceData.GetKeyFromFullTerm(FullKey) );
 				}
 			}
 
 			return list;
 		}
 
-		void BuildScriptCategory( StringBuilder sb, string Category, List<string> AdjustedTerms, List<string> Terms )
+		void BuildScriptCategory( StringBuilder sbTrans, StringBuilder sbTerms, string Category, List<string> AdjustedTerms, List<string> Terms )
 		{
-			if (Category==LanguageSource.EmptyCategory)
+			if (Category==LanguageSourceData.EmptyCategory)
 			{
-				for (int i=0; i<Terms.Count; ++i)
-					sb.AppendLine("		public static string "+AdjustedTerms[i]+" \t\t{ get{ return Get (\""+Terms[i]+"\"); } }");
-			}
+                for (int i = 0; i < Terms.Count; ++i)
+                {
+                    sbTrans.AppendLine( "		public static string " + AdjustedTerms[i] + " \t\t{ get{ return LocalizationManager.GetTranslation (\"" + Terms[i] + "\"); } }");
+                    sbTerms.AppendLine("		public const string " + AdjustedTerms[i] + " = \"" + Terms[i] + "\";");
+                }
+            }
 			else
 			for (int i=0; i<Terms.Count; ++i)
 			{
-				sb.AppendLine("			public static string "+AdjustedTerms[i]+" \t\t{ get{ return Get (\""+Category+"/"+Terms[i]+"\"); } }");
+				sbTrans.AppendLine("			public static string "+AdjustedTerms[i]+ " \t\t{ get{ return LocalizationManager.GetTranslation (\"" + Category+"/"+Terms[i]+"\"); } }");
+                sbTerms.AppendLine("		    public const string " + AdjustedTerms[i] + " = \"" + Category + "/" + Terms[i] + "\";");
 			}
 		}
 
 		string ScriptTool_AdjustTerm( string Term, bool allowFullLength = false )
 		{
+            Term = I2Utils.GetValidTermName(Term);
+
 			// C# IDs can't start with a number
-			if (NumberChars.IndexOf(Term[0])>=0)
+			if (I2Utils.NumberChars.IndexOf(Term[0])>=0)
 				Term = "_"+Term;
 			
 			if (!allowFullLength && Term.Length>Script_Tool_MaxVariableLength)
@@ -198,7 +214,7 @@ namespace I2.Loc
 			// Remove invalid characters
 			char[] chars = Term.ToCharArray();
 			for (int i=0, imax=chars.Length; i<imax; ++i)
-				if (ValidChars.IndexOf(chars[i])<0)
+				if (I2Utils.ValidChars.IndexOf(chars[i])<0)
 					chars[i]='_';
 			return new string(chars);
 		}

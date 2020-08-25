@@ -8,7 +8,7 @@ namespace I2.Loc
 {
 	public interface IResourceManager_Bundles
 	{
-		T LoadFromBundle<T>(string path) where T : Object;
+		Object LoadFromBundle(string path, System.Type assetType );
 	}
 
 	public class ResourceManager : MonoBehaviour 
@@ -116,23 +116,25 @@ namespace I2.Loc
 
 				T obj = null;
 
-				if (Path.EndsWith( "]", System.StringComparison.OrdinalIgnoreCase ))	// Handle sprites (Multiple) loaded from resources :   "SpritePath[SpriteName]"
-				{
-					int idx = Path.LastIndexOf( "[", System.StringComparison.OrdinalIgnoreCase );
-					int len = Path.Length-idx-2;
-					string MultiSpriteName = Path.Substring( idx+1, len );
-					Path = Path.Substring( 0, idx );
+                if (Path.EndsWith("]", System.StringComparison.OrdinalIgnoreCase))  // Handle sprites (Multiple) loaded from resources :   "SpritePath[SpriteName]"
+                {
+                    int idx = Path.LastIndexOf("[", System.StringComparison.OrdinalIgnoreCase);
+                    int len = Path.Length - idx - 2;
+                    string MultiSpriteName = Path.Substring(idx + 1, len);
+                    Path = Path.Substring(0, idx);
 
-					T[] objs = Resources.LoadAll<T>( Path );
-					for (int j=0, jmax=objs.Length; j<jmax; ++j)
-						if (objs[j].name.Equals( MultiSpriteName ))
-						{
-							obj = objs[j];
-							break;
-						}
-				}
-				else
-					obj = Resources.Load( Path, typeof(T) ) as T;
+                    T[] objs = Resources.LoadAll<T>(Path);
+                    for (int j = 0, jmax = objs.Length; j < jmax; ++j)
+                        if (objs[j].name.Equals(MultiSpriteName))
+                        {
+                            obj = objs[j];
+                            break;
+                        }
+                }
+                else
+                {
+                    obj = Resources.Load(Path, typeof(T)) as T;
+                }
 
 				if (obj == null)
 					obj = LoadFromBundle<T>( Path );
@@ -162,7 +164,7 @@ namespace I2.Loc
 			for (int i = 0, imax = mBundleManagers.Count; i < imax; ++i)
 				if (mBundleManagers[i]!=null)
 				{
-					var obj = mBundleManagers[i].LoadFromBundle<T>(path);
+					var obj = mBundleManagers[i].LoadFromBundle(path, typeof(T)) as T;
 					if (obj != null)
 						return obj;
 				}
