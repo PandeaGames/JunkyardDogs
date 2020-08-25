@@ -15,7 +15,7 @@ MonoBehaviour:
   _specification:
     _id: Mamoth
   _manufacturer:
-    _id: Kinzoku Inu
+    _id: 
   Material:
     _id: Aluminum
   _engine:
@@ -47,8 +47,8 @@ MonoBehaviour:
   _topArmament:
     _id: KinzokuInuSpiralWeaponProcessor
   _frontArmament:
-    _id: 
-  _leftArmament:
     _id: KinzokuInuSpiralWeaponProcessor
+  _leftArmament:
+    _id: 
   _rightArmament:
-    _id: AkaminaProcessorMiniMachineGun
+    _id: 

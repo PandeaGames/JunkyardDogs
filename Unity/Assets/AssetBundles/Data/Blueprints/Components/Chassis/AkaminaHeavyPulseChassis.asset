@@ -15,7 +15,7 @@ MonoBehaviour:
   _specification:
     _id: Mamoth
   _manufacturer:
-    _id: Akamina
+    _id: 
   Material:
     _id: Steel
   _engine:
@@ -49,6 +49,6 @@ MonoBehaviour:
   _frontArmament:
     _id: 
   _leftArmament:
-    _id: AkaminaProcessorFastPulse
+    _id: AkaminaProcessorMiniMachineGun
   _rightArmament:
     _id: AkaminaProcessorFastPulse
